@@ -1,8 +1,10 @@
 name: Build ROM
 
-# Builds the Emerald ROM on every push to any branch and attaches it to the run,
-# so the game can be tested without a computer. Download it from the run's
-# "Artifacts" section on GitHub (in a browser; the GitHub mobile app doesn't show artifacts).
+# Builds the Emerald ROM and attaches it to the run, so the game can be tested
+# without a computer. Builds take a while, so they only run when asked:
+#   - a pushed commit whose message contains [build], or
+#   - "Run workflow" on the Actions tab (pick the branch).
+# Download the ROM from the run's "Artifacts" section on GitHub (in a browser; the GitHub mobile app doesn't show artifacts).
 # The ROM is uploaded unzipped, so it downloads as a plain .gba file.
 on:
   push:
@@ -10,7 +12,9 @@ on:
 
 jobs:
   build:
-    if: github.actor != 'allcontributors[bot]'
+    if: >-
+      github.actor != 'allcontributors[bot]' &&
+      (github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[build]'))
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
