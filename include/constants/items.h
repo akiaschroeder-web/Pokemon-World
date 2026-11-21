@@ -1063,6 +1063,7 @@ enum __attribute__((packed)) Item
     ITEM_LUNAR_WING = 882,
     ITEM_SUITE_KEY = 883,
     ITEM_OLD_CHARM = 884,
+    ITEM_BADGE_CASE = 885, // Pokémon World: shows the badges from every region
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

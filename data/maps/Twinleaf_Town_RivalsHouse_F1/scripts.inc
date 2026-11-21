@@ -6,7 +6,7 @@ Twinleaf_Town_RivalsHouse_F1_EventScript_PtNpc1::
 	faceplayer
 	goto_if_lt VAR_SINNOH_STORY, 2, Twinleaf_Town_RivalsHouse_F1_EventScript_PtNpc1_S0
 	goto_if_lt VAR_SINNOH_STORY, 4, Twinleaf_Town_RivalsHouse_F1_EventScript_PtNpc1_S1
-	goto_if_unset FLAG_BADGE01_GET, Twinleaf_Town_RivalsHouse_F1_EventScript_PtNpc1_S2
+	goto_if_unset FLAG_SINNOH_BADGE01_GET, Twinleaf_Town_RivalsHouse_F1_EventScript_PtNpc1_S2
 	msgbox Twinleaf_Town_RivalsHouse_F1_Text_SNTookOff, MSGBOX_DEFAULT
 	release
 	end

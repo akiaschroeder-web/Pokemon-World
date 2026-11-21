@@ -63,9 +63,9 @@ Sinnoh_EventScript_GenericMart::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	goto_if_set FLAG_BADGE05_GET, Sinnoh_EventScript_GenericMart5
-	goto_if_set FLAG_BADGE03_GET, Sinnoh_EventScript_GenericMart3
-	goto_if_set FLAG_BADGE01_GET, Sinnoh_EventScript_GenericMart1
+	goto_if_set FLAG_SINNOH_BADGE05_GET, Sinnoh_EventScript_GenericMart5
+	goto_if_set FLAG_SINNOH_BADGE03_GET, Sinnoh_EventScript_GenericMart3
+	goto_if_set FLAG_SINNOH_BADGE01_GET, Sinnoh_EventScript_GenericMart1
 	pokemart Sinnoh_Pokemart_Tier0
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release

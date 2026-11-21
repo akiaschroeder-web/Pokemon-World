@@ -153,7 +153,7 @@ SnowpointCity_Gym_1F_EventScript_LeaderDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SnowpointCity_Gym_1F_Text_ExplainBadge, MSGBOX_DEFAULT
-	setflag FLAG_BADGE07_GET
+	setflag FLAG_SINNOH_BADGE07_GET
 	settrainerflag TRAINER_SN_ANTON_1
 	settrainerflag TRAINER_SN_SAVANNAH_1
 	settrainerflag TRAINER_SN_ALICIA_1
@@ -173,7 +173,7 @@ SnowpointCity_Gym_1F_EventScript_GiveTM::
 SnowpointCity_Gym_1F_EventScript_PtGymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE07_GET, SnowpointCity_Gym_1F_EventScript_PtGymGuideAfter
+	goto_if_set FLAG_SINNOH_BADGE07_GET, SnowpointCity_Gym_1F_EventScript_PtGymGuideAfter
 	msgbox SnowpointCity_Gym_1F_Text_PtGymGuide, MSGBOX_DEFAULT
 	msgbox SnowpointCity_Gym_1F_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -186,7 +186,7 @@ SnowpointCity_Gym_1F_EventScript_PtGymGuideAfter::
 
 SnowpointCity_Gym_1F_EventScript_PtGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE07_GET, SnowpointCity_Gym_1F_EventScript_PtGymStatueWon
+	goto_if_set FLAG_SINNOH_BADGE07_GET, SnowpointCity_Gym_1F_EventScript_PtGymStatueWon
 	msgbox SnowpointCity_Gym_1F_Text_PtGymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

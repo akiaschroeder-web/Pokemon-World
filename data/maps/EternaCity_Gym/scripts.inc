@@ -13,7 +13,7 @@ EternaCity_Gym_EventScript_GardeniaDefeated::
 	message EternaCity_Gym_Text_ReceivedBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	setflag FLAG_BADGE02_GET
+	setflag FLAG_SINNOH_BADGE02_GET
 	setvar VAR_SINNOH_STORY, 27
 	goto EternaCity_Gym_EventScript_GiveTM
 	end
@@ -30,7 +30,7 @@ EternaCity_Gym_EventScript_GiveTM::
 EternaCity_Gym_EventScript_Guide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE02_GET, EternaCity_Gym_EventScript_GuideWon
+	goto_if_set FLAG_SINNOH_BADGE02_GET, EternaCity_Gym_EventScript_GuideWon
 	msgbox EternaCity_Gym_Text_Guide, MSGBOX_DEFAULT
 	msgbox EternaCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -145,7 +145,7 @@ EternaCity_Gym_Text_AngelaPost:
 
 EternaCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE02_GET, EternaCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_SINNOH_BADGE02_GET, EternaCity_Gym_EventScript_GymStatuePostVictory
 	msgbox EternaCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

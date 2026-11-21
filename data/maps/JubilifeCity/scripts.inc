@@ -118,7 +118,7 @@ JubilifeCity_Text_PtNpc6:
 JubilifeCity_EventScript_PtNpc7::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE01_GET, JubilifeCity_EventScript_PtNpc7_SNVar0
+	goto_if_set FLAG_SINNOH_BADGE01_GET, JubilifeCity_EventScript_PtNpc7_SNVar0
 	msgbox JubilifeCity_Text_PtNpc7, MSGBOX_DEFAULT
 	release
 	end

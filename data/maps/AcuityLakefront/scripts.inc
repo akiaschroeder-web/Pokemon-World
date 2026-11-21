@@ -5,7 +5,7 @@ AcuityLakefront_MapScripts::
 AcuityLakefront_OnTransition:
 	setflag FLAG_SN_HIDE_ACUITYFRONT_BARRY
 	goto_if_lt VAR_SINNOH_STORY, 31, AcuityLakefront_OnTransition_End
-	goto_if_set FLAG_BADGE07_GET, AcuityLakefront_OnTransition_End
+	goto_if_set FLAG_SINNOH_BADGE07_GET, AcuityLakefront_OnTransition_End
 	goto_if_set FLAG_SN_ACUITYFRONT_BARRY_DONE, AcuityLakefront_OnTransition_End
 	clearflag FLAG_SN_HIDE_ACUITYFRONT_BARRY
 AcuityLakefront_OnTransition_End:

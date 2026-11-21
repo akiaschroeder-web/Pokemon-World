@@ -236,7 +236,7 @@ Route213_OnTransitionSN:
 
 Route213_EventScript_SNVis_BOMB:
 	setflag FLAG_SN_HIDE_BOMB
-	goto_if_unset FLAG_BADGE05_GET, Route213_EventScript_SNVis_BOMB_End
+	goto_if_unset FLAG_SINNOH_BADGE05_GET, Route213_EventScript_SNVis_BOMB_End
 	goto_if_defeated TRAINER_SN_GRUNT_31, Route213_EventScript_SNVis_BOMB_End
 	clearflag FLAG_SN_HIDE_BOMB
 Route213_EventScript_SNVis_BOMB_End:

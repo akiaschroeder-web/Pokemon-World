@@ -444,7 +444,7 @@ SunyshoreCity_Gym_EventScript_LeaderDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SunyshoreCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
-	setflag FLAG_BADGE08_GET
+	setflag FLAG_SINNOH_BADGE08_GET
 	settrainerflag TRAINER_SN_TIERA_1
 	settrainerflag TRAINER_SN_FORREST_1
 	settrainerflag TRAINER_SN_JERRY_1
@@ -466,7 +466,7 @@ SunyshoreCity_Gym_EventScript_GiveTM::
 SunyshoreCity_Gym_EventScript_PtGymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_Gym_EventScript_PtGymGuideAfter
+	goto_if_set FLAG_SINNOH_BADGE08_GET, SunyshoreCity_Gym_EventScript_PtGymGuideAfter
 	msgbox SunyshoreCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
 	msgbox SunyshoreCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -479,7 +479,7 @@ SunyshoreCity_Gym_EventScript_PtGymGuideAfter::
 
 SunyshoreCity_Gym_EventScript_PtGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_Gym_EventScript_PtGymStatueWon
+	goto_if_set FLAG_SINNOH_BADGE08_GET, SunyshoreCity_Gym_EventScript_PtGymStatueWon
 	msgbox SunyshoreCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

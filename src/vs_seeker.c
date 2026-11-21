@@ -548,8 +548,8 @@ static u32 GetGameProgressFlags()
 {
     const u32 gameProgressFlags[] = {
         // Proyecto Sinnoh: niveles de revancha como en Platino
-        FLAG_BADGE05_GET,
-        FLAG_BADGE07_GET,
+        FLAG_SINNOH_BADGE05_GET,
+        FLAG_SINNOH_BADGE07_GET,
         FLAG_SYS_GAME_CLEAR,
         FLAG_SYS_NATIONAL_DEX
     };

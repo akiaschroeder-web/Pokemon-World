@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_world.h"
 #include "sinnoh_radar.h"
 #include "item_use.h"
 #include "battle.h"
@@ -777,6 +778,16 @@ static void Task_AccessPokemonBoxLink(u8 taskId)
 {
     ScriptContext_SetupScript(EventScript_AccessPokemonBoxLink);
     DestroyTask(taskId);
+}
+
+// Pokémon World: list each region's badges.
+void ItemUseOutOfBattle_BadgeCase(u8 taskId)
+{
+    PW_BufferBadgeCaseText(gStringVar4);
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
+    else
+        DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
 }
 
 void ItemUseOutOfBattle_CoinCase(u8 taskId)

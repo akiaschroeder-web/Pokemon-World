@@ -281,7 +281,7 @@ HearthomeCity_EventScript_SNMrGoods::
 	faceplayer
 	goto_if_set FLAG_SN_MRGOODS_GIFT, HearthomeCity_EventScript_SNMrGoods_Done
 	msgbox HearthomeCity_EventScript_SNMrGoods_Hello, MSGBOX_DEFAULT
-	goto_if_unset FLAG_BADGE03_GET, HearthomeCity_EventScript_SNMrGoods_Later
+	goto_if_unset FLAG_SINNOH_BADGE03_GET, HearthomeCity_EventScript_SNMrGoods_Later
 	givedecoration DECOR_PIKACHU_DOLL
 	goto_if_eq VAR_RESULT, FALSE, HearthomeCity_EventScript_SNMrGoods_Full
 	setflag FLAG_SN_MRGOODS_GIFT
@@ -339,7 +339,7 @@ HearthomeCity_EventScript_SNVis_KEIRA_End:
 HearthomeCity_EventScript_SNVis_GYM_BLOCK:
 	setflag FLAG_SN_HIDE_GYM_BLOCK
 	goto_if_set FLAG_SN_MET_FANTINA, HearthomeCity_EventScript_SNVis_GYM_BLOCK_End
-	goto_if_set FLAG_BADGE03_GET, HearthomeCity_EventScript_SNVis_GYM_BLOCK_End
+	goto_if_set FLAG_SINNOH_BADGE03_GET, HearthomeCity_EventScript_SNVis_GYM_BLOCK_End
 	clearflag FLAG_SN_HIDE_GYM_BLOCK
 HearthomeCity_EventScript_SNVis_GYM_BLOCK_End:
 	return

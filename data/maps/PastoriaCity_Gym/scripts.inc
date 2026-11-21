@@ -124,7 +124,7 @@ PastoriaCity_Gym_EventScript_LeaderDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox PastoriaCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
-	setflag FLAG_BADGE05_GET
+	setflag FLAG_SINNOH_BADGE05_GET
 	settrainerflag TRAINER_SN_JACKY_1
 	settrainerflag TRAINER_SN_DAMIAN_1
 	settrainerflag TRAINER_SN_CAITLYN_1
@@ -144,7 +144,7 @@ PastoriaCity_Gym_EventScript_GiveTM::
 PastoriaCity_Gym_EventScript_PtGymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE05_GET, PastoriaCity_Gym_EventScript_PtGymGuideAfter
+	goto_if_set FLAG_SINNOH_BADGE05_GET, PastoriaCity_Gym_EventScript_PtGymGuideAfter
 	msgbox PastoriaCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -157,7 +157,7 @@ PastoriaCity_Gym_EventScript_PtGymGuideAfter::
 
 PastoriaCity_Gym_EventScript_PtGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE05_GET, PastoriaCity_Gym_EventScript_PtGymStatueWon
+	goto_if_set FLAG_SINNOH_BADGE05_GET, PastoriaCity_Gym_EventScript_PtGymStatueWon
 	msgbox PastoriaCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

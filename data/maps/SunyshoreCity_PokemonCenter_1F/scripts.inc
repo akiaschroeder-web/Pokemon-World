@@ -45,7 +45,7 @@ SunyshoreCity_PokemonCenter_1F_Text_PtNpc2_1:
 SunyshoreCity_PokemonCenter_1F_EventScript_PtNpc2::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_PokemonCenter_1F_EventScript_PtNpc2_AwesomelyCoolEightBadges
+	goto_if_set FLAG_SINNOH_BADGE08_GET, SunyshoreCity_PokemonCenter_1F_EventScript_PtNpc2_AwesomelyCoolEightBadges
 	msgbox SunyshoreCity_PokemonCenter_1F_Text_PtNpc2_0, MSGBOX_DEFAULT
 	release
 	end

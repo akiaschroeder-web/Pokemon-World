@@ -42,7 +42,7 @@ CelesticTown_OnTransitionSN:
 CelesticTown_EventScript_SNVis_CEL_GRUNT:
 	setflag FLAG_SN_HIDE_CEL_ELDER_OUT
 	setflag FLAG_SN_HIDE_CEL_GRUNT
-	goto_if_unset FLAG_BADGE05_GET, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
+	goto_if_unset FLAG_SINNOH_BADGE05_GET, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
 	goto_if_defeated TRAINER_SN_GRUNT_31, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
 	clearflag FLAG_SN_HIDE_CEL_GRUNT
 	clearflag FLAG_SN_HIDE_CEL_ELDER_OUT
@@ -92,7 +92,7 @@ CelesticTown_EventScript_SNCEL_GRUNT_Post:
 CelesticTown_EventScript_SNVis_CEL_CYNTHIA:
 	setflag FLAG_SN_HIDE_CEL_CYNTHIA
 	goto_if_not_defeated TRAINER_SN_CYRUS_1, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
-	goto_if_set FLAG_BADGE06_GET, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
+	goto_if_set FLAG_SINNOH_BADGE06_GET, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
 	clearflag FLAG_SN_HIDE_CEL_CYNTHIA
 CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End:
 	return

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_world.h"
 #include "event_data.h"
 #include "field_move.h"
 #include "fldeff.h"
@@ -19,9 +20,10 @@ static bool32 IsAlwaysTrue(enum FieldMove fieldMove)
     return TRUE;
 }
 
+// Pokémon World: a field move works once you have its badge from any region.
 static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
 {
-    return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET);
+    return PW_HasFieldMoveBadge(fieldMove);
 }
 
 const struct FieldMoveUnlock gFieldMoveUnlocks[FIELD_MOVE_UNLOCK_COUNT] =

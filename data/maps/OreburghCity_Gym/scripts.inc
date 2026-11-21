@@ -14,7 +14,7 @@ OreburghCity_Gym_EventScript_RoarkDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox OreburghCity_Gym_Text_BadgeInfo, MSGBOX_DEFAULT
-	setflag FLAG_BADGE01_GET
+	setflag FLAG_SINNOH_BADGE01_GET
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
@@ -34,7 +34,7 @@ OreburghCity_Gym_EventScript_GiveTM::
 OreburghCity_Gym_EventScript_Guide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE01_GET, OreburghCity_Gym_EventScript_GuideWon
+	goto_if_set FLAG_SINNOH_BADGE01_GET, OreburghCity_Gym_EventScript_GuideWon
 	msgbox OreburghCity_Gym_Text_Guide, MSGBOX_DEFAULT
 	msgbox OreburghCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -157,7 +157,7 @@ OreburghCity_Gym_Text_DariusPost:
 
 OreburghCity_Gym_EventScript_GymStatue::
 	lockall
-	goto_if_set FLAG_BADGE01_GET, OreburghCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_SINNOH_BADGE01_GET, OreburghCity_Gym_EventScript_GymStatuePostVictory
 	msgbox OreburghCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

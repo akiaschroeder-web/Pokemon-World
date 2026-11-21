@@ -46,7 +46,7 @@ IronIsland_EventScript_SNRiley::
 	msgbox IronIsland_EventScript_SNRiley_T1, MSGBOX_DEFAULT
 	giveitem ITEM_HM_STRENGTH
 	setflag FLAG_SN_RECEIVED_HM_STRENGTH
-	goto_if_set FLAG_BADGE06_GET, IronIsland_EventScript_SNRiley_HasBadge
+	goto_if_set FLAG_SINNOH_BADGE06_GET, IronIsland_EventScript_SNRiley_HasBadge
 	msgbox IronIsland_EventScript_SNRiley_T2, MSGBOX_DEFAULT
 	goto IronIsland_EventScript_SNRiley_Leave
 IronIsland_EventScript_SNRiley_HasBadge:

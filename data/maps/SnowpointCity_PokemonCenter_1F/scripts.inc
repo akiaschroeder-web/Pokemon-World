@@ -59,7 +59,7 @@ SnowpointCity_PokemonCenter_1F_Text_PtNpc4:
 	.string "or Fighting-type POKéMON, I think.$"
 
 SnowpointCity_PokemonCenter_1F_EventScript_PtNpc4::
-	goto_if_set FLAG_BADGE07_GET, SnowpointCity_PokemonCenter_1F_EventScript_SNMayleneAfter
+	goto_if_set FLAG_SINNOH_BADGE07_GET, SnowpointCity_PokemonCenter_1F_EventScript_SNMayleneAfter
 	msgbox SnowpointCity_PokemonCenter_1F_Text_SNMayleneBefore, MSGBOX_NPC
 	end
 SnowpointCity_PokemonCenter_1F_EventScript_SNMayleneAfter:

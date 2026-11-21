@@ -5,7 +5,7 @@ SolaceonTown_MapScripts::
 SolaceonTown_EventScript_PtNpc1::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE03_GET, SolaceonTown_EventScript_PtNpc1_SNVar0
+	goto_if_set FLAG_SINNOH_BADGE03_GET, SolaceonTown_EventScript_PtNpc1_SNVar0
 	msgbox SolaceonTown_Text_PtNpc1, MSGBOX_DEFAULT
 	release
 	end

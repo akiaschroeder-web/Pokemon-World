@@ -143,7 +143,7 @@ CanalaveCity_Gym_EventScript_LeaderDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox CanalaveCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
-	setflag FLAG_BADGE06_GET
+	setflag FLAG_SINNOH_BADGE06_GET
 	settrainerflag TRAINER_SN_DAVID_1
 	settrainerflag TRAINER_SN_JACKSON_1
 	settrainerflag TRAINER_SN_GARY_1
@@ -164,7 +164,7 @@ CanalaveCity_Gym_EventScript_GiveTM::
 CanalaveCity_Gym_EventScript_PtGymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE06_GET, CanalaveCity_Gym_EventScript_PtGymGuideAfter
+	goto_if_set FLAG_SINNOH_BADGE06_GET, CanalaveCity_Gym_EventScript_PtGymGuideAfter
 	msgbox CanalaveCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
 	msgbox CanalaveCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -177,7 +177,7 @@ CanalaveCity_Gym_EventScript_PtGymGuideAfter::
 
 CanalaveCity_Gym_EventScript_PtGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE06_GET, CanalaveCity_Gym_EventScript_PtGymStatueWon
+	goto_if_set FLAG_SINNOH_BADGE06_GET, CanalaveCity_Gym_EventScript_PtGymStatueWon
 	msgbox CanalaveCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

@@ -231,7 +231,7 @@ VeilstoneCity_OnTransitionSN:
 VeilstoneCity_EventScript_SNVis_GYM_CP:
 	setflag FLAG_SN_HIDE_GYM_CP
 	call VeilstoneCity_EventScript_SNCPGfx
-	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_EventScript_SNVis_GYM_CP_End
+	goto_if_set FLAG_SINNOH_BADGE04_GET, VeilstoneCity_EventScript_SNVis_GYM_CP_End
 	goto_if_set FLAG_SN_VEIL_GYM_SCENE_DONE, VeilstoneCity_EventScript_SNVis_GYM_CP_End
 	clearflag FLAG_SN_HIDE_GYM_CP
 VeilstoneCity_EventScript_SNVis_GYM_CP_End:
@@ -252,7 +252,7 @@ VeilstoneCity_EventScript_SNVis_WH_GRUNTS_End:
 VeilstoneCity_EventScript_SNVis_WH_CP:
 	setflag FLAG_SN_HIDE_WH_CP
 	call VeilstoneCity_EventScript_SNCPGfx
-	goto_if_unset FLAG_BADGE04_GET, VeilstoneCity_EventScript_SNVis_WH_CP_End
+	goto_if_unset FLAG_SINNOH_BADGE04_GET, VeilstoneCity_EventScript_SNVis_WH_CP_End
 	goto_if_set FLAG_SN_VEIL_WAREHOUSE_DONE, VeilstoneCity_EventScript_SNVis_WH_CP_End
 	clearflag FLAG_SN_HIDE_WH_CP
 VeilstoneCity_EventScript_SNVis_WH_CP_End:

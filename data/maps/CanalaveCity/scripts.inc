@@ -63,7 +63,7 @@ CanalaveCity_EventScript_PtNpc3::
 	faceplayer
 	call CanalaveCity_EventScript_SNExploded
 	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_PtNpc3_SNVar0
-	goto_if_unset FLAG_BADGE06_GET, CanalaveCity_EventScript_PtNpc3_Base
+	goto_if_unset FLAG_SINNOH_BADGE06_GET, CanalaveCity_EventScript_PtNpc3_Base
 	goto_if_lt VAR_SINNOH_STORY, 31, CanalaveCity_EventScript_PtNpc3_SNVar1
 CanalaveCity_EventScript_PtNpc3_Base:
 	msgbox CanalaveCity_Text_PtNpc3, MSGBOX_DEFAULT
@@ -549,7 +549,7 @@ CanalaveCity_Text_SNLucasWonder:
 
 CanalaveCity_EventScript_SNVis_CANAL_GYM_BARRY:
 	setflag FLAG_SN_HIDE_CANAL_GYM_BARRY
-	goto_if_unset FLAG_BADGE06_GET, CanalaveCity_EventScript_SNVis_CANAL_GYM_BARRY_End
+	goto_if_unset FLAG_SINNOH_BADGE06_GET, CanalaveCity_EventScript_SNVis_CANAL_GYM_BARRY_End
 	goto_if_ge VAR_SINNOH_STORY, 31, CanalaveCity_EventScript_SNVis_CANAL_GYM_BARRY_End
 	goto_if_set FLAG_SN_CANAL_BARRY_GYM_DONE, CanalaveCity_EventScript_SNVis_CANAL_GYM_BARRY_End
 	clearflag FLAG_SN_HIDE_CANAL_GYM_BARRY

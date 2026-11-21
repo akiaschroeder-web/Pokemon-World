@@ -276,7 +276,7 @@ EternaForest_OnTransitionSN:
 
 EternaForest_EventScript_SNVis_CHATEAU_GARDENIA:
 	setflag FLAG_SN_HIDE_CHATEAU_GARDENIA
-	goto_if_unset FLAG_BADGE02_GET, EternaForest_EventScript_SNVis_CHATEAU_GARDENIA_End
+	goto_if_unset FLAG_SINNOH_BADGE02_GET, EternaForest_EventScript_SNVis_CHATEAU_GARDENIA_End
 	clearflag FLAG_SN_HIDE_CHATEAU_GARDENIA
 EternaForest_EventScript_SNVis_CHATEAU_GARDENIA_End:
 	return

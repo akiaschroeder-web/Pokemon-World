@@ -202,7 +202,7 @@ Route217_OnTransitionSN:
 Route217_EventScript_SNVis_MAYLENE:
 	setflag FLAG_SN_HIDE_MAYLENE
 	goto_if_set FLAG_SN_MET_MAYLENE_217, Route217_EventScript_SNVis_MAYLENE_End
-	goto_if_set FLAG_BADGE07_GET, Route217_EventScript_SNVis_MAYLENE_End
+	goto_if_set FLAG_SINNOH_BADGE07_GET, Route217_EventScript_SNVis_MAYLENE_End
 	clearflag FLAG_SN_HIDE_MAYLENE
 Route217_EventScript_SNVis_MAYLENE_End:
 	return

@@ -6,7 +6,7 @@ HearthomeCity_Gym_MapScripts::
 HearthomeCity_Gym_OnTransitionSN:
 	setvar VAR_TEMP_3, 0
 	goto_if_set FLAG_SN_HEARTHOME_GUIDE_MET, HearthomeCity_Gym_OnTransitionSN_End
-	goto_if_set FLAG_BADGE03_GET, HearthomeCity_Gym_OnTransitionSN_End
+	goto_if_set FLAG_SINNOH_BADGE03_GET, HearthomeCity_Gym_OnTransitionSN_End
 	setvar VAR_TEMP_3, 1
 HearthomeCity_Gym_OnTransitionSN_End:
 	end
@@ -155,7 +155,7 @@ HearthomeCity_Gym_EventScript_LeaderDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox HearthomeCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
-	setflag FLAG_BADGE03_GET
+	setflag FLAG_SINNOH_BADGE03_GET
 	settrainerflag TRAINER_SN_DONNY_1
 	settrainerflag TRAINER_SN_MOLLY_1
 	settrainerflag TRAINER_SN_MACKENZIE_1
@@ -175,7 +175,7 @@ HearthomeCity_Gym_EventScript_GiveTM::
 HearthomeCity_Gym_EventScript_PtGymGuide::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE03_GET, HearthomeCity_Gym_EventScript_PtGymGuideAfter
+	goto_if_set FLAG_SINNOH_BADGE03_GET, HearthomeCity_Gym_EventScript_PtGymGuideAfter
 	msgbox HearthomeCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
 	msgbox HearthomeCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
@@ -188,7 +188,7 @@ HearthomeCity_Gym_EventScript_PtGymGuideAfter::
 
 HearthomeCity_Gym_EventScript_PtGymStatue::
 	lockall
-	goto_if_set FLAG_BADGE03_GET, HearthomeCity_Gym_EventScript_PtGymStatueWon
+	goto_if_set FLAG_SINNOH_BADGE03_GET, HearthomeCity_Gym_EventScript_PtGymStatueWon
 	msgbox HearthomeCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
 	releaseall
 	end

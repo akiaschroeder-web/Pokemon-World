@@ -16401,6 +16401,23 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    // Pokémon World
+    [ITEM_BADGE_CASE] =
+    {
+        .name = ITEM_NAME("Badge Case"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A case that holds\n"
+            "the Gym Badges from\n"
+            "every region."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_BadgeCase,
+        .iconPic = gItemIcon_CoinCase,
+        .iconPalette = gItemIconPalette_CoinCase,
+    },
 };
 
 #undef ITEM_NAME

@@ -83,7 +83,7 @@ SunyshoreCity_OnTransitionSN:
 	call SunyshoreCity_EventScript_SNVis_FLINT
 	call SunyshoreCity_EventScript_SNVis_JASMINE
 	setvar VAR_TEMP_3, 0
-	goto_if_unset FLAG_BADGE08_GET, SunyshoreCity_OnTransitionSN_End
+	goto_if_unset FLAG_SINNOH_BADGE08_GET, SunyshoreCity_OnTransitionSN_End
 	goto_if_set FLAG_SN_SUNYSHORE_BARRY, SunyshoreCity_OnTransitionSN_End
 	setvar VAR_TEMP_3, 1
 SunyshoreCity_OnTransitionSN_End:
@@ -91,7 +91,7 @@ SunyshoreCity_OnTransitionSN_End:
 
 SunyshoreCity_EventScript_SNVis_JASMINE:
 	setflag FLAG_SN_HIDE_JASMINE
-	goto_if_unset FLAG_BADGE08_GET, SunyshoreCity_EventScript_SNVis_JASMINE_End
+	goto_if_unset FLAG_SINNOH_BADGE08_GET, SunyshoreCity_EventScript_SNVis_JASMINE_End
 	goto_if_set FLAG_SN_RECEIVED_HM_WATERFALL, SunyshoreCity_EventScript_SNVis_JASMINE_End
 	clearflag FLAG_SN_HIDE_JASMINE
 SunyshoreCity_EventScript_SNVis_JASMINE_End:
@@ -131,7 +131,7 @@ SunyshoreCity_EventScript_SNJasmine_T2:
 
 SunyshoreCity_EventScript_SNVis_FLINT:
 	setflag FLAG_SN_HIDE_FLINT
-	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_EventScript_SNVis_FLINT_End
+	goto_if_set FLAG_SINNOH_BADGE08_GET, SunyshoreCity_EventScript_SNVis_FLINT_End
 	clearflag FLAG_SN_HIDE_FLINT
 SunyshoreCity_EventScript_SNVis_FLINT_End:
 	return
@@ -206,7 +206,7 @@ SunyshoreCity_EventScript_SNFlint_T4:
 
 SunyshoreCity_EventScript_SNVis_SUNY_BARRY:
 	setflag FLAG_SN_HIDE_SUNY_BARRY
-	goto_if_unset FLAG_BADGE08_GET, SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End
+	goto_if_unset FLAG_SINNOH_BADGE08_GET, SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End
 	goto_if_set FLAG_SN_SUNYSHORE_BARRY, SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End
 	clearflag FLAG_SN_HIDE_SUNY_BARRY
 SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End:

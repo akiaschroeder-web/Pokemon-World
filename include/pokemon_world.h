@@ -42,4 +42,12 @@ const struct ObjectEventGraphicsInfo *PW_SubstituteGraphicsInfo(u16 graphicsId, 
 enum TrainerPicID PW_GetPlayerTrainerPic(enum TrainerPicID fallback);
 enum TrainerPicID PW_SubstituteOpponentTrainerPic(enum TrainerClassID trainerClass, enum TrainerPicID pic);
 
+// Badges: each region keeps its own 8.
+#define PW_BADGES_PER_REGION 8
+bool32 PW_HasBadge(enum Region region, u32 badgeIndex);
+u32 PW_CountBadges(enum Region region);
+u32 PW_GetObedienceBadgeCount(void);
+bool32 PW_HasFieldMoveBadge(u32 fieldMove);
+void PW_BufferBadgeCaseText(u8 *dest);
+
 #endif // GUARD_POKEMON_WORLD_H

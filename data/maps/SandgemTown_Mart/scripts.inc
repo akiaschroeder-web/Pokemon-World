@@ -6,7 +6,7 @@ SandgemTown_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	goto_if_set FLAG_BADGE01_GET, SandgemTown_Mart_EventScript_ClerkBadge
+	goto_if_set FLAG_SINNOH_BADGE01_GET, SandgemTown_Mart_EventScript_ClerkBadge
 	pokemart SandgemTown_Mart_Pokemart_Basic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release

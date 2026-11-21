@@ -15,7 +15,7 @@ PastoriaCity_Text_PtNpc1:
 PastoriaCity_EventScript_PtNpc2::
 	lock
 	faceplayer
-	goto_if_set FLAG_BADGE05_GET, PastoriaCity_EventScript_PtNpc2_SNVar0
+	goto_if_set FLAG_SINNOH_BADGE05_GET, PastoriaCity_EventScript_PtNpc2_SNVar0
 	msgbox PastoriaCity_Text_PtNpc2, MSGBOX_DEFAULT
 	release
 	end
@@ -136,7 +136,7 @@ PastoriaCity_EventScript_SNBarryGuard::
 
 PastoriaCity_EventScript_SNVis_PAST_BARRY:
 	setflag FLAG_SN_HIDE_PAST_BARRY
-	goto_if_unset FLAG_BADGE04_GET, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
+	goto_if_unset FLAG_SINNOH_BADGE04_GET, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
 	goto_if_defeated TRAINER_SN_BARRY_1, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
 	goto_if_defeated TRAINER_SN_BARRY_2, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
 	goto_if_defeated TRAINER_SN_BARRY_3, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
@@ -256,7 +256,7 @@ PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_P:
 
 PastoriaCity_EventScript_SNVis_PAST_GRUNT:
 	setflag FLAG_SN_HIDE_PAST_GRUNT
-	goto_if_unset FLAG_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
+	goto_if_unset FLAG_SINNOH_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
 	goto PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
 	clearflag FLAG_SN_HIDE_PAST_GRUNT
 PastoriaCity_EventScript_SNVis_PAST_GRUNT_End:
@@ -304,7 +304,7 @@ PastoriaCity_Text_SNGrunt3:
 
 PastoriaCity_EventScript_SNVis_PAST_WAKE_A:
 	setflag FLAG_SN_HIDE_PAST_WAKE_A
-	goto_if_unset FLAG_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End
+	goto_if_unset FLAG_SINNOH_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End
 	goto_if_set FLAG_SN_PAST_WAKE_A, PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End
 	clearflag FLAG_SN_HIDE_PAST_WAKE_A
 PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End:

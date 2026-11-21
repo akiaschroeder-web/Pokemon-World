@@ -1,9 +1,15 @@
 #include "global.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "item.h"
+#include "constants/items.h"
 #include "pokemon_world.h"
 #include "constants/event_objects.h"
 #include "constants/vars.h"
+#include "constants/field_move.h"
+#include "constants/flags.h"
+#include "string_util.h"
+#include "constants/characters.h"
 
 // Pokémon World: starting region and character designs.
 
@@ -44,6 +50,7 @@ void PW_ApplyPendingChoices(void)
     VarSet(VAR_PW_START_REGION, sPending.region);
     VarSet(VAR_PW_PLAYER_DESIGN, sPending.player);
     VarSet(VAR_PW_RIVAL_DESIGN, sPending.rival);
+    AddBagItem(ITEM_BADGE_CASE, 1); // every journey starts with the Badge Case
 }
 
 // The vars hold the choice once the game has started; before that (during the
@@ -225,4 +232,135 @@ enum TrainerPicID PW_SubstituteOpponentTrainerPic(enum TrainerClassID trainerCla
      || pic == TRAINER_PIC_SINNOH_BARRY)
         return gPwDesigns[design].trainerPic;
     return pic;
+}
+
+// ---------------------------------------------------------------- badges
+
+// Regions in the order the Badge Case lists them.
+static const u8 sBadgeRegions[] = {REGION_KANTO, REGION_JOHTO, REGION_HOENN, REGION_SINNOH};
+
+static const u16 sBadgeFlags[][PW_BADGES_PER_REGION] =
+{
+    [REGION_KANTO] = {FLAG_KANTO_BADGE01_GET, FLAG_KANTO_BADGE02_GET, FLAG_KANTO_BADGE03_GET, FLAG_KANTO_BADGE04_GET,
+                      FLAG_KANTO_BADGE05_GET, FLAG_KANTO_BADGE06_GET, FLAG_KANTO_BADGE07_GET, FLAG_KANTO_BADGE08_GET},
+    [REGION_JOHTO] = {FLAG_JOHTO_BADGE01_GET, FLAG_JOHTO_BADGE02_GET, FLAG_JOHTO_BADGE03_GET, FLAG_JOHTO_BADGE04_GET,
+                      FLAG_JOHTO_BADGE05_GET, FLAG_JOHTO_BADGE06_GET, FLAG_JOHTO_BADGE07_GET, FLAG_JOHTO_BADGE08_GET},
+    [REGION_HOENN] = {FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
+                      FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET},
+    [REGION_SINNOH] = {FLAG_SINNOH_BADGE01_GET, FLAG_SINNOH_BADGE02_GET, FLAG_SINNOH_BADGE03_GET, FLAG_SINNOH_BADGE04_GET,
+                       FLAG_SINNOH_BADGE05_GET, FLAG_SINNOH_BADGE06_GET, FLAG_SINNOH_BADGE07_GET, FLAG_SINNOH_BADGE08_GET},
+};
+
+static const u8 *const sBadgeNames[][PW_BADGES_PER_REGION] =
+{
+    [REGION_KANTO]  = {COMPOUND_STRING("BOULDER"), COMPOUND_STRING("CASCADE"), COMPOUND_STRING("THUNDER"), COMPOUND_STRING("RAINBOW"),
+                       COMPOUND_STRING("SOUL"), COMPOUND_STRING("MARSH"), COMPOUND_STRING("VOLCANO"), COMPOUND_STRING("EARTH")},
+    [REGION_JOHTO]  = {COMPOUND_STRING("ZEPHYR"), COMPOUND_STRING("HIVE"), COMPOUND_STRING("PLAIN"), COMPOUND_STRING("FOG"),
+                       COMPOUND_STRING("STORM"), COMPOUND_STRING("MINERAL"), COMPOUND_STRING("GLACIER"), COMPOUND_STRING("RISING")},
+    [REGION_HOENN]  = {COMPOUND_STRING("STONE"), COMPOUND_STRING("KNUCKLE"), COMPOUND_STRING("DYNAMO"), COMPOUND_STRING("HEAT"),
+                       COMPOUND_STRING("BALANCE"), COMPOUND_STRING("FEATHER"), COMPOUND_STRING("MIND"), COMPOUND_STRING("RAIN")},
+    [REGION_SINNOH] = {COMPOUND_STRING("COAL"), COMPOUND_STRING("FOREST"), COMPOUND_STRING("COBBLE"), COMPOUND_STRING("FEN"),
+                       COMPOUND_STRING("RELIC"), COMPOUND_STRING("MINE"), COMPOUND_STRING("ICICLE"), COMPOUND_STRING("BEACON")},
+};
+
+static const u8 *const sRegionNames[] =
+{
+    [REGION_KANTO] = COMPOUND_STRING("KANTO"),
+    [REGION_JOHTO] = COMPOUND_STRING("JOHTO"),
+    [REGION_HOENN] = COMPOUND_STRING("HOENN"),
+    [REGION_SINNOH] = COMPOUND_STRING("SINNOH"),
+};
+
+// Which badge (1-8, 0 = none) in each region lets a field move be used outside battle.
+// A move works once you have its badge from any region, so nothing has to be redone.
+static const u8 sFieldMoveBadges[][REGION_SINNOH + 1] =
+{
+    //                          Kanto Johto Hoenn Sinnoh
+    [FIELD_MOVE_CUT]       = { [REGION_KANTO] = 2, [REGION_JOHTO] = 2, [REGION_HOENN] = 1, [REGION_SINNOH] = 2 },
+    [FIELD_MOVE_FLASH]     = { [REGION_KANTO] = 1, [REGION_JOHTO] = 1, [REGION_HOENN] = 2, [REGION_SINNOH] = 2 },
+    [FIELD_MOVE_ROCK_SMASH]= { [REGION_KANTO] = 6, [REGION_JOHTO] = 0, [REGION_HOENN] = 3, [REGION_SINNOH] = 1 },
+    [FIELD_MOVE_STRENGTH]  = { [REGION_KANTO] = 4, [REGION_JOHTO] = 3, [REGION_HOENN] = 4, [REGION_SINNOH] = 6 },
+    [FIELD_MOVE_SURF]      = { [REGION_KANTO] = 5, [REGION_JOHTO] = 4, [REGION_HOENN] = 5, [REGION_SINNOH] = 5 },
+    [FIELD_MOVE_FLY]       = { [REGION_KANTO] = 3, [REGION_JOHTO] = 5, [REGION_HOENN] = 6, [REGION_SINNOH] = 3 },
+    [FIELD_MOVE_DIVE]      = { [REGION_KANTO] = 0, [REGION_JOHTO] = 0, [REGION_HOENN] = 7, [REGION_SINNOH] = 0 },
+    [FIELD_MOVE_WATERFALL] = { [REGION_KANTO] = 7, [REGION_JOHTO] = 8, [REGION_HOENN] = 8, [REGION_SINNOH] = 8 },
+};
+
+bool32 PW_HasBadge(enum Region region, u32 badgeIndex)
+{
+    if (region >= ARRAY_COUNT(sBadgeFlags) || sBadgeFlags[region][0] == 0 || badgeIndex >= PW_BADGES_PER_REGION)
+        return FALSE;
+    return FlagGet(sBadgeFlags[region][badgeIndex]);
+}
+
+u32 PW_CountBadges(enum Region region)
+{
+    u32 i, count = 0;
+    for (i = 0; i < PW_BADGES_PER_REGION; i++)
+        count += PW_HasBadge(region, i);
+    return count;
+}
+
+// Obedience follows your best region: 8 badges anywhere and every Pokémon obeys.
+u32 PW_GetObedienceBadgeCount(void)
+{
+    u32 i, best = 0;
+    for (i = 0; i < ARRAY_COUNT(sBadgeRegions); i++)
+        best = max(best, PW_CountBadges(sBadgeRegions[i]));
+    return best;
+}
+
+bool32 PW_HasFieldMoveBadge(u32 fieldMove)
+{
+    u32 i;
+    if (fieldMove >= ARRAY_COUNT(sFieldMoveBadges))
+        return FALSE;
+    for (i = 0; i < ARRAY_COUNT(sBadgeRegions); i++)
+    {
+        u32 region = sBadgeRegions[i];
+        u32 badge = sFieldMoveBadges[fieldMove][region];
+        if (badge != 0 && PW_HasBadge(region, badge - 1))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// One page per region: "HOENN: 3 of 8" then the badges collected.
+void PW_BufferBadgeCaseText(u8 *dest)
+{
+    u32 i, j;
+    u8 *end = dest;
+
+    *end = EOS;
+    for (i = 0; i < ARRAY_COUNT(sBadgeRegions); i++)
+    {
+        u32 region = sBadgeRegions[i];
+        u32 count = PW_CountBadges(region);
+        u32 shown = 0;
+
+        if (i != 0)
+            end = StringAppend(end, COMPOUND_STRING("\p"));
+        end = StringAppend(end, sRegionNames[region]);
+        end = StringAppend(end, COMPOUND_STRING(": "));
+        end = ConvertIntToDecimalStringN(end, count, STR_CONV_MODE_LEFT_ALIGN, 1);
+        end = StringAppend(end, COMPOUND_STRING(" of 8 badges"));
+        if (count == 0)
+        {
+            end = StringAppend(end, COMPOUND_STRING("\nNone yet."));
+            continue;
+        }
+        for (j = 0; j < PW_BADGES_PER_REGION; j++)
+        {
+            if (!PW_HasBadge(region, j))
+                continue;
+            if (shown == 0)
+                end = StringAppend(end, COMPOUND_STRING("\n"));
+            else if (shown == 4)
+                end = StringAppend(end, COMPOUND_STRING("\l"));
+            else
+                end = StringAppend(end, COMPOUND_STRING(", "));
+            end = StringAppend(end, sBadgeNames[region][j]);
+            shown++;
+        }
+    }
 }

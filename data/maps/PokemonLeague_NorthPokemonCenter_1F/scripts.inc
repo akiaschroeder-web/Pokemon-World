@@ -44,7 +44,7 @@ PokemonLeague_NorthPokemonCenter_1F_Pokemart:
 	.2byte ITEM_MAX_REPEL
 	pokemartlistend
 
-@ The door guards only check for FLAG_BADGE06_GET because Winonas badge is the only one that can be skipped
+@ The door guards only check for FLAG_SINNOH_BADGE06_GET because Winonas badge is the only one that can be skipped
 @ Its assumed the player has the remaining badges
 PokemonLeague_NorthPokemonCenter_1F_EventScript_DoorGuard::
 	lockall
@@ -55,7 +55,7 @@ PokemonLeague_NorthPokemonCenter_1F_EventScript_DoorGuard::
 	message PokemonLeague_NorthPokemonCenter_1F_Text_MustHaveAllGymBadges
 	waitmessage
 	delay 120
-	goto_if_unset FLAG_BADGE06_GET, PokemonLeague_NorthPokemonCenter_1F_EventScript_NotAllBadges
+	goto_if_unset FLAG_SINNOH_BADGE06_GET, PokemonLeague_NorthPokemonCenter_1F_EventScript_NotAllBadges
 	closemessage
 	applymovement LOCALID_POKEMON_LEAGUE_NORTH_POKEMON_CENTER_1F_LEAGUE_GUARD_1, PokemonLeague_NorthPokemonCenter_1F_Movement_LeftGuardOutOfWay
 	applymovement LOCALID_POKEMON_LEAGUE_NORTH_POKEMON_CENTER_1F_LEAGUE_GUARD_2, PokemonLeague_NorthPokemonCenter_1F_Movement_RightGuardOutOfWay
@@ -149,7 +149,7 @@ PokemonLeague_NorthPokemonCenter_1F_EventScript_PtNpc1::
 
 PokemonLeague_NorthPokemonCenter_1F_EventScript_SNVis_LEAGUE_BARRY:
 	setflag FLAG_SN_HIDE_LEAGUE_BARRY
-	goto_if_unset FLAG_BADGE08_GET, PokemonLeague_NorthPokemonCenter_1F_EventScript_SNVis_LEAGUE_BARRY_End
+	goto_if_unset FLAG_SINNOH_BADGE08_GET, PokemonLeague_NorthPokemonCenter_1F_EventScript_SNVis_LEAGUE_BARRY_End
 	goto_if_defeated TRAINER_SN_BARRY_7, PokemonLeague_NorthPokemonCenter_1F_EventScript_SNVis_LEAGUE_BARRY_End
 	goto_if_defeated TRAINER_SN_BARRY_8, PokemonLeague_NorthPokemonCenter_1F_EventScript_SNVis_LEAGUE_BARRY_End
 	goto_if_defeated TRAINER_SN_BARRY_9, PokemonLeague_NorthPokemonCenter_1F_EventScript_SNVis_LEAGUE_BARRY_End

@@ -1638,7 +1638,37 @@
 #define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 
-#define FLAGS_COUNT (DAILY_FLAGS_END + 1)
+// Pokémon World: flags of our own, after Emerald's. Room for more regions' flags later.
+#define PW_FLAGS_START                              (DAILY_FLAGS_END + 1)
+// Each region keeps its own 8 badges (Hoenn uses FLAG_BADGE01_GET-FLAG_BADGE08_GET).
+// Kanto's badges are the same whether Kanto is played before or after Johto.
+#define FLAG_KANTO_BADGE01_GET                      (PW_FLAGS_START + 0x00) // Boulder
+#define FLAG_KANTO_BADGE02_GET                      (PW_FLAGS_START + 0x01) // Cascade
+#define FLAG_KANTO_BADGE03_GET                      (PW_FLAGS_START + 0x02) // Thunder
+#define FLAG_KANTO_BADGE04_GET                      (PW_FLAGS_START + 0x03) // Rainbow
+#define FLAG_KANTO_BADGE05_GET                      (PW_FLAGS_START + 0x04) // Soul
+#define FLAG_KANTO_BADGE06_GET                      (PW_FLAGS_START + 0x05) // Marsh
+#define FLAG_KANTO_BADGE07_GET                      (PW_FLAGS_START + 0x06) // Volcano
+#define FLAG_KANTO_BADGE08_GET                      (PW_FLAGS_START + 0x07) // Earth
+#define FLAG_JOHTO_BADGE01_GET                      (PW_FLAGS_START + 0x08) // Zephyr
+#define FLAG_JOHTO_BADGE02_GET                      (PW_FLAGS_START + 0x09) // Hive
+#define FLAG_JOHTO_BADGE03_GET                      (PW_FLAGS_START + 0x0A) // Plain
+#define FLAG_JOHTO_BADGE04_GET                      (PW_FLAGS_START + 0x0B) // Fog
+#define FLAG_JOHTO_BADGE05_GET                      (PW_FLAGS_START + 0x0C) // Storm
+#define FLAG_JOHTO_BADGE06_GET                      (PW_FLAGS_START + 0x0D) // Mineral
+#define FLAG_JOHTO_BADGE07_GET                      (PW_FLAGS_START + 0x0E) // Glacier
+#define FLAG_JOHTO_BADGE08_GET                      (PW_FLAGS_START + 0x0F) // Rising
+#define FLAG_SINNOH_BADGE01_GET                     (PW_FLAGS_START + 0x10) // Coal
+#define FLAG_SINNOH_BADGE02_GET                     (PW_FLAGS_START + 0x11) // Forest
+#define FLAG_SINNOH_BADGE03_GET                     (PW_FLAGS_START + 0x12) // Cobble
+#define FLAG_SINNOH_BADGE04_GET                     (PW_FLAGS_START + 0x13) // Fen
+#define FLAG_SINNOH_BADGE05_GET                     (PW_FLAGS_START + 0x14) // Relic
+#define FLAG_SINNOH_BADGE06_GET                     (PW_FLAGS_START + 0x15) // Mine
+#define FLAG_SINNOH_BADGE07_GET                     (PW_FLAGS_START + 0x16) // Icicle
+#define FLAG_SINNOH_BADGE08_GET                     (PW_FLAGS_START + 0x17) // Beacon
+#define PW_FLAGS_END                                (PW_FLAGS_START + 0xFF)
+
+#define FLAGS_COUNT (PW_FLAGS_END + 1)
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

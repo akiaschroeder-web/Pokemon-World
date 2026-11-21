@@ -765,7 +765,7 @@ VeilstoneCity_GameCorner_OnTransitionSN:
 
 VeilstoneCity_GameCorner_EventScript_SNVis_GC_LOOKER:
 	setflag FLAG_SN_HIDE_GC_LOOKER
-	goto_if_unset FLAG_BADGE04_GET, VeilstoneCity_GameCorner_EventScript_SNVis_GC_LOOKER_End
+	goto_if_unset FLAG_SINNOH_BADGE04_GET, VeilstoneCity_GameCorner_EventScript_SNVis_GC_LOOKER_End
 	clearflag FLAG_SN_HIDE_GC_LOOKER
 VeilstoneCity_GameCorner_EventScript_SNVis_GC_LOOKER_End:
 	return

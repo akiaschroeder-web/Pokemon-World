@@ -3,7 +3,7 @@ LostTower_5F_MapScripts::
 	.byte 0
 
 LostTower_5F_OnTransitionSN:
-	goto_if_unset FLAG_BADGE03_GET, LostTower_5F_OnTransitionSN_End
+	goto_if_unset FLAG_SINNOH_BADGE03_GET, LostTower_5F_OnTransitionSN_End
 	setflag FLAG_SN_USED_DEFOG_IN_ROUTE_209_LOST_TOWER_5F
 LostTower_5F_OnTransitionSN_End:
 	end
