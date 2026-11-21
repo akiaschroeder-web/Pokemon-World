@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_world.h"
 #include "trainer_pokemon_sprites.h"
 #include "bg.h"
 #include "constants/rgb.h"
@@ -196,6 +197,7 @@ static void Task_NewGameBirchSpeech_Init(u8);
 static void Task_DisplayMainMenuInvalidActionError(u8);
 static void AddBirchSpeechObjects(u8);
 static void Task_NewGameBirchSpeech_WaitToShowBirch(u8);
+static void Task_PwSetup_Start(u8);
 static void NewGameBirchSpeech_StartFadeInTarget1OutTarget2(u8, u8);
 static void NewGameBirchSpeech_StartFadePlatformOut(u8, u8);
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome(u8);
@@ -1090,10 +1092,11 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 return;
             }
 
-            // Proyecto Sinnoh: intro del Prof. Serbal en lugar del discurso de Abedul
-            DestroyTask(taskId);
-            StartRowanIntro();
-            return;
+            // Pokémon World: new game setup (region, characters) runs on Birch's
+            // background first, then hands off to Birch's or Rowan's intro.
+            gPlttBufferUnfaded[0] = RGB_BLACK;
+            gPlttBufferFaded[0] = RGB_BLACK;
+            gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
             break;
         case ACTION_CONTINUE:
             gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -1296,7 +1299,7 @@ static void HighlightSelectedMainMenuItem(enum PartyMenuType menuType, u8 select
 #define tBrendanSpriteId data[10]
 #define tMaySpriteId data[11]
 
-static void UNUSED Task_NewGameBirchSpeech_Init(u8 taskId)
+static void Task_NewGameBirchSpeech_Init(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
@@ -1320,13 +1323,221 @@ static void UNUSED Task_NewGameBirchSpeech_Init(u8 taskId)
     AddBirchSpeechObjects(taskId);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     gTasks[taskId].tBG1HOFS = 0;
-    gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
+    gTasks[taskId].func = Task_PwSetup_Start; // Pokémon World: choose region and characters first
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
     PlayBGM(MUS_ROUTE122);
     ShowBg(0);
     ShowBg(1);
+}
+
+// ---------------------------------------------------------------------------
+// Pokémon World: new game setup — starting region, your character, your rival.
+// Runs on Birch's background before either professor appears.
+// ---------------------------------------------------------------------------
+
+enum
+{
+    PW_SETUP_REGION,
+    PW_SETUP_PLAYER,
+    PW_SETUP_RIVAL,
+};
+
+static EWRAM_DATA struct
+{
+    u8 step;
+    u8 region;
+    u8 player;
+    u8 rival;
+} sPwSetup = {0};
+
+static const u8 sText_PwSetup_Region[] = _("Where will your journey begin?");
+static const u8 sText_PwSetup_Player[] = _("Which TRAINER are you?");
+static const u8 sText_PwSetup_Rival[] = _("And who is your rival?");
+static const u8 sText_PwSetup_SameAsYou[] = _("That's you! Pick someone else\nas your rival.");
+
+static const struct MenuAction sPwSetupRegionActions[] =
+{
+    {COMPOUND_STRING("HOENN"),  {NULL}},
+    {COMPOUND_STRING("SINNOH"), {NULL}},
+};
+static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH};
+
+// Player choices are the first four entries; the rival can also be Barry.
+static const struct MenuAction sPwSetupDesignActions[] =
+{
+    {COMPOUND_STRING("BRENDAN"), {NULL}},
+    {COMPOUND_STRING("MAY"),     {NULL}},
+    {COMPOUND_STRING("LUCAS"),   {NULL}},
+    {COMPOUND_STRING("DAWN"),    {NULL}},
+    {COMPOUND_STRING("BARRY"),   {NULL}},
+};
+static const u8 sPwSetupDesigns[] = {PW_DESIGN_BRENDAN, PW_DESIGN_MAY, PW_DESIGN_LUCAS, PW_DESIGN_DAWN, PW_DESIGN_BARRY};
+#define PW_PLAYABLE_DESIGN_COUNT 4
+
+static void Task_PwSetup_ShowPrompt(u8 taskId);
+static void Task_PwSetup_WaitPrompt(u8 taskId);
+static void Task_PwSetup_HandleInput(u8 taskId);
+static void Task_PwSetup_FadeToRowan(u8 taskId);
+
+static void PwSetup_PrintMessage(const u8 *text)
+{
+    NewGameBirchSpeech_ClearWindow(0);
+    StringExpandPlaceholders(gStringVar4, text);
+    AddTextPrinterForMessage(TRUE);
+}
+
+static void PwSetup_ShowMenu(void)
+{
+    const struct MenuAction *actions = sPwSetup.step == PW_SETUP_REGION ? sPwSetupRegionActions : sPwSetupDesignActions;
+    u8 count = sPwSetup.step == PW_SETUP_REGION ? ARRAY_COUNT(sPwSetupRegionActions)
+             : sPwSetup.step == PW_SETUP_PLAYER ? PW_PLAYABLE_DESIGN_COUNT
+             : ARRAY_COUNT(sPwSetupDesignActions);
+
+    DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[2], 0xF3);
+    FillWindowPixelBuffer(2, PIXEL_FILL(1));
+    PrintMenuTable(2, count, actions);
+    InitMenuInUpperLeftCornerNormal(2, count, 0);
+    PutWindowTilemap(2);
+    CopyWindowToVram(2, COPYWIN_FULL);
+}
+
+// Birch's player sprites were made before the character was chosen.
+static void PwSetup_RecreatePlayerSprites(u8 taskId)
+{
+    s16 ids[2] = {gTasks[taskId].tBrendanSpriteId, gTasks[taskId].tMaySpriteId};
+    u32 i;
+
+    for (i = 0; i < 2; i++)
+    {
+        enum TrainerPicID pic = FacilityClassToPicIndex(i == 0 ? FACILITY_CLASS_BRENDAN : FACILITY_CLASS_MAY);
+        u8 spriteId;
+
+        if (gPwDesigns[PW_GetPlayerDesign()].gender == (i == 0 ? MALE : FEMALE))
+            pic = PW_GetPlayerTrainerPic(pic);
+        DestroySpriteAndFreeResources(&gSprites[ids[i]]);
+        spriteId = CreateTrainerSprite(pic, 120, 60, 0, NULL);
+        gSprites[spriteId].callback = SpriteCB_Null;
+        gSprites[spriteId].invisible = TRUE;
+        gSprites[spriteId].oam.priority = 0;
+        if (i == 0)
+            gTasks[taskId].tBrendanSpriteId = spriteId;
+        else
+            gTasks[taskId].tMaySpriteId = spriteId;
+    }
+}
+
+static void Task_PwSetup_Start(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    memset(&sPwSetup, 0, sizeof(sPwSetup));
+    PW_SetPendingChoices(REGION_NONE, PW_DESIGN_NONE, PW_DESIGN_NONE);
+    InitWindows(sNewGameBirchSpeechTextWindows);
+    LoadMainMenuWindowFrameTiles(0, 0xF3);
+    LoadMessageBoxGfx(0, BIRCH_DLG_BASE_TILE_NUM, BG_PLTT_ID(15));
+    DrawDialogFrameWithCustomTile(0, TRUE, BIRCH_DLG_BASE_TILE_NUM);
+    PutWindowTilemap(0);
+    CopyWindowToVram(0, COPYWIN_GFX);
+    sPwSetup.step = PW_SETUP_REGION;
+    gTasks[taskId].func = Task_PwSetup_ShowPrompt;
+}
+
+static void Task_PwSetup_ShowPrompt(u8 taskId)
+{
+    static const u8 *const sPrompts[] = {sText_PwSetup_Region, sText_PwSetup_Player, sText_PwSetup_Rival};
+    PwSetup_PrintMessage(sPrompts[sPwSetup.step]);
+    gTasks[taskId].func = Task_PwSetup_WaitPrompt;
+}
+
+static void Task_PwSetup_WaitPrompt(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {
+        PwSetup_ShowMenu();
+        gTasks[taskId].func = Task_PwSetup_HandleInput;
+    }
+}
+
+static void Task_PwSetup_HandleInput(u8 taskId)
+{
+    s8 input = Menu_ProcessInputNoWrap();
+
+    if (input == MENU_NOTHING_CHOSEN)
+        return;
+
+    if (input == MENU_B_PRESSED)
+    {
+        // Step back to the previous question.
+        if (sPwSetup.step == PW_SETUP_REGION)
+            return;
+        PlaySE(SE_SELECT);
+        NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
+        sPwSetup.step--;
+        gTasks[taskId].func = Task_PwSetup_ShowPrompt;
+        return;
+    }
+
+    switch (sPwSetup.step)
+    {
+    case PW_SETUP_REGION:
+        sPwSetup.region = sPwSetupRegions[input];
+        break;
+    case PW_SETUP_PLAYER:
+        sPwSetup.player = sPwSetupDesigns[input];
+        break;
+    case PW_SETUP_RIVAL:
+        if (sPwSetupDesigns[input] == sPwSetup.player)
+        {
+            PlaySE(SE_FAILURE);
+            NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
+            PwSetup_PrintMessage(sText_PwSetup_SameAsYou);
+            gTasks[taskId].func = Task_PwSetup_WaitPrompt;
+            return;
+        }
+        sPwSetup.rival = sPwSetupDesigns[input];
+        break;
+    }
+    PlaySE(SE_SELECT);
+    NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
+
+    if (sPwSetup.step != PW_SETUP_RIVAL)
+    {
+        sPwSetup.step++;
+        gTasks[taskId].func = Task_PwSetup_ShowPrompt;
+        return;
+    }
+
+    // All chosen.
+    PW_SetPendingChoices(sPwSetup.region, sPwSetup.player, sPwSetup.rival);
+    gSaveBlock2Ptr->playerGender = gPwDesigns[sPwSetup.player].gender;
+    StringCopy_PlayerName(gSaveBlock1Ptr->rivalName, gPwDesigns[sPwSetup.rival].name);
+    NewGameBirchSpeech_ClearWindow(0);
+    ClearDialogWindowAndFrame(0, TRUE);
+    if (sPwSetup.region == REGION_SINNOH)
+    {
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_PwSetup_FadeToRowan;
+    }
+    else
+    {
+        // Hoenn: carry on with Birch's speech; it shows its own text windows.
+        FreeAllWindowBuffers();
+        PwSetup_RecreatePlayerSprites(taskId);
+        gTasks[taskId].tTimer = 0x40;
+        gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
+    }
+}
+
+static void Task_PwSetup_FadeToRowan(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    FreeAllWindowBuffers();
+    ResetAllPicSprites();
+    DestroyTask(taskId);
+    StartRowanIntro();
 }
 
 static void Task_NewGameBirchSpeech_WaitToShowBirch(u8 taskId)
@@ -1492,13 +1703,22 @@ static void Task_NewGameBirchSpeech_StartPlayerFadeIn(u8 taskId)
         else
         {
             u8 spriteId = gTasks[taskId].tBrendanSpriteId;
+            enum Gender gender = MALE;
 
+            // Pokémon World: the chosen character decides the gender.
+            if (PW_GetPlayerDesign() != PW_DESIGN_NONE)
+            {
+                gender = gPwDesigns[PW_GetPlayerDesign()].gender;
+                gSaveBlock2Ptr->playerGender = gender;
+                if (gender != MALE)
+                    spriteId = gTasks[taskId].tMaySpriteId;
+            }
             gSprites[spriteId].x = 180;
             gSprites[spriteId].y = 60;
             gSprites[spriteId].invisible = FALSE;
             gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
             gTasks[taskId].tPlayerSpriteId = spriteId;
-            gTasks[taskId].tPlayerGender = MALE;
+            gTasks[taskId].tPlayerGender = gender;
             NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
             NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForPlayerFadeIn;
@@ -1511,7 +1731,10 @@ static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8 taskId)
     if (gTasks[taskId].tIsDoneFadingSprites)
     {
         gSprites[gTasks[taskId].tPlayerSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
-        gTasks[taskId].func = Task_NewGameBirchSpeech_BoyOrGirl;
+        if (PW_GetPlayerDesign() != PW_DESIGN_NONE)
+            gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName; // Pokémon World: already chosen
+        else
+            gTasks[taskId].func = Task_NewGameBirchSpeech_BoyOrGirl;
     }
 }
 
@@ -1928,12 +2151,13 @@ static void AddBirchSpeechObjects(u8 taskId)
     gSprites[lotadSpriteId].oam.priority = 0;
     gSprites[lotadSpriteId].invisible = TRUE;
     gTasks[taskId].tLotadSpriteId = lotadSpriteId;
-    brendanSpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN), 120, 60, 0, NULL);
+    // Pokémon World: show the chosen character in place of Brendan/May.
+    brendanSpriteId = CreateTrainerSprite(gPwDesigns[PW_GetPlayerDesign()].gender == MALE ? PW_GetPlayerTrainerPic(FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN)) : FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN), 120, 60, 0, NULL);
     gSprites[brendanSpriteId].callback = SpriteCB_Null;
     gSprites[brendanSpriteId].invisible = TRUE;
     gSprites[brendanSpriteId].oam.priority = 0;
     gTasks[taskId].tBrendanSpriteId = brendanSpriteId;
-    maySpriteId = CreateTrainerSprite(FacilityClassToPicIndex(FACILITY_CLASS_MAY), 120, 60, 0, NULL);
+    maySpriteId = CreateTrainerSprite(gPwDesigns[PW_GetPlayerDesign()].gender == FEMALE && PW_GetPlayerDesign() != PW_DESIGN_NONE ? PW_GetPlayerTrainerPic(FacilityClassToPicIndex(FACILITY_CLASS_MAY)) : FacilityClassToPicIndex(FACILITY_CLASS_MAY), 120, 60, 0, NULL);
     gSprites[maySpriteId].callback = SpriteCB_Null;
     gSprites[maySpriteId].invisible = TRUE;
     gSprites[maySpriteId].oam.priority = 0;

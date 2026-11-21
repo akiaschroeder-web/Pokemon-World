@@ -856,3 +856,27 @@ const u32 gObjectEventPic_SinnohRiley[] = INCGFX_U32("graphics/object_events/pic
 const u16 gObjectEventPal_SinnohRiley[] = INCGFX_U16("graphics/object_events/palettes/sinnoh/riley.pal", ".gbapal");
 const u32 gObjectEventPic_SinnohCheryl[] = INCGFX_U32("graphics/object_events/pics/people/sinnoh/cheryl.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_SinnohCheryl[] = INCGFX_U16("graphics/object_events/palettes/sinnoh/cheryl.pal", ".gbapal");
+
+// Pokémon World: Lucas and Dawn as player characters (sprites from the Sinnoh project)
+const u32 gObjectEventPic_PwLucasNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/lucas/walking.4bpp", "graphics/object_events/pics/people/lucas/running.4bpp");
+const u16 gObjectEventPal_PwLucas[] = INCGFX_U16("graphics/object_events/palettes/lucas.pal", ".gbapal");
+const u16 gObjectEventPal_PwLucasReflection[] = INCGFX_U16("graphics/object_events/palettes/lucas_reflection.pal", ".gbapal");
+const u32 gObjectEventPic_PwLucasMachBike[] = INCGFX_U32("graphics/object_events/pics/people/lucas/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/lucas/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasSurfing[] = INCGFX_U32("graphics/object_events/pics/people/lucas/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/lucas/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/lucas/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasFishing[] = INCGFX_U32("graphics/object_events/pics/people/lucas/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasWatering[] = INCGFX_U32("graphics/object_events/pics/people/lucas/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwLucasDecorating[] = INCGFX_U32("graphics/object_events/pics/people/lucas/decorating.png", ".4bpp");
+const u32 gObjectEventPic_PwDawnNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/dawn/walking.4bpp", "graphics/object_events/pics/people/dawn/running.4bpp");
+const u16 gObjectEventPal_PwDawn[] = INCGFX_U16("graphics/object_events/palettes/dawn.pal", ".gbapal");
+const u16 gObjectEventPal_PwDawnReflection[] = INCGFX_U16("graphics/object_events/palettes/dawn_reflection.pal", ".gbapal");
+const u32 gObjectEventPic_PwDawnMachBike[] = INCGFX_U32("graphics/object_events/pics/people/dawn/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/dawn/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnSurfing[] = INCGFX_U32("graphics/object_events/pics/people/dawn/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/dawn/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/dawn/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnFishing[] = INCGFX_U32("graphics/object_events/pics/people/dawn/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnWatering[] = INCGFX_U32("graphics/object_events/pics/people/dawn/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwDawnDecorating[] = INCGFX_U32("graphics/object_events/pics/people/dawn/decorating.png", ".4bpp");

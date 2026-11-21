@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "battle.h"
 #include "data.h"
+#include "pokemon_world.h"
 #include "string_util.h"
 #include "strings.h"
 #include "graphics.h"
@@ -255,4 +256,10 @@ const u8 *GetTrainerNameFromId(u16 trainerId)
       || !StringCompare(trainer->trainerName, gText_ExpandedPlaceholder_Brendan)))
         return GetRivalName();
     return trainer->trainerName;
+}
+
+enum TrainerPicID GetTrainerPicFromId(u16 trainerId)
+{
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
+    return PW_SubstituteOpponentTrainerPic(trainer->trainerClass, trainer->trainerPic);
 }

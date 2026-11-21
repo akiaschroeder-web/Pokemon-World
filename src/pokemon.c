@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_world.h"
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
@@ -5672,10 +5673,11 @@ enum TrainerPicID FacilityClassToPicIndex(u16 facilityClass)
 
 enum TrainerPicID PlayerGenderToFrontTrainerPicId(enum Gender playerGender)
 {
+    // Pokémon World: the chosen character's picture, when one was chosen.
     if (playerGender != MALE)
-        return FacilityClassToPicIndex(IS_FRLG ? FACILITY_CLASS_LEAF : FACILITY_CLASS_MAY);
+        return PW_GetPlayerTrainerPic(FacilityClassToPicIndex(IS_FRLG ? FACILITY_CLASS_LEAF : FACILITY_CLASS_MAY));
     else
-        return FacilityClassToPicIndex(IS_FRLG ? FACILITY_CLASS_RED : FACILITY_CLASS_BRENDAN);
+        return PW_GetPlayerTrainerPic(FacilityClassToPicIndex(IS_FRLG ? FACILITY_CLASS_RED : FACILITY_CLASS_BRENDAN));
 }
 
 void HandleSetPokedexFlag(enum NationalDexOrder nationalNum, u8 caseId, u32 personality)

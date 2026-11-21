@@ -1,4 +1,5 @@
 #include "global.h"
+#include "pokemon_world.h"
 #include "malloc.h"
 #include "battle_anim.h"
 #include "battle_pyramid.h"
@@ -506,6 +507,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc4Reflection,        OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION},
     {gObjectEventPal_Brendan,               OBJ_EVENT_PAL_TAG_BRENDAN},
     {gObjectEventPal_BrendanReflection,     OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION},
+    {gObjectEventPal_PwLucas,               OBJ_EVENT_PAL_TAG_PW_LUCAS},
+    {gObjectEventPal_PwLucasReflection,     OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION},
+    {gObjectEventPal_PwDawn,                OBJ_EVENT_PAL_TAG_PW_DAWN},
+    {gObjectEventPal_PwDawnReflection,      OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
     {gObjectEventPal_PlayerUnderwater,      OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER},
     {gObjectEventPal_QuintyPlump,           OBJ_EVENT_PAL_TAG_QUINTY_PLUMP},
@@ -716,6 +721,20 @@ static const u16 sReflectionPaletteTags_May[] = {
     OBJ_EVENT_PAL_TAG_MAY_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_PwLucas[] = {
+    OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_PwDawn[] = {
+    OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
@@ -724,6 +743,8 @@ static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
 };
 
 static const struct PairedPalettes sPlayerReflectionPaletteSets[] = {
+    {OBJ_EVENT_PAL_TAG_PW_LUCAS,          sReflectionPaletteTags_PwLucas},
+    {OBJ_EVENT_PAL_TAG_PW_DAWN,           sReflectionPaletteTags_PwDawn},
     {OBJ_EVENT_PAL_TAG_BRENDAN,           sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,               sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER, sReflectionPaletteTags_PlayerUnderwater},
@@ -808,6 +829,8 @@ static const u16 sReflectionPaletteTags_RedLeaf[] = {
 };
 
 static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
+    {OBJ_EVENT_PAL_TAG_PW_LUCAS,          sReflectionPaletteTags_PwLucas},
+    {OBJ_EVENT_PAL_TAG_PW_DAWN,           sReflectionPaletteTags_PwDawn},
     {OBJ_EVENT_PAL_TAG_BRENDAN,          sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,              sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_QUINTY_PLUMP,     sReflectionPaletteTags_QuintyPlump},
@@ -3311,7 +3334,8 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u16 graphicsId)
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_NINJA_BOY;
 
-    return gObjectEventGraphicsInfoPointers[graphicsId];
+    // Pokémon World: the player and rival look like the characters chosen at the start.
+    return PW_SubstituteGraphicsInfo(graphicsId, gObjectEventGraphicsInfoPointers[graphicsId]);
 }
 
 static void SetObjectEventDynamicGraphicsId(struct ObjectEvent *objectEvent)

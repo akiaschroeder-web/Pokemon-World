@@ -836,6 +836,11 @@ enum
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 #define OBJ_EVENT_PAL_TAG_SN_EMOTE                0x1F00 // Proyecto Sinnoh: paleta original para !, flechas, Surf y Vuelo
+// Pokémon World: Lucas and Dawn as player characters
+#define OBJ_EVENT_PAL_TAG_PW_LUCAS                0x1F01
+#define OBJ_EVENT_PAL_TAG_PW_DAWN                 0x1F02
+#define OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION     0x1F03
+#define OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION      0x1F04
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

@@ -730,16 +730,15 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_None, gTrainerPalette_None),
         .backPic = TRAINER_BACK_PIC(1, gTrainerBackPic_None, gTrainerPalette_None, sBackAnims_None),
     },
-    // Proyecto Sinnoh: el protagonista es Lucas y la protagonista, Dawn
     [TRAINER_PIC_BRENDAN] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohLucas, gTrainerPalette_SinnohLucas),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohLucas, gTrainerBackPicPalette_SinnohLucas, sBackAnims_Hoenn),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Brendan, gTrainerPalette_Brendan),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Brendan, gTrainerPalette_Brendan, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_MAY] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohDawn, gTrainerPalette_SinnohDawn),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohDawn, gTrainerBackPicPalette_SinnohDawn, sBackAnims_Hoenn),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_May, gTrainerPalette_May),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_May, gTrainerPalette_May, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_RED] =
     {

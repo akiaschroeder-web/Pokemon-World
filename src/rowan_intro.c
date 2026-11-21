@@ -2,6 +2,7 @@
 // Sigue el orden de pokeplatinum (src/applications/rowan_intro/rowan_intro_app.c y tv_app.c)
 // pero en una sola pantalla, al estilo de RF/Esmeralda.
 #include "global.h"
+#include "pokemon_world.h"
 #include "bg.h"
 #include "decompress.h"
 #include "gpu_regs.h"
@@ -189,6 +190,9 @@ enum RowanIntroState
     RI_TV_WAIT,
     RI_TV_FADE_OUT,
     RI_EXIT,
+    // Pokémon World: character already chosen in the new game setup
+    RI_PW_SHOW_AVATAR,
+    RI_PW_AVATAR_WAIT,
 };
 
 struct RowanIntro
@@ -1037,7 +1041,33 @@ static void Task_RowanIntro(u8 taskId)
         if (IsMessageDone())
         {
             StartSpriteFade(1 << SLOT_A, FALSE, 1);
-            sRI.state = RI_GENDER_FADE_OUT_ROWAN;
+            // Pokémon World: skip the boy/girl question if a character was already chosen.
+            if (PW_GetPlayerDesign() != PW_DESIGN_NONE)
+            {
+                sRI.gender = gPwDesigns[PW_GetPlayerDesign()].gender;
+                gSaveBlock2Ptr->playerGender = sRI.gender;
+                sRI.state = RI_PW_SHOW_AVATAR;
+            }
+            else
+            {
+                sRI.state = RI_GENDER_FADE_OUT_ROWAN;
+            }
+        }
+        break;
+    case RI_PW_SHOW_AVATAR:
+        if (!sRI.fading)
+        {
+            ShowSlot(PlayerSlot(), PlayerGfx(0), POS_CENTER, POS_Y);
+            HideSlot(PlayerSlot());
+            StartSpriteFade(1 << PlayerSlot(), TRUE, 1);
+            sRI.state = RI_PW_AVATAR_WAIT;
+        }
+        break;
+    case RI_PW_AVATAR_WAIT:
+        if (!sRI.fading)
+        {
+            PrintMessage(gText_RowanIntro_NameDialogue);
+            sRI.state = RI_NAME_TEXT;
         }
         break;
     case RI_GENDER_FADE_OUT_ROWAN:
@@ -1195,7 +1225,11 @@ static void Task_RowanIntro(u8 taskId)
         if (IsMessageDone())
         {
             StartSpriteFade(1 << SLOT_A, FALSE, 1);
-            sRI.state = RI_RIVAL_FADE_IN;
+            // Pokémon World: the rival was already chosen (and named) in the new game setup.
+            if (PW_GetRivalDesign() != PW_DESIGN_NONE)
+                sRI.state = RI_RIVAL_FADE_OUT;
+            else
+                sRI.state = RI_RIVAL_FADE_IN;
             sRI.subState = 0;
         }
         break;
