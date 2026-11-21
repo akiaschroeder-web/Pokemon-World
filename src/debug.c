@@ -35,6 +35,7 @@
 #include "naming_screen.h"
 #include "new_game.h"
 #include "overworld.h"
+#include "constants/heal_locations.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
@@ -288,6 +289,7 @@ static void DebugAction_Selection_StepUpdate(u8 taskId);
 static void DebugAction_Selection_NextStep(u8 taskId);
 
 static void DebugAction_Util_Fly(u8 taskId);
+static void DebugAction_Util_WarpToTown(u8 taskId, const void *healLocation);
 static void DebugAction_Util_WatchCredits(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
 
@@ -767,8 +769,67 @@ static const u8 *const sDebugMenu_Actions_BagUse_Options[] =
     COMPOUND_STRING("No Bag: {STR_VAR_1}Invalid value"),
 };
 
+// Pokémon World: warp straight to a town in any region.
+// Each entry warps to that town's heal location (in front of its Pokémon Center).
+// Kanto isn't listed yet: its maps are only built into the FireRed version of the ROM.
+#define DEBUG_HEAL_LOCATION(id) ((const void *)(uintptr_t)(id))
+
+static const struct DebugMenuOption sDebugMenu_Actions_WarpHoenn[] =
+{
+    { COMPOUND_STRING("Littleroot Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE) },
+    { COMPOUND_STRING("Oldale Town"),         DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_OLDALE_TOWN) },
+    { COMPOUND_STRING("Petalburg City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PETALBURG_CITY) },
+    { COMPOUND_STRING("Rustboro City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_RUSTBORO_CITY) },
+    { COMPOUND_STRING("Dewford Town"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_DEWFORD_TOWN) },
+    { COMPOUND_STRING("Slateport City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SLATEPORT_CITY) },
+    { COMPOUND_STRING("Mauville City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_MAUVILLE_CITY) },
+    { COMPOUND_STRING("Verdanturf Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VERDANTURF_TOWN) },
+    { COMPOUND_STRING("Fallarbor Town"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FALLARBOR_TOWN) },
+    { COMPOUND_STRING("Lavaridge Town"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_LAVARIDGE_TOWN) },
+    { COMPOUND_STRING("Fortree City"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FORTREE_CITY) },
+    { COMPOUND_STRING("Lilycove City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_LILYCOVE_CITY) },
+    { COMPOUND_STRING("Mossdeep City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_MOSSDEEP_CITY) },
+    { COMPOUND_STRING("Sootopolis City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SOOTOPOLIS_CITY) },
+    { COMPOUND_STRING("Pacifidlog Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PACIFIDLOG_TOWN) },
+    { COMPOUND_STRING("Ever Grande City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_EVER_GRANDE_CITY) },
+    { COMPOUND_STRING("Pokémon League"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE) },
+    { COMPOUND_STRING("Battle Frontier"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST) },
+    { NULL }
+};
+
+static const struct DebugMenuOption sDebugMenu_Actions_WarpSinnoh[] =
+{
+    { COMPOUND_STRING("Twinleaf Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_TWINLEAF_TOWN) },
+    { COMPOUND_STRING("Sandgem Town"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SANDGEM_TOWN) },
+    { COMPOUND_STRING("Jubilife City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_JUBILIFE_CITY) },
+    { COMPOUND_STRING("Oreburgh City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_OREBURGH_CITY) },
+    { COMPOUND_STRING("Floaroma Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FLOAROMA_TOWN) },
+    { COMPOUND_STRING("Eterna City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ETERNA_CITY) },
+    { COMPOUND_STRING("Hearthome City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_HEARTHOME_CITY) },
+    { COMPOUND_STRING("Solaceon Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SOLACEON_TOWN) },
+    { COMPOUND_STRING("Veilstone City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VEILSTONE_CITY) },
+    { COMPOUND_STRING("Pastoria City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PASTORIA_CITY) },
+    { COMPOUND_STRING("Celestic Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CELESTIC_TOWN) },
+    { COMPOUND_STRING("Canalave City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CANALAVE_CITY) },
+    { COMPOUND_STRING("Snowpoint City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SNOWPOINT_CITY) },
+    { COMPOUND_STRING("Sunyshore City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SUNYSHORE_CITY) },
+    { COMPOUND_STRING("Pokémon League"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_POKEMON_LEAGUE_NORTH) },
+    { COMPOUND_STRING("Fight Area"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FIGHT_AREA) },
+    { COMPOUND_STRING("Survival Area"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SURVIVAL_AREA) },
+    { COMPOUND_STRING("Resort Area"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_RESORT_AREA) },
+    { NULL }
+};
+
+static const struct DebugMenuOption sDebugMenu_Actions_WarpRegion[] =
+{
+    { COMPOUND_STRING("Hoenn…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpHoenn },
+    { COMPOUND_STRING("Sinnoh…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpSinnoh },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_Main[] =
 {
+    { COMPOUND_STRING("Warp to town…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpRegion, },
     { COMPOUND_STRING("Utilities…"),    DebugAction_OpenSubMenu, sDebugMenu_Actions_Utilities, },
     { COMPOUND_STRING("PC/Bag…"),       DebugAction_OpenSubMenu, sDebugMenu_Actions_PCBag, },
     { COMPOUND_STRING("Party…"),        DebugAction_OpenSubMenu, sDebugMenu_Actions_Party, },
@@ -1748,6 +1809,15 @@ static void DebugAction_Util_Fly(u8 taskId)
 {
     Debug_DestroyMenu(taskId);
     SetMainCallback2(CB2_OpenFlyMap);
+}
+
+static void DebugAction_Util_WarpToTown(u8 taskId, const void *healLocation)
+{
+    SetWarpDestinationToHealLocation((uintptr_t)healLocation);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+    Debug_DestroyMenu_Full(taskId);
+    ScriptContext_Stop();
 }
 
 static void DebugSelectionStep_UpdateMapGroup(u8 taskId, u8 digits, u32 min, u32 max)
