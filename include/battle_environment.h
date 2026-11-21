@@ -16,11 +16,25 @@ struct BattleEnvironment
     struct BattleBackgroundEntry entry;
     struct BattleBackground background;
     const void *palette;
-    const void *paletteEvening; // Proyecto Sinnoh: paletas de tarde y noche como en Platino
-    const void *paletteNight;
     TaskFunc battleIntroSlide;
 };
 
 extern const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT];
+
+// Pokémon World: region-specific battle background graphics.
+struct BattleEnvironmentGfx
+{
+    struct BattleBackgroundEntry entry;
+    struct BattleBackground background;
+    const void *palette;
+    const void *paletteEvening; // optional: used outdoors in the evening (Platinum-style)
+    const void *paletteNight;   // optional: used outdoors at night
+};
+
+extern const struct BattleEnvironmentGfx gBattleEnvironmentGfxSinnoh[BATTLE_ENVIRONMENT_COUNT];
+
+const struct BattleBackgroundEntry *GetBattleEnvironmentEntryGfx(u32 environment);
+const struct BattleBackground *GetBattleEnvironmentBackgroundGfx(u32 environment);
+u32 GetBattleBgFadePalettes(void);
 
 #endif // GUARD_BATTLE_ENVIRONMENT_H

@@ -5133,10 +5133,20 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
+            return MUS_VS_AQUA_MAGMA;
+        // Pokémon World: Sinnoh's own battle themes
+        case TRAINER_CLASS_TEAM_GALACTIC:
+        case TRAINER_CLASS_GALACTIC_COMMANDER:
             return MUS_DPP_VS_GALACTIC;
+        case TRAINER_CLASS_BOSS_FRLG:
+            if (GetCurrentRegion() == REGION_SINNOH)
+                return MUS_DPP_VS_CYRUS;
+            return MUS_VS_TRAINER;
         case TRAINER_CLASS_LEADER:
             return MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
+            if (GetCurrentRegion() == REGION_SINNOH)
+                return MUS_DPP_VS_CYNTHIA;
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
@@ -5170,8 +5180,10 @@ u16 GetBattleBGM(void)
     {
         if (GetCurrentRegion() == REGION_KANTO)
             return MUS_RG_VS_WILD;
-        else
+        else if (GetCurrentRegion() == REGION_SINNOH)
             return MUS_DPP_VS_WILD;
+        else
+            return MUS_VS_WILD;
     }
 }
 

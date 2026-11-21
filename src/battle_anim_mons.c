@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_environment.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_interface.h"
@@ -1340,7 +1341,7 @@ u32 GetBattlePalettesMask(bool8 battleBackground, bool8 attacker, bool8 target, 
     if (battleBackground)
     {
         if (!IsContest())
-            selectedPalettes = 0x1e; // Proyecto Sinnoh: paletas 1, 2, 3 y 4 (los fondos de Sinnoh usan la 4)
+            selectedPalettes = GetBattleBgFadePalettes(); // Pokémon World: Sinnoh backgrounds also use palette 4
         else
             selectedPalettes = 1 << GetBattleBgPaletteNum();
     }

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_environment.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -826,7 +827,7 @@ static void SpriteCB_Ball_Arc(struct Sprite *sprite)
 
             enum PokeBall ballId = ItemIdToBallId(gLastUsedItem);
             AnimateBallOpenParticles(sprite->x, sprite->y - 5, 1, 28, ballId);
-            LaunchBallFadeMonTask(FALSE, gBattleAnimTarget, 0x1E, ballId); // Proyecto Sinnoh: paletas de fondo 1-4
+            LaunchBallFadeMonTask(FALSE, gBattleAnimTarget, GetBattleBgFadePalettes(), ballId); // Pokémon World: Sinnoh backgrounds also use palette 4
         }
     }
 }
@@ -1406,7 +1407,7 @@ static void SpriteCB_Ball_Release_Step(struct Sprite *sprite)
 
     enum PokeBall ballId = ItemIdToBallId(gLastUsedItem);
     AnimateBallOpenParticles(sprite->x, sprite->y - 5, 1, 28, ballId);
-    LaunchBallFadeMonTask(TRUE, gBattleAnimTarget, 0x1E, ballId); // Proyecto Sinnoh: paletas de fondo 1-4
+    LaunchBallFadeMonTask(TRUE, gBattleAnimTarget, GetBattleBgFadePalettes(), ballId); // Pokémon World: Sinnoh backgrounds also use palette 4
 
     // Animate Pokémon emerging from Poké Ball
     gSprites[gBattlerSpriteIds[gBattleAnimTarget]].invisible = FALSE;

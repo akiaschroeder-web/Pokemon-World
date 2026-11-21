@@ -1,4 +1,5 @@
 #include "global.h"
+#include "battle_environment.h"
 #include "battle_anim.h"
 #include "battle_anim_internal.h"
 #include "palette.h"
@@ -601,7 +602,7 @@ void AnimTask_BlendColorCycleExclude(u8 taskId)
     }
 
     if (cmd->unk0 == 1)
-        selectedPalettes |= 0x1E; // Proyecto Sinnoh: incluye la paleta 4 del fondo
+        selectedPalettes |= GetBattleBgFadePalettes(); // Pokémon World: Sinnoh backgrounds also use palette 4
 
     gTasks[taskId].tPalSelectorHi = selectedPalettes >> 16;
     gTasks[taskId].tPalSelectorLo = selectedPalettes & 0xFF;

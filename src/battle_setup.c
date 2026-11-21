@@ -1,4 +1,5 @@
 #include "global.h"
+#include "regions.h"
 #include "sinnoh_radar.h"
 #include "data.h"
 #include "main.h"
@@ -1770,6 +1771,9 @@ void PlayTrainerEncounterMusic(void)
 
     enum TrainerApproachMusic musicStyle = GetTrainerEncounterMusicId(trainerId);
     music = gTrainerApproachMusicStyles[musicStyle];
+    // Pokémon World: Sinnoh's villains (marked with Aqua's style) get Team Galactic's encounter theme.
+    if (musicStyle == TRAINER_ENCOUNTER_MUSIC_AQUA && GetCurrentRegion() == REGION_SINNOH)
+        music = MUS_DPP_ENCOUNTER_GALACTIC;
     PlayNewMapMusic(music);
 
 }

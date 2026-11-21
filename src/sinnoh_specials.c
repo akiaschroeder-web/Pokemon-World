@@ -1,4 +1,5 @@
 #include "global.h"
+#include "regions.h"
 #include "event_data.h"
 #include "pokemon.h"
 #include "pokedex.h"
@@ -315,6 +316,9 @@ void SinnohCountAllMons(void)
 // Se usa la batalla de Wally de Esmeralda con el sprite de espaldas del acompañante.
 enum TrainerPicID SinnohTutorialBackPic(void)
 {
+    // Pokémon World: only Sinnoh's catching tutorial uses Lucas/Dawn; Hoenn's keeps Wally.
+    if (GetCurrentRegion() != REGION_SINNOH)
+        return TRAINER_PIC_WALLY;
     return gSaveBlock2Ptr->playerGender == MALE ? TRAINER_PIC_SINNOH_DAWN : TRAINER_PIC_SINNOH_LUCAS;
 }
 

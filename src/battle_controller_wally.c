@@ -1,4 +1,5 @@
 #include "global.h"
+#include "regions.h"
 #include "sinnoh_specials.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -316,7 +317,7 @@ static void WallyHandleChooseAction(enum BattlerId battler)
         ActionSelectionDestroyCursorAt(i);
 
     ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
-    BattleStringExpandPlaceholdersToDisplayedString(gSaveBlock2Ptr->playerGender == MALE ? COMPOUND_STRING("What will\nDAWN do?") : COMPOUND_STRING("What will\nLUCAS do?"));
+    BattleStringExpandPlaceholdersToDisplayedString(GetCurrentRegion() != REGION_SINNOH ? gText_WhatWillWallyDo : gSaveBlock2Ptr->playerGender == MALE ? COMPOUND_STRING("What will\nDAWN do?") : COMPOUND_STRING("What will\nLUCAS do?"));
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
 }
 

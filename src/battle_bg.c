@@ -1,4 +1,5 @@
 #include "global.h"
+#include "regions.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_bg.h"
@@ -871,27 +872,58 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
     return BATTLE_ENVIRONMENT_PLAIN;
 }
 
-// Proyecto Sinnoh: como en Platino, los fondos de exterior cambian de paleta por la tarde y por la noche.
+// Pokémon World: battles in Sinnoh use Sinnoh's backgrounds (from the Sinnoh project);
+// everywhere else uses the normal ones.
+static const struct BattleEnvironmentGfx *GetRegionalBattleEnvironmentGfx(u32 environment)
+{
+    if (environment < BATTLE_ENVIRONMENT_COUNT
+     && GetCurrentRegion() == REGION_SINNOH
+     && gBattleEnvironmentGfxSinnoh[environment].background.tileset != NULL)
+        return &gBattleEnvironmentGfxSinnoh[environment];
+    return NULL;
+}
+
+const struct BattleBackgroundEntry *GetBattleEnvironmentEntryGfx(u32 environment)
+{
+    const struct BattleEnvironmentGfx *gfx = GetRegionalBattleEnvironmentGfx(environment);
+    return gfx != NULL ? &gfx->entry : &gBattleEnvironmentInfo[environment].entry;
+}
+
+const struct BattleBackground *GetBattleEnvironmentBackgroundGfx(u32 environment)
+{
+    const struct BattleEnvironmentGfx *gfx = GetRegionalBattleEnvironmentGfx(environment);
+    return gfx != NULL ? &gfx->background : &gBattleEnvironmentInfo[environment].background;
+}
+
+// Sinnoh's backgrounds also use background palette 4, so fades must include it.
+u32 GetBattleBgFadePalettes(void)
+{
+    return GetRegionalBattleEnvironmentGfx(gBattleEnvironment) != NULL ? 0x1E : 0xE;
+}
+
+// Sinnoh's outdoor backgrounds change palette in the evening and at night, like in Platinum.
 static const void *GetBattleEnvironmentPalette(u32 environment)
 {
-    const struct BattleEnvironment *env = &gBattleEnvironmentInfo[environment];
+    const struct BattleEnvironmentGfx *gfx = GetRegionalBattleEnvironmentGfx(environment);
+    if (gfx == NULL)
+        return gBattleEnvironmentInfo[environment].palette;
     if (gMapHeader.mapType != MAP_TYPE_INDOOR && gMapHeader.mapType != MAP_TYPE_UNDERGROUND && gMapHeader.mapType != MAP_TYPE_SECRET_BASE)
     {
         switch (GetTimeOfDay())
         {
         case TIME_EVENING:
-            if (env->paletteEvening != NULL)
-                return env->paletteEvening;
+            if (gfx->paletteEvening != NULL)
+                return gfx->paletteEvening;
             break;
         case TIME_NIGHT:
-            if (env->paletteNight != NULL)
-                return env->paletteNight;
+            if (gfx->paletteNight != NULL)
+                return gfx->paletteNight;
             break;
         default:
             break;
         }
     }
-    return env->palette;
+    return gfx->palette;
 }
 
 // Loads the initial battle environment.
@@ -900,8 +932,8 @@ static void LoadBattleEnvironmentGfx(u16 environment)
     if (environment >= NELEMS(gBattleEnvironmentInfo))
         environment = BATTLE_ENVIRONMENT_PLAIN;  // If higher than the number of entries in gBattleEnvironmentInfo, use the default.
     // Copy to bg3
-    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].background.tileset, (void *)(BG_CHAR_ADDR(2)));
-    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
+    DecompressDataWithHeaderVram(GetBattleEnvironmentBackgroundGfx(environment)->tileset, (void *)(BG_CHAR_ADDR(2)));
+    DecompressDataWithHeaderVram(GetBattleEnvironmentBackgroundGfx(environment)->tilemap, (void *)(BG_SCREEN_ADDR(26)));
     LoadPalette(GetBattleEnvironmentPalette(environment), BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
@@ -912,8 +944,8 @@ static void LoadBattleEnvironmentEntryGfx(u16 environment)
     if (environment >= NELEMS(gBattleEnvironmentInfo))
         environment = BATTLE_ENVIRONMENT_PLAIN;
     // Copy to bg1
-    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].entry.tileset, (void *)BG_CHAR_ADDR(1));
-    DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].entry.tilemap, (void *)BG_SCREEN_ADDR(28));
+    DecompressDataWithHeaderVram(GetBattleEnvironmentEntryGfx(environment)->tileset, (void *)BG_CHAR_ADDR(1));
+    DecompressDataWithHeaderVram(GetBattleEnvironmentEntryGfx(environment)->tilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
 static u8 GetBattleEnvironmentOverride(void)
@@ -921,8 +953,8 @@ static u8 GetBattleEnvironmentOverride(void)
     u8 battleScene = GetCurrentMapBattleScene();
 
     if (TestRunner_Battle_GetForcedEnvironment()
-     && gBattleEnvironmentInfo[gBattleEnvironment].background.tilemap
-     && gBattleEnvironmentInfo[gBattleEnvironment].background.tileset)
+     && GetBattleEnvironmentBackgroundGfx(gBattleEnvironment)->tilemap
+     && GetBattleEnvironmentBackgroundGfx(gBattleEnvironment)->tileset)
     {
         return gBattleEnvironment;
     }
@@ -1304,8 +1336,8 @@ void DrawBattleEntryBackground(void)
     else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))
     {
         if (TestRunner_Battle_GetForcedEnvironment()
-         && gBattleEnvironmentInfo[gBattleEnvironment].background.tilemap
-         && gBattleEnvironmentInfo[gBattleEnvironment].background.tileset)
+         && GetBattleEnvironmentBackgroundGfx(gBattleEnvironment)->tilemap
+         && GetBattleEnvironmentBackgroundGfx(gBattleEnvironment)->tileset)
         {
             LoadBattleEnvironmentEntryGfx(gBattleEnvironment);
         }
@@ -1362,10 +1394,10 @@ bool8 LoadChosenBattleElement(u8 caseId)
         LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         break;
     case 3:
-        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.tileset, (void *)(BG_CHAR_ADDR(2)));
+        DecompressDataWithHeaderVram(GetBattleEnvironmentBackgroundGfx(GetBattleEnvironmentOverride())->tileset, (void *)(BG_CHAR_ADDR(2)));
         break;
     case 4:
-        DecompressDataWithHeaderVram(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
+        DecompressDataWithHeaderVram(GetBattleEnvironmentBackgroundGfx(GetBattleEnvironmentOverride())->tilemap, (void *)(BG_SCREEN_ADDR(26)));
         break;
     case 5:
         LoadPalette(GetBattleEnvironmentPalette(GetBattleEnvironmentOverride()), BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
