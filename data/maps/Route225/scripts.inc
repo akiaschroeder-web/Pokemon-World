@@ -2,14 +2,14 @@ Route225_MapScripts::
 	.byte 0
 
 Route225_EventScript_Rodolfo::
-	trainerbattle_single TRAINER_HECTOR, Route225_Text_RodolfoIntro, Route225_Text_RodolfoDefeat
+	trainerbattle_single TRAINER_SN_RODOLFO_2, Route225_Text_RodolfoIntro, Route225_Text_RodolfoDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Rodolfo_Rematch
 	msgbox Route225_Text_RodolfoPost, MSGBOX_AUTOCLOSE
 	end
 
 Route225_EventScript_Rodolfo_Rematch:
-	trainerbattle_rematch TRAINER_HECTOR, Route225_Text_RodolfoIntro, Route225_Text_RodolfoDefeat
+	trainerbattle_rematch TRAINER_SN_RODOLFO_2, Route225_Text_RodolfoIntro, Route225_Text_RodolfoDefeat
 	msgbox Route225_Text_RodolfoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -27,14 +27,14 @@ Route225_Text_RodolfoPost:
 	.string "that short time.$"
 
 Route225_EventScript_Ashlee::
-	trainerbattle_single TRAINER_TABITHA_MOSSDEEP, Route225_Text_AshleeIntro, Route225_Text_AshleeDefeat
+	trainerbattle_single TRAINER_SN_ASHLEE_1, Route225_Text_AshleeIntro, Route225_Text_AshleeDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Ashlee_Rematch
 	msgbox Route225_Text_AshleePost, MSGBOX_AUTOCLOSE
 	end
 
 Route225_EventScript_Ashlee_Rematch:
-	trainerbattle_rematch TRAINER_TABITHA_MOSSDEEP, Route225_Text_AshleeIntro, Route225_Text_AshleeDefeat
+	trainerbattle_rematch TRAINER_SN_ASHLEE_1, Route225_Text_AshleeIntro, Route225_Text_AshleeDefeat
 	msgbox Route225_Text_AshleePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -52,14 +52,14 @@ Route225_Text_AshleePost:
 	.string "if you set your mind to it.$"
 
 Route225_EventScript_Audrey::
-	trainerbattle_single TRAINER_WALLY_VR_1, Route225_Text_AudreyIntro, Route225_Text_AudreyDefeat
+	trainerbattle_single TRAINER_SN_AUDREY_2, Route225_Text_AudreyIntro, Route225_Text_AudreyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Audrey_Rematch
 	msgbox Route225_Text_AudreyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route225_EventScript_Audrey_Rematch:
-	trainerbattle_rematch TRAINER_WALLY_VR_1, Route225_Text_AudreyIntro, Route225_Text_AudreyDefeat
+	trainerbattle_rematch TRAINER_SN_AUDREY_2, Route225_Text_AudreyIntro, Route225_Text_AudreyDefeat
 	msgbox Route225_Text_AudreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -76,14 +76,14 @@ Route225_Text_AudreyPost:
 	.string "only just recently flown here.$"
 
 Route225_EventScript_Daisy::
-	trainerbattle_single TRAINER_TIANA, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
+	trainerbattle_single TRAINER_SN_DAISY_1, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Daisy_Rematch
 	msgbox Route225_Text_DaisyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route225_EventScript_Daisy_Rematch:
-	trainerbattle_rematch TRAINER_TIANA, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
+	trainerbattle_rematch TRAINER_SN_DAISY_1, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
 	msgbox Route225_Text_DaisyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -101,14 +101,14 @@ Route225_Text_DaisyPost:
 	.string "would be much more fun that way!$"
 
 Route225_EventScript_Geoffrey::
-	trainerbattle_single TRAINER_JANICE, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
+	trainerbattle_single TRAINER_SN_GEOFFREY_2, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Geoffrey_Rematch
 	msgbox Route225_Text_GeoffreyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route225_EventScript_Geoffrey_Rematch:
-	trainerbattle_rematch TRAINER_JANICE, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
+	trainerbattle_rematch TRAINER_SN_GEOFFREY_2, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
 	msgbox Route225_Text_GeoffreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -125,14 +125,14 @@ Route225_Text_GeoffreyPost:
 	.string "come close to coming close...$"
 
 Route225_EventScript_Deanna::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_119_MUDKIP, Route225_Text_DeannaIntro, Route225_Text_DeannaDefeat
+	trainerbattle_single TRAINER_SN_DEANNA_2, Route225_Text_DeannaIntro, Route225_Text_DeannaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Deanna_Rematch
 	msgbox Route225_Text_DeannaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route225_EventScript_Deanna_Rematch:
-	trainerbattle_rematch TRAINER_BRENDAN_ROUTE_119_MUDKIP, Route225_Text_DeannaIntro, Route225_Text_DeannaDefeat
+	trainerbattle_rematch TRAINER_SN_DEANNA_2, Route225_Text_DeannaIntro, Route225_Text_DeannaDefeat
 	msgbox Route225_Text_DeannaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -150,7 +150,7 @@ Route225_Text_DeannaPost:
 	.string "battle will turn out.$"
 
 Route225_EventScript_Dwayne::
-	trainerbattle_single TRAINER_VIVI, Route225_Text_DwayneIntro, Route225_Text_DwayneDefeat
+	trainerbattle_single TRAINER_SN_DWAYNE_1, Route225_Text_DwayneIntro, Route225_Text_DwayneDefeat
 	msgbox Route225_Text_DwaynePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -170,7 +170,7 @@ Route225_Text_DwaynePost:
 	.string "cleaning up the environment!$"
 
 Route225_EventScript_Quinn::
-	trainerbattle_single TRAINER_SALLY, Route225_Text_QuinnIntro, Route225_Text_QuinnDefeat
+	trainerbattle_single TRAINER_SN_QUINN_1, Route225_Text_QuinnIntro, Route225_Text_QuinnDefeat
 	msgbox Route225_Text_QuinnPost, MSGBOX_AUTOCLOSE
 	end
 

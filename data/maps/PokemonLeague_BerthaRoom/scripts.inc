@@ -43,7 +43,7 @@ PokemonLeague_BerthaRoom_EventScript_Phoebe::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox PokemonLeague_BerthaRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_BerthaRoom_EventScript_SNRematchBattle
-	trainerbattle_no_intro TRAINER_PHOEBE, PokemonLeague_BerthaRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_SN_BERTHA_1, PokemonLeague_BerthaRoom_Text_Defeat
 PokemonLeague_BerthaRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_BerthaRoom_EventScript_Defeated
 	end
@@ -87,5 +87,5 @@ PokemonLeague_BerthaRoom_Text_PostBattleSpeech:
 	.string "you desire. Ahahaha!$"
 
 PokemonLeague_BerthaRoom_EventScript_SNRematchBattle:
-	trainerbattle_no_intro TRAINER_NICOLAS_3, PokemonLeague_BerthaRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_SN_BERTHA_2, PokemonLeague_BerthaRoom_Text_Defeat
 	goto PokemonLeague_BerthaRoom_EventScript_SNAfterBattle

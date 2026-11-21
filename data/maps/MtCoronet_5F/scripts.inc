@@ -2,7 +2,7 @@ MtCoronet_5F_MapScripts::
 	.byte 0
 
 MtCoronet_5F_EventScript_Grunt::
-	trainerbattle_single TRAINER_VALERIE_5, MtCoronet_5F_Text_GruntIntro, MtCoronet_5F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_25, MtCoronet_5F_Text_GruntIntro, MtCoronet_5F_Text_GruntDefeat
 	msgbox MtCoronet_5F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -24,7 +24,7 @@ MtCoronet_5F_Text_GruntPost:
 	.string "rough, long, and draining...$"
 
 MtCoronet_5F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_CINDY_1, MtCoronet_5F_Text_Grunt2Intro, MtCoronet_5F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_26, MtCoronet_5F_Text_Grunt2Intro, MtCoronet_5F_Text_Grunt2Defeat
 	msgbox MtCoronet_5F_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 

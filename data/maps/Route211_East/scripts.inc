@@ -2,7 +2,7 @@ Route211_East_MapScripts::
 	.byte 0
 
 Route211_East_EventScript_Katherine::
-	trainerbattle_single TRAINER_DUDLEY, Route211_East_Text_KatherineIntro, Route211_East_Text_KatherineDefeat
+	trainerbattle_single TRAINER_SN_KATHERINE_1, Route211_East_Text_KatherineIntro, Route211_East_Text_KatherineDefeat
 	msgbox Route211_East_Text_KatherinePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ Route211_East_Text_KatherinePost:
 	.string "NOCTOWL keeps me warm!$"
 
 Route211_East_EventScript_Nick::
-	trainerbattle_single TRAINER_CHAD, Route211_East_Text_NickIntro, Route211_East_Text_NickDefeat
+	trainerbattle_single TRAINER_SN_NICK_1, Route211_East_Text_NickIntro, Route211_East_Text_NickDefeat
 	msgbox Route211_East_Text_NickPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,7 +35,7 @@ Route211_East_Text_NickPost:
 	.string "Trainer and then ambush them!$"
 
 Route211_East_EventScript_Sean::
-	trainerbattle_single TRAINER_HITOSHI, Route211_East_Text_SeanIntro, Route211_East_Text_SeanDefeat
+	trainerbattle_single TRAINER_SN_SEAN_1, Route211_East_Text_SeanIntro, Route211_East_Text_SeanDefeat
 	msgbox Route211_East_Text_SeanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -53,14 +53,14 @@ Route211_East_Text_SeanPost:
 	.string "That's my policy!$"
 
 Route211_East_EventScript_Harry::
-	trainerbattle_single TRAINER_KIYO, Route211_East_Text_HarryIntro, Route211_East_Text_HarryDefeat
+	trainerbattle_single TRAINER_SN_HARRY_1, Route211_East_Text_HarryIntro, Route211_East_Text_HarryDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route211_East_EventScript_Harry_Rematch
 	msgbox Route211_East_Text_HarryPost, MSGBOX_AUTOCLOSE
 	end
 
 Route211_East_EventScript_Harry_Rematch:
-	trainerbattle_rematch TRAINER_KIYO, Route211_East_Text_HarryIntro, Route211_East_Text_HarryDefeat
+	trainerbattle_rematch TRAINER_SN_HARRY_1, Route211_East_Text_HarryIntro, Route211_East_Text_HarryDefeat
 	msgbox Route211_East_Text_HarryPost, MSGBOX_AUTOCLOSE
 	end
 

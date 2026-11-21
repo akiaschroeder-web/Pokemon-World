@@ -2,7 +2,7 @@ Route221_MapScripts::
 	.byte 0
 
 Route221_EventScript_Dillon::
-	trainerbattle_single TRAINER_GRACE, Route221_Text_DillonIntro, Route221_Text_DillonDefeat
+	trainerbattle_single TRAINER_SN_DILLON_1, Route221_Text_DillonIntro, Route221_Text_DillonDefeat
 	msgbox Route221_Text_DillonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ Route221_Text_DillonPost:
 	.string "I'm kicking furiously.$"
 
 Route221_EventScript_Vanessa::
-	trainerbattle_single TRAINER_TANYA, Route221_Text_VanessaIntro, Route221_Text_VanessaDefeat
+	trainerbattle_single TRAINER_SN_VANESSA_1, Route221_Text_VanessaIntro, Route221_Text_VanessaDefeat
 	msgbox Route221_Text_VanessaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ Route221_Text_VanessaPost:
 	.string "tougher with water POKéMON.$"
 
 Route221_EventScript_Cory::
-	trainerbattle_single TRAINER_SHARON, Route221_Text_CoryIntro, Route221_Text_CoryDefeat
+	trainerbattle_single TRAINER_SN_CORY_1, Route221_Text_CoryIntro, Route221_Text_CoryDefeat
 	msgbox Route221_Text_CoryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -56,14 +56,14 @@ Route221_Text_CoryPost:
 	.string "missing out on all of it!$"
 
 Route221_EventScript_Ivan::
-	trainerbattle_single TRAINER_NIKKI, Route221_Text_IvanIntro, Route221_Text_IvanDefeat
+	trainerbattle_single TRAINER_SN_IVAN_1, Route221_Text_IvanIntro, Route221_Text_IvanDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route221_EventScript_Ivan_Rematch
 	msgbox Route221_Text_IvanPost, MSGBOX_AUTOCLOSE
 	end
 
 Route221_EventScript_Ivan_Rematch:
-	trainerbattle_rematch TRAINER_NIKKI, Route221_Text_IvanIntro, Route221_Text_IvanDefeat
+	trainerbattle_rematch TRAINER_SN_IVAN_1, Route221_Text_IvanIntro, Route221_Text_IvanDefeat
 	msgbox Route221_Text_IvanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -81,14 +81,14 @@ Route221_Text_IvanPost:
 	.string "POKéMON you can see there?$"
 
 Route221_EventScript_Jake::
-	trainerbattle_single TRAINER_BRENDA, Route221_Text_JakeIntro, Route221_Text_JakeDefeat
+	trainerbattle_single TRAINER_SN_JAKE_2, Route221_Text_JakeIntro, Route221_Text_JakeDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route221_EventScript_Jake_Rematch
 	msgbox Route221_Text_JakePost, MSGBOX_AUTOCLOSE
 	end
 
 Route221_EventScript_Jake_Rematch:
-	trainerbattle_rematch TRAINER_BRENDA, Route221_Text_JakeIntro, Route221_Text_JakeDefeat
+	trainerbattle_rematch TRAINER_SN_JAKE_2, Route221_Text_JakeIntro, Route221_Text_JakeDefeat
 	msgbox Route221_Text_JakePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -106,14 +106,14 @@ Route221_Text_JakePost:
 	.string "better yourself is a talent in itself.$"
 
 Route221_EventScript_Shannon::
-	trainerbattle_single TRAINER_KATIE, Route221_Text_ShannonIntro, Route221_Text_ShannonDefeat
+	trainerbattle_single TRAINER_SN_SHANNON_2, Route221_Text_ShannonIntro, Route221_Text_ShannonDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route221_EventScript_Shannon_Rematch
 	msgbox Route221_Text_ShannonPost, MSGBOX_AUTOCLOSE
 	end
 
 Route221_EventScript_Shannon_Rematch:
-	trainerbattle_rematch TRAINER_KATIE, Route221_Text_ShannonIntro, Route221_Text_ShannonDefeat
+	trainerbattle_rematch TRAINER_SN_SHANNON_2, Route221_Text_ShannonIntro, Route221_Text_ShannonDefeat
 	msgbox Route221_Text_ShannonPost, MSGBOX_AUTOCLOSE
 	end
 

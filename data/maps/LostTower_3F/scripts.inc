@@ -2,7 +2,7 @@ LostTower_3F_MapScripts::
 	.byte 0
 
 LostTower_3F_EventScript_Leonard::
-	trainerbattle_single TRAINER_TIMOTHY_2, LostTower_3F_Text_LeonardIntro, LostTower_3F_Text_LeonardDefeat
+	trainerbattle_single TRAINER_SN_LEONARD_1, LostTower_3F_Text_LeonardIntro, LostTower_3F_Text_LeonardDefeat
 	msgbox LostTower_3F_Text_LeonardPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ LostTower_3F_Text_LeonardPost:
 	.string "within these walls?$"
 
 LostTower_3F_EventScript_Kirby::
-	trainerbattle_single TRAINER_TIMOTHY_3, LostTower_3F_Text_KirbyIntro, LostTower_3F_Text_KirbyDefeat
+	trainerbattle_single TRAINER_SN_KIRBY_1, LostTower_3F_Text_KirbyIntro, LostTower_3F_Text_KirbyDefeat
 	msgbox LostTower_3F_Text_KirbyPost, MSGBOX_AUTOCLOSE
 	end
 

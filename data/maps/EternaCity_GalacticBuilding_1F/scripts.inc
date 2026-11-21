@@ -95,7 +95,7 @@ EternaCity_GalacticBuilding_1F_Text_GruntStars:
 
 
 EternaCity_GalacticBuilding_1F_EventScript_Grunt::
-	trainerbattle_single TRAINER_CLARENCE, EternaCity_GalacticBuilding_1F_Text_GruntIntro, EternaCity_GalacticBuilding_1F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_41, EternaCity_GalacticBuilding_1F_Text_GruntIntro, EternaCity_GalacticBuilding_1F_Text_GruntDefeat
 	msgbox EternaCity_GalacticBuilding_1F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -115,7 +115,7 @@ EternaCity_GalacticBuilding_1F_Text_GruntPost:
 
 
 EternaCity_GalacticBuilding_1F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_TERRY, EternaCity_GalacticBuilding_1F_Text_Grunt2Intro, EternaCity_GalacticBuilding_1F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_42, EternaCity_GalacticBuilding_1F_Text_Grunt2Intro, EternaCity_GalacticBuilding_1F_Text_Grunt2Defeat
 	msgbox EternaCity_GalacticBuilding_1F_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 

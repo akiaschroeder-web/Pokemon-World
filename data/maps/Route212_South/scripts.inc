@@ -2,7 +2,7 @@ Route212_South_MapScripts::
 	.byte 0
 
 Route212_South_EventScript_Juan::
-	trainerbattle_single TRAINER_BRENT, Route212_South_Text_JuanIntro, Route212_South_Text_JuanDefeat
+	trainerbattle_single TRAINER_SN_JUAN_1, Route212_South_Text_JuanIntro, Route212_South_Text_JuanDefeat
 	msgbox Route212_South_Text_JuanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ Route212_South_Text_JuanPost:
 	.string "things--as am I. Is that wrong?$"
 
 Route212_South_EventScript_Josh::
-	trainerbattle_single TRAINER_DONALD, Route212_South_Text_JoshIntro, Route212_South_Text_JoshDefeat
+	trainerbattle_single TRAINER_SN_JOSH_1, Route212_South_Text_JoshIntro, Route212_South_Text_JoshDefeat
 	msgbox Route212_South_Text_JoshPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -36,7 +36,7 @@ Route212_South_Text_JoshPost:
 	.string "fishing, help me reel 'em in!$"
 
 Route212_South_EventScript_Travis::
-	trainerbattle_single TRAINER_TAYLOR, Route212_South_Text_TravisIntro, Route212_South_Text_TravisDefeat
+	trainerbattle_single TRAINER_SN_TRAVIS_1, Route212_South_Text_TravisIntro, Route212_South_Text_TravisDefeat
 	msgbox Route212_South_Text_TravisPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -53,14 +53,14 @@ Route212_South_Text_TravisPost:
 	.string "around outside, rain or shine.$"
 
 Route212_South_EventScript_Taylor::
-	trainerbattle_single TRAINER_DEREK, Route212_South_Text_TaylorIntro, Route212_South_Text_TaylorDefeat
+	trainerbattle_single TRAINER_SN_TAYLOR_2, Route212_South_Text_TaylorIntro, Route212_South_Text_TaylorDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Taylor_Rematch
 	msgbox Route212_South_Text_TaylorPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_South_EventScript_Taylor_Rematch:
-	trainerbattle_rematch TRAINER_DEREK, Route212_South_Text_TaylorIntro, Route212_South_Text_TaylorDefeat
+	trainerbattle_rematch TRAINER_SN_TAYLOR_2, Route212_South_Text_TaylorIntro, Route212_South_Text_TaylorDefeat
 	msgbox Route212_South_Text_TaylorPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -75,14 +75,14 @@ Route212_South_Text_TaylorPost:
 	.string "break branches off trees or anything.$"
 
 Route212_South_EventScript_Allison::
-	trainerbattle_single TRAINER_EDWARD, Route212_South_Text_AllisonIntro, Route212_South_Text_AllisonDefeat
+	trainerbattle_single TRAINER_SN_ALLISON_1, Route212_South_Text_AllisonIntro, Route212_South_Text_AllisonDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Allison_Rematch
 	msgbox Route212_South_Text_AllisonPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_South_EventScript_Allison_Rematch:
-	trainerbattle_rematch TRAINER_EDWARD, Route212_South_Text_AllisonIntro, Route212_South_Text_AllisonDefeat
+	trainerbattle_rematch TRAINER_SN_ALLISON_1, Route212_South_Text_AllisonIntro, Route212_South_Text_AllisonDefeat
 	msgbox Route212_South_Text_AllisonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -98,7 +98,7 @@ Route212_South_Text_AllisonPost:
 	.string "could live out here.$"
 
 Route212_South_EventScript_Jeffrey::
-	trainerbattle_single TRAINER_WILLIAM, Route212_South_Text_JeffreyIntro, Route212_South_Text_JeffreyDefeat
+	trainerbattle_single TRAINER_SN_JEFFREY_1, Route212_South_Text_JeffreyIntro, Route212_South_Text_JeffreyDefeat
 	msgbox Route212_South_Text_JeffreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -115,14 +115,14 @@ Route212_South_Text_JeffreyPost:
 	.string "part of Mother Nature.$"
 
 Route212_South_EventScript_Danny::
-	trainerbattle_single TRAINER_JOSHUA, Route212_South_Text_DannyIntro, Route212_South_Text_DannyDefeat
+	trainerbattle_single TRAINER_SN_DANNY_1, Route212_South_Text_DannyIntro, Route212_South_Text_DannyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Danny_Rematch
 	msgbox Route212_South_Text_DannyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_South_EventScript_Danny_Rematch:
-	trainerbattle_rematch TRAINER_JOSHUA, Route212_South_Text_DannyIntro, Route212_South_Text_DannyDefeat
+	trainerbattle_rematch TRAINER_SN_DANNY_1, Route212_South_Text_DannyIntro, Route212_South_Text_DannyDefeat
 	msgbox Route212_South_Text_DannyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -138,7 +138,7 @@ Route212_South_Text_DannyPost:
 	.string "shadiness! It's an honest mistake!$"
 
 Route212_South_EventScript_Stefano::
-	trainerbattle_single TRAINER_JACLYN, Route212_South_Text_StefanoIntro, Route212_South_Text_StefanoDefeat
+	trainerbattle_single TRAINER_SN_STEFANO_1, Route212_South_Text_StefanoIntro, Route212_South_Text_StefanoDefeat
 	msgbox Route212_South_Text_StefanoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -154,7 +154,7 @@ Route212_South_Text_StefanoPost:
 	.string "loss... Ufufufufu...$"
 
 Route212_South_EventScript_Dean::
-	trainerbattle_single TRAINER_KAYLA, Route212_South_Text_DeanIntro, Route212_South_Text_DeanDefeat
+	trainerbattle_single TRAINER_SN_DEAN_1, Route212_South_Text_DeanIntro, Route212_South_Text_DeanDefeat
 	msgbox Route212_South_Text_DeanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -176,14 +176,14 @@ Route212_South_Text_DeanPost:
 	.string "by time of day!$"
 
 Route212_South_EventScript_Shaun::
-	trainerbattle_single TRAINER_ALEXIS, Route212_South_Text_ShaunIntro, Route212_South_Text_ShaunDefeat
+	trainerbattle_single TRAINER_SN_SHAUN_1, Route212_South_Text_ShaunIntro, Route212_South_Text_ShaunDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Shaun_Rematch
 	msgbox Route212_South_Text_ShaunPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_South_EventScript_Shaun_Rematch:
-	trainerbattle_rematch TRAINER_ALEXIS, Route212_South_Text_ShaunIntro, Route212_South_Text_ShaunDefeat
+	trainerbattle_rematch TRAINER_SN_SHAUN_1, Route212_South_Text_ShaunIntro, Route212_South_Text_ShaunDefeat
 	msgbox Route212_South_Text_ShaunPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -202,14 +202,14 @@ Route212_South_Text_ShaunPost:
 	.string "whole area was under the sea.$"
 
 Route212_South_EventScript_Alexa::
-	trainerbattle_single TRAINER_MICAH, Route212_South_Text_AlexaIntro, Route212_South_Text_AlexaDefeat
+	trainerbattle_single TRAINER_SN_ALEXA_1, Route212_South_Text_AlexaIntro, Route212_South_Text_AlexaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Alexa_Rematch
 	msgbox Route212_South_Text_AlexaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_South_EventScript_Alexa_Rematch:
-	trainerbattle_rematch TRAINER_MICAH, Route212_South_Text_AlexaIntro, Route212_South_Text_AlexaDefeat
+	trainerbattle_rematch TRAINER_SN_ALEXA_1, Route212_South_Text_AlexaIntro, Route212_South_Text_AlexaDefeat
 	msgbox Route212_South_Text_AlexaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -227,7 +227,7 @@ Route212_South_Text_AlexaPost:
 	.string "Oh, such a big dilemma!$"
 
 Route212_South_EventScript_Sabrina::
-	trainerbattle_single TRAINER_THOMAS, Route212_South_Text_SabrinaIntro, Route212_South_Text_SabrinaDefeat
+	trainerbattle_single TRAINER_SN_SABRINA_1, Route212_South_Text_SabrinaIntro, Route212_South_Text_SabrinaDefeat
 	msgbox Route212_South_Text_SabrinaPost, MSGBOX_AUTOCLOSE
 	end
 

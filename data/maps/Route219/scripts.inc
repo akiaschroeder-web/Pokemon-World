@@ -2,7 +2,7 @@ Route219_MapScripts::
 	.byte 0
 
 Route219_EventScript_Trenton::
-	trainerbattle_single TRAINER_ANGELICA, Route219_Text_TrentonIntro, Route219_Text_TrentonDefeat
+	trainerbattle_single TRAINER_SN_TRENTON_1, Route219_Text_TrentonIntro, Route219_Text_TrentonDefeat
 	msgbox Route219_Text_TrentonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ Route219_Text_TrentonPost:
 	.string "But that old guy looks kind of scary.$"
 
 Route219_EventScript_Mariel::
-	trainerbattle_single TRAINER_BEVERLY, Route219_Text_MarielIntro, Route219_Text_MarielDefeat
+	trainerbattle_single TRAINER_SN_MARIEL_1, Route219_Text_MarielIntro, Route219_Text_MarielDefeat
 	msgbox Route219_Text_MarielPost, MSGBOX_AUTOCLOSE
 	end
 

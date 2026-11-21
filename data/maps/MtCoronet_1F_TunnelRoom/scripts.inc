@@ -2,7 +2,7 @@ MtCoronet_1F_TunnelRoom_MapScripts::
 	.byte 0
 
 MtCoronet_1F_TunnelRoom_EventScript_Grunt::
-	trainerbattle_single TRAINER_BROOKE_3, MtCoronet_1F_TunnelRoom_Text_GruntIntro, MtCoronet_1F_TunnelRoom_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_18, MtCoronet_1F_TunnelRoom_Text_GruntIntro, MtCoronet_1F_TunnelRoom_Text_GruntDefeat
 	msgbox MtCoronet_1F_TunnelRoom_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ MtCoronet_1F_TunnelRoom_Text_GruntPost:
 	.string "tell it has a weird energy!$"
 
 MtCoronet_1F_TunnelRoom_EventScript_Grunt2::
-	trainerbattle_single TRAINER_BROOKE_4, MtCoronet_1F_TunnelRoom_Text_Grunt2Intro, MtCoronet_1F_TunnelRoom_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_19, MtCoronet_1F_TunnelRoom_Text_Grunt2Intro, MtCoronet_1F_TunnelRoom_Text_Grunt2Defeat
 	msgbox MtCoronet_1F_TunnelRoom_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ MtCoronet_1F_TunnelRoom_Text_Grunt2Post:
 	.string "Galactic will achieve greatness!$"
 
 MtCoronet_1F_TunnelRoom_EventScript_Grunt3::
-	trainerbattle_single TRAINER_BROOKE_5, MtCoronet_1F_TunnelRoom_Text_Grunt3Intro, MtCoronet_1F_TunnelRoom_Text_Grunt3Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_20, MtCoronet_1F_TunnelRoom_Text_Grunt3Intro, MtCoronet_1F_TunnelRoom_Text_Grunt3Defeat
 	msgbox MtCoronet_1F_TunnelRoom_Text_Grunt3Post, MSGBOX_AUTOCLOSE
 	end
 

@@ -6,24 +6,24 @@ ValorLakefront_Restaurant_MapScripts::
 ValorLakefront_Restaurant_OnTransitionSN:
 	goto_if_set FLAG_DAILY_SN_RESTAURANT, ValorLakefront_Restaurant_OnTransitionSN_Set
 	setflag FLAG_DAILY_SN_RESTAURANT
-	cleartrainerflag TRAINER_DAYTON
-	cleartrainerflag TRAINER_RACHEL
-	cleartrainerflag TRAINER_LEONEL
-	cleartrainerflag TRAINER_CALLIE
-	cleartrainerflag TRAINER_CALE
-	cleartrainerflag TRAINER_MYLES
-	cleartrainerflag TRAINER_PAT
-	cleartrainerflag TRAINER_MAY_RUSTBORO_TREECKO
-	cleartrainerflag TRAINER_MAY_RUSTBORO_TORCHIC
-	cleartrainerflag TRAINER_FABIAN
-	cleartrainerflag TRAINER_MAKAYLA
-	cleartrainerflag TRAINER_AISHA
-	cleartrainerflag TRAINER_BRANDI
-	cleartrainerflag TRAINER_MELINA
-	cleartrainerflag TRAINER_JOHNSON
-	cleartrainerflag TRAINER_DEVAN
-	cleartrainerflag TRAINER_MARLENE
-	cleartrainerflag TRAINER_HELENE
+	cleartrainerflag TRAINER_SN_ISMAEL_1
+	cleartrainerflag TRAINER_SN_HARLEY_1
+	cleartrainerflag TRAINER_SN_ROMAN_1
+	cleartrainerflag TRAINER_SN_KYLIE_1
+	cleartrainerflag TRAINER_SN_LEONARDO_1
+	cleartrainerflag TRAINER_SN_REBECCA_1
+	cleartrainerflag TRAINER_SN_EUGENE_1
+	cleartrainerflag TRAINER_SN_ALISON_1
+	cleartrainerflag TRAINER_SN_ESTEBAN_1
+	cleartrainerflag TRAINER_SN_MEREDITH_1
+	cleartrainerflag TRAINER_SN_EMANUEL_1
+	cleartrainerflag TRAINER_SN_BLYTHE_1
+	cleartrainerflag TRAINER_SN_DARRYL_1
+	cleartrainerflag TRAINER_SN_VALERIE_1
+	cleartrainerflag TRAINER_SN_KENDRICK_1
+	cleartrainerflag TRAINER_SN_GABRIELLA_1
+	cleartrainerflag TRAINER_SN_EMILIO_1
+	cleartrainerflag TRAINER_SN_KAYLEE_1
 ValorLakefront_Restaurant_OnTransitionSN_Set:
 	special SinnohRestaurantSetup
 	setvar VAR_TEMP_3, 0
@@ -84,7 +84,7 @@ ValorLakefront_Restaurant_EventScript_SNTable::
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC0:
-	goto_if_defeated TRAINER_DAYTON, ValorLakefront_Restaurant_EventScript_SNC0_Done
+	goto_if_defeated TRAINER_SN_ISMAEL_1, ValorLakefront_Restaurant_EventScript_SNC0_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC0_Need
 	special SinnohRestaurantVariant
@@ -107,7 +107,7 @@ ValorLakefront_Restaurant_EventScript_SNC0_V2:
 ValorLakefront_Restaurant_EventScript_SNC0_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_DAYTON, ValorLakefront_Restaurant_Text_SNRIsmaelLose, TRAINER_RACHEL, ValorLakefront_Restaurant_Text_SNRHarleyLose
+	trainerbattle_two_trainers TRAINER_SN_ISMAEL_1, ValorLakefront_Restaurant_Text_SNRIsmaelLose, TRAINER_SN_HARLEY_1, ValorLakefront_Restaurant_Text_SNRHarleyLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC0_D1
@@ -130,7 +130,7 @@ ValorLakefront_Restaurant_EventScript_SNC0_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC1:
-	goto_if_defeated TRAINER_LEONEL, ValorLakefront_Restaurant_EventScript_SNC1_Done
+	goto_if_defeated TRAINER_SN_ROMAN_1, ValorLakefront_Restaurant_EventScript_SNC1_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC1_Need
 	special SinnohRestaurantVariant
@@ -153,7 +153,7 @@ ValorLakefront_Restaurant_EventScript_SNC1_V2:
 ValorLakefront_Restaurant_EventScript_SNC1_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_LEONEL, ValorLakefront_Restaurant_Text_SNRRomanLose, TRAINER_CALLIE, ValorLakefront_Restaurant_Text_SNRKylieLose
+	trainerbattle_two_trainers TRAINER_SN_ROMAN_1, ValorLakefront_Restaurant_Text_SNRRomanLose, TRAINER_SN_KYLIE_1, ValorLakefront_Restaurant_Text_SNRKylieLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC1_D1
@@ -176,7 +176,7 @@ ValorLakefront_Restaurant_EventScript_SNC1_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC2:
-	goto_if_defeated TRAINER_CALE, ValorLakefront_Restaurant_EventScript_SNC2_Done
+	goto_if_defeated TRAINER_SN_LEONARDO_1, ValorLakefront_Restaurant_EventScript_SNC2_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC2_Need
 	special SinnohRestaurantVariant
@@ -199,7 +199,7 @@ ValorLakefront_Restaurant_EventScript_SNC2_V2:
 ValorLakefront_Restaurant_EventScript_SNC2_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_CALE, ValorLakefront_Restaurant_Text_SNRLeonardoLose, TRAINER_MYLES, ValorLakefront_Restaurant_Text_SNRRebeccaLose
+	trainerbattle_two_trainers TRAINER_SN_LEONARDO_1, ValorLakefront_Restaurant_Text_SNRLeonardoLose, TRAINER_SN_REBECCA_1, ValorLakefront_Restaurant_Text_SNRRebeccaLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC2_D1
@@ -222,7 +222,7 @@ ValorLakefront_Restaurant_EventScript_SNC2_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC3:
-	goto_if_defeated TRAINER_PAT, ValorLakefront_Restaurant_EventScript_SNC3_Done
+	goto_if_defeated TRAINER_SN_EUGENE_1, ValorLakefront_Restaurant_EventScript_SNC3_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC3_Need
 	special SinnohRestaurantVariant
@@ -245,7 +245,7 @@ ValorLakefront_Restaurant_EventScript_SNC3_V2:
 ValorLakefront_Restaurant_EventScript_SNC3_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_PAT, ValorLakefront_Restaurant_Text_SNREugeneLose, TRAINER_MAY_RUSTBORO_TREECKO, ValorLakefront_Restaurant_Text_SNRAlisonLose
+	trainerbattle_two_trainers TRAINER_SN_EUGENE_1, ValorLakefront_Restaurant_Text_SNREugeneLose, TRAINER_SN_ALISON_1, ValorLakefront_Restaurant_Text_SNRAlisonLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC3_D1
@@ -268,7 +268,7 @@ ValorLakefront_Restaurant_EventScript_SNC3_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC4:
-	goto_if_defeated TRAINER_MAY_RUSTBORO_TORCHIC, ValorLakefront_Restaurant_EventScript_SNC4_Done
+	goto_if_defeated TRAINER_SN_ESTEBAN_1, ValorLakefront_Restaurant_EventScript_SNC4_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC4_Need
 	special SinnohRestaurantVariant
@@ -291,7 +291,7 @@ ValorLakefront_Restaurant_EventScript_SNC4_V2:
 ValorLakefront_Restaurant_EventScript_SNC4_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_MAY_RUSTBORO_TORCHIC, ValorLakefront_Restaurant_Text_SNREstebanLose, TRAINER_FABIAN, ValorLakefront_Restaurant_Text_SNRMeredithLose
+	trainerbattle_two_trainers TRAINER_SN_ESTEBAN_1, ValorLakefront_Restaurant_Text_SNREstebanLose, TRAINER_SN_MEREDITH_1, ValorLakefront_Restaurant_Text_SNRMeredithLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC4_D1
@@ -314,7 +314,7 @@ ValorLakefront_Restaurant_EventScript_SNC4_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC5:
-	goto_if_defeated TRAINER_MAKAYLA, ValorLakefront_Restaurant_EventScript_SNC5_Done
+	goto_if_defeated TRAINER_SN_EMANUEL_1, ValorLakefront_Restaurant_EventScript_SNC5_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC5_Need
 	special SinnohRestaurantVariant
@@ -337,7 +337,7 @@ ValorLakefront_Restaurant_EventScript_SNC5_V2:
 ValorLakefront_Restaurant_EventScript_SNC5_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_MAKAYLA, ValorLakefront_Restaurant_Text_SNREmanuelLose, TRAINER_AISHA, ValorLakefront_Restaurant_Text_SNRBlytheLose
+	trainerbattle_two_trainers TRAINER_SN_EMANUEL_1, ValorLakefront_Restaurant_Text_SNREmanuelLose, TRAINER_SN_BLYTHE_1, ValorLakefront_Restaurant_Text_SNRBlytheLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC5_D1
@@ -360,7 +360,7 @@ ValorLakefront_Restaurant_EventScript_SNC5_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC6:
-	goto_if_defeated TRAINER_BRANDI, ValorLakefront_Restaurant_EventScript_SNC6_Done
+	goto_if_defeated TRAINER_SN_DARRYL_1, ValorLakefront_Restaurant_EventScript_SNC6_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC6_Need
 	special SinnohRestaurantVariant
@@ -383,7 +383,7 @@ ValorLakefront_Restaurant_EventScript_SNC6_V2:
 ValorLakefront_Restaurant_EventScript_SNC6_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_BRANDI, ValorLakefront_Restaurant_Text_SNRDarrylLose, TRAINER_MELINA, ValorLakefront_Restaurant_Text_SNRValerieLose
+	trainerbattle_two_trainers TRAINER_SN_DARRYL_1, ValorLakefront_Restaurant_Text_SNRDarrylLose, TRAINER_SN_VALERIE_1, ValorLakefront_Restaurant_Text_SNRValerieLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC6_D1
@@ -406,7 +406,7 @@ ValorLakefront_Restaurant_EventScript_SNC6_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC7:
-	goto_if_defeated TRAINER_JOHNSON, ValorLakefront_Restaurant_EventScript_SNC7_Done
+	goto_if_defeated TRAINER_SN_KENDRICK_1, ValorLakefront_Restaurant_EventScript_SNC7_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC7_Need
 	special SinnohRestaurantVariant
@@ -429,7 +429,7 @@ ValorLakefront_Restaurant_EventScript_SNC7_V2:
 ValorLakefront_Restaurant_EventScript_SNC7_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_JOHNSON, ValorLakefront_Restaurant_Text_SNRKendrickLose, TRAINER_DEVAN, ValorLakefront_Restaurant_Text_SNRGabriellaLose
+	trainerbattle_two_trainers TRAINER_SN_KENDRICK_1, ValorLakefront_Restaurant_Text_SNRKendrickLose, TRAINER_SN_GABRIELLA_1, ValorLakefront_Restaurant_Text_SNRGabriellaLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC7_D1
@@ -452,7 +452,7 @@ ValorLakefront_Restaurant_EventScript_SNC7_Need:
 	end
 
 ValorLakefront_Restaurant_EventScript_SNC8:
-	goto_if_defeated TRAINER_MARLENE, ValorLakefront_Restaurant_EventScript_SNC8_Done
+	goto_if_defeated TRAINER_SN_EMILIO_1, ValorLakefront_Restaurant_EventScript_SNC8_Done
 	specialvar VAR_RESULT, CountPartyAliveNonEggMons
 	goto_if_lt VAR_RESULT, 2, ValorLakefront_Restaurant_EventScript_SNC8_Need
 	special SinnohRestaurantVariant
@@ -475,7 +475,7 @@ ValorLakefront_Restaurant_EventScript_SNC8_V2:
 ValorLakefront_Restaurant_EventScript_SNC8_Ans:
 	goto_if_eq VAR_RESULT, NO, ValorLakefront_Restaurant_EventScript_SNC_End
 	closemessage
-	trainerbattle_two_trainers TRAINER_MARLENE, ValorLakefront_Restaurant_Text_SNREmilioLose, TRAINER_HELENE, ValorLakefront_Restaurant_Text_SNRKayleeLose
+	trainerbattle_two_trainers TRAINER_SN_EMILIO_1, ValorLakefront_Restaurant_Text_SNREmilioLose, TRAINER_SN_KAYLEE_1, ValorLakefront_Restaurant_Text_SNRKayleeLose
 	special SinnohRestaurantVariant
 	switch VAR_RESULT
 	case 1, ValorLakefront_Restaurant_EventScript_SNC8_D1

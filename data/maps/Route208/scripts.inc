@@ -2,7 +2,7 @@ Route208_MapScripts::
 	.byte 0
 
 Route208_EventScript_Robert::
-	trainerbattle_single TRAINER_EDGAR, Route208_Text_RobertIntro, Route208_Text_RobertDefeat
+	trainerbattle_single TRAINER_SN_ROBERT_1, Route208_Text_RobertIntro, Route208_Text_RobertDefeat
 	msgbox Route208_Text_RobertPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,7 +21,7 @@ Route208_Text_RobertPost:
 	.string "you're young or old in battles.$"
 
 Route208_EventScript_Alexander::
-	trainerbattle_single TRAINER_ALBERT, Route208_Text_AlexanderIntro, Route208_Text_AlexanderDefeat
+	trainerbattle_single TRAINER_SN_ALEXANDER_1, Route208_Text_AlexanderIntro, Route208_Text_AlexanderDefeat
 	msgbox Route208_Text_AlexanderPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ Route208_Text_AlexanderPost:
 	.string "should be going, check the Town Map!$"
 
 Route208_EventScript_Jonathan::
-	trainerbattle_single TRAINER_KINDRA, Route208_Text_JonathanIntro, Route208_Text_JonathanDefeat
+	trainerbattle_single TRAINER_SN_JONATHAN_1, Route208_Text_JonathanIntro, Route208_Text_JonathanDefeat
 	msgbox Route208_Text_JonathanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -57,7 +57,7 @@ Route208_Text_JonathanPost:
 	.string "POKéMON?$"
 
 Route208_EventScript_Kyle::
-	trainerbattle_single TRAINER_TAMMY, Route208_Text_KyleIntro, Route208_Text_KyleDefeat
+	trainerbattle_single TRAINER_SN_KYLE_1, Route208_Text_KyleIntro, Route208_Text_KyleDefeat
 	msgbox Route208_Text_KylePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -77,7 +77,7 @@ Route208_Text_KylePost:
 	.string "for toughening up your POKéMON.$"
 
 Route208_EventScript_Cody::
-	trainerbattle_single TRAINER_TASHA, Route208_Text_CodyIntro, Route208_Text_CodyDefeat
+	trainerbattle_single TRAINER_SN_CODY_1, Route208_Text_CodyIntro, Route208_Text_CodyDefeat
 	msgbox Route208_Text_CodyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -93,7 +93,7 @@ Route208_Text_CodyPost:
 	.string "catch good POKéMON.$"
 
 Route208_EventScript_Hannah::
-	trainerbattle_single TRAINER_NAOMI, Route208_Text_HannahIntro, Route208_Text_HannahDefeat
+	trainerbattle_single TRAINER_SN_HANNAH_1, Route208_Text_HannahIntro, Route208_Text_HannahDefeat
 	msgbox Route208_Text_HannahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -112,14 +112,14 @@ Route208_Text_HannahPost:
 	.string "too.$"
 
 Route208_EventScript_William::
-	trainerbattle_single TRAINER_MELISSA, Route208_Text_WilliamIntro, Route208_Text_WilliamDefeat
+	trainerbattle_single TRAINER_SN_WILLIAM_1, Route208_Text_WilliamIntro, Route208_Text_WilliamDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route208_EventScript_William_Rematch
 	msgbox Route208_Text_WilliamPost, MSGBOX_AUTOCLOSE
 	end
 
 Route208_EventScript_William_Rematch:
-	trainerbattle_rematch TRAINER_MELISSA, Route208_Text_WilliamIntro, Route208_Text_WilliamDefeat
+	trainerbattle_rematch TRAINER_SN_WILLIAM_1, Route208_Text_WilliamIntro, Route208_Text_WilliamDefeat
 	msgbox Route208_Text_WilliamPost, MSGBOX_AUTOCLOSE
 	end
 

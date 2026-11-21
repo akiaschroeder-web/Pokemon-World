@@ -2,7 +2,7 @@ GalacticHQ_3F_MapScripts::
 	.byte 0
 
 GalacticHQ_3F_EventScript_Grunt::
-	trainerbattle_single TRAINER_GRUNT_MT_PYRE_2, GalacticHQ_3F_Text_GruntIntro, GalacticHQ_3F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_7, GalacticHQ_3F_Text_GruntIntro, GalacticHQ_3F_Text_GruntDefeat
 	msgbox GalacticHQ_3F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -18,7 +18,7 @@ GalacticHQ_3F_Text_GruntPost:
 	.string "Team Galactic, and this is our HQ!$"
 
 GalacticHQ_3F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_MT_PYRE_3, GalacticHQ_3F_Text_Grunt2Intro, GalacticHQ_3F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_8, GalacticHQ_3F_Text_Grunt2Intro, GalacticHQ_3F_Text_Grunt2Defeat
 	msgbox GalacticHQ_3F_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -37,7 +37,7 @@ GalacticHQ_3F_Text_Grunt2Post:
 	.string "anyway!$"
 
 GalacticHQ_3F_EventScript_Grunt3::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_4, GalacticHQ_3F_Text_Grunt3Intro, GalacticHQ_3F_Text_Grunt3Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_9, GalacticHQ_3F_Text_Grunt3Intro, GalacticHQ_3F_Text_Grunt3Defeat
 	msgbox GalacticHQ_3F_Text_Grunt3Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -56,7 +56,7 @@ GalacticHQ_3F_Text_Grunt3Post:
 	.string "Trainer you can find anywhere!$"
 
 GalacticHQ_3F_EventScript_Grunt4::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_5, GalacticHQ_3F_Text_Grunt4Intro, GalacticHQ_3F_Text_Grunt4Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_10, GalacticHQ_3F_Text_Grunt4Intro, GalacticHQ_3F_Text_Grunt4Defeat
 	msgbox GalacticHQ_3F_Text_Grunt4Post, MSGBOX_AUTOCLOSE
 	end
 

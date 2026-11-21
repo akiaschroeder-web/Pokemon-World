@@ -4,7 +4,7 @@ PastoriaCity_Gym_MapScripts::
 
 
 PastoriaCity_Gym_EventScript_Jacky::
-	trainerbattle_single TRAINER_WALTER_1, PastoriaCity_Gym_Text_JackyIntro, PastoriaCity_Gym_Text_JackyDefeat
+	trainerbattle_single TRAINER_SN_JACKY_1, PastoriaCity_Gym_Text_JackyIntro, PastoriaCity_Gym_Text_JackyDefeat
 	msgbox PastoriaCity_Gym_Text_JackyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -24,7 +24,7 @@ PastoriaCity_Gym_Text_JackyPost:
 	.string "kind of mask.$"
 
 PastoriaCity_Gym_EventScript_Damian::
-	trainerbattle_single TRAINER_WALTER_2, PastoriaCity_Gym_Text_DamianIntro, PastoriaCity_Gym_Text_DamianDefeat
+	trainerbattle_single TRAINER_SN_DAMIAN_1, PastoriaCity_Gym_Text_DamianIntro, PastoriaCity_Gym_Text_DamianDefeat
 	msgbox PastoriaCity_Gym_Text_DamianPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -43,7 +43,7 @@ PastoriaCity_Gym_Text_DamianPost:
 	.string "sure you’d meet tougher POKéMON.$"
 
 PastoriaCity_Gym_EventScript_Caitlyn::
-	trainerbattle_single TRAINER_WALTER_3, PastoriaCity_Gym_Text_CaitlynIntro, PastoriaCity_Gym_Text_CaitlynDefeat
+	trainerbattle_single TRAINER_SN_CAITLYN_1, PastoriaCity_Gym_Text_CaitlynIntro, PastoriaCity_Gym_Text_CaitlynDefeat
 	msgbox PastoriaCity_Gym_Text_CaitlynPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -60,7 +60,7 @@ PastoriaCity_Gym_Text_CaitlynPost:
 	.string "kinds of POKéMON.$"
 
 PastoriaCity_Gym_EventScript_Samson::
-	trainerbattle_single TRAINER_WALTER_4, PastoriaCity_Gym_Text_SamsonIntro, PastoriaCity_Gym_Text_SamsonDefeat
+	trainerbattle_single TRAINER_SN_SAMSON_1, PastoriaCity_Gym_Text_SamsonIntro, PastoriaCity_Gym_Text_SamsonDefeat
 	msgbox PastoriaCity_Gym_Text_SamsonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -76,7 +76,7 @@ PastoriaCity_Gym_Text_SamsonPost:
 	.string "I’m now becalmed like a waveless sea...$"
 
 PastoriaCity_Gym_EventScript_Erick::
-	trainerbattle_single TRAINER_WALTER_5, PastoriaCity_Gym_Text_ErickIntro, PastoriaCity_Gym_Text_ErickDefeat
+	trainerbattle_single TRAINER_SN_ERICK_1, PastoriaCity_Gym_Text_ErickIntro, PastoriaCity_Gym_Text_ErickDefeat
 	msgbox PastoriaCity_Gym_Text_ErickPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -93,7 +93,7 @@ PastoriaCity_Gym_Text_ErickPost:
 	.string "fishing and neglected training.$"
 
 PastoriaCity_Gym_EventScript_Walter::
-	trainerbattle_single TRAINER_JERRY_1, PastoriaCity_Gym_Text_WalterIntro, PastoriaCity_Gym_Text_WalterDefeat
+	trainerbattle_single TRAINER_SN_WALTER_1, PastoriaCity_Gym_Text_WalterIntro, PastoriaCity_Gym_Text_WalterDefeat
 	msgbox PastoriaCity_Gym_Text_WalterPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -113,7 +113,7 @@ PastoriaCity_Gym_Text_WalterPost:
 
 PastoriaCity_Gym_EventScript_Leader::
 	goto_if_set FLAG_SYS_GAME_CLEAR, PastoriaCity_Gym_EventScript_SNRematch
-	trainerbattle_single TRAINER_JACKI_5, PastoriaCity_Gym_Text_LeaderIntro, PastoriaCity_Gym_Text_LeaderDefeat, PastoriaCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_WAKE_1, PastoriaCity_Gym_Text_LeaderIntro, PastoriaCity_Gym_Text_LeaderDefeat, PastoriaCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM55_FROM_WAKE, PastoriaCity_Gym_EventScript_GiveTM
 	msgbox PastoriaCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
 	release
@@ -125,12 +125,12 @@ PastoriaCity_Gym_EventScript_LeaderDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox PastoriaCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE05_GET
-	settrainerflag TRAINER_WALTER_1
-	settrainerflag TRAINER_WALTER_2
-	settrainerflag TRAINER_WALTER_3
-	settrainerflag TRAINER_WALTER_4
-	settrainerflag TRAINER_WALTER_5
-	settrainerflag TRAINER_JERRY_1
+	settrainerflag TRAINER_SN_JACKY_1
+	settrainerflag TRAINER_SN_DAMIAN_1
+	settrainerflag TRAINER_SN_CAITLYN_1
+	settrainerflag TRAINER_SN_SAMSON_1
+	settrainerflag TRAINER_SN_ERICK_1
+	settrainerflag TRAINER_SN_WALTER_1
 	goto PastoriaCity_Gym_EventScript_GiveTM
 
 PastoriaCity_Gym_EventScript_GiveTM::
@@ -253,7 +253,7 @@ PastoriaCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, PastoriaCity_Gym_EventScript_SNRematch_No
 	msgbox PastoriaCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_KATELYN_3, PastoriaCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_WAKE_2, PastoriaCity_Gym_EventScript_SNRematch_Defeat
 	msgbox PastoriaCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

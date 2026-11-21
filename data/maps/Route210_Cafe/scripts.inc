@@ -2,7 +2,7 @@ Route210_Cafe_MapScripts::
 	.byte 0
 
 Route210_Cafe_EventScript_Fernando::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_2, Route210_Cafe_Text_FernandoIntro, Route210_Cafe_Text_FernandoDefeat
+	trainerbattle_single TRAINER_SN_FERNANDO_1, Route210_Cafe_Text_FernandoIntro, Route210_Cafe_Text_FernandoDefeat
 	msgbox Route210_Cafe_Text_FernandoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -22,7 +22,7 @@ Route210_Cafe_Text_FernandoPost:
 	.string "POKéMON Collector for you...$"
 
 Route210_Cafe_EventScript_Edwin::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_3, Route210_Cafe_Text_EdwinIntro, Route210_Cafe_Text_EdwinDefeat
+	trainerbattle_single TRAINER_SN_EDWIN_1, Route210_Cafe_Text_EdwinIntro, Route210_Cafe_Text_EdwinDefeat
 	msgbox Route210_Cafe_Text_EdwinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -41,7 +41,7 @@ Route210_Cafe_Text_EdwinPost:
 	.string "weak as when I caught it.$"
 
 Route210_Cafe_EventScript_Kati::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_4, Route210_Cafe_Text_KatiIntro, Route210_Cafe_Text_KatiDefeat
+	trainerbattle_single TRAINER_SN_KATI_1, Route210_Cafe_Text_KatiIntro, Route210_Cafe_Text_KatiDefeat
 	msgbox Route210_Cafe_Text_KatiPost, MSGBOX_AUTOCLOSE
 	end
 

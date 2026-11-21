@@ -43,7 +43,7 @@ CelesticTown_EventScript_SNVis_CEL_GRUNT:
 	setflag FLAG_SN_HIDE_CEL_ELDER_OUT
 	setflag FLAG_SN_HIDE_CEL_GRUNT
 	goto_if_unset FLAG_BADGE05_GET, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
-	goto_if_defeated TRAINER_ELLIOT_1, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
+	goto_if_defeated TRAINER_SN_GRUNT_31, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
 	clearflag FLAG_SN_HIDE_CEL_GRUNT
 	clearflag FLAG_SN_HIDE_CEL_ELDER_OUT
 CelesticTown_EventScript_SNVis_CEL_GRUNT_End:
@@ -56,7 +56,7 @@ CelesticTown_EventScript_SNCEL_GRUNT::
 	goto_if_eq VAR_RESULT, NO, CelesticTown_EventScript_SNCEL_GRUNT_No
 	msgbox CelesticTown_EventScript_SNCEL_GRUNT_Intro, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_ELLIOT_1, CelesticTown_EventScript_SNCEL_GRUNT_Defeat
+	trainerbattle_no_intro TRAINER_SN_GRUNT_31, CelesticTown_EventScript_SNCEL_GRUNT_Defeat
 	msgbox CelesticTown_EventScript_SNCEL_GRUNT_Post, MSGBOX_DEFAULT
 	closemessage
 	sn_walkto VAR_LAST_TALKED, 30, 27, SN_SPEED_FAST, 0, 0, 0
@@ -91,7 +91,7 @@ CelesticTown_EventScript_SNCEL_GRUNT_Post:
 
 CelesticTown_EventScript_SNVis_CEL_CYNTHIA:
 	setflag FLAG_SN_HIDE_CEL_CYNTHIA
-	goto_if_not_defeated TRAINER_ELLIOT_2, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
+	goto_if_not_defeated TRAINER_SN_CYRUS_1, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
 	goto_if_set FLAG_BADGE06_GET, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
 	clearflag FLAG_SN_HIDE_CEL_CYNTHIA
 CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End:

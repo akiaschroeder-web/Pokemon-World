@@ -3,7 +3,7 @@ IronIsland_B2F_Left_MapScripts::
 	.byte 0
 
 IronIsland_B2F_Left_EventScript_Damon::
-	trainerbattle_single TRAINER_ROSE_5, IronIsland_B2F_Left_Text_DamonIntro, IronIsland_B2F_Left_Text_DamonDefeat
+	trainerbattle_single TRAINER_SN_DAMON_1, IronIsland_B2F_Left_Text_DamonIntro, IronIsland_B2F_Left_Text_DamonDefeat
 	msgbox IronIsland_B2F_Left_Text_DamonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -24,7 +24,7 @@ IronIsland_B2F_Left_Text_DamonPost:
 	.string "still be stickin’ my flag on top!$"
 
 IronIsland_B2F_Left_EventScript_Maurice::
-	trainerbattle_single TRAINER_DUSTY_1, IronIsland_B2F_Left_Text_MauriceIntro, IronIsland_B2F_Left_Text_MauriceDefeat
+	trainerbattle_single TRAINER_SN_MAURICE_1, IronIsland_B2F_Left_Text_MauriceIntro, IronIsland_B2F_Left_Text_MauriceDefeat
 	msgbox IronIsland_B2F_Left_Text_MauricePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -42,7 +42,7 @@ IronIsland_B2F_Left_Text_MauricePost:
 	.string "Oh, and this isn’t the mountains.$"
 
 IronIsland_B2F_Left_EventScript_Kendal::
-	trainerbattle_single TRAINER_DUSTY_2, IronIsland_B2F_Left_Text_KendalIntro, IronIsland_B2F_Left_Text_KendalDefeat
+	trainerbattle_single TRAINER_SN_KENDAL_1, IronIsland_B2F_Left_Text_KendalIntro, IronIsland_B2F_Left_Text_KendalDefeat
 	msgbox IronIsland_B2F_Left_Text_KendalPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -60,7 +60,7 @@ IronIsland_B2F_Left_Text_KendalPost:
 	.string "take for me to do that?$"
 
 IronIsland_B2F_Left_EventScript_Tyler::
-	trainerbattle_single TRAINER_DUSTY_3, IronIsland_B2F_Left_Text_TylerIntro, IronIsland_B2F_Left_Text_TylerDefeat
+	trainerbattle_single TRAINER_SN_TYLER_2, IronIsland_B2F_Left_Text_TylerIntro, IronIsland_B2F_Left_Text_TylerDefeat
 	msgbox IronIsland_B2F_Left_Text_TylerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -77,7 +77,7 @@ IronIsland_B2F_Left_Text_TylerPost:
 	.string "Veilstone City one day...$"
 
 IronIsland_B2F_Left_EventScript_Brendon::
-	trainerbattle_single TRAINER_DUSTY_4, IronIsland_B2F_Left_Text_BrendonIntro, IronIsland_B2F_Left_Text_BrendonDefeat
+	trainerbattle_single TRAINER_SN_BRENDON_1, IronIsland_B2F_Left_Text_BrendonIntro, IronIsland_B2F_Left_Text_BrendonDefeat
 	msgbox IronIsland_B2F_Left_Text_BrendonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -95,7 +95,7 @@ IronIsland_B2F_Left_Text_BrendonPost:
 	.string "POKéMON can get together here.$"
 
 IronIsland_B2F_Left_EventScript_Quentin::
-	trainerbattle_single TRAINER_DUSTY_5, IronIsland_B2F_Left_Text_QuentinIntro, IronIsland_B2F_Left_Text_QuentinDefeat
+	trainerbattle_single TRAINER_SN_QUENTIN_1, IronIsland_B2F_Left_Text_QuentinIntro, IronIsland_B2F_Left_Text_QuentinDefeat
 	msgbox IronIsland_B2F_Left_Text_QuentinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -112,7 +112,7 @@ IronIsland_B2F_Left_Text_QuentinPost:
 	.string "I think...$"
 
 IronIsland_B2F_Left_EventScript_Jonah::
-	trainerbattle_single TRAINER_LOLA_1, IronIsland_B2F_Left_Text_JonahIntro, IronIsland_B2F_Left_Text_JonahDefeat
+	trainerbattle_single TRAINER_SN_JONAH_1, IronIsland_B2F_Left_Text_JonahIntro, IronIsland_B2F_Left_Text_JonahDefeat
 	msgbox IronIsland_B2F_Left_Text_JonahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -134,7 +134,7 @@ IronIsland_B2F_Left_Text_JonahPost:
 	.string "call home someday...$"
 
 IronIsland_B2F_Left_EventScript_Brenda::
-	trainerbattle_single TRAINER_LOLA_2, IronIsland_B2F_Left_Text_BrendaIntro, IronIsland_B2F_Left_Text_BrendaDefeat
+	trainerbattle_single TRAINER_SN_BRENDA_1, IronIsland_B2F_Left_Text_BrendaIntro, IronIsland_B2F_Left_Text_BrendaDefeat
 	msgbox IronIsland_B2F_Left_Text_BrendaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -183,14 +183,14 @@ IronIsland_B2F_Left_OnTransitionSN:
 
 IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT1:
 	setflag FLAG_SN_HIDE_IRON_GRUNT1
-	goto_if_defeated TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT1_End
+	goto_if_defeated TRAINER_SN_GRUNT_32, IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT1_End
 	clearflag FLAG_SN_HIDE_IRON_GRUNT1
 IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT1_End:
 	return
 
 IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT2:
 	setflag FLAG_SN_HIDE_IRON_GRUNT2
-	goto_if_defeated TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT2_End
+	goto_if_defeated TRAINER_SN_GRUNT_33, IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT2_End
 	clearflag FLAG_SN_HIDE_IRON_GRUNT2
 IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT2_End:
 	return
@@ -223,7 +223,7 @@ IronIsland_B2F_Left_EventScript_SNIronGrunts::
 	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Ethics, MSGBOX_DEFAULT
 IronIsland_B2F_Left_EventScript_SNIronGrunts_Battle:
 	closemessage
-	trainerbattle_two_trainers_sn TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNIronGrunts_DA, TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNIronGrunts_DB
+	trainerbattle_two_trainers_sn TRAINER_SN_GRUNT_32, IronIsland_B2F_Left_EventScript_SNIronGrunts_DA, TRAINER_SN_GRUNT_33, IronIsland_B2F_Left_EventScript_SNIronGrunts_DB
 	msgbox IronIsland_B2F_Left_EventScript_SNIronGrunts_Post1, MSGBOX_DEFAULT
 	msgbox IronIsland_B2F_Left_EventScript_SNIronGrunts_After, MSGBOX_DEFAULT
 	closemessage

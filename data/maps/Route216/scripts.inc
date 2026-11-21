@@ -2,7 +2,7 @@ Route216_MapScripts::
 	.byte 0
 
 Route216_EventScript_Blake::
-	trainerbattle_single TRAINER_ISOBEL, Route216_Text_BlakeIntro, Route216_Text_BlakeDefeat
+	trainerbattle_single TRAINER_SN_BLAKE_1, Route216_Text_BlakeIntro, Route216_Text_BlakeDefeat
 	msgbox Route216_Text_BlakePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ Route216_Text_BlakePost:
 	.string "I can't take this cold...$"
 
 Route216_EventScript_Laura::
-	trainerbattle_single TRAINER_DONNY, Route216_Text_LauraIntro, Route216_Text_LauraDefeat
+	trainerbattle_single TRAINER_SN_LAURA_1, Route216_Text_LauraIntro, Route216_Text_LauraDefeat
 	msgbox Route216_Text_LauraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,14 +35,14 @@ Route216_Text_LauraPost:
 	.string "more comfy outfit...$"
 
 Route216_EventScript_Philip::
-	trainerbattle_single TRAINER_TALIA, Route216_Text_PhilipIntro, Route216_Text_PhilipDefeat
+	trainerbattle_single TRAINER_SN_PHILIP_1, Route216_Text_PhilipIntro, Route216_Text_PhilipDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route216_EventScript_Philip_Rematch
 	msgbox Route216_Text_PhilipPost, MSGBOX_AUTOCLOSE
 	end
 
 Route216_EventScript_Philip_Rematch:
-	trainerbattle_rematch TRAINER_TALIA, Route216_Text_PhilipIntro, Route216_Text_PhilipDefeat
+	trainerbattle_rematch TRAINER_SN_PHILIP_1, Route216_Text_PhilipIntro, Route216_Text_PhilipDefeat
 	msgbox Route216_Text_PhilipPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -58,7 +58,7 @@ Route216_Text_PhilipPost:
 	.string "losing feeling all over my body!$"
 
 Route216_EventScript_Bradley::
-	trainerbattle_single TRAINER_ALLISON, Route216_Text_BradleyIntro, Route216_Text_BradleyDefeat
+	trainerbattle_single TRAINER_SN_BRADLEY_1, Route216_Text_BradleyIntro, Route216_Text_BradleyDefeat
 	msgbox Route216_Text_BradleyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -74,7 +74,7 @@ Route216_Text_BradleyPost:
 	.string "meet again. Slalom!$"
 
 Route216_EventScript_Garrett::
-	trainerbattle_single TRAINER_AARON, Route216_Text_GarrettIntro, Route216_Text_GarrettDefeat
+	trainerbattle_single TRAINER_SN_GARRETT_1, Route216_Text_GarrettIntro, Route216_Text_GarrettDefeat
 	msgbox Route216_Text_GarrettPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -91,7 +91,7 @@ Route216_Text_GarrettPost:
 	.string "lose battles you should be dominating.$"
 
 Route216_EventScript_Maria::
-	trainerbattle_single TRAINER_PERRY, Route216_Text_MariaIntro, Route216_Text_MariaDefeat
+	trainerbattle_single TRAINER_SN_MARIA_1, Route216_Text_MariaIntro, Route216_Text_MariaDefeat
 	msgbox Route216_Text_MariaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -109,7 +109,7 @@ Route216_Text_MariaPost:
 	.string "doesn't work.$"
 
 Route216_EventScript_Kaitlyn::
-	trainerbattle_single TRAINER_HUGH, Route216_Text_KaitlynIntro, Route216_Text_KaitlynDefeat
+	trainerbattle_single TRAINER_SN_KAITLYN_1, Route216_Text_KaitlynIntro, Route216_Text_KaitlynDefeat
 	msgbox Route216_Text_KaitlynPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -125,14 +125,14 @@ Route216_Text_KaitlynPost:
 	.string "should go ski with my POKéMON...$"
 
 Route216_EventScript_Edward::
-	trainerbattle_single TRAINER_PHIL, Route216_Text_EdwardIntro, Route216_Text_EdwardDefeat
+	trainerbattle_single TRAINER_SN_EDWARD_1, Route216_Text_EdwardIntro, Route216_Text_EdwardDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route216_EventScript_Edward_Rematch
 	msgbox Route216_Text_EdwardPost, MSGBOX_AUTOCLOSE
 	end
 
 Route216_EventScript_Edward_Rematch:
-	trainerbattle_rematch TRAINER_PHIL, Route216_Text_EdwardIntro, Route216_Text_EdwardDefeat
+	trainerbattle_rematch TRAINER_SN_EDWARD_1, Route216_Text_EdwardIntro, Route216_Text_EdwardDefeat
 	msgbox Route216_Text_EdwardPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -148,14 +148,14 @@ Route216_Text_EdwardPost:
 	.string "with an edge!$"
 
 Route216_EventScript_Andrea::
-	trainerbattle_single TRAINER_PRESLEY, Route216_Text_AndreaIntro, Route216_Text_AndreaDefeat
+	trainerbattle_single TRAINER_SN_ANDREA_1, Route216_Text_AndreaIntro, Route216_Text_AndreaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route216_EventScript_Andrea_Rematch
 	msgbox Route216_Text_AndreaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route216_EventScript_Andrea_Rematch:
-	trainerbattle_rematch TRAINER_PRESLEY, Route216_Text_AndreaIntro, Route216_Text_AndreaDefeat
+	trainerbattle_rematch TRAINER_SN_ANDREA_1, Route216_Text_AndreaIntro, Route216_Text_AndreaDefeat
 	msgbox Route216_Text_AndreaPost, MSGBOX_AUTOCLOSE
 	end
 

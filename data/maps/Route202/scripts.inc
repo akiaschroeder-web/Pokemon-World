@@ -200,14 +200,14 @@ Route202_Text_DawnBye:
 	.string "OK, I need to get going. Bye, now!$"
 
 Route202_EventScript_Tristan::
-	trainerbattle_single TRAINER_BILLY, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
+	trainerbattle_single TRAINER_SN_TRISTAN_1, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route202_EventScript_Tristan_Rematch
 	msgbox Route202_Text_TristanPost, MSGBOX_AUTOCLOSE
 	end
 
 Route202_EventScript_Tristan_Rematch:
-	trainerbattle_rematch TRAINER_BILLY, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
+	trainerbattle_rematch TRAINER_SN_TRISTAN_1, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
 	msgbox Route202_Text_TristanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -225,7 +225,7 @@ Route202_Text_TristanPost:
 	.string "from battling.$"
 
 Route202_EventScript_Natalie::
-	trainerbattle_single TRAINER_JOEY, Route202_Text_NatalieIntro, Route202_Text_NatalieDefeat
+	trainerbattle_single TRAINER_SN_NATALIE_1, Route202_Text_NatalieIntro, Route202_Text_NatalieDefeat
 	msgbox Route202_Text_NataliePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -241,7 +241,7 @@ Route202_Text_NataliePost:
 	.string "need to go to a POKéMON CENTER!$"
 
 Route202_EventScript_Logan::
-	trainerbattle_single TRAINER_TIMMY, Route202_Text_LoganIntro, Route202_Text_LoganDefeat
+	trainerbattle_single TRAINER_SN_LOGAN_1, Route202_Text_LoganIntro, Route202_Text_LoganDefeat
 	msgbox Route202_Text_LoganPost, MSGBOX_AUTOCLOSE
 	end
 

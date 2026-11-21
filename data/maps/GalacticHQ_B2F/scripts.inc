@@ -2,7 +2,7 @@ GalacticHQ_B2F_MapScripts::
 	.byte 0
 
 GalacticHQ_B2F_EventScript_Grunt::
-	trainerbattle_single TRAINER_ROSE_1, GalacticHQ_B2F_Text_GruntIntro, GalacticHQ_B2F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_11, GalacticHQ_B2F_Text_GruntIntro, GalacticHQ_B2F_Text_GruntDefeat
 	msgbox GalacticHQ_B2F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ GalacticHQ_B2F_Text_GruntPost:
 	.string "not know what fear is, kid!$"
 
 GalacticHQ_B2F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_ROSE_2, GalacticHQ_B2F_Text_Grunt2Intro, GalacticHQ_B2F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_12, GalacticHQ_B2F_Text_Grunt2Intro, GalacticHQ_B2F_Text_Grunt2Defeat
 	msgbox GalacticHQ_B2F_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 

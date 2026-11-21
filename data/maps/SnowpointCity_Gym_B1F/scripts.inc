@@ -88,7 +88,7 @@ SnowpointCity_Gym_B1F_Text_BriannaPostBattle:
 	.string "I'm sure. Giggle…$"
 
 SnowpointCity_Gym_B1F_EventScript_Anton::
-	trainerbattle_single TRAINER_ANNA_AND_MEG_1, SnowpointCity_Gym_B1F_Text_AntonIntro, SnowpointCity_Gym_B1F_Text_AntonDefeat
+	trainerbattle_single TRAINER_SN_ANTON_1, SnowpointCity_Gym_B1F_Text_AntonIntro, SnowpointCity_Gym_B1F_Text_AntonDefeat
 	msgbox SnowpointCity_Gym_B1F_Text_AntonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -106,7 +106,7 @@ SnowpointCity_Gym_B1F_Text_AntonPost:
 	.string "makes you tough, perhaps.$"
 
 SnowpointCity_Gym_B1F_EventScript_Savannah::
-	trainerbattle_single TRAINER_ANNA_AND_MEG_2, SnowpointCity_Gym_B1F_Text_SavannahIntro, SnowpointCity_Gym_B1F_Text_SavannahDefeat
+	trainerbattle_single TRAINER_SN_SAVANNAH_1, SnowpointCity_Gym_B1F_Text_SavannahIntro, SnowpointCity_Gym_B1F_Text_SavannahDefeat
 	msgbox SnowpointCity_Gym_B1F_Text_SavannahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -125,7 +125,7 @@ SnowpointCity_Gym_B1F_Text_SavannahPost:
 	.string "hot, they’re cool! Hahah!$"
 
 SnowpointCity_Gym_B1F_EventScript_Alicia::
-	trainerbattle_single TRAINER_ANNA_AND_MEG_3, SnowpointCity_Gym_B1F_Text_AliciaIntro, SnowpointCity_Gym_B1F_Text_AliciaDefeat
+	trainerbattle_single TRAINER_SN_ALICIA_1, SnowpointCity_Gym_B1F_Text_AliciaIntro, SnowpointCity_Gym_B1F_Text_AliciaDefeat
 	msgbox SnowpointCity_Gym_B1F_Text_AliciaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -145,7 +145,7 @@ SnowpointCity_Gym_B1F_Text_AliciaPost:
 	.string "never lose.$"
 
 SnowpointCity_Gym_B1F_EventScript_Isaiah::
-	trainerbattle_single TRAINER_ANNA_AND_MEG_4, SnowpointCity_Gym_B1F_Text_IsaiahIntro, SnowpointCity_Gym_B1F_Text_IsaiahDefeat
+	trainerbattle_single TRAINER_SN_ISAIAH_1, SnowpointCity_Gym_B1F_Text_IsaiahIntro, SnowpointCity_Gym_B1F_Text_IsaiahDefeat
 	msgbox SnowpointCity_Gym_B1F_Text_IsaiahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -164,7 +164,7 @@ SnowpointCity_Gym_B1F_Text_IsaiahPost:
 	.string "the battles I have fought.$"
 
 SnowpointCity_Gym_B1F_EventScript_Brenna::
-	trainerbattle_single TRAINER_ANNA_AND_MEG_5, SnowpointCity_Gym_B1F_Text_BrennaIntro, SnowpointCity_Gym_B1F_Text_BrennaDefeat
+	trainerbattle_single TRAINER_SN_BRENNA_1, SnowpointCity_Gym_B1F_Text_BrennaIntro, SnowpointCity_Gym_B1F_Text_BrennaDefeat
 	msgbox SnowpointCity_Gym_B1F_Text_BrennaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -182,7 +182,7 @@ SnowpointCity_Gym_B1F_Text_BrennaPost:
 	.string "no limit to how far you can go.$"
 
 SnowpointCity_Gym_B1F_EventScript_Sergio::
-	trainerbattle_single TRAINER_MIGUEL_1, SnowpointCity_Gym_B1F_Text_SergioIntro, SnowpointCity_Gym_B1F_Text_SergioDefeat
+	trainerbattle_single TRAINER_SN_SERGIO_1, SnowpointCity_Gym_B1F_Text_SergioIntro, SnowpointCity_Gym_B1F_Text_SergioDefeat
 	msgbox SnowpointCity_Gym_B1F_Text_SergioPost, MSGBOX_AUTOCLOSE
 	end
 

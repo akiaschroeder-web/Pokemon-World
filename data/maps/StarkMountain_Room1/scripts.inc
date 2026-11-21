@@ -25,7 +25,7 @@ StarkMountain_Room1_EventScript_SNCommanders::
 	waitmovement 0
 	msgbox StarkMountain_Room1_EventScript_SNCommanders_T1, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_SOPHIE, StarkMountain_Room1_EventScript_SNCommanders_MarsDefeat
+	trainerbattle_no_intro TRAINER_SN_MARS_4, StarkMountain_Room1_EventScript_SNCommanders_MarsDefeat
 	msgbox StarkMountain_Room1_EventScript_SNCommanders_T2, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SN_STARK_MARS, Common_Movement_WalkInPlaceFasterLeft
@@ -35,7 +35,7 @@ StarkMountain_Room1_EventScript_SNCommanders::
 	closemessage
 	applymovement LOCALID_SN_STARK_JUPITER, Common_Movement_FaceDown
 	waitmovement 0
-	trainerbattle_no_intro TRAINER_COBY, StarkMountain_Room1_EventScript_SNCommanders_JupDefeat
+	trainerbattle_no_intro TRAINER_SN_JUPITER_3, StarkMountain_Room1_EventScript_SNCommanders_JupDefeat
 	msgbox StarkMountain_Room1_EventScript_SNCommanders_T4, MSGBOX_DEFAULT
 	closemessage
 	delay 15

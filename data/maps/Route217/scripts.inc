@@ -3,7 +3,7 @@ Route217_MapScripts::
 	.byte 0
 
 Route217_EventScript_Shawn::
-	trainerbattle_single TRAINER_COLIN, Route217_Text_ShawnIntro, Route217_Text_ShawnDefeat
+	trainerbattle_single TRAINER_SN_SHAWN_1, Route217_Text_ShawnIntro, Route217_Text_ShawnDefeat
 	msgbox Route217_Text_ShawnPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ Route217_Text_ShawnPost:
 	.string "Trainers' school instead...$"
 
 Route217_EventScript_Lexie::
-	trainerbattle_single TRAINER_BENNY, Route217_Text_LexieIntro, Route217_Text_LexieDefeat
+	trainerbattle_single TRAINER_SN_LEXIE_1, Route217_Text_LexieIntro, Route217_Text_LexieDefeat
 	msgbox Route217_Text_LexiePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -36,14 +36,14 @@ Route217_Text_LexiePost:
 	.string "around here. Don't go getting lost!$"
 
 Route217_EventScript_Bjorn::
-	trainerbattle_single TRAINER_CHESTER, Route217_Text_BjornIntro, Route217_Text_BjornDefeat
+	trainerbattle_single TRAINER_SN_BJORN_1, Route217_Text_BjornIntro, Route217_Text_BjornDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Bjorn_Rematch
 	msgbox Route217_Text_BjornPost, MSGBOX_AUTOCLOSE
 	end
 
 Route217_EventScript_Bjorn_Rematch:
-	trainerbattle_rematch TRAINER_CHESTER, Route217_Text_BjornIntro, Route217_Text_BjornDefeat
+	trainerbattle_rematch TRAINER_SN_BJORN_1, Route217_Text_BjornIntro, Route217_Text_BjornDefeat
 	msgbox Route217_Text_BjornPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -59,14 +59,14 @@ Route217_Text_BjornPost:
 	.string "through POKéMON. At least I think so.$"
 
 Route217_EventScript_Madison::
-	trainerbattle_single TRAINER_ALEX, Route217_Text_MadisonIntro, Route217_Text_MadisonDefeat
+	trainerbattle_single TRAINER_SN_MADISON_1, Route217_Text_MadisonIntro, Route217_Text_MadisonDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Madison_Rematch
 	msgbox Route217_Text_MadisonPost, MSGBOX_AUTOCLOSE
 	end
 
 Route217_EventScript_Madison_Rematch:
-	trainerbattle_rematch TRAINER_ALEX, Route217_Text_MadisonIntro, Route217_Text_MadisonDefeat
+	trainerbattle_rematch TRAINER_SN_MADISON_1, Route217_Text_MadisonIntro, Route217_Text_MadisonDefeat
 	msgbox Route217_Text_MadisonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -83,7 +83,7 @@ Route217_Text_MadisonPost:
 	.string "hidden move to climb cliffs?$"
 
 Route217_EventScript_Matthew::
-	trainerbattle_single TRAINER_BECK, Route217_Text_MatthewIntro, Route217_Text_MatthewDefeat
+	trainerbattle_single TRAINER_SN_MATTHEW_1, Route217_Text_MatthewIntro, Route217_Text_MatthewDefeat
 	msgbox Route217_Text_MatthewPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -99,7 +99,7 @@ Route217_Text_MatthewPost:
 	.string "blizzard!$"
 
 Route217_EventScript_Ethan::
-	trainerbattle_single TRAINER_YASU, Route217_Text_EthanIntro, Route217_Text_EthanDefeat
+	trainerbattle_single TRAINER_SN_ETHAN_1, Route217_Text_EthanIntro, Route217_Text_EthanDefeat
 	msgbox Route217_Text_EthanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -115,7 +115,7 @@ Route217_Text_EthanPost:
 	.string "ninja when they grow up?$"
 
 Route217_EventScript_Luke::
-	trainerbattle_single TRAINER_TAKASHI, Route217_Text_LukeIntro, Route217_Text_LukeDefeat
+	trainerbattle_single TRAINER_SN_LUKE_1, Route217_Text_LukeIntro, Route217_Text_LukeDefeat
 	msgbox Route217_Text_LukePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -130,14 +130,14 @@ Route217_Text_LukePost:
 	.string "Hiyah!$"
 
 Route217_EventScript_Dalton::
-	trainerbattle_single TRAINER_DIANNE, Route217_Text_DaltonIntro, Route217_Text_DaltonDefeat
+	trainerbattle_single TRAINER_SN_DALTON_2, Route217_Text_DaltonIntro, Route217_Text_DaltonDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Dalton_Rematch
 	msgbox Route217_Text_DaltonPost, MSGBOX_AUTOCLOSE
 	end
 
 Route217_EventScript_Dalton_Rematch:
-	trainerbattle_rematch TRAINER_DIANNE, Route217_Text_DaltonIntro, Route217_Text_DaltonDefeat
+	trainerbattle_rematch TRAINER_SN_DALTON_2, Route217_Text_DaltonIntro, Route217_Text_DaltonDefeat
 	msgbox Route217_Text_DaltonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -153,14 +153,14 @@ Route217_Text_DaltonPost:
 	.string "view is breathtaking then.$"
 
 Route217_EventScript_Olivia::
-	trainerbattle_single TRAINER_JANI, Route217_Text_OliviaIntro, Route217_Text_OliviaDefeat
+	trainerbattle_single TRAINER_SN_OLIVIA_1, Route217_Text_OliviaIntro, Route217_Text_OliviaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Olivia_Rematch
 	msgbox Route217_Text_OliviaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route217_EventScript_Olivia_Rematch:
-	trainerbattle_rematch TRAINER_JANI, Route217_Text_OliviaIntro, Route217_Text_OliviaDefeat
+	trainerbattle_rematch TRAINER_SN_OLIVIA_1, Route217_Text_OliviaIntro, Route217_Text_OliviaDefeat
 	msgbox Route217_Text_OliviaPost, MSGBOX_AUTOCLOSE
 	end
 

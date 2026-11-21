@@ -123,7 +123,7 @@ OreburghCity_Gym_Text_GuideWon:
 	.string "if you’d become my fan!$"
 
 OreburghCity_Gym_EventScript_Jonathon::
-	trainerbattle_single TRAINER_JOSH, OreburghCity_Gym_Text_JonathonIntro, OreburghCity_Gym_Text_JonathonDefeat
+	trainerbattle_single TRAINER_SN_JONATHON_1, OreburghCity_Gym_Text_JonathonIntro, OreburghCity_Gym_Text_JonathonDefeat
 	msgbox OreburghCity_Gym_Text_JonathonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -140,7 +140,7 @@ OreburghCity_Gym_Text_JonathonPost:
 	.string "shortcut or the long way!$"
 
 OreburghCity_Gym_EventScript_Darius::
-	trainerbattle_single TRAINER_TOMMY, OreburghCity_Gym_Text_DariusIntro, OreburghCity_Gym_Text_DariusDefeat
+	trainerbattle_single TRAINER_SN_DARIUS_1, OreburghCity_Gym_Text_DariusIntro, OreburghCity_Gym_Text_DariusDefeat
 	msgbox OreburghCity_Gym_Text_DariusPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -187,7 +187,7 @@ OreburghCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, OreburghCity_Gym_EventScript_SNRematch_No
 	msgbox OreburghCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_ISAIAH_4, OreburghCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_ROARK_2, OreburghCity_Gym_EventScript_SNRematch_Defeat
 	msgbox OreburghCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

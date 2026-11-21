@@ -63,7 +63,7 @@ SpearPillar_EventScript_SNVis_SP_GRUNT1:
 	setflag FLAG_SN_HIDE_SP_GRUNT1
 	goto_if_lt VAR_SINNOH_STORY, 32, SpearPillar_EventScript_SNVis_SP_GRUNT1_End
 	goto_if_ge VAR_SINNOH_STORY, 33, SpearPillar_EventScript_SNVis_SP_GRUNT1_End
-	goto_if_defeated TRAINER_DYLAN_1, SpearPillar_EventScript_SNVis_SP_GRUNT1_End
+	goto_if_defeated TRAINER_SN_GRUNT_38, SpearPillar_EventScript_SNVis_SP_GRUNT1_End
 	clearflag FLAG_SN_HIDE_SP_GRUNT1
 SpearPillar_EventScript_SNVis_SP_GRUNT1_End:
 	return
@@ -72,7 +72,7 @@ SpearPillar_EventScript_SNVis_SP_GRUNT2:
 	setflag FLAG_SN_HIDE_SP_GRUNT2
 	goto_if_lt VAR_SINNOH_STORY, 32, SpearPillar_EventScript_SNVis_SP_GRUNT2_End
 	goto_if_ge VAR_SINNOH_STORY, 33, SpearPillar_EventScript_SNVis_SP_GRUNT2_End
-	goto_if_defeated TRAINER_DYLAN_2, SpearPillar_EventScript_SNVis_SP_GRUNT2_End
+	goto_if_defeated TRAINER_SN_GRUNT_39, SpearPillar_EventScript_SNVis_SP_GRUNT2_End
 	clearflag FLAG_SN_HIDE_SP_GRUNT2
 SpearPillar_EventScript_SNVis_SP_GRUNT2_End:
 	return
@@ -81,7 +81,7 @@ SpearPillar_EventScript_SNVis_SP_MARS:
 	setflag FLAG_SN_HIDE_SP_MARS
 	goto_if_lt VAR_SINNOH_STORY, 32, SpearPillar_EventScript_SNVis_SP_MARS_End
 	goto_if_ge VAR_SINNOH_STORY, 33, SpearPillar_EventScript_SNVis_SP_MARS_End
-	goto_if_defeated TRAINER_DYLAN_3, SpearPillar_EventScript_SNVis_SP_MARS_End
+	goto_if_defeated TRAINER_SN_MARS_3, SpearPillar_EventScript_SNVis_SP_MARS_End
 	clearflag FLAG_SN_HIDE_SP_MARS
 SpearPillar_EventScript_SNVis_SP_MARS_End:
 	return
@@ -90,7 +90,7 @@ SpearPillar_EventScript_SNVis_SP_JUPITER:
 	setflag FLAG_SN_HIDE_SP_JUPITER
 	goto_if_lt VAR_SINNOH_STORY, 32, SpearPillar_EventScript_SNVis_SP_JUPITER_End
 	goto_if_ge VAR_SINNOH_STORY, 33, SpearPillar_EventScript_SNVis_SP_JUPITER_End
-	goto_if_defeated TRAINER_DYLAN_4, SpearPillar_EventScript_SNVis_SP_JUPITER_End
+	goto_if_defeated TRAINER_SN_JUPITER_1, SpearPillar_EventScript_SNVis_SP_JUPITER_End
 	clearflag FLAG_SN_HIDE_SP_JUPITER
 SpearPillar_EventScript_SNVis_SP_JUPITER_End:
 	return
@@ -124,7 +124,7 @@ SpearPillar_EventScript_SNVis_PALKIA_End:
 	return
 
 SpearPillar_EventScript_SNSP_GRUNT1::
-	trainerbattle_single TRAINER_DYLAN_1, SpearPillar_EventScript_SNSP_GRUNT1_Intro, SpearPillar_EventScript_SNSP_GRUNT1_Defeat, SpearPillar_EventScript_SNSP_GRUNT1_Won
+	trainerbattle_single TRAINER_SN_GRUNT_38, SpearPillar_EventScript_SNSP_GRUNT1_Intro, SpearPillar_EventScript_SNSP_GRUNT1_Defeat, SpearPillar_EventScript_SNSP_GRUNT1_Won
 	end
 
 SpearPillar_EventScript_SNSP_GRUNT1_Won:
@@ -147,7 +147,7 @@ SpearPillar_EventScript_SNSP_GRUNT1_Post:
 	.string "Our boss will create a new world!$"
 
 SpearPillar_EventScript_SNSP_GRUNT2::
-	trainerbattle_single TRAINER_DYLAN_2, SpearPillar_EventScript_SNSP_GRUNT2_Intro, SpearPillar_EventScript_SNSP_GRUNT2_Defeat, SpearPillar_EventScript_SNSP_GRUNT2_Won
+	trainerbattle_single TRAINER_SN_GRUNT_39, SpearPillar_EventScript_SNSP_GRUNT2_Intro, SpearPillar_EventScript_SNSP_GRUNT2_Defeat, SpearPillar_EventScript_SNSP_GRUNT2_Won
 	end
 
 SpearPillar_EventScript_SNSP_GRUNT2_Won:
@@ -170,7 +170,7 @@ SpearPillar_EventScript_SNSP_GRUNT2_Post:
 	.string "Gah... The boss won’t like this...$"
 
 SpearPillar_EventScript_SNSP_MARS::
-	trainerbattle_single TRAINER_DYLAN_3, SpearPillar_EventScript_SNSP_MARS_Intro, SpearPillar_EventScript_SNSP_MARS_Defeat, SpearPillar_EventScript_SNSP_MARS_Won
+	trainerbattle_single TRAINER_SN_MARS_3, SpearPillar_EventScript_SNSP_MARS_Intro, SpearPillar_EventScript_SNSP_MARS_Defeat, SpearPillar_EventScript_SNSP_MARS_Won
 	end
 
 SpearPillar_EventScript_SNSP_MARS_Won:
@@ -199,7 +199,7 @@ SpearPillar_EventScript_SNSP_MARS_Post:
 	.string "You can stay if you won’t meddle.$"
 
 SpearPillar_EventScript_SNSP_JUPITER::
-	trainerbattle_single TRAINER_DYLAN_4, SpearPillar_EventScript_SNSP_JUPITER_Intro, SpearPillar_EventScript_SNSP_JUPITER_Defeat, SpearPillar_EventScript_SNSP_JUPITER_Won
+	trainerbattle_single TRAINER_SN_JUPITER_1, SpearPillar_EventScript_SNSP_JUPITER_Intro, SpearPillar_EventScript_SNSP_JUPITER_Defeat, SpearPillar_EventScript_SNSP_JUPITER_Won
 	end
 
 SpearPillar_EventScript_SNSP_JUPITER_Won:
@@ -230,7 +230,7 @@ SpearPillar_EventScript_SNCyrus::
 	msgbox SpearPillar_EventScript_SNCyrus_T1, MSGBOX_DEFAULT
 	msgbox SpearPillar_EventScript_SNCyrus_T2, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_DYLAN_5, SpearPillar_EventScript_SNCyrus_Defeat
+	trainerbattle_no_intro TRAINER_SN_CYRUS_3, SpearPillar_EventScript_SNCyrus_Defeat
 	msgbox SpearPillar_EventScript_SNCyrus_T3, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -353,7 +353,7 @@ SpearPillar_EventScript_SNSPGrunts::
 	goto_if_lt VAR_RESULT, 2, SpearPillar_EventScript_SNSPGruntsOnlyOne
 	msgbox SpearPillar_Text_SNGruntsIntro, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_two_trainers_sn TRAINER_DYLAN_1, SpearPillar_EventScript_SNSPGrunts_DA, TRAINER_DYLAN_2, SpearPillar_EventScript_SNSPGrunts_DB
+	trainerbattle_two_trainers_sn TRAINER_SN_GRUNT_38, SpearPillar_EventScript_SNSPGrunts_DA, TRAINER_SN_GRUNT_39, SpearPillar_EventScript_SNSPGrunts_DB
 	msgbox SpearPillar_EventScript_SNSPGrunts_After, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -460,7 +460,7 @@ SpearPillar_EventScript_SNSPCommanders_P1:
 SpearPillar_EventScript_SNSPCommanders_P2:
 	setfollowernpc LOCALID_SN_SP_BARRY, FNPC_ALL_LAND, 0, PARTNER_BARRY_TURTWIG
 SpearPillar_EventScript_SNSPCommanders_Battle:
-	trainerbattle_two_trainers_sn TRAINER_DYLAN_3, SpearPillar_EventScript_SNSPCommanders_DA, TRAINER_DYLAN_4, SpearPillar_EventScript_SNSPCommanders_DB
+	trainerbattle_two_trainers_sn TRAINER_SN_MARS_3, SpearPillar_EventScript_SNSPCommanders_DA, TRAINER_SN_JUPITER_1, SpearPillar_EventScript_SNSPCommanders_DB
 	getplayerxy VAR_0x8004, VAR_0x8005
 	addvar VAR_0x8005, 1
 	destroyfollowernpc

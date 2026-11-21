@@ -2,7 +2,7 @@ LakeValor_Drained_MapScripts::
 	.byte 0
 
 LakeValor_Drained_EventScript_Grunt::
-	trainerbattle_single TRAINER_CINDY_2, LakeValor_Drained_Text_GruntIntro, LakeValor_Drained_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_28, LakeValor_Drained_Text_GruntIntro, LakeValor_Drained_Text_GruntDefeat
 	msgbox LakeValor_Drained_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -24,7 +24,7 @@ LakeValor_Drained_Text_GruntPost:
 	.string "Lake Verity!$"
 
 LakeValor_Drained_EventScript_Grunt2::
-	trainerbattle_single TRAINER_CINDY_3, LakeValor_Drained_Text_Grunt2Intro, LakeValor_Drained_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_29, LakeValor_Drained_Text_Grunt2Intro, LakeValor_Drained_Text_Grunt2Defeat
 	msgbox LakeValor_Drained_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -45,7 +45,7 @@ LakeValor_Drained_Text_Grunt2Post:
 	.string "what do you think?$"
 
 LakeValor_Drained_EventScript_Grunt3::
-	trainerbattle_single TRAINER_CINDY_4, LakeValor_Drained_Text_Grunt3Intro, LakeValor_Drained_Text_Grunt3Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_30, LakeValor_Drained_Text_Grunt3Intro, LakeValor_Drained_Text_Grunt3Defeat
 	msgbox LakeValor_Drained_Text_Grunt3Post, MSGBOX_AUTOCLOSE
 	end
 

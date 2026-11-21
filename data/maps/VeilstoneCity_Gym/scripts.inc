@@ -7,7 +7,7 @@ VeilstoneCity_Gym_OnTransition:
 	end
 
 VeilstoneCity_Gym_EventScript_SetFlashLevel::
-	goto_if_defeated TRAINER_CAMERON_5, VeilstoneCity_Gym_EventScript_SetLightsOn
+	goto_if_defeated TRAINER_SN_MAYLENE_1, VeilstoneCity_Gym_EventScript_SetLightsOn
 	call VeilstoneCity_Gym_EventScript_CountTrainersDefeated
 	copyvar VAR_0x8001, VAR_0x8000
 	goto_if_eq VAR_0x8000, 0, VeilstoneCity_Gym_EventScript_SetFlashLevel7
@@ -112,19 +112,19 @@ VeilstoneCity_Gym_EventScript_AnimateFlashFullBrightness::
 
 VeilstoneCity_Gym_EventScript_CountTrainersDefeated::
 	setvar VAR_0x8000, 0
-	goto_if_not_defeated TRAINER_JACKI_1, VeilstoneCity_Gym_EventScript_CheckJocelyn
+	goto_if_not_defeated TRAINER_SN_COLBY_1, VeilstoneCity_Gym_EventScript_CheckJocelyn
 	addvar VAR_0x8000, 1
 VeilstoneCity_Gym_EventScript_CheckJocelyn::
-	goto_if_not_defeated TRAINER_JACKI_2, VeilstoneCity_Gym_EventScript_CheckLaura
+	goto_if_not_defeated TRAINER_SN_DARREN_1, VeilstoneCity_Gym_EventScript_CheckLaura
 	addvar VAR_0x8000, 1
 VeilstoneCity_Gym_EventScript_CheckLaura::
-	goto_if_not_defeated TRAINER_JACKI_3, VeilstoneCity_Gym_EventScript_CheckBrenden
+	goto_if_not_defeated TRAINER_SN_JEFFERY_1, VeilstoneCity_Gym_EventScript_CheckBrenden
 	addvar VAR_0x8000, 1
 VeilstoneCity_Gym_EventScript_CheckBrenden::
 	goto_if_not_defeated TRAINER_BRENDEN, VeilstoneCity_Gym_EventScript_CheckCristian
 	addvar VAR_0x8000, 1
 VeilstoneCity_Gym_EventScript_CheckCristian::
-	goto_if_not_defeated TRAINER_JACKI_4, VeilstoneCity_Gym_EventScript_CheckLilith
+	goto_if_not_defeated TRAINER_SN_RAFAEL_1, VeilstoneCity_Gym_EventScript_CheckLilith
 	addvar VAR_0x8000, 1
 VeilstoneCity_Gym_EventScript_CheckLilith::
 	goto_if_not_defeated TRAINER_LILITH, VeilstoneCity_Gym_EventScript_StopCountingTrainers
@@ -313,7 +313,7 @@ VeilstoneCity_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "with at least two POKéMON.$"
 
 VeilstoneCity_Gym_EventScript_Colby::
-	trainerbattle_single TRAINER_JACKI_1, VeilstoneCity_Gym_Text_ColbyIntro, VeilstoneCity_Gym_Text_ColbyDefeat, VeilstoneCity_Gym_EventScript_TakaoBrightenRoom
+	trainerbattle_single TRAINER_SN_COLBY_1, VeilstoneCity_Gym_Text_ColbyIntro, VeilstoneCity_Gym_Text_ColbyDefeat, VeilstoneCity_Gym_EventScript_TakaoBrightenRoom
 	msgbox VeilstoneCity_Gym_Text_ColbyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -331,7 +331,7 @@ VeilstoneCity_Gym_Text_ColbyPost:
 	.string "you like a stack of bricks!$"
 
 VeilstoneCity_Gym_EventScript_Darren::
-	trainerbattle_single TRAINER_JACKI_2, VeilstoneCity_Gym_Text_DarrenIntro, VeilstoneCity_Gym_Text_DarrenDefeat, VeilstoneCity_Gym_EventScript_JocelynBrightenRoom
+	trainerbattle_single TRAINER_SN_DARREN_1, VeilstoneCity_Gym_Text_DarrenIntro, VeilstoneCity_Gym_Text_DarrenDefeat, VeilstoneCity_Gym_EventScript_JocelynBrightenRoom
 	msgbox VeilstoneCity_Gym_Text_DarrenPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -350,7 +350,7 @@ VeilstoneCity_Gym_Text_DarrenPost:
 	.string "POKéMON, however.$"
 
 VeilstoneCity_Gym_EventScript_Jeffery::
-	trainerbattle_single TRAINER_JACKI_3, VeilstoneCity_Gym_Text_JefferyIntro, VeilstoneCity_Gym_Text_JefferyDefeat, VeilstoneCity_Gym_EventScript_LauraBrightenRoom
+	trainerbattle_single TRAINER_SN_JEFFERY_1, VeilstoneCity_Gym_Text_JefferyIntro, VeilstoneCity_Gym_Text_JefferyDefeat, VeilstoneCity_Gym_EventScript_LauraBrightenRoom
 	msgbox VeilstoneCity_Gym_Text_JefferyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -370,7 +370,7 @@ VeilstoneCity_Gym_Text_JefferyPost:
 	.string "making excuses.$"
 
 VeilstoneCity_Gym_EventScript_Rafael::
-	trainerbattle_single TRAINER_JACKI_4, VeilstoneCity_Gym_Text_RafaelIntro, VeilstoneCity_Gym_Text_RafaelDefeat, VeilstoneCity_Gym_EventScript_CristianBrightenRoom
+	trainerbattle_single TRAINER_SN_RAFAEL_1, VeilstoneCity_Gym_Text_RafaelIntro, VeilstoneCity_Gym_Text_RafaelDefeat, VeilstoneCity_Gym_EventScript_CristianBrightenRoom
 	msgbox VeilstoneCity_Gym_Text_RafaelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -388,7 +388,7 @@ VeilstoneCity_Gym_Text_RafaelPost:
 
 VeilstoneCity_Gym_EventScript_Leader::
 	goto_if_set FLAG_SYS_GAME_CLEAR, VeilstoneCity_Gym_EventScript_SNRematch
-	trainerbattle_single TRAINER_CAMERON_5, VeilstoneCity_Gym_Text_LeaderIntro, VeilstoneCity_Gym_Text_LeaderDefeat, VeilstoneCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_MAYLENE_1, VeilstoneCity_Gym_Text_LeaderIntro, VeilstoneCity_Gym_Text_LeaderDefeat, VeilstoneCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM60_FROM_MAYLENE, VeilstoneCity_Gym_EventScript_GiveTM
 	msgbox VeilstoneCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
 	release
@@ -402,10 +402,10 @@ VeilstoneCity_Gym_EventScript_LeaderDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox VeilstoneCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE04_GET
-	settrainerflag TRAINER_JACKI_1
-	settrainerflag TRAINER_JACKI_2
-	settrainerflag TRAINER_JACKI_3
-	settrainerflag TRAINER_JACKI_4
+	settrainerflag TRAINER_SN_COLBY_1
+	settrainerflag TRAINER_SN_DARREN_1
+	settrainerflag TRAINER_SN_JEFFERY_1
+	settrainerflag TRAINER_SN_RAFAEL_1
 	goto VeilstoneCity_Gym_EventScript_GiveTM
 
 VeilstoneCity_Gym_EventScript_GiveTM::
@@ -522,7 +522,7 @@ VeilstoneCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, VeilstoneCity_Gym_EventScript_SNRematch_No
 	msgbox VeilstoneCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_KATELYN_2, VeilstoneCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_MAYLENE_2, VeilstoneCity_Gym_EventScript_SNRematch_Defeat
 	msgbox VeilstoneCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

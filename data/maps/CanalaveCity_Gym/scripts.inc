@@ -4,7 +4,7 @@ CanalaveCity_Gym_MapScripts::
 
 
 CanalaveCity_Gym_EventScript_David::
-	trainerbattle_single TRAINER_JERRY_3, CanalaveCity_Gym_Text_DavidIntro, CanalaveCity_Gym_Text_DavidDefeat
+	trainerbattle_single TRAINER_SN_DAVID_1, CanalaveCity_Gym_Text_DavidIntro, CanalaveCity_Gym_Text_DavidDefeat
 	msgbox CanalaveCity_Gym_Text_DavidPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ CanalaveCity_Gym_Text_DavidPost:
 	.string "The road extends into infinity...$"
 
 CanalaveCity_Gym_EventScript_Jackson::
-	trainerbattle_single TRAINER_JERRY_4, CanalaveCity_Gym_Text_JacksonIntro, CanalaveCity_Gym_Text_JacksonDefeat
+	trainerbattle_single TRAINER_SN_JACKSON_1, CanalaveCity_Gym_Text_JacksonIntro, CanalaveCity_Gym_Text_JacksonDefeat
 	msgbox CanalaveCity_Gym_Text_JacksonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -36,7 +36,7 @@ CanalaveCity_Gym_Text_JacksonPost:
 	.string "spinning on the panels.$"
 
 CanalaveCity_Gym_EventScript_Gary::
-	trainerbattle_single TRAINER_JERRY_5, CanalaveCity_Gym_Text_GaryIntro, CanalaveCity_Gym_Text_GaryDefeat
+	trainerbattle_single TRAINER_SN_GARY_1, CanalaveCity_Gym_Text_GaryIntro, CanalaveCity_Gym_Text_GaryDefeat
 	msgbox CanalaveCity_Gym_Text_GaryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ CanalaveCity_Gym_Text_GaryPost:
 	.string "I get all the fun I need every day!$"
 
 CanalaveCity_Gym_EventScript_Ricky::
-	trainerbattle_single TRAINER_KAREN_1, CanalaveCity_Gym_Text_RickyIntro, CanalaveCity_Gym_Text_RickyDefeat
+	trainerbattle_single TRAINER_SN_RICKY_1, CanalaveCity_Gym_Text_RickyIntro, CanalaveCity_Gym_Text_RickyDefeat
 	msgbox CanalaveCity_Gym_Text_RickyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -73,7 +73,7 @@ CanalaveCity_Gym_Text_RickyPost:
 	.string "everything ends for you!$"
 
 CanalaveCity_Gym_EventScript_Cesar::
-	trainerbattle_single TRAINER_KAREN_2, CanalaveCity_Gym_Text_CesarIntro, CanalaveCity_Gym_Text_CesarDefeat
+	trainerbattle_single TRAINER_SN_CESAR_1, CanalaveCity_Gym_Text_CesarIntro, CanalaveCity_Gym_Text_CesarDefeat
 	msgbox CanalaveCity_Gym_Text_CesarPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -93,7 +93,7 @@ CanalaveCity_Gym_Text_CesarPost:
 	.string "potential to surpass aces!$"
 
 CanalaveCity_Gym_EventScript_Gerardo::
-	trainerbattle_single TRAINER_KAREN_3, CanalaveCity_Gym_Text_GerardoIntro, CanalaveCity_Gym_Text_GerardoDefeat
+	trainerbattle_single TRAINER_SN_GERARDO_1, CanalaveCity_Gym_Text_GerardoIntro, CanalaveCity_Gym_Text_GerardoDefeat
 	msgbox CanalaveCity_Gym_Text_GerardoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -112,7 +112,7 @@ CanalaveCity_Gym_Text_GerardoPost:
 	.string "is what made you prevail!$"
 
 CanalaveCity_Gym_EventScript_Breanna::
-	trainerbattle_single TRAINER_KAREN_4, CanalaveCity_Gym_Text_BreannaIntro, CanalaveCity_Gym_Text_BreannaDefeat
+	trainerbattle_single TRAINER_SN_BREANNA_1, CanalaveCity_Gym_Text_BreannaIntro, CanalaveCity_Gym_Text_BreannaDefeat
 	msgbox CanalaveCity_Gym_Text_BreannaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -132,7 +132,7 @@ CanalaveCity_Gym_Text_BreannaPost:
 
 CanalaveCity_Gym_EventScript_Leader::
 	goto_if_set FLAG_SYS_GAME_CLEAR, CanalaveCity_Gym_EventScript_SNRematch
-	trainerbattle_single TRAINER_JERRY_2, CanalaveCity_Gym_Text_LeaderIntro, CanalaveCity_Gym_Text_LeaderDefeat, CanalaveCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_BYRON_1, CanalaveCity_Gym_Text_LeaderIntro, CanalaveCity_Gym_Text_LeaderDefeat, CanalaveCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM91_FROM_BYRON, CanalaveCity_Gym_EventScript_GiveTM
 	msgbox CanalaveCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
 	release
@@ -144,13 +144,13 @@ CanalaveCity_Gym_EventScript_LeaderDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox CanalaveCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE06_GET
-	settrainerflag TRAINER_JERRY_3
-	settrainerflag TRAINER_JERRY_4
-	settrainerflag TRAINER_JERRY_5
-	settrainerflag TRAINER_KAREN_1
-	settrainerflag TRAINER_KAREN_2
-	settrainerflag TRAINER_KAREN_3
-	settrainerflag TRAINER_KAREN_4
+	settrainerflag TRAINER_SN_DAVID_1
+	settrainerflag TRAINER_SN_JACKSON_1
+	settrainerflag TRAINER_SN_GARY_1
+	settrainerflag TRAINER_SN_RICKY_1
+	settrainerflag TRAINER_SN_CESAR_1
+	settrainerflag TRAINER_SN_GERARDO_1
+	settrainerflag TRAINER_SN_BREANNA_1
 	goto CanalaveCity_Gym_EventScript_GiveTM
 
 CanalaveCity_Gym_EventScript_GiveTM::
@@ -273,7 +273,7 @@ CanalaveCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, CanalaveCity_Gym_EventScript_SNRematch_No
 	msgbox CanalaveCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_KATELYN_4, CanalaveCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_BYRON_2, CanalaveCity_Gym_EventScript_SNRematch_Defeat
 	msgbox CanalaveCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

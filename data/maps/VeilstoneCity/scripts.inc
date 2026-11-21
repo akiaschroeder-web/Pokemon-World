@@ -528,7 +528,7 @@ VeilstoneCity_EventScript_SNWHCP_PL2:
 	setfollowernpc LOCALID_SN_WH_CP, FNPC_ALL_LAND, 0, PARTNER_LUCAS_PIPLUP
 	goto VeilstoneCity_EventScript_SNWHCP_Battle
 VeilstoneCity_EventScript_SNWHCP_Battle:
-	trainerbattle_two_trainers_sn TRAINER_LAWRENCE, VeilstoneCity_EventScript_SNWHCP_DA, TRAINER_WYATT, VeilstoneCity_EventScript_SNWHCP_DB
+	trainerbattle_two_trainers_sn TRAINER_SN_GRUNT_46, VeilstoneCity_EventScript_SNWHCP_DA, TRAINER_SN_GRUNT_47, VeilstoneCity_EventScript_SNWHCP_DB
 	destroyfollowernpc
 	setobjectxyperm LOCALID_SN_WH_CP, 24, 21
 	clearflag FLAG_SN_HIDE_WH_CP

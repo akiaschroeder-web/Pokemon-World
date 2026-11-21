@@ -2,7 +2,7 @@ Route229_MapScripts::
 	.byte 0
 
 Route229_EventScript_Deshawn::
-	trainerbattle_single TRAINER_LORENZO, Route229_Text_DeshawnIntro, Route229_Text_DeshawnDefeat
+	trainerbattle_single TRAINER_SN_DESHAWN_1, Route229_Text_DeshawnIntro, Route229_Text_DeshawnDefeat
 	msgbox Route229_Text_DeshawnPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ Route229_Text_DeshawnPost:
 	.string "nature clean. It doesn't take much.$"
 
 Route229_EventScript_Felix::
-	trainerbattle_single TRAINER_SEBASTIAN, Route229_Text_FelixIntro, Route229_Text_FelixDefeat
+	trainerbattle_single TRAINER_SN_FELIX_1, Route229_Text_FelixIntro, Route229_Text_FelixDefeat
 	msgbox Route229_Text_FelixPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -36,7 +36,7 @@ Route229_Text_FelixPost:
 	.string "Let's battle again sometime, yeah?$"
 
 Route229_EventScript_Dana::
-	trainerbattle_single TRAINER_JENNA, Route229_Text_DanaIntro, Route229_Text_DanaDefeat
+	trainerbattle_single TRAINER_SN_DANA_1, Route229_Text_DanaIntro, Route229_Text_DanaDefeat
 	msgbox Route229_Text_DanaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -54,7 +54,7 @@ Route229_Text_DanaPost:
 	.string "them.$"
 
 Route229_EventScript_Sandra::
-	trainerbattle_single TRAINER_SOPHIA, Route229_Text_SandraIntro, Route229_Text_SandraDefeat
+	trainerbattle_single TRAINER_SN_SANDRA_1, Route229_Text_SandraIntro, Route229_Text_SandraDefeat
 	msgbox Route229_Text_SandraPost, MSGBOX_AUTOCLOSE
 	end
 

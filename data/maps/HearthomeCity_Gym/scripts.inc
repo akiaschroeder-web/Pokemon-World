@@ -36,7 +36,7 @@ HearthomeCity_Gym_EventScript_SNGuideFirst::
 
 
 HearthomeCity_Gym_EventScript_Donny::
-	trainerbattle_single TRAINER_JEFFREY_4, HearthomeCity_Gym_Text_DonnyIntro, HearthomeCity_Gym_Text_DonnyDefeat
+	trainerbattle_single TRAINER_SN_DONNY_1, HearthomeCity_Gym_Text_DonnyIntro, HearthomeCity_Gym_Text_DonnyDefeat
 	msgbox HearthomeCity_Gym_Text_DonnyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ HearthomeCity_Gym_Text_DonnyPost:
 	.string "marks on the tiles.$"
 
 HearthomeCity_Gym_EventScript_Molly::
-	trainerbattle_single TRAINER_JEFFREY_5, HearthomeCity_Gym_Text_MollyIntro, HearthomeCity_Gym_Text_MollyDefeat
+	trainerbattle_single TRAINER_SN_MOLLY_1, HearthomeCity_Gym_Text_MollyIntro, HearthomeCity_Gym_Text_MollyDefeat
 	msgbox HearthomeCity_Gym_Text_MollyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -70,7 +70,7 @@ HearthomeCity_Gym_Text_MollyPost:
 	.string "take on every Trainer.$"
 
 HearthomeCity_Gym_EventScript_Mackenzie::
-	trainerbattle_single TRAINER_CAMERON_1, HearthomeCity_Gym_Text_MackenzieIntro, HearthomeCity_Gym_Text_MackenzieDefeat
+	trainerbattle_single TRAINER_SN_MACKENZIE_1, HearthomeCity_Gym_Text_MackenzieIntro, HearthomeCity_Gym_Text_MackenzieDefeat
 	msgbox HearthomeCity_Gym_Text_MackenziePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -87,7 +87,7 @@ HearthomeCity_Gym_Text_MackenziePost:
 	.string "That way, I’ll win next time.$"
 
 HearthomeCity_Gym_EventScript_Allen::
-	trainerbattle_single TRAINER_CAMERON_2, HearthomeCity_Gym_Text_AllenIntro, HearthomeCity_Gym_Text_AllenDefeat
+	trainerbattle_single TRAINER_SN_ALLEN_1, HearthomeCity_Gym_Text_AllenIntro, HearthomeCity_Gym_Text_AllenDefeat
 	msgbox HearthomeCity_Gym_Text_AllenPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -106,7 +106,7 @@ HearthomeCity_Gym_Text_AllenPost:
 	.string "POKéMON, too. I’m watching you...$"
 
 HearthomeCity_Gym_EventScript_Chance::
-	trainerbattle_single TRAINER_CAMERON_3, HearthomeCity_Gym_Text_ChanceIntro, HearthomeCity_Gym_Text_ChanceDefeat
+	trainerbattle_single TRAINER_SN_CHANCE_1, HearthomeCity_Gym_Text_ChanceIntro, HearthomeCity_Gym_Text_ChanceDefeat
 	msgbox HearthomeCity_Gym_Text_ChancePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -125,7 +125,7 @@ HearthomeCity_Gym_Text_ChancePost:
 	.string "again and again, I came to realize that.$"
 
 HearthomeCity_Gym_EventScript_Catherine::
-	trainerbattle_single TRAINER_CAMERON_4, HearthomeCity_Gym_Text_CatherineIntro, HearthomeCity_Gym_Text_CatherineDefeat
+	trainerbattle_single TRAINER_SN_CATHERINE_1, HearthomeCity_Gym_Text_CatherineIntro, HearthomeCity_Gym_Text_CatherineDefeat
 	msgbox HearthomeCity_Gym_Text_CatherinePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -144,7 +144,7 @@ HearthomeCity_Gym_Text_CatherinePost:
 
 HearthomeCity_Gym_EventScript_Leader::
 	goto_if_set FLAG_SYS_GAME_CLEAR, HearthomeCity_Gym_EventScript_SNRematch
-	trainerbattle_single TRAINER_JEFFREY_3, HearthomeCity_Gym_Text_LeaderIntro, HearthomeCity_Gym_Text_LeaderDefeat, HearthomeCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_FANTINA_1, HearthomeCity_Gym_Text_LeaderIntro, HearthomeCity_Gym_Text_LeaderDefeat, HearthomeCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM65_FROM_FANTINA, HearthomeCity_Gym_EventScript_GiveTM
 	msgbox HearthomeCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
 	release
@@ -156,12 +156,12 @@ HearthomeCity_Gym_EventScript_LeaderDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox HearthomeCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE03_GET
-	settrainerflag TRAINER_JEFFREY_4
-	settrainerflag TRAINER_JEFFREY_5
-	settrainerflag TRAINER_CAMERON_1
-	settrainerflag TRAINER_CAMERON_2
-	settrainerflag TRAINER_CAMERON_3
-	settrainerflag TRAINER_CAMERON_4
+	settrainerflag TRAINER_SN_DONNY_1
+	settrainerflag TRAINER_SN_MOLLY_1
+	settrainerflag TRAINER_SN_MACKENZIE_1
+	settrainerflag TRAINER_SN_ALLEN_1
+	settrainerflag TRAINER_SN_CHANCE_1
+	settrainerflag TRAINER_SN_CATHERINE_1
 	goto HearthomeCity_Gym_EventScript_GiveTM
 
 HearthomeCity_Gym_EventScript_GiveTM::
@@ -282,7 +282,7 @@ HearthomeCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, HearthomeCity_Gym_EventScript_SNRematch_No
 	msgbox HearthomeCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_KATELYN_1, HearthomeCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_FANTINA_2, HearthomeCity_Gym_EventScript_SNRematch_Defeat
 	msgbox HearthomeCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

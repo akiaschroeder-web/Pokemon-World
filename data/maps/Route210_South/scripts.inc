@@ -3,7 +3,7 @@ Route210_South_MapScripts::
 	.byte 0
 
 Route210_South_EventScript_Fabian::
-	trainerbattle_single TRAINER_DEAN, Route210_South_Text_FabianIntro, Route210_South_Text_FabianDefeat
+	trainerbattle_single TRAINER_SN_FABIAN_1, Route210_South_Text_FabianIntro, Route210_South_Text_FabianDefeat
 	msgbox Route210_South_Text_FabianPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ Route210_South_Text_FabianPost:
 	.string "HEARTHOME CITY. Maybe I'll do that.$"
 
 Route210_South_EventScript_Brennan::
-	trainerbattle_single TRAINER_RODNEY, Route210_South_Text_BrennanIntro, Route210_South_Text_BrennanDefeat
+	trainerbattle_single TRAINER_SN_BRENNAN_1, Route210_South_Text_BrennanIntro, Route210_South_Text_BrennanDefeat
 	msgbox Route210_South_Text_BrennanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,14 +38,14 @@ Route210_South_Text_BrennanPost:
 	.string "cries... I heard them!$"
 
 Route210_South_EventScript_TeriTia::
-	trainerbattle_double TRAINER_RICHARD, Route210_South_Text_TeriTiaIntro, Route210_South_Text_TeriTiaDefeat, Route210_South_Text_TeriTiaNotEnough
+	trainerbattle_double TRAINER_SN_TERI_TIA_1, Route210_South_Text_TeriTiaIntro, Route210_South_Text_TeriTiaDefeat, Route210_South_Text_TeriTiaNotEnough
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route210_South_EventScript_TeriTia_Rematch
 	msgbox Route210_South_Text_TeriTiaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route210_South_EventScript_TeriTia_Rematch:
-	trainerbattle_rematch_double TRAINER_RICHARD, Route210_South_Text_TeriTiaIntro, Route210_South_Text_TeriTiaDefeat, Route210_South_Text_TeriTiaNotEnough
+	trainerbattle_rematch_double TRAINER_SN_TERI_TIA_1, Route210_South_Text_TeriTiaIntro, Route210_South_Text_TeriTiaDefeat, Route210_South_Text_TeriTiaNotEnough
 	msgbox Route210_South_Text_TeriTiaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -65,7 +65,7 @@ Route210_South_Text_TeriTiaNotEnough:
 	.string "POKéMON.$"
 
 Route210_South_EventScript_Bruce::
-	trainerbattle_single TRAINER_HERMAN, Route210_South_Text_BruceIntro, Route210_South_Text_BruceDefeat
+	trainerbattle_single TRAINER_SN_BRUCE_1, Route210_South_Text_BruceIntro, Route210_South_Text_BruceDefeat
 	msgbox Route210_South_Text_BrucePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -83,7 +83,7 @@ Route210_South_Text_BrucePost:
 	.string "stuff, I guess.$"
 
 Route210_South_EventScript_Wyatt::
-	trainerbattle_single TRAINER_SANTIAGO, Route210_South_Text_WyattIntro, Route210_South_Text_WyattDefeat
+	trainerbattle_single TRAINER_SN_WYATT_1, Route210_South_Text_WyattIntro, Route210_South_Text_WyattDefeat
 	msgbox Route210_South_Text_WyattPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -100,7 +100,7 @@ Route210_South_Text_WyattPost:
 	.string "Just joking.$"
 
 Route210_South_EventScript_Kahlil::
-	trainerbattle_single TRAINER_GILBERT, Route210_South_Text_KahlilIntro, Route210_South_Text_KahlilDefeat
+	trainerbattle_single TRAINER_SN_KAHLIL_1, Route210_South_Text_KahlilIntro, Route210_South_Text_KahlilDefeat
 	msgbox Route210_South_Text_KahlilPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -117,7 +117,7 @@ Route210_South_Text_KahlilPost:
 	.string "Did you know they even sell POKéBLOCKS?$"
 
 Route210_South_EventScript_Amber::
-	trainerbattle_single TRAINER_FRANKLIN, Route210_South_Text_AmberIntro, Route210_South_Text_AmberDefeat
+	trainerbattle_single TRAINER_SN_AMBER_1, Route210_South_Text_AmberIntro, Route210_South_Text_AmberDefeat
 	msgbox Route210_South_Text_AmberPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -134,7 +134,7 @@ Route210_South_Text_AmberPost:
 	.string "isn't it all about love?$"
 
 Route210_South_EventScript_AvaMatt::
-	trainerbattle_double TRAINER_KEVIN, Route210_South_Text_AvaMattIntro, Route210_South_Text_AvaMattDefeat, Route210_South_Text_AvaMattNotEnough
+	trainerbattle_double TRAINER_SN_AVA_MATT_1, Route210_South_Text_AvaMattIntro, Route210_South_Text_AvaMattDefeat, Route210_South_Text_AvaMattNotEnough
 	msgbox Route210_South_Text_AvaMattPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -156,14 +156,14 @@ Route210_South_Text_AvaMattNotEnough:
 	.string "beat us both with one POKéMON.$"
 
 Route210_South_EventScript_Marco::
-	trainerbattle_single TRAINER_JACK, Route210_South_Text_MarcoIntro, Route210_South_Text_MarcoDefeat
+	trainerbattle_single TRAINER_SN_MARCO_1, Route210_South_Text_MarcoIntro, Route210_South_Text_MarcoDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route210_South_EventScript_Marco_Rematch
 	msgbox Route210_South_Text_MarcoPost, MSGBOX_AUTOCLOSE
 	end
 
 Route210_South_EventScript_Marco_Rematch:
-	trainerbattle_rematch TRAINER_JACK, Route210_South_Text_MarcoIntro, Route210_South_Text_MarcoDefeat
+	trainerbattle_rematch TRAINER_SN_MARCO_1, Route210_South_Text_MarcoIntro, Route210_South_Text_MarcoDefeat
 	msgbox Route210_South_Text_MarcoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -196,14 +196,14 @@ Route210_South_Text_PtSign2:
 	.string "Café Cabin Freshly Squeezed Milk$"
 
 Route210_South_EventScript_TeriTia2::
-	trainerbattle_double TRAINER_CALVIN_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
+	trainerbattle_double TRAINER_SN_TERI_AND_T_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route210_South_EventScript_TeriTia2_Rematch
 	msgbox Route210_South_Text_TeriTia2Post, MSGBOX_AUTOCLOSE
 	end
 
 Route210_South_EventScript_TeriTia2_Rematch:
-	trainerbattle_rematch_double TRAINER_CALVIN_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
+	trainerbattle_rematch_double TRAINER_SN_TERI_AND_T_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
 	msgbox Route210_South_Text_TeriTia2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -220,7 +220,7 @@ Route210_South_Text_TeriTia2NotEnough:
 	.string "You need two POKéMON to battle us!$"
 
 Route210_South_EventScript_AvaMatt2::
-	trainerbattle_double TRAINER_CALVIN_2, Route210_South_Text_AvaMatt2Intro, Route210_South_Text_AvaMatt2Defeat, Route210_South_Text_AvaMatt2NotEnough
+	trainerbattle_double TRAINER_SN_AVA_AND_MA_1, Route210_South_Text_AvaMatt2Intro, Route210_South_Text_AvaMatt2Defeat, Route210_South_Text_AvaMatt2NotEnough
 	msgbox Route210_South_Text_AvaMatt2Post, MSGBOX_AUTOCLOSE
 	end
 

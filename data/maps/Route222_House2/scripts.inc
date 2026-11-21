@@ -2,7 +2,7 @@ Route222_House2_MapScripts::
 	.byte 0
 
 Route222_House2_EventScript_Janet::
-	trainerbattle_single TRAINER_SAWYER_1, Route222_House2_Text_JanetIntro, Route222_House2_Text_JanetDefeat
+	trainerbattle_single TRAINER_SN_JANET_1, Route222_House2_Text_JanetIntro, Route222_House2_Text_JanetDefeat
 	msgbox Route222_House2_Text_JanetPost, MSGBOX_AUTOCLOSE
 	end
 

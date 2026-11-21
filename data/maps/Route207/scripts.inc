@@ -3,7 +3,7 @@ Route207_MapScripts::
 	.byte 0
 
 Route207_EventScript_Anthony::
-	trainerbattle_single TRAINER_MATT, Route207_Text_AnthonyIntro, Route207_Text_AnthonyDefeat
+	trainerbattle_single TRAINER_SN_ANTHONY_1, Route207_Text_AnthonyIntro, Route207_Text_AnthonyDefeat
 	msgbox Route207_Text_AnthonyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ Route207_Text_AnthonyPost:
 	.string "bring back the ancient POKéMON!$"
 
 Route207_EventScript_Lauren::
-	trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route207_Text_LaurenIntro, Route207_Text_LaurenDefeat
+	trainerbattle_single TRAINER_SN_LAUREN_1, Route207_Text_LaurenIntro, Route207_Text_LaurenDefeat
 	msgbox Route207_Text_LaurenPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ Route207_Text_LaurenPost:
 	.string "Terminal?$"
 
 Route207_EventScript_Austin::
-	trainerbattle_single TRAINER_SHELLY_SEAFLOOR_CAVERN, Route207_Text_AustinIntro, Route207_Text_AustinDefeat
+	trainerbattle_single TRAINER_SN_AUSTIN_1, Route207_Text_AustinIntro, Route207_Text_AustinDefeat
 	msgbox Route207_Text_AustinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ Route207_Text_AustinPost:
 	.string "about them getting cold.$"
 
 Route207_EventScript_Justin::
-	trainerbattle_single TRAINER_ARCHIE, Route207_Text_JustinIntro, Route207_Text_JustinDefeat
+	trainerbattle_single TRAINER_SN_JUSTIN_1, Route207_Text_JustinIntro, Route207_Text_JustinDefeat
 	msgbox Route207_Text_JustinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -71,7 +71,7 @@ Route207_Text_JustinPost:
 	.string "before heading to MT. CORONET again.$"
 
 Route207_EventScript_Kevin::
-	trainerbattle_single TRAINER_VINCENT, Route207_Text_KevinIntro, Route207_Text_KevinDefeat
+	trainerbattle_single TRAINER_SN_KEVIN_1, Route207_Text_KevinIntro, Route207_Text_KevinDefeat
 	msgbox Route207_Text_KevinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -88,14 +88,14 @@ Route207_Text_KevinPost:
 	.string "me--the loser!$"
 
 Route207_EventScript_Helen::
-	trainerbattle_single TRAINER_LEROY, Route207_Text_HelenIntro, Route207_Text_HelenDefeat
+	trainerbattle_single TRAINER_SN_HELEN_1, Route207_Text_HelenIntro, Route207_Text_HelenDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route207_EventScript_Helen_Rematch
 	msgbox Route207_Text_HelenPost, MSGBOX_AUTOCLOSE
 	end
 
 Route207_EventScript_Helen_Rematch:
-	trainerbattle_rematch TRAINER_LEROY, Route207_Text_HelenIntro, Route207_Text_HelenDefeat
+	trainerbattle_rematch TRAINER_SN_HELEN_1, Route207_Text_HelenIntro, Route207_Text_HelenDefeat
 	msgbox Route207_Text_HelenPost, MSGBOX_AUTOCLOSE
 	end
 

@@ -2,7 +2,7 @@ SinnohVictoryRoad_B1F_MapScripts::
 	.byte 0
 
 SinnohVictoryRoad_B1F_EventScript_JoPat::
-	trainerbattle_double TRAINER_WINSTON_4, SinnohVictoryRoad_B1F_Text_JoPatIntro, SinnohVictoryRoad_B1F_Text_JoPatDefeat, SinnohVictoryRoad_B1F_Text_JoPatNotEnough
+	trainerbattle_double TRAINER_SN_JO_AND_PAT_1, SinnohVictoryRoad_B1F_Text_JoPatIntro, SinnohVictoryRoad_B1F_Text_JoPatDefeat, SinnohVictoryRoad_B1F_Text_JoPatNotEnough
 	msgbox SinnohVictoryRoad_B1F_Text_JoPatPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ SinnohVictoryRoad_B1F_Text_JoPatNotEnough:
 	.string "You need two POKéMON to battle us!$"
 
 SinnohVictoryRoad_B1F_EventScript_Ondrej::
-	trainerbattle_single TRAINER_WINSTON_5, SinnohVictoryRoad_B1F_Text_OndrejIntro, SinnohVictoryRoad_B1F_Text_OndrejDefeat
+	trainerbattle_single TRAINER_SN_ONDREJ_1, SinnohVictoryRoad_B1F_Text_OndrejIntro, SinnohVictoryRoad_B1F_Text_OndrejDefeat
 	msgbox SinnohVictoryRoad_B1F_Text_OndrejPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -36,7 +36,7 @@ SinnohVictoryRoad_B1F_Text_OndrejPost:
 	.string "of the Dragon-type moves...?$"
 
 SinnohVictoryRoad_B1F_EventScript_Valencia::
-	trainerbattle_single TRAINER_STEVE_1, SinnohVictoryRoad_B1F_Text_ValenciaIntro, SinnohVictoryRoad_B1F_Text_ValenciaDefeat
+	trainerbattle_single TRAINER_SN_VALENCIA_1, SinnohVictoryRoad_B1F_Text_ValenciaIntro, SinnohVictoryRoad_B1F_Text_ValenciaDefeat
 	msgbox SinnohVictoryRoad_B1F_Text_ValenciaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -51,7 +51,7 @@ SinnohVictoryRoad_B1F_Text_ValenciaPost:
 	.string "legendary POKéMON?$"
 
 SinnohVictoryRoad_B1F_EventScript_Henry::
-	trainerbattle_single TRAINER_THALIA_1, SinnohVictoryRoad_B1F_Text_HenryIntro, SinnohVictoryRoad_B1F_Text_HenryDefeat
+	trainerbattle_single TRAINER_SN_HENRY_1, SinnohVictoryRoad_B1F_Text_HenryIntro, SinnohVictoryRoad_B1F_Text_HenryDefeat
 	msgbox SinnohVictoryRoad_B1F_Text_HenryPost, MSGBOX_AUTOCLOSE
 	end
 

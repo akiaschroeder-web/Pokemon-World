@@ -2,7 +2,7 @@ Route206_MapScripts::
 	.byte 0
 
 Route206_EventScript_Axel::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_1, Route206_Text_AxelIntro, Route206_Text_AxelDefeat
+	trainerbattle_single TRAINER_SN_AXEL_1, Route206_Text_AxelIntro, Route206_Text_AxelDefeat
 	msgbox Route206_Text_AxelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ Route206_Text_AxelPost:
 	.string "awesome Trainers all around!$"
 
 Route206_EventScript_Megan::
-	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_1, Route206_Text_MeganIntro, Route206_Text_MeganDefeat
+	trainerbattle_single TRAINER_SN_MEGAN_1, Route206_Text_MeganIntro, Route206_Text_MeganDefeat
 	msgbox Route206_Text_MeganPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -36,7 +36,7 @@ Route206_Text_MeganPost:
 	.string "while sailing downhill.$"
 
 Route206_EventScript_James::
-	trainerbattle_single TRAINER_ISABELLA, Route206_Text_JamesIntro, Route206_Text_JamesDefeat
+	trainerbattle_single TRAINER_SN_JAMES_1, Route206_Text_JamesIntro, Route206_Text_JamesDefeat
 	msgbox Route206_Text_JamesPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -54,7 +54,7 @@ Route206_Text_JamesPost:
 	.string "Road in one long shot.$"
 
 Route206_EventScript_Nicole::
-	trainerbattle_single TRAINER_JONATHAN, Route206_Text_NicoleIntro, Route206_Text_NicoleDefeat
+	trainerbattle_single TRAINER_SN_NICOLE_1, Route206_Text_NicoleIntro, Route206_Text_NicoleDefeat
 	msgbox Route206_Text_NicolePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -72,14 +72,14 @@ Route206_Text_NicolePost:
 	.string "race, not a battle!$"
 
 Route206_EventScript_John::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, Route206_Text_JohnIntro, Route206_Text_JohnDefeat
+	trainerbattle_single TRAINER_SN_JOHN_1, Route206_Text_JohnIntro, Route206_Text_JohnDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route206_EventScript_John_Rematch
 	msgbox Route206_Text_JohnPost, MSGBOX_AUTOCLOSE
 	end
 
 Route206_EventScript_John_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_WEATHER_INST_1, Route206_Text_JohnIntro, Route206_Text_JohnDefeat
+	trainerbattle_rematch TRAINER_SN_JOHN_1, Route206_Text_JohnIntro, Route206_Text_JohnDefeat
 	msgbox Route206_Text_JohnPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -98,14 +98,14 @@ Route206_Text_JohnPost:
 	.string "I love them both!$"
 
 Route206_EventScript_Kayla::
-	trainerbattle_single TRAINER_GRUNT_MUSEUM_1, Route206_Text_KaylaIntro, Route206_Text_KaylaDefeat
+	trainerbattle_single TRAINER_SN_KAYLA_1, Route206_Text_KaylaIntro, Route206_Text_KaylaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route206_EventScript_Kayla_Rematch
 	msgbox Route206_Text_KaylaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route206_EventScript_Kayla_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_MUSEUM_1, Route206_Text_KaylaIntro, Route206_Text_KaylaDefeat
+	trainerbattle_rematch TRAINER_SN_KAYLA_1, Route206_Text_KaylaIntro, Route206_Text_KaylaDefeat
 	msgbox Route206_Text_KaylaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -122,7 +122,7 @@ Route206_Text_KaylaPost:
 	.string "you cry! Boo-hoo-hoo!$"
 
 Route206_EventScript_Ryan::
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_1, Route206_Text_RyanIntro, Route206_Text_RyanDefeat
+	trainerbattle_single TRAINER_SN_RYAN_1, Route206_Text_RyanIntro, Route206_Text_RyanDefeat
 	msgbox Route206_Text_RyanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -139,7 +139,7 @@ Route206_Text_RyanPost:
 	.string "We should be getting home to rest...$"
 
 Route206_EventScript_Rachel::
-	trainerbattle_single TRAINER_GRUNT_MT_PYRE_1, Route206_Text_RachelIntro, Route206_Text_RachelDefeat
+	trainerbattle_single TRAINER_SN_RACHEL_1, Route206_Text_RachelIntro, Route206_Text_RachelDefeat
 	msgbox Route206_Text_RachelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -157,14 +157,14 @@ Route206_Text_RachelPost:
 	.string "Road looks nice?$"
 
 Route206_EventScript_Theodore::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, Route206_Text_TheodoreIntro, Route206_Text_TheodoreDefeat
+	trainerbattle_single TRAINER_SN_THEODORE_1, Route206_Text_TheodoreIntro, Route206_Text_TheodoreDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route206_EventScript_Theodore_Rematch
 	msgbox Route206_Text_TheodorePost, MSGBOX_AUTOCLOSE
 	end
 
 Route206_EventScript_Theodore_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_AQUA_HIDEOUT_6, Route206_Text_TheodoreIntro, Route206_Text_TheodoreDefeat
+	trainerbattle_rematch TRAINER_SN_THEODORE_1, Route206_Text_TheodoreIntro, Route206_Text_TheodoreDefeat
 	msgbox Route206_Text_TheodorePost, MSGBOX_AUTOCLOSE
 	end
 

@@ -64,8 +64,8 @@ CelesticTown_Ruins_OnTransitionSN:
 
 CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS:
 	setflag FLAG_SN_HIDE_CEL_CYRUS
-	goto_if_not_defeated TRAINER_ELLIOT_1, CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS_End
-	goto_if_defeated TRAINER_ELLIOT_2, CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS_End
+	goto_if_not_defeated TRAINER_SN_GRUNT_31, CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS_End
+	goto_if_defeated TRAINER_SN_CYRUS_1, CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS_End
 	clearflag FLAG_SN_HIDE_CEL_CYRUS
 CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS_End:
 	return
@@ -79,7 +79,7 @@ CelesticTown_Ruins_EventScript_SNCyrus_Ask:
 	goto_if_eq VAR_RESULT, NO, CelesticTown_Ruins_EventScript_SNCyrus_Coward
 	msgbox CelesticTown_Ruins_EventScript_SNCyrus_Intro, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_ELLIOT_2, CelesticTown_Ruins_EventScript_SNCyrus_Defeat
+	trainerbattle_no_intro TRAINER_SN_CYRUS_1, CelesticTown_Ruins_EventScript_SNCyrus_Defeat
 	goto CelesticTown_Ruins_EventScript_SNCyrus_Won
 CelesticTown_Ruins_EventScript_SNCyrus_Coward:
 	msgbox CelesticTown_Ruins_Text_SNCyrusCoward, MSGBOX_DEFAULT
@@ -102,7 +102,7 @@ CelesticTown_Ruins_EventScript_SNElder::
 	lock
 	faceplayer
 	goto_if_set FLAG_SN_RECEIVED_HM_SURF, CelesticTown_Ruins_EventScript_SNElderDone
-	goto_if_not_defeated TRAINER_ELLIOT_2, CelesticTown_Ruins_EventScript_SNElderDone
+	goto_if_not_defeated TRAINER_SN_CYRUS_1, CelesticTown_Ruins_EventScript_SNElderDone
 	msgbox CelesticTown_Ruins_Text_SNElder1, MSGBOX_DEFAULT
 	giveitem ITEM_HM_SURF
 	setflag FLAG_SN_RECEIVED_HM_SURF

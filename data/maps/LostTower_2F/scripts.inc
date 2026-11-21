@@ -2,7 +2,7 @@ LostTower_2F_MapScripts::
 	.byte 0
 
 LostTower_2F_EventScript_Oliver::
-	trainerbattle_single TRAINER_TIMOTHY_1, LostTower_2F_Text_OliverIntro, LostTower_2F_Text_OliverDefeat
+	trainerbattle_single TRAINER_SN_OLIVER_1, LostTower_2F_Text_OliverIntro, LostTower_2F_Text_OliverDefeat
 	msgbox LostTower_2F_Text_OliverPost, MSGBOX_AUTOCLOSE
 	end
 

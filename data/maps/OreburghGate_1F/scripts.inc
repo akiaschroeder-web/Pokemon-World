@@ -2,7 +2,7 @@ OreburghGate_1F_MapScripts::
 	.byte 0
 
 OreburghGate_1F_EventScript_Diana::
-	trainerbattle_single TRAINER_AUTUMN, OreburghGate_1F_Text_DianaIntro, OreburghGate_1F_Text_DianaDefeat
+	trainerbattle_single TRAINER_SN_DIANA_1, OreburghGate_1F_Text_DianaIntro, OreburghGate_1F_Text_DianaDefeat
 	msgbox OreburghGate_1F_Text_DianaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ OreburghGate_1F_Text_DianaPost:
 	.string "an adventure.$"
 
 OreburghGate_1F_EventScript_Curtis::
-	trainerbattle_single TRAINER_TED, OreburghGate_1F_Text_CurtisIntro, OreburghGate_1F_Text_CurtisDefeat
+	trainerbattle_single TRAINER_SN_CURTIS_1, OreburghGate_1F_Text_CurtisIntro, OreburghGate_1F_Text_CurtisDefeat
 	msgbox OreburghGate_1F_Text_CurtisPost, MSGBOX_AUTOCLOSE
 	end
 

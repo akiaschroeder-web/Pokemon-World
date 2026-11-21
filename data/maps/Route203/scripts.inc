@@ -122,7 +122,7 @@ Route203_Text_BarryAfter:
 	.string "I’m gonna toughen up for that, totally!$"
 
 Route203_EventScript_Sebastian::
-	trainerbattle_single TRAINER_EDDIE, Route203_Text_SebastianIntro, Route203_Text_SebastianDefeat
+	trainerbattle_single TRAINER_SN_SEBASTIAN_1, Route203_Text_SebastianIntro, Route203_Text_SebastianDefeat
 	msgbox Route203_Text_SebastianPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -139,7 +139,7 @@ Route203_Text_SebastianPost:
 	.string "Badge, you're a total nobody...$"
 
 Route203_EventScript_Michael::
-	trainerbattle_single TRAINER_ALLEN, Route203_Text_MichaelIntro, Route203_Text_MichaelDefeat
+	trainerbattle_single TRAINER_SN_MICHAEL_1, Route203_Text_MichaelIntro, Route203_Text_MichaelDefeat
 	msgbox Route203_Text_MichaelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -157,7 +157,7 @@ Route203_Text_MichaelPost:
 	.string "I always have a tough time choosing.$"
 
 Route203_EventScript_Kaitlin::
-	trainerbattle_single TRAINER_DILLON, Route203_Text_KaitlinIntro, Route203_Text_KaitlinDefeat
+	trainerbattle_single TRAINER_SN_KAITLIN_1, Route203_Text_KaitlinIntro, Route203_Text_KaitlinDefeat
 	msgbox Route203_Text_KaitlinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -173,14 +173,14 @@ Route203_Text_KaitlinPost:
 	.string "the POKéMON I want.$"
 
 Route203_EventScript_Dallas::
-	trainerbattle_single TRAINER_JAYLEN, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
+	trainerbattle_single TRAINER_SN_DALLAS_1, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route203_EventScript_Dallas_Rematch
 	msgbox Route203_Text_DallasPost, MSGBOX_AUTOCLOSE
 	end
 
 Route203_EventScript_Dallas_Rematch:
-	trainerbattle_rematch TRAINER_JAYLEN, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
+	trainerbattle_rematch TRAINER_SN_DALLAS_1, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
 	msgbox Route203_Text_DallasPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -196,14 +196,14 @@ Route203_Text_DallasPost:
 	.string "promise I'll get tougher!$"
 
 Route203_EventScript_Madeline::
-	trainerbattle_single TRAINER_TRAVIS, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
+	trainerbattle_single TRAINER_SN_MADELINE_1, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route203_EventScript_Madeline_Rematch
 	msgbox Route203_Text_MadelinePost, MSGBOX_AUTOCLOSE
 	end
 
 Route203_EventScript_Madeline_Rematch:
-	trainerbattle_rematch TRAINER_TRAVIS, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
+	trainerbattle_rematch TRAINER_SN_MADELINE_1, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
 	msgbox Route203_Text_MadelinePost, MSGBOX_AUTOCLOSE
 	end
 

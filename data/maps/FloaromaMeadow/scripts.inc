@@ -6,10 +6,10 @@ FloaromaMeadow_EventScript_Grunts::
 	faceplayer
 	msgbox FloaromaMeadow_Text_Grunt1Intro, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RANDALL, FloaromaMeadow_Text_Grunt1Defeat
+	trainerbattle_no_intro TRAINER_SN_GRUNT_14, FloaromaMeadow_Text_Grunt1Defeat
 	msgbox FloaromaMeadow_Text_Grunt2Intro, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_PARKER, FloaromaMeadow_Text_Grunt2Defeat
+	trainerbattle_no_intro TRAINER_SN_GRUNT_15, FloaromaMeadow_Text_Grunt2Defeat
 	msgbox FloaromaMeadow_Text_GruntsFlee, MSGBOX_DEFAULT
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK

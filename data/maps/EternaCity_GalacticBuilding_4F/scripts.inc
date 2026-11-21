@@ -5,7 +5,7 @@ EternaCity_GalacticBuilding_4F_EventScript_Jupiter::
 	lock
 	faceplayer
 	msgbox EternaCity_GalacticBuilding_4F_Text_JupiterIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_PAXTON, EternaCity_GalacticBuilding_4F_Text_JupiterDefeat
+	trainerbattle_no_intro TRAINER_SN_JUPITER_2, EternaCity_GalacticBuilding_4F_Text_JupiterDefeat
 	msgbox EternaCity_GalacticBuilding_4F_Text_JupiterAfter, MSGBOX_DEFAULT
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK

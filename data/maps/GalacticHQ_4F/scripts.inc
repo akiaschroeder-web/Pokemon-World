@@ -48,7 +48,7 @@ GalacticHQ_4F_OnTransitionSN:
 GalacticHQ_4F_EventScript_SNVis_HQ_CYRUS:
 	setflag FLAG_SN_HIDE_HQ_CYRUS
 	goto_if_lt VAR_SINNOH_STORY, 31, GalacticHQ_4F_EventScript_SNVis_HQ_CYRUS_End
-	goto_if_defeated TRAINER_ABIGAIL_5, GalacticHQ_4F_EventScript_SNVis_HQ_CYRUS_End
+	goto_if_defeated TRAINER_SN_CYRUS_2, GalacticHQ_4F_EventScript_SNVis_HQ_CYRUS_End
 	clearflag FLAG_SN_HIDE_HQ_CYRUS
 GalacticHQ_4F_EventScript_SNVis_HQ_CYRUS_End:
 	return
@@ -62,7 +62,7 @@ GalacticHQ_4F_EventScript_SNCyrus::
 	waitmovement 0
 	msgbox GalacticHQ_4F_Text_SNIKnowWhy, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_ABIGAIL_5, GalacticHQ_4F_EventScript_SNCyrus_Defeat
+	trainerbattle_no_intro TRAINER_SN_CYRUS_2, GalacticHQ_4F_EventScript_SNCyrus_Defeat
 	msgbox GalacticHQ_4F_EventScript_SNCyrus_Post, MSGBOX_DEFAULT
 	giveitem ITEM_MASTER_BALL
 	msgbox GalacticHQ_4F_EventScript_SNCyrus_Post2, MSGBOX_DEFAULT

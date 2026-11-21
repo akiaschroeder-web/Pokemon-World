@@ -2,7 +2,7 @@ MtCoronet_3F_MapScripts::
 	.byte 0
 
 MtCoronet_3F_EventScript_Grunt::
-	trainerbattle_single TRAINER_VALERIE_1, MtCoronet_3F_Text_GruntIntro, MtCoronet_3F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_21, MtCoronet_3F_Text_GruntIntro, MtCoronet_3F_Text_GruntDefeat
 	msgbox MtCoronet_3F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -23,7 +23,7 @@ MtCoronet_3F_Text_GruntPost:
 	.string "That would solve all our problems!$"
 
 MtCoronet_3F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_VALERIE_2, MtCoronet_3F_Text_Grunt2Intro, MtCoronet_3F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_22, MtCoronet_3F_Text_Grunt2Intro, MtCoronet_3F_Text_Grunt2Defeat
 	msgbox MtCoronet_3F_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 

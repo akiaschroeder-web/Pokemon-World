@@ -2,7 +2,7 @@ GalacticHQ_1F_MapScripts::
 	.byte 0
 
 GalacticHQ_1F_EventScript_Grunt::
-	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_3, GalacticHQ_1F_Text_GruntIntro, GalacticHQ_1F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_1, GalacticHQ_1F_Text_GruntIntro, GalacticHQ_1F_Text_GruntDefeat
 	msgbox GalacticHQ_1F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ GalacticHQ_1F_Text_GruntPost:
 	.string "connect.$"
 
 GalacticHQ_1F_EventScript_Fredrick::
-	trainerbattle_single TRAINER_GABRIELLE_1, GalacticHQ_1F_Text_FredrickIntro, GalacticHQ_1F_Text_FredrickDefeat
+	trainerbattle_single TRAINER_SN_FREDRICK_1, GalacticHQ_1F_Text_FredrickIntro, GalacticHQ_1F_Text_FredrickDefeat
 	msgbox GalacticHQ_1F_Text_FredrickPost, MSGBOX_AUTOCLOSE
 	end
 

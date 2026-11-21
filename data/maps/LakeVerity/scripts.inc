@@ -144,7 +144,7 @@ LakeVerity_OnTransitionSN:
 LakeVerity_EventScript_SNVis_VERITY_MARS:
 	setflag FLAG_SN_HIDE_VERITY_MARS
 	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_MARS_End
-	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_MARS_End
+	goto_if_defeated TRAINER_SN_MARS_2, LakeVerity_EventScript_SNVis_VERITY_MARS_End
 	clearflag FLAG_SN_HIDE_VERITY_MARS
 LakeVerity_EventScript_SNVis_VERITY_MARS_End:
 	return
@@ -152,8 +152,8 @@ LakeVerity_EventScript_SNVis_VERITY_MARS_End:
 LakeVerity_EventScript_SNVis_VERITY_GRUNT1:
 	setflag FLAG_SN_HIDE_VERITY_GRUNT1
 	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
-	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
-	goto_if_defeated TRAINER_BENJAMIN_5, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
+	goto_if_defeated TRAINER_SN_MARS_2, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
+	goto_if_defeated TRAINER_SN_GRUNT_34, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
 	clearflag FLAG_SN_HIDE_VERITY_GRUNT1
 LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End:
 	return
@@ -161,8 +161,8 @@ LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End:
 LakeVerity_EventScript_SNVis_VERITY_GRUNT2:
 	setflag FLAG_SN_HIDE_VERITY_GRUNT2
 	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
-	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
-	goto_if_defeated TRAINER_ABIGAIL_1, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
+	goto_if_defeated TRAINER_SN_MARS_2, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
+	goto_if_defeated TRAINER_SN_GRUNT_35, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
 	clearflag FLAG_SN_HIDE_VERITY_GRUNT2
 LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End:
 	return
@@ -170,8 +170,8 @@ LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End:
 LakeVerity_EventScript_SNVis_VERITY_GRUNT3:
 	setflag FLAG_SN_HIDE_VERITY_GRUNT3
 	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
-	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
-	goto_if_defeated TRAINER_ABIGAIL_2, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
+	goto_if_defeated TRAINER_SN_MARS_2, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
+	goto_if_defeated TRAINER_SN_GRUNT_36, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
 	clearflag FLAG_SN_HIDE_VERITY_GRUNT3
 LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End:
 	return
@@ -179,14 +179,14 @@ LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End:
 LakeVerity_EventScript_SNVis_VERITY_GRUNT4:
 	setflag FLAG_SN_HIDE_VERITY_GRUNT4
 	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
-	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
-	goto_if_defeated TRAINER_ABIGAIL_3, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
+	goto_if_defeated TRAINER_SN_MARS_2, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
+	goto_if_defeated TRAINER_SN_GRUNT_37, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
 	clearflag FLAG_SN_HIDE_VERITY_GRUNT4
 LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End:
 	return
 
 LakeVerity_EventScript_SNVERITY_MARS::
-	trainerbattle_single TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVERITY_MARS_Intro, LakeVerity_EventScript_SNVERITY_MARS_Defeat, LakeVerity_EventScript_SNVERITY_MARS_Won
+	trainerbattle_single TRAINER_SN_MARS_2, LakeVerity_EventScript_SNVERITY_MARS_Intro, LakeVerity_EventScript_SNVERITY_MARS_Defeat, LakeVerity_EventScript_SNVERITY_MARS_Won
 	msgbox LakeVerity_EventScript_SNVERITY_MARS_Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -247,7 +247,7 @@ LakeVerity_EventScript_SNVERITY_MARS_Post:
 	.string "Team Galactic has for them!$"
 
 LakeVerity_EventScript_SNVERITY_GRUNT1::
-	trainerbattle_single TRAINER_BENJAMIN_5, LakeVerity_EventScript_SNVERITY_GRUNT1_Intro, LakeVerity_EventScript_SNVERITY_GRUNT1_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT1_Won
+	trainerbattle_single TRAINER_SN_GRUNT_34, LakeVerity_EventScript_SNVERITY_GRUNT1_Intro, LakeVerity_EventScript_SNVERITY_GRUNT1_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT1_Won
 	msgbox LakeVerity_EventScript_SNVERITY_GRUNT1_Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -272,7 +272,7 @@ LakeVerity_EventScript_SNVERITY_GRUNT1_Post:
 	.string "Mars will deal with you!$"
 
 LakeVerity_EventScript_SNVERITY_GRUNT2::
-	trainerbattle_single TRAINER_ABIGAIL_1, LakeVerity_EventScript_SNVERITY_GRUNT2_Intro, LakeVerity_EventScript_SNVERITY_GRUNT2_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT2_Won
+	trainerbattle_single TRAINER_SN_GRUNT_35, LakeVerity_EventScript_SNVERITY_GRUNT2_Intro, LakeVerity_EventScript_SNVERITY_GRUNT2_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT2_Won
 	msgbox LakeVerity_EventScript_SNVERITY_GRUNT2_Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -297,7 +297,7 @@ LakeVerity_EventScript_SNVERITY_GRUNT2_Post:
 	.string "Mars will deal with you!$"
 
 LakeVerity_EventScript_SNVERITY_GRUNT3::
-	trainerbattle_single TRAINER_ABIGAIL_2, LakeVerity_EventScript_SNVERITY_GRUNT3_Intro, LakeVerity_EventScript_SNVERITY_GRUNT3_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT3_Won
+	trainerbattle_single TRAINER_SN_GRUNT_36, LakeVerity_EventScript_SNVERITY_GRUNT3_Intro, LakeVerity_EventScript_SNVERITY_GRUNT3_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT3_Won
 	msgbox LakeVerity_EventScript_SNVERITY_GRUNT3_Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -322,7 +322,7 @@ LakeVerity_EventScript_SNVERITY_GRUNT3_Post:
 	.string "Mars will deal with you!$"
 
 LakeVerity_EventScript_SNVERITY_GRUNT4::
-	trainerbattle_single TRAINER_ABIGAIL_3, LakeVerity_EventScript_SNVERITY_GRUNT4_Intro, LakeVerity_EventScript_SNVERITY_GRUNT4_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT4_Won
+	trainerbattle_single TRAINER_SN_GRUNT_37, LakeVerity_EventScript_SNVERITY_GRUNT4_Intro, LakeVerity_EventScript_SNVERITY_GRUNT4_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT4_Won
 	msgbox LakeVerity_EventScript_SNVERITY_GRUNT4_Post, MSGBOX_AUTOCLOSE
 	end
 

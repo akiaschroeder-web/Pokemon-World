@@ -2,7 +2,7 @@ Route215_MapScripts::
 	.byte 0
 
 Route215_EventScript_Derek::
-	trainerbattle_single TRAINER_CARTER, Route215_Text_DerekIntro, Route215_Text_DerekDefeat
+	trainerbattle_single TRAINER_SN_DEREK_1, Route215_Text_DerekIntro, Route215_Text_DerekDefeat
 	msgbox Route215_Text_DerekPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -17,7 +17,7 @@ Route215_Text_DerekPost:
 	.string "Back to training for us!$"
 
 Route215_EventScript_Gregory::
-	trainerbattle_single TRAINER_RONALD, Route215_Text_GregoryIntro, Route215_Text_GregoryDefeat
+	trainerbattle_single TRAINER_SN_GREGORY_1, Route215_Text_GregoryIntro, Route215_Text_GregoryDefeat
 	msgbox Route215_Text_GregoryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -37,7 +37,7 @@ Route215_Text_GregoryPost:
 	.string "wouldn't!$"
 
 Route215_EventScript_Nathaniel::
-	trainerbattle_single TRAINER_JACOB, Route215_Text_NathanielIntro, Route215_Text_NathanielDefeat
+	trainerbattle_single TRAINER_SN_NATHANIEL_1, Route215_Text_NathanielIntro, Route215_Text_NathanielDefeat
 	msgbox Route215_Text_NathanielPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -54,7 +54,7 @@ Route215_Text_NathanielPost:
 	.string "more I sweat, the tougher I get!$"
 
 Route215_EventScript_Scott::
-	trainerbattle_single TRAINER_ANTHONY, Route215_Text_ScottIntro, Route215_Text_ScottDefeat
+	trainerbattle_single TRAINER_SN_SCOTT_1, Route215_Text_ScottIntro, Route215_Text_ScottDefeat
 	msgbox Route215_Text_ScottPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -70,7 +70,7 @@ Route215_Text_ScottPost:
 	.string "huff-huff.$"
 
 Route215_EventScript_Calvin::
-	trainerbattle_single TRAINER_JASMINE, Route215_Text_CalvinIntro, Route215_Text_CalvinDefeat
+	trainerbattle_single TRAINER_SN_CALVIN_1, Route215_Text_CalvinIntro, Route215_Text_CalvinDefeat
 	msgbox Route215_Text_CalvinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -87,14 +87,14 @@ Route215_Text_CalvinPost:
 	.string "UNDERGROUND is the better choice.$"
 
 Route215_EventScript_Dennis::
-	trainerbattle_single TRAINER_CAMDEN, Route215_Text_DennisIntro, Route215_Text_DennisDefeat
+	trainerbattle_single TRAINER_SN_DENNIS_1, Route215_Text_DennisIntro, Route215_Text_DennisDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route215_EventScript_Dennis_Rematch
 	msgbox Route215_Text_DennisPost, MSGBOX_AUTOCLOSE
 	end
 
 Route215_EventScript_Dennis_Rematch:
-	trainerbattle_rematch TRAINER_CAMDEN, Route215_Text_DennisIntro, Route215_Text_DennisDefeat
+	trainerbattle_rematch TRAINER_SN_DENNIS_1, Route215_Text_DennisIntro, Route215_Text_DennisDefeat
 	msgbox Route215_Text_DennisPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -113,14 +113,14 @@ Route215_Text_DennisPost:
 	.string "Nothing like that means anything!$"
 
 Route215_EventScript_Maya::
-	trainerbattle_single TRAINER_DEMETRIUS, Route215_Text_MayaIntro, Route215_Text_MayaDefeat
+	trainerbattle_single TRAINER_SN_MAYA_1, Route215_Text_MayaIntro, Route215_Text_MayaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route215_EventScript_Maya_Rematch
 	msgbox Route215_Text_MayaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route215_EventScript_Maya_Rematch:
-	trainerbattle_rematch TRAINER_DEMETRIUS, Route215_Text_MayaIntro, Route215_Text_MayaDefeat
+	trainerbattle_rematch TRAINER_SN_MAYA_1, Route215_Text_MayaIntro, Route215_Text_MayaDefeat
 	msgbox Route215_Text_MayaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -136,14 +136,14 @@ Route215_Text_MayaPost:
 	.string "was confident, you know.$"
 
 Route215_EventScript_Craig::
-	trainerbattle_single TRAINER_CHASE, Route215_Text_CraigIntro, Route215_Text_CraigDefeat
+	trainerbattle_single TRAINER_SN_CRAIG_1, Route215_Text_CraigIntro, Route215_Text_CraigDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route215_EventScript_Craig_Rematch
 	msgbox Route215_Text_CraigPost, MSGBOX_AUTOCLOSE
 	end
 
 Route215_EventScript_Craig_Rematch:
-	trainerbattle_rematch TRAINER_CHASE, Route215_Text_CraigIntro, Route215_Text_CraigDefeat
+	trainerbattle_rematch TRAINER_SN_CRAIG_1, Route215_Text_CraigIntro, Route215_Text_CraigDefeat
 	msgbox Route215_Text_CraigPost, MSGBOX_AUTOCLOSE
 	end
 

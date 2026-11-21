@@ -2,7 +2,7 @@ Route226_MapScripts::
 	.byte 0
 
 Route226_EventScript_Lydia::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_119_TREECKO, Route226_Text_LydiaIntro, Route226_Text_LydiaDefeat
+	trainerbattle_single TRAINER_SN_LYDIA_1, Route226_Text_LydiaIntro, Route226_Text_LydiaDefeat
 	msgbox Route226_Text_LydiaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -22,7 +22,7 @@ Route226_Text_LydiaPost:
 	.string "get all mellowed out.$"
 
 Route226_EventScript_Graham::
-	trainerbattle_single TRAINER_ROBIN, Route226_Text_GrahamIntro, Route226_Text_GrahamDefeat
+	trainerbattle_single TRAINER_SN_GRAHAM_1, Route226_Text_GrahamIntro, Route226_Text_GrahamDefeat
 	msgbox Route226_Text_GrahamPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -40,7 +40,7 @@ Route226_Text_GrahamPost:
 	.string "caught. They mean everything to me!$"
 
 Route226_EventScript_Geneva::
-	trainerbattle_single TRAINER_RICK, Route226_Text_GenevaIntro, Route226_Text_GenevaDefeat
+	trainerbattle_single TRAINER_SN_GENEVA_1, Route226_Text_GenevaIntro, Route226_Text_GenevaDefeat
 	msgbox Route226_Text_GenevaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -59,7 +59,7 @@ Route226_Text_GenevaPost:
 	.string "on top of my head. That gets messy.$"
 
 Route226_EventScript_Stanley::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_119_TORCHIC, Route226_Text_StanleyIntro, Route226_Text_StanleyDefeat
+	trainerbattle_single TRAINER_SN_STANLEY_1, Route226_Text_StanleyIntro, Route226_Text_StanleyDefeat
 	msgbox Route226_Text_StanleyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -81,7 +81,7 @@ Route226_Text_StanleyPost:
 	.string "that I need to work on first.$"
 
 Route226_EventScript_Wade::
-	trainerbattle_single TRAINER_MAY_ROUTE_103_MUDKIP, Route226_Text_WadeIntro, Route226_Text_WadeDefeat
+	trainerbattle_single TRAINER_SN_WADE_1, Route226_Text_WadeIntro, Route226_Text_WadeDefeat
 	msgbox Route226_Text_WadePost, MSGBOX_AUTOCLOSE
 	end
 

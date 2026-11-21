@@ -3,7 +3,7 @@ WaywardCave_1F_MapScripts::
 	.byte 0
 
 WaywardCave_1F_EventScript_Diego::
-	trainerbattle_single TRAINER_RICKY_3, WaywardCave_1F_Text_DiegoIntro, WaywardCave_1F_Text_DiegoDefeat
+	trainerbattle_single TRAINER_SN_DIEGO_1, WaywardCave_1F_Text_DiegoIntro, WaywardCave_1F_Text_DiegoDefeat
 	msgbox WaywardCave_1F_Text_DiegoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ WaywardCave_1F_Text_DiegoPost:
 	.string "That’s my story!$"
 
 WaywardCave_1F_EventScript_Tori::
-	trainerbattle_single TRAINER_RICKY_4, WaywardCave_1F_Text_ToriIntro, WaywardCave_1F_Text_ToriDefeat
+	trainerbattle_single TRAINER_SN_TORI_1, WaywardCave_1F_Text_ToriIntro, WaywardCave_1F_Text_ToriDefeat
 	msgbox WaywardCave_1F_Text_ToriPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,7 +39,7 @@ WaywardCave_1F_Text_ToriPost:
 	.string "place like this...$"
 
 WaywardCave_1F_EventScript_Cassidy::
-	trainerbattle_single TRAINER_RICKY_5, WaywardCave_1F_Text_CassidyIntro, WaywardCave_1F_Text_CassidyDefeat
+	trainerbattle_single TRAINER_SN_CASSIDY_1, WaywardCave_1F_Text_CassidyIntro, WaywardCave_1F_Text_CassidyDefeat
 	msgbox WaywardCave_1F_Text_CassidyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -56,7 +56,7 @@ WaywardCave_1F_Text_CassidyPost:
 	.string "heard crying from deeper in the cave.$"
 
 WaywardCave_1F_EventScript_Wayne::
-	trainerbattle_single TRAINER_WILTON_1, WaywardCave_1F_Text_WayneIntro, WaywardCave_1F_Text_WayneDefeat
+	trainerbattle_single TRAINER_SN_WAYNE_1, WaywardCave_1F_Text_WayneIntro, WaywardCave_1F_Text_WayneDefeat
 	msgbox WaywardCave_1F_Text_WaynePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -72,7 +72,7 @@ WaywardCave_1F_Text_WaynePost:
 	.string "some underground tag, too.$"
 
 WaywardCave_1F_EventScript_Reginald::
-	trainerbattle_single TRAINER_WILTON_2, WaywardCave_1F_Text_ReginaldIntro, WaywardCave_1F_Text_ReginaldDefeat
+	trainerbattle_single TRAINER_SN_REGINALD_1, WaywardCave_1F_Text_ReginaldIntro, WaywardCave_1F_Text_ReginaldDefeat
 	msgbox WaywardCave_1F_Text_ReginaldPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -86,7 +86,7 @@ WaywardCave_1F_Text_ReginaldPost:
 	.string "Me? No, I’m not lost. I live here!$"
 
 WaywardCave_1F_EventScript_Terry::
-	trainerbattle_single TRAINER_WILTON_3, WaywardCave_1F_Text_TerryIntro, WaywardCave_1F_Text_TerryDefeat
+	trainerbattle_single TRAINER_SN_TERRY_1, WaywardCave_1F_Text_TerryIntro, WaywardCave_1F_Text_TerryDefeat
 	msgbox WaywardCave_1F_Text_TerryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -105,7 +105,7 @@ WaywardCave_1F_Text_TerryPost:
 	.string "seriously! I do!$"
 
 WaywardCave_1F_EventScript_Ana::
-	trainerbattle_single TRAINER_WILTON_4, WaywardCave_1F_Text_AnaIntro, WaywardCave_1F_Text_AnaDefeat
+	trainerbattle_single TRAINER_SN_ANA_1, WaywardCave_1F_Text_AnaIntro, WaywardCave_1F_Text_AnaDefeat
 	msgbox WaywardCave_1F_Text_AnaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -122,7 +122,7 @@ WaywardCave_1F_Text_AnaPost:
 	.string "There’s no deep meaning to it.$"
 
 WaywardCave_1F_EventScript_Parker::
-	trainerbattle_single TRAINER_WILTON_5, WaywardCave_1F_Text_ParkerIntro, WaywardCave_1F_Text_ParkerDefeat
+	trainerbattle_single TRAINER_SN_PARKER_1, WaywardCave_1F_Text_ParkerIntro, WaywardCave_1F_Text_ParkerDefeat
 	msgbox WaywardCave_1F_Text_ParkerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -141,7 +141,7 @@ WaywardCave_1F_Text_ParkerPost:
 	.string "but...$"
 
 WaywardCave_1F_EventScript_Gerald::
-	trainerbattle_single TRAINER_BROOKE_1, WaywardCave_1F_Text_GeraldIntro, WaywardCave_1F_Text_GeraldDefeat
+	trainerbattle_single TRAINER_SN_GERALD_1, WaywardCave_1F_Text_GeraldIntro, WaywardCave_1F_Text_GeraldDefeat
 	msgbox WaywardCave_1F_Text_GeraldPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -160,7 +160,7 @@ WaywardCave_1F_Text_GeraldPost:
 	.string "this place can’t be called ruins!$"
 
 WaywardCave_1F_EventScript_Lorenzo::
-	trainerbattle_single TRAINER_BROOKE_2, WaywardCave_1F_Text_LorenzoIntro, WaywardCave_1F_Text_LorenzoDefeat
+	trainerbattle_single TRAINER_SN_LORENZO_1, WaywardCave_1F_Text_LorenzoIntro, WaywardCave_1F_Text_LorenzoDefeat
 	msgbox WaywardCave_1F_Text_LorenzoPost, MSGBOX_AUTOCLOSE
 	end
 

@@ -24,12 +24,12 @@ ValleyWindoworks_Indoor_EventScript_SNDoorGrunt::
 	end
 
 ValleyWindoworks_Indoor_EventScript_Grunt1::
-	trainerbattle_single TRAINER_GEORGE, ValleyWindoworks_Indoor_Text_G1Intro, ValleyWindoworks_Indoor_Text_G1Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_16, ValleyWindoworks_Indoor_Text_G1Intro, ValleyWindoworks_Indoor_Text_G1Defeat
 	msgbox ValleyWindoworks_Indoor_Text_G1Post, MSGBOX_AUTOCLOSE
 	end
 
 ValleyWindoworks_Indoor_EventScript_Grunt2::
-	trainerbattle_single TRAINER_BERKE, ValleyWindoworks_Indoor_Text_G2Intro, ValleyWindoworks_Indoor_Text_G2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_17, ValleyWindoworks_Indoor_Text_G2Intro, ValleyWindoworks_Indoor_Text_G2Defeat
 	msgbox ValleyWindoworks_Indoor_Text_G2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ ValleyWindoworks_Indoor_EventScript_Mars::
 	goto_if_ge VAR_SINNOH_STORY, 22, ValleyWindoworks_Indoor_EventScript_MarsEnd
 	msgbox ValleyWindoworks_Indoor_Text_MarsIntro, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_BRAXTON, ValleyWindoworks_Indoor_Text_MarsDefeat
+	trainerbattle_no_intro TRAINER_SN_MARS_1, ValleyWindoworks_Indoor_Text_MarsDefeat
 	msgbox ValleyWindoworks_Indoor_Text_MarsAfter, MSGBOX_DEFAULT
 	msgbox ValleyWindoworks_Indoor_Text_Charon, MSGBOX_DEFAULT
 	closemessage

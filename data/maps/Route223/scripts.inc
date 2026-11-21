@@ -2,14 +2,14 @@ Route223_MapScripts::
 	.byte 0
 
 Route223_EventScript_Wesley::
-	trainerbattle_single TRAINER_CAROL, Route223_Text_WesleyIntro, Route223_Text_WesleyDefeat
+	trainerbattle_single TRAINER_SN_WESLEY_1, Route223_Text_WesleyIntro, Route223_Text_WesleyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Wesley_Rematch
 	msgbox Route223_Text_WesleyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route223_EventScript_Wesley_Rematch:
-	trainerbattle_rematch TRAINER_CAROL, Route223_Text_WesleyIntro, Route223_Text_WesleyDefeat
+	trainerbattle_rematch TRAINER_SN_WESLEY_1, Route223_Text_WesleyIntro, Route223_Text_WesleyDefeat
 	msgbox Route223_Text_WesleyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -25,7 +25,7 @@ Route223_Text_WesleyPost:
 	.string "driftwood...$"
 
 Route223_EventScript_Ricardo::
-	trainerbattle_single TRAINER_NANCY, Route223_Text_RicardoIntro, Route223_Text_RicardoDefeat
+	trainerbattle_single TRAINER_SN_RICARDO_1, Route223_Text_RicardoIntro, Route223_Text_RicardoDefeat
 	msgbox Route223_Text_RicardoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -43,14 +43,14 @@ Route223_Text_RicardoPost:
 	.string "broaden your horizons.$"
 
 Route223_EventScript_Francisco::
-	trainerbattle_single TRAINER_MARTHA, Route223_Text_FranciscoIntro, Route223_Text_FranciscoDefeat
+	trainerbattle_single TRAINER_SN_FRANCISCO_1, Route223_Text_FranciscoIntro, Route223_Text_FranciscoDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Francisco_Rematch
 	msgbox Route223_Text_FranciscoPost, MSGBOX_AUTOCLOSE
 	end
 
 Route223_EventScript_Francisco_Rematch:
-	trainerbattle_rematch TRAINER_MARTHA, Route223_Text_FranciscoIntro, Route223_Text_FranciscoDefeat
+	trainerbattle_rematch TRAINER_SN_FRANCISCO_1, Route223_Text_FranciscoIntro, Route223_Text_FranciscoDefeat
 	msgbox Route223_Text_FranciscoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -66,7 +66,7 @@ Route223_Text_FranciscoPost:
 	.string "Badges? No wonder you're so tough...$"
 
 Route223_EventScript_Colton::
-	trainerbattle_single TRAINER_CEDRIC, Route223_Text_ColtonIntro, Route223_Text_ColtonDefeat
+	trainerbattle_single TRAINER_SN_COLTON_1, Route223_Text_ColtonIntro, Route223_Text_ColtonDefeat
 	msgbox Route223_Text_ColtonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -82,7 +82,7 @@ Route223_Text_ColtonPost:
 	.string "Kanto and Hoenn regions?$"
 
 Route223_EventScript_Troy::
-	trainerbattle_single TRAINER_IRENE, Route223_Text_TroyIntro, Route223_Text_TroyDefeat
+	trainerbattle_single TRAINER_SN_TROY_1, Route223_Text_TroyIntro, Route223_Text_TroyDefeat
 	msgbox Route223_Text_TroyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -99,7 +99,7 @@ Route223_Text_TroyPost:
 	.string "show you how to swim.$"
 
 Route223_EventScript_Oscar::
-	trainerbattle_single TRAINER_GINA_AND_MIA_1, Route223_Text_OscarIntro, Route223_Text_OscarDefeat
+	trainerbattle_single TRAINER_SN_OSCAR_1, Route223_Text_OscarIntro, Route223_Text_OscarDefeat
 	msgbox Route223_Text_OscarPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -116,14 +116,14 @@ Route223_Text_OscarPost:
 	.string "train by myself...$"
 
 Route223_EventScript_Miranda::
-	trainerbattle_single TRAINER_MIU_AND_YUKI, Route223_Text_MirandaIntro, Route223_Text_MirandaDefeat
+	trainerbattle_single TRAINER_SN_MIRANDA_1, Route223_Text_MirandaIntro, Route223_Text_MirandaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Miranda_Rematch
 	msgbox Route223_Text_MirandaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route223_EventScript_Miranda_Rematch:
-	trainerbattle_rematch TRAINER_MIU_AND_YUKI, Route223_Text_MirandaIntro, Route223_Text_MirandaDefeat
+	trainerbattle_rematch TRAINER_SN_MIRANDA_1, Route223_Text_MirandaIntro, Route223_Text_MirandaDefeat
 	msgbox Route223_Text_MirandaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -141,7 +141,7 @@ Route223_Text_MirandaPost:
 	.string "anywhere, either.$"
 
 Route223_EventScript_Aubree::
-	trainerbattle_single TRAINER_HUEY, Route223_Text_AubreeIntro, Route223_Text_AubreeDefeat
+	trainerbattle_single TRAINER_SN_AUBREE_1, Route223_Text_AubreeIntro, Route223_Text_AubreeDefeat
 	msgbox Route223_Text_AubreePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -157,7 +157,7 @@ Route223_Text_AubreePost:
 	.string "about where to carry my POKé BALLS!$"
 
 Route223_EventScript_Paige::
-	trainerbattle_single TRAINER_EDMOND, Route223_Text_PaigeIntro, Route223_Text_PaigeDefeat
+	trainerbattle_single TRAINER_SN_PAIGE_1, Route223_Text_PaigeIntro, Route223_Text_PaigeDefeat
 	msgbox Route223_Text_PaigePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -174,14 +174,14 @@ Route223_Text_PaigePost:
 	.string "Breathe in...and out!$"
 
 Route223_EventScript_Crystal::
-	trainerbattle_single TRAINER_DWAYNE, Route223_Text_CrystalIntro, Route223_Text_CrystalDefeat
+	trainerbattle_single TRAINER_SN_CRYSTAL_1, Route223_Text_CrystalIntro, Route223_Text_CrystalDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Crystal_Rematch
 	msgbox Route223_Text_CrystalPost, MSGBOX_AUTOCLOSE
 	end
 
 Route223_EventScript_Crystal_Rematch:
-	trainerbattle_rematch TRAINER_DWAYNE, Route223_Text_CrystalIntro, Route223_Text_CrystalDefeat
+	trainerbattle_rematch TRAINER_SN_CRYSTAL_1, Route223_Text_CrystalIntro, Route223_Text_CrystalDefeat
 	msgbox Route223_Text_CrystalPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -202,7 +202,7 @@ Route223_Text_CrystalPost:
 	.string "what's for dinner tomorrow, and...$"
 
 Route223_EventScript_Cassandra::
-	trainerbattle_single TRAINER_LEONARD, Route223_Text_CassandraIntro, Route223_Text_CassandraDefeat
+	trainerbattle_single TRAINER_SN_CASSANDRA_1, Route223_Text_CassandraIntro, Route223_Text_CassandraDefeat
 	msgbox Route223_Text_CassandraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -223,7 +223,7 @@ Route223_Text_CassandraPost:
 	.string "POKéMON I should be using!$"
 
 Route223_EventScript_Gabrielle::
-	trainerbattle_single TRAINER_DUNCAN, Route223_Text_GabrielleIntro, Route223_Text_GabrielleDefeat
+	trainerbattle_single TRAINER_SN_GABRIELLE_1, Route223_Text_GabrielleIntro, Route223_Text_GabrielleDefeat
 	msgbox Route223_Text_GabriellePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -241,14 +241,14 @@ Route223_Text_GabriellePost:
 	.string "of guy looks great with POKéMON!$"
 
 Route223_EventScript_Zachariah::
-	trainerbattle_single TRAINER_JAZMYN, Route223_Text_ZachariahIntro, Route223_Text_ZachariahDefeat
+	trainerbattle_single TRAINER_SN_ZACHARIAH_1, Route223_Text_ZachariahIntro, Route223_Text_ZachariahDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Zachariah_Rematch
 	msgbox Route223_Text_ZachariahPost, MSGBOX_AUTOCLOSE
 	end
 
 Route223_EventScript_Zachariah_Rematch:
-	trainerbattle_rematch TRAINER_JAZMYN, Route223_Text_ZachariahIntro, Route223_Text_ZachariahDefeat
+	trainerbattle_rematch TRAINER_SN_ZACHARIAH_1, Route223_Text_ZachariahIntro, Route223_Text_ZachariahDefeat
 	msgbox Route223_Text_ZachariahPost, MSGBOX_AUTOCLOSE
 	end
 

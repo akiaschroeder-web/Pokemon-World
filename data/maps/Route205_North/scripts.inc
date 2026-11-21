@@ -2,7 +2,7 @@ Route205_North_MapScripts::
 	.byte 0
 
 Route205_North_EventScript_Andrew::
-	trainerbattle_single TRAINER_JULIE, Route205_North_Text_AndrewIntro, Route205_North_Text_AndrewDefeat
+	trainerbattle_single TRAINER_SN_ANDREW_1, Route205_North_Text_AndrewIntro, Route205_North_Text_AndrewDefeat
 	msgbox Route205_North_Text_AndrewPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,14 +19,14 @@ Route205_North_Text_AndrewPost:
 	.string "appears. That's how you fish.$"
 
 Route205_North_EventScript_Joseph::
-	trainerbattle_single TRAINER_PATRICIA, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
+	trainerbattle_single TRAINER_SN_JOSEPH_1, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route205_North_EventScript_Joseph_Rematch
 	msgbox Route205_North_Text_JosephPost, MSGBOX_AUTOCLOSE
 	end
 
 Route205_North_EventScript_Joseph_Rematch:
-	trainerbattle_rematch TRAINER_PATRICIA, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
+	trainerbattle_rematch TRAINER_SN_JOSEPH_1, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
 	msgbox Route205_North_Text_JosephPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -42,7 +42,7 @@ Route205_North_Text_JosephPost:
 	.string "big ones!$"
 
 Route205_North_EventScript_Zachary::
-	trainerbattle_single TRAINER_SAMUEL, Route205_North_Text_ZacharyIntro, Route205_North_Text_ZacharyDefeat
+	trainerbattle_single TRAINER_SN_ZACHARY_1, Route205_North_Text_ZacharyIntro, Route205_North_Text_ZacharyDefeat
 	msgbox Route205_North_Text_ZacharyPost, MSGBOX_AUTOCLOSE
 	end
 

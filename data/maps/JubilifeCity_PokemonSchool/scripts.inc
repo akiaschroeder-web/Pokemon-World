@@ -143,7 +143,7 @@ JubilifeCity_PokemonSchool_Text_Barry3:
 	.string "See you around!$"
 
 JubilifeCity_PokemonSchool_EventScript_Harrison::
-	trainerbattle_single TRAINER_DAISY, JubilifeCity_PokemonSchool_Text_HarrisonIntro, JubilifeCity_PokemonSchool_Text_HarrisonDefeat
+	trainerbattle_single TRAINER_SN_HARRISON_1, JubilifeCity_PokemonSchool_Text_HarrisonIntro, JubilifeCity_PokemonSchool_Text_HarrisonDefeat
 	msgbox JubilifeCity_PokemonSchool_Text_HarrisonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -159,7 +159,7 @@ JubilifeCity_PokemonSchool_Text_HarrisonPost:
 	.string "look!$"
 
 JubilifeCity_PokemonSchool_EventScript_Christine::
-	trainerbattle_single TRAINER_JOHANNA, JubilifeCity_PokemonSchool_Text_ChristineIntro, JubilifeCity_PokemonSchool_Text_ChristineDefeat
+	trainerbattle_single TRAINER_SN_CHRISTINE_1, JubilifeCity_PokemonSchool_Text_ChristineIntro, JubilifeCity_PokemonSchool_Text_ChristineDefeat
 	msgbox JubilifeCity_PokemonSchool_Text_ChristinePost, MSGBOX_AUTOCLOSE
 	end
 

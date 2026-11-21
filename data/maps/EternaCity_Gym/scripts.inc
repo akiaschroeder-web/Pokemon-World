@@ -3,7 +3,7 @@ EternaCity_Gym_MapScripts::
 
 EternaCity_Gym_EventScript_Gardenia::
 	goto_if_set FLAG_SYS_GAME_CLEAR, EternaCity_Gym_EventScript_SNRematch
-	trainerbattle_single TRAINER_ALEXIA, EternaCity_Gym_Text_GardeniaIntro, EternaCity_Gym_Text_GardeniaDefeat, EternaCity_Gym_EventScript_GardeniaDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_GARDENIA_1, EternaCity_Gym_Text_GardeniaIntro, EternaCity_Gym_Text_GardeniaDefeat, EternaCity_Gym_EventScript_GardeniaDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_TM_GIGA_DRAIN, EternaCity_Gym_EventScript_GiveTM
 	msgbox EternaCity_Gym_Text_GardeniaPost, MSGBOX_DEFAULT
 	release
@@ -96,7 +96,7 @@ EternaCity_Gym_Text_Guide:
 	.string "who come to challenge the Gym Leader.$"
 
 EternaCity_Gym_EventScript_Caroline::
-	trainerbattle_single TRAINER_VITO, EternaCity_Gym_Text_CarolineIntro, EternaCity_Gym_Text_CarolineDefeat
+	trainerbattle_single TRAINER_SN_CAROLINE_1, EternaCity_Gym_Text_CarolineIntro, EternaCity_Gym_Text_CarolineDefeat
 	msgbox EternaCity_Gym_Text_CarolinePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -111,7 +111,7 @@ EternaCity_Gym_Text_CarolinePost:
 	.string "more than anything.$"
 
 EternaCity_Gym_EventScript_Jenna::
-	trainerbattle_single TRAINER_OWEN, EternaCity_Gym_Text_JennaIntro, EternaCity_Gym_Text_JennaDefeat
+	trainerbattle_single TRAINER_SN_JENNA_1, EternaCity_Gym_Text_JennaIntro, EternaCity_Gym_Text_JennaDefeat
 	msgbox EternaCity_Gym_Text_JennaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -128,7 +128,7 @@ EternaCity_Gym_Text_JennaPost:
 	.string "against GRASS POKéMON.$"
 
 EternaCity_Gym_EventScript_Angela::
-	trainerbattle_single TRAINER_WARREN, EternaCity_Gym_Text_AngelaIntro, EternaCity_Gym_Text_AngelaDefeat
+	trainerbattle_single TRAINER_SN_ANGELA_1, EternaCity_Gym_Text_AngelaIntro, EternaCity_Gym_Text_AngelaDefeat
 	msgbox EternaCity_Gym_Text_AngelaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -175,7 +175,7 @@ EternaCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, EternaCity_Gym_EventScript_SNRematch_No
 	msgbox EternaCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_ISAIAH_5, EternaCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_GARDENIA_2, EternaCity_Gym_EventScript_SNRematch_Defeat
 	msgbox EternaCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

@@ -2,7 +2,7 @@ MtCoronet_4F_Room1_MapScripts::
 	.byte 0
 
 MtCoronet_4F_Room1_EventScript_Grunt::
-	trainerbattle_single TRAINER_VALERIE_3, MtCoronet_4F_Room1_Text_GruntIntro, MtCoronet_4F_Room1_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_23, MtCoronet_4F_Room1_Text_GruntIntro, MtCoronet_4F_Room1_Text_GruntDefeat
 	msgbox MtCoronet_4F_Room1_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -22,7 +22,7 @@ MtCoronet_4F_Room1_Text_GruntPost:
 	.string "have realized sooner...$"
 
 MtCoronet_4F_Room1_EventScript_Grunt2::
-	trainerbattle_single TRAINER_VALERIE_4, MtCoronet_4F_Room1_Text_Grunt2Intro, MtCoronet_4F_Room1_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_24, MtCoronet_4F_Room1_Text_Grunt2Intro, MtCoronet_4F_Room1_Text_Grunt2Defeat
 	msgbox MtCoronet_4F_Room1_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 

@@ -2,7 +2,7 @@ SinnohVictoryRoad_2F_MapScripts::
 	.byte 0
 
 SinnohVictoryRoad_2F_EventScript_Omar::
-	trainerbattle_single TRAINER_JESSICA_5, SinnohVictoryRoad_2F_Text_OmarIntro, SinnohVictoryRoad_2F_Text_OmarDefeat
+	trainerbattle_single TRAINER_SN_OMAR_1, SinnohVictoryRoad_2F_Text_OmarIntro, SinnohVictoryRoad_2F_Text_OmarDefeat
 	msgbox SinnohVictoryRoad_2F_Text_OmarPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ SinnohVictoryRoad_2F_Text_OmarPost:
 	.string "It’s a goal of mine I’m working on.$"
 
 SinnohVictoryRoad_2F_EventScript_Sydney::
-	trainerbattle_single TRAINER_WINSTON_1, SinnohVictoryRoad_2F_Text_SydneyIntro, SinnohVictoryRoad_2F_Text_SydneyDefeat
+	trainerbattle_single TRAINER_SN_SYDNEY_1, SinnohVictoryRoad_2F_Text_SydneyIntro, SinnohVictoryRoad_2F_Text_SydneyDefeat
 	msgbox SinnohVictoryRoad_2F_Text_SydneyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ SinnohVictoryRoad_2F_Text_SydneyPost:
 	.string "The Elite Four should just surrender.$"
 
 SinnohVictoryRoad_2F_EventScript_Clayton::
-	trainerbattle_single TRAINER_WINSTON_2, SinnohVictoryRoad_2F_Text_ClaytonIntro, SinnohVictoryRoad_2F_Text_ClaytonDefeat
+	trainerbattle_single TRAINER_SN_CLAYTON_1, SinnohVictoryRoad_2F_Text_ClaytonIntro, SinnohVictoryRoad_2F_Text_ClaytonDefeat
 	msgbox SinnohVictoryRoad_2F_Text_ClaytonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ SinnohVictoryRoad_2F_Text_ClaytonPost:
 	.string "young Trainers like you to the test.$"
 
 SinnohVictoryRoad_2F_EventScript_AlKay::
-	trainerbattle_double TRAINER_WINSTON_3, SinnohVictoryRoad_2F_Text_AlKayIntro, SinnohVictoryRoad_2F_Text_AlKayDefeat, SinnohVictoryRoad_2F_Text_AlKayNotEnough
+	trainerbattle_double TRAINER_SN_AL_AND_KAY_1, SinnohVictoryRoad_2F_Text_AlKayIntro, SinnohVictoryRoad_2F_Text_AlKayDefeat, SinnohVictoryRoad_2F_Text_AlKayNotEnough
 	msgbox SinnohVictoryRoad_2F_Text_AlKayPost, MSGBOX_AUTOCLOSE
 	end
 

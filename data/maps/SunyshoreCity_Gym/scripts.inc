@@ -279,7 +279,7 @@ SunyshoreCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "POKéMON, all right?$"
 
 SunyshoreCity_Gym_EventScript_Tiera::
-	trainerbattle_single TRAINER_MIGUEL_3, SunyshoreCity_Gym_Text_TieraIntro, SunyshoreCity_Gym_Text_TieraDefeat
+	trainerbattle_single TRAINER_SN_TIERA_1, SunyshoreCity_Gym_Text_TieraIntro, SunyshoreCity_Gym_Text_TieraDefeat
 	msgbox SunyshoreCity_Gym_Text_TieraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -297,7 +297,7 @@ SunyshoreCity_Gym_Text_TieraPost:
 	.string "step on a switch.$"
 
 SunyshoreCity_Gym_EventScript_Forrest::
-	trainerbattle_single TRAINER_MIGUEL_4, SunyshoreCity_Gym_Text_ForrestIntro, SunyshoreCity_Gym_Text_ForrestDefeat
+	trainerbattle_single TRAINER_SN_FORREST_1, SunyshoreCity_Gym_Text_ForrestIntro, SunyshoreCity_Gym_Text_ForrestDefeat
 	msgbox SunyshoreCity_Gym_Text_ForrestPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -315,7 +315,7 @@ SunyshoreCity_Gym_Text_ForrestPost:
 	.string "The world of POKéMON is deep!$"
 
 SunyshoreCity_Gym_EventScript_Jerry::
-	trainerbattle_single TRAINER_MIGUEL_5, SunyshoreCity_Gym_Text_JerryIntro, SunyshoreCity_Gym_Text_JerryDefeat
+	trainerbattle_single TRAINER_SN_JERRY_1, SunyshoreCity_Gym_Text_JerryIntro, SunyshoreCity_Gym_Text_JerryDefeat
 	msgbox SunyshoreCity_Gym_Text_JerryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -334,7 +334,7 @@ SunyshoreCity_Gym_Text_JerryPost:
 	.string "on what you can become!$"
 
 SunyshoreCity_Gym_EventScript_Meghan::
-	trainerbattle_single TRAINER_ISABEL_1, SunyshoreCity_Gym_Text_MeghanIntro, SunyshoreCity_Gym_Text_MeghanDefeat
+	trainerbattle_single TRAINER_SN_MEGHAN_1, SunyshoreCity_Gym_Text_MeghanIntro, SunyshoreCity_Gym_Text_MeghanDefeat
 	msgbox SunyshoreCity_Gym_Text_MeghanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -352,7 +352,7 @@ SunyshoreCity_Gym_Text_MeghanPost:
 	.string "Would you like to try, too?$"
 
 SunyshoreCity_Gym_EventScript_Destiny::
-	trainerbattle_single TRAINER_ISABEL_2, SunyshoreCity_Gym_Text_DestinyIntro, SunyshoreCity_Gym_Text_DestinyDefeat
+	trainerbattle_single TRAINER_SN_DESTINY_1, SunyshoreCity_Gym_Text_DestinyIntro, SunyshoreCity_Gym_Text_DestinyDefeat
 	msgbox SunyshoreCity_Gym_Text_DestinyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -372,7 +372,7 @@ SunyshoreCity_Gym_Text_DestinyPost:
 	.string "thrill that POKéMON do!$"
 
 SunyshoreCity_Gym_EventScript_Preston::
-	trainerbattle_single TRAINER_ISABEL_3, SunyshoreCity_Gym_Text_PrestonIntro, SunyshoreCity_Gym_Text_PrestonDefeat
+	trainerbattle_single TRAINER_SN_PRESTON_1, SunyshoreCity_Gym_Text_PrestonIntro, SunyshoreCity_Gym_Text_PrestonDefeat
 	msgbox SunyshoreCity_Gym_Text_PrestonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -390,7 +390,7 @@ SunyshoreCity_Gym_Text_PrestonPost:
 	.string "want the win enough.$"
 
 SunyshoreCity_Gym_EventScript_Lonnie::
-	trainerbattle_single TRAINER_ISABEL_4, SunyshoreCity_Gym_Text_LonnieIntro, SunyshoreCity_Gym_Text_LonnieDefeat
+	trainerbattle_single TRAINER_SN_LONNIE_1, SunyshoreCity_Gym_Text_LonnieIntro, SunyshoreCity_Gym_Text_LonnieDefeat
 	msgbox SunyshoreCity_Gym_Text_LonniePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -410,7 +410,7 @@ SunyshoreCity_Gym_Text_LonniePost:
 	.string "out?$"
 
 SunyshoreCity_Gym_EventScript_Zachery::
-	trainerbattle_single TRAINER_ISABEL_5, SunyshoreCity_Gym_Text_ZacheryIntro, SunyshoreCity_Gym_Text_ZacheryDefeat
+	trainerbattle_single TRAINER_SN_ZACHERY_1, SunyshoreCity_Gym_Text_ZacheryIntro, SunyshoreCity_Gym_Text_ZacheryDefeat
 	msgbox SunyshoreCity_Gym_Text_ZacheryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -429,7 +429,7 @@ SunyshoreCity_Gym_Text_ZacheryPost:
 
 SunyshoreCity_Gym_EventScript_Leader::
 	goto_if_set FLAG_SYS_GAME_CLEAR, SunyshoreCity_Gym_EventScript_SNRematch
-	trainerbattle_single TRAINER_MIGUEL_2, SunyshoreCity_Gym_Text_LeaderIntro, SunyshoreCity_Gym_Text_LeaderDefeat, SunyshoreCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_VOLKNER_1, SunyshoreCity_Gym_Text_LeaderIntro, SunyshoreCity_Gym_Text_LeaderDefeat, SunyshoreCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM57_FROM_VOLKNER, SunyshoreCity_Gym_EventScript_GiveTM
 	msgbox SunyshoreCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
 	release
@@ -445,14 +445,14 @@ SunyshoreCity_Gym_EventScript_LeaderDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SunyshoreCity_Gym_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE08_GET
-	settrainerflag TRAINER_MIGUEL_3
-	settrainerflag TRAINER_MIGUEL_4
-	settrainerflag TRAINER_MIGUEL_5
-	settrainerflag TRAINER_ISABEL_1
-	settrainerflag TRAINER_ISABEL_2
-	settrainerflag TRAINER_ISABEL_3
-	settrainerflag TRAINER_ISABEL_4
-	settrainerflag TRAINER_ISABEL_5
+	settrainerflag TRAINER_SN_TIERA_1
+	settrainerflag TRAINER_SN_FORREST_1
+	settrainerflag TRAINER_SN_JERRY_1
+	settrainerflag TRAINER_SN_MEGHAN_1
+	settrainerflag TRAINER_SN_DESTINY_1
+	settrainerflag TRAINER_SN_PRESTON_1
+	settrainerflag TRAINER_SN_LONNIE_1
+	settrainerflag TRAINER_SN_ZACHERY_1
 	goto SunyshoreCity_Gym_EventScript_GiveTM
 
 SunyshoreCity_Gym_EventScript_GiveTM::
@@ -595,7 +595,7 @@ SunyshoreCity_Gym_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, SunyshoreCity_Gym_EventScript_SNRematch_No
 	msgbox SunyshoreCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_NICOLAS_1, SunyshoreCity_Gym_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_VOLKNER_2, SunyshoreCity_Gym_EventScript_SNRematch_Defeat
 	msgbox SunyshoreCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

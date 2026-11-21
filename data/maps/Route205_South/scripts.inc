@@ -2,7 +2,7 @@ Route205_South_MapScripts::
 	.byte 0
 
 Route205_South_EventScript_Daniel::
-	trainerbattle_single TRAINER_LEAH, Route205_South_Text_DanielIntro, Route205_South_Text_DanielDefeat
+	trainerbattle_single TRAINER_SN_DANIEL_1, Route205_South_Text_DanielIntro, Route205_South_Text_DanielDefeat
 	msgbox Route205_South_Text_DanielPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,14 +21,14 @@ Route205_South_Text_DanielPost:
 	.string "searching off in the mountains!$"
 
 Route205_South_EventScript_Elizabeth::
-	trainerbattle_single TRAINER_FELIX, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
+	trainerbattle_single TRAINER_SN_ELIZABETH_1, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route205_South_EventScript_Elizabeth_Rematch
 	msgbox Route205_South_Text_ElizabethPost, MSGBOX_AUTOCLOSE
 	end
 
 Route205_South_EventScript_Elizabeth_Rematch:
-	trainerbattle_rematch TRAINER_FELIX, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
+	trainerbattle_rematch TRAINER_SN_ELIZABETH_1, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
 	msgbox Route205_South_Text_ElizabethPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -45,7 +45,7 @@ Route205_South_Text_ElizabethPost:
 	.string "be surrounded by sweet scents.$"
 
 Route205_South_EventScript_Jacob::
-	trainerbattle_single TRAINER_VIOLET, Route205_South_Text_JacobIntro, Route205_South_Text_JacobDefeat
+	trainerbattle_single TRAINER_SN_JACOB_1, Route205_South_Text_JacobIntro, Route205_South_Text_JacobDefeat
 	msgbox Route205_South_Text_JacobPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -62,7 +62,7 @@ Route205_South_Text_JacobPost:
 	.string "I need to be more prepared than this!$"
 
 Route205_South_EventScript_Siena::
-	trainerbattle_single TRAINER_CHIP, Route205_South_Text_SienaIntro, Route205_South_Text_SienaDefeat
+	trainerbattle_single TRAINER_SN_SIENA_1, Route205_South_Text_SienaIntro, Route205_South_Text_SienaDefeat
 	msgbox Route205_South_Text_SienaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -80,7 +80,7 @@ Route205_South_Text_SienaPost:
 	.string "females, and some aren't either!$"
 
 Route205_South_EventScript_Nicholas::
-	trainerbattle_single TRAINER_FOSTER, Route205_South_Text_NicholasIntro, Route205_South_Text_NicholasDefeat
+	trainerbattle_single TRAINER_SN_NICHOLAS_1, Route205_South_Text_NicholasIntro, Route205_South_Text_NicholasDefeat
 	msgbox Route205_South_Text_NicholasPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -96,7 +96,7 @@ Route205_South_Text_NicholasPost:
 	.string "long, I became a Hiker...$"
 
 Route205_South_EventScript_Kelsey::
-	trainerbattle_single TRAINER_AUSTINA, Route205_South_Text_KelseyIntro, Route205_South_Text_KelseyDefeat
+	trainerbattle_single TRAINER_SN_KELSEY_1, Route205_South_Text_KelseyIntro, Route205_South_Text_KelseyDefeat
 	msgbox Route205_South_Text_KelseyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -113,14 +113,14 @@ Route205_South_Text_KelseyPost:
 	.string "appreciate it!$"
 
 Route205_South_EventScript_Karina::
-	trainerbattle_single TRAINER_GWEN, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
+	trainerbattle_single TRAINER_SN_KARINA_1, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route205_South_EventScript_Karina_Rematch
 	msgbox Route205_South_Text_KarinaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route205_South_EventScript_Karina_Rematch:
-	trainerbattle_rematch TRAINER_GWEN, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
+	trainerbattle_rematch TRAINER_SN_KARINA_1, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
 	msgbox Route205_South_Text_KarinaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -136,14 +136,14 @@ Route205_South_Text_KarinaPost:
 	.string "cries of POKéMON?$"
 
 Route205_South_EventScript_Zackary::
-	trainerbattle_single TRAINER_SIMON, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
+	trainerbattle_single TRAINER_SN_ZACKARY_1, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route205_South_EventScript_Zackary_Rematch
 	msgbox Route205_South_Text_ZackaryPost, MSGBOX_AUTOCLOSE
 	end
 
 Route205_South_EventScript_Zackary_Rematch:
-	trainerbattle_rematch TRAINER_SIMON, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
+	trainerbattle_rematch TRAINER_SN_ZACKARY_1, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
 	msgbox Route205_South_Text_ZackaryPost, MSGBOX_AUTOCLOSE
 	end
 

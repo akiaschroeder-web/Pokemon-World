@@ -2,7 +2,7 @@ Route212_North_MapScripts::
 	.byte 0
 
 Route212_North_EventScript_Jason::
-	trainerbattle_single TRAINER_ATSUSHI, Route212_North_Text_JasonIntro, Route212_North_Text_JasonDefeat
+	trainerbattle_single TRAINER_SN_JASON_1, Route212_North_Text_JasonIntro, Route212_North_Text_JasonDefeat
 	msgbox Route212_North_Text_JasonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -22,14 +22,14 @@ Route212_North_Text_JasonPost:
 	.string "bed I had sent from overseas.$"
 
 Route212_North_EventScript_Melissa::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_7, Route212_North_Text_MelissaIntro, Route212_North_Text_MelissaDefeat
+	trainerbattle_single TRAINER_SN_MELISSA_1, Route212_North_Text_MelissaIntro, Route212_North_Text_MelissaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_North_EventScript_Melissa_Rematch
 	msgbox Route212_North_Text_MelissaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_North_EventScript_Melissa_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_AQUA_HIDEOUT_7, Route212_North_Text_MelissaIntro, Route212_North_Text_MelissaDefeat
+	trainerbattle_rematch TRAINER_SN_MELISSA_1, Route212_North_Text_MelissaIntro, Route212_North_Text_MelissaDefeat
 	msgbox Route212_North_Text_MelissaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -45,14 +45,14 @@ Route212_North_Text_MelissaPost:
 	.string "teacher to be so good.$"
 
 Route212_North_EventScript_Jeremy::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, Route212_North_Text_JeremyIntro, Route212_North_Text_JeremyDefeat
+	trainerbattle_single TRAINER_SN_JEREMY_1, Route212_North_Text_JeremyIntro, Route212_North_Text_JeremyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_North_EventScript_Jeremy_Rematch
 	msgbox Route212_North_Text_JeremyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_North_EventScript_Jeremy_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_AQUA_HIDEOUT_8, Route212_North_Text_JeremyIntro, Route212_North_Text_JeremyDefeat
+	trainerbattle_rematch TRAINER_SN_JEREMY_1, Route212_North_Text_JeremyIntro, Route212_North_Text_JeremyDefeat
 	msgbox Route212_North_Text_JeremyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -71,14 +71,14 @@ Route212_North_Text_JeremyPost:
 	.string "prized garden of POKéMON.$"
 
 Route212_North_EventScript_Reina::
-	trainerbattle_single TRAINER_DREW, Route212_North_Text_ReinaIntro, Route212_North_Text_ReinaDefeat
+	trainerbattle_single TRAINER_SN_REINA_1, Route212_North_Text_ReinaIntro, Route212_North_Text_ReinaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route212_North_EventScript_Reina_Rematch
 	msgbox Route212_North_Text_ReinaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route212_North_EventScript_Reina_Rematch:
-	trainerbattle_rematch TRAINER_DREW, Route212_North_Text_ReinaIntro, Route212_North_Text_ReinaDefeat
+	trainerbattle_rematch TRAINER_SN_REINA_1, Route212_North_Text_ReinaIntro, Route212_North_Text_ReinaDefeat
 	msgbox Route212_North_Text_ReinaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -96,7 +96,7 @@ Route212_North_Text_ReinaPost:
 	.string "members of my social club.$"
 
 Route212_North_EventScript_Bobby::
-	trainerbattle_single TRAINER_BEAU, Route212_North_Text_BobbyIntro, Route212_North_Text_BobbyDefeat
+	trainerbattle_single TRAINER_SN_BOBBY_1, Route212_North_Text_BobbyIntro, Route212_North_Text_BobbyDefeat
 	msgbox Route212_North_Text_BobbyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -113,7 +113,7 @@ Route212_North_Text_BobbyPost:
 	.string "you're out so late?$"
 
 Route212_North_EventScript_Alex::
-	trainerbattle_single TRAINER_LARRY, Route212_North_Text_AlexIntro, Route212_North_Text_AlexDefeat
+	trainerbattle_single TRAINER_SN_ALEX_1, Route212_North_Text_AlexIntro, Route212_North_Text_AlexDefeat
 	msgbox Route212_North_Text_AlexPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -130,7 +130,7 @@ Route212_North_Text_AlexPost:
 	.string "shady-looking characters! You hear?$"
 
 Route212_North_EventScript_Dylan::
-	trainerbattle_single TRAINER_SHANE, Route212_North_Text_DylanIntro, Route212_North_Text_DylanDefeat
+	trainerbattle_single TRAINER_SN_DYLAN_1, Route212_North_Text_DylanIntro, Route212_North_Text_DylanDefeat
 	msgbox Route212_North_Text_DylanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -147,7 +147,7 @@ Route212_North_Text_DylanPost:
 	.string "before the boss radios me...$"
 
 Route212_North_EventScript_Caleb::
-	trainerbattle_single TRAINER_JUSTIN, Route212_North_Text_CalebIntro, Route212_North_Text_CalebDefeat
+	trainerbattle_single TRAINER_SN_CALEB_1, Route212_North_Text_CalebIntro, Route212_North_Text_CalebDefeat
 	msgbox Route212_North_Text_CalebPost, MSGBOX_AUTOCLOSE
 	end
 

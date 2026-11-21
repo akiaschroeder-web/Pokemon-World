@@ -2,7 +2,7 @@ OreburghGate_B1F_MapScripts::
 	.byte 0
 
 OreburghGate_B1F_EventScript_Grant::
-	trainerbattle_single TRAINER_JEFFREY_2, OreburghGate_B1F_Text_GrantIntro, OreburghGate_B1F_Text_GrantDefeat
+	trainerbattle_single TRAINER_SN_GRANT_1, OreburghGate_B1F_Text_GrantIntro, OreburghGate_B1F_Text_GrantDefeat
 	msgbox OreburghGate_B1F_Text_GrantPost, MSGBOX_AUTOCLOSE
 	end
 

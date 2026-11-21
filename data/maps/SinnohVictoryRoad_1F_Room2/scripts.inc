@@ -3,7 +3,7 @@ SinnohVictoryRoad_1F_Room2_MapScripts::
 	.byte 0
 
 SinnohVictoryRoad_1F_Room2_EventScript_Micah::
-	trainerbattle_single TRAINER_STEVE_2, SinnohVictoryRoad_1F_Room2_Text_MicahIntro, SinnohVictoryRoad_1F_Room2_Text_MicahDefeat
+	trainerbattle_single TRAINER_SN_MICAH_1, SinnohVictoryRoad_1F_Room2_Text_MicahIntro, SinnohVictoryRoad_1F_Room2_Text_MicahDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_MicahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -22,7 +22,7 @@ SinnohVictoryRoad_1F_Room2_Text_MicahPost:
 	.string "them square in the eyes.$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Brandi::
-	trainerbattle_single TRAINER_STEVE_3, SinnohVictoryRoad_1F_Room2_Text_BrandiIntro, SinnohVictoryRoad_1F_Room2_Text_BrandiDefeat
+	trainerbattle_single TRAINER_SN_BRANDI_1, SinnohVictoryRoad_1F_Room2_Text_BrandiIntro, SinnohVictoryRoad_1F_Room2_Text_BrandiDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_BrandiPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,7 +39,7 @@ SinnohVictoryRoad_1F_Room2_Text_BrandiPost:
 	.string "...It’s all the same. Go, me.$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Desiree::
-	trainerbattle_single TRAINER_STEVE_4, SinnohVictoryRoad_1F_Room2_Text_DesireeIntro, SinnohVictoryRoad_1F_Room2_Text_DesireeDefeat
+	trainerbattle_single TRAINER_SN_DESIREE_1, SinnohVictoryRoad_1F_Room2_Text_DesireeIntro, SinnohVictoryRoad_1F_Room2_Text_DesireeDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_DesireePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -61,7 +61,7 @@ SinnohVictoryRoad_1F_Room2_Text_DesireePost:
 	.string "out!$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Landon::
-	trainerbattle_single TRAINER_STEVE_5, SinnohVictoryRoad_1F_Room2_Text_LandonIntro, SinnohVictoryRoad_1F_Room2_Text_LandonDefeat
+	trainerbattle_single TRAINER_SN_LANDON_1, SinnohVictoryRoad_1F_Room2_Text_LandonIntro, SinnohVictoryRoad_1F_Room2_Text_LandonDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_LandonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -78,7 +78,7 @@ SinnohVictoryRoad_1F_Room2_Text_LandonPost:
 	.string "It takes much more to win!$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Eddie::
-	trainerbattle_single TRAINER_TONY_1, SinnohVictoryRoad_1F_Room2_Text_EddieIntro, SinnohVictoryRoad_1F_Room2_Text_EddieDefeat
+	trainerbattle_single TRAINER_SN_EDDIE_1, SinnohVictoryRoad_1F_Room2_Text_EddieIntro, SinnohVictoryRoad_1F_Room2_Text_EddieDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_EddiePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -94,7 +94,7 @@ SinnohVictoryRoad_1F_Room2_Text_EddiePost:
 	.string "know, go train elsewhere.$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Terrell::
-	trainerbattle_single TRAINER_TONY_2, SinnohVictoryRoad_1F_Room2_Text_TerrellIntro, SinnohVictoryRoad_1F_Room2_Text_TerrellDefeat
+	trainerbattle_single TRAINER_SN_TERRELL_1, SinnohVictoryRoad_1F_Room2_Text_TerrellIntro, SinnohVictoryRoad_1F_Room2_Text_TerrellDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_TerrellPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -111,7 +111,7 @@ SinnohVictoryRoad_1F_Room2_Text_TerrellPost:
 	.string "me a whole lot. I thank you humbly.$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Arthur::
-	trainerbattle_single TRAINER_TONY_3, SinnohVictoryRoad_1F_Room2_Text_ArthurIntro, SinnohVictoryRoad_1F_Room2_Text_ArthurDefeat
+	trainerbattle_single TRAINER_SN_ARTHUR_1, SinnohVictoryRoad_1F_Room2_Text_ArthurIntro, SinnohVictoryRoad_1F_Room2_Text_ArthurDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_ArthurPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -130,7 +130,7 @@ SinnohVictoryRoad_1F_Room2_Text_ArthurPost:
 	.string "you can get a taste of victory!$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Clarice::
-	trainerbattle_single TRAINER_TONY_4, SinnohVictoryRoad_1F_Room2_Text_ClariceIntro, SinnohVictoryRoad_1F_Room2_Text_ClariceDefeat
+	trainerbattle_single TRAINER_SN_CLARICE_1, SinnohVictoryRoad_1F_Room2_Text_ClariceIntro, SinnohVictoryRoad_1F_Room2_Text_ClariceDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_ClaricePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -146,7 +146,7 @@ SinnohVictoryRoad_1F_Room2_Text_ClaricePost:
 	.string "someone as tough as you!$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Deandre::
-	trainerbattle_single TRAINER_TONY_5, SinnohVictoryRoad_1F_Room2_Text_DeandreIntro, SinnohVictoryRoad_1F_Room2_Text_DeandreDefeat
+	trainerbattle_single TRAINER_SN_DEANDRE_1, SinnohVictoryRoad_1F_Room2_Text_DeandreIntro, SinnohVictoryRoad_1F_Room2_Text_DeandreDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_DeandrePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -166,7 +166,7 @@ SinnohVictoryRoad_1F_Room2_Text_DeandrePost:
 	.string "those, either.$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Kendra::
-	trainerbattle_single TRAINER_NOB_1, SinnohVictoryRoad_1F_Room2_Text_KendraIntro, SinnohVictoryRoad_1F_Room2_Text_KendraDefeat
+	trainerbattle_single TRAINER_SN_KENDRA_1, SinnohVictoryRoad_1F_Room2_Text_KendraIntro, SinnohVictoryRoad_1F_Room2_Text_KendraDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_KendraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -181,7 +181,7 @@ SinnohVictoryRoad_1F_Room2_Text_KendraPost:
 	.string "path of the future!$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Autumn::
-	trainerbattle_single TRAINER_NOB_2, SinnohVictoryRoad_1F_Room2_Text_AutumnIntro, SinnohVictoryRoad_1F_Room2_Text_AutumnDefeat
+	trainerbattle_single TRAINER_SN_AUTUMN_1, SinnohVictoryRoad_1F_Room2_Text_AutumnIntro, SinnohVictoryRoad_1F_Room2_Text_AutumnDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_AutumnPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -197,7 +197,7 @@ SinnohVictoryRoad_1F_Room2_Text_AutumnPost:
 	.string "with my favorite POKéMON.$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Joe::
-	trainerbattle_single TRAINER_NOB_3, SinnohVictoryRoad_1F_Room2_Text_JoeIntro, SinnohVictoryRoad_1F_Room2_Text_JoeDefeat
+	trainerbattle_single TRAINER_SN_JOE_1, SinnohVictoryRoad_1F_Room2_Text_JoeIntro, SinnohVictoryRoad_1F_Room2_Text_JoeDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_JoePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -213,7 +213,7 @@ SinnohVictoryRoad_1F_Room2_Text_JoePost:
 	.string "That’s what makes a good Trainer...$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Willie::
-	trainerbattle_single TRAINER_NOB_4, SinnohVictoryRoad_1F_Room2_Text_WillieIntro, SinnohVictoryRoad_1F_Room2_Text_WillieDefeat
+	trainerbattle_single TRAINER_SN_WILLIE_1, SinnohVictoryRoad_1F_Room2_Text_WillieIntro, SinnohVictoryRoad_1F_Room2_Text_WillieDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_WilliePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -229,7 +229,7 @@ SinnohVictoryRoad_1F_Room2_Text_WilliePost:
 	.string "from our mistakes...$"
 
 SinnohVictoryRoad_1F_Room2_EventScript_Brenden::
-	trainerbattle_single TRAINER_NOB_5, SinnohVictoryRoad_1F_Room2_Text_BrendenIntro, SinnohVictoryRoad_1F_Room2_Text_BrendenDefeat
+	trainerbattle_single TRAINER_SN_BRENDEN_1, SinnohVictoryRoad_1F_Room2_Text_BrendenIntro, SinnohVictoryRoad_1F_Room2_Text_BrendenDefeat
 	msgbox SinnohVictoryRoad_1F_Room2_Text_BrendenPost, MSGBOX_AUTOCLOSE
 	end
 

@@ -2,7 +2,7 @@ SolaceonRuins_Room3_MapScripts::
 	.byte 0
 
 SolaceonRuins_Room3_EventScript_Karl::
-	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_2, SolaceonRuins_Room3_Text_KarlIntro, SolaceonRuins_Room3_Text_KarlDefeat
+	trainerbattle_single TRAINER_SN_KARL_1, SolaceonRuins_Room3_Text_KarlIntro, SolaceonRuins_Room3_Text_KarlDefeat
 	msgbox SolaceonRuins_Room3_Text_KarlPost, MSGBOX_AUTOCLOSE
 	end
 

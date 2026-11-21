@@ -2,14 +2,14 @@ Route218_MapScripts::
 	.byte 0
 
 Route218_EventScript_Tony::
-	trainerbattle_single TRAINER_LUNG, Route218_Text_TonyIntro, Route218_Text_TonyDefeat
+	trainerbattle_single TRAINER_SN_TONY_1, Route218_Text_TonyIntro, Route218_Text_TonyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route218_EventScript_Tony_Rematch
 	msgbox Route218_Text_TonyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route218_EventScript_Tony_Rematch:
-	trainerbattle_rematch TRAINER_LUNG, Route218_Text_TonyIntro, Route218_Text_TonyDefeat
+	trainerbattle_rematch TRAINER_SN_TONY_1, Route218_Text_TonyIntro, Route218_Text_TonyDefeat
 	msgbox Route218_Text_TonyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -25,7 +25,7 @@ Route218_Text_TonyPost:
 	.string "so cool that way...$"
 
 Route218_EventScript_Skyler::
-	trainerbattle_single TRAINER_CORA, Route218_Text_SkylerIntro, Route218_Text_SkylerDefeat
+	trainerbattle_single TRAINER_SN_SKYLER_1, Route218_Text_SkylerIntro, Route218_Text_SkylerDefeat
 	msgbox Route218_Text_SkylerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -41,14 +41,14 @@ Route218_Text_SkylerPost:
 	.string "Trainer among Trainers!$"
 
 Route218_EventScript_Miguel::
-	trainerbattle_single TRAINER_PAULA, Route218_Text_MiguelIntro, Route218_Text_MiguelDefeat
+	trainerbattle_single TRAINER_SN_MIGUEL_1, Route218_Text_MiguelIntro, Route218_Text_MiguelDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route218_EventScript_Miguel_Rematch
 	msgbox Route218_Text_MiguelPost, MSGBOX_AUTOCLOSE
 	end
 
 Route218_EventScript_Miguel_Rematch:
-	trainerbattle_rematch TRAINER_PAULA, Route218_Text_MiguelIntro, Route218_Text_MiguelDefeat
+	trainerbattle_rematch TRAINER_SN_MIGUEL_1, Route218_Text_MiguelIntro, Route218_Text_MiguelDefeat
 	msgbox Route218_Text_MiguelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -65,7 +65,7 @@ Route218_Text_MiguelPost:
 	.string "the POKéMON.$"
 
 Route218_EventScript_Luc::
-	trainerbattle_single TRAINER_CLARISSA, Route218_Text_LucIntro, Route218_Text_LucDefeat
+	trainerbattle_single TRAINER_SN_LUC_1, Route218_Text_LucIntro, Route218_Text_LucDefeat
 	msgbox Route218_Text_LucPost, MSGBOX_AUTOCLOSE
 	end
 

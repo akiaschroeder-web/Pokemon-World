@@ -33,7 +33,7 @@ OreburghMine_B2F_Text_SNRoark2:
 	.string "Leader first. That’d be me!$"
 
 OreburghMine_B2F_EventScript_Mason::
-	trainerbattle_single TRAINER_MARY, OreburghMine_B2F_Text_MasonIntro, OreburghMine_B2F_Text_MasonDefeat
+	trainerbattle_single TRAINER_SN_MASON_1, OreburghMine_B2F_Text_MasonIntro, OreburghMine_B2F_Text_MasonDefeat
 	msgbox OreburghMine_B2F_Text_MasonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -49,7 +49,7 @@ OreburghMine_B2F_Text_MasonPost:
 	.string "thirst with my POKéMON!$"
 
 OreburghMine_B2F_EventScript_Colin::
-	trainerbattle_single TRAINER_ALIX, OreburghMine_B2F_Text_ColinIntro, OreburghMine_B2F_Text_ColinDefeat
+	trainerbattle_single TRAINER_SN_COLIN_1, OreburghMine_B2F_Text_ColinIntro, OreburghMine_B2F_Text_ColinDefeat
 	msgbox OreburghMine_B2F_Text_ColinPost, MSGBOX_AUTOCLOSE
 	end
 

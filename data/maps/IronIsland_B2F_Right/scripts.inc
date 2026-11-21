@@ -2,7 +2,7 @@ IronIsland_B2F_Right_MapScripts::
 	.byte 0
 
 IronIsland_B2F_Right_EventScript_Noel::
-	trainerbattle_single TRAINER_LOLA_3, IronIsland_B2F_Right_Text_NoelIntro, IronIsland_B2F_Right_Text_NoelDefeat
+	trainerbattle_single TRAINER_SN_NOEL_1, IronIsland_B2F_Right_Text_NoelIntro, IronIsland_B2F_Right_Text_NoelDefeat
 	msgbox IronIsland_B2F_Right_Text_NoelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,7 +21,7 @@ IronIsland_B2F_Right_Text_NoelPost:
 	.string "magnet!$"
 
 IronIsland_B2F_Right_EventScript_Braden::
-	trainerbattle_single TRAINER_LOLA_4, IronIsland_B2F_Right_Text_BradenIntro, IronIsland_B2F_Right_Text_BradenDefeat
+	trainerbattle_single TRAINER_SN_BRADEN_1, IronIsland_B2F_Right_Text_BradenIntro, IronIsland_B2F_Right_Text_BradenDefeat
 	msgbox IronIsland_B2F_Right_Text_BradenPost, MSGBOX_AUTOCLOSE
 	end
 

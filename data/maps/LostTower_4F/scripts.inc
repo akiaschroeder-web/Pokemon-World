@@ -2,7 +2,7 @@ LostTower_4F_MapScripts::
 	.byte 0
 
 LostTower_4F_EventScript_Rebekah::
-	trainerbattle_single TRAINER_TIMOTHY_4, LostTower_4F_Text_RebekahIntro, LostTower_4F_Text_RebekahDefeat
+	trainerbattle_single TRAINER_SN_REBEKAH_1, LostTower_4F_Text_RebekahIntro, LostTower_4F_Text_RebekahDefeat
 	msgbox LostTower_4F_Text_RebekahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -18,7 +18,7 @@ LostTower_4F_Text_RebekahPost:
 	.string "I’ve spent time with, however fleeting.$"
 
 LostTower_4F_EventScript_MikeNat::
-	trainerbattle_double TRAINER_TIMOTHY_5, LostTower_4F_Text_MikeNatIntro, LostTower_4F_Text_MikeNatDefeat, LostTower_4F_Text_MikeNatNotEnough
+	trainerbattle_double TRAINER_SN_MIKE_AND_N_1, LostTower_4F_Text_MikeNatIntro, LostTower_4F_Text_MikeNatDefeat, LostTower_4F_Text_MikeNatNotEnough
 	msgbox LostTower_4F_Text_MikeNatPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,7 +35,7 @@ LostTower_4F_Text_MikeNatNotEnough:
 	.string "You need two POKéMON to battle us!$"
 
 LostTower_4F_EventScript_BethBob::
-	trainerbattle_double TRAINER_SHELBY_1, LostTower_4F_Text_BethBobIntro, LostTower_4F_Text_BethBobDefeat, LostTower_4F_Text_BethBobNotEnough
+	trainerbattle_double TRAINER_SN_BETH_AND_B_1, LostTower_4F_Text_BethBobIntro, LostTower_4F_Text_BethBobDefeat, LostTower_4F_Text_BethBobNotEnough
 	msgbox LostTower_4F_Text_BethBobPost, MSGBOX_AUTOCLOSE
 	end
 

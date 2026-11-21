@@ -49,7 +49,7 @@ PokemonLeague_AaronRoom_EventScript_Sidney::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox PokemonLeague_AaronRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_AaronRoom_EventScript_SNRematchBattle
-	trainerbattle_no_intro TRAINER_SIDNEY, PokemonLeague_AaronRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_SN_AARON_1, PokemonLeague_AaronRoom_Text_Defeat
 PokemonLeague_AaronRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_AaronRoom_EventScript_Defeated
 	end
@@ -98,5 +98,5 @@ PokemonLeague_AaronRoom_Text_PostBattleSpeech:
 	.string "my beautiful and tough bug POKéMON!$"
 
 PokemonLeague_AaronRoom_EventScript_SNRematchBattle:
-	trainerbattle_no_intro TRAINER_NICOLAS_2, PokemonLeague_AaronRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_SN_AARON_2, PokemonLeague_AaronRoom_Text_Defeat
 	goto PokemonLeague_AaronRoom_EventScript_SNAfterBattle

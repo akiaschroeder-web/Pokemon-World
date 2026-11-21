@@ -3,7 +3,7 @@ ValleyWindworks_MapScripts::
 	.byte 0
 
 ValleyWindworks_EventScript_DoorGrunt::
-	trainerbattle_single TRAINER_CHARLIE, ValleyWindworks_Text_DoorIntro, ValleyWindworks_Text_DoorDefeat, ValleyWindworks_EventScript_DoorGruntFlees
+	trainerbattle_single TRAINER_SN_GRUNT_13, ValleyWindworks_Text_DoorIntro, ValleyWindworks_Text_DoorDefeat, ValleyWindworks_EventScript_DoorGruntFlees
 	msgbox ValleyWindworks_Text_DoorDefeat, MSGBOX_AUTOCLOSE
 	end
 

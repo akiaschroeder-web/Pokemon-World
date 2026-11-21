@@ -2,7 +2,7 @@ Route222_MapScripts::
 	.byte 0
 
 Route222_EventScript_Brett::
-	trainerbattle_single TRAINER_SUSIE, Route222_Text_BrettIntro, Route222_Text_BrettDefeat
+	trainerbattle_single TRAINER_SN_BRETT_1, Route222_Text_BrettIntro, Route222_Text_BrettDefeat
 	msgbox Route222_Text_BrettPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -18,14 +18,14 @@ Route222_Text_BrettPost:
 	.string "more is there to say?$"
 
 Route222_EventScript_Alec::
-	trainerbattle_single TRAINER_KARA, Route222_Text_AlecIntro, Route222_Text_AlecDefeat
+	trainerbattle_single TRAINER_SN_ALEC_1, Route222_Text_AlecIntro, Route222_Text_AlecDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route222_EventScript_Alec_Rematch
 	msgbox Route222_Text_AlecPost, MSGBOX_AUTOCLOSE
 	end
 
 Route222_EventScript_Alec_Rematch:
-	trainerbattle_rematch TRAINER_KARA, Route222_Text_AlecIntro, Route222_Text_AlecDefeat
+	trainerbattle_rematch TRAINER_SN_ALEC_1, Route222_Text_AlecIntro, Route222_Text_AlecDefeat
 	msgbox Route222_Text_AlecPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -42,7 +42,7 @@ Route222_Text_AlecPost:
 	.string "Farewell, until we meet again!$"
 
 Route222_EventScript_George::
-	trainerbattle_single TRAINER_DANA, Route222_Text_GeorgeIntro, Route222_Text_GeorgeDefeat
+	trainerbattle_single TRAINER_SN_GEORGE_1, Route222_Text_GeorgeIntro, Route222_Text_GeorgeDefeat
 	msgbox Route222_Text_GeorgePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -58,7 +58,7 @@ Route222_Text_GeorgePost:
 	.string "of pace for me.$"
 
 Route222_EventScript_Cole::
-	trainerbattle_single TRAINER_SIENNA, Route222_Text_ColeIntro, Route222_Text_ColeDefeat
+	trainerbattle_single TRAINER_SN_COLE_1, Route222_Text_ColeIntro, Route222_Text_ColeDefeat
 	msgbox Route222_Text_ColePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -74,7 +74,7 @@ Route222_Text_ColePost:
 	.string "Oh, right... I was fishing, wasn't I?$"
 
 Route222_EventScript_Nicola::
-	trainerbattle_single TRAINER_DEBRA, Route222_Text_NicolaIntro, Route222_Text_NicolaDefeat
+	trainerbattle_single TRAINER_SN_NICOLA_1, Route222_Text_NicolaIntro, Route222_Text_NicolaDefeat
 	msgbox Route222_Text_NicolaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -91,7 +91,7 @@ Route222_Text_NicolaPost:
 	.string "POKéMON than make them battle.$"
 
 Route222_EventScript_Conner::
-	trainerbattle_single TRAINER_LINDA, Route222_Text_ConnerIntro, Route222_Text_ConnerDefeat
+	trainerbattle_single TRAINER_SN_CONNER_1, Route222_Text_ConnerIntro, Route222_Text_ConnerDefeat
 	msgbox Route222_Text_ConnerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -108,14 +108,14 @@ Route222_Text_ConnerPost:
 	.string "because POKéMON live there.$"
 
 Route222_EventScript_Trey::
-	trainerbattle_single TRAINER_KAYLEE, Route222_Text_TreyIntro, Route222_Text_TreyDefeat
+	trainerbattle_single TRAINER_SN_TREY_1, Route222_Text_TreyIntro, Route222_Text_TreyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route222_EventScript_Trey_Rematch
 	msgbox Route222_Text_TreyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route222_EventScript_Trey_Rematch:
-	trainerbattle_rematch TRAINER_KAYLEE, Route222_Text_TreyIntro, Route222_Text_TreyDefeat
+	trainerbattle_rematch TRAINER_SN_TREY_1, Route222_Text_TreyIntro, Route222_Text_TreyDefeat
 	msgbox Route222_Text_TreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -132,7 +132,7 @@ Route222_Text_TreyPost:
 	.string "find you exceedingly tiresome!$"
 
 Route222_EventScript_Luther::
-	trainerbattle_single TRAINER_LAUREL, Route222_Text_LutherIntro, Route222_Text_LutherDefeat
+	trainerbattle_single TRAINER_SN_LUTHER_1, Route222_Text_LutherIntro, Route222_Text_LutherDefeat
 	msgbox Route222_Text_LutherPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -150,7 +150,7 @@ Route222_Text_LutherPost:
 	.string "lose sight of your dream!$"
 
 Route222_EventScript_Thomas::
-	trainerbattle_single TRAINER_CARLEE, Route222_Text_ThomasIntro, Route222_Text_ThomasDefeat
+	trainerbattle_single TRAINER_SN_THOMAS_1, Route222_Text_ThomasIntro, Route222_Text_ThomasDefeat
 	msgbox Route222_Text_ThomasPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -167,7 +167,7 @@ Route222_Text_ThomasPost:
 	.string "patrol. Funny how things go.$"
 
 Route222_EventScript_Holly::
-	trainerbattle_single TRAINER_HEIDI, Route222_Text_HollyIntro, Route222_Text_HollyDefeat
+	trainerbattle_single TRAINER_SN_HOLLY_1, Route222_Text_HollyIntro, Route222_Text_HollyDefeat
 	msgbox Route222_Text_HollyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -183,14 +183,14 @@ Route222_Text_HollyPost:
 	.string "bob around.$"
 
 Route222_EventScript_Marc::
-	trainerbattle_single TRAINER_BECKY, Route222_Text_MarcIntro, Route222_Text_MarcDefeat
+	trainerbattle_single TRAINER_SN_MARC_1, Route222_Text_MarcIntro, Route222_Text_MarcDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route222_EventScript_Marc_Rematch
 	msgbox Route222_Text_MarcPost, MSGBOX_AUTOCLOSE
 	end
 
 Route222_EventScript_Marc_Rematch:
-	trainerbattle_rematch TRAINER_BECKY, Route222_Text_MarcIntro, Route222_Text_MarcDefeat
+	trainerbattle_rematch TRAINER_SN_MARC_1, Route222_Text_MarcIntro, Route222_Text_MarcDefeat
 	msgbox Route222_Text_MarcPost, MSGBOX_AUTOCLOSE
 	end
 

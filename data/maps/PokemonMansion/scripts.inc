@@ -59,8 +59,8 @@ PokemonMansion_EventScript_SNMAsk:
 	waitmovement 0
 	msgbox PokemonMansion_Text_SNMM1Intro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_CAMRON
-	trainerbattle_no_intro TRAINER_CAMRON, PokemonMansion_Text_SNMM1Defeat
+	cleartrainerflag TRAINER_SN_BELINDA_1
+	trainerbattle_no_intro TRAINER_SN_BELINDA_1, PokemonMansion_Text_SNMM1Defeat
 	special SinnohAddBattleTurns
 	applymovement LOCALID_SN_MAID_KNOCKOUT, PokemonMansion_Movement_SNMLeave
 	waitmovement 0
@@ -68,8 +68,8 @@ PokemonMansion_EventScript_SNMAsk:
 	waitmovement 0
 	msgbox PokemonMansion_Text_SNMM2Intro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_CAROLINA
-	trainerbattle_no_intro TRAINER_CAROLINA, PokemonMansion_Text_SNMM2Defeat
+	cleartrainerflag TRAINER_SN_SOPHIE_1
+	trainerbattle_no_intro TRAINER_SN_SOPHIE_1, PokemonMansion_Text_SNMM2Defeat
 	special SinnohAddBattleTurns
 	applymovement LOCALID_SN_MAID_KNOCKOUT, PokemonMansion_Movement_SNMLeave
 	waitmovement 0
@@ -77,8 +77,8 @@ PokemonMansion_EventScript_SNMAsk:
 	waitmovement 0
 	msgbox PokemonMansion_Text_SNMM3Intro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_ELIJAH
-	trainerbattle_no_intro TRAINER_ELIJAH, PokemonMansion_Text_SNMM3Defeat
+	cleartrainerflag TRAINER_SN_EMILY_1
+	trainerbattle_no_intro TRAINER_SN_EMILY_1, PokemonMansion_Text_SNMM3Defeat
 	special SinnohAddBattleTurns
 	applymovement LOCALID_SN_MAID_KNOCKOUT, PokemonMansion_Movement_SNMLeave
 	waitmovement 0
@@ -86,8 +86,8 @@ PokemonMansion_EventScript_SNMAsk:
 	waitmovement 0
 	msgbox PokemonMansion_Text_SNMM4Intro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_CELIA
-	trainerbattle_no_intro TRAINER_CELIA, PokemonMansion_Text_SNMM4Defeat
+	cleartrainerflag TRAINER_SN_ELENA_1
+	trainerbattle_no_intro TRAINER_SN_ELENA_1, PokemonMansion_Text_SNMM4Defeat
 	special SinnohAddBattleTurns
 	applymovement LOCALID_SN_MAID_KNOCKOUT, PokemonMansion_Movement_SNMLeave
 	waitmovement 0
@@ -101,8 +101,8 @@ PokemonMansion_EventScript_SNMAsk:
 	waitmovement 0
 	msgbox PokemonMansion_Text_SNMM5Intro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_BRYAN
-	trainerbattle_no_intro TRAINER_BRYAN, PokemonMansion_Text_SNMM5Defeat
+	cleartrainerflag TRAINER_SN_CLARE_1
+	trainerbattle_no_intro TRAINER_SN_CLARE_1, PokemonMansion_Text_SNMM5Defeat
 	special SinnohAddBattleTurns
 	applymovement LOCALID_SN_MAID_KNOCKOUT, PokemonMansion_Movement_SNMLeave
 	waitmovement 0
@@ -133,14 +133,14 @@ PokemonMansion_EventScript_SNMBoss:
 	goto_if_eq VAR_0x8007, 1, PokemonMansion_EventScript_SNMCelesteBattle
 	msgbox PokemonMansion_Text_SNMLiamIntro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_BRANDEN
-	trainerbattle_no_intro TRAINER_BRANDEN, PokemonMansion_Text_SNMLiamDefeat
+	cleartrainerflag TRAINER_SN_LIAM_1
+	trainerbattle_no_intro TRAINER_SN_LIAM_1, PokemonMansion_Text_SNMLiamDefeat
 	goto PokemonMansion_EventScript_SNMBossEnd
 PokemonMansion_EventScript_SNMCelesteBattle:
 	msgbox PokemonMansion_Text_SNMCelesteIntro, MSGBOX_DEFAULT
 	closemessage
-	cleartrainerflag TRAINER_BRYANT
-	trainerbattle_no_intro TRAINER_BRYANT, PokemonMansion_Text_SNMCelesteDefeat
+	cleartrainerflag TRAINER_SN_CELESTE_1
+	trainerbattle_no_intro TRAINER_SN_CELESTE_1, PokemonMansion_Text_SNMCelesteDefeat
 PokemonMansion_EventScript_SNMBossEnd:
 	applymovement LOCALID_SN_MAID_BOSS, PokemonMansion_Movement_SNMLeave
 	waitmovement 0

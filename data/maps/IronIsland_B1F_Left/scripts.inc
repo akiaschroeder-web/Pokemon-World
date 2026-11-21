@@ -2,7 +2,7 @@ IronIsland_B1F_Left_MapScripts::
 	.byte 0
 
 IronIsland_B1F_Left_EventScript_Lawrence::
-	trainerbattle_single TRAINER_ROSE_3, IronIsland_B1F_Left_Text_LawrenceIntro, IronIsland_B1F_Left_Text_LawrenceDefeat
+	trainerbattle_single TRAINER_SN_LAWRENCE_1, IronIsland_B1F_Left_Text_LawrenceIntro, IronIsland_B1F_Left_Text_LawrenceDefeat
 	msgbox IronIsland_B1F_Left_Text_LawrencePost, MSGBOX_AUTOCLOSE
 	end
 

@@ -2,7 +2,7 @@ Route210_North_MapScripts::
 	.byte 0
 
 Route210_North_EventScript_Ernest::
-	trainerbattle_single TRAINER_DOUGLAS, Route210_North_Text_ErnestIntro, Route210_North_Text_ErnestDefeat
+	trainerbattle_single TRAINER_SN_ERNEST_1, Route210_North_Text_ErnestIntro, Route210_North_Text_ErnestDefeat
 	msgbox Route210_North_Text_ErnestPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -18,7 +18,7 @@ Route210_North_Text_ErnestPost:
 	.string "talent. It's pretty amazing.$"
 
 Route210_North_EventScript_Alyssa::
-	trainerbattle_single TRAINER_DARRIN, Route210_North_Text_AlyssaIntro, Route210_North_Text_AlyssaDefeat
+	trainerbattle_single TRAINER_SN_ALYSSA_1, Route210_North_Text_AlyssaIntro, Route210_North_Text_AlyssaDefeat
 	msgbox Route210_North_Text_AlyssaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,7 +35,7 @@ Route210_North_Text_AlyssaPost:
 	.string "How dare you beat us! Go away! Go!$"
 
 Route210_North_EventScript_Joel::
-	trainerbattle_single TRAINER_JEROME, Route210_North_Text_JoelIntro, Route210_North_Text_JoelDefeat
+	trainerbattle_single TRAINER_SN_JOEL_1, Route210_North_Text_JoelIntro, Route210_North_Text_JoelDefeat
 	msgbox Route210_North_Text_JoelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -53,7 +53,7 @@ Route210_North_Text_JoelPost:
 	.string "Now I feel silly for hiding!$"
 
 Route210_North_EventScript_Nathan::
-	trainerbattle_single TRAINER_MATTHEW, Route210_North_Text_NathanIntro, Route210_North_Text_NathanDefeat
+	trainerbattle_single TRAINER_SN_NATHAN_1, Route210_North_Text_NathanIntro, Route210_North_Text_NathanDefeat
 	msgbox Route210_North_Text_NathanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -70,7 +70,7 @@ Route210_North_Text_NathanPost:
 	.string "POKé BALLS.$"
 
 Route210_North_EventScript_Davido::
-	trainerbattle_single TRAINER_DAVID, Route210_North_Text_DavidoIntro, Route210_North_Text_DavidoDefeat
+	trainerbattle_single TRAINER_SN_DAVIDO_1, Route210_North_Text_DavidoIntro, Route210_North_Text_DavidoDefeat
 	msgbox Route210_North_Text_DavidoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -88,14 +88,14 @@ Route210_North_Text_DavidoPost:
 	.string "I should become a devotee of theirs.$"
 
 Route210_North_EventScript_Patrick::
-	trainerbattle_single TRAINER_SPENCER, Route210_North_Text_PatrickIntro, Route210_North_Text_PatrickDefeat
+	trainerbattle_single TRAINER_SN_PATRICK_1, Route210_North_Text_PatrickIntro, Route210_North_Text_PatrickDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route210_North_EventScript_Patrick_Rematch
 	msgbox Route210_North_Text_PatrickPost, MSGBOX_AUTOCLOSE
 	end
 
 Route210_North_EventScript_Patrick_Rematch:
-	trainerbattle_rematch TRAINER_SPENCER, Route210_North_Text_PatrickIntro, Route210_North_Text_PatrickDefeat
+	trainerbattle_rematch TRAINER_SN_PATRICK_1, Route210_North_Text_PatrickIntro, Route210_North_Text_PatrickDefeat
 	msgbox Route210_North_Text_PatrickPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -111,14 +111,14 @@ Route210_North_Text_PatrickPost:
 	.string "nothing like mine!$"
 
 Route210_North_EventScript_Brianna::
-	trainerbattle_single TRAINER_ROLAND, Route210_North_Text_BriannaIntro, Route210_North_Text_BriannaDefeat
+	trainerbattle_single TRAINER_SN_BRIANNA_1, Route210_North_Text_BriannaIntro, Route210_North_Text_BriannaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route210_North_EventScript_Brianna_Rematch
 	msgbox Route210_North_Text_BriannaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route210_North_EventScript_Brianna_Rematch:
-	trainerbattle_rematch TRAINER_ROLAND, Route210_North_Text_BriannaIntro, Route210_North_Text_BriannaDefeat
+	trainerbattle_rematch TRAINER_SN_BRIANNA_1, Route210_North_Text_BriannaIntro, Route210_North_Text_BriannaDefeat
 	msgbox Route210_North_Text_BriannaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -134,7 +134,7 @@ Route210_North_Text_BriannaPost:
 	.string "simply a wonder to watch!$"
 
 Route210_North_EventScript_ZacJen::
-	trainerbattle_double TRAINER_NOLEN, Route210_North_Text_ZacJenIntro, Route210_North_Text_ZacJenDefeat, Route210_North_Text_ZacJenNotEnough
+	trainerbattle_double TRAINER_SN_ZAC_JEN_1, Route210_North_Text_ZacJenIntro, Route210_North_Text_ZacJenDefeat, Route210_North_Text_ZacJenNotEnough
 	msgbox Route210_North_Text_ZacJenPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -159,14 +159,14 @@ Route210_North_Text_ZacJenNotEnough:
 	.string "POKéMON with you?$"
 
 Route210_North_EventScript_Brian::
-	trainerbattle_single TRAINER_STAN, Route210_North_Text_BrianIntro, Route210_North_Text_BrianDefeat
+	trainerbattle_single TRAINER_SN_BRIAN_1, Route210_North_Text_BrianIntro, Route210_North_Text_BrianDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route210_North_EventScript_Brian_Rematch
 	msgbox Route210_North_Text_BrianPost, MSGBOX_AUTOCLOSE
 	end
 
 Route210_North_EventScript_Brian_Rematch:
-	trainerbattle_rematch TRAINER_STAN, Route210_North_Text_BrianIntro, Route210_North_Text_BrianDefeat
+	trainerbattle_rematch TRAINER_SN_BRIAN_1, Route210_North_Text_BrianIntro, Route210_North_Text_BrianDefeat
 	msgbox Route210_North_Text_BrianPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -186,7 +186,7 @@ Route210_North_Text_BrianPost:
 	.string "victory is mine!$"
 
 Route210_North_EventScript_Adam::
-	trainerbattle_single TRAINER_BARRY, Route210_North_Text_AdamIntro, Route210_North_Text_AdamDefeat
+	trainerbattle_single TRAINER_SN_ADAM_1, Route210_North_Text_AdamIntro, Route210_North_Text_AdamDefeat
 	msgbox Route210_North_Text_AdamPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -227,7 +227,7 @@ Route210_North_Text_PtSign2:
 	.string "Grandma Wilma's House$"
 
 Route210_North_EventScript_ZacJen2::
-	trainerbattle_double TRAINER_SHELBY_5, Route210_North_Text_ZacJen2Intro, Route210_North_Text_ZacJen2Defeat, Route210_North_Text_ZacJen2NotEnough
+	trainerbattle_double TRAINER_SN_ZAC_AND_JE_1, Route210_North_Text_ZacJen2Intro, Route210_North_Text_ZacJen2Defeat, Route210_North_Text_ZacJen2NotEnough
 	msgbox Route210_North_Text_ZacJen2Post, MSGBOX_AUTOCLOSE
 	end
 

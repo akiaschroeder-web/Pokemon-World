@@ -2,14 +2,14 @@ Route209_MapScripts::
 	.byte 0
 
 Route209_EventScript_Albert::
-	trainerbattle_single TRAINER_SHEILA, Route209_Text_AlbertIntro, Route209_Text_AlbertDefeat
+	trainerbattle_single TRAINER_SN_ALBERT_1, Route209_Text_AlbertIntro, Route209_Text_AlbertDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route209_EventScript_Albert_Rematch
 	msgbox Route209_Text_AlbertPost, MSGBOX_AUTOCLOSE
 	end
 
 Route209_EventScript_Albert_Rematch:
-	trainerbattle_rematch TRAINER_SHEILA, Route209_Text_AlbertIntro, Route209_Text_AlbertDefeat
+	trainerbattle_rematch TRAINER_SN_ALBERT_1, Route209_Text_AlbertIntro, Route209_Text_AlbertDefeat
 	msgbox Route209_Text_AlbertPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -26,14 +26,14 @@ Route209_Text_AlbertPost:
 	.string "with a lot of love.$"
 
 Route209_EventScript_Jennifer::
-	trainerbattle_single TRAINER_SHIRLEY, Route209_Text_JenniferIntro, Route209_Text_JenniferDefeat
+	trainerbattle_single TRAINER_SN_JENNIFER_1, Route209_Text_JenniferIntro, Route209_Text_JenniferDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route209_EventScript_Jennifer_Rematch
 	msgbox Route209_Text_JenniferPost, MSGBOX_AUTOCLOSE
 	end
 
 Route209_EventScript_Jennifer_Rematch:
-	trainerbattle_rematch TRAINER_SHIRLEY, Route209_Text_JenniferIntro, Route209_Text_JenniferDefeat
+	trainerbattle_rematch TRAINER_SN_JENNIFER_1, Route209_Text_JenniferIntro, Route209_Text_JenniferDefeat
 	msgbox Route209_Text_JenniferPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -50,7 +50,7 @@ Route209_Text_JenniferPost:
 	.string "and they'll bond closely with you.$"
 
 Route209_EventScript_Shelley::
-	trainerbattle_single TRAINER_MOLLIE, Route209_Text_ShelleyIntro, Route209_Text_ShelleyDefeat
+	trainerbattle_single TRAINER_SN_SHELLEY_1, Route209_Text_ShelleyIntro, Route209_Text_ShelleyDefeat
 	msgbox Route209_Text_ShelleyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -68,7 +68,7 @@ Route209_Text_ShelleyPost:
 	.string "I'd say it's the best of both worlds!$"
 
 Route209_EventScript_Richard::
-	trainerbattle_single TRAINER_GARRET, Route209_Text_RichardIntro, Route209_Text_RichardDefeat
+	trainerbattle_single TRAINER_SN_RICHARD_1, Route209_Text_RichardIntro, Route209_Text_RichardDefeat
 	msgbox Route209_Text_RichardPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -85,7 +85,7 @@ Route209_Text_RichardPost:
 	.string "better tomorrow!$"
 
 Route209_EventScript_Raul::
-	trainerbattle_single TRAINER_MARK, Route209_Text_RaulIntro, Route209_Text_RaulDefeat
+	trainerbattle_single TRAINER_SN_RAUL_1, Route209_Text_RaulIntro, Route209_Text_RaulDefeat
 	msgbox Route209_Text_RaulPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -101,14 +101,14 @@ Route209_Text_RaulPost:
 	.string "act together.$"
 
 Route209_EventScript_Danielle::
-	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_1, Route209_Text_DanielleIntro, Route209_Text_DanielleDefeat
+	trainerbattle_single TRAINER_SN_DANIELLE_1, Route209_Text_DanielleIntro, Route209_Text_DanielleDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route209_EventScript_Danielle_Rematch
 	msgbox Route209_Text_DaniellePost, MSGBOX_AUTOCLOSE
 	end
 
 Route209_EventScript_Danielle_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_MT_CHIMNEY_1, Route209_Text_DanielleIntro, Route209_Text_DanielleDefeat
+	trainerbattle_rematch TRAINER_SN_DANIELLE_1, Route209_Text_DanielleIntro, Route209_Text_DanielleDefeat
 	msgbox Route209_Text_DaniellePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -123,7 +123,7 @@ Route209_Text_DaniellePost:
 	.string "be a POKéMON!$"
 
 Route209_EventScript_EmmaLil::
-	trainerbattle_double TRAINER_LUIS, Route209_Text_EmmaLilIntro, Route209_Text_EmmaLilDefeat, Route209_Text_EmmaLilNotEnough
+	trainerbattle_double TRAINER_SN_EMMA_LIL_1, Route209_Text_EmmaLilIntro, Route209_Text_EmmaLilDefeat, Route209_Text_EmmaLilNotEnough
 	msgbox Route209_Text_EmmaLilPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -144,7 +144,7 @@ Route209_Text_EmmaLilNotEnough:
 	.string "one POKéMON!$"
 
 Route209_EventScript_TySue::
-	trainerbattle_double TRAINER_DOMINIK, Route209_Text_TySueIntro, Route209_Text_TySueDefeat, Route209_Text_TySueNotEnough
+	trainerbattle_double TRAINER_SN_TY_SUE_1, Route209_Text_TySueIntro, Route209_Text_TySueDefeat, Route209_Text_TySueNotEnough
 	msgbox Route209_Text_TySuePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -199,7 +199,7 @@ Route209_Text_PtSign3:
 	.string "registered item instantly.$"
 
 Route209_EventScript_EmmaLil2::
-	trainerbattle_double TRAINER_SHELBY_3, Route209_Text_EmmaLil2Intro, Route209_Text_EmmaLil2Defeat, Route209_Text_EmmaLil2NotEnough
+	trainerbattle_double TRAINER_SN_EMMA_AND_L_1, Route209_Text_EmmaLil2Intro, Route209_Text_EmmaLil2Defeat, Route209_Text_EmmaLil2NotEnough
 	msgbox Route209_Text_EmmaLil2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -216,7 +216,7 @@ Route209_Text_EmmaLil2NotEnough:
 	.string "You need two POKéMON to battle us!$"
 
 Route209_EventScript_TySue2::
-	trainerbattle_double TRAINER_SHELBY_4, Route209_Text_TySue2Intro, Route209_Text_TySue2Defeat, Route209_Text_TySue2NotEnough
+	trainerbattle_double TRAINER_SN_TY_AND_SUE_1, Route209_Text_TySue2Intro, Route209_Text_TySue2Defeat, Route209_Text_TySue2NotEnough
 	msgbox Route209_Text_TySue2Post, MSGBOX_AUTOCLOSE
 	end
 

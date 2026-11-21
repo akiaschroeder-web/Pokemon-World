@@ -3,7 +3,7 @@ Route213_MapScripts::
 	.byte 0
 
 Route213_EventScript_Sheltin::
-	trainerbattle_single TRAINER_PAUL, Route213_Text_SheltinIntro, Route213_Text_SheltinDefeat
+	trainerbattle_single TRAINER_SN_SHELTIN_1, Route213_Text_SheltinIntro, Route213_Text_SheltinDefeat
 	msgbox Route213_Text_SheltinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ Route213_Text_SheltinPost:
 	.string "POKéMON look more lively.$"
 
 Route213_EventScript_Evan::
-	trainerbattle_single TRAINER_GEORGIA, Route213_Text_EvanIntro, Route213_Text_EvanDefeat
+	trainerbattle_single TRAINER_SN_EVAN_1, Route213_Text_EvanIntro, Route213_Text_EvanDefeat
 	msgbox Route213_Text_EvanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,7 +38,7 @@ Route213_Text_EvanPost:
 	.string "prunes!$"
 
 Route213_EventScript_Mary::
-	trainerbattle_single TRAINER_KATE_AND_JOY, Route213_Text_MaryIntro, Route213_Text_MaryDefeat
+	trainerbattle_single TRAINER_SN_MARY_1, Route213_Text_MaryIntro, Route213_Text_MaryDefeat
 	msgbox Route213_Text_MaryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ Route213_Text_MaryPost:
 	.string "the Hoenn region.$"
 
 Route213_EventScript_Haley::
-	trainerbattle_single TRAINER_VICTOR, Route213_Text_HaleyIntro, Route213_Text_HaleyDefeat
+	trainerbattle_single TRAINER_SN_HALEY_1, Route213_Text_HaleyIntro, Route213_Text_HaleyDefeat
 	msgbox Route213_Text_HaleyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -71,14 +71,14 @@ Route213_Text_HaleyPost:
 	.string "too...$"
 
 Route213_EventScript_Jared::
-	trainerbattle_single TRAINER_COLTON, Route213_Text_JaredIntro, Route213_Text_JaredDefeat
+	trainerbattle_single TRAINER_SN_JARED_1, Route213_Text_JaredIntro, Route213_Text_JaredDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route213_EventScript_Jared_Rematch
 	msgbox Route213_Text_JaredPost, MSGBOX_AUTOCLOSE
 	end
 
 Route213_EventScript_Jared_Rematch:
-	trainerbattle_rematch TRAINER_COLTON, Route213_Text_JaredIntro, Route213_Text_JaredDefeat
+	trainerbattle_rematch TRAINER_SN_JARED_1, Route213_Text_JaredIntro, Route213_Text_JaredDefeat
 	msgbox Route213_Text_JaredPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -95,14 +95,14 @@ Route213_Text_JaredPost:
 	.string "I ran out of breath just opening it!$"
 
 Route213_EventScript_Chelsea::
-	trainerbattle_single TRAINER_VICTORIA, Route213_Text_ChelseaIntro, Route213_Text_ChelseaDefeat
+	trainerbattle_single TRAINER_SN_CHELSEA_1, Route213_Text_ChelseaIntro, Route213_Text_ChelseaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route213_EventScript_Chelsea_Rematch
 	msgbox Route213_Text_ChelseaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route213_EventScript_Chelsea_Rematch:
-	trainerbattle_rematch TRAINER_VICTORIA, Route213_Text_ChelseaIntro, Route213_Text_ChelseaDefeat
+	trainerbattle_rematch TRAINER_SN_CHELSEA_1, Route213_Text_ChelseaIntro, Route213_Text_ChelseaDefeat
 	msgbox Route213_Text_ChelseaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -117,14 +117,14 @@ Route213_Text_ChelseaPost:
 	.string "I bet it tastes yummy!$"
 
 Route213_EventScript_Cyndy::
-	trainerbattle_single TRAINER_VANESSA, Route213_Text_CyndyIntro, Route213_Text_CyndyDefeat
+	trainerbattle_single TRAINER_SN_CYNDY_1, Route213_Text_CyndyIntro, Route213_Text_CyndyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route213_EventScript_Cyndy_Rematch
 	msgbox Route213_Text_CyndyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route213_EventScript_Cyndy_Rematch:
-	trainerbattle_rematch TRAINER_VANESSA, Route213_Text_CyndyIntro, Route213_Text_CyndyDefeat
+	trainerbattle_rematch TRAINER_SN_CYNDY_1, Route213_Text_CyndyIntro, Route213_Text_CyndyDefeat
 	msgbox Route213_Text_CyndyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -141,7 +141,7 @@ Route213_Text_CyndyPost:
 	.string "you look!$"
 
 Route213_EventScript_Kenneth::
-	trainerbattle_single TRAINER_VICKY, Route213_Text_KennethIntro, Route213_Text_KennethDefeat
+	trainerbattle_single TRAINER_SN_KENNETH_1, Route213_Text_KennethIntro, Route213_Text_KennethDefeat
 	msgbox Route213_Text_KennethPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -160,7 +160,7 @@ Route213_Text_KennethPost:
 	.string "Just don't you talk to me.$"
 
 Route213_EventScript_Paul::
-	trainerbattle_single TRAINER_QUINCY, Route213_Text_PaulIntro, Route213_Text_PaulDefeat
+	trainerbattle_single TRAINER_SN_PAUL_1, Route213_Text_PaulIntro, Route213_Text_PaulDefeat
 	msgbox Route213_Text_PaulPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -237,7 +237,7 @@ Route213_OnTransitionSN:
 Route213_EventScript_SNVis_BOMB:
 	setflag FLAG_SN_HIDE_BOMB
 	goto_if_unset FLAG_BADGE05_GET, Route213_EventScript_SNVis_BOMB_End
-	goto_if_defeated TRAINER_ELLIOT_1, Route213_EventScript_SNVis_BOMB_End
+	goto_if_defeated TRAINER_SN_GRUNT_31, Route213_EventScript_SNVis_BOMB_End
 	clearflag FLAG_SN_HIDE_BOMB
 Route213_EventScript_SNVis_BOMB_End:
 	return

@@ -85,7 +85,7 @@ EternaForest_Text_CherylBye2:
 	.string "luck on your journey!$"
 
 EternaForest_EventScript_Jack::
-	trainerbattle_single TRAINER_JODY, EternaForest_Text_JackIntro, EternaForest_Text_JackDefeat
+	trainerbattle_single TRAINER_SN_JACK_1, EternaForest_Text_JackIntro, EternaForest_Text_JackDefeat
 	msgbox EternaForest_Text_JackPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -102,7 +102,7 @@ EternaForest_Text_JackPost:
 	.string "doesn't add up to any wins...$"
 
 EternaForest_EventScript_Briana::
-	trainerbattle_single TRAINER_WENDY, EternaForest_Text_BrianaIntro, EternaForest_Text_BrianaDefeat
+	trainerbattle_single TRAINER_SN_BRIANA_1, EternaForest_Text_BrianaIntro, EternaForest_Text_BrianaDefeat
 	msgbox EternaForest_Text_BrianaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -119,7 +119,7 @@ EternaForest_Text_BrianaPost:
 	.string "either. It was the worst!$"
 
 EternaForest_EventScript_Lindsey::
-	trainerbattle_single TRAINER_KEIRA, EternaForest_Text_LindseyIntro, EternaForest_Text_LindseyDefeat
+	trainerbattle_single TRAINER_SN_LINDSEY_1, EternaForest_Text_LindseyIntro, EternaForest_Text_LindseyDefeat
 	msgbox EternaForest_Text_LindseyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -137,7 +137,7 @@ EternaForest_Text_LindseyPost:
 	.string "a presence...$"
 
 EternaForest_EventScript_Elijah::
-	trainerbattle_single TRAINER_JENNIFER, EternaForest_Text_ElijahIntro, EternaForest_Text_ElijahDefeat
+	trainerbattle_single TRAINER_SN_ELIJAH_1, EternaForest_Text_ElijahIntro, EternaForest_Text_ElijahDefeat
 	msgbox EternaForest_Text_ElijahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -153,7 +153,7 @@ EternaForest_Text_ElijahPost:
 	.string "to be solved in this strange world...$"
 
 EternaForest_EventScript_Phillip::
-	trainerbattle_single TRAINER_HOPE, EternaForest_Text_PhillipIntro, EternaForest_Text_PhillipDefeat
+	trainerbattle_single TRAINER_SN_PHILLIP_1, EternaForest_Text_PhillipIntro, EternaForest_Text_PhillipDefeat
 	msgbox EternaForest_Text_PhillipPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -167,7 +167,7 @@ EternaForest_Text_PhillipPost:
 	.string "There's a POKéMON ability named Swarm.$"
 
 EternaForest_EventScript_Donald::
-	trainerbattle_single TRAINER_SHANNON, EternaForest_Text_DonaldIntro, EternaForest_Text_DonaldDefeat
+	trainerbattle_single TRAINER_SN_DONALD_1, EternaForest_Text_DonaldIntro, EternaForest_Text_DonaldDefeat
 	msgbox EternaForest_Text_DonaldPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -183,7 +183,7 @@ EternaForest_Text_DonaldPost:
 	.string "it turned out to be just a Trainer!$"
 
 EternaForest_EventScript_Kody::
-	trainerbattle_single TRAINER_MICHELLE, EternaForest_Text_KodyIntro, EternaForest_Text_KodyDefeat
+	trainerbattle_single TRAINER_SN_KODY_1, EternaForest_Text_KodyIntro, EternaForest_Text_KodyDefeat
 	msgbox EternaForest_Text_KodyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -199,7 +199,7 @@ EternaForest_Text_KodyPost:
 	.string "particularly strong presence there.$"
 
 EternaForest_EventScript_Rachael::
-	trainerbattle_single TRAINER_CAROLINE, EternaForest_Text_RachaelIntro, EternaForest_Text_RachaelDefeat
+	trainerbattle_single TRAINER_SN_RACHAEL_1, EternaForest_Text_RachaelIntro, EternaForest_Text_RachaelDefeat
 	msgbox EternaForest_Text_RachaelPost, MSGBOX_AUTOCLOSE
 	end
 

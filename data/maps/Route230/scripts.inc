@@ -2,14 +2,14 @@ Route230_MapScripts::
 	.byte 0
 
 Route230_EventScript_Glenn::
-	trainerbattle_single TRAINER_JULIO, Route230_Text_GlennIntro, Route230_Text_GlennDefeat
+	trainerbattle_single TRAINER_SN_GLENN_1, Route230_Text_GlennIntro, Route230_Text_GlennDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route230_EventScript_Glenn_Rematch
 	msgbox Route230_Text_GlennPost, MSGBOX_AUTOCLOSE
 	end
 
 Route230_EventScript_Glenn_Rematch:
-	trainerbattle_rematch TRAINER_JULIO, Route230_Text_GlennIntro, Route230_Text_GlennDefeat
+	trainerbattle_rematch TRAINER_SN_GLENN_1, Route230_Text_GlennIntro, Route230_Text_GlennDefeat
 	msgbox Route230_Text_GlennPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -26,14 +26,14 @@ Route230_Text_GlennPost:
 	.string "And you rode right over me!$"
 
 Route230_EventScript_Joanna::
-	trainerbattle_single TRAINER_GRUNT_UNUSED, Route230_Text_JoannaIntro, Route230_Text_JoannaDefeat
+	trainerbattle_single TRAINER_SN_JOANNA_1, Route230_Text_JoannaIntro, Route230_Text_JoannaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route230_EventScript_Joanna_Rematch
 	msgbox Route230_Text_JoannaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route230_EventScript_Joanna_Rematch:
-	trainerbattle_rematch TRAINER_GRUNT_UNUSED, Route230_Text_JoannaIntro, Route230_Text_JoannaDefeat
+	trainerbattle_rematch TRAINER_SN_JOANNA_1, Route230_Text_JoannaIntro, Route230_Text_JoannaDefeat
 	msgbox Route230_Text_JoannaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -51,7 +51,7 @@ Route230_Text_JoannaPost:
 	.string "really even trying.$"
 
 Route230_EventScript_Kurt::
-	trainerbattle_single TRAINER_GRUNT_JAGGED_PASS, Route230_Text_KurtIntro, Route230_Text_KurtDefeat
+	trainerbattle_single TRAINER_SN_KURT_1, Route230_Text_KurtIntro, Route230_Text_KurtDefeat
 	msgbox Route230_Text_KurtPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -70,7 +70,7 @@ Route230_Text_KurtPost:
 	.string "somewhere deep down.$"
 
 Route230_EventScript_Sophia::
-	trainerbattle_single TRAINER_LEONARDO, Route230_Text_SophiaIntro, Route230_Text_SophiaDefeat
+	trainerbattle_single TRAINER_SN_SOPHIA_1, Route230_Text_SophiaIntro, Route230_Text_SophiaDefeat
 	msgbox Route230_Text_SophiaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -85,7 +85,7 @@ Route230_Text_SophiaPost:
 	.string "swimsuit's getting a little tight...$"
 
 Route230_EventScript_Sam::
-	trainerbattle_single TRAINER_ATHENA, Route230_Text_SamIntro, Route230_Text_SamDefeat
+	trainerbattle_single TRAINER_SN_SAM_1, Route230_Text_SamIntro, Route230_Text_SamDefeat
 	msgbox Route230_Text_SamPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -101,7 +101,7 @@ Route230_Text_SamPost:
 	.string "any better as a Trainer...$"
 
 Route230_EventScript_Mallory::
-	trainerbattle_single TRAINER_HARRISON, Route230_Text_MalloryIntro, Route230_Text_MalloryDefeat
+	trainerbattle_single TRAINER_SN_MALLORY_1, Route230_Text_MalloryIntro, Route230_Text_MalloryDefeat
 	msgbox Route230_Text_MalloryPost, MSGBOX_AUTOCLOSE
 	end
 

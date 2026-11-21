@@ -3,14 +3,14 @@ Route227_MapScripts::
 	.byte 0
 
 Route227_EventScript_Saul::
-	trainerbattle_single TRAINER_MAY_ROUTE_110_MUDKIP, Route227_Text_SaulIntro, Route227_Text_SaulDefeat
+	trainerbattle_single TRAINER_SN_SAUL_2, Route227_Text_SaulIntro, Route227_Text_SaulDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route227_EventScript_Saul_Rematch
 	msgbox Route227_Text_SaulPost, MSGBOX_AUTOCLOSE
 	end
 
 Route227_EventScript_Saul_Rematch:
-	trainerbattle_rematch TRAINER_MAY_ROUTE_110_MUDKIP, Route227_Text_SaulIntro, Route227_Text_SaulDefeat
+	trainerbattle_rematch TRAINER_SN_SAUL_2, Route227_Text_SaulIntro, Route227_Text_SaulDefeat
 	msgbox Route227_Text_SaulPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -27,7 +27,7 @@ Route227_Text_SaulPost:
 	.string "I'm willing to take on the world!$"
 
 Route227_EventScript_Felicia::
-	trainerbattle_single TRAINER_MAY_ROUTE_119_MUDKIP, Route227_Text_FeliciaIntro, Route227_Text_FeliciaDefeat
+	trainerbattle_single TRAINER_SN_FELICIA_1, Route227_Text_FeliciaIntro, Route227_Text_FeliciaDefeat
 	msgbox Route227_Text_FeliciaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -47,7 +47,7 @@ Route227_Text_FeliciaPost:
 	.string "grow tough in a place like this.$"
 
 Route227_EventScript_Griffin::
-	trainerbattle_single TRAINER_MAY_ROUTE_103_TREECKO, Route227_Text_GriffinIntro, Route227_Text_GriffinDefeat
+	trainerbattle_single TRAINER_SN_GRIFFIN_1, Route227_Text_GriffinIntro, Route227_Text_GriffinDefeat
 	msgbox Route227_Text_GriffinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -64,7 +64,7 @@ Route227_Text_GriffinPost:
 	.string "Seems I've caught a cold.$"
 
 Route227_EventScript_Mikayla::
-	trainerbattle_single TRAINER_MAY_ROUTE_110_TREECKO, Route227_Text_MikaylaIntro, Route227_Text_MikaylaDefeat
+	trainerbattle_single TRAINER_SN_MIKAYLA_1, Route227_Text_MikaylaIntro, Route227_Text_MikaylaDefeat
 	msgbox Route227_Text_MikaylaPost, MSGBOX_AUTOCLOSE
 	end
 

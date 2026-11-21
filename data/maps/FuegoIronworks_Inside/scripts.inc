@@ -2,7 +2,7 @@ FuegoIronworks_Inside_MapScripts::
 	.byte 0
 
 FuegoIronworks_Inside_EventScript_Dillan::
-	trainerbattle_single TRAINER_LOLA_5, FuegoIronworks_Inside_Text_DillanIntro, FuegoIronworks_Inside_Text_DillanDefeat
+	trainerbattle_single TRAINER_SN_DILLAN_1, FuegoIronworks_Inside_Text_DillanIntro, FuegoIronworks_Inside_Text_DillanDefeat
 	msgbox FuegoIronworks_Inside_Text_DillanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ FuegoIronworks_Inside_Text_DillanPost:
 	.string "POKéMON have nothing on me!$"
 
 FuegoIronworks_Inside_EventScript_Holden::
-	trainerbattle_single TRAINER_RICKY_1, FuegoIronworks_Inside_Text_HoldenIntro, FuegoIronworks_Inside_Text_HoldenDefeat
+	trainerbattle_single TRAINER_SN_HOLDEN_1, FuegoIronworks_Inside_Text_HoldenIntro, FuegoIronworks_Inside_Text_HoldenDefeat
 	msgbox FuegoIronworks_Inside_Text_HoldenPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -37,7 +37,7 @@ FuegoIronworks_Inside_Text_HoldenPost:
 	.string "We’re pretty proud of them here!$"
 
 FuegoIronworks_Inside_EventScript_Conrad::
-	trainerbattle_single TRAINER_RICKY_2, FuegoIronworks_Inside_Text_ConradIntro, FuegoIronworks_Inside_Text_ConradDefeat
+	trainerbattle_single TRAINER_SN_CONRAD_1, FuegoIronworks_Inside_Text_ConradIntro, FuegoIronworks_Inside_Text_ConradDefeat
 	msgbox FuegoIronworks_Inside_Text_ConradPost, MSGBOX_AUTOCLOSE
 	end
 

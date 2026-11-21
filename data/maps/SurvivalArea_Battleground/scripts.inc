@@ -197,7 +197,7 @@ SurvivalArea_Battleground_EventScript_SNRoark::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNRoark_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNRoark_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_CHARLOTTE, SurvivalArea_Battleground_EventScript_SNRoark_Lose
+	trainerbattle_no_intro TRAINER_SN_ROARK_3, SurvivalArea_Battleground_EventScript_SNRoark_Lose
 	setflag FLAG_DAILY_SN_BG_ROARK
 	goto SurvivalArea_Battleground_EventScript_SNRoark_Done
 	end
@@ -323,7 +323,7 @@ SurvivalArea_Battleground_EventScript_SNGardenia::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNGardenia_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNGardenia_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_DEANDRE, SurvivalArea_Battleground_EventScript_SNGardenia_Lose
+	trainerbattle_no_intro TRAINER_SN_GARDENIA_3, SurvivalArea_Battleground_EventScript_SNGardenia_Lose
 	setflag FLAG_DAILY_SN_BG_GARDENIA
 	goto SurvivalArea_Battleground_EventScript_SNGardenia_Done
 	end
@@ -443,7 +443,7 @@ SurvivalArea_Battleground_EventScript_SNFantina::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNFantina_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNFantina_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_1, SurvivalArea_Battleground_EventScript_SNFantina_Lose
+	trainerbattle_no_intro TRAINER_SN_FANTINA_3, SurvivalArea_Battleground_EventScript_SNFantina_Lose
 	setflag FLAG_DAILY_SN_BG_FANTINA
 	goto SurvivalArea_Battleground_EventScript_SNFantina_Done
 	end
@@ -557,7 +557,7 @@ SurvivalArea_Battleground_EventScript_SNMaylene::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNMaylene_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNMaylene_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_2, SurvivalArea_Battleground_EventScript_SNMaylene_Lose
+	trainerbattle_no_intro TRAINER_SN_MAYLENE_3, SurvivalArea_Battleground_EventScript_SNMaylene_Lose
 	setflag FLAG_DAILY_SN_BG_MAYLENE
 	goto SurvivalArea_Battleground_EventScript_SNMaylene_Done
 	end
@@ -670,7 +670,7 @@ SurvivalArea_Battleground_EventScript_SNWake::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNWake_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNWake_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_3, SurvivalArea_Battleground_EventScript_SNWake_Lose
+	trainerbattle_no_intro TRAINER_SN_WAKE_3, SurvivalArea_Battleground_EventScript_SNWake_Lose
 	setflag FLAG_DAILY_SN_BG_WAKE
 	goto SurvivalArea_Battleground_EventScript_SNWake_Done
 	end
@@ -799,7 +799,7 @@ SurvivalArea_Battleground_EventScript_SNByron::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNByron_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNByron_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_4, SurvivalArea_Battleground_EventScript_SNByron_Lose
+	trainerbattle_no_intro TRAINER_SN_BYRON_3, SurvivalArea_Battleground_EventScript_SNByron_Lose
 	setflag FLAG_DAILY_SN_BG_BYRON
 	goto SurvivalArea_Battleground_EventScript_SNByron_Done
 	end
@@ -928,7 +928,7 @@ SurvivalArea_Battleground_EventScript_SNCandice::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNCandice_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNCandice_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_5, SurvivalArea_Battleground_EventScript_SNCandice_Lose
+	trainerbattle_no_intro TRAINER_SN_CANDICE_3, SurvivalArea_Battleground_EventScript_SNCandice_Lose
 	setflag FLAG_DAILY_SN_BG_CANDICE
 	goto SurvivalArea_Battleground_EventScript_SNCandice_Done
 	end
@@ -1032,7 +1032,7 @@ SurvivalArea_Battleground_EventScript_SNVolkner::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNVolkner_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNVolkner_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_6, SurvivalArea_Battleground_EventScript_SNVolkner_Lose
+	trainerbattle_no_intro TRAINER_SN_VOLKNER_4, SurvivalArea_Battleground_EventScript_SNVolkner_Lose
 	setflag FLAG_DAILY_SN_BG_VOLKNER
 	goto SurvivalArea_Battleground_EventScript_SNVolkner_Done
 	end
@@ -1140,7 +1140,7 @@ SurvivalArea_Battleground_EventScript_SNBuck::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNBuck_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNBuck_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_7, SurvivalArea_Battleground_EventScript_SNBuck_Lose
+	trainerbattle_no_intro TRAINER_SN_BUCK_1, SurvivalArea_Battleground_EventScript_SNBuck_Lose
 	setflag FLAG_DAILY_SN_BG_BUCK
 	goto SurvivalArea_Battleground_EventScript_SNBuck_Done
 	end
@@ -1244,7 +1244,7 @@ SurvivalArea_Battleground_EventScript_SNCheryl::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNCheryl_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNCheryl_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_8, SurvivalArea_Battleground_EventScript_SNCheryl_Lose
+	trainerbattle_no_intro TRAINER_SN_CHERYL_1, SurvivalArea_Battleground_EventScript_SNCheryl_Lose
 	setflag FLAG_DAILY_SN_BG_CHERYL
 	goto SurvivalArea_Battleground_EventScript_SNCheryl_Done
 	end
@@ -1349,7 +1349,7 @@ SurvivalArea_Battleground_EventScript_SNRiley::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNRiley_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNRiley_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_9, SurvivalArea_Battleground_EventScript_SNRiley_Lose
+	trainerbattle_no_intro TRAINER_SN_RILEY_1, SurvivalArea_Battleground_EventScript_SNRiley_Lose
 	setflag FLAG_DAILY_SN_BG_RILEY
 	goto SurvivalArea_Battleground_EventScript_SNRiley_Done
 	end
@@ -1457,7 +1457,7 @@ SurvivalArea_Battleground_EventScript_SNMarley::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNMarley_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNMarley_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_10, SurvivalArea_Battleground_EventScript_SNMarley_Lose
+	trainerbattle_no_intro TRAINER_SN_MARLEY_1, SurvivalArea_Battleground_EventScript_SNMarley_Lose
 	setflag FLAG_DAILY_SN_BG_MARLEY
 	goto SurvivalArea_Battleground_EventScript_SNMarley_Done
 	end
@@ -1551,7 +1551,7 @@ SurvivalArea_Battleground_EventScript_SNMira::
 	call_if_eq VAR_TEMP_4, 0, SurvivalArea_Battleground_EventScript_SNMira_Intro1
 	call_if_eq VAR_TEMP_4, 1, SurvivalArea_Battleground_EventScript_SNMira_Intro2
 	closemessage
-	trainerbattle_no_intro TRAINER_GRUNT_MAGMA_HIDEOUT_11, SurvivalArea_Battleground_EventScript_SNMira_Lose
+	trainerbattle_no_intro TRAINER_SN_MIRA_1, SurvivalArea_Battleground_EventScript_SNMira_Lose
 	setflag FLAG_DAILY_SN_BG_MIRA
 	goto SurvivalArea_Battleground_EventScript_SNMira_Done
 	end

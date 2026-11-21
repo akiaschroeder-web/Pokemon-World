@@ -2,7 +2,7 @@ MtCoronet_6F_MapScripts::
 	.byte 0
 
 MtCoronet_6F_EventScript_Grunt::
-	trainerbattle_single TRAINER_GRUNT_SPACE_CENTER_2, MtCoronet_6F_Text_GruntIntro, MtCoronet_6F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_27, MtCoronet_6F_Text_GruntIntro, MtCoronet_6F_Text_GruntDefeat
 	msgbox MtCoronet_6F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 

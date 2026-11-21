@@ -2,7 +2,7 @@ SinnohVictoryRoad_1F_MapScripts::
 	.byte 0
 
 SinnohVictoryRoad_1F_EventScript_Bryce::
-	trainerbattle_single TRAINER_CINDY_5, SinnohVictoryRoad_1F_Text_BryceIntro, SinnohVictoryRoad_1F_Text_BryceDefeat
+	trainerbattle_single TRAINER_SN_BRYCE_1, SinnohVictoryRoad_1F_Text_BryceIntro, SinnohVictoryRoad_1F_Text_BryceDefeat
 	msgbox SinnohVictoryRoad_1F_Text_BrycePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -19,7 +19,7 @@ SinnohVictoryRoad_1F_Text_BrycePost:
 	.string "POKéMON League!$"
 
 SinnohVictoryRoad_1F_EventScript_Miles::
-	trainerbattle_single TRAINER_CINDY_6, SinnohVictoryRoad_1F_Text_MilesIntro, SinnohVictoryRoad_1F_Text_MilesDefeat
+	trainerbattle_single TRAINER_SN_MILES_1, SinnohVictoryRoad_1F_Text_MilesIntro, SinnohVictoryRoad_1F_Text_MilesDefeat
 	msgbox SinnohVictoryRoad_1F_Text_MilesPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,7 +35,7 @@ SinnohVictoryRoad_1F_Text_MilesPost:
 	.string "karate I learned on the Internet!$"
 
 SinnohVictoryRoad_1F_EventScript_Hana::
-	trainerbattle_single TRAINER_JESSICA_1, SinnohVictoryRoad_1F_Text_HanaIntro, SinnohVictoryRoad_1F_Text_HanaDefeat
+	trainerbattle_single TRAINER_SN_HANA_1, SinnohVictoryRoad_1F_Text_HanaIntro, SinnohVictoryRoad_1F_Text_HanaDefeat
 	msgbox SinnohVictoryRoad_1F_Text_HanaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -52,7 +52,7 @@ SinnohVictoryRoad_1F_Text_HanaPost:
 	.string "through the POKéMON League...$"
 
 SinnohVictoryRoad_1F_EventScript_Mariah::
-	trainerbattle_single TRAINER_JESSICA_2, SinnohVictoryRoad_1F_Text_MariahIntro, SinnohVictoryRoad_1F_Text_MariahDefeat
+	trainerbattle_single TRAINER_SN_MARIAH_1, SinnohVictoryRoad_1F_Text_MariahIntro, SinnohVictoryRoad_1F_Text_MariahDefeat
 	msgbox SinnohVictoryRoad_1F_Text_MariahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -71,7 +71,7 @@ SinnohVictoryRoad_1F_Text_MariahPost:
 	.string "their way on Victory Road...$"
 
 SinnohVictoryRoad_1F_EventScript_Edgar::
-	trainerbattle_single TRAINER_JESSICA_3, SinnohVictoryRoad_1F_Text_EdgarIntro, SinnohVictoryRoad_1F_Text_EdgarDefeat
+	trainerbattle_single TRAINER_SN_EDGAR_1, SinnohVictoryRoad_1F_Text_EdgarIntro, SinnohVictoryRoad_1F_Text_EdgarDefeat
 	msgbox SinnohVictoryRoad_1F_Text_EdgarPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -91,7 +91,7 @@ SinnohVictoryRoad_1F_Text_EdgarPost:
 	.string "allows us to shine!$"
 
 SinnohVictoryRoad_1F_EventScript_Clinton::
-	trainerbattle_single TRAINER_JESSICA_4, SinnohVictoryRoad_1F_Text_ClintonIntro, SinnohVictoryRoad_1F_Text_ClintonDefeat
+	trainerbattle_single TRAINER_SN_CLINTON_1, SinnohVictoryRoad_1F_Text_ClintonIntro, SinnohVictoryRoad_1F_Text_ClintonDefeat
 	msgbox SinnohVictoryRoad_1F_Text_ClintonPost, MSGBOX_AUTOCLOSE
 	end
 

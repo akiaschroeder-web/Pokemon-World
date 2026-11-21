@@ -2,7 +2,7 @@ Route204_MapScripts::
 	.byte 0
 
 Route204_EventScript_Sarah::
-	trainerbattle_single TRAINER_MARCEL, Route204_Text_SarahIntro, Route204_Text_SarahDefeat
+	trainerbattle_single TRAINER_SN_SARAH_1, Route204_Text_SarahIntro, Route204_Text_SarahDefeat
 	msgbox Route204_Text_SarahPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -18,14 +18,14 @@ Route204_Text_SarahPost:
 	.string "training POKéMON!$"
 
 Route204_EventScript_Samantha::
-	trainerbattle_single TRAINER_ALBERTO, Route204_Text_SamanthaIntro, Route204_Text_SamanthaDefeat
+	trainerbattle_single TRAINER_SN_SAMANTHA_1, Route204_Text_SamanthaIntro, Route204_Text_SamanthaDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route204_EventScript_Samantha_Rematch
 	msgbox Route204_Text_SamanthaPost, MSGBOX_AUTOCLOSE
 	end
 
 Route204_EventScript_Samantha_Rematch:
-	trainerbattle_rematch TRAINER_ALBERTO, Route204_Text_SamanthaIntro, Route204_Text_SamanthaDefeat
+	trainerbattle_rematch TRAINER_SN_SAMANTHA_1, Route204_Text_SamanthaIntro, Route204_Text_SamanthaDefeat
 	msgbox Route204_Text_SamanthaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -40,7 +40,7 @@ Route204_Text_SamanthaPost:
 	.string "was holding a Berry...$"
 
 Route204_EventScript_Tyler::
-	trainerbattle_single TRAINER_ED, Route204_Text_TylerIntro, Route204_Text_TylerDefeat
+	trainerbattle_single TRAINER_SN_TYLER_1, Route204_Text_TylerIntro, Route204_Text_TylerDefeat
 	msgbox Route204_Text_TylerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -58,14 +58,14 @@ Route204_Text_TylerPost:
 	.string "most fond memories, I think.$"
 
 Route204_EventScript_Brandon::
-	trainerbattle_single TRAINER_DECLAN, Route204_Text_BrandonIntro, Route204_Text_BrandonDefeat
+	trainerbattle_single TRAINER_SN_BRANDON_1, Route204_Text_BrandonIntro, Route204_Text_BrandonDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route204_EventScript_Brandon_Rematch
 	msgbox Route204_Text_BrandonPost, MSGBOX_AUTOCLOSE
 	end
 
 Route204_EventScript_Brandon_Rematch:
-	trainerbattle_rematch TRAINER_DECLAN, Route204_Text_BrandonIntro, Route204_Text_BrandonDefeat
+	trainerbattle_rematch TRAINER_SN_BRANDON_1, Route204_Text_BrandonIntro, Route204_Text_BrandonDefeat
 	msgbox Route204_Text_BrandonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -84,7 +84,7 @@ Route204_Text_BrandonPost:
 	.string "You gotta believe me. They're good!$"
 
 Route204_EventScript_Taylor::
-	trainerbattle_single TRAINER_FREDRICK, Route204_Text_TaylorIntro, Route204_Text_TaylorDefeat
+	trainerbattle_single TRAINER_SN_TAYLOR_1, Route204_Text_TaylorIntro, Route204_Text_TaylorDefeat
 	msgbox Route204_Text_TaylorPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -101,7 +101,7 @@ Route204_Text_TaylorPost:
 	.string "apps from the POKéNAV Company?$"
 
 Route204_EventScript_Twins::
-	trainerbattle_double TRAINER_ZANDER, Route204_Text_TwinsIntro, Route204_Text_TwinsDefeat, Route204_Text_TwinsNotEnough
+	trainerbattle_double TRAINER_SN_LIV_LIZ_1, Route204_Text_TwinsIntro, Route204_Text_TwinsDefeat, Route204_Text_TwinsNotEnough
 	msgbox Route204_Text_TwinsPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -198,7 +198,7 @@ Route204_Text_Sign4:
 	.string "JUBILIFE CITY / FLOAROMA TOWN$"
 
 Route204_EventScript_LivLiz::
-	trainerbattle_double TRAINER_SHELBY_2, Route204_Text_LivLizIntro, Route204_Text_LivLizDefeat, Route204_Text_LivLizNotEnough
+	trainerbattle_double TRAINER_SN_LIV_AND_LI_1, Route204_Text_LivLizIntro, Route204_Text_LivLizDefeat, Route204_Text_LivLizNotEnough
 	msgbox Route204_Text_LivLizPost, MSGBOX_AUTOCLOSE
 	end
 

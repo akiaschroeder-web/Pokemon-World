@@ -4,7 +4,7 @@ StarkMountain_MapScripts::
 	.byte 0
 
 StarkMountain_EventScript_Darien::
-	trainerbattle_single TRAINER_FERNANDO_1, StarkMountain_Text_DarienIntro, StarkMountain_Text_DarienDefeat
+	trainerbattle_single TRAINER_SN_DARIEN_1, StarkMountain_Text_DarienIntro, StarkMountain_Text_DarienDefeat
 	msgbox StarkMountain_Text_DarienPost, MSGBOX_AUTOCLOSE
 	end
 

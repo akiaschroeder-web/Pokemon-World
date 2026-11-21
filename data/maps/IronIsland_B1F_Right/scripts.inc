@@ -2,7 +2,7 @@ IronIsland_B1F_Right_MapScripts::
 	.byte 0
 
 IronIsland_B1F_Right_EventScript_Summer::
-	trainerbattle_single TRAINER_ROSE_4, IronIsland_B1F_Right_Text_SummerIntro, IronIsland_B1F_Right_Text_SummerDefeat
+	trainerbattle_single TRAINER_SN_SUMMER_1, IronIsland_B1F_Right_Text_SummerIntro, IronIsland_B1F_Right_Text_SummerDefeat
 	msgbox IronIsland_B1F_Right_Text_SummerPost, MSGBOX_AUTOCLOSE
 	end
 

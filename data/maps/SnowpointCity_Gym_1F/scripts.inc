@@ -141,7 +141,7 @@ SnowpointCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 
 SnowpointCity_Gym_1F_EventScript_Leader::
 	goto_if_set FLAG_SYS_GAME_CLEAR, SnowpointCity_Gym_1F_EventScript_SNRematch
-	trainerbattle_single TRAINER_KAREN_5, SnowpointCity_Gym_1F_Text_LeaderIntro, SnowpointCity_Gym_1F_Text_LeaderDefeat, SnowpointCity_Gym_1F_EventScript_LeaderDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SN_CANDICE_1, SnowpointCity_Gym_1F_Text_LeaderIntro, SnowpointCity_Gym_1F_Text_LeaderDefeat, SnowpointCity_Gym_1F_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM72_FROM_CANDICE, SnowpointCity_Gym_1F_EventScript_GiveTM
 	msgbox SnowpointCity_Gym_1F_Text_LeaderPostBattle, MSGBOX_DEFAULT
 	release
@@ -154,12 +154,12 @@ SnowpointCity_Gym_1F_EventScript_LeaderDefeated::
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox SnowpointCity_Gym_1F_Text_ExplainBadge, MSGBOX_DEFAULT
 	setflag FLAG_BADGE07_GET
-	settrainerflag TRAINER_ANNA_AND_MEG_1
-	settrainerflag TRAINER_ANNA_AND_MEG_2
-	settrainerflag TRAINER_ANNA_AND_MEG_3
-	settrainerflag TRAINER_ANNA_AND_MEG_4
-	settrainerflag TRAINER_ANNA_AND_MEG_5
-	settrainerflag TRAINER_MIGUEL_1
+	settrainerflag TRAINER_SN_ANTON_1
+	settrainerflag TRAINER_SN_SAVANNAH_1
+	settrainerflag TRAINER_SN_ALICIA_1
+	settrainerflag TRAINER_SN_ISAIAH_1
+	settrainerflag TRAINER_SN_BRENNA_1
+	settrainerflag TRAINER_SN_SERGIO_1
 	goto SnowpointCity_Gym_1F_EventScript_GiveTM
 
 SnowpointCity_Gym_1F_EventScript_GiveTM::
@@ -273,7 +273,7 @@ SnowpointCity_Gym_1F_EventScript_SNRematch::
 	goto_if_eq VAR_RESULT, NO, SnowpointCity_Gym_1F_EventScript_SNRematch_No
 	msgbox SnowpointCity_Gym_1F_EventScript_SNRematch_Go, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_KATELYN_5, SnowpointCity_Gym_1F_EventScript_SNRematch_Defeat
+	trainerbattle_no_intro TRAINER_SN_CANDICE_2, SnowpointCity_Gym_1F_EventScript_SNRematch_Defeat
 	msgbox SnowpointCity_Gym_1F_EventScript_SNRematch_After, MSGBOX_DEFAULT
 	release
 	end

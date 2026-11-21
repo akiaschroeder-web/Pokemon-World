@@ -2,7 +2,7 @@ Route228_MapScripts::
 	.byte 0
 
 Route228_EventScript_Jose::
-	trainerbattle_single TRAINER_MAY_ROUTE_119_TREECKO, Route228_Text_JoseIntro, Route228_Text_JoseDefeat
+	trainerbattle_single TRAINER_SN_JOSE_1, Route228_Text_JoseIntro, Route228_Text_JoseDefeat
 	msgbox Route228_Text_JosePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,14 +20,14 @@ Route228_Text_JosePost:
 	.string "aren't everything.$"
 
 Route228_EventScript_Moira::
-	trainerbattle_single TRAINER_MAY_ROUTE_103_TORCHIC, Route228_Text_MoiraIntro, Route228_Text_MoiraDefeat
+	trainerbattle_single TRAINER_SN_MOIRA_2, Route228_Text_MoiraIntro, Route228_Text_MoiraDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Moira_Rematch
 	msgbox Route228_Text_MoiraPost, MSGBOX_AUTOCLOSE
 	end
 
 Route228_EventScript_Moira_Rematch:
-	trainerbattle_rematch TRAINER_MAY_ROUTE_103_TORCHIC, Route228_Text_MoiraIntro, Route228_Text_MoiraDefeat
+	trainerbattle_rematch TRAINER_SN_MOIRA_2, Route228_Text_MoiraIntro, Route228_Text_MoiraDefeat
 	msgbox Route228_Text_MoiraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -44,14 +44,14 @@ Route228_Text_MoiraPost:
 	.string "had.$"
 
 Route228_EventScript_Kyler::
-	trainerbattle_single TRAINER_MAY_ROUTE_110_TORCHIC, Route228_Text_KylerIntro, Route228_Text_KylerDefeat
+	trainerbattle_single TRAINER_SN_KYLER_1, Route228_Text_KylerIntro, Route228_Text_KylerDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Kyler_Rematch
 	msgbox Route228_Text_KylerPost, MSGBOX_AUTOCLOSE
 	end
 
 Route228_EventScript_Kyler_Rematch:
-	trainerbattle_rematch TRAINER_MAY_ROUTE_110_TORCHIC, Route228_Text_KylerIntro, Route228_Text_KylerDefeat
+	trainerbattle_rematch TRAINER_SN_KYLER_1, Route228_Text_KylerIntro, Route228_Text_KylerDefeat
 	msgbox Route228_Text_KylerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -67,7 +67,7 @@ Route228_Text_KylerPost:
 	.string "of what that means.$"
 
 Route228_EventScript_Krista::
-	trainerbattle_single TRAINER_MAY_ROUTE_119_TORCHIC, Route228_Text_KristaIntro, Route228_Text_KristaDefeat
+	trainerbattle_single TRAINER_SN_KRISTA_1, Route228_Text_KristaIntro, Route228_Text_KristaDefeat
 	msgbox Route228_Text_KristaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -83,7 +83,7 @@ Route228_Text_KristaPost:
 	.string "sorts of Trainers.$"
 
 Route228_EventScript_Keegan::
-	trainerbattle_single TRAINER_DAVIS, Route228_Text_KeeganIntro, Route228_Text_KeeganDefeat
+	trainerbattle_single TRAINER_SN_KEEGAN_1, Route228_Text_KeeganIntro, Route228_Text_KeeganDefeat
 	msgbox Route228_Text_KeeganPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -104,14 +104,14 @@ Route228_Text_KeeganPost:
 	.string "Both have to grow together!$"
 
 Route228_EventScript_Corbin::
-	trainerbattle_single TRAINER_MITCHELL, Route228_Text_CorbinIntro, Route228_Text_CorbinDefeat
+	trainerbattle_single TRAINER_SN_CORBIN_1, Route228_Text_CorbinIntro, Route228_Text_CorbinDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Corbin_Rematch
 	msgbox Route228_Text_CorbinPost, MSGBOX_AUTOCLOSE
 	end
 
 Route228_EventScript_Corbin_Rematch:
-	trainerbattle_rematch TRAINER_MITCHELL, Route228_Text_CorbinIntro, Route228_Text_CorbinDefeat
+	trainerbattle_rematch TRAINER_SN_CORBIN_1, Route228_Text_CorbinIntro, Route228_Text_CorbinDefeat
 	msgbox Route228_Text_CorbinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -128,7 +128,7 @@ Route228_Text_CorbinPost:
 	.string "came true...$"
 
 Route228_EventScript_Meagan::
-	trainerbattle_single TRAINER_HALLE, Route228_Text_MeaganIntro, Route228_Text_MeaganDefeat
+	trainerbattle_single TRAINER_SN_MEAGAN_1, Route228_Text_MeaganIntro, Route228_Text_MeaganDefeat
 	msgbox Route228_Text_MeaganPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -144,14 +144,14 @@ Route228_Text_MeaganPost:
 	.string "someone who teaches POKéMON moves.$"
 
 Route228_EventScript_Davon::
-	trainerbattle_single TRAINER_GARRISON, Route228_Text_DavonIntro, Route228_Text_DavonDefeat
+	trainerbattle_single TRAINER_SN_DAVON_2, Route228_Text_DavonIntro, Route228_Text_DavonDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Davon_Rematch
 	msgbox Route228_Text_DavonPost, MSGBOX_AUTOCLOSE
 	end
 
 Route228_EventScript_Davon_Rematch:
-	trainerbattle_rematch TRAINER_GARRISON, Route228_Text_DavonIntro, Route228_Text_DavonDefeat
+	trainerbattle_rematch TRAINER_SN_DAVON_2, Route228_Text_DavonIntro, Route228_Text_DavonDefeat
 	msgbox Route228_Text_DavonPost, MSGBOX_AUTOCLOSE
 	end
 

@@ -2,14 +2,14 @@ Route214_MapScripts::
 	.byte 0
 
 Route214_EventScript_Carlos::
-	trainerbattle_single TRAINER_KATELYNN, Route214_Text_CarlosIntro, Route214_Text_CarlosDefeat
+	trainerbattle_single TRAINER_SN_CARLOS_1, Route214_Text_CarlosIntro, Route214_Text_CarlosDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route214_EventScript_Carlos_Rematch
 	msgbox Route214_Text_CarlosPost, MSGBOX_AUTOCLOSE
 	end
 
 Route214_EventScript_Carlos_Rematch:
-	trainerbattle_rematch TRAINER_KATELYNN, Route214_Text_CarlosIntro, Route214_Text_CarlosDefeat
+	trainerbattle_rematch TRAINER_SN_CARLOS_1, Route214_Text_CarlosIntro, Route214_Text_CarlosDefeat
 	msgbox Route214_Text_CarlosPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -28,7 +28,7 @@ Route214_Text_CarlosPost:
 	.string "decided to live in SINNOH then.$"
 
 Route214_EventScript_Douglas::
-	trainerbattle_single TRAINER_ANDREW, Route214_Text_DouglasIntro, Route214_Text_DouglasDefeat
+	trainerbattle_single TRAINER_SN_DOUGLAS_1, Route214_Text_DouglasIntro, Route214_Text_DouglasDefeat
 	msgbox Route214_Text_DouglasPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -50,7 +50,7 @@ Route214_Text_DouglasPost:
 	.string "drawings.$"
 
 Route214_EventScript_Brady::
-	trainerbattle_single TRAINER_IVAN, Route214_Text_BradyIntro, Route214_Text_BradyDefeat
+	trainerbattle_single TRAINER_SN_BRADY_1, Route214_Text_BradyIntro, Route214_Text_BradyDefeat
 	msgbox Route214_Text_BradyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -70,7 +70,7 @@ Route214_Text_BradyPost:
 	.string "Pokédex is filled!$"
 
 Route214_EventScript_Bryan::
-	trainerbattle_single TRAINER_CLAUDE, Route214_Text_BryanIntro, Route214_Text_BryanDefeat
+	trainerbattle_single TRAINER_SN_BRYAN_1, Route214_Text_BryanIntro, Route214_Text_BryanDefeat
 	msgbox Route214_Text_BryanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -88,7 +88,7 @@ Route214_Text_BryanPost:
 	.string "Collecting a lot is my life!$"
 
 Route214_EventScript_Ronald::
-	trainerbattle_single TRAINER_NED, Route214_Text_RonaldIntro, Route214_Text_RonaldDefeat
+	trainerbattle_single TRAINER_SN_RONALD_1, Route214_Text_RonaldIntro, Route214_Text_RonaldDefeat
 	msgbox Route214_Text_RonaldPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -107,7 +107,7 @@ Route214_Text_RonaldPost:
 	.string "myself.$"
 
 Route214_EventScript_Jamal::
-	trainerbattle_single TRAINER_DALE, Route214_Text_JamalIntro, Route214_Text_JamalDefeat
+	trainerbattle_single TRAINER_SN_JAMAL_1, Route214_Text_JamalIntro, Route214_Text_JamalDefeat
 	msgbox Route214_Text_JamalPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -125,7 +125,7 @@ Route214_Text_JamalPost:
 	.string "and north are important, too!$"
 
 Route214_EventScript_Devon::
-	trainerbattle_single TRAINER_NOLAN, Route214_Text_DevonIntro, Route214_Text_DevonDefeat
+	trainerbattle_single TRAINER_SN_DEVON_1, Route214_Text_DevonIntro, Route214_Text_DevonDefeat
 	msgbox Route214_Text_DevonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -141,14 +141,14 @@ Route214_Text_DevonPost:
 	.string "can't decide which one to pamper.$"
 
 Route214_EventScript_Mitchell::
-	trainerbattle_single TRAINER_BARNY, Route214_Text_MitchellIntro, Route214_Text_MitchellDefeat
+	trainerbattle_single TRAINER_SN_MITCHELL_1, Route214_Text_MitchellIntro, Route214_Text_MitchellDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route214_EventScript_Mitchell_Rematch
 	msgbox Route214_Text_MitchellPost, MSGBOX_AUTOCLOSE
 	end
 
 Route214_EventScript_Mitchell_Rematch:
-	trainerbattle_rematch TRAINER_BARNY, Route214_Text_MitchellIntro, Route214_Text_MitchellDefeat
+	trainerbattle_rematch TRAINER_SN_MITCHELL_1, Route214_Text_MitchellIntro, Route214_Text_MitchellDefeat
 	msgbox Route214_Text_MitchellPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -164,14 +164,14 @@ Route214_Text_MitchellPost:
 	.string "by understanding POKéMON?$"
 
 Route214_EventScript_Abigail::
-	trainerbattle_single TRAINER_WADE, Route214_Text_AbigailIntro, Route214_Text_AbigailDefeat
+	trainerbattle_single TRAINER_SN_ABIGAIL_1, Route214_Text_AbigailIntro, Route214_Text_AbigailDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route214_EventScript_Abigail_Rematch
 	msgbox Route214_Text_AbigailPost, MSGBOX_AUTOCLOSE
 	end
 
 Route214_EventScript_Abigail_Rematch:
-	trainerbattle_rematch TRAINER_WADE, Route214_Text_AbigailIntro, Route214_Text_AbigailDefeat
+	trainerbattle_rematch TRAINER_SN_ABIGAIL_1, Route214_Text_AbigailIntro, Route214_Text_AbigailDefeat
 	msgbox Route214_Text_AbigailPost, MSGBOX_AUTOCLOSE
 	end
 

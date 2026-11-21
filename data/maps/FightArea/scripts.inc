@@ -174,7 +174,7 @@ FightArea_EventScript_SNMulti_P1:
 FightArea_EventScript_SNMulti_P2:
 	setfollowernpc LOCALID_SN_FIGHTAREA_BARRY, FNPC_ALL_LAND, 0, PARTNER_BARRY_TURTWIG
 FightArea_EventScript_SNMulti_Battle:
-	trainerbattle_two_trainers_sn TRAINER_ANGELINA, FightArea_EventScript_SNMulti_DF, TRAINER_KAI, FightArea_EventScript_SNMulti_DV
+	trainerbattle_two_trainers_sn TRAINER_SN_FLINT_3, FightArea_EventScript_SNMulti_DF, TRAINER_SN_VOLKNER_3, FightArea_EventScript_SNMulti_DV
 	destroyfollowernpc
 	setobjectxyperm LOCALID_SN_FIGHTAREA_BARRY, 49, 10
 	clearflag FLAG_SN_HIDE_FA_MULTI

@@ -2,7 +2,7 @@ Route211_West_MapScripts::
 	.byte 0
 
 Route211_West_EventScript_Alexandra::
-	trainerbattle_single TRAINER_KOICHI, Route211_West_Text_AlexandraIntro, Route211_West_Text_AlexandraDefeat
+	trainerbattle_single TRAINER_SN_ALEXANDRA_1, Route211_West_Text_AlexandraIntro, Route211_West_Text_AlexandraDefeat
 	msgbox Route211_West_Text_AlexandraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -18,7 +18,7 @@ Route211_West_Text_AlexandraPost:
 	.string "human speech! Did you know that?$"
 
 Route211_West_EventScript_Louis::
-	trainerbattle_single TRAINER_YUJI, Route211_West_Text_LouisIntro, Route211_West_Text_LouisDefeat
+	trainerbattle_single TRAINER_SN_LOUIS_1, Route211_West_Text_LouisIntro, Route211_West_Text_LouisDefeat
 	msgbox Route211_West_Text_LouisPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,14 +35,14 @@ Route211_West_Text_LouisPost:
 	.string "ancient and mysterious mountain.$"
 
 Route211_West_EventScript_Zach::
-	trainerbattle_single TRAINER_DAISUKE, Route211_West_Text_ZachIntro, Route211_West_Text_ZachDefeat
+	trainerbattle_single TRAINER_SN_ZACH_1, Route211_West_Text_ZachIntro, Route211_West_Text_ZachDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route211_West_EventScript_Zach_Rematch
 	msgbox Route211_West_Text_ZachPost, MSGBOX_AUTOCLOSE
 	end
 
 Route211_West_EventScript_Zach_Rematch:
-	trainerbattle_rematch TRAINER_DAISUKE, Route211_West_Text_ZachIntro, Route211_West_Text_ZachDefeat
+	trainerbattle_rematch TRAINER_SN_ZACH_1, Route211_West_Text_ZachIntro, Route211_West_Text_ZachDefeat
 	msgbox Route211_West_Text_ZachPost, MSGBOX_AUTOCLOSE
 	end
 

@@ -43,7 +43,7 @@ PokemonLeague_FlintRoom_EventScript_Glacia::
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox PokemonLeague_FlintRoom_Text_IntroSpeech, MSGBOX_DEFAULT
 	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_FlintRoom_EventScript_SNRematchBattle
-	trainerbattle_no_intro TRAINER_GLACIA, PokemonLeague_FlintRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_SN_FLINT_1, PokemonLeague_FlintRoom_Text_Defeat
 PokemonLeague_FlintRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_FlintRoom_EventScript_Defeated
 	end
@@ -77,5 +77,5 @@ PokemonLeague_FlintRoom_Text_PostBattleSpeech:
 	.string "...Keep going...$"
 
 PokemonLeague_FlintRoom_EventScript_SNRematchBattle:
-	trainerbattle_no_intro TRAINER_NICOLAS_4, PokemonLeague_FlintRoom_Text_Defeat
+	trainerbattle_no_intro TRAINER_SN_FLINT_2, PokemonLeague_FlintRoom_Text_Defeat
 	goto PokemonLeague_FlintRoom_EventScript_SNAfterBattle

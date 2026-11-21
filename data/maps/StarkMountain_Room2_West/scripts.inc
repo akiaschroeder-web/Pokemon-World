@@ -3,7 +3,7 @@ StarkMountain_Room2_West_MapScripts::
 	.byte 0
 
 StarkMountain_Room2_EventScript_Keenan::
-	trainerbattle_single TRAINER_DALTON_1, StarkMountain_Room2_Text_KeenanIntro, StarkMountain_Room2_Text_KeenanDefeat
+	trainerbattle_single TRAINER_SN_KEENAN_1, StarkMountain_Room2_Text_KeenanIntro, StarkMountain_Room2_Text_KeenanDefeat
 	msgbox StarkMountain_Room2_Text_KeenanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,7 +21,7 @@ StarkMountain_Room2_Text_KeenanPost:
 	.string "That is what makes me a Trainer!$"
 
 StarkMountain_Room2_EventScript_Kassandra::
-	trainerbattle_single TRAINER_DALTON_2, StarkMountain_Room2_Text_KassandraIntro, StarkMountain_Room2_Text_KassandraDefeat
+	trainerbattle_single TRAINER_SN_KASSANDRA_1, StarkMountain_Room2_Text_KassandraIntro, StarkMountain_Room2_Text_KassandraDefeat
 	msgbox StarkMountain_Room2_Text_KassandraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,7 +39,7 @@ StarkMountain_Room2_Text_KassandraPost:
 	.string "this area.$"
 
 StarkMountain_Room2_EventScript_Skylar::
-	trainerbattle_single TRAINER_DALTON_3, StarkMountain_Room2_Text_SkylarIntro, StarkMountain_Room2_Text_SkylarDefeat
+	trainerbattle_single TRAINER_SN_SKYLAR_1, StarkMountain_Room2_Text_SkylarIntro, StarkMountain_Room2_Text_SkylarDefeat
 	msgbox StarkMountain_Room2_Text_SkylarPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -60,7 +60,7 @@ StarkMountain_Room2_Text_SkylarPost:
 	.string "That’s what makes us Trainers.$"
 
 StarkMountain_Room2_EventScript_Natasha::
-	trainerbattle_single TRAINER_DALTON_4, StarkMountain_Room2_Text_NatashaIntro, StarkMountain_Room2_Text_NatashaDefeat
+	trainerbattle_single TRAINER_SN_NATASHA_1, StarkMountain_Room2_Text_NatashaIntro, StarkMountain_Room2_Text_NatashaDefeat
 	msgbox StarkMountain_Room2_Text_NatashaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -76,7 +76,7 @@ StarkMountain_Room2_Text_NatashaPost:
 	.string "what I’ll do.$"
 
 StarkMountain_Room2_EventScript_Chelsey::
-	trainerbattle_single TRAINER_DALTON_5, StarkMountain_Room2_Text_ChelseyIntro, StarkMountain_Room2_Text_ChelseyDefeat
+	trainerbattle_single TRAINER_SN_CHELSEY_1, StarkMountain_Room2_Text_ChelseyIntro, StarkMountain_Room2_Text_ChelseyDefeat
 	msgbox StarkMountain_Room2_Text_ChelseyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -95,7 +95,7 @@ StarkMountain_Room2_Text_ChelseyPost:
 	.string "it would be a boring world.$"
 
 StarkMountain_Room2_EventScript_Sterling::
-	trainerbattle_single TRAINER_BERNIE_1, StarkMountain_Room2_Text_SterlingIntro, StarkMountain_Room2_Text_SterlingDefeat
+	trainerbattle_single TRAINER_SN_STERLING_1, StarkMountain_Room2_Text_SterlingIntro, StarkMountain_Room2_Text_SterlingDefeat
 	msgbox StarkMountain_Room2_Text_SterlingPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -112,7 +112,7 @@ StarkMountain_Room2_Text_SterlingPost:
 	.string "write home about?$"
 
 StarkMountain_Room2_EventScript_Krystal::
-	trainerbattle_single TRAINER_BERNIE_2, StarkMountain_Room2_Text_KrystalIntro, StarkMountain_Room2_Text_KrystalDefeat
+	trainerbattle_single TRAINER_SN_KRYSTAL_1, StarkMountain_Room2_Text_KrystalIntro, StarkMountain_Room2_Text_KrystalDefeat
 	msgbox StarkMountain_Room2_Text_KrystalPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -128,7 +128,7 @@ StarkMountain_Room2_Text_KrystalPost:
 	.string "It’s such a shame.$"
 
 StarkMountain_Room2_EventScript_Ray::
-	trainerbattle_single TRAINER_BERNIE_3, StarkMountain_Room2_Text_RayIntro, StarkMountain_Room2_Text_RayDefeat
+	trainerbattle_single TRAINER_SN_RAY_1, StarkMountain_Room2_Text_RayIntro, StarkMountain_Room2_Text_RayDefeat
 	msgbox StarkMountain_Room2_Text_RayPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -145,7 +145,7 @@ StarkMountain_Room2_Text_RayPost:
 	.string "failed to dent your spirits!$"
 
 StarkMountain_Room2_EventScript_Stefan::
-	trainerbattle_single TRAINER_BERNIE_4, StarkMountain_Room2_Text_StefanIntro, StarkMountain_Room2_Text_StefanDefeat
+	trainerbattle_single TRAINER_SN_STEFAN_1, StarkMountain_Room2_Text_StefanIntro, StarkMountain_Room2_Text_StefanDefeat
 	msgbox StarkMountain_Room2_Text_StefanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -162,7 +162,7 @@ StarkMountain_Room2_Text_StefanPost:
 	.string "memories, one after another...$"
 
 StarkMountain_Room2_EventScript_Jasmin::
-	trainerbattle_single TRAINER_BERNIE_5, StarkMountain_Room2_Text_JasminIntro, StarkMountain_Room2_Text_JasminDefeat
+	trainerbattle_single TRAINER_SN_JASMIN_1, StarkMountain_Room2_Text_JasminIntro, StarkMountain_Room2_Text_JasminDefeat
 	msgbox StarkMountain_Room2_Text_JasminPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -178,7 +178,7 @@ StarkMountain_Room2_Text_JasminPost:
 	.string "made...$"
 
 StarkMountain_Room2_EventScript_Drake::
-	trainerbattle_single TRAINER_ETHAN_1, StarkMountain_Room2_Text_DrakeIntro, StarkMountain_Room2_Text_DrakeDefeat
+	trainerbattle_single TRAINER_SN_DRAKE_1, StarkMountain_Room2_Text_DrakeIntro, StarkMountain_Room2_Text_DrakeDefeat
 	msgbox StarkMountain_Room2_Text_DrakePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -193,7 +193,7 @@ StarkMountain_Room2_Text_DrakePost:
 	.string "My POKéMON seem to like it here a lot.$"
 
 StarkMountain_Room2_EventScript_Jarrett::
-	trainerbattle_single TRAINER_ETHAN_2, StarkMountain_Room2_Text_JarrettIntro, StarkMountain_Room2_Text_JarrettDefeat
+	trainerbattle_single TRAINER_SN_JARRETT_1, StarkMountain_Room2_Text_JarrettIntro, StarkMountain_Room2_Text_JarrettDefeat
 	msgbox StarkMountain_Room2_Text_JarrettPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -210,7 +210,7 @@ StarkMountain_Room2_Text_JarrettPost:
 	.string "more than anything!$"
 
 StarkMountain_Room2_EventScript_Abel::
-	trainerbattle_single TRAINER_ETHAN_3, StarkMountain_Room2_Text_AbelIntro, StarkMountain_Room2_Text_AbelDefeat
+	trainerbattle_single TRAINER_SN_ABEL_1, StarkMountain_Room2_Text_AbelIntro, StarkMountain_Room2_Text_AbelDefeat
 	msgbox StarkMountain_Room2_Text_AbelPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -228,7 +228,7 @@ StarkMountain_Room2_Text_AbelPost:
 	.string "make it easy for you to move onward.$"
 
 StarkMountain_Room2_EventScript_Monique::
-	trainerbattle_single TRAINER_ETHAN_4, StarkMountain_Room2_Text_MoniqueIntro, StarkMountain_Room2_Text_MoniqueDefeat
+	trainerbattle_single TRAINER_SN_MONIQUE_1, StarkMountain_Room2_Text_MoniqueIntro, StarkMountain_Room2_Text_MoniqueDefeat
 	msgbox StarkMountain_Room2_Text_MoniquePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -244,7 +244,7 @@ StarkMountain_Room2_Text_MoniquePost:
 	.string "little adventure...$"
 
 StarkMountain_Room2_EventScript_Harlan::
-	trainerbattle_single TRAINER_ETHAN_5, StarkMountain_Room2_Text_HarlanIntro, StarkMountain_Room2_Text_HarlanDefeat
+	trainerbattle_single TRAINER_SN_HARLAN_1, StarkMountain_Room2_Text_HarlanIntro, StarkMountain_Room2_Text_HarlanDefeat
 	msgbox StarkMountain_Room2_Text_HarlanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -262,7 +262,7 @@ StarkMountain_Room2_Text_HarlanPost:
 	.string "is what draws me here.$"
 
 StarkMountain_Room2_EventScript_Kenny::
-	trainerbattle_single TRAINER_JEFFREY_1, StarkMountain_Room2_Text_KennyIntro, StarkMountain_Room2_Text_KennyDefeat
+	trainerbattle_single TRAINER_SN_KENNY_1, StarkMountain_Room2_Text_KennyIntro, StarkMountain_Room2_Text_KennyDefeat
 	msgbox StarkMountain_Room2_Text_KennyPost, MSGBOX_AUTOCLOSE
 	end
 

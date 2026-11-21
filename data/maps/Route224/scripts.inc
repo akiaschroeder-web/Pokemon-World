@@ -3,7 +3,7 @@ Route224_MapScripts::
 	.byte 0
 
 Route224_EventScript_Ruben::
-	trainerbattle_single TRAINER_JONAS, Route224_Text_RubenIntro, Route224_Text_RubenDefeat
+	trainerbattle_single TRAINER_SN_RUBEN_1, Route224_Text_RubenIntro, Route224_Text_RubenDefeat
 	msgbox Route224_Text_RubenPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,14 +21,14 @@ Route224_Text_RubenPost:
 	.string "made you very powerful.$"
 
 Route224_EventScript_Maxwell::
-	trainerbattle_single TRAINER_KAYLEY, Route224_Text_MaxwellIntro, Route224_Text_MaxwellDefeat
+	trainerbattle_single TRAINER_SN_MAXWELL_1, Route224_Text_MaxwellIntro, Route224_Text_MaxwellDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Maxwell_Rematch
 	msgbox Route224_Text_MaxwellPost, MSGBOX_AUTOCLOSE
 	end
 
 Route224_EventScript_Maxwell_Rematch:
-	trainerbattle_rematch TRAINER_KAYLEY, Route224_Text_MaxwellIntro, Route224_Text_MaxwellDefeat
+	trainerbattle_rematch TRAINER_SN_MAXWELL_1, Route224_Text_MaxwellIntro, Route224_Text_MaxwellDefeat
 	msgbox Route224_Text_MaxwellPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -46,7 +46,7 @@ Route224_Text_MaxwellPost:
 	.string "presence emanating from here...$"
 
 Route224_EventScript_Carl::
-	trainerbattle_single TRAINER_AURON, Route224_Text_CarlIntro, Route224_Text_CarlDefeat
+	trainerbattle_single TRAINER_SN_CARL_1, Route224_Text_CarlIntro, Route224_Text_CarlDefeat
 	msgbox Route224_Text_CarlPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -63,14 +63,14 @@ Route224_Text_CarlPost:
 	.string "thing for toughening up my POKéMON!$"
 
 Route224_EventScript_Armando::
-	trainerbattle_single TRAINER_KELVIN, Route224_Text_ArmandoIntro, Route224_Text_ArmandoDefeat
+	trainerbattle_single TRAINER_SN_ARMANDO_1, Route224_Text_ArmandoIntro, Route224_Text_ArmandoDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Armando_Rematch
 	msgbox Route224_Text_ArmandoPost, MSGBOX_AUTOCLOSE
 	end
 
 Route224_EventScript_Armando_Rematch:
-	trainerbattle_rematch TRAINER_KELVIN, Route224_Text_ArmandoIntro, Route224_Text_ArmandoDefeat
+	trainerbattle_rematch TRAINER_SN_ARMANDO_1, Route224_Text_ArmandoIntro, Route224_Text_ArmandoDefeat
 	msgbox Route224_Text_ArmandoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -89,14 +89,14 @@ Route224_Text_ArmandoPost:
 	.string "your heart is strong.$"
 
 Route224_EventScript_Brittney::
-	trainerbattle_single TRAINER_MARLEY, Route224_Text_BrittneyIntro, Route224_Text_BrittneyDefeat
+	trainerbattle_single TRAINER_SN_BRITTNEY_1, Route224_Text_BrittneyIntro, Route224_Text_BrittneyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Brittney_Rematch
 	msgbox Route224_Text_BrittneyPost, MSGBOX_AUTOCLOSE
 	end
 
 Route224_EventScript_Brittney_Rematch:
-	trainerbattle_rematch TRAINER_MARLEY, Route224_Text_BrittneyIntro, Route224_Text_BrittneyDefeat
+	trainerbattle_rematch TRAINER_SN_BRITTNEY_1, Route224_Text_BrittneyIntro, Route224_Text_BrittneyDefeat
 	msgbox Route224_Text_BrittneyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -115,7 +115,7 @@ Route224_Text_BrittneyPost:
 	.string "to awaken the power within.$"
 
 Route224_EventScript_Jamie::
-	trainerbattle_single TRAINER_REYNA, Route224_Text_JamieIntro, Route224_Text_JamieDefeat
+	trainerbattle_single TRAINER_SN_JAMIE_1, Route224_Text_JamieIntro, Route224_Text_JamieDefeat
 	msgbox Route224_Text_JamiePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -136,7 +136,7 @@ Route224_Text_JamiePost:
 	.string "additional data.$"
 
 Route224_EventScript_Larry::
-	trainerbattle_single TRAINER_HUDSON, Route224_Text_LarryIntro, Route224_Text_LarryDefeat
+	trainerbattle_single TRAINER_SN_LARRY_1, Route224_Text_LarryIntro, Route224_Text_LarryDefeat
 	msgbox Route224_Text_LarryPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -152,14 +152,14 @@ Route224_Text_LarryPost:
 	.string "monument around, so I came running.$"
 
 Route224_EventScript_Hayden::
-	trainerbattle_single TRAINER_CONOR, Route224_Text_HaydenIntro, Route224_Text_HaydenDefeat
+	trainerbattle_single TRAINER_SN_HAYDEN_1, Route224_Text_HaydenIntro, Route224_Text_HaydenDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Hayden_Rematch
 	msgbox Route224_Text_HaydenPost, MSGBOX_AUTOCLOSE
 	end
 
 Route224_EventScript_Hayden_Rematch:
-	trainerbattle_rematch TRAINER_CONOR, Route224_Text_HaydenIntro, Route224_Text_HaydenDefeat
+	trainerbattle_rematch TRAINER_SN_HAYDEN_1, Route224_Text_HaydenIntro, Route224_Text_HaydenDefeat
 	msgbox Route224_Text_HaydenPost, MSGBOX_AUTOCLOSE
 	end
 

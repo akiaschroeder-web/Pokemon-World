@@ -2,7 +2,7 @@ GalacticHQ_2F_MapScripts::
 	.byte 0
 
 GalacticHQ_2F_EventScript_Grunt::
-	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_4, GalacticHQ_2F_Text_GruntIntro, GalacticHQ_2F_Text_GruntDefeat
+	trainerbattle_single TRAINER_SN_GRUNT_3, GalacticHQ_2F_Text_GruntIntro, GalacticHQ_2F_Text_GruntDefeat
 	msgbox GalacticHQ_2F_Text_GruntPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,7 +21,7 @@ GalacticHQ_2F_Text_GruntPost:
 	.string "gruntiest of the grunts... Humph!$"
 
 GalacticHQ_2F_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_2, GalacticHQ_2F_Text_Grunt2Intro, GalacticHQ_2F_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_5, GalacticHQ_2F_Text_Grunt2Intro, GalacticHQ_2F_Text_Grunt2Defeat
 	msgbox GalacticHQ_2F_Text_Grunt2Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,7 +39,7 @@ GalacticHQ_2F_Text_Grunt2Post:
 	.string "late. The experiment’s done!$"
 
 GalacticHQ_2F_EventScript_Grunt3::
-	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_3, GalacticHQ_2F_Text_Grunt3Intro, GalacticHQ_2F_Text_Grunt3Defeat
+	trainerbattle_single TRAINER_SN_GRUNT_6, GalacticHQ_2F_Text_Grunt3Intro, GalacticHQ_2F_Text_Grunt3Defeat
 	msgbox GalacticHQ_2F_Text_Grunt3Post, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ GalacticHQ_2F_Text_Grunt3Post:
 	.string "that what this is all about?$"
 
 GalacticHQ_2F_EventScript_Darrius::
-	trainerbattle_single TRAINER_GRUNT_MUSEUM_2, GalacticHQ_2F_Text_DarriusIntro, GalacticHQ_2F_Text_DarriusDefeat
+	trainerbattle_single TRAINER_SN_DARRIUS_1, GalacticHQ_2F_Text_DarriusIntro, GalacticHQ_2F_Text_DarriusDefeat
 	msgbox GalacticHQ_2F_Text_DarriusPost, MSGBOX_AUTOCLOSE
 	end
 
