@@ -3,6 +3,7 @@ name: Build ROM
 # Builds the Emerald ROM on every push to any branch and attaches it to the run,
 # so the game can be tested without a computer. Download it from the run's
 # "Artifacts" section on GitHub (in a browser; the GitHub mobile app doesn't show artifacts).
+# The ROM is uploaded unzipped, so it downloads as a plain .gba file.
 on:
   push:
   workflow_dispatch:
@@ -31,9 +32,9 @@ jobs:
           mv pokeemerald.gba "pokemon-world-${branch}-${GITHUB_SHA::7}.gba"
 
       - name: Upload ROM
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
-          name: pokemon-world-rom
           path: pokemon-world-*.gba
+          archive: false
           retention-days: 14
           if-no-files-found: error
