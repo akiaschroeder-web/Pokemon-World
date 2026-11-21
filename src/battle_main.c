@@ -414,6 +414,25 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RUIN_MANIAC_FRLG] =     { _("RUIN MANIAC"), 12 },
     [TRAINER_CLASS_LADY_FRLG] =            { _("LADY"), 50 },
     [TRAINER_CLASS_PAINTER_FRLG] =         { _("PAINTER"), 4 },
+    [TRAINER_CLASS_WORKER] =               { _("WORKER"), 10 }, // Proyecto Sinnoh
+    [TRAINER_CLASS_TEAM_GALACTIC] = { _("GALACTIC"), 5 },
+    [TRAINER_CLASS_GALACTIC_COMMANDER] = { _("COMMANDER"), 30 },
+    [TRAINER_CLASS_VETERAN] = { _("VETERAN"), 20 },
+    [TRAINER_CLASS_SOCIALITE] = { _("SOCIALITE"), 50 },
+    [TRAINER_CLASS_SKIER] = { _("SKIER"), 8 },
+    [TRAINER_CLASS_SCIENTIST] = { _("SCIENTIST"), 12 },
+    [TRAINER_CLASS_RANCHER] = { _("RANCHER"), 10 },
+    [TRAINER_CLASS_POLICEMAN] = { _("POLICEMAN"), 10 },
+    [TRAINER_CLASS_POKE_KID] = { _("POKé KID"), 2 },
+    [TRAINER_CLASS_PI] = { _("P.I."), 10 },
+    [TRAINER_CLASS_JOGGER] = { _("JOGGER"), 4 },
+    [TRAINER_CLASS_DOUBLE_TEAM] = { _("DOUBLE TEAM"), 15 },
+    [TRAINER_CLASS_CYCLIST] = { _("CYCLIST"), 8 },
+    [TRAINER_CLASS_COWGIRL] = { _("COWGIRL"), 6 },
+    [TRAINER_CLASS_BELLE_AND_PA] = { _("BELLE & PA"), 10 },
+    [TRAINER_CLASS_ARTIST] = { _("ARTIST"), 10 },
+    [TRAINER_CLASS_ACE_TRAINER] = { _("ACE TRAINER"), 15 },
+    [TRAINER_CLASS_MAID] = { _("MAID"), 10 },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
@@ -5094,7 +5113,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
-            PlayBGM(MUS_VICTORY_AQUA_MAGMA);
+            PlayBGM(MUS_DPP_VICTORY_GALACTIC);
             break;
         case TRAINER_CLASS_LEADER:
             PlayBGM(MUS_VICTORY_GYM_LEADER);

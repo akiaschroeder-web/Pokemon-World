@@ -822,7 +822,6 @@ enum __attribute__((packed)) Item
     ITEM_HM07 = 688,
     ITEM_HM08 = 689,
 
-
     /* Expands to:
      *   ITEM_TM_FOCUS_PUNCH = ITEM_TM01,
      *   ...
@@ -1051,6 +1050,19 @@ enum __attribute__((packed)) Item
     ITEM_BAXCALIBRITE = 871,
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
+
+    // Proyecto Sinnoh: objetos clave de Platino
+    ITEM_JOURNAL = 874,
+    ITEM_VS_RECORDER = 875,
+    ITEM_COUPON_1 = 876,
+    ITEM_COUPON_2 = 877,
+    ITEM_COUPON_3 = 878,
+    ITEM_WORKS_KEY = 879,
+    ITEM_SECRET_POTION = 880,
+    ITEM_GALACTIC_KEY = 881,
+    ITEM_LUNAR_WING = 882,
+    ITEM_SUITE_KEY = 883,
+    ITEM_OLD_CHARM = 884,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

@@ -150,7 +150,7 @@
 #define VAR_ROUTE133_STATE                               0x4080 // Unused Var
 #define VAR_ROUTE134_STATE                               0x4081 // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_UNUSED_0x4083                                0x4083 // Unused Var
+#define VAR_SN_HONEY_TREE                                0x4083 // Proyecto Sinnoh
 #define VAR_BIRCH_LAB_STATE                              0x4084
 #define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086
@@ -158,13 +158,13 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_SN_HONEY_DAY                                 0x408B // Proyecto Sinnoh
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
 #define VAR_DEVON_CORP_3F_STATE                          0x408F
 #define VAR_BRINEY_HOUSE_STATE                           0x4090
-#define VAR_UNUSED_0x4091                                0x4091 // Unused Var
+#define VAR_SN_TROPHY_SPECIES                            0x4091 // Proyecto Sinnoh
 #define VAR_LITTLEROOT_INTRO_STATE                       0x4092
 #define VAR_MAUVILLE_GYM_STATE                           0x4093
 #define VAR_LILYCOVE_MUSEUM_2F_STATE                     0x4094
@@ -175,6 +175,7 @@
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
 #define VAR_UNUSED_0x409B                                0x409B // Unused Var
+#define VAR_SN_SAFARI_START VAR_UNUSED_0x409B // Proyecto Sinnoh: Pokémon que tenías al entrar al Gran Pantano
 #define VAR_ELITE_4_STATE                                0x409C
 #define VAR_UNUSED_0x409D                                0x409D // Unused Var
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
@@ -337,5 +338,27 @@
 #define TESTING_VAR_UNUSED_6                (TESTING_VARS_START + 0x6)
 #define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
 #endif // TESTING
+
+// ---- Proyecto Sinnoh: progreso de la historia ----
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// 0 inicio, 1 Barry en tu cuarto, 2 mamá avisa de la hierba, 3 Barry en su casa,
+// 4 inicial y combate con Barry (Ruta 201), 5 mamá da las Deportivas,
+// 6 Barry propone ir al Lago Veraz, 7 escena del lago (Helio y Mesprit),
+// 8 Maya/Leo y Barry en Arena, 9 Pokédex, 10 MT27 fuera del laboratorio,
+// 11 mamá da el Diario y la madre de Barry el Paquete, 12 tutorial de captura,
+// 13 Looker en Jubileo, 14 Barry en la Escuela (Mapa), 15 campaña del Pokéreloj,
+// 16 Pokénav, 17 Barry en la Ruta 203, 18 Roco en la mina, 19 medalla Lignito,
+// 20 Equipo Galaxia en Jubileo, 21 la niña de la Ruta 205 pide ayuda, 22 Venus derrotada,
+// 23 Maite te acompaña (Bosque Vetusto), 24 Maite se despide, 25 escena de la estatua,
+// 26 MO01 de Cintia, 27 medalla Bosque
+#define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
+// 0 hasta tener el primer Pokémon (bloquea la hierba alta), 1 después
+// 0 Looker aún no ha aparecido en Jubileo, 1 ya
+#define VAR_SINNOH_LOOKER                 VAR_UNUSED_0x40DC
+#define VAR_SINNOH_HAS_POKEMON            VAR_UNUSED_0x40DB
 
 #endif // GUARD_CONSTANTS_VARS_H

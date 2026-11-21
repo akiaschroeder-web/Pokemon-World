@@ -315,6 +315,37 @@ gSpecials::
 	def_special Script_FacePlayer
 	def_special Script_ClearHeldMovement
 	def_special InitRoamer
+	def_special SinnohAddRoamer
+	def_special SinnohRotomAppliance
+	def_special SinnohPartyHasRotom
+	def_special SinnohRandomFossil
+	def_special SinnohLeadMonIsCute
+	def_special SinnohNewsPressPick
+	def_special SinnohPartyHasSpecies
+	def_special SinnohTrophyGardenPick
+	def_special SinnohHoneyTreeMon
+	def_special SinnohMarshBinoculars
+	def_special SinnohHoneyReady
+	def_special SinnohHoneySlather
+	def_special SinnohDayOfWeek
+	def_special SinnohBattlegroundSelect
+	def_special SinnohBattlegroundMsgSet
+	def_special SinnohMaidTarget
+	def_special SinnohAddBattleTurns
+	def_special SinnohRestaurantSetup
+	def_special SinnohRestaurantCouple
+	def_special SinnohRestaurantVariant
+	def_special SinnohPartyMaxRibbons
+	def_special SinnohSpaTreatment
+	def_special SinnohUnownFormsCount
+	def_special SinnohCountAllMons
+	def_special SinnohPathToPlayer
+	def_special SinnohLoadCounterpartMon
+	def_special SinnohStartCatchTutorial
+	def_special SinnohPathTo
+	def_special SinnohPlayerFaceObject
+	def_special SinnohGetObjectPos
+	def_special SinnohDailyOutbreak
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1

@@ -2943,6 +2943,9 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                 }
                 break;
             case WEATHER_SNOW:
+            case WEATHER_SNOW_LIGHT:
+            case WEATHER_SNOW_HEAVY:
+            case WEATHER_BLIZZARD:
                 if (!(gBattleWeather & B_WEATHER_ICY_ANY))
                 {
                     if (B_OVERWORLD_SNOW >= GEN_9)

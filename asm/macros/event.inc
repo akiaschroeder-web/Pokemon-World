@@ -813,6 +813,11 @@
 
 	@ Starts a double battle with the player against two trainers
 	@ Takes two trainers and defeat text for each
+	@ Proyecto Sinnoh: dos entrenadores sin presentación, desde cualquier script (casilla o NPC), y el script sigue después
+	.macro trainerbattle_two_trainers_sn trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
+	trainerbattle OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE
+	.endm
+
 	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
 	trainerbattle OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE
 	.endm
@@ -3001,4 +3006,63 @@
 	braillemessage \text
 	getbraillestringwidth \text
 	call EventScript_BrailleCursorWaitButton
+	.endm
+
+	@ Proyecto Sinnoh: movimientos de escena calculados al vuelo (ver src/sinnoh_scene.c).
+	@ El NPC anda hasta quedar junto al jugador y lo mira.
+	.macro sn_walktoplayer localid:req, speed=SN_SPEED_NORMAL, flags=0, buf=0
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
+	setvar VAR_0x8004, \localid
+	.endif
+	setvar VAR_0x8005, \buf
+	setvar VAR_0x8006, \speed
+	setvar VAR_0x8007, \flags
+	special SinnohPathToPlayer
+	applymovement \localid, gSinnohMoveBuf\buf
+	.endm
+
+	@ El NPC (o OBJ_EVENT_ID_PLAYER) anda hasta (x, y) y al final mira hacia face (DIR_* o SN_FACE_PLAYER).
+	.macro sn_walkto localid:req, x:req, y:req, speed=SN_SPEED_NORMAL, face=0, flags=0, buf=0
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
+	setvar VAR_0x8004, \localid
+	.endif
+	setvar VAR_0x8005, \buf
+	setvar VAR_0x8006, \speed
+	setvar VAR_0x8007, \flags
+	setvar VAR_0x8008, \x
+	setvar VAR_0x8009, \y
+	setvar VAR_0x800A, \face
+	special SinnohPathTo
+	applymovement \localid, gSinnohMoveBuf\buf
+	.endm
+
+	@ El jugador se gira hacia el NPC.
+	.macro sn_playerface localid:req, buf=3
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
+	setvar VAR_0x8004, \localid
+	.endif
+	setvar VAR_0x8005, \buf
+	special SinnohPlayerFaceObject
+	applymovement OBJ_EVENT_ID_PLAYER, gSinnohMoveBuf\buf
+	.endm
+
+	@ Igual que sn_walkto, pero el destino ya está en VAR_0x8008 / VAR_0x8009 (p. ej. con getplayerxy).
+	.macro sn_walkto_vars localid:req, speed=SN_SPEED_NORMAL, face=0, flags=0, buf=0
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
+	setvar VAR_0x8004, \localid
+	.endif
+	setvar VAR_0x8005, \buf
+	setvar VAR_0x8006, \speed
+	setvar VAR_0x8007, \flags
+	setvar VAR_0x800A, \face
+	special SinnohPathTo
+	applymovement \localid, gSinnohMoveBuf\buf
 	.endm

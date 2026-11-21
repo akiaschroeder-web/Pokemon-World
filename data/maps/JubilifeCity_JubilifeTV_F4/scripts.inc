@@ -1,0 +1,38 @@
+JubilifeCity_JubilifeTV_F4_MapScripts::
+	.byte 0
+
+JubilifeCity_JubilifeTV_F4_EventScript_PtNpc1::
+	msgbox JubilifeCity_JubilifeTV_F4_Text_PtNpc1, MSGBOX_NPC
+	end
+
+JubilifeCity_JubilifeTV_F4_Text_PtNpc1:
+	.string "From up here, you can see the\n"
+	.string "whole of JUBILIFE. Isn't it\l"
+	.string "wonderful?$"
+
+JubilifeCity_JubilifeTV_F4_EventScript_PtNpc2::
+	msgbox JubilifeCity_JubilifeTV_F4_Text_PtNpc2, MSGBOX_NPC
+	end
+
+JubilifeCity_JubilifeTV_F4_Text_PtNpc2:
+	.string "This is the director's floor.\n"
+	.string "Please don't touch the equipment!$"
+
+JubilifeCity_JubilifeTV_F4_EventScript_PtNpc3::
+	msgbox JubilifeCity_JubilifeTV_F4_Text_PtNpc3, MSGBOX_NPC
+	end
+
+JubilifeCity_JubilifeTV_F4_Text_PtNpc3:
+	.string "We're promoting the theme “Smiles are\n"
+	.string "dreamy.” In keeping with that theme,\l"
+	.string "we added variety programs to our\l"
+	.string "scheduling.\p"
+	.string "Please do tune in!$"
+
+JubilifeCity_JubilifeTV_F4_EventScript_SNPtRECEPTIONIST::
+	msgbox JubilifeCity_JubilifeTV_F4_EventScript_SNPtRECEPTIONIST_Text, MSGBOX_NPC
+	end
+
+JubilifeCity_JubilifeTV_F4_EventScript_SNPtRECEPTIONIST_Text:
+	.string "“Participation for all” is our TV\n"
+	.string "network’s motto.$"

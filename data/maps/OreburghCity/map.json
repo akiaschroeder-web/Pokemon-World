@@ -1,0 +1,582 @@
+{
+  "id": "MAP_OREBURGH_CITY",
+  "name": "OreburghCity",
+  "layout": "LAYOUT_OREBURGH_CITY",
+  "music": "MUS_DPP_OREBURGH",
+  "region_map_section": "MAPSEC_OREBURGH_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE207",
+      "offset": 35,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
+      "x": 51,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F",
+      "x": 36,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_POKEFAN_F",
+      "x": 50,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc3",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORE_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
+      "x": 15,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 14,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc5",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 61,
+      "y": 57,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc6",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
+      "x": 41,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc7",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 42,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc8",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 55,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc9",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GUITARIST",
+      "x": 27,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc10",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL",
+      "x": 41,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc11",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
+      "x": 60,
+      "y": 57,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc12",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
+      "x": 61,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc13",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
+      "x": 41,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc14",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL",
+      "x": 55,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_PtNpc15",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 44,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DIRE_HIT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 41,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_YELLOW_SHARD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR"
+    },
+    {
+      "local_id": "LOCALID_SN_ORE_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 30,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_SNBarryTalk",
+      "flag": "FLAG_SN_HIDE_ORE_BARRY"
+    },
+    {
+      "local_id": "LOCALID_SN_ORE_BARRY_POST",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 30,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_SNBarryPost",
+      "flag": "FLAG_SN_HIDE_ORE_BARRY_POST"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_GATE_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 18,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_FLAT1_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_FLAT2_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 54,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_MINING_MUSEUM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 59,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_FLAT3_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 56,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 50,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_MINE_B1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_MINE_B1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 52,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_MINE_B1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 53,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_MINE_B1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 62,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_MINING_MUSEUM",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_GymClosed"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T0"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T3"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T4"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T5"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T6"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T7"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T8"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 14,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 15,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 17,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign4"
+    },
+    {
+      "type": "sign",
+      "x": 52,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign6"
+    },
+    {
+      "type": "sign",
+      "x": 50,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign7"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign3"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign5"
+    },
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign2"
+    },
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 0,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 40,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST"
+    }
+  ]
+}

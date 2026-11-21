@@ -1,0 +1,259 @@
+{
+  "id": "MAP_FLOAROMA_MEADOW",
+  "name": "FloaromaMeadow",
+  "layout": "LAYOUT_FLOAROMA_MEADOW",
+  "music": "MUS_DPP_FLOAROMA",
+  "region_map_section": "MAPSEC_FLOAROMA_MEADOW",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_FUEGO_IRONWORKS",
+      "offset": 28,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_MEADOW_HONEY_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_POKEFAN_M",
+      "x": 30,
+      "y": 43,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FloaromaMeadow_EventScript_HoneyMan",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_MEADOW_GRUNT_1",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 28,
+      "y": 43,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FloaromaMeadow_EventScript_Grunts",
+      "flag": "FLAG_HIDE_MEADOW_GRUNTS"
+    },
+    {
+      "local_id": "LOCALID_MEADOW_GRUNT_2",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 28,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FloaromaMeadow_EventScript_Grunts",
+      "flag": "FLAG_HIDE_MEADOW_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 20,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MIRACLE_SEED",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_SUPER_REPEL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 49,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LEAF_STONE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_ZINC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 26,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ULTRA_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_ELIXIR_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 17,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_LEAF_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 30,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FloaromaMeadow_EventScript_SNHoneyTree",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_FLOAROMA_TOWN",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 11,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_FLOAROMA_TOWN",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 35,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_FLOAROMA_MEADOW_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 48,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_FUEGO_IRONWORKS",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 49,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_FUEGO_IRONWORKS",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 45,
+      "y": 44,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 39,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 43,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 35,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 45,
+      "y": 31,
+      "elevation": 3,
+      "item": "ITEM_PP_UP",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 50,
+      "y": 34,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 31,
+      "y": 31,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 50,
+      "y": 41,
+      "elevation": 3,
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 25,
+      "y": 42,
+      "elevation": 3,
+      "item": "ITEM_FULL_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON"
+    },
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 24,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL"
+    }
+  ]
+}

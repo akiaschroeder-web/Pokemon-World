@@ -10,20 +10,20 @@
 #define METATILE_BattleDome_Door_PreBattleRoom  0x20A
 
 // gTileset_BattleFrontier
-#define METATILE_BattleFrontier_CorridorOpenDoor_Bottom  0x20F
-#define METATILE_BattleFrontier_CorridorOpenDoor_Top     0x207
-#define METATILE_BattleFrontier_Door_Elevator            0x20E
-#define METATILE_BattleFrontier_Door_MultiCorridor_Left  0x2AD
-#define METATILE_BattleFrontier_Door_MultiCorridor_Right 0x2AE
-#define METATILE_BattleFrontier_Elevator_Bottom0         0x339
-#define METATILE_BattleFrontier_Elevator_Bottom1         0x33A
-#define METATILE_BattleFrontier_Elevator_Bottom2         0x33B
-#define METATILE_BattleFrontier_Elevator_Mid0            0x331
-#define METATILE_BattleFrontier_Elevator_Mid1            0x332
-#define METATILE_BattleFrontier_Elevator_Mid2            0x333
-#define METATILE_BattleFrontier_Elevator_Top0            0x329
-#define METATILE_BattleFrontier_Elevator_Top1            0x32A
-#define METATILE_BattleFrontier_Elevator_Top2            0x32B
+#define METATILE_BattleFrontier_CorridorOpenDoor_Bottom   0x20F
+#define METATILE_BattleFrontier_CorridorOpenDoor_Top      0x207
+#define METATILE_BattleFrontier_Door_Elevator             0x20E
+#define METATILE_BattleFrontier_Door_MultiCorridor_Left   0x2AD
+#define METATILE_BattleFrontier_Door_MultiCorridor_Right  0x2AE
+#define METATILE_BattleFrontier_Elevator_Bottom0          0x339
+#define METATILE_BattleFrontier_Elevator_Bottom1          0x33A
+#define METATILE_BattleFrontier_Elevator_Bottom2          0x33B
+#define METATILE_BattleFrontier_Elevator_Mid0             0x331
+#define METATILE_BattleFrontier_Elevator_Mid1             0x332
+#define METATILE_BattleFrontier_Elevator_Mid2             0x333
+#define METATILE_BattleFrontier_Elevator_Top0             0x329
+#define METATILE_BattleFrontier_Elevator_Top1             0x32A
+#define METATILE_BattleFrontier_Elevator_Top2             0x32B
 
 // gTileset_BattleFrontierOutsideEast
 #define METATILE_BattleFrontierOutsideEast_Door              0x3FC
@@ -146,6 +146,9 @@
 #define METATILE_CeladonCity_CyclingRoad_Grass  0x352
 #define METATILE_CeladonCity_CyclingRoad_Mowed  0x33E
 #define METATILE_CeladonCity_DeptStoreDoor      0x294
+
+// gTileset_Celestic
+#define METATILE_Celestic_LongGrass_Root  0x287
 
 // gTileset_CeruleanCity
 #define METATILE_CeruleanCity_Door  0x298
@@ -286,7 +289,7 @@
 #define METATILE_General_RockWall_SandBase     0x091
 #define METATILE_General_RoughDeepWater        0x14F
 #define METATILE_General_RoughWater            0x14E
-#define METATILE_General_SandPit_Center        0x121
+#define METATILE_General_SandPit_Center        0x124
 #define METATILE_General_SecretBase_TreeLeft   0x026
 #define METATILE_General_SecretBase_TreeRight  0x027
 #define METATILE_General_SecretBase_VineLeft   0x036
@@ -307,6 +310,9 @@
 #define METATILE_GenericBuilding1_PlayersPCOff  0x28F
 #define METATILE_GenericBuilding1_PlayersPCOn   0x28A
 
+// gTileset_Hearthome
+#define METATILE_Hearthome_Door  0x29C
+
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215
@@ -321,6 +327,9 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Interior  0x297
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked    0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
+
+// gTileset_Jubilife
+#define METATILE_Jubilife_Door  0x2CF
 
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
@@ -338,6 +347,7 @@
 #define METATILE_Lilycove_Door_DeptStore   0x30C
 #define METATILE_Lilycove_Door_SafariZone  0x32D
 #define METATILE_Lilycove_Door_Wooden      0x28E
+#define METATILE_Lilycove_MuddySlope       0x2C1
 #define METATILE_Lilycove_Wailmer0         0x290
 #define METATILE_Lilycove_Wailmer0_Alt     0x298
 #define METATILE_Lilycove_Wailmer1         0x291
@@ -386,6 +396,7 @@
 #define METATILE_Mauville_MirageTower_TileD   0x3DC
 #define METATILE_Mauville_MirageTower_TileE   0x3DD
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
+#define METATILE_Mauville_TallGrass           0x3A7
 
 // gTileset_MauvilleGym
 #define METATILE_MauvilleGym_FloorTile        0x21A
@@ -461,6 +472,7 @@
 #define METATILE_PalletTown_OaksLabDoor  0x2AC
 
 // gTileset_Petalburg
+#define METATILE_Petalburg_Door             0x229
 #define METATILE_Petalburg_Door_BirchsLab   0x249
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
@@ -949,6 +961,9 @@
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
 
+// gTileset_Snowpoint
+#define METATILE_Snowpoint_TallGrass  0x205
+
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E
 #define METATILE_Sootopolis_Door_Closed      0x248
@@ -1015,6 +1030,12 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
+
+// gTileset_Valor
+#define METATILE_Valor_Door  0x22B
+
+// gTileset_Veilstone
+#define METATILE_Veilstone_Door_DeptStore  0x25C
 
 // gTileset_VermilionCity
 #define METATILE_VermilionCity_Door        0x29E

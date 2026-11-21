@@ -15,8 +15,10 @@ enum {
 #define METLOC_IN_GAME_TRADE       0xFE
 #define METLOC_FATEFUL_ENCOUNTER   0xFF
 
-#define KANTO_MAPSEC_START  MAPSEC_PALLET_TOWN
-#define KANTO_MAPSEC_END    MAPSEC_SPECIAL_AREA
-#define KANTO_MAPSEC_COUNT (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
+// Proyecto Sinnoh: las secciones de Kanto se han eliminado para dejar sitio a las de Sinnoh
+// (las secciones se guardan en un u8 y no caben todas).
+#define KANTO_MAPSEC_START  MAPSEC_NONE
+#define KANTO_MAPSEC_END    MAPSEC_NONE
+#define KANTO_MAPSEC_COUNT  0
 
 #endif // GUARD_CONSTANTS_REGION_MAP_SECTIONS_H

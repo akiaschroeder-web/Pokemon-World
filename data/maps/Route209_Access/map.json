@@ -1,0 +1,91 @@
+{
+  "id": "MAP_ROUTE209_ACCESS",
+  "name": "Route209_Access",
+  "layout": "LAYOUT_ROUTE209_ACCESS",
+  "music": "MUS_DPP_ROUTE209",
+  "region_map_section": "MAPSEC_ROUTE_209",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL",
+      "x": 1,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route209_Access_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_R209_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 9,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route209_Access_EventScript_SNBarry",
+      "flag": "FLAG_SN_HIDE_R209_BARRY"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_HEARTHOME_CITY",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE209",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route209_Access_EventScript_SNR209BARRY_T0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route209_Access_EventScript_SNR209BARRY_T1"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route209_Access_EventScript_SNR209BARRY_T2"
+    }
+  ],
+  "bg_events": []
+}

@@ -514,6 +514,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Vigoroth,              OBJ_EVENT_PAL_TAG_VIGOROTH},
     {gObjectEventPal_EnemyZigzagoon,        OBJ_EVENT_PAL_TAG_ZIGZAGOON},
     {gObjectEventPal_May,                   OBJ_EVENT_PAL_TAG_MAY},
+    {gObjectEventPal_SnEmote,               OBJ_EVENT_PAL_TAG_SN_EMOTE},
     {gObjectEventPal_MayReflection,         OBJ_EVENT_PAL_TAG_MAY_REFLECTION},
     {gObjectEventPal_MovingBox,             OBJ_EVENT_PAL_TAG_MOVING_BOX},
     {gObjectEventPal_CableCar,              OBJ_EVENT_PAL_TAG_CABLE_CAR},
@@ -531,7 +532,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
-#if IS_FRLG
+#if 1 // Proyecto Sinnoh: gráficos de Rojo Fuego siempre disponibles (antes IS_FRLG)
     {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_RED},
     {gObjectEventPal_PlayerReflectionFrlg,  OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION},
     {gObjectEventPal_PlayerFrlg,            OBJ_EVENT_PAL_TAG_PLAYER_GREEN},
@@ -584,6 +585,116 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPaletteEmotes,             OBJ_EVENT_PAL_TAG_EMOTES},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
 #ifdef BUGFIX
+    // Proyecto Sinnoh
+    {gObjectEventPal_SinnohArgenta, OBJ_EVENT_PAL_TAG_SINNOH_ARGENTA},
+    {gObjectEventPal_SinnohArtist, OBJ_EVENT_PAL_TAG_SINNOH_ARTIST},
+    {gObjectEventPal_SinnohBarry, OBJ_EVENT_PAL_TAG_SINNOH_BARRY},
+    {gObjectEventPal_SinnohBruja, OBJ_EVENT_PAL_TAG_SINNOH_BRUJA},
+    {gObjectEventPal_SinnohByron, OBJ_EVENT_PAL_TAG_SINNOH_BYRON},
+    {gObjectEventPal_SinnohWaitress, OBJ_EVENT_PAL_TAG_SINNOH_WAITRESS},
+    {gObjectEventPal_SinnohWaiter, OBJ_EVENT_PAL_TAG_SINNOH_WAITER},
+    {gObjectEventPal_SinnohBugCatcher, OBJ_EVENT_PAL_TAG_SINNOH_BUG_CATCHER},
+    {gObjectEventPal_SinnohCharon, OBJ_EVENT_PAL_TAG_SINNOH_CHARON},
+    {gObjectEventPal_SinnohParasolLady, OBJ_EVENT_PAL_TAG_SINNOH_PARASOL_LADY},
+    {gObjectEventPal_SinnohCyclistM, OBJ_EVENT_PAL_TAG_SINNOH_CYCLIST_M},
+    {gObjectEventPal_SinnohScientistF, OBJ_EVENT_PAL_TAG_SINNOH_SCIENTIST_F},
+    {gObjectEventPal_SinnohScientistM, OBJ_EVENT_PAL_TAG_SINNOH_SCIENTIST_M},
+    {gObjectEventPal_SinnohBreederF, OBJ_EVENT_PAL_TAG_SINNOH_BREEDER_F},
+    {gObjectEventPal_SinnohBreederM, OBJ_EVENT_PAL_TAG_SINNOH_BREEDER_M},
+    {gObjectEventPal_SinnohCynthia, OBJ_EVENT_PAL_TAG_SINNOH_CYNTHIA},
+    {gObjectEventPal_SinnohCyrus, OBJ_EVENT_PAL_TAG_SINNOH_CYRUS},
+    {gObjectEventPal_SinnohLady, OBJ_EVENT_PAL_TAG_SINNOH_LADY},
+    {gObjectEventPal_SinnohDarach, OBJ_EVENT_PAL_TAG_SINNOH_DARACH},
+    {gObjectEventPal_SinnohDawn, OBJ_EVENT_PAL_TAG_SINNOH_DAWN},
+    {gObjectEventPal_SinnohDragonTamer, OBJ_EVENT_PAL_TAG_SINNOH_DRAGON_TAMER},
+    {gObjectEventPal_SinnohGentleman, OBJ_EVENT_PAL_TAG_SINNOH_GENTLEMAN},
+    {gObjectEventPal_SinnohAceTrainerF, OBJ_EVENT_PAL_TAG_SINNOH_ACE_TRAINER_F},
+    {gObjectEventPal_SinnohAceTrainerM, OBJ_EVENT_PAL_TAG_SINNOH_ACE_TRAINER_M},
+    {gObjectEventPal_SinnohAceTrainerSnowF, OBJ_EVENT_PAL_TAG_SINNOH_ACE_TRAINER_SNOW_F},
+    {gObjectEventPal_SinnohAceTrainerSnowM, OBJ_EVENT_PAL_TAG_SINNOH_ACE_TRAINER_SNOW_M},
+    {gObjectEventPal_SinnohSchoolKidF, OBJ_EVENT_PAL_TAG_SINNOH_SCHOOL_KID_F},
+    {gObjectEventPal_SinnohSkierM, OBJ_EVENT_PAL_TAG_SINNOH_SKIER_M},
+    {gObjectEventPal_SinnohSkierF, OBJ_EVENT_PAL_TAG_SINNOH_SKIER_F},
+    {gObjectEventPal_SinnohFantina, OBJ_EVENT_PAL_TAG_SINNOH_FANTINA},
+    {gObjectEventPal_SinnohFlint, OBJ_EVENT_PAL_TAG_SINNOH_FLINT},
+    {gObjectEventPal_SinnohBertha, OBJ_EVENT_PAL_TAG_SINNOH_BERTHA},
+    {gObjectEventPal_SinnohGalaxyGruntF, OBJ_EVENT_PAL_TAG_SINNOH_GALAXY_GRUNT_F},
+    {gObjectEventPal_SinnohGalaxyGruntM, OBJ_EVENT_PAL_TAG_SINNOH_GALAXY_GRUNT_M},
+    {gObjectEventPal_SinnohFatMan, OBJ_EVENT_PAL_TAG_SINNOH_FAT_MAN},
+    {gObjectEventPal_SinnohGuitarist, OBJ_EVENT_PAL_TAG_SINNOH_GUITARIST},
+    {gObjectEventPal_SinnohJupiter, OBJ_EVENT_PAL_TAG_SINNOH_JUPITER},
+    {gObjectEventPal_SinnohLass, OBJ_EVENT_PAL_TAG_SINNOH_LASS},
+    {gObjectEventPal_SinnohLooker, OBJ_EVENT_PAL_TAG_SINNOH_LOOKER},
+    {gObjectEventPal_SinnohLucas, OBJ_EVENT_PAL_TAG_SINNOH_LUCAS},
+    {gObjectEventPal_SinnohBattleGirl, OBJ_EVENT_PAL_TAG_SINNOH_BATTLE_GIRL},
+    {gObjectEventPal_SinnohMaylene, OBJ_EVENT_PAL_TAG_SINNOH_MAYLENE},
+    {gObjectEventPal_SinnohSocialite, OBJ_EVENT_PAL_TAG_SINNOH_SOCIALITE},
+    {gObjectEventPal_SinnohMars, OBJ_EVENT_PAL_TAG_SINNOH_MARS},
+    {gObjectEventPal_SinnohPsychicF, OBJ_EVENT_PAL_TAG_SINNOH_PSYCHIC_F},
+    {gObjectEventPal_SinnohPsychicM, OBJ_EVENT_PAL_TAG_SINNOH_PSYCHIC_M},
+    {gObjectEventPal_SinnohBeauty, OBJ_EVENT_PAL_TAG_SINNOH_BEAUTY},
+    {gObjectEventPal_SinnohHiker, OBJ_EVENT_PAL_TAG_SINNOH_HIKER},
+    {gObjectEventPal_SinnohLittleGirl, OBJ_EVENT_PAL_TAG_SINNOH_LITTLE_GIRL},
+    {gObjectEventPal_SinnohRichBoy, OBJ_EVENT_PAL_TAG_SINNOH_RICH_BOY},
+    {gObjectEventPal_SinnohWorker, OBJ_EVENT_PAL_TAG_SINNOH_WORKER},
+    {gObjectEventPal_SinnohBirdKeeper, OBJ_EVENT_PAL_TAG_SINNOH_BIRD_KEEPER},
+    {gObjectEventPal_SinnohPalmer, OBJ_EVENT_PAL_TAG_SINNOH_PALMER},
+    {gObjectEventPal_SinnohClown, OBJ_EVENT_PAL_TAG_SINNOH_CLOWN},
+    {gObjectEventPal_SinnohPokeKid, OBJ_EVENT_PAL_TAG_SINNOH_POKE_KID},
+    {gObjectEventPal_SinnohCollector, OBJ_EVENT_PAL_TAG_SINNOH_COLLECTOR},
+    {gObjectEventPal_SinnohPokefanM, OBJ_EVENT_PAL_TAG_SINNOH_POKEFAN_M},
+    {gObjectEventPal_SinnohPokefanF, OBJ_EVENT_PAL_TAG_SINNOH_POKEFAN_F},
+    {gObjectEventPal_SinnohRangerF, OBJ_EVENT_PAL_TAG_SINNOH_RANGER_F},
+    {gObjectEventPal_SinnohRangerM, OBJ_EVENT_PAL_TAG_SINNOH_RANGER_M},
+    {gObjectEventPal_SinnohPoliceman, OBJ_EVENT_PAL_TAG_SINNOH_POLICEMAN},
+    {gObjectEventPal_SinnohReceptionist, OBJ_EVENT_PAL_TAG_SINNOH_RECEPTIONIST},
+    {gObjectEventPal_SinnohRuinManiac, OBJ_EVENT_PAL_TAG_SINNOH_RUIN_MANIAC},
+    {gObjectEventPal_SinnohSaturn, OBJ_EVENT_PAL_TAG_SINNOH_SATURN},
+    {gObjectEventPal_SinnohRowan, OBJ_EVENT_PAL_TAG_SINNOH_ROWAN},
+    {gObjectEventPal_SinnohMiddleAgedWoman, OBJ_EVENT_PAL_TAG_SINNOH_MIDDLE_AGED_WOMAN},
+    {gObjectEventPal_SinnohAromaLady, OBJ_EVENT_PAL_TAG_SINNOH_AROMA_LADY},
+    {gObjectEventPal_SinnohMaid, OBJ_EVENT_PAL_TAG_SINNOH_MAID},
+    {gObjectEventPal_SinnohVolkner, OBJ_EVENT_PAL_TAG_SINNOH_VOLKNER},
+    {gObjectEventPal_SinnohWake, OBJ_EVENT_PAL_TAG_SINNOH_WAKE},
+    {gObjectEventPal_SinnohMira, OBJ_EVENT_PAL_TAG_SINNOH_MIRA},
+    {gObjectEventPal_SinnohRoark, OBJ_EVENT_PAL_TAG_SINNOH_ROARK},
+    {gObjectEventPal_SinnohGardenia, OBJ_EVENT_PAL_TAG_SINNOH_GARDENIA},
+    {gObjectEventPal_SinnohCandice, OBJ_EVENT_PAL_TAG_SINNOH_CANDICE},
+    {gObjectEventPal_SinnohAaron, OBJ_EVENT_PAL_TAG_SINNOH_AARON},
+    {gObjectEventPal_SinnohLucian, OBJ_EVENT_PAL_TAG_SINNOH_LUCIAN},
+    {gObjectEventPal_SinnohMonTorchic, OBJ_EVENT_PAL_TAG_SINNOH_MON_TORCHIC},
+    {gObjectEventPal_SinnohMonDrifloon, OBJ_EVENT_PAL_TAG_SINNOH_MON_DRIFLOON},
+    {gObjectEventPal_SinnohMonStarly, OBJ_EVENT_PAL_TAG_SINNOH_MON_STARLY},
+    {gObjectEventPal_SinnohMonMachop, OBJ_EVENT_PAL_TAG_SINNOH_MON_MACHOP},
+    {gObjectEventPal_SinnohMonSkitty, OBJ_EVENT_PAL_TAG_SINNOH_MON_SKITTY},
+    {gObjectEventPal_SinnohMonClefairy, OBJ_EVENT_PAL_TAG_SINNOH_MON_CLEFAIRY},
+    {gObjectEventPal_SinnohMonShroomish, OBJ_EVENT_PAL_TAG_SINNOH_MON_SHROOMISH},
+    {gObjectEventPal_SinnohMonHappiny, OBJ_EVENT_PAL_TAG_SINNOH_MON_HAPPINY},
+    {gObjectEventPal_SinnohMonBuneary, OBJ_EVENT_PAL_TAG_SINNOH_MON_BUNEARY},
+    {gObjectEventPal_SinnohMonPachirisu, OBJ_EVENT_PAL_TAG_SINNOH_MON_PACHIRISU},
+    {gObjectEventPal_SinnohMonPsyduck, OBJ_EVENT_PAL_TAG_SINNOH_MON_PSYDUCK},
+    {gObjectEventPal_SinnohMonJigglypuff, OBJ_EVENT_PAL_TAG_SINNOH_MON_JIGGLYPUFF},
+    {gObjectEventPal_SinnohMonPikachu, OBJ_EVENT_PAL_TAG_SINNOH_MON_PIKACHU},
+    {gObjectEventPal_SinnohMonMagikarp, OBJ_EVENT_PAL_TAG_SINNOH_MON_MAGIKARP},
+    {gObjectEventPal_SinnohMonPalkia, OBJ_EVENT_PAL_TAG_SINNOH_MON_PALKIA},
+    {gObjectEventPal_SinnohMonDialga, OBJ_EVENT_PAL_TAG_SINNOH_MON_DIALGA},
+    {gObjectEventPal_SinnohMonUxie, OBJ_EVENT_PAL_TAG_SINNOH_MON_UXIE},
+    {gObjectEventPal_SinnohMonMesprit, OBJ_EVENT_PAL_TAG_SINNOH_MON_MESPRIT},
+    {gObjectEventPal_SinnohMonAzelf, OBJ_EVENT_PAL_TAG_SINNOH_MON_AZELF},
+    {gObjectEventPal_SinnohMonHeatran, OBJ_EVENT_PAL_TAG_SINNOH_MON_HEATRAN},
+    {gObjectEventPal_SinnohMonRegigigas, OBJ_EVENT_PAL_TAG_SINNOH_MON_REGIGIGAS},
+    {gObjectEventPal_SinnohMonShaymin, OBJ_EVENT_PAL_TAG_SINNOH_MON_SHAYMIN},
+    {gObjectEventPal_SinnohMonGiratinaAltered, OBJ_EVENT_PAL_TAG_SINNOH_MON_GIRATINA_ALTERED},
+    {gObjectEventPal_SinnohMonDarkrai, OBJ_EVENT_PAL_TAG_SINNOH_MON_DARKRAI},
+    {gObjectEventPal_SinnohMonCresselia, OBJ_EVENT_PAL_TAG_SINNOH_MON_CRESSELIA},
+    {gObjectEventPal_SinnohMonArceus, OBJ_EVENT_PAL_TAG_SINNOH_MON_ARCEUS},
+    {gObjectEventPal_SinnohMossRock, OBJ_EVENT_PAL_TAG_SINNOH_MOSS_ROCK},
+    {gObjectEventPal_SinnohIceRock, OBJ_EVENT_PAL_TAG_SINNOH_ICE_ROCK},
+    {gObjectEventPal_SinnohMarley, OBJ_EVENT_PAL_TAG_SINNOH_MARLEY},
+    {gObjectEventPal_SinnohJasmine, OBJ_EVENT_PAL_TAG_SINNOH_JASMINE},
+    {gObjectEventPal_SinnohBuck, OBJ_EVENT_PAL_TAG_SINNOH_BUCK},
+    {gObjectEventPal_SinnohRiley, OBJ_EVENT_PAL_TAG_SINNOH_RILEY},
+    {gObjectEventPal_SinnohCheryl, OBJ_EVENT_PAL_TAG_SINNOH_CHERYL},
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
     {}, // BUG: FindObjectEventPaletteIndexByTag looks for OBJ_EVENT_PAL_TAG_NONE and not 0x0.
@@ -2359,6 +2470,9 @@ void UpdateFollowingPokemon(void)
      || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, shiny, female)->oam->size > ST_OAM_SIZE_2)
      || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
      || PlayerHasFollowerNPC()
+     // Proyecto Sinnoh: como en Platino, los Pokémon solo te siguen en la Plaza Amistad
+     || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_AMITY_SQUARE)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_AMITY_SQUARE)
      )
     {
         RemoveFollowingPokemon();
@@ -2628,18 +2742,15 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
         switch (gMapHeader.regionMapSectionId)
         {
         case MAPSEC_RUSTBORO_CITY:
-        case MAPSEC_PEWTER_CITY:
             multi = TYPE_ROCK;
             break;
         case MAPSEC_DEWFORD_TOWN:
             multi = TYPE_FIGHTING;
             break;
         case MAPSEC_MAUVILLE_CITY:
-        case MAPSEC_VERMILION_CITY:
             multi = TYPE_ELECTRIC;
             break;
         case MAPSEC_LAVARIDGE_TOWN:
-        case MAPSEC_CINNABAR_ISLAND:
             multi = TYPE_FIRE;
             break;
         case MAPSEC_PETALBURG_CITY:
@@ -2649,22 +2760,12 @@ void GetFollowerAction(struct ScriptContext *ctx) // Essentially a big switch fo
             multi = TYPE_FLYING;
             break;
         case MAPSEC_MOSSDEEP_CITY:
-        case MAPSEC_SAFFRON_CITY:
             multi = TYPE_PSYCHIC;
             break;
         case MAPSEC_SOOTOPOLIS_CITY:
-        case MAPSEC_CERULEAN_CITY:
             multi = TYPE_WATER;
             break;
-        case MAPSEC_CELADON_CITY:
-            multi = TYPE_GRASS;
-            break;
-        case MAPSEC_FUCHSIA_CITY:
-            multi = TYPE_POISON;
-            break;
-        case MAPSEC_VIRIDIAN_CITY:
-            multi = TYPE_GROUND;
-            break;
+            
         default:
             multi = NUMBER_OF_MON_TYPES;
         }

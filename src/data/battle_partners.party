@@ -42,3 +42,469 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Protect
 - Solar Beam
 - Dragon Claw
+
+=== PARTNER_CHERYL ===
+Name: CHERYL
+Class: Pkmn Trainer 1
+Pic: Sinnoh Cheryl
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Chansey
+Level: 20
+- Egg Bomb
+- Refresh
+- Soft-Boiled
+- Pound
+
+=== PARTNER_BARRY_CHIMCHAR ===
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Staraptor
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Aerial Ace
+- Take Down
+- Quick Attack
+
+Heracross
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Brick Break
+- Night Slash
+- Aerial Ace
+
+Empoleon
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Aqua Jet
+- Aerial Ace
+- Metal Claw
+- Swagger
+
+=== PARTNER_BARRY_PIPLUP ===
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Staraptor
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Aerial Ace
+- Take Down
+- Quick Attack
+
+Heracross
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Brick Break
+- Night Slash
+- Aerial Ace
+
+Torterra
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Bite
+- Leech Seed
+- Synthesis
+
+=== PARTNER_BARRY_TURTWIG ===
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Staraptor
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Aerial Ace
+- Take Down
+- Quick Attack
+
+Heracross
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Brick Break
+- Night Slash
+- Aerial Ace
+
+Infernape
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Punishment
+- Flame Wheel
+- Will O Wisp
+
+=== PARTNER_RILEY ===
+Name: RILEY
+Class: Pkmn Trainer 1
+Pic: Sinnoh Riley
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Lucario
+Level: 41
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Metal Claw
+- Force Palm
+- Quick Attack
+- Bone Rush
+
+=== PARTNER_BUCK ===
+Name: BUCK
+Class: Pkmn Trainer 1
+Pic: Sinnoh Buck
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLAYDOL
+Level: 63
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_PSYCHIC
+- MOVE_ANCIENT_POWER
+- MOVE_LIGHT_SCREEN
+- MOVE_REFLECT
+
+
+
+=== PARTNER_MIRA ===
+Name: MIRA
+Class: Pkmn Trainer 1
+Pic: Sinnoh Mira
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_KADABRA
+Level: 26
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_CONFUSION
+- MOVE_SHOCK_WAVE
+- MOVE_FLASH
+- MOVE_KINESIS
+
+
+
+=== PARTNER_MARLEY ===
+Name: MARLEY
+Class: Pkmn Trainer 1
+Pic: Sinnoh Marley
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_ARCANINE
+Level: 59
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EXTREME_SPEED
+- MOVE_FIRE_FANG
+- MOVE_HELPING_HAND
+- MOVE_AGILITY
+
+=== PARTNER_DAWN_TURTWIG ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_PRINPLUP
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_BUBBLE_BEAM
+- MOVE_METAL_CLAW
+- MOVE_PECK
+- MOVE_GROWL
+
+
+=== PARTNER_DAWN_CHIMCHAR ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GROTLE
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_MEGA_DRAIN
+- MOVE_BITE
+- MOVE_CURSE
+
+
+=== PARTNER_DAWN_PIPLUP ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MONFERNO
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_FLAME_WHEEL
+- MOVE_MACH_PUNCH
+- MOVE_FURY_SWIPES
+- MOVE_TORMENT
+
+
+=== PARTNER_LUCAS_TURTWIG ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_PRINPLUP
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_BUBBLE_BEAM
+- MOVE_METAL_CLAW
+- MOVE_PECK
+- MOVE_GROWL
+
+
+=== PARTNER_LUCAS_CHIMCHAR ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GROTLE
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_MEGA_DRAIN
+- MOVE_BITE
+- MOVE_CURSE
+
+
+=== PARTNER_LUCAS_PIPLUP ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MONFERNO
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_FLAME_WHEEL
+- MOVE_MACH_PUNCH
+- MOVE_FURY_SWIPES
+- MOVE_TORMENT
+
+=== PARTNER_DAWN_J_TURTWIG ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_PIPLUP
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_BUBBLE
+- MOVE_POUND
+
+
+=== PARTNER_DAWN_J_CHIMCHAR ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_TURTWIG
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_ABSORB
+- MOVE_TACKLE
+
+
+=== PARTNER_DAWN_J_PIPLUP ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CHIMCHAR
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EMBER
+- MOVE_SCRATCH
+
+
+=== PARTNER_LUCAS_J_TURTWIG ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_PIPLUP
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_BUBBLE
+- MOVE_POUND
+
+
+=== PARTNER_LUCAS_J_CHIMCHAR ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_TURTWIG
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_ABSORB
+- MOVE_TACKLE
+
+
+=== PARTNER_LUCAS_J_PIPLUP ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CHIMCHAR
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EMBER
+- MOVE_SCRATCH
+
