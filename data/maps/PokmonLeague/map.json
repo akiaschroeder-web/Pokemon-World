@@ -3,7 +3,7 @@
   "name": "PokmonLeague",
   "layout": "LAYOUT_POKMON_LEAGUE",
   "music": "MUS_DPP_LEAGUE_OUTSIDE",
-  "region_map_section": "MAPSEC_POKEMON_LEAGUE",
+  "region_map_section": "MAPSEC_SN_POKEMON_LEAGUE",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_NONE",

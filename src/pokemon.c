@@ -687,6 +687,8 @@ static const struct SpriteTemplate sSpriteTemplate_64x64 =
 
 // NOTE: Reordering this array will break compatibility with existing
 // saves.
+STATIC_ASSERT(MAPSEC_COUNT <= METLOC_SPECIAL_EGG, PokemonWorldMetLocationFitsNineBits);
+
 static const u32 sCompressedStatuses[] =
 {
     STATUS1_NONE,
@@ -753,7 +755,9 @@ UNUSED static const struct BoxPokemon sBoxPokemonConstantsFit =
         .spDefenseEV = MAX_PER_STAT_EVS,
     },
     .secure.substructs[3].type3 = {
-        .metLocation = min(MAPSEC_COUNT, min(METLOC_SPECIAL_EGG, min(METLOC_IN_GAME_TRADE, METLOC_FATEFUL_ENCOUNTER))),
+        // Pokémon World: met location is 9 bits (metLocation + metLocationHigh).
+        .metLocation = 0xFF,
+        .metLocationHigh = 1,
         .metLevel = MAX_LEVEL,
         .metGame = NUM_VERSIONS, // NOTE: NUM_VERSIONS is inclusive!
         .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -2199,7 +2203,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             retVal = (GetSubstruct3(boxMon)->pokerus & 0x0F);
             break;
         case MON_DATA_MET_LOCATION:
-            retVal = GetSubstruct3(boxMon)->metLocation;
+            retVal = GetSubstruct3(boxMon)->metLocation | (GetSubstruct3(boxMon)->metLocationHigh << 8);
             break;
         case MON_DATA_MET_LEVEL:
             retVal = GetSubstruct3(boxMon)->metLevel;
@@ -2714,7 +2718,13 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             GetSubstruct3(boxMon)->pokerus = (GetSubstruct3(boxMon)->pokerus & 0xF0) | *data;
             break;
         case MON_DATA_MET_LOCATION:
-            SET8(GetSubstruct3(boxMon)->metLocation);
+        {
+            // Pokémon World: 9-bit met location, read from a u16.
+            u16 location = data[0] + (data[1] << 8);
+            GetSubstruct3(boxMon)->metLocation = location & 0xFF;
+            GetSubstruct3(boxMon)->metLocationHigh = (location >> 8) & 1;
+            break;
+        }
             break;
         case MON_DATA_MET_LEVEL:
             SET8(GetSubstruct3(boxMon)->metLevel);

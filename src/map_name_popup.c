@@ -254,7 +254,7 @@ static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
     [MAPSEC_MT_CORONET] = MAPPOPUP_THEME_STONE,
     [MAPSEC_MT_STARK] = MAPPOPUP_THEME_STONE,
     [MAPSEC_IRON_ISLAND] = MAPPOPUP_THEME_STONE,
-    [MAPSEC_POKEMON_LEAGUE] = MAPPOPUP_THEME_BRICK,
+    [MAPSEC_SN_POKEMON_LEAGUE] = MAPPOPUP_THEME_BRICK,
     [MAPSEC_VERITY_LAKEFRONT] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_VALOR_LAKEFRONT] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_ACUITY_LAKEFRONT] = MAPPOPUP_THEME_WOOD,
@@ -441,7 +441,7 @@ static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping_BW[] =
     [MAPSEC_MT_CORONET] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_MT_STARK] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_IRON_ISLAND] = MAPPOPUP_THEME_BW_DEFAULT,
-    [MAPSEC_POKEMON_LEAGUE] = MAPPOPUP_THEME_BW_DEFAULT,
+    [MAPSEC_SN_POKEMON_LEAGUE] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_VERITY_LAKEFRONT] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_VALOR_LAKEFRONT] = MAPPOPUP_THEME_BW_DEFAULT,
     [MAPSEC_ACUITY_LAKEFRONT] = MAPPOPUP_THEME_BW_DEFAULT,
@@ -811,6 +811,16 @@ static void LoadMapNamePopUpWindowBg(void)
     if (OW_POPUP_GENERATION == GEN_5)
         secondaryPopUpWindowId = GetSecondaryPopUpWindowId();
 
+    // Pokémon World: Kanto's map sections are back; the Gen 3 theme table skips them.
+    mapsec_u16_t themeIndex = regionMapSectionId;
+    if (themeIndex >= KANTO_MAPSEC_START)
+    {
+        if (themeIndex > KANTO_MAPSEC_END)
+            themeIndex -= KANTO_MAPSEC_COUNT;
+        else
+            themeIndex = 0; // Kanto: use the first theme
+    }
+
     if (OW_POPUP_GENERATION == GEN_5)
     {
         popUpThemeId = sRegionMapSectionId_To_PopUpThemeIdMapping_BW[regionMapSectionId];
@@ -833,7 +843,7 @@ static void LoadMapNamePopUpWindowBg(void)
     }
     else
     {
-        popUpThemeId = sMapSectionToThemeId[regionMapSectionId];
+        popUpThemeId = sMapSectionToThemeId[themeIndex];
         LoadBgTiles(GetWindowAttribute(popupWindowId, WINDOW_BG), sMapPopUp_OutlineTable[popUpThemeId], 0x400, 0x21D);
         CallWindowFunction(popupWindowId, DrawMapNamePopUpFrame);
         PutWindowTilemap(popupWindowId);

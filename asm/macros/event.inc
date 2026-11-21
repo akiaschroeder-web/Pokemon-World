@@ -1815,7 +1815,7 @@
 	.macro setmonmetlocation slot:req, location:req
 	.byte SCR_OP_SETMONMETLOCATION
 	.2byte \slot
-	.byte \location
+	.2byte \location @ Pokémon World: map sections are 16-bit
 	.endm
 
 	@ For the rotating tile puzzles in Mossdeep Gym / Trick House Room 7. Moves the objects one rotation

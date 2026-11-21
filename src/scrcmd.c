@@ -2996,7 +2996,7 @@ bool8 ScrCmd_warpspinenter(struct ScriptContext *ctx)
 bool8 ScrCmd_setmonmetlocation(struct ScriptContext *ctx)
 {
     u16 partyIndex = VarGet(ScriptReadHalfword(ctx));
-    u8 location = ScriptReadByte(ctx);
+    u16 location = ScriptReadHalfword(ctx); // Pokémon World: map sections are 16-bit
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 

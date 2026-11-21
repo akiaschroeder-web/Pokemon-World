@@ -3,7 +3,7 @@
   "name": "PokemonLeague_BerthaRoom",
   "layout": "LAYOUT_POKEMON_LEAGUE_BERTHA_ROOM",
   "music": "MUS_DPP_LEAGUE_INSIDE",
-  "region_map_section": "MAPSEC_POKEMON_LEAGUE",
+  "region_map_section": "MAPSEC_SN_POKEMON_LEAGUE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

@@ -167,7 +167,7 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
     text << "\t.2byte " << json_to_string(map_data, "music") << "\n";
 
     text << "\t.2byte " << json_to_string(layout, "id") << "\n"
-         << "\t.byte "  << json_to_string(map_data, "region_map_section") << "\n"
+         << "\t.2byte " << json_to_string(map_data, "region_map_section") << "\n" // Pokémon World: 16-bit map sections
          << "\t.byte "  << json_to_string(map_data, "weather") << "\n"
          << "\t.byte "  << json_to_string(map_data, "map_type") << "\n";
 
@@ -176,6 +176,7 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
         text << "\t.byte 0\n";
     else
         text << "\t.byte " << floor_number << "\n";
+    text << "\t.byte 0 @ padding (Pokémon World: 16-bit map sections)\n";
 
     if (!map_data["night_music"].is_null())
         text << "\t.2byte " << json_to_string(map_data, "night_music") << "\n";
@@ -198,7 +199,8 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
         text << "requires_flash=" << json_to_string(map_data, "requires_flash") << "\n";
     }
 
-     text << "\t.byte " << json_to_string(map_data, "battle_scene") << "\n\n";
+     text << "\t.byte " << json_to_string(map_data, "battle_scene") << "\n";
+     text << "\t.2byte 0 @ padding to 0x20 (Pokémon World: 16-bit map sections)\n\n";
 
     return text.str();
 }

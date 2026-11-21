@@ -49,7 +49,10 @@
 //
 // If you choose to widen Map Sections, be aware that Met Locations (below)
 // are based on Map Sections and will also be widened.
-typedef u8  mapsec_u8_t;
+// Pokémon World: widened to 16 bits. Four regions need more than 255 map sections.
+// The name is kept so the rest of the codebase is unchanged. TV shows in the save
+// still store 8 bits (see global.tv.h); Pokémon store 9 bits (see metLocationHigh).
+typedef u16 mapsec_u8_t;
 typedef u16 mapsec_u16_t;
 typedef s16 mapsec_s16_t;
 typedef s32 mapsec_s32_t;

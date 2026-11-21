@@ -3,7 +3,7 @@
   "name": "SinnohVictoryRoad_1F",
   "layout": "LAYOUT_SINNOH_VICTORY_ROAD_1F",
   "music": "MUS_DPP_VICTORY_ROAD",
-  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_SN_VICTORY_ROAD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

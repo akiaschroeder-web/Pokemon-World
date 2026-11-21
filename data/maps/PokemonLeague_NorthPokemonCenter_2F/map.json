@@ -3,7 +3,7 @@
   "name": "PokemonLeague_NorthPokemonCenter_2F",
   "layout": "LAYOUT_POKEMON_LEAGUE_NORTH_POKEMON_CENTER_2F",
   "music": "MUS_DPP_POKECENTER",
-  "region_map_section": "MAPSEC_POKEMON_LEAGUE",
+  "region_map_section": "MAPSEC_SN_POKEMON_LEAGUE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

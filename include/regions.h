@@ -7,9 +7,10 @@
 enum KantoSubRegion GetKantoSubregion(u32 mapSecId);
 
 // Pokémon World: the region is worked out from the map section.
-// Sinnoh's map sections are one block, from Twinleaf Town to Rock Peak Ruins.
+// Sinnoh's map sections are one block, from Twinleaf Town to the Sinnoh copies of
+// Victory Road, the Pokémon League and the Pokémon Mansion.
 #define SINNOH_MAPSEC_START MAPSEC_TWINLEAF_TOWN
-#define SINNOH_MAPSEC_END   MAPSEC_ROCK_PEAK_RUINS
+#define SINNOH_MAPSEC_END   MAPSEC_SN_POKEMON_MANSION
 
 static inline enum Region GetRegionForSectionId(u32 sectionId)
 {
