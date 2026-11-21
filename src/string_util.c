@@ -497,6 +497,12 @@ static const u8 *ExpandPlaceholder_RivalName(void)
         return (IS_FRLG ? gText_ExpandedPlaceholder_Red : gText_ExpandedPlaceholder_Brendan);
 }
 
+// Pokémon World: the rival's chosen name, for code outside text placeholders.
+const u8 *GetRivalName(void)
+{
+    return ExpandPlaceholder_RivalName();
+}
+
 static const u8 *ExpandPlaceholder_Version(void)
 {
     return gText_ExpandedPlaceholder_Emerald;

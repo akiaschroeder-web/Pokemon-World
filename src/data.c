@@ -2,6 +2,8 @@
 #include "malloc.h"
 #include "battle.h"
 #include "data.h"
+#include "string_util.h"
+#include "strings.h"
 #include "graphics.h"
 #include "trainer_pools.h"
 #include "battle_transition.h"
@@ -241,3 +243,16 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #include "data/trainer_approach_music.h"
 
 #include "data/text/follower_messages.h"
+
+// Pokémon World: Hoenn's rival trainers are named MAY/BRENDAN in the trainer data;
+// in battle they use the name the player gave the rival.
+const u8 *GetTrainerNameFromId(u16 trainerId)
+{
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
+
+    if (trainer->trainerClass == TRAINER_CLASS_RIVAL
+     && (!StringCompare(trainer->trainerName, gText_ExpandedPlaceholder_May)
+      || !StringCompare(trainer->trainerName, gText_ExpandedPlaceholder_Brendan)))
+        return GetRivalName();
+    return trainer->trainerName;
+}

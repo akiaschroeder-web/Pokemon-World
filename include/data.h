@@ -307,10 +307,8 @@ static inline const u8 *GetTrainerClassNameFromId(u16 trainerId)
     return gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 }
 
-static inline const u8 *GetTrainerNameFromId(u16 trainerId)
-{
-    return GetTrainerStructFromId(trainerId)->trainerName;
-}
+// Pokémon World: defined in data.c, so Hoenn's rival (MAY/BRENDAN) can show the rival's chosen name.
+const u8 *GetTrainerNameFromId(u16 trainerId);
 
 static inline const enum TrainerPicID GetTrainerPicFromId(u16 trainerId)
 {
