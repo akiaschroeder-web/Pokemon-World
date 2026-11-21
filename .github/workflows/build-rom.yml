@@ -1,0 +1,39 @@
+name: Build ROM
+
+# Builds the Emerald ROM on every push to any branch and attaches it to the run,
+# so the game can be tested without a computer. Download it from the run's
+# "Artifacts" section on GitHub (in a browser; the GitHub mobile app doesn't show artifacts).
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: github.actor != 'allcontributors[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install GBA toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi libpng-dev python3
+
+      - name: Build
+        env:
+          GAME_VERSION: EMERALD
+        run: make -j$(nproc) -O all
+
+      - name: Name the ROM after the branch and commit
+        run: |
+          branch="${GITHUB_REF_NAME//\//-}"
+          mv pokeemerald.gba "pokemon-world-${branch}-${GITHUB_SHA::7}.gba"
+
+      - name: Upload ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: pokemon-world-rom
+          path: pokemon-world-*.gba
+          retention-days: 14
+          if-no-files-found: error
