@@ -25,6 +25,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 200 # to tell which files changed since the cached build
+
+      # Reuse the previous build: everything the build generates (objects, converted
+      # graphics, tools) is kept between runs, so only what changed is rebuilt.
+      - name: Restore the previous build
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/build-cache
+          key: web-build-${{ github.sha }}
+          restore-keys: web-build-
+
+      - name: Unpack the previous build
+        run: |
+          if [ -f /tmp/build-cache/build.tar ] && git cat-file -e "$(cat /tmp/build-cache/sha)^{commit}" 2>/dev/null; then
+            old=$(cat /tmp/build-cache/sha)
+            # Sources count as old, generated files keep their times, and files changed
+            # since the cached build count as new, so make rebuilds just those.
+            git ls-files -z | xargs -0 touch -h -d 2000-01-01
+            tar -xf /tmp/build-cache/build.tar
+            git diff --name-only -z "$old" HEAD | xargs -0 -r touch -h 2>/dev/null || true
+            echo "Reusing the build of $old ($(git diff --name-only "$old" HEAD | wc -l) files changed)"
+          else
+            echo "No usable previous build; building everything."
+          fi
 
       - name: Install tools
         run: |
@@ -43,6 +68,21 @@ jobs:
           set -o pipefail
           make -j$(nproc) PLATFORM=web web 2>&1 | tee build.log
           ls -la build/web/site
+
+      - name: Keep the build for next time
+        if: success()
+        run: |
+          rm -rf /tmp/build-cache && mkdir -p /tmp/build-cache
+          git ls-files -z -o -i --exclude-standard | grep -zv '^node_modules/\|^screenshots/\|^build.log$' | tar --null -T - -cf /tmp/build-cache/build.tar
+          git rev-parse HEAD > /tmp/build-cache/sha
+          ls -la /tmp/build-cache
+
+      - name: Save the build cache
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/build-cache
+          key: web-build-${{ github.sha }}
 
       - name: Show build errors
         if: failure()

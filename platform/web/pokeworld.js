@@ -17,10 +17,10 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     KeyA: KEY.L, KeyS: KEY.R,
     KeyW: KEY.UP, KeyK: KEY.A, KeyJ: KEY.B
   };
-  var heldKeyboard = 0, heldTouch = 0, sentKeys = -1;
+  var heldKeyboard = 0, heldTouch = 0, heldScript = 0, scriptFrames = 0, sentKeys = -1;
 
   function sendKeys() {
-    var k = heldKeyboard | heldTouch;
+    var k = heldKeyboard | heldTouch | heldScript;
     if (k !== sentKeys && Module._Web_SetKeys) {
       Module._Web_SetKeys(k);
       sentKeys = k;
@@ -91,10 +91,28 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     ctx.putImageData(image, 0, 0);
   };
 
+  // Testing aids (tools/web/drive.js): hold keys for an exact number of frames, and
+  // "turbo" (?turbo in the address, or Module.pwTurbo = true): run as fast as possible
+  // instead of at the GBA's speed.
+  Module.pwKeyBits = keyboard;
+  Module.pwHoldKeys = function (bits, frames) {
+    heldScript = bits; scriptFrames = frames; sendKeys();
+  };
+  if (/[?&]turbo\b/.test(location.search)) Module.pwTurbo = true;
+  var turboChannel = null, turboResolve = null;
+
   var nextFrameAt = 0;
   Module.pwFrameCount = 0;
   Module.pwWaitForNextFrame = function () {
     Module.pwFrameCount++;
+    if (scriptFrames && --scriptFrames === 0) { heldScript = 0; sendKeys(); }
+    if (Module.pwTurbo) {
+      if (!turboChannel) {
+        turboChannel = new MessageChannel();
+        turboChannel.port1.onmessage = function () { var r = turboResolve; turboResolve = null; r && r(); };
+      }
+      return new Promise(function (resolve) { turboResolve = resolve; turboChannel.port2.postMessage(0); });
+    }
     return new Promise(function (resolve) {
       function tick(now) {
         if (document.hidden) { requestAnimationFrame(tick); return; }

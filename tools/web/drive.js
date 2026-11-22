@@ -49,6 +49,13 @@ fs.mkdirSync(out, { recursive: true });
     await cdp.send('Debugger.resume').catch(() => {});
   });
   const pauseIfHung = () => cdp.send('Debugger.pause').catch((e) => console.log('[drive] pause failed: ' + e.message));
+  // TURBO=1: the game runs as fast as it can (keys are then held for exact frame counts).
+  const turbo = !!process.env.TURBO;
+  if (turbo) await page.addInitScript(() => { window.Module = window.Module || {}; Module.pwTurbo = true; });
+  const hold = async (key, frames) => {
+    if (turbo) { await page.evaluate(([k, f]) => Module.pwHoldKeys(Module.pwKeyBits[k], f), [key, frames]); await waitFrames(frames); }
+    else { await page.keyboard.down(key); await waitFrames(frames); await page.keyboard.up(key); }
+  };
   await page.goto(url);
 
   const timeout = (ms, v) => new Promise((r) => setTimeout(() => r(v), ms));
@@ -73,7 +80,7 @@ fs.mkdirSync(out, { recursive: true });
       const s = await state();
       if (s === 'hung') { await pauseIfHung(); await timeout(2000); throw new Error('page hung'); }
       if (s.frame >= s0.frame + n) return s;
-      await timeout(30);
+      await timeout(turbo ? 5 : 30);
     }
   };
 
@@ -106,10 +113,10 @@ fs.mkdirSync(out, { recursive: true });
         console.log(`vram ${a}: ${describe(await state())}`);
       } else if (op === 'press') {
         for (let i = 0; i < (b || 1); i++) {
-          await page.keyboard.down(a); await waitFrames(3); await page.keyboard.up(a); await waitFrames(c || 8);
+          await hold(a, 3); await waitFrames(c || 8);
         }
       } else if (op === 'hold') {
-        await page.keyboard.down(a); await waitFrames(b || 16); await page.keyboard.up(a); await waitFrames(4);
+        await hold(a, b || 16); await waitFrames(4);
       } else if (op === 'pressUntil') {
         // press `a` every 20 frames until a task/callback matching `b` runs (at most c frames)
         const max = c || 3000;
@@ -119,7 +126,7 @@ fs.mkdirSync(out, { recursive: true });
           const names = [table[s.cb2] || '', ...s.tasks.map((f) => table[f] || '')];
           if (names.some((n) => n.includes(b))) break;
           if (s.frame > s0.frame + max) { console.log(`pressUntil ${b}: gave up at ${describe(s)}`); break; }
-          await page.keyboard.down(a); await waitFrames(3); await page.keyboard.up(a); await waitFrames(17);
+          await hold(a, 3); await waitFrames(17);
         }
       } else if (op === 'until') {
         const max = b || 3000;
