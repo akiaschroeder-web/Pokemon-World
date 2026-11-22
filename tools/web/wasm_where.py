@@ -6,6 +6,7 @@ name and the instructions just before that offset, with the names of called func
 (the build links with --profiling-funcs so names are kept).
 
 usage: wasm_where.py index.wasm 0xOFFSET [count]
+       wasm_where.py index.wasm --table N...   (name the functions behind function pointers)
 """
 import struct
 import sys
@@ -37,10 +38,10 @@ def sleb(b, p):
 
 def main():
     b = open(sys.argv[1], "rb").read()
-    target = int(sys.argv[2], 0)
+    target = int(sys.argv[2], 0) if sys.argv[2] != '--table' else 0
     count = int(sys.argv[3]) if len(sys.argv) > 3 else 40
     p = 8
-    names, imports, code = {}, 0, None
+    names, imports, code, elems = {}, 0, None, None
     while p < len(b):
         sid = b[p]
         p += 1
@@ -67,6 +68,8 @@ def main():
                     q += 2
         elif sid == 10:
             code = start
+        elif sid == 9:
+            elems = start
         elif sid == 0:
             l, q = uleb(b, start)
             if b[q:q + l] == b"name":
@@ -84,6 +87,26 @@ def main():
                             q += l
                     q = nxt
         p = start + size
+    if sys.argv[2] == "--table":
+        # Function pointers (table indices) -> function names. Emscripten emits one active
+        # element segment starting at table index 1.
+        q = elems
+        n, q = uleb(b, q)
+        table = {}
+        for _ in range(n):
+            flags, q = uleb(b, q)
+            assert flags == 0, flags
+            assert b[q] == 0x41
+            off, q = sleb(b, q + 1)
+            q += 1  # end
+            cnt, q = uleb(b, q)
+            for k in range(cnt):
+                f, q = uleb(b, q)
+                table[off + k] = f
+        for a in sys.argv[3:]:
+            f = table.get(int(a))
+            print(f"{a}: {names.get(f, f)}")
+        return
     # find the function containing target
     q = code
     n, q = uleb(b, q)

@@ -76,6 +76,19 @@ EMSCRIPTEN_KEEPALIVE void *Web_GetFramebuffer(void)
     return sRgbaFrame;
 }
 
+// Debugging: print what the game is doing (main callbacks and running tasks).
+// Function pointers print as table indices; tools/web/wasm_where.py --table names them.
+#include "task.h"
+EMSCRIPTEN_KEEPALIVE void Web_DebugDump(void)
+{
+    u32 i;
+    printf("callback1=%u callback2=%u vblank=%u state=%u\n", (u32)(uintptr_t)gMain.callback1,
+           (u32)(uintptr_t)gMain.callback2, (u32)(uintptr_t)gMain.vblankCallback, gMain.state);
+    for (i = 0; i < NUM_TASKS; i++)
+        if (gTasks[i].isActive)
+            printf("task %u: func=%u data0=%d data1=%d\n", i, (u32)(uintptr_t)gTasks[i].func, gTasks[i].data[0], gTasks[i].data[1]);
+}
+
 EMSCRIPTEN_KEEPALIVE void *Web_GetAudio(void)
 {
     return NULL; // sound comes later
