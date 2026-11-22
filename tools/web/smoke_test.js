@@ -17,17 +17,26 @@ fs.mkdirSync(out, { recursive: true });
   page.on('pageerror', (e) => log.push(`[pageerror] ${e.message}`));
   await page.goto(url);
 
-  const frames = async () => page.evaluate(() => (window.Module && Module.pwFrameCount) || 0);
+  // If the game hangs the page's main thread, evaluate() never returns; give up after 3 s.
+  const frames = async () => Promise.race([
+    page.evaluate(() => (window.Module && Module.pwFrameCount) || 0),
+    new Promise((r) => setTimeout(() => r(-1), 3000)),
+  ]);
   const shot = async (name) => {
     const n = await frames();
     log.push(`--- ${name}: frame ${n}`);
-    await page.locator('#screen').screenshot({ path: path.join(out, `${name}.png`) });
+    await page.locator('#screen').screenshot({ path: path.join(out, `${name}.png`), timeout: 5000 });
   };
   const waitFrames = async (count, timeoutMs = 60000) => {
     const start = await frames();
     const t0 = Date.now();
-    while ((await frames()) < start + count && Date.now() - t0 < timeoutMs)
-      await page.waitForTimeout(100);
+    if (start < 0) throw new Error('the page is not responding (game stuck in a loop?)');
+    while (Date.now() - t0 < timeoutMs) {
+      const n = await frames();
+      if (n < 0) throw new Error('the page stopped responding (game stuck in a loop?)');
+      if (n >= start + count) break;
+      await new Promise((r) => setTimeout(r, 100));
+    }
   };
   const press = async (key, holdFrames = 6) => {
     await page.keyboard.down(key);

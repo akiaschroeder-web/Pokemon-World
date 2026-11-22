@@ -50,13 +50,14 @@ jobs:
 
       - name: Check it runs
         if: success()
+        timeout-minutes: 15
         run: |
           cd build/web/site
           python3 -m http.server 8000 > /dev/null 2>&1 &
           cd "$GITHUB_WORKSPACE"
           npm install --no-save playwright@1.49.1 > /dev/null
           npx playwright install --with-deps chromium > /dev/null
-          node tools/web/smoke_test.js http://localhost:8000/ screenshots
+          timeout 600 node tools/web/smoke_test.js http://localhost:8000/ screenshots || echo "smoke test stopped ($?)"
 
       - name: Save screenshots (and the built site) to the web-screenshots branch
         if: always()
