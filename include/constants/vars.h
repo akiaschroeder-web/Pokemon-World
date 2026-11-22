@@ -1,7 +1,11 @@
 #ifndef GUARD_CONSTANTS_VARS_H
 #define GUARD_CONSTANTS_VARS_H
 
+#if defined(FIRERED) || defined(LEAFGREEN)
 #include "constants/vars_frlg.h"
+#else
+#include "constants/vars_kanto.h" // Pokémon World: FireRed's vars, moved into Kanto's range
+#endif
 
 #define VARS_START 0x4000
 
@@ -279,6 +283,14 @@
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
+
+// Pokémon World: each added region's vars, stored in SaveBlock3 (gSaveBlock3Ptr->regionVars).
+#define REGION_VARS_START             0x4800
+#define PW_VARS_START                 (REGION_VARS_START+0x000) // 0x10 vars of our own
+#define KANTO_VARS_START              (REGION_VARS_START+0x010) // 0xE0 vars
+#define JOHTO_VARS_START              (REGION_VARS_START+0x0F0) // 0x100 vars
+#define REGION_VARS_END               (REGION_VARS_START+0x1EF)
+#define REGION_VARS_COUNT             (REGION_VARS_END - REGION_VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000
 // special vars

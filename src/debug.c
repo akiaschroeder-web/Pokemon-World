@@ -820,8 +820,34 @@ static const struct DebugMenuOption sDebugMenu_Actions_WarpSinnoh[] =
     { NULL }
 };
 
+static const struct DebugMenuOption sDebugMenu_Actions_WarpKanto[] =
+{
+    { COMPOUND_STRING("Pallet Town"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PALLET_TOWN) },
+    { COMPOUND_STRING("Viridian City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VIRIDIAN_CITY) },
+    { COMPOUND_STRING("Pewter City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PEWTER_CITY) },
+    { COMPOUND_STRING("Cerulean City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CERULEAN_CITY) },
+    { COMPOUND_STRING("Vermilion City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VERMILION_CITY) },
+    { COMPOUND_STRING("Lavender Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_LAVENDER_TOWN) },
+    { COMPOUND_STRING("Celadon City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CELADON_CITY) },
+    { COMPOUND_STRING("Fuchsia City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FUCHSIA_CITY) },
+    { COMPOUND_STRING("Saffron City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SAFFRON_CITY) },
+    { COMPOUND_STRING("Cinnabar Island"),   DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CINNABAR_ISLAND) },
+    { COMPOUND_STRING("Indigo Plateau"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_INDIGO_PLATEAU) },
+    { COMPOUND_STRING("Route 4"),           DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ROUTE4) },
+    { COMPOUND_STRING("Route 10"),          DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ROUTE10) },
+    { COMPOUND_STRING("One Island"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ONE_ISLAND) },
+    { COMPOUND_STRING("Two Island"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_TWO_ISLAND) },
+    { COMPOUND_STRING("Three Island"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_THREE_ISLAND) },
+    { COMPOUND_STRING("Four Island"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FOUR_ISLAND) },
+    { COMPOUND_STRING("Five Island"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FIVE_ISLAND) },
+    { COMPOUND_STRING("Six Island"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SIX_ISLAND) },
+    { COMPOUND_STRING("Seven Island"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SEVEN_ISLAND) },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_WarpRegion[] =
 {
+    { COMPOUND_STRING("Kanto…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpKanto },
     { COMPOUND_STRING("Hoenn…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpHoenn },
     { COMPOUND_STRING("Sinnoh…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpSinnoh },
     { NULL }
@@ -2505,7 +2531,7 @@ static void DebugAction_Trainers_SetRematch(u8 taskId)
 
     if (rematchId == -1)
     {
-        FlagToggle(TRAINER_FLAGS_START + sDebugMenuListData->data[0]);
+        FlagToggle(GetTrainerFlagId(sDebugMenuListData->data[0]));
         return;
     }
 
@@ -2516,7 +2542,7 @@ static void DebugAction_Trainers_SetRematch(u8 taskId)
 
         if (!HasTrainerBeenFought(gRematchTable[rematchId].trainerIds[i]))
         {
-            FlagToggle(TRAINER_FLAGS_START + gRematchTable[rematchId].trainerIds[i]);
+            FlagToggle(GetTrainerFlagId(gRematchTable[rematchId].trainerIds[i]));
             return;
         }
     }
@@ -2526,7 +2552,7 @@ static void DebugAction_Trainers_SetRematch(u8 taskId)
         if (gRematchTable[rematchId].trainerIds[i] == 0)
             break;
 
-        FlagToggle(TRAINER_FLAGS_START + gRematchTable[rematchId].trainerIds[i]);
+        FlagToggle(GetTrainerFlagId(gRematchTable[rematchId].trainerIds[i]));
     }
 }
 

@@ -42,7 +42,7 @@ const u16 gTilesetPalettes_SecretBaseRedCave[][16] =
 };
 
 
-#if !IS_FRLG
+#if 1 // Pokémon World: Emerald and FireRed tilesets are both built (was !IS_FRLG)
 
 const u32 gTilesetTiles_Petalburg[] = INCGFX_U32("data/tilesets/secondary/petalburg/tiles.png", ".4bpp.fastSmol", "-num_tiles 159 -Wnum_tiles");
 const u32 gTilesetTiles_PetalburgSn[] = INCGFX_U32("data/tilesets/secondary/petalburg_sn/tiles.png", ".4bpp.fastSmol", "-num_tiles 159 -Wnum_tiles");
@@ -2176,7 +2176,8 @@ const u16 gTilesetPalettes_Pasos[][16] =
 
 const u32 gTilesetTiles_Pasos[] = INCGFX_U32("data/tilesets/secondary/pasos/tiles.png", ".4bpp.fastSmol");
 
-#else
+#endif
+#if 1 // FRLG tilesets (Kanto)
 
 const u32 gTilesetTiles_Building_Frlg[] = INCGFX_U32("data/tilesets/primary/building_frlg/tiles.png", ".4bpp.smol");
 

@@ -166,8 +166,12 @@ u16 *GetVarPointer(u16 id)
 {
     if (id < VARS_START)
         return NULL;
-    else if (id < SPECIAL_VARS_START)
+    else if (id <= VARS_END)
         return &gSaveBlock1Ptr->vars[id - VARS_START];
+    else if (id >= REGION_VARS_START && id <= REGION_VARS_END) // Pokémon World
+        return &gSaveBlock3Ptr->regionVars[id - REGION_VARS_START];
+    else if (id < SPECIAL_VARS_START)
+        return NULL;
 #if TESTING
     else if (id >= TESTING_VARS_START)
         return &sTestVars[id - TESTING_VARS_START];
@@ -210,8 +214,12 @@ u8 *GetFlagPointer(u16 id)
 {
     if (id == 0)
         return NULL;
-    else if (id < SPECIAL_FLAGS_START)
+    else if (id < FLAGS_COUNT)
         return &gSaveBlock1Ptr->flags[id / 8];
+    else if (id >= REGION_FLAGS_START && id <= REGION_FLAGS_END) // Pokémon World
+        return &gSaveBlock3Ptr->regionFlags[(id - REGION_FLAGS_START) / 8];
+    else if (id < SPECIAL_FLAGS_START)
+        return NULL;
 #if TESTING
     else if (id >= TESTING_FLAGS_START)
         return &sTestFlags[(id - TESTING_FLAGS_START) / 8];

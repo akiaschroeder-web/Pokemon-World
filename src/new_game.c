@@ -212,10 +212,9 @@ void NewGameInitData(void)
     UpdateDailySeed();
     PW_ApplyPendingChoices(); // Pokémon World: store the region and characters chosen before the intro
     WarpToTruck();
-    if (IS_FRLG)
-        RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
-    else
+    if (!IS_FRLG)
         RunScriptImmediately(EventScript_ResetAllMapFlags);
+    RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg); // Pokémon World: Kanto's starting flags too
     StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();

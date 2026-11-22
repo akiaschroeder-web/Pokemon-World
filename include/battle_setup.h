@@ -107,6 +107,7 @@ bool32 GetTrainerFlagFromScriptPointer(const u8 *data);
 bool32 GetRematchFromScriptPointer(const u8 *data);
 void SetTrainerFacingDirection(void);
 bool8 GetTrainerFlag(void);
+u16 GetTrainerFlagId(u16 trainerId);
 bool8 HasTrainerBeenFought(u16 trainerId);
 void SetTrainerFlag(u16 trainerId);
 void ClearTrainerFlag(u16 trainerId);

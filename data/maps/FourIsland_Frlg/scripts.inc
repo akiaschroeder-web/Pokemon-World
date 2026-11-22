@@ -127,7 +127,7 @@ FourIsland_EventScript_CheckOnTwoMons::
 FourIsland_EventScript_OldWoman::
 	lock
 	faceplayer
-	goto_if_set FLAG_IS_CHAMPION, FourIsland_EventScript_OldWomanLoreleiLeft
+	goto_if_set FLAG_KT_IS_CHAMPION, FourIsland_EventScript_OldWomanLoreleiLeft
 	msgbox FourIsland_Text_LoreleiHasReturned
 	release
 	end

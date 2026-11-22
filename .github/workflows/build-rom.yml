@@ -30,6 +30,9 @@ jobs:
           GAME_VERSION: EMERALD
         run: make -j$(nproc) -O all
 
+      - name: Show how much of the 32 MB ROM is used
+        run: arm-none-eabi-size pokeemerald.elf || true
+
       - name: Name the ROM after the branch and commit
         run: |
           branch="${GITHUB_REF_NAME//\//-}"

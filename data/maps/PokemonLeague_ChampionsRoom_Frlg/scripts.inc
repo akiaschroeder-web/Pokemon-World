@@ -7,9 +7,9 @@ PokemonLeague_ChampionsRoom_Frlg_MapScripts::
 PokemonLeague_ChampionsRoom_OnResume::
 	setvar VAR_0x8004, 4
 	call PokemonLeague_EventScript_DoLightingEffect
-	call_if_eq VAR_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerSquirtle
-	call_if_eq VAR_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerCharmander
+	call_if_eq VAR_KT_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerSquirtle
+	call_if_eq VAR_KT_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerBulbasaur
+	call_if_eq VAR_KT_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerCharmander
 	end
 
 PokemonLeague_ChampionsRoom_EventScript_CheckStopTriggerSquirtle::
@@ -50,13 +50,13 @@ PokemonLeague_ChampionsRoom_EventScript_EnterRoom::
 	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerEnter
 	waitmovement 0
 	delay 20
-	call_if_unset FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_Intro
-	call_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_RematchIntro
+	call_if_unset FLAG_KT_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_Intro
+	call_if_set FLAG_KT_SYS_GAME_CLEAR, PokemonLeague_ChampionsRoom_EventScript_RematchIntro
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
 	savebgm MUS_VICTORY_GYM_LEADER
-	call_if_unset FLAG_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_Battle
-	call_if_set FLAG_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_Rematch
+	call_if_unset FLAG_KT_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_Battle
+	call_if_set FLAG_KT_IS_CHAMPION, PokemonLeague_ChampionsRoom_EventScript_Rematch
 	setflag FLAG_TEMP_4
 	clearflag FLAG_TEMP_5
 	setflag FLAG_DEFEATED_CHAMP
@@ -100,15 +100,15 @@ PokemonLeague_ChampionsRoom_EventScript_QuestLogEnd::
 	end
 
 PokemonLeague_ChampionsRoom_EventScript_Battle::
-	call_if_eq VAR_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_BattleSquirtle
-	call_if_eq VAR_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_BattleBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_BattleCharmander
+	call_if_eq VAR_KT_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_BattleSquirtle
+	call_if_eq VAR_KT_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_BattleBulbasaur
+	call_if_eq VAR_KT_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_BattleCharmander
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_Rematch::
-	call_if_eq VAR_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_RematchSquirtle
-	call_if_eq VAR_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_RematchBulbasaur
-	call_if_eq VAR_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_RematchCharmander
+	call_if_eq VAR_KT_STARTER_MON, 2, PokemonLeague_ChampionsRoom_EventScript_RematchSquirtle
+	call_if_eq VAR_KT_STARTER_MON, 1, PokemonLeague_ChampionsRoom_EventScript_RematchBulbasaur
+	call_if_eq VAR_KT_STARTER_MON, 0, PokemonLeague_ChampionsRoom_EventScript_RematchCharmander
 	return
 
 PokemonLeague_ChampionsRoom_EventScript_Intro::

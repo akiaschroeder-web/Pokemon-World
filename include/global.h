@@ -269,6 +269,9 @@ struct SaveBlock3
     u8 dexNavSearchLevels[NUM_SPECIES];
 #endif
     u8 dexNavChain;
+    // Pokémon World: flags and vars of the regions added after Hoenn and Sinnoh
+    u8 regionFlags[NUM_REGION_FLAG_BYTES];
+    u16 regionVars[REGION_VARS_COUNT];
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

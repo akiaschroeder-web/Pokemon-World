@@ -28,7 +28,7 @@ const struct Tileset gTileset_SecretBaseRedCave =
 const struct Tileset *const gTilesetPointer_SecretBase = &gTileset_SecretBase;
 const struct Tileset *const gTilesetPointer_SecretBaseRedCave = &gTileset_SecretBaseRedCave;
 
-#if !IS_FRLG
+#if 1 // Pokémon World: Emerald and FireRed tilesets are both built (was !IS_FRLG)
 
 const struct Tileset gTileset_General =
 {
@@ -1151,7 +1151,8 @@ const struct Tileset gTileset_Pasos =
     .metatileAttributes = gMetatileAttributes_Pasos,
     .callback = NULL,
 };
-#else
+#endif
+#if 1 // FRLG tilesets (Kanto)
 
 // FRLG tilesets
 const struct Tileset gTileset_BuildingFrlg =

@@ -2,7 +2,11 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #include "constants/battle_partner.h"
+#if defined(FIRERED) || defined(LEAFGREEN)
 #include "constants/opponents_frlg.h"
+#else
+#include "constants/opponents_kanto.h" // Pokémon World: FireRed's trainers, after Hoenn's and Sinnoh's
+#endif
 
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1
@@ -1554,8 +1558,12 @@
 #define TRAINER_SN_ALISON_1      1528
 #define TRAINER_SN_ESTEBAN_1     1529
 
-#define TRAINERS_COUNT_EMERALD     1530
-#define MAX_TRAINERS_COUNT_EMERALD 1536
+// Pokémon World: Kanto's trainers (FireRed's, in the same order) come next.
+#define KANTO_TRAINERS_START       1530
+#define KANTO_TRAINERS_END         (KANTO_TRAINERS_START + TRAINERS_COUNT_FRLG - 2)
+
+#define TRAINERS_COUNT_EMERALD     (KANTO_TRAINERS_END + 1)
+#define MAX_TRAINERS_COUNT_EMERALD 3072
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG

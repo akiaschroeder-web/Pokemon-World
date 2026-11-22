@@ -18,14 +18,14 @@ BirthIsland_Exterior_Frlg_OnTransition::
 	end
 
 BirthIsland_Exterior_Frlg_EventScript_HideDeoxysAndPuzzle::
-	setflag FLAG_HIDE_DEOXYS
+	setflag FLAG_KT_HIDE_DEOXYS
 	setflag FLAG_HIDE_BIRTH_ISLAND_METEORITE
 	return
 
 BirthIsland_Exterior_Frlg_EventScript_TryShowDeoxysPuzzle::
 	goto_if_set FLAG_DEOXYS_FLEW_AWAY, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_BIRTH_ISLAND_METEORITE
-	clearflag FLAG_DEOXYS_ROCK_COMPLETE
+	clearflag FLAG_KT_DEOXYS_ROCK_COMPLETE
 	return
 
 BirthIsland_Exterior_Frlg_OnResume::

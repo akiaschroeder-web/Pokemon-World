@@ -754,8 +754,8 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
         }
         string map_name = json_to_string(map_data, "name");
 
-        if ((version == "emerald" && region != "REGION_HOENN")
-         || (version == "firered" && region != "REGION_KANTO")) {
+        // Pokémon World: the Emerald build has every region's maps.
+        if (version == "firered" && region != "REGION_KANTO") {
             invalid_maps.push_back(map_name);
         }
     }
@@ -791,8 +791,9 @@ static bool frlg_layout_in_emerald(const Json &layout) {
             if (!line.empty() && line[0] != '#') ids.insert(line);
         }
     }
-    return version == "emerald" && json_to_string(layout, "layout_version", true) == "frlg"
-        && ids.count(json_to_string(layout, "id", true)) > 0;
+    // Pokémon World: Kanto is part of the Emerald build, so all FRLG layouts are too.
+    (void)ids;
+    return version == "emerald" && json_to_string(layout, "layout_version", true) == "frlg";
 }
 
 string generate_layout_headers_text(Json layouts_data) {

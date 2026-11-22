@@ -4,7 +4,7 @@ const u16 gMetatileAttributes_SecretBasePrimary[] = INCBIN_U16("data/tilesets/pr
 const u16 gMetatiles_SecretBaseSecondary[] = INCBIN_U16("data/tilesets/secondary/secret_base/metatiles.bin");
 const u16 gMetatileAttributes_SecretBaseSecondary[] = INCBIN_U16("data/tilesets/secondary/secret_base/metatile_attributes.bin");
 
-#if !IS_FRLG
+#if 1 // Pokémon World: Emerald and FireRed tilesets are both built (was !IS_FRLG)
 
 const u16 gMetatiles_General[] = INCBIN_U16("data/tilesets/primary/general/metatiles.bin");
 const u16 gMetatiles_GeneralSn[] = INCBIN_U16("data/tilesets/primary/general_sn/metatiles.bin");
@@ -277,7 +277,8 @@ const u16 gMetatileAttributes_Valor[] = INCBIN_U16("data/tilesets/secondary/valo
 const u16 gMetatiles_Pasos[] = INCBIN_U16("data/tilesets/secondary/pasos/metatiles.bin");
 const u16 gMetatileAttributes_Pasos[] = INCBIN_U16("data/tilesets/secondary/pasos/metatile_attributes.bin");
 
-#else
+#endif
+#if 1 // FRLG tilesets (Kanto)
 
 const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
 const u16 gMetatileAttributes_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatile_attributes.bin");
