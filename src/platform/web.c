@@ -25,8 +25,6 @@ void AgbMain(void);
 
 #define FLASH_SIZE 0x20000
 
-#include "malloc.h"
-u8 gHeap[HEAP_SIZE] ALIGNED(4); // on the GBA this sits in EWRAM, placed by the linker script
 
 static u16 sGbaFrame[DISPLAY_WIDTH * DISPLAY_HEIGHT];
 static u32 sRgbaFrame[DISPLAY_WIDTH * DISPLAY_HEIGHT];

@@ -67,7 +67,7 @@ jobs:
           rm -rf /tmp/shots && cp -r screenshots /tmp/shots
           git checkout --orphan shots-tmp
           git rm -rfq . || true
-          cp -r /tmp/shots/* .
+          cp -r /tmp/shots/. .
           cp build.log . 2>/dev/null || true
           git add -A
           git commit -qm "Screenshots of ${sha}"
