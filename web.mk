@@ -23,7 +23,7 @@ WEB_DEFS := -DPORTABLE -DPLATFORM_WEB -DNONMATCHING -DUBFIX
 WEB_CFLAGS := $(WEB_OPT) -std=gnu17 $(WEB_DEFS) \
 	-Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wno-unknown-attributes -Wno-ignored-attributes \
 	-Wno-unused-command-line-argument -Wno-gnu-designator -Wno-initializer-overrides \
-	-Wno-unknown-pragmas -Wno-pointer-sign -Wno-incompatible-pointer-types-discards-qualifiers \
+	-Wno-unknown-pragmas -Wno-gnu-alignof-expression -Wno-null-dereference -Wno-pointer-sign -Wno-incompatible-pointer-types-discards-qualifiers \
 	-Wno-constant-conversion -Wno-tautological-constant-out-of-range-compare -Wno-array-bounds \
 	-Wno-builtin-declaration-mismatch -Wno-incompatible-library-redeclaration \
 	-Wno-error=incompatible-function-pointer-types -fno-strict-aliasing -fwrapv -funsigned-char

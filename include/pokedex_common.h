@@ -2,6 +2,9 @@
 #define GUARD_POKEDEX_COMMON_H
 
 // Common Pokédex Definitions and Functions
+#ifdef PAGE_SIZE
+#undef PAGE_SIZE // the C library's memory page size (web/PC build); unrelated to this one
+#endif
 enum
 {
     PAGE_MAIN,
