@@ -192,8 +192,14 @@ static void InitMainCallbacks(void)
 
 static void CallCallbacks(void)
 {
+#ifdef PLATFORM_WEB
+    WEB_TRACE("cb1", gMain.callback1);
+#endif
     if (gMain.callback1)
         gMain.callback1();
+#ifdef PLATFORM_WEB
+    WEB_TRACE("cb2", gMain.callback2);
+#endif
 
     if (gMain.callback2)
         gMain.callback2();
@@ -361,6 +367,9 @@ static void VBlankIntr(void)
     if (gTrainerHillVBlankCounter && *gTrainerHillVBlankCounter < 0xFFFFFFFF)
         (*gTrainerHillVBlankCounter)++;
 
+#ifdef PLATFORM_WEB
+    WEB_TRACE("vblank", gMain.vblankCallback);
+#endif
     if (gMain.vblankCallback)
         gMain.vblankCallback();
 

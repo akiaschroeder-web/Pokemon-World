@@ -297,6 +297,9 @@ void AnimateSprites(void)
 
         if (sprite->inUse)
         {
+#ifdef PLATFORM_WEB
+            WEB_TRACE("sprite", sprite->callback);
+#endif
             sprite->callback(sprite);
 
             if (sprite->inUse)

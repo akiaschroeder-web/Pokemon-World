@@ -40,6 +40,12 @@
 #ifdef PORTABLE
 #include <stdio.h>
 #define DBGPRINTF(...) printf(__VA_ARGS__)
+#ifdef PLATFORM_WEB
+// Web build, debugging: when Web_SetTrace(1) has been called, print each callback
+// before it runs ("[t] kind func"; tools/web/drive.js names the function pointers).
+extern unsigned int gWebTrace;
+#define WEB_TRACE(kind, fn) do { if (gWebTrace) printf("[t] %s %u\n", kind, (unsigned)(uintptr_t)(fn)); } while (0)
+#endif
 #else
 #define DBGPRINTF(...)
 #endif

@@ -115,6 +115,9 @@ void RunTasks(void)
     {
         do
         {
+#ifdef PLATFORM_WEB
+            WEB_TRACE("task", gTasks[taskId].func);
+#endif
             gTasks[taskId].func(taskId);
             taskId = gTasks[taskId].next;
         } while (taskId != TAIL_SENTINEL);

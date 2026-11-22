@@ -10,7 +10,8 @@
 //   ["pressUntil", "KeyZ", "NameFragment", maxFrames]  keep pressing until it matches
 //   ["wait", frames]
 //   ["shot", "name"]                       screenshot of the game screen
-//   ["call", "Web_DebugWindows"]           call an exported debugging function
+//   ["call", "Web_SetTrace", 1]            call an exported debugging function (one number argument)
+//   ["trace"]                              log callbacks and tasks every frame
 //   ["state"]                              print the running tasks and callbacks
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -22,10 +23,32 @@ const steps = JSON.parse(stepsJson);
 fs.mkdirSync(out, { recursive: true });
 
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ dumpio: !!process.env.DUMPIO, args: process.env.JSFLAGS ? ['--js-flags=' + process.env.JSFLAGS] : [] });
   const page = await browser.newPage({ viewport: { width: 800, height: 700 } });
   page.on('pageerror', (e) => console.log(`[pageerror] ${e.message}\n${e.stack}`));
-  page.on('console', (m) => { if (!m.text().startsWith('[AgbMain]')) console.log(`[console] ${m.text()}`); });
+  page.on('console', (m) => {
+    let t = m.text();
+    if (t.startsWith('[AgbMain]')) return;
+    if (t.startsWith('[t] ')) t = t.replace(/ (\d+)$/, (_, n) => ' ' + (table[n] || n)); // WEB_TRACE lines
+    console.log(`[console] ${t}`);
+  });
+  // Keep a flood of messages (e.g. a failing assert in a loop) from taking the page down:
+  // pass on the first 300, then count the rest.
+  await page.addInitScript((MAXLOG) => {
+    const log = console.log.bind(console), err = console.error.bind(console);
+    let n = 0;
+    const wrap = (f) => (...a) => { if (++n <= MAXLOG) f(...a); else if (n % 100000 === 0) f(`[drive] ${n} messages`); };
+    console.log = wrap(log); console.error = wrap(err); console.warn = wrap(err);
+  }, +(process.env.MAXLOG || 300));
+  // If the game stops handing frames back (a loop waiting on something that only the
+  // V-blank interrupt would change), pause it in the debugger and print where it is.
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Debugger.enable');
+  cdp.on('Debugger.paused', async (ev) => {
+    console.log('[drive] paused in:\n' + ev.callFrames.slice(0, 25).map((f) => '  ' + f.functionName).join('\n'));
+    await cdp.send('Debugger.resume').catch(() => {});
+  });
+  const pauseIfHung = () => cdp.send('Debugger.pause').catch((e) => console.log('[drive] pause failed: ' + e.message));
   await page.goto(url);
 
   const timeout = (ms, v) => new Promise((r) => setTimeout(() => r(v), ms));
@@ -38,17 +61,17 @@ fs.mkdirSync(out, { recursive: true });
       const base = tasks + i * 40;
       if (HEAPU8[base + 4]) t.push(HEAPU32[base >> 2]);
     }
-    return { frame: Module.pwFrameCount || 0, cb1: HEAPU32[main], cb2: HEAPU32[main + 1], tasks: t };
+    return { mem: HEAPU8.length >> 20, frame: Module.pwFrameCount || 0, cb1: HEAPU32[main], cb2: HEAPU32[main + 1], tasks: t };
   }), timeout(3000, 'hung')]);
   const describe = (s) => s && s !== 'hung'
-    ? `frame ${s.frame} cb2=${table[s.cb2] || s.cb2} cb1=${table[s.cb1] || s.cb1} tasks=[${s.tasks.map((f) => table[f] || f).join(', ')}]`
+    ? `frame ${s.frame} mem ${s.mem}MB cb2=${table[s.cb2] || s.cb2} cb1=${table[s.cb1] || s.cb1} tasks=[${s.tasks.map((f) => table[f] || f).join(', ')}]`
     : String(s);
   const waitFrames = async (n) => {
     const s0 = await state();
     if (!s0 || s0 === 'hung') throw new Error('page not running: ' + describe(s0));
     for (;;) {
       const s = await state();
-      if (s === 'hung') throw new Error('page hung');
+      if (s === 'hung') { await pauseIfHung(); await timeout(2000); throw new Error('page hung'); }
       if (s.frame >= s0.frame + n) return s;
       await timeout(30);
     }
@@ -59,7 +82,16 @@ fs.mkdirSync(out, { recursive: true });
     for (const st of steps) {
       const [op, a, b, c] = st;
       if (op === 'wait') await waitFrames(a);
-      else if (op === 'call') await page.evaluate((f) => Module['_' + f](), a); // e.g. Web_DebugWindows (prints)
+      else if (op === 'call') await page.evaluate(([f, x]) => Module['_' + f](x), [a, b]); // e.g. Web_DebugWindows (prints)
+      else if (op === 'trace') await page.evaluate((tbl) => { // log callbacks and tasks every frame from now on
+        const w = Module.pwWaitForNextFrame;
+        Module.pwWaitForNextFrame = function () {
+          const a = Module._Web_DebugAddresses() >> 2, main = HEAPU32[a + 4] >> 2, tasks = HEAPU32[a + 5], t = [];
+          for (let i = 0; i < 16; i++) if (HEAPU8[tasks + i * 40 + 4]) t.push(tbl[HEAPU32[(tasks + i * 40) >> 2]]);
+          console.log(`[trace] ${Module.pwFrameCount} cb2=${tbl[HEAPU32[main + 1]]} cb1=${tbl[HEAPU32[main]]} vb=${tbl[HEAPU32[main + 2]]} state=${HEAPU8[(main << 2) + 0x438] ?? ''} ${t.join(',')}`);
+          return w();
+        };
+      }, table);
       else if (op === 'state') console.log(describe(await state()));
       else if (op === 'shot') {
         await page.locator('#screen').screenshot({ path: path.join(out, `${a}.png`), timeout: 5000 });

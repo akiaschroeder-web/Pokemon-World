@@ -104,6 +104,12 @@ EMSCRIPTEN_KEEPALIVE const u32 *Web_DebugAddresses(void)
     return sAddrs;
 }
 
+unsigned int gWebTrace;
+EMSCRIPTEN_KEEPALIVE void Web_SetTrace(int on)
+{
+    gWebTrace = on;
+}
+
 // Debugging: windows, BG tilemap buffers and the heap's blocks.
 #include "window.h"
 #include "bg.h"
