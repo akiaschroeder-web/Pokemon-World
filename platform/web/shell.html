@@ -38,7 +38,7 @@
   [data-key="L"] { left: 16px; } [data-key="R"] { right: 16px; }
   [data-key="SELECT"], [data-key="START"] { bottom: 18px; width: 74px; height: 28px; border-radius: 14px; font-size: 12px; }
   [data-key="SELECT"] { left: calc(50% - 84px); } [data-key="START"] { left: calc(50% + 10px); }
-  #menu { position: absolute; right: 8px; top: 8px; z-index: 5; }
+  #menu { margin: 4px 0; z-index: 5; }
   #menu button, #menu label { background: var(--btn); color: var(--text); border: 0; border-radius: 8px;
     padding: 6px 10px; font: inherit; font-size: 12px; margin-left: 4px; cursor: pointer; }
   #menu input { display: none; }
@@ -60,12 +60,12 @@
 </head>
 <body>
 <div id="app">
+  <div id="screen-wrap"><canvas id="screen" width="240" height="160"></canvas></div>
+  <div id="status">Loading…</div>
   <div id="menu">
     <button onclick="Module.pwExportSave()">Export save</button>
     <label>Import save<input type="file" accept=".sav,application/octet-stream" onchange="this.files[0] && confirm('Replace your current save with this file?') && Module.pwImportSave(this.files[0])"></label>
   </div>
-  <div id="screen-wrap"><canvas id="screen" width="240" height="160"></canvas></div>
-  <div id="status">Loading…</div>
   <div class="pad">
     <div class="btn" data-key="L">L</div><div class="btn" data-key="R">R</div>
     <div class="dpad">
