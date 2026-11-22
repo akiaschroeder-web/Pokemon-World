@@ -669,3 +669,21 @@ gSpecials::
 	def_special UpdateTrainerCardPhotoIcons
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
+
+@ Pokémon World: stand-ins for Heart & Soul specials (src/hns_stubs.c, TODO)
+	def_special HnsStub_CheckAerodactyl
+	def_special HnsStub_CheckCelebi
+	def_special HnsStub_CheckHooh
+	def_special HnsStub_CheckKabuto
+	def_special HnsStub_CheckOmanyte
+	def_special HnsStub_CheckTogepi
+	def_special HnsStub_DoSlidingPuzzle
+	def_special HnsStub_EnterBugContestMode
+	def_special HnsStub_GetBattleFrontierTutorMoveIndex
+	def_special HnsStub_GetDaycareCost
+	def_special HnsStub_GetMaxPartySize
+	def_special HnsStub_HaircutBrother1
+	def_special HnsStub_NameRival
+	def_special HnsStub_ShowBugContestChosenMon
+	def_special HnsStub_SwitchMonAbility
+	def_special HnsStub_ToggleShinyColors

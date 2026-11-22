@@ -1684,6 +1684,8 @@
 #define REGION_FLAGS_END                        (REGION_TRAINER_FLAGS_START+REGION_TRAINER_FLAGS_COUNT-1) // 0x1EFF
 #define NUM_REGION_FLAG_BYTES                   ((REGION_FLAGS_END - REGION_FLAGS_START + 1) / 8)
 
+#include "constants/flags_hns.h" // Pokémon World: Heart & Soul's Johto and later-Kanto flags (generated)
+
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000
 #define FLAG_HIDE_MAP_NAME_POPUP                (SPECIAL_FLAGS_START + 0x0)

@@ -404,6 +404,8 @@ static const u8 sDoorAnimTiles_SootopolisSn[] = INCGFX_U8("graphics/door_anims/s
 static const u8 sDoorAnimTiles_SootopolisPeakedRoofSn[] = INCGFX_U8("graphics/door_anims/sinnoh/hoenn_edits/sootopolis_peaked_roof.png", ".4bpp");
 static const u8 sDoorAnimTiles_VerdanturfSn[] = INCGFX_U8("graphics/door_anims/sinnoh/hoenn_edits/verdanturf.png", ".4bpp");
 
+#include "data/field_door_hns_gfx.h" // Pokémon World: Heart & Soul's door graphics (generated)
+
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
 #if !IS_FRLG
@@ -1428,6 +1430,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_BattleFrontier
     },
 #endif // !IS_FRLG
+#include "data/field_door_hns_table.h" // Pokémon World: Heart & Soul's doors (generated)
     {},
 };
 

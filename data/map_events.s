@@ -14,6 +14,7 @@
 #include "constants/berry.h"
 #include "constants/species.h"
 #include "constants/apricorn_tree.h"
+#include "constants/hns_compat.h" // Pokémon World: Heart & Soul stand-ins (generated)
 	.include "asm/macros.inc"
 	.include "constants/constants.inc"
 

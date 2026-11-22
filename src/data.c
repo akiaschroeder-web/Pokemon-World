@@ -238,6 +238,7 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 #else
 #include "data/trainers.h"
 #include "data/trainers_frlg.h" // Pokémon World: Kanto's trainers, from KANTO_TRAINERS_START
+#include "data/trainers_hns.h"  // Pokémon World: Heart & Soul's trainers, from JOHTO_TRAINERS_START
 #endif
 };
 #endif

@@ -119,7 +119,7 @@ struct MapLayout
     bool8 isFrlg;
     u8 borderWidth;
     u8 borderHeight;
-    u8 padding;
+    bool8 isHns; // Pokémon World: Heart & Soul layout (FireRed-sized primary tileset, Emerald attributes and border)
 };
 
 struct BackupMapLayout

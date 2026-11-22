@@ -6,6 +6,7 @@
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
+#include "constants/hns_compat.h" // Pokémon World: Heart & Soul stand-ins (generated)
 	.include "asm/macros.inc"
 	.include "constants/constants.inc"
 

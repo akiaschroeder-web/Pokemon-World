@@ -84,4 +84,6 @@ extern const struct Tileset gTileset_SSAnne;
 extern const struct Tileset gTileset_SeaCottage;
 extern const struct Tileset gTileset_TrainerTower;
 
+#include "tilesets_hns.h" // Pokémon World: Heart & Soul tilesets (generated)
+
 #endif //GUARD_tilesets_H

@@ -771,7 +771,7 @@ static const u8 *const sDebugMenu_Actions_BagUse_Options[] =
 
 // Pokémon World: warp straight to a town in any region.
 // Each entry warps to that town's heal location (in front of its Pokémon Center).
-// Kanto isn't listed yet: its maps are only built into the FireRed version of the ROM.
+// Kanto is FireRed's; "Kanto (3 years later)" and Johto are Heart & Soul's (*_HNS).
 #define DEBUG_HEAL_LOCATION(id) ((const void *)(uintptr_t)(id))
 
 static const struct DebugMenuOption sDebugMenu_Actions_WarpHoenn[] =
@@ -845,9 +845,49 @@ static const struct DebugMenuOption sDebugMenu_Actions_WarpKanto[] =
     { NULL }
 };
 
+// Heart & Soul's Johto
+static const struct DebugMenuOption sDebugMenu_Actions_WarpJohto[] =
+{
+    { COMPOUND_STRING("New Bark Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_NEW_BARK_TOWN_HNS) },
+    { COMPOUND_STRING("Cherrygrove City"),  DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CHERRYGROVE_CITY_HNS) },
+    { COMPOUND_STRING("Violet City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VIOLET_CITY_HNS) },
+    { COMPOUND_STRING("Azalea Town"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_AZALEA_TOWN_HNS) },
+    { COMPOUND_STRING("Goldenrod City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_GOLDENROD_CITY_HNS) },
+    { COMPOUND_STRING("Ecruteak City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ECRUTEAK_CITY_HNS) },
+    { COMPOUND_STRING("Olivine City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_OLIVINE_CITY_HNS) },
+    { COMPOUND_STRING("Cianwood City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CIANWOOD_CITY_HNS) },
+    { COMPOUND_STRING("Safari Zone Gate"),  DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SAFARI_ZONE_GATE_HNS) },
+    { COMPOUND_STRING("Mahogany Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_MAHOGANYTOWN_HNS) },
+    { COMPOUND_STRING("Lake of Rage"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_LAKE_OF_RAGE_HNS) },
+    { COMPOUND_STRING("Blackthorn City"),   DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_BLACKTHORN_CITY_HNS) },
+    { COMPOUND_STRING("Route 32"),          DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ROUTE_32_HNS) },
+    { COMPOUND_STRING("Route 26"),          DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_ROUTE26NORTH_HNS) },
+    { COMPOUND_STRING("Mt. Silver"),        DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_MT_SILVER_HNS) },
+    { NULL }
+};
+
+// Heart & Soul's Gold/Silver-era Kanto
+static const struct DebugMenuOption sDebugMenu_Actions_WarpKantoLater[] =
+{
+    { COMPOUND_STRING("Pallet Town"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PALLET_TOWN_HNS) },
+    { COMPOUND_STRING("Viridian City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VIRIDIAN_CITY_HNS) },
+    { COMPOUND_STRING("Pewter City"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_PEWTER_CITY_HNS) },
+    { COMPOUND_STRING("Cerulean City"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CERULEAN_CITY_HNS) },
+    { COMPOUND_STRING("Vermilion City"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_VERMILION_CITY_HNS) },
+    { COMPOUND_STRING("Lavender Town"),     DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_LAVENDER_TOWN_HNS) },
+    { COMPOUND_STRING("Celadon City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CELADON_CITY_HNS) },
+    { COMPOUND_STRING("Saffron City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_SAFFRON_CITY_HNS) },
+    { COMPOUND_STRING("Fuchsia City"),      DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_FUCHSIA_CITY_HNS) },
+    { COMPOUND_STRING("Cinnabar Island"),   DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_CINNABAR_ISLAND_HNS) },
+    { COMPOUND_STRING("Indigo Plateau"),    DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_INDIGO_PLATEAU_HNS) },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_WarpRegion[] =
 {
     { COMPOUND_STRING("Kanto…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpKanto },
+    { COMPOUND_STRING("Kanto (3 yrs later)…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpKantoLater },
+    { COMPOUND_STRING("Johto…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpJohto },
     { COMPOUND_STRING("Hoenn…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpHoenn },
     { COMPOUND_STRING("Sinnoh…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpSinnoh },
     { NULL }

@@ -21,6 +21,13 @@ Used with permission of the Heart & Soul team — https://github.com/PokemonHnS-
 
 Also used: Johto badge artwork (Badge Case).
 
+Brought over from Heart & Soul so far (converted by `tools/pokemon_world/import_hns.py`, files marked `_Hns`/`_hns`):
+- Johto and Gold/Silver-era ("3 years later") Kanto maps: 418 maps with their layouts, map scripts and texts, events, connections and warps
+- 98 tilesets (Johto/Kanto primaries and secondaries) with their palettes, metatiles and animation frames, and the Johto general tileset animation
+- Door animations, region map sections and heal locations for Johto and later Kanto
+- Trainer parties of the trainers on those maps (classes/pics Heart & Soul made itself are not brought over yet)
+- Shared scripts and texts the maps use (Bug-Catching Contest, Battle Frontier Lounge nurse, and others)
+
 Assets Heart & Soul credits in turn:
 - Engine base: **Modern Emerald — Resetes12**
 - Sprites: **Cesare_CBass**, **AveonTrainer**, **PurpleZaffre**, **BatimaTheBat**

@@ -41,4 +41,6 @@ void InitTilesetAnim_EternaGym(void);
 void InitTilesetAnim_SilphCo(void);
 void InitTilesetAnim_MtEmber(void);
 
+void InitTilesetAnim_JohtoGeneral_Hns(void); // Pokémon World: Heart & Soul
+
 #endif // GUARD_TILESET_ANIMS_H

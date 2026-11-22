@@ -407,19 +407,21 @@ u8 MapGridGetCollisionAt(s32 x, s32 y)
     return UNPACK_COLLISION(block);
 }
 
+// Pokémon World: Heart & Soul's layouts (isHns) have FireRed-sized primary tilesets
+// (640 tiles and metatiles, 7 palettes) but Emerald's metatile attributes and border.
 u32 GetNumTilesInPrimary(struct MapLayout const *mapLayout)
 {
-    return mapLayout->isFrlg ? NUM_TILES_IN_PRIMARY_FRLG : NUM_TILES_IN_PRIMARY;
+    return (mapLayout->isFrlg || mapLayout->isHns) ? NUM_TILES_IN_PRIMARY_FRLG : NUM_TILES_IN_PRIMARY;
 }
 
 u32 GetNumMetatilesInPrimary(struct MapLayout const *mapLayout)
 {
-    return mapLayout->isFrlg ? NUM_METATILES_IN_PRIMARY_FRLG : NUM_METATILES_IN_PRIMARY;
+    return (mapLayout->isFrlg || mapLayout->isHns) ? NUM_METATILES_IN_PRIMARY_FRLG : NUM_METATILES_IN_PRIMARY;
 }
 
 u32 GetNumPalsInPrimary(struct MapLayout const *mapLayout)
 {
-    return mapLayout->isFrlg ? NUM_PALS_IN_PRIMARY_FRLG : NUM_PALS_IN_PRIMARY;
+    return (mapLayout->isFrlg || mapLayout->isHns) ? NUM_PALS_IN_PRIMARY_FRLG : NUM_PALS_IN_PRIMARY;
 }
 
 u32 MapGridGetMetatileIdAt(s32 x, s32 y)

@@ -793,7 +793,9 @@ static bool frlg_layout_in_emerald(const Json &layout) {
     }
     // Pokémon World: Kanto is part of the Emerald build, so all FRLG layouts are too.
     (void)ids;
-    return version == "emerald" && json_to_string(layout, "layout_version", true) == "frlg";
+    // Pokémon World: Heart & Soul's layouts (Johto, later Kanto) are part of the Emerald build too.
+    return version == "emerald" && (json_to_string(layout, "layout_version", true) == "frlg"
+                                 || json_to_string(layout, "layout_version", true) == "hns");
 }
 
 string generate_layout_headers_text(Json layouts_data) {
@@ -845,8 +847,9 @@ string generate_layout_headers_text(Json layouts_data) {
         }
         else
         {
+            // Pokémon World: the last byte is MapLayout.isHns (640-tile primary, Emerald attributes)
             text << "\t.2byte 0\n"
-                 << "\t.byte 0\n";
+                 << "\t.byte " << (layout_version == "hns" ? "TRUE" : "0") << "\n";
         }
         text << "\n";
     }

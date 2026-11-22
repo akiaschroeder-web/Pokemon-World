@@ -1950,3 +1950,4 @@ const struct Tileset gTileset_OreburghMuseum =
     .metatileAttributes = gMetatileAttributes_OreburghMuseum,
     .callback = NULL,
 };
+#include "headers_hns.h" // Pokémon World: Heart & Soul tilesets (generated)

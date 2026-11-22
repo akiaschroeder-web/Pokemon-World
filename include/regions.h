@@ -18,6 +18,11 @@ static inline enum Region GetRegionForSectionId(u32 sectionId)
         return REGION_SINNOH;
     if (sectionId >= KANTO_MAPSEC_START && sectionId < KANTO_MAPSEC_END && KANTO_MAPSEC_COUNT > 0)
         return REGION_KANTO;
+    // Heart & Soul's Johto, then the later-Kanto places FireRed's Kanto doesn't have
+    if (sectionId >= JOHTO_MAPSEC_START && sectionId <= JOHTO_MAPSEC_END)
+        return REGION_JOHTO;
+    if (sectionId >= KANTO_HNS_MAPSEC_START && sectionId <= KANTO_HNS_MAPSEC_END && KANTO_HNS_MAPSEC_START != MAPSEC_NONE)
+        return REGION_KANTO;
     return REGION_HOENN;
 }
 

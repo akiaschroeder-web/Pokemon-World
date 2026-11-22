@@ -3764,3 +3764,4 @@ const u16 gTilesetPalettes_OreburghMuseum[][16] =
 };
 
 const u32 gTilesetTiles_OreburghMuseum[] = INCGFX_U32("data/tilesets/secondary/oreburgh_museum/tiles.png", ".4bpp.fastSmol");
+#include "graphics_hns.h" // Pokémon World: Heart & Soul tilesets (generated)

@@ -292,6 +292,8 @@
 #define REGION_VARS_END               (REGION_VARS_START+0x1EF)
 #define REGION_VARS_COUNT             (REGION_VARS_END - REGION_VARS_START + 1)
 
+#include "constants/vars_hns.h" // Pokémon World: Heart & Soul's Johto and later-Kanto vars (generated)
+
 #define SPECIAL_VARS_START            0x8000
 // special vars
 // They are commonly used as parameters to commands, or return values from commands.

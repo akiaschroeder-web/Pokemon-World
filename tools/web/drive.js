@@ -117,6 +117,17 @@ fs.mkdirSync(out, { recursive: true });
         }
       } else if (op === 'hold') {
         await hold(a, b || 16); await waitFrames(4);
+      } else if (op === 'chord') {
+        // several keys at once, e.g. ["chord", ["KeyS", "Enter"], 6] = R + START (the debug menu)
+        const n = b || 6;
+        if (turbo) {
+          await page.evaluate(([ks, f]) => Module.pwHoldKeys(ks.reduce((m, k) => m | Module.pwKeyBits[k], 0), f), [a, n]);
+        } else {
+          for (const k of a) await page.keyboard.down(k);
+        }
+        await waitFrames(n);
+        if (!turbo) for (const k of a) await page.keyboard.up(k);
+        await waitFrames(4);
       } else if (op === 'pressUntil') {
         // press `a` every 20 frames until a task/callback matching `b` runs (at most c frames)
         const max = c || 3000;

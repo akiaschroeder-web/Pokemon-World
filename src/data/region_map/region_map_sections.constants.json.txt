@@ -20,4 +20,7 @@ enum {
 #define KANTO_MAPSEC_END    MAPSEC_SPECIAL_AREA
 #define KANTO_MAPSEC_COUNT (KANTO_MAPSEC_END - KANTO_MAPSEC_START + 1)
 
+// Pokémon World: Heart & Soul's Johto and later-Kanto map sections (generated)
+#include "constants/region_map_sections_hns.h"
+
 #endif // GUARD_CONSTANTS_REGION_MAP_SECTIONS_H

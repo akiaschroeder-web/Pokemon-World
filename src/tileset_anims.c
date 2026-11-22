@@ -1446,3 +1446,4 @@ void InitTilesetAnim_CeladonGym(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_CeladonGym;
 }
 
+#include "data/tilesets/tileset_anims_hns.h" // Pokémon World: Heart & Soul tileset animations
