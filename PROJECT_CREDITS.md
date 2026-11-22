@@ -19,6 +19,8 @@ Used with permission of the Heart & Soul team — https://github.com/PokemonHnS-
 - Lead Developer / Game Director: **Lil Dill**
 - Developers: **TixoRebel**, **InfiniteBacon42**, **Exclsior**, **Phantonomy**, **DaniRainbow**
 
+Also used: Johto badge artwork (Badge Case).
+
 Assets Heart & Soul credits in turn:
 - Engine base: **Modern Emerald — Resetes12**
 - Sprites: **Cesare_CBass**, **AveonTrainer**, **PurpleZaffre**, **BatimaTheBat**

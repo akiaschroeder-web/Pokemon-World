@@ -48,6 +48,5 @@ bool32 PW_HasBadge(enum Region region, u32 badgeIndex);
 u32 PW_CountBadges(enum Region region);
 u32 PW_GetObedienceBadgeCount(void);
 bool32 PW_HasFieldMoveBadge(u32 fieldMove);
-void PW_BufferBadgeCaseText(u8 *dest);
 
 #endif // GUARD_POKEMON_WORLD_H

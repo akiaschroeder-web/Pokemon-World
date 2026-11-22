@@ -1,5 +1,6 @@
 #include "global.h"
 #include "pokemon_world.h"
+#include "badge_case.h"
 #include "sinnoh_radar.h"
 #include "item_use.h"
 #include "battle.h"
@@ -780,14 +781,35 @@ static void Task_AccessPokemonBoxLink(u8 taskId)
     DestroyTask(taskId);
 }
 
-// Pokémon World: list each region's badges.
+// Pokémon World: open the Badge Case screen, from the bag or as a registered item.
+static void CB2_OpenBadgeCaseFromBag(void)
+{
+    ShowBadgeCase(CB2_ReturnToBagMenuPocket);
+}
+
+static void Task_OpenRegisteredBadgeCase(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        ShowBadgeCase(CB2_ReturnToField);
+        DestroyTask(taskId);
+    }
+}
+
 void ItemUseOutOfBattle_BadgeCase(u8 taskId)
 {
-    PW_BufferBadgeCaseText(gStringVar4);
     if (!gTasks[taskId].tUsingRegisteredKeyItem)
-        DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
+    {
+        gBagMenu->newScreenCallback = CB2_OpenBadgeCaseFromBag;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
     else
-        DisplayItemMessageOnField(taskId, gStringVar4, Task_CloseCantUseKeyItemMessage);
+    {
+        gFieldCallback = FieldCB_ReturnToFieldNoScript;
+        FadeScreen(FADE_TO_BLACK, 0);
+        gTasks[taskId].func = Task_OpenRegisteredBadgeCase;
+    }
 }
 
 void ItemUseOutOfBattle_CoinCase(u8 taskId)

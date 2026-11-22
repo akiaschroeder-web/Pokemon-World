@@ -251,26 +251,6 @@ static const u16 sBadgeFlags[][PW_BADGES_PER_REGION] =
                        FLAG_SINNOH_BADGE05_GET, FLAG_SINNOH_BADGE06_GET, FLAG_SINNOH_BADGE07_GET, FLAG_SINNOH_BADGE08_GET},
 };
 
-static const u8 *const sBadgeNames[][PW_BADGES_PER_REGION] =
-{
-    [REGION_KANTO]  = {COMPOUND_STRING("BOULDER"), COMPOUND_STRING("CASCADE"), COMPOUND_STRING("THUNDER"), COMPOUND_STRING("RAINBOW"),
-                       COMPOUND_STRING("SOUL"), COMPOUND_STRING("MARSH"), COMPOUND_STRING("VOLCANO"), COMPOUND_STRING("EARTH")},
-    [REGION_JOHTO]  = {COMPOUND_STRING("ZEPHYR"), COMPOUND_STRING("HIVE"), COMPOUND_STRING("PLAIN"), COMPOUND_STRING("FOG"),
-                       COMPOUND_STRING("STORM"), COMPOUND_STRING("MINERAL"), COMPOUND_STRING("GLACIER"), COMPOUND_STRING("RISING")},
-    [REGION_HOENN]  = {COMPOUND_STRING("STONE"), COMPOUND_STRING("KNUCKLE"), COMPOUND_STRING("DYNAMO"), COMPOUND_STRING("HEAT"),
-                       COMPOUND_STRING("BALANCE"), COMPOUND_STRING("FEATHER"), COMPOUND_STRING("MIND"), COMPOUND_STRING("RAIN")},
-    [REGION_SINNOH] = {COMPOUND_STRING("COAL"), COMPOUND_STRING("FOREST"), COMPOUND_STRING("COBBLE"), COMPOUND_STRING("FEN"),
-                       COMPOUND_STRING("RELIC"), COMPOUND_STRING("MINE"), COMPOUND_STRING("ICICLE"), COMPOUND_STRING("BEACON")},
-};
-
-static const u8 *const sRegionNames[] =
-{
-    [REGION_KANTO] = COMPOUND_STRING("KANTO"),
-    [REGION_JOHTO] = COMPOUND_STRING("JOHTO"),
-    [REGION_HOENN] = COMPOUND_STRING("HOENN"),
-    [REGION_SINNOH] = COMPOUND_STRING("SINNOH"),
-};
-
 // Which badge (1-8, 0 = none) in each region lets a field move be used outside battle.
 // A move works once you have its badge from any region, so nothing has to be redone.
 static const u8 sFieldMoveBadges[][REGION_SINNOH + 1] =
@@ -323,44 +303,4 @@ bool32 PW_HasFieldMoveBadge(u32 fieldMove)
             return TRUE;
     }
     return FALSE;
-}
-
-// One page per region: "HOENN: 3 of 8" then the badges collected.
-void PW_BufferBadgeCaseText(u8 *dest)
-{
-    u32 i, j;
-    u8 *end = dest;
-
-    *end = EOS;
-    for (i = 0; i < ARRAY_COUNT(sBadgeRegions); i++)
-    {
-        u32 region = sBadgeRegions[i];
-        u32 count = PW_CountBadges(region);
-        u32 shown = 0;
-
-        if (i != 0)
-            end = StringAppend(end, COMPOUND_STRING("\p"));
-        end = StringAppend(end, sRegionNames[region]);
-        end = StringAppend(end, COMPOUND_STRING(": "));
-        end = ConvertIntToDecimalStringN(end, count, STR_CONV_MODE_LEFT_ALIGN, 1);
-        end = StringAppend(end, COMPOUND_STRING(" of 8 badges"));
-        if (count == 0)
-        {
-            end = StringAppend(end, COMPOUND_STRING("\nNone yet."));
-            continue;
-        }
-        for (j = 0; j < PW_BADGES_PER_REGION; j++)
-        {
-            if (!PW_HasBadge(region, j))
-                continue;
-            if (shown == 0)
-                end = StringAppend(end, COMPOUND_STRING("\n"));
-            else if (shown == 4)
-                end = StringAppend(end, COMPOUND_STRING("\l"));
-            else
-                end = StringAppend(end, COMPOUND_STRING(", "));
-            end = StringAppend(end, sBadgeNames[region][j]);
-            shown++;
-        }
-    }
 }
