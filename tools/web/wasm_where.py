@@ -39,7 +39,7 @@ def sleb(b, p):
 def main():
     b = open(sys.argv[1], "rb").read()
     target = int(sys.argv[2], 0) if sys.argv[2] != '--table' else 0
-    count = int(sys.argv[3]) if len(sys.argv) > 3 else 40
+    count = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[2] != "--table" else 40
     p = 8
     names, imports, code, elems = {}, 0, None, None
     while p < len(b):
@@ -103,6 +103,10 @@ def main():
             for k in range(cnt):
                 f, q = uleb(b, q)
                 table[off + k] = f
+        if sys.argv[3:] == ["--json"]:
+            import json
+            print(json.dumps({i: names.get(f, str(f)) for i, f in table.items()}))
+            return
         for a in sys.argv[3:]:
             f = table.get(int(a))
             print(f"{a}: {names.get(f, f)}")

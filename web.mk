@@ -96,7 +96,7 @@ $(MID_BUILDDIR)/%.o: $(MID_BUILDDIR)/%.wasmasm
 # --- link
 WEB_LDFLAGS := $(WEB_OPT) -sASYNCIFY -sASYNCIFY_STACK_SIZE=65536 -sALLOW_MEMORY_GROWTH=1 \
 	-sINITIAL_MEMORY=134217728 -sSTACK_SIZE=1048576 -sENVIRONMENT=web \
-	-sEXPORTED_RUNTIME_METHODS=HEAPU8,HEAPU16,HEAPU32 -sEXPORTED_FUNCTIONS=_main,_Web_GetFramebuffer,_Web_SetKeys,_Web_GetAudio,_Web_DebugDump,_Web_DebugAddresses \
+	-sEXPORTED_RUNTIME_METHODS=HEAPU8,HEAPU16,HEAPU32 -sEXPORTED_FUNCTIONS=_main,_Web_GetFramebuffer,_Web_SetKeys,_Web_GetAudio,_Web_DebugDump,_Web_DebugAddresses,_Web_DebugWindows \
 	-sMODULARIZE=0 --profiling-funcs -lidbfs.js --shell-file platform/web/shell.html
 
 web: $(WEB_SITE)/index.html

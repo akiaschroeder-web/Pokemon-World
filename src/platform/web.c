@@ -104,6 +104,32 @@ EMSCRIPTEN_KEEPALIVE const u32 *Web_DebugAddresses(void)
     return sAddrs;
 }
 
+// Debugging: windows, BG tilemap buffers and the heap's blocks.
+#include "window.h"
+#include "bg.h"
+#include "malloc.h"
+#include "gpu_regs.h"
+EMSCRIPTEN_KEEPALIVE void Web_DebugWindows(void)
+{
+    struct MemBlock *b = (struct MemBlock *)gHeap;
+    u32 i, n = 0;
+    for (i = 0; i < NUM_BACKGROUNDS; i++)
+        printf("bg%u: tilemapBuf=%#x winBuf=%#x metric=%#x type=%u mode=%u cnt=%#x\n", i, (u32)(uintptr_t)GetBgTilemapBuffer(i),
+               (u32)(uintptr_t)gWindowBgTilemapBuffers[i], GetBgAttribute(i, BG_ATTR_METRIC), GetBgAttribute(i, BG_ATTR_TYPE), GetBgMode(),
+               GetGpuReg(REG_OFFSET_BG0CNT + 2 * i));
+    for (i = 0; i < WINDOWS_MAX; i++)
+        if (gWindows[i].window.bg != 0xFF)
+            printf("win%u: bg=%u x=%u y=%u w=%u h=%u base=%u tileData=%#x\n", i, gWindows[i].window.bg, gWindows[i].window.tilemapLeft,
+                   gWindows[i].window.tilemapTop, gWindows[i].window.width, gWindows[i].window.height, gWindows[i].window.baseBlock,
+                   (u32)(uintptr_t)gWindows[i].tileData);
+    printf("heap at %#x\n", (u32)(uintptr_t)gHeap);
+    do
+    {
+        printf("block %#x alloc=%u size=%#x magic=%#x\n", (u32)(uintptr_t)b->data, b->allocated, b->size, b->magic);
+        b = b->next;
+    } while (b != (struct MemBlock *)gHeap && ++n < 64);
+}
+
 EMSCRIPTEN_KEEPALIVE void *Web_GetAudio(void)
 {
     return NULL; // sound comes later
