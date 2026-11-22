@@ -18,8 +18,28 @@ void SoundMainBTM(void) {}
 void RealClearChain(void *x) {}
 void m4aSoundVSync(void) {}
 
-void MPlayJumpTableCopy(MPlayFunc *mplayJumpTable)
+// The BIOS's 64-byte clear, called through the jump table as Clear64byte(void *).
+static void Clear64Bytes(void *x)
 {
+    memset(x, 0, 64);
+}
+
+// The BIOS copies its table of sequencer commands here (m4a.c calls entries 34 and 35
+// directly). Same order as the GBA's table; m4a.c then replaces a few entries.
+void MPlayJumpTableCopy(MPlayFunc *table)
+{
+    static const MPlayFunc sTemplate[36] = {
+        (MPlayFunc)ply_fine, (MPlayFunc)ply_goto, (MPlayFunc)ply_patt, (MPlayFunc)ply_pend,
+        (MPlayFunc)ply_rept, (MPlayFunc)ply_fine, (MPlayFunc)ply_fine, (MPlayFunc)ply_fine,
+        (MPlayFunc)ply_fine, (MPlayFunc)ply_prio, (MPlayFunc)ply_tempo, (MPlayFunc)ply_keysh,
+        (MPlayFunc)ply_voice, (MPlayFunc)ply_vol, (MPlayFunc)ply_pan, (MPlayFunc)ply_bend,
+        (MPlayFunc)ply_bendr, (MPlayFunc)ply_lfos, (MPlayFunc)ply_lfodl, (MPlayFunc)ply_mod,
+        (MPlayFunc)ply_modt, (MPlayFunc)ply_fine, (MPlayFunc)ply_fine, (MPlayFunc)ply_tune,
+        (MPlayFunc)ply_fine, (MPlayFunc)ply_fine, (MPlayFunc)ply_fine, (MPlayFunc)ply_port,
+        (MPlayFunc)ply_fine, (MPlayFunc)ply_endtie, (MPlayFunc)SampleFreqSet, (MPlayFunc)TrackStop,
+        (MPlayFunc)FadeOutBody, (MPlayFunc)TrkVolPitSet, (MPlayFunc)RealClearChain, (MPlayFunc)Clear64Bytes,
+    };
+    memcpy(table, sTemplate, sizeof(sTemplate));
 }
 
 void TrackStop(struct MusicPlayerInfo *mplayInfo, struct MusicPlayerTrack *track)
