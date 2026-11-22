@@ -1527,6 +1527,7 @@ static void Task_PwSetup_HandleInput(u8 taskId)
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
         CpuFill16(0, (void *)BG_SCREEN_ADDR(GetBgAttribute(0, BG_ATTR_MAPBASEINDEX)), BG_SCREEN_SIZE);
         FreeAllWindowBuffers();
+        UnsetBgTilemapBuffer(0); // freed above; InitWindows would otherwise reuse the stale pointer
         PwSetup_RecreatePlayerSprites(taskId);
         gTasks[taskId].tTimer = 0x40;
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
@@ -1540,6 +1541,7 @@ static void Task_PwSetup_FadeToRowan(u8 taskId)
     FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
     CpuFill16(0, (void *)BG_SCREEN_ADDR(GetBgAttribute(0, BG_ATTR_MAPBASEINDEX)), BG_SCREEN_SIZE);
     FreeAllWindowBuffers();
+    UnsetBgTilemapBuffer(0);
     ResetAllPicSprites();
     DestroyTask(taskId);
     StartRowanIntro();
