@@ -36,7 +36,9 @@ Used with permission of **LiderMorti00 (Morti)** — https://github.com/LiderMor
 MIT License — https://github.com/gradenGnostic/pokeemerald-multiplatform
 
 The hardware stand-ins in `src/platform/` (BIOS functions, software DMA, the GBA picture
-renderer) come from this port, adapted for pokeemerald-expansion. They build on earlier
+renderer) come from this port, adapted for pokeemerald-expansion. So does the sound engine
+(`src/platform/m4a_engine.c`, `sound_mixer.c` and `cgb_audio.c`: the C version of the m4a
+sequencer and PCM mixer, and the Game Boy sound channels). They build on earlier
 portable work by the pret community (the BIOS code is based on VBA-M).
 
 ## Original Work

@@ -6,7 +6,9 @@
 // (Emscripten's Asyncify turns the wait into a pause instead of a busy loop).
 //
 // Video: src/platform/gba_fast_draw.c renders the GBA picture into a buffer that the
-// page copies onto a canvas. Input comes from the keyboard or on-screen buttons
+// page copies onto a canvas. Sound: the V-blank interrupt runs the sound driver, which mixes
+// one frame of sound (src/platform/sound_mixer.c); that goes to the page, which plays it
+// through Web Audio. Input comes from the keyboard or on-screen buttons
 // (platform/web/pokeworld.js). Saves are kept in the browser (localStorage).
 
 #ifdef PLATFORM_WEB
@@ -18,6 +20,7 @@
 #include "siirtc.h"
 #include "platform/dma.h"
 #include "platform/framedraw.h"
+#include "platform/sound.h"
 
 extern IntrFunc gIntrTable[];
 extern unsigned char gPlatformFlash[];
@@ -48,6 +51,11 @@ EM_JS(void, Web_LoadSave, (void *dest, int size), {
 
 EM_JS(void, Web_StoreSave, (const void *src, int size), {
     Module.pwStoreSave(src, size);
+});
+
+// One V-blank's worth of sound (stereo float samples, interleaved).
+EM_JS(void, Web_QueueAudio, (const float *samples, int count, int rate), {
+    Module.pwQueueAudio && Module.pwQueueAudio(samples, count, rate);
 });
 
 EM_JS(void, Web_Reload, (void), {
@@ -136,9 +144,31 @@ EMSCRIPTEN_KEEPALIVE void Web_DebugWindows(void)
     } while (b != (struct MemBlock *)gHeap && ++n < 64);
 }
 
-EMSCRIPTEN_KEEPALIVE void *Web_GetAudio(void)
+// Sound, for debugging and tests: what the sound driver mixed during the last V-blank.
+// Returns {samples pointer (stereo float), number of stereo samples, sample rate, frames mixed,
+// frames with a cry playing, the cry's loudness × 1000000, Direct Sound channels on, Game Boy channels on}.
+static u32 sAudioInfo[8];
+EMSCRIPTEN_KEEPALIVE const u32 *Web_GetAudio(void)
 {
-    return NULL; // sound comes later
+    sAudioInfo[3] = gPlatformSoundDebug.frames;
+    sAudioInfo[4] = gPlatformSoundDebug.cryFrames;
+    sAudioInfo[5] = (u32)(gPlatformSoundDebug.cryRms * 1000000.0f);
+    sAudioInfo[6] = gPlatformSoundDebug.activeChannels;
+    sAudioInfo[7] = gPlatformSoundDebug.activeCgbChannels;
+    return sAudioInfo;
+}
+
+static void SendAudio(void)
+{
+    const float *samples;
+    u32 n = PlatformSound_TakeQueued(&samples);
+
+    sAudioInfo[0] = (uintptr_t)samples;
+    sAudioInfo[1] = n;
+    sAudioInfo[2] = (u32)PLATFORM_SOUND_RATE;
+    if (n == 0)
+        return; // the sound driver didn't run (not set up yet, or switched off)
+    Web_QueueAudio(samples, n, (int)PLATFORM_SOUND_RATE);
 }
 
 // --- frame loop
@@ -171,6 +201,9 @@ void VBlankIntrWait(void)
     if (REG_DISPSTAT & DISPSTAT_VBLANK_INTR)
         gIntrTable[4]();
     REG_DISPSTAT &= ~INTR_FLAG_VBLANK;
+
+    // The V-blank interrupt ran the sound driver (m4aSoundMain): pass the frame's sound on.
+    SendAudio();
 
     // Saving: write to the browser a moment after the game stops writing.
     if (sSaveDirty && ++sFramesSinceSaveWrite > 10)

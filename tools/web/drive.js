@@ -13,6 +13,10 @@
 //   ["call", "Web_SetTrace", 1]            call an exported debugging function (one number argument)
 //   ["trace"]                              log callbacks and tasks every frame
 //   ["state"]                              print the running tasks and callbacks
+//   ["audio", "name", frames, "KeyZ"]      record the game's sound for a while: name.wav, plus its loudness
+//                                          (optionally pressing a key every 20 frames meanwhile)
+//   ["audioinfo"]                          print the Web Audio state (output mode, context state, queue)
+// env AUDIOLOG=1: the page logs the sound's loudness once a second ("[audio] frame N rms ...").
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -86,6 +90,8 @@ fs.mkdirSync(out, { recursive: true });
 
   try {
     for (;;) { const s = await state(); if (s && s !== 'hung' && s.frame > 0) break; await timeout(200); }
+    // (set here: shell.html replaces a Module object made before the page's scripts run)
+    if (process.env.AUDIOLOG) await page.evaluate(() => { Module.pwAudioLog = true; });
     for (const st of steps) {
       const [op, a, b, c] = st;
       if (op === 'wait') await waitFrames(a);
@@ -100,6 +106,36 @@ fs.mkdirSync(out, { recursive: true });
         };
       }, table);
       else if (op === 'state') console.log(describe(await state()));
+      else if (op === 'audioinfo') console.log('audioinfo: ' + JSON.stringify(await page.evaluate(() => Module.pwAudioInfo())));
+      else if (op === 'audio') {
+        await page.evaluate(() => { Module.pwAudioCapture = []; });
+        if (c) { // keep pressing a key every 20 frames meanwhile
+          for (let f = 0; f < (b || 180); f += 20) { await hold(c, 3); await waitFrames(17); }
+        } else {
+          await waitFrames(b || 180);
+        }
+        const r = await page.evaluate(() => {
+          const chunks = Module.pwAudioCapture; Module.pwAudioCapture = null;
+          let n = 0; for (const c of chunks) n += c.length;
+          const pcm = new Int16Array(n); let i = 0, sumSq = 0, peak = 0, zc = 0, prev = 0, dc = 0;
+          for (const c of chunks) for (let j = 0; j < c.length; j++) {
+            const v = c[j]; pcm[i++] = Math.max(-32768, Math.min(32767, Math.round(v * 32767)));
+            sumSq += v * v; dc += v; peak = Math.max(peak, Math.abs(v));
+            if ((j & 1) === 0) { if ((v >= 0) !== (prev >= 0)) zc++; prev = v; } // left channel zero crossings
+          }
+          const u8 = new Uint8Array(pcm.buffer); let s = '';
+          for (let k = 0; k < u8.length; k += 0x8000) s += String.fromCharCode.apply(null, u8.subarray(k, k + 0x8000));
+          return { b64: btoa(s), frames: chunks.length, samples: n / 2, rms: Math.sqrt(sumSq / Math.max(1, n)), peak, dc: dc / Math.max(1, n), zc };
+        });
+        const data = Buffer.from(r.b64, 'base64'), rate = 42048, hdr = Buffer.alloc(44);
+        hdr.write('RIFF', 0); hdr.writeUInt32LE(36 + data.length, 4); hdr.write('WAVEfmt ', 8); hdr.writeUInt32LE(16, 16);
+        hdr.writeUInt16LE(1, 20); hdr.writeUInt16LE(2, 22); hdr.writeUInt32LE(rate, 24); hdr.writeUInt32LE(rate * 4, 28);
+        hdr.writeUInt16LE(4, 32); hdr.writeUInt16LE(16, 34); hdr.write('data', 36); hdr.writeUInt32LE(data.length, 40);
+        fs.writeFileSync(path.join(out, `${a}.wav`), Buffer.concat([hdr, data]));
+        const secs = r.samples / rate;
+        console.log(`audio ${a}: ${r.frames} frames, ${secs.toFixed(2)} s, rms ${r.rms.toFixed(5)} peak ${r.peak.toFixed(4)} ` +
+                    `dc ${r.dc.toFixed(5)} zero crossings/s ${(r.zc / Math.max(secs, 1e-9)).toFixed(0)}; ${describe(await state())}`);
+      }
       else if (op === 'shot') {
         await page.locator('#screen').screenshot({ path: path.join(out, `${a}.png`), timeout: 5000 });
         console.log(`shot ${a}: ${describe(await state())}`);
