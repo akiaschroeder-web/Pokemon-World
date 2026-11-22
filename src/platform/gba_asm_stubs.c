@@ -6,6 +6,7 @@
 
 #include "global.h"
 #include "gba/m4a_internal.h"
+#include "main.h"
 
 u32 umul3232H32(u32 a, u32 b)
 {
@@ -78,5 +79,37 @@ void GameCubeMultiBoot_ExecuteProgram(struct GcmbStruct *pStruct) {}
 void GameCubeMultiBoot_Init(struct GcmbStruct *pStruct) {}
 void GameCubeMultiBoot_HandleSerialInterrupt(struct GcmbStruct *pStruct) {}
 void GameCubeMultiBoot_Quit(void) {}
+
+// src/rom_header.s (filled in by gbafix on the GBA)
+const u8 RomHeaderGameCode[GAME_CODE_LENGTH] = {'B', 'P', 'E', 'E'};
+const u8 RomHeaderSoftwareVersion = 0;
+
+// src/crt0.s: reloads EWRAM's initial values on the GBA; the page reloads instead.
+void ReInitializeEWRAM(void) {}
+
+// Set by the GBA linker script.
+void CB2_InitCopyrightScreenAfterBootup(void);
+void gInitialMainCB2(void)
+{
+    CB2_InitCopyrightScreenAfterBootup();
+}
+
+// src/libisagbprn.c (mGBA's debug log): to the browser console instead.
+#include <stdarg.h>
+#include <stdio.h>
+bool32 (MgbaOpen)(void) { return TRUE; }
+void (MgbaClose)(void) {}
+void (MgbaPrintf)(s32 level, const char *fmt, ...)
+{
+    va_list va;
+    va_start(va, fmt);
+    vprintf(fmt, va);
+    va_end(va);
+    printf("\n");
+}
+void (MgbaAssert)(const char *file, s32 line, const char *message, bool32 stop)
+{
+    printf("Assertion failed: %s:%d: %s\n", file, (int)line, message);
+}
 
 #endif // PORTABLE

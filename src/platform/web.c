@@ -123,6 +123,12 @@ void VBlankIntrWait(void)
 
     Web_WaitForNextFrame();
     REG_KEYINPUT = ~sKeys & KEYS_MASK;
+
+    // Timers: the game reads them to seed its random numbers (e.g. the trainer ID),
+    // so give them values that differ from run to run.
+    REG_TM1CNT_L = (u16)(emscripten_random() * 0x10000);
+    REG_TM2CNT_L = (u16)(emscripten_random() * 0x10000);
+    REG_TM3CNT_L = (u16)(emscripten_random() * 0x10000);
 }
 
 void Web_MarkSaveDirty(void)

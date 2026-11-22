@@ -543,3 +543,41 @@ u16 Sqrt(u32 num)
     }
     return bound;
 }
+
+// BIOS BitUnPack: widens packed pixels (1/2/4/8 bits) to 1/2/4/8/16/32 bits each.
+struct PlatformBitUnPackArgs
+{
+    u16 srcLength;
+    u8 srcBits;
+    u8 destBits;
+    u32 dataOffset:31;
+    u32 zeroDataFlag:1;
+};
+
+void BitUnPack(const void *src, void *dest, const struct PlatformBitUnPackArgs *args)
+{
+    const u8 *in = src;
+    u32 *out = dest;
+    u32 outWord = 0, outBits = 0;
+    u32 mask = (1 << args->srcBits) - 1;
+    u32 i, j;
+
+    for (i = 0; i < args->srcLength; i++)
+    {
+        u8 byte = in[i];
+        for (j = 0; j < 8; j += args->srcBits)
+        {
+            u32 v = (byte >> j) & mask;
+            if (v != 0 || args->zeroDataFlag)
+                v += args->dataOffset;
+            outWord |= v << outBits;
+            outBits += args->destBits;
+            if (outBits >= 32)
+            {
+                *out++ = outWord;
+                outWord = 0;
+                outBits = 0;
+            }
+        }
+    }
+}

@@ -11,7 +11,12 @@
 # The result goes to build/web/site/ (index.html, pokeworld.js, pokeworld.wasm).
 
 WEB_CC ?= emcc
+# Data files are preprocessed with the host's C preprocessor (no GBA toolchain needed).
+CPP := cpp
 WEB_HOST_AS ?= as
+# The host's (x86) assembler differs from ARM's in two ways that matter here:
+# '@' comments (dropped, but not the \@ macro counter) and .word (16-bit on x86, 32-bit on ARM).
+WEB_AS_COMMENTS := sed -E -e 's/(^|[^\\])@.*$$/\1/' -e 's/\.word([[:space:]])/.4byte\1/g'
 WEB_OPT ?= -O2
 
 WEB_DEFS := -DPORTABLE -DPLATFORM_WEB -DNONMATCHING -DUBFIX
@@ -56,7 +61,7 @@ $(WEB_FUNCTYPES): $(WEB_C_OBJS)
 	python3 tools/web/wasm_functypes.py $@ $(WEB_C_OBJS)
 
 $(DATA_ASM_BUILDDIR)/%.elf.o: $(DATA_ASM_SUBDIR)/%.s
-	$(PREPROC) -s $< charmap.txt | $(CPP) $(CPPFLAGS) -DPORTABLE $(INCLUDE_SCANINC_ARGS) - | $(PREPROC) -ie $< charmap.txt | $(WEB_HOST_AS) $(WEB_ASFLAGS) -o $@
+	$(PREPROC) -s $< charmap.txt | $(CPP) $(CPPFLAGS) -DPORTABLE=PORTABLE $(INCLUDE_SCANINC_ARGS) - | $(PREPROC) -ie $< charmap.txt | $(WEB_AS_COMMENTS) | $(WEB_HOST_AS) $(WEB_ASFLAGS) -o $@
 
 $(DATA_ASM_BUILDDIR)/%.d: $(DATA_ASM_SUBDIR)/%.s
 	$(SCANINC) -M $@ -g $(ASSETS_DIR_NAME) $(INCLUDE_SCANINC_ARGS) -I "" $<
@@ -65,17 +70,27 @@ ifneq ($(NODEP),1)
 -include $(addprefix $(OBJ_DIR)/,$(DATA_ASM_SRCS:.s=.d))
 endif
 
-$(MID_BUILDDIR)/%.elf.o: $(MID_ASM_DIR)/%.s
-	$(WEB_HOST_AS) $(WEB_ASFLAGS) -I sound -o $@ $<
+WEB_SOUND_INC := $(OBJ_DIR)/sound_inc
+$(WEB_SOUND_INC)/MPlayDef.s: sound/MPlayDef.s
+	@mkdir -p $(@D)
+	$(WEB_AS_COMMENTS) < $< > $@
 
-%.wasm.s: %.elf.o $(WEB_FUNCTYPES) tools/web/elf2wasm.py
-	python3 tools/web/elf2wasm.py $< $@ --functypes $(WEB_FUNCTYPES)
+$(MID_BUILDDIR)/%.elf.o: $(MID_ASM_DIR)/%.s $(WEB_SOUND_INC)/MPlayDef.s
+	$(WEB_AS_COMMENTS) < $< | $(WEB_HOST_AS) $(WEB_ASFLAGS) -I $(WEB_SOUND_INC) -I sound -o $@
 
-$(DATA_ASM_BUILDDIR)/%.o: $(DATA_ASM_BUILDDIR)/%.wasm.s
-	$(WEB_CC) -c $< -o $@
+WEB_ABSYMS := $(OBJ_DIR)/data_constants.txt
+WEB_DATA_ELFS := $(WEB_DATA_OBJS:.o=.elf.o)
+$(WEB_ABSYMS): $(WEB_DATA_ELFS) tools/web/elf2wasm.py
+	python3 tools/web/elf2wasm.py --list-abs $@ $(WEB_DATA_ELFS)
 
-$(MID_BUILDDIR)/%.o: $(MID_BUILDDIR)/%.wasm.s
-	$(WEB_CC) -c $< -o $@
+%.wasmasm: %.elf.o $(WEB_FUNCTYPES) $(WEB_ABSYMS) tools/web/elf2wasm.py
+	python3 tools/web/elf2wasm.py $< $@ --functypes $(WEB_FUNCTYPES) --abs $(WEB_ABSYMS)
+
+$(DATA_ASM_BUILDDIR)/%.o: $(DATA_ASM_BUILDDIR)/%.wasmasm
+	$(WEB_CC) -c -x assembler $< -o $@
+
+$(MID_BUILDDIR)/%.o: $(MID_BUILDDIR)/%.wasmasm
+	$(WEB_CC) -c -x assembler $< -o $@
 
 # --- link
 WEB_LDFLAGS := $(WEB_OPT) -sASYNCIFY -sASYNCIFY_STACK_SIZE=65536 -sALLOW_MEMORY_GROWTH=1 \

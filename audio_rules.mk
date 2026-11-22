@@ -16,8 +16,10 @@ $(shell mkdir -p $(SPECIAL_OUTDIRS) )
 # Assembly song compilation
 $(SONG_BUILDDIR)/%.o: $(SONG_SUBDIR)/%.s $(EXPANSION_BATTLE_CONFIG)
 	$(AS) $(ASFLAGS) -I sound -o $@ $<
+ifneq ($(PLATFORM),web) # the web build assembles songs itself (web.mk)
 $(MID_BUILDDIR)/%.o: $(MID_ASM_DIR)/%.s
 	$(AS) $(ASFLAGS) -I sound -o $@ $<
+endif
 
 # Compressed cries
 $(CRY_BIN_DIR)/%.bin: $(CRY_SUBDIR)/%.wav
