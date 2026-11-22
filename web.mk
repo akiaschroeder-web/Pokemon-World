@@ -57,7 +57,7 @@ ifneq ($(NODEP),1)
 endif
 
 # --- data: GNU as (32-bit) -> ELF -> WebAssembly assembly -> object
-$(WEB_FUNCTYPES): $(WEB_C_OBJS)
+$(WEB_FUNCTYPES): $(WEB_C_OBJS) tools/web/wasm_functypes.py
 	python3 tools/web/wasm_functypes.py $@ $(WEB_C_OBJS)
 
 $(DATA_ASM_BUILDDIR)/%.elf.o: $(DATA_ASM_SUBDIR)/%.s

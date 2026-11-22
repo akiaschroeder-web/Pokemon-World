@@ -71,7 +71,12 @@ bool32 IsLastHealLocationPlayerHouse()
         || IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F)
         || IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE)
         || IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F)
-        || IsLastHealLocation(HEAL_LOCATION_PALLET_TOWN))
+        || IsLastHealLocation(HEAL_LOCATION_PALLET_TOWN)
+        // Pokémon World: Heart & Soul's New Bark Town and later Pallet Town (Red's house, Red's mom)
+        || IsLastHealLocation(HEAL_LOCATION_NEW_BARK_TOWN_HNS)
+        || IsLastHealLocation(HEAL_LOCATION_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS)
+        || IsLastHealLocation(HEAL_LOCATION_NEW_MAP1_HNS)
+        || IsLastHealLocation(HEAL_LOCATION_PALLET_TOWN_HNS))
         return TRUE;
 
     return FALSE;

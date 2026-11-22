@@ -506,7 +506,11 @@
       "id": "HEAL_LOCATION_NEW_BARK_TOWN_HNS",
       "map": "MAP_NEW_BARK_TOWN_HNS",
       "x": 20,
-      "y": 12
+      "y": 12,
+      "respawn_map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_1F_HNS",
+      "respawn_npc": "1",
+      "respawn_x": 2,
+      "respawn_y": 3
     },
     {
       "id": "HEAL_LOCATION_VIOLET_CITY_HNS",
@@ -592,7 +596,11 @@
       "id": "HEAL_LOCATION_PALLET_TOWN_HNS",
       "map": "MAP_PALLET_TOWN_HNS",
       "x": 11,
-      "y": 9
+      "y": 9,
+      "respawn_map": "MAP_PALLET_TOWN_REDS_HOUSE_1F_HNS",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 5
     },
     {
       "id": "HEAL_LOCATION_VIRIDIAN_CITY_HNS",
@@ -698,7 +706,11 @@
       "id": "HEAL_LOCATION_LAKE_OF_RAGE_HNS",
       "map": "MAP_LAKE_OF_RAGE_HNS",
       "x": 31,
-      "y": 43
+      "y": 43,
+      "respawn_map": "MAP_MAHOGANY_TOWN_POKEMON_CENTER_HNS",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 4
     },
     {
       "id": "HEAL_LOCATION_INDIGO_PLATEAU_HNS",
@@ -724,7 +736,11 @@
       "id": "HEAL_LOCATION_NEW_MAP1_HNS",
       "map": "MAP_NEW_MAP1_HNS",
       "x": 22,
-      "y": 18
+      "y": 18,
+      "respawn_map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_1F_HNS",
+      "respawn_npc": "1",
+      "respawn_x": 2,
+      "respawn_y": 3
     },
     {
       "id": "HEAL_LOCATION_CHERRYGROVE_CITY_HNS",
@@ -740,7 +756,11 @@
       "id": "HEAL_LOCATION_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS",
       "map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS",
       "x": 4,
-      "y": 4
+      "y": 4,
+      "respawn_map": "MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_1F_HNS",
+      "respawn_npc": "1",
+      "respawn_x": 2,
+      "respawn_y": 3
     },
     {
       "id": "HEAL_LOCATION_ROUTE_32_HNS",
@@ -756,7 +776,11 @@
       "id": "HEAL_LOCATION_ROUTE26NORTH_HNS",
       "map": "MAP_ROUTE26NORTH_HNS",
       "x": 12,
-      "y": 6
+      "y": 6,
+      "respawn_map": "MAP_VIRIDIAN_CITY_POKEMON_CENTER_HNS",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 4
     }
   ]
 }

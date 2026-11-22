@@ -25,15 +25,18 @@ Brought over from Heart & Soul so far (converted by `tools/pokemon_world/import_
 - Johto and Gold/Silver-era ("3 years later") Kanto maps: 418 maps with their layouts, map scripts and texts, events, connections and warps
 - 98 tilesets (Johto/Kanto primaries and secondaries) with their palettes, metatiles and animation frames, and the Johto general tileset animation
 - Door animations, region map sections and heal locations for Johto and later Kanto
-- Trainer parties of the trainers on those maps (classes/pics Heart & Soul made itself are not brought over yet)
+- Trainers of those maps: their parties, AI flags, held/bag items and double battles
+- Trainer front pics Heart & Soul has and we didn't (`graphics/trainers/front_pics/hns/`): the Johto gym leaders (Falkner, Bugsy, Whitney, Morty, Chuck, Jasmine, Pryce, Clair), the later-Kanto gym leaders (Brock, Misty, Lt. Surge, Erika, Janine, Sabrina, Blaine, Blue), the Elite Four (Will, Koga, Bruno, Karen), Silver, Red, Giovanni, the Team Rocket executives (Archer, Ariana, Petrel, Proton), Eusine, Mr. Fuji, Kimono Girl, Sage, Firebreather and Psychic (33 pics). Pics identical to ours (FireRed/Emerald ones) use ours.
+- Trainer classes Heart & Soul added (names and prize money): Rocket Admin, Sage, Firebreather, Kimono Girl, Mystery Man
+- Wild Pokémon of every imported map: grass, water, Rock Smash (which Heart & Soul also uses for Headbutt trees) and fishing, with Heart & Soul's night tables
 - Shared scripts and texts the maps use (Bug-Catching Contest, Battle Frontier Lounge nurse, and others)
 
 Assets Heart & Soul credits in turn:
 - Engine base: **Modern Emerald — Resetes12**
-- Sprites: **Cesare_CBass**, **AveonTrainer**, **PurpleZaffre**, **BatimaTheBat**
+- Sprites (including the trainer pics above; Heart & Soul doesn't credit them one by one): **Cesare_CBass**, **AveonTrainer**, **PurpleZaffre**, **BatimaTheBat**
 - Tilesets: **Crystal Advance — Kertra**, **Ekat99**, **TheDeadHeroAlistair**, **Johto Redrawn Team**
 - Maps / mapping references: **Crystal Advance — Kertra**, **Fire Gold — blackfragrant**, **SkidMarc25**
-- Gameplay: **Crystal Legacy — TSP (TheSmithPlays)**
+- Gameplay (including the trainer teams and wild encounters): **Crystal Legacy — TSP (TheSmithPlays)**
 - Surfing Pokémon overworlds: **slawter666**, **wally-217**
 
 ### Sinnoh — from Sinnoh pokeemerald-expansion

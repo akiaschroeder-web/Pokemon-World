@@ -26,6 +26,7 @@
 #include "metatile_behavior.h"
 #include "palette.h"
 #include "oras_dowse.h"
+#include "regions.h"
 #include "overworld.h"
 #include "scanline_effect.h"
 #include "script.h"
@@ -1465,8 +1466,11 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
             DestroyTask(taskId);
             if (gTasks[taskId].tIsPlayerHouse)
             {
-                if (IS_FRLG)
+                // Pokémon World: the professor of the region Mom's house is in
+                if (IS_FRLG || GetCurrentRegion() == REGION_KANTO)
                     StringCopy(gStringVar1, COMPOUND_STRING("PROF. OAK"));
+                else if (GetCurrentRegion() == REGION_JOHTO)
+                    StringCopy(gStringVar1, COMPOUND_STRING("PROF. ELM"));
                 else
                     StringCopy(gStringVar1, COMPOUND_STRING("PROF. BIRCH"));
                 ScriptContext_SetupScript(EventScript_AfterWhiteOutMomHeal);

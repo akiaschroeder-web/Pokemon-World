@@ -95,7 +95,9 @@ def functypes(path):
                     index = s.uleb()
                     if not undefined or flags & 0x40:
                         nm = s.name()
-                        if skind == 0 and not undefined:
+                        # (static functions are skipped: data files can only point at global
+                        # ones, and a static with the same name would give the wrong type)
+                        if skind == 0 and not undefined and not flags & 0x2:
                             params, results = types[func_types[index]]
                             out[nm] = (",".join(params), ",".join(results))
                 elif skind == 1:

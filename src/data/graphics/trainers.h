@@ -723,6 +723,8 @@ const u16 gTrainerPalette_SinnohCommanderSaturn[] = INCGFX_U16("graphics/trainer
 const u32 gTrainerFrontPic_SinnohGalacticBossCyrus[] = INCGFX_U32("graphics/trainers/front_pics/sinnoh/galactic_boss_cyrus.png", ".4bpp.smol");
 const u16 gTrainerPalette_SinnohGalacticBossCyrus[] = INCGFX_U16("graphics/trainers/front_pics/sinnoh/galactic_boss_cyrus.png", ".gbapal");
 
+#include "trainers_hns_gfx.h" // Pokémon World: Heart & Soul's front pics (generated)
+
 const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
 {
     [TRAINER_PIC_NONE] =
@@ -1633,4 +1635,5 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohMira, gTrainerBackPicPalette_SinnohMira, sBackAnims_Hoenn),
     },
+#include "trainers_hns_table.h" // Pokémon World: Heart & Soul's front pics (generated)
 };

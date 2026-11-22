@@ -1092,6 +1092,8 @@ static void TryUpdateGymLeaderRematchFromTrainer(void)
 }
 
 // Pokémon World: trainers after Hoenn's and Sinnoh's keep their flags in SaveBlock3.
+// Kanto's (1530-2152) and Heart & Soul's Johto/later-Kanto trainers (JOHTO_TRAINERS_START on) all fit.
+STATIC_ASSERT(TRAINERS_COUNT <= SAVEBLOCK1_TRAINER_FLAGS_COUNT + REGION_TRAINER_FLAGS_COUNT, RegionTrainerFlagsFit);
 u16 GetTrainerFlagId(u16 trainerId)
 {
     if (trainerId < SAVEBLOCK1_TRAINER_FLAGS_COUNT)

@@ -433,6 +433,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_ARTIST] = { _("ARTIST"), 10 },
     [TRAINER_CLASS_ACE_TRAINER] = { _("ACE TRAINER"), 15 },
     [TRAINER_CLASS_MAID] = { _("MAID"), 10 },
+#include "data/trainer_classes_hns.h" // Pokémon World: Heart & Soul's classes (generated)
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
