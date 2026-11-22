@@ -89,6 +89,21 @@ EMSCRIPTEN_KEEPALIVE void Web_DebugDump(void)
             printf("task %u: func=%u data0=%d data1=%d\n", i, (u32)(uintptr_t)gTasks[i].func, gTasks[i].data[0], gTasks[i].data[1]);
 }
 
+// Debugging: where the hardware memory is, so the page's console can look at it
+// (Module.HEAPU8 at these addresses): IO registers, palette, VRAM, OAM, gMain, gTasks.
+EMSCRIPTEN_KEEPALIVE const u32 *Web_DebugAddresses(void)
+{
+    extern unsigned char gPlatformIoRegs[], gPlatformPltt[], gPlatformVram[], gPlatformOam[];
+    static u32 sAddrs[6];
+    sAddrs[0] = (uintptr_t)gPlatformIoRegs;
+    sAddrs[1] = (uintptr_t)gPlatformPltt;
+    sAddrs[2] = (uintptr_t)gPlatformVram;
+    sAddrs[3] = (uintptr_t)gPlatformOam;
+    sAddrs[4] = (uintptr_t)&gMain;
+    sAddrs[5] = (uintptr_t)gTasks;
+    return sAddrs;
+}
+
 EMSCRIPTEN_KEEPALIVE void *Web_GetAudio(void)
 {
     return NULL; // sound comes later
