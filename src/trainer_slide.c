@@ -56,15 +56,23 @@ static bool32 ShouldRunTrainerSlideLastLowHp(u32 lastId, enum BattlerId battler,
 static void SetTrainerSlideParameters(enum BattlerId battler, u32* lastId, u32* trainerId, u32* retValue);
 static bool32 IsSlideInitalizedOrPlayed(enum BattlerId battler, enum TrainerSlideType slideId);
 
+// Pokémon World: the tables below only cover trainer IDs below their *_TABLE_COUNT; every
+// other trainer has no slide messages. A full table for every trainer ID took about 1 MB of
+// ROM while holding nothing. To give trainers slides, raise the count past their IDs.
 // Partner trainers must be added as TRAINER_PARTNER(PARTNER_XXXX)
-static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINER_PARTNER(PARTNER_COUNT)][TRAINER_SLIDE_COUNT] =
+#define TRAINER_SLIDE_TABLE_COUNT          1
+#define FRONTIER_TRAINER_SLIDE_TABLE_COUNT 1
+
+static const u8* const sNoTrainerSlides[TRAINER_SLIDE_COUNT] = {0};
+
+static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINER_SLIDE_TABLE_COUNT][TRAINER_SLIDE_COUNT] =
 {
     [DIFFICULTY_NORMAL] =
     {
     },
 };
 
-static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
+static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINER_SLIDE_TABLE_COUNT][TRAINER_SLIDE_COUNT] =
 {
     [DIFFICULTY_NORMAL] =
     {
@@ -126,9 +134,9 @@ static const u8* const *GetTrainerSlideArray(enum DifficultyLevel difficulty, u3
     return (FlagGet(TESTING_FLAG_TRAINER_SLIDES) ? sTestTrainerSlides[difficulty][trainerId] : NULL);
 #else
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-        return sFrontierTrainerSlides[difficulty][trainerId];
+        return trainerId < FRONTIER_TRAINER_SLIDE_TABLE_COUNT ? sFrontierTrainerSlides[difficulty][trainerId] : sNoTrainerSlides;
     else
-        return sTrainerSlides[difficulty][trainerId];
+        return trainerId < TRAINER_SLIDE_TABLE_COUNT ? sTrainerSlides[difficulty][trainerId] : sNoTrainerSlides;
 #endif // TESTING
 }
 
