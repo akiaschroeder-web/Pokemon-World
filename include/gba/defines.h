@@ -2,21 +2,39 @@
 #define GUARD_GBA_DEFINES_H
 
 #include <stddef.h>
+#include <stdint.h>
 
 #define TRUE   1
 #define FALSE  0
 
+#ifdef PORTABLE
+// Pokémon World web/PC build: there is no IWRAM or EWRAM, everything is ordinary memory.
+#define IWRAM_DATA
+#define EWRAM_DATA
+#define IWRAM_INIT
+#define EWRAM_INIT
+#define COMMON_DATA
+#else
 #define IWRAM_DATA __attribute__((section(".bss")))
 #define EWRAM_DATA __attribute__((section(".sbss")))
 #define IWRAM_INIT __attribute__((section(".iwram")))
 #define EWRAM_INIT __attribute__((section(".ewram")))
 #define COMMON_DATA __attribute__((section("common_data")))
+#endif
 #define UNUSED __attribute__((unused))
 #define USED __attribute__((used))
+#ifdef PORTABLE
+#define KEEP_SECTION
+#else
 #define KEEP_SECTION __attribute__((section(".text.consts")))
+#endif
 #define DEPRECATED(msg) __attribute__((deprecated(msg)))
 
+#ifdef PORTABLE
+#define ARM_FUNC
+#else
 #define ARM_FUNC __attribute__((target("arm")))
+#endif
 
 #if MODERN
 #define NOINLINE __attribute__((noinline))
@@ -30,9 +48,19 @@
 #define ALWAYS_INLINE inline __attribute__((always_inline))
 #define NONNULL __attribute__((__nonnull__))
 
+#ifdef PORTABLE
+// The hardware lives in plain arrays (src/platform/bios.c).
+extern struct SoundInfo *gPlatformSoundInfoPtr;
+extern unsigned short gPlatformIntrCheck;
+extern void *gPlatformIntrVector;
+#define SOUND_INFO_PTR (gPlatformSoundInfoPtr)
+#define INTR_CHECK     (gPlatformIntrCheck)
+#define INTR_VECTOR    (gPlatformIntrVector)
+#else
 #define SOUND_INFO_PTR (*(struct SoundInfo **)0x3007FF0)
 #define INTR_CHECK     (*(u16 *)0x3007FF8)
 #define INTR_VECTOR    (*(void **)0x3007FFC)
+#endif
 
 #define ROM_START 0x8000000
 #define ROM_END 0xA000000
@@ -42,14 +70,24 @@
 #define IWRAM_START 0x03000000
 #define IWRAM_END   (IWRAM_START + 0x8000)
 
+#ifdef PORTABLE
+extern unsigned char gPlatformPltt[];
+#define PLTT          ((uintptr_t)gPlatformPltt)
+#else
 #define PLTT          0x5000000
+#endif
 #define BG_PLTT       PLTT
 #define BG_PLTT_SIZE  0x200
 #define OBJ_PLTT      (PLTT + BG_PLTT_SIZE)
 #define OBJ_PLTT_SIZE 0x200
 #define PLTT_SIZE     (BG_PLTT_SIZE + OBJ_PLTT_SIZE)
 
+#ifdef PORTABLE
+extern unsigned char gPlatformVram[];
+#define VRAM      ((uintptr_t)gPlatformVram)
+#else
 #define VRAM      0x6000000
+#endif
 #define VRAM_SIZE 0x18000
 
 #define BG_VRAM           VRAM
@@ -72,7 +110,12 @@
 #define OBJ_VRAM1      (VRAM + 0x14000)
 #define OBJ_VRAM1_SIZE 0x4000
 
+#ifdef PORTABLE
+extern unsigned char gPlatformOam[];
+#define OAM      ((uintptr_t)gPlatformOam)
+#else
 #define OAM      0x7000000
+#endif
 #define OAM_SIZE 0x400
 
 #define ROM_HEADER_SIZE   0xC0

@@ -32,5 +32,12 @@ Assets Heart & Soul credits in turn:
 ### Sinnoh — from Sinnoh pokeemerald-expansion
 Used with permission of **LiderMorti00 (Morti)** — https://github.com/LiderMorti00/sinnoh-pokeemerald-expansion
 
+### Web/PC version — from pokeemerald-multiplatform
+MIT License — https://github.com/gradenGnostic/pokeemerald-multiplatform
+
+The hardware stand-ins in `src/platform/` (BIOS functions, software DMA, the GBA picture
+renderer) come from this port, adapted for pokeemerald-expansion. They build on earlier
+portable work by the pret community (the BIOS code is based on VBA-M).
+
 ## Original Work
 - <YOUR TEAM HERE>

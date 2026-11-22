@@ -615,6 +615,15 @@ static bool32 Script_IsEffectInstrumentedCommand(ScrCmdFunc func)
     return (((uintptr_t)func) & 0xE000000) == 0xA000000;
 }
 
+#ifdef PORTABLE
+// Web/PC build: no command is effect-instrumented (that relies on the ROM mirror), so
+// the analysis stops before running any command and never jumps back.
+#undef __builtin_setjmp
+#undef __builtin_longjmp
+#define __builtin_setjmp(buf) 0
+#define __builtin_longjmp(buf, val) do { (void)(buf); } while (0)
+#endif
+
 /* 'setjmp' and 'longjmp' cause link errors, so we use
  * '__builtin_setjmp' and '__builtin_longjmp' instead.
  * See https://gcc.gnu.org/onlinedocs/gcc/Nonlocal-Gotos.html */

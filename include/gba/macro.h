@@ -5,7 +5,7 @@
 {                                                                                 \
     vu##bit tmp = (vu##bit)(value);                                               \
     CpuSet((void *)&tmp,                                                          \
-           dest,                                                                  \
+           (void *)(uintptr_t)(dest),                                                                  \
            CPU_SET_##bit##BIT | CPU_SET_SRC_FIXED | ((size)/(bit/8) & 0x1FFFFF)); \
 }
 
@@ -23,7 +23,7 @@
 #define CpuFill16(value, dest, size) CPU_FILL(value, dest, size, 16)
 #define CpuFill32(value, dest, size) CPU_FILL(value, dest, size, 32)
 
-#define CPU_COPY_UNCHECKED(src, dest, size, bit) CpuSet(src, dest, CPU_SET_##bit##BIT | ((size)/(bit/8) & 0x1FFFFF))
+#define CPU_COPY_UNCHECKED(src, dest, size, bit) CpuSet((const void *)(uintptr_t)(src), (void *)(uintptr_t)(dest), CPU_SET_##bit##BIT | ((size)/(bit/8) & 0x1FFFFF))
 
 #if MODERN
 #define CPU_COPY(src, dest, size, bit) \
@@ -62,7 +62,7 @@
 {                                                                    \
     vu32 tmp = (vu32)(value);                                        \
     CpuFastSet((void *)&tmp,                                         \
-               dest,                                                 \
+               (void *)(uintptr_t)(dest),                                                 \
                CPU_FAST_SET_SRC_FIXED | ((size)/(32/8) & 0x1FFFFF)); \
 }
 
@@ -88,8 +88,14 @@
     } \
 }
 
-#define CpuFastCopy(src, dest, size) CpuFastSet(src, dest, ((size)/(32/8) & 0x1FFFFF))
+#define CpuFastCopy(src, dest, size) CpuFastSet((const void *)(uintptr_t)(src), (void *)(uintptr_t)(dest), ((size)/(32/8) & 0x1FFFFF))
 
+#ifdef PORTABLE
+// Web/PC build: DMA is done in software (src/platform/dma.c).
+void PlatformDmaSet(int dmaNum, const void *src, void *dest, u32 control);
+#define DmaSetUnchecked(dmaNum, src, dest, control) \
+    PlatformDmaSet(dmaNum, (const void *)(uintptr_t)(src), (void *)(uintptr_t)(dest), (u32)(control))
+#else
 #define DmaSetUnchecked(dmaNum, src, dest, control) \
 {                                                 \
     vu32 *dmaRegs = (vu32 *)REG_ADDR_DMA##dmaNum; \
@@ -98,6 +104,7 @@
     dmaRegs[2] = (vu32)(control);                 \
     dmaRegs[2];                                   \
 }
+#endif
 
 #if MODERN
 // NOTE: Assumes 16-bit DMAs.
@@ -144,7 +151,7 @@
 
 #define DMA_CLEAR_UNCHECKED(dmaNum, dest, size, bit) \
 {                                           \
-    vu##bit *_dest = (vu##bit *)(dest);     \
+    vu##bit *_dest = (vu##bit *)(uintptr_t)(dest); \
     u32 _size = size;                       \
     DmaFill##bit(dmaNum, 0, _dest, _size);  \
 }
@@ -187,8 +194,8 @@
 
 #define DmaCopyLarge(dmaNum, src, dest, size, block, bit) \
 {                                                         \
-    const void *_src = src;                               \
-    void *_dest = dest;                                   \
+    const void *_src = (const void *)(uintptr_t)(src);                               \
+    void *_dest = (void *)(uintptr_t)(dest);                                   \
     u32 _size = size;                                     \
     while (1)                                             \
     {                                                     \
@@ -210,7 +217,7 @@
 
 #define DmaFillLarge(dmaNum, value, dest, size, block, bit) \
 {                                                           \
-    void *_dest = dest;                                     \
+    void *_dest = (void *)(uintptr_t)(dest);                                     \
     u32 _size = size;                                       \
     while (1)                                               \
     {                                                       \
@@ -237,8 +244,8 @@
 
 #define DmaCopyDefvars(dmaNum, src, dest, size, bit) \
 {                                                    \
-    const void *_src = src;                          \
-    void *_dest = dest;                              \
+    const void *_src = (const void *)(uintptr_t)(src);                          \
+    void *_dest = (void *)(uintptr_t)(dest);                              \
     u32 _size = size;                                \
     DmaCopy##bit(dmaNum, _src, _dest, _size);        \
 }
@@ -248,7 +255,7 @@
 
 #define DmaFillDefvars(dmaNum, value, dest, size, bit) \
 {                                                      \
-    void *_dest = dest;                                \
+    void *_dest = (void *)(uintptr_t)(dest);                                \
     u32 _size = size;                                  \
     DmaFill##bit(dmaNum, value, _dest, _size);         \
 }
@@ -258,7 +265,7 @@
 
 #define DmaClearDefvars(dmaNum, dest, size, bit) \
 {                                                \
-    void *_dest = dest;                          \
+    void *_dest = (void *)(uintptr_t)(dest);                          \
     u32 _size = size;                            \
     DmaClear##bit(dmaNum, _dest, _size);         \
 }

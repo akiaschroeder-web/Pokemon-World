@@ -187,8 +187,13 @@ void SetSpeaker(struct ScriptContext *ctx)
 
     if (arg < SP_NAME_COUNT)
         speaker = gSpeakerNamesTable[arg];
+#ifdef PORTABLE
+    else // web/PC build: data isn't at GBA ROM addresses
+        speaker = (const u8 *)(uintptr_t)arg;
+#else
     else if (arg >= ROM_START && arg < ROM_END)
         speaker = (const u8 *)arg;
+#endif
 
     gSpeakerName = speaker;
 }

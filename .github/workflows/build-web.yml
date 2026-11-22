@@ -1,0 +1,90 @@
+name: Build web version
+
+# Builds the browser version of the game and publishes it on GitHub Pages.
+# Runs when a pushed commit's message contains [web], or from "Run workflow".
+# After building, it opens the game in a headless browser, presses a few buttons
+# and saves screenshots to the web-screenshots branch, as a quick check.
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: web-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: >-
+      github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[web]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libpng-dev python3 binutils
+
+      - name: Install Emscripten
+        uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.74
+
+      - name: Build
+        env:
+          GAME_VERSION: EMERALD
+        run: |
+          make -j$(nproc) PLATFORM=web web 2>&1 | tee build.log
+          ls -la build/web/site
+
+      - name: Show build errors
+        if: failure()
+        run: grep -E "error|undefined symbol" build.log | head -200 || true
+
+      - name: Check it runs
+        run: |
+          cd build/web/site
+          python3 -m http.server 8000 > /dev/null 2>&1 &
+          cd "$GITHUB_WORKSPACE"
+          npm install --no-save playwright@1.49.1 > /dev/null
+          npx playwright install --with-deps chromium > /dev/null
+          node tools/web/smoke_test.js http://localhost:8000/ screenshots
+
+      - name: Save screenshots to the web-screenshots branch
+        if: always()
+        run: |
+          mkdir -p screenshots
+          git config user.name "web build"
+          git config user.email "actions@users.noreply.github.com"
+          sha=$(git rev-parse --short HEAD)
+          git fetch origin web-screenshots || true
+          rm -rf /tmp/shots && cp -r screenshots /tmp/shots
+          git checkout --orphan shots-tmp
+          git rm -rfq . || true
+          cp -r /tmp/shots/* .
+          cp build.log . 2>/dev/null || true
+          git add -A
+          git commit -qm "Screenshots of ${sha}"
+          git push -f origin shots-tmp:web-screenshots
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish on GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -7,11 +7,21 @@
 typedef uint8_t   u8;
 typedef uint16_t u16;
 typedef uint32_t u32;
+#ifdef PORTABLE
+// Web/PC build: lay out 64-bit values like the GBA does (4-byte alignment), so structs
+// and save data are the same size and shape as in the ROM.
+typedef uint64_t u64 __attribute__((aligned(4)));
+#else
 typedef uint64_t u64;
+#endif
 typedef int8_t    s8;
 typedef int16_t  s16;
 typedef int32_t  s32;
+#ifdef PORTABLE
+typedef int64_t  s64 __attribute__((aligned(4)));
+#else
 typedef int64_t  s64;
+#endif
 
 typedef volatile u8   vu8;
 typedef volatile u16 vu16;

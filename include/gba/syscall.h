@@ -35,7 +35,7 @@ void CpuSet(const void *src, void *dest, u32 control);
     { \
         _Static_assert(_Alignof(src) >= __builtin_choose_expr(__builtin_constant_p(control), ((control) & CPU_SET_32BIT) ? 4 : 2, 2), "source potentially unaligned"); \
         _Static_assert(_Alignof(dest) >= __builtin_choose_expr(__builtin_constant_p(control), ((control) & CPU_SET_32BIT) ? 4 : 2, 2), "destination potentially unaligned"); \
-        CpuSet(src, dest, control); \
+        CpuSet((const void *)(uintptr_t)(src), (void *)(uintptr_t)(dest), control); \
     } while (0)
 #endif
 
@@ -49,7 +49,7 @@ void CpuFastSet(const void *src, void *dest, u32 control);
     { \
         _Static_assert(_Alignof(src) >= 4, "source potentially unaligned"); \
         _Static_assert(_Alignof(dest) >= 4, "destination potentially unaligned"); \
-        CpuFastSet(src, dest, control); \
+        CpuFastSet((const void *)(uintptr_t)(src), (void *)(uintptr_t)(dest), control); \
     } while (0)
 #endif
 

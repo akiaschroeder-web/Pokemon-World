@@ -36,6 +36,13 @@
 
 #if MODERN
 #define asm __asm__
+
+#ifdef PORTABLE
+#include <stdio.h>
+#define DBGPRINTF(...) printf(__VA_ARGS__)
+#else
+#define DBGPRINTF(...)
+#endif
 #endif
 
 /// IDE support
