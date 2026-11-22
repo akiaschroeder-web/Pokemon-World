@@ -160,9 +160,7 @@ void RegisterRamReset(u32 resetFlags)
 {
 }
 
-void IntrMain(void)
-{
-}
+u32 IntrMain[1]; // the GBA's interrupt dispatcher (src/crt0.s); interrupts are called directly here
 
 int MultiBoot(struct MultiBootParam *mp)
 {
