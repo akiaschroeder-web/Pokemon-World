@@ -65,6 +65,7 @@ $(DATA_ASM_BUILDDIR)/%.elf.o: $(DATA_ASM_SUBDIR)/%.s
 
 $(DATA_ASM_BUILDDIR)/%.d: $(DATA_ASM_SUBDIR)/%.s
 	$(SCANINC) -M $@ -g $(ASSETS_DIR_NAME) $(INCLUDE_SCANINC_ARGS) -I "" $<
+	@sed -i -E '1s|^([^:]*)\.o:|\1.elf.o:|' $@ # the web build assembles to .elf.o first
 
 ifneq ($(NODEP),1)
 -include $(addprefix $(OBJ_DIR)/,$(DATA_ASM_SRCS:.s=.d))
