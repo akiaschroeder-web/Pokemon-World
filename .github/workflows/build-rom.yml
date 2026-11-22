@@ -31,7 +31,12 @@ jobs:
         run: make -j$(nproc) -O all
 
       - name: Show how much of the 32 MB ROM is used
-        run: arm-none-eabi-size pokeemerald.elf || true
+        run: |
+          arm-none-eabi-size pokeemerald.elf || true
+          echo "Largest pieces of the ROM (bytes, name):"
+          arm-none-eabi-nm --size-sort -S pokeemerald.elf | awk '$3 ~ /[TtRrDd]/ {print strtonum("0x"$2), $4}' | sort -rn | head -60 || true
+          echo "ROM bytes by source folder:"
+          arm-none-eabi-nm -S -l pokeemerald.elf 2>/dev/null | awk 'NF>=5 && $3 ~ /[TtRrDd]/ {split($5,a,":"); f=a[1]; sub("^.*/pokemon-world/","",f); sub("^.*/Pokemon-World/","",f); n=split(f,p,"/"); key=p[1]"/"p[2]; s[key]+=strtonum("0x"$2)} END {for (k in s) print s[k], k}' | sort -rn | head -40 || true
 
       - name: Name the ROM after the branch and commit
         run: |
