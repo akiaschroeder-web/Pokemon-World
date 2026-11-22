@@ -4,6 +4,11 @@
 #include <stdbool.h>
 #include "platform/dma.h"
 
+// Text-mode backgrounds can't reach the sprite half of VRAM (from 0x10000): the GBA
+// reads those tiles as empty. Tile maps sometimes point there with leftover entries.
+#define BG_TILE_BYTE(loc) ((charBaseBlock * 0x4000 + (loc) < 0x10000) ? bgtiles[(loc)] : 0)
+#define BG_TILE_WORD(loc) ((charBaseBlock * 0x4000 + (loc) < 0x10000) ? *(uint32_t *)&bgtiles[(loc)] : 0)
+
 #define mosaicBGEffectX (REG_MOSAIC & 0xF)
 #define mosaicBGEffectY ((REG_MOSAIC >> 4) & 0xF)
 #define mosaicSpriteEffectX ((REG_MOSAIC >> 8) & 0xF)
@@ -248,7 +253,7 @@ static void RenderBGScanlineWinBlend(int bgNum, uint16_t control, uint16_t hoffs
     {
         for (int i = visibleTilePixels; i < 8; i++)
         {
-            pixel = bgtiles[tileLoc + (3-(i/2))];
+            pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
             if (i & 1)
                 pixel &= 0xF;
@@ -264,7 +269,7 @@ static void RenderBGScanlineWinBlend(int bgNum, uint16_t control, uint16_t hoffs
     {
         for (int i = visibleTilePixels; i < 8; i++)
         {
-            pixel = bgtiles[tileLoc + (i/2)];
+            pixel = BG_TILE_BYTE(tileLoc + (i/2));
 
             if (i & 1)
                 pixel >>= 4;
@@ -289,7 +294,7 @@ static void RenderBGScanlineWinBlend(int bgNum, uint16_t control, uint16_t hoffs
             tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
         else
             tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-        uint32_t pixel32 = *(uint32_t*)&bgtiles[tileLoc];
+        uint32_t pixel32 = BG_TILE_WORD(tileLoc);
         if (pixel32 != 0) {
             if (entry & (1 << 10))
             {
@@ -327,13 +332,13 @@ static void RenderBGScanlineWinBlend(int bgNum, uint16_t control, uint16_t hoffs
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    if((BG_TILE_WORD(tileLoc)) != 0)
     {
         if (entry & (1 << 10)) //horizontally flipped
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -350,7 +355,7 @@ static void RenderBGScanlineWinBlend(int bgNum, uint16_t control, uint16_t hoffs
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
                 
                 if (i & 1)
                     pixel >>= 4;
@@ -475,14 +480,14 @@ static void RenderBGScanlineWin(int bgNum, uint16_t control, uint16_t hoffs, uin
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    //if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    //if((BG_TILE_WORD(tileLoc)) != 0)
     //{
         //draw left most tile
         if (entry & (1 << 10))
         {
             for (int i = visibleTilePixels; i < 8; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -498,7 +503,7 @@ static void RenderBGScanlineWin(int bgNum, uint16_t control, uint16_t hoffs, uin
         {
             for (int i = visibleTilePixels; i < 8; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
 
                 if (i & 1)
                     pixel >>= 4;
@@ -524,7 +529,7 @@ static void RenderBGScanlineWin(int bgNum, uint16_t control, uint16_t hoffs, uin
             tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
         else
             tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-        uint32_t pixel32 = *(uint32_t*)&bgtiles[tileLoc];
+        uint32_t pixel32 = BG_TILE_WORD(tileLoc);
         if (pixel32 != 0) {
             if (entry & (1 << 10))
             {
@@ -562,13 +567,13 @@ static void RenderBGScanlineWin(int bgNum, uint16_t control, uint16_t hoffs, uin
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    if((BG_TILE_WORD(tileLoc)) != 0)
     {
         if (entry & (1 << 10)) //horizontally flipped
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -585,7 +590,7 @@ static void RenderBGScanlineWin(int bgNum, uint16_t control, uint16_t hoffs, uin
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
                 
                 if (i & 1)
                     pixel >>= 4;
@@ -717,14 +722,14 @@ static void RenderBGScanlineBlend(int bgNum, uint16_t control, uint16_t hoffs, u
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    //if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    //if((BG_TILE_WORD(tileLoc)) != 0)
     {
         //draw left most tile
         if (entry & (1 << 10))
         {
             for (int i = visibleTilePixels; i < 8; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -740,7 +745,7 @@ static void RenderBGScanlineBlend(int bgNum, uint16_t control, uint16_t hoffs, u
         {
             for (int i = visibleTilePixels; i < 8; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
 
                 if (i & 1)
                     pixel >>= 4;
@@ -766,7 +771,7 @@ static void RenderBGScanlineBlend(int bgNum, uint16_t control, uint16_t hoffs, u
             tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
         else
             tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-        uint32_t pixel32 = *(uint32_t*)&bgtiles[tileLoc];
+        uint32_t pixel32 = BG_TILE_WORD(tileLoc);
         if (pixel32 != 0) {
             if (entry & (1 << 10))
             {
@@ -804,13 +809,13 @@ static void RenderBGScanlineBlend(int bgNum, uint16_t control, uint16_t hoffs, u
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    if((BG_TILE_WORD(tileLoc)) != 0)
     {
         if (entry & (1 << 10)) //horizontally flipped
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -827,7 +832,7 @@ static void RenderBGScanlineBlend(int bgNum, uint16_t control, uint16_t hoffs, u
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
                 
                 if (i & 1)
                     pixel >>= 4;
@@ -946,14 +951,14 @@ static void RenderBGScanlineNoEffect(int bgNum, uint16_t control, uint16_t hoffs
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    //if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    //if((BG_TILE_WORD(tileLoc)) != 0)
     {
         //draw left most tile
         if (entry & (1 << 10))
         {
             for (int i = visibleTilePixels; i < 8; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -969,7 +974,7 @@ static void RenderBGScanlineNoEffect(int bgNum, uint16_t control, uint16_t hoffs
         {
             for (int i = visibleTilePixels; i < 8; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
 
                 if (i & 1)
                     pixel >>= 4;
@@ -995,7 +1000,7 @@ static void RenderBGScanlineNoEffect(int bgNum, uint16_t control, uint16_t hoffs
             tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
         else
             tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-        uint32_t pixel32 = *(uint32_t*)&bgtiles[tileLoc];
+        uint32_t pixel32 = BG_TILE_WORD(tileLoc);
         if (pixel32 != 0) {
             if (entry & (1 << 10))
             {
@@ -1033,13 +1038,13 @@ static void RenderBGScanlineNoEffect(int bgNum, uint16_t control, uint16_t hoffs
         tileLoc = (tileNum * (bitsPerPixel * 8)) + (7 - tileY)*bitsPerPixel;
     else
         tileLoc = (tileNum * (bitsPerPixel * 8)) + tileY*bitsPerPixel;
-    if((*(uint32_t*)&bgtiles[tileLoc]) != 0)
+    if((BG_TILE_WORD(tileLoc)) != 0)
     {
         if (entry & (1 << 10)) //horizontally flipped
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (3-(i/2))];
+                pixel = BG_TILE_BYTE(tileLoc + (3-(i/2)));
 
                 if (i & 1)
                     pixel &= 0xF;
@@ -1056,7 +1061,7 @@ static void RenderBGScanlineNoEffect(int bgNum, uint16_t control, uint16_t hoffs
         {
             for (int i = 0; i < visibleTilePixels; i++)
             {
-                pixel = bgtiles[tileLoc + (i/2)];
+                pixel = BG_TILE_BYTE(tileLoc + (i/2));
                 
                 if (i & 1)
                     pixel >>= 4;
