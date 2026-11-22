@@ -482,6 +482,15 @@ bool32 IsDma3ManagerBusyWithBgCopy(void)
 {
     int i;
 
+#ifdef PORTABLE
+    // Some callers wait on this in a tight loop (e.g. DoMapLoadLoop in overworld.c).
+    // On hardware the V-blank interrupt runs ProcessDma3Requests in the middle of
+    // that loop; the portable build only runs it once per frame in VBlankIntrWait,
+    // so the copies would never finish and the loop would never end. Do here what
+    // the interrupt would have done (nothing is drawn until VBlankIntrWait anyway).
+    ProcessDma3Requests();
+#endif
+
     for (i = 0; i < 0x80; i++)
     {
         u8 div = i / 0x20;

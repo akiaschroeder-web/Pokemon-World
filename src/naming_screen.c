@@ -704,6 +704,8 @@ static bool8 MainState_Exit(void)
             SetMainCallback2(sNamingScreen->returnCallback);
         DestroyTask(FindTaskIdByFunc(Task_NamingScreen));
         FreeAllWindowBuffers();
+        // VBlankCB_NamingScreen reads sNamingScreen, so stop it before freeing.
+        ResetVHBlank();
         FREE_AND_SET_NULL(sNamingScreen);
     }
     return FALSE;
@@ -2080,6 +2082,12 @@ static void PrintControls(void)
 static void CB2_NamingScreen(void)
 {
     RunTasks();
+    // MainState_Exit (run by the task above) may just have freed sNamingScreen.
+    // The sprite callbacks (e.g. SpriteCB_Underscore) read it, so don't run them
+    // again: on hardware that read is harmless garbage, but in the web build the
+    // NULL read turns into a wild pointer and crashes the browser tab.
+    if (sNamingScreen == NULL)
+        return;
     AnimateSprites();
     BuildOamBuffer();
     UpdatePaletteFade();
