@@ -2279,7 +2279,7 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong)
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(GetCurrentRegion() == REGION_SINNOH ? MUS_DPP_VICTORY_WILD : MUS_VICTORY_WILD);
+                    PlayBGM(GetWildVictoryBGM()); // Pokémon World: by place
                     gBattleStruct->wildVictorySong++;
                 }
 

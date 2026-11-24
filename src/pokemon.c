@@ -5098,8 +5098,64 @@ bool32 IsSpeciesInHoennDex(enum Species species)
         return TRUE;
 }
 
+// Pokémon World: HGSS's themes for Johto's legendaries, in Johto and the later Kanto (0 = none)
+u16 GetHgssLegendaryBGM(enum Species species)
+{
+    if (!IsHgssMusicStyle(GetCurrentMusicStyle()))
+        return 0;
+    switch (species)
+    {
+    case SPECIES_LUGIA:
+        return MUS_HG_VS_LUGIA;
+    case SPECIES_HO_OH:
+        return MUS_HG_VS_HO_OH;
+    case SPECIES_RAIKOU:
+        return MUS_HG_VS_RAIKOU;
+    case SPECIES_ENTEI:
+        return MUS_HG_VS_ENTEI;
+    case SPECIES_SUICUNE:
+        return MUS_HG_VS_SUICUNE;
+    default:
+        return 0;
+    }
+}
+
+// Pokémon World: battle music follows the place (see GetCurrentMusicStyle in regions.h). Hoenn keeps
+// Emerald's, FireRed's Kanto FireRed's, Sinnoh the Sinnoh port's, Johto and the later Kanto HGSS's.
+// Opponents with a theme of their own (legendaries, villain teams, Frontier Brains...) keep it.
+static u16 GetHgssTrainerBGM(enum TrainerClassID trainerClass, bool32 kanto)
+{
+    switch (trainerClass)
+    {
+    case TRAINER_CLASS_TEAM_ROCKET_FRLG:
+    case TRAINER_CLASS_ROCKET_ADMIN_HNS:
+    case TRAINER_CLASS_BOSS_FRLG:
+        return MUS_HG_VS_ROCKET;
+    case TRAINER_CLASS_LEADER:
+    case TRAINER_CLASS_LEADER_FRLG:
+        return kanto ? MUS_HG_VS_GYM_LEADER_KANTO : MUS_HG_VS_GYM_LEADER;
+    case TRAINER_CLASS_ELITE_FOUR:  // HGSS's Elite Four battles use the Johto gym leader theme
+    case TRAINER_CLASS_ELITE_FOUR_FRLG:
+        return MUS_HG_VS_GYM_LEADER;
+    case TRAINER_CLASS_CHAMPION:    // Lance
+    case TRAINER_CLASS_CHAMPION_FRLG:
+    case TRAINER_CLASS_PKMN_TRAINER_1: // Red
+        return MUS_HG_VS_CHAMPION;
+    case TRAINER_CLASS_RIVAL:       // Silver
+        return MUS_HG_VS_RIVAL;
+    default:
+        return kanto ? MUS_HG_VS_TRAINER_KANTO : MUS_HG_VS_TRAINER;
+    }
+}
+
 u16 GetBattleBGM(void)
 {
+    enum MusicStyle style = GetCurrentMusicStyle();
+
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
+     && GetHgssLegendaryBGM(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES)))
+        return GetHgssLegendaryBGM(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES));
+
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         switch (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES))
@@ -5134,6 +5190,13 @@ u16 GetBattleBGM(void)
             trainerClass = TRAINER_CLASS_EXPERT;
         else
             trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
+
+        if (IsHgssMusicStyle(style) && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+         && trainerClass != TRAINER_CLASS_TEAM_GALACTIC && trainerClass != TRAINER_CLASS_GALACTIC_COMMANDER
+         && trainerClass != TRAINER_CLASS_TEAM_AQUA && trainerClass != TRAINER_CLASS_TEAM_MAGMA
+         && trainerClass != TRAINER_CLASS_AQUA_ADMIN && trainerClass != TRAINER_CLASS_MAGMA_ADMIN
+         && trainerClass != TRAINER_CLASS_AQUA_LEADER && trainerClass != TRAINER_CLASS_MAGMA_LEADER)
+            return GetHgssTrainerBGM(trainerClass, style == MUSIC_STYLE_HGSS_KANTO);
 
         switch (trainerClass)
         {
@@ -5181,7 +5244,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            if (GetCurrentRegion() == REGION_KANTO)
+            if (style == MUSIC_STYLE_FRLG)
                 return MUS_RG_VS_TRAINER;
             else
                 return MUS_VS_TRAINER;
@@ -5189,12 +5252,98 @@ u16 GetBattleBGM(void)
     }
     else
     {
-        if (GetCurrentRegion() == REGION_KANTO)
+        switch (style)
+        {
+        case MUSIC_STYLE_FRLG:
             return MUS_RG_VS_WILD;
-        else if (GetCurrentRegion() == REGION_SINNOH)
+        case MUSIC_STYLE_SINNOH:
             return MUS_DPP_VS_WILD;
-        else
+        case MUSIC_STYLE_HGSS_JOHTO:
+            return MUS_HG_VS_WILD;
+        case MUSIC_STYLE_HGSS_KANTO:
+            return MUS_HG_VS_WILD_KANTO;
+        default:
             return MUS_VS_WILD;
+        }
+    }
+}
+
+// Pokémon World: the music for beating a trainer, by place (see GetBattleBGM)
+u16 GetTrainerVictoryBGM(enum TrainerClassID trainerClass)
+{
+    enum MusicStyle style = GetCurrentMusicStyle();
+
+    switch (trainerClass)
+    {
+    case TRAINER_CLASS_TEAM_AQUA:
+    case TRAINER_CLASS_TEAM_MAGMA:
+    case TRAINER_CLASS_AQUA_ADMIN:
+    case TRAINER_CLASS_AQUA_LEADER:
+    case TRAINER_CLASS_MAGMA_ADMIN:
+    case TRAINER_CLASS_MAGMA_LEADER:
+        return MUS_VICTORY_AQUA_MAGMA;
+    case TRAINER_CLASS_TEAM_GALACTIC: // Sinnoh's Galactic victory theme
+    case TRAINER_CLASS_GALACTIC_COMMANDER:
+        return MUS_DPP_VICTORY_GALACTIC;
+    default:
+        break;
+    }
+
+    switch (style)
+    {
+    case MUSIC_STYLE_HGSS_JOHTO:
+    case MUSIC_STYLE_HGSS_KANTO:
+        switch (trainerClass)
+        {
+        case TRAINER_CLASS_LEADER:
+        case TRAINER_CLASS_LEADER_FRLG:
+        case TRAINER_CLASS_ELITE_FOUR:
+        case TRAINER_CLASS_ELITE_FOUR_FRLG:
+        case TRAINER_CLASS_CHAMPION:
+        case TRAINER_CLASS_CHAMPION_FRLG:
+        case TRAINER_CLASS_PKMN_TRAINER_1:
+            return MUS_HG_VICTORY_GYM_LEADER;
+        default:
+            return MUS_HG_VICTORY_TRAINER;
+        }
+    case MUSIC_STYLE_FRLG:
+        switch (trainerClass)
+        {
+        case TRAINER_CLASS_LEADER:
+        case TRAINER_CLASS_LEADER_FRLG:
+        case TRAINER_CLASS_ELITE_FOUR_FRLG:
+        case TRAINER_CLASS_CHAMPION_FRLG:
+            return MUS_RG_VICTORY_GYM_LEADER;
+        default:
+            return MUS_RG_VICTORY_TRAINER;
+        }
+    default:
+        switch (trainerClass)
+        {
+        case TRAINER_CLASS_ELITE_FOUR:
+        case TRAINER_CLASS_CHAMPION:
+            return MUS_VICTORY_LEAGUE;
+        case TRAINER_CLASS_LEADER:
+            return MUS_VICTORY_GYM_LEADER;
+        default:
+            return MUS_VICTORY_TRAINER;
+        }
+    }
+}
+
+u16 GetWildVictoryBGM(void)
+{
+    switch (GetCurrentMusicStyle())
+    {
+    case MUSIC_STYLE_FRLG:
+        return MUS_RG_VICTORY_WILD;
+    case MUSIC_STYLE_SINNOH:
+        return MUS_DPP_VICTORY_WILD;
+    case MUSIC_STYLE_HGSS_JOHTO:
+    case MUSIC_STYLE_HGSS_KANTO:
+        return MUS_HG_VICTORY_WILD;
+    default:
+        return MUS_VICTORY_WILD;
     }
 }
 

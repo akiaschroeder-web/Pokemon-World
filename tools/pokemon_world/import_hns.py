@@ -34,7 +34,7 @@ What it writes (all generated: edit this script, not the output):
   include/constants/vars_hns.h              ... vars (JOHTO_VARS_START)
   include/constants/opponents_hns.h         ... trainer IDs (JOHTO_TRAINERS_START)
   include/constants/metatile_labels_hns.h   METATILE_Hns_*
-  include/constants/hns_compat.h            temporary music/item stand-ins, Heart & Soul sprites = ours
+  include/constants/hns_compat.h            stand-ins (non-HGSS songs), Heart & Soul sprites = ours
   include/constants/event_objects.h         OBJ_EVENT_GFX_HNS_* and OBJ_EVENT_PAL_TAG_HNS_* (between its
                                             "// BEGIN HNS_OBJ_EVENT_..." / "// END" lines), with
   src/data/object_events/*_hns.h            Heart & Soul's overworld sprites we lacked (hns_sprites.py)
@@ -48,7 +48,12 @@ What it writes (all generated: edit this script, not the output):
   src/data/graphics/trainers_hns_{gfx,table}.h  their front pics
   graphics/trainers/front_pics/hns/         Heart & Soul's trainer front pics we lacked
   include/constants/trainer_music_hns.h     Heart & Soul's encounter music -> our styles
-                                            (table: ENCOUNTER_MUSIC below; HGSS music is stage 4)
+                                            (table: ENCOUNTER_MUSIC below)
+  include/constants/map_groups_hns.h        HNS_MAP_GROUP_FIRST/LAST (tells later Kanto from FireRed's)
+  HGSS music (hns_music.py):                sound/songs/midi/mus_hg_*.mid + midi_hns.cfg,
+                                            include/constants/songs_hns.h, sound/song_table_hns.inc,
+                                            sound/voicegroups/hgss.inc, sound/direct_sound_data_hgss.inc,
+                                            sound/direct_sound_samples/hgss/
   src/data/wild_encounters.json             gWildMonHeaders entries for *_HNS maps (day
                                             table gX_Hns, night table gX_Hns_Night)
   src/data/tilesets/{graphics,metatiles,headers}_hns.h
@@ -1027,6 +1032,15 @@ class Importer:
             mg["group_order"].append(ng)
             mg[ng] = [m + "_Hns" for m in ms]
         wjson("data/maps/map_groups.json", mg)
+        # Heart & Soul's map groups come last, together: the game tells its maps (the later Kanto,
+        # with HGSS music) from FireRed's (same map sections) by the map group.
+        idx = [i for i, g in enumerate(mg["group_order"]) if g.endswith("_Hns")]
+        if idx != list(range(idx[0], idx[-1] + 1)):
+            sys.exit("map_groups.json: the *_Hns groups aren't together")
+        wr("include/constants/map_groups_hns.h", GEN_C + "#ifndef GUARD_CONSTANTS_MAP_GROUPS_HNS_H\n"
+           "#define GUARD_CONSTANTS_MAP_GROUPS_HNS_H\n\n// Heart & Soul's map groups (Johto and the later Kanto), "
+           f"{mg['group_order'][idx[0]]} to {mg['group_order'][idx[-1]]}\n"
+           f"#define HNS_MAP_GROUP_FIRST {idx[0]}\n#define HNS_MAP_GROUP_LAST  {idx[-1]}\n\n#endif\n")
 
     # --- heal locations -------------------------------------------------------------
     def gen_heal_locations(self):
@@ -1241,9 +1255,11 @@ class Importer:
     def gen_compat(self):
         out = [GEN_C, "#ifndef GUARD_CONSTANTS_HNS_COMPAT_H\n#define GUARD_CONSTANTS_HNS_COMPAT_H\n\n",
                "// Stand-ins for things Heart & Soul has and we don't have yet. TODO: replace each\n",
-               "// with the real thing in a later stage (HGSS music, Johto sprites, Johto key items).\n\n",
-               "// Music: Heart & Soul's HGSS songs, played as an existing song for now.\n"]
-        for s in sorted(self.missing_songs):
+               "// with the real thing in a later stage.\n\n",
+               "// Music: songs Heart & Soul plays that aren't HGSS songs (those are in constants/songs_hns.h),\n"
+               "// played as the closest song we have.\n"]
+        self.hgss_songs = hns_music.import_music(self.H, self.missing_songs, note)
+        for s in sorted(self.missing_songs - self.hgss_songs):
             alt = MUSIC_STANDIN.get(s)
             if not alt:
                 alt = "MUS_ROUTE101" if s.startswith("MUS_") else "SE_SELECT"
@@ -1368,12 +1384,11 @@ class Importer:
 
     def gen_trainer_music(self):
         out = [GEN_C, "#ifndef GUARD_CONSTANTS_TRAINER_MUSIC_HNS_H\n#define GUARD_CONSTANTS_TRAINER_MUSIC_HNS_H\n\n",
-               "// Heart & Soul's trainer encounter music, as one of our encounter styles until the HGSS\n",
-               "// music comes in (stage 4). The table is ENCOUNTER_MUSIC in tools/pokemon_world/import_hns.py:\n",
-               "// to give these their own songs, add TRAINER_ENCOUNTER_MUSIC_* values (and their songs in\n",
-               "// src/data/trainer_approach_music.h) and point these at them there.\n\n"]
+               "// Heart & Soul's trainer encounter music, as our encounter styles (the HGSS themes are\n",
+               "// TRAINER_ENCOUNTER_MUSIC_HG_*, their songs in src/data/trainer_approach_music.h). The table\n",
+               "// is ENCOUNTER_MUSIC in tools/pokemon_world/import_hns.py.\n\n"]
         for h, (ours, why) in ENCOUNTER_MUSIC.items():
-            line = f"#define TRAINER_ENCOUNTER_MUSIC_HNS_{h:<16} TRAINER_ENCOUNTER_MUSIC_{ours:<11}"
+            line = f"#define TRAINER_ENCOUNTER_MUSIC_HNS_{h:<16} TRAINER_ENCOUNTER_MUSIC_{ours:<16}"
             out.append((f"{line} // {why}" if why else line.rstrip()) + "\n")
         out.append("\n#endif\n")
         wr("include/constants/trainer_music_hns.h", "".join(out))
@@ -1671,31 +1686,32 @@ FEMALE_PICS = {
 }
 # Heart & Soul's AI_SCRIPT_* -> expansion's AI_FLAG_* (same name unless listed here).
 AI_RENAME = {"SETUP_FIRST_TURN": "FORCE_SETUP_FIRST_TURN"}
-# Heart & Soul's trainer encounter music -> one of our encounter styles, until HGSS music (stage 4).
-# Written to include/constants/trainer_music_hns.h as TRAINER_ENCOUNTER_MUSIC_HNS_<key>.
+# Heart & Soul's trainer encounter music -> our encounter styles (the HGSS ones are TRAINER_ENCOUNTER_MUSIC_HG_*,
+# with their songs in src/data/trainer_approach_music.h). Written to include/constants/trainer_music_hns.h
+# as TRAINER_ENCOUNTER_MUSIC_HNS_<key>.
 ENCOUNTER_MUSIC = OrderedDict([
     ("MALE", ("MALE", "Heart & Soul: standard male")),
-    ("FEMALE", ("FEMALE", "Kimono Girls")),
+    ("FEMALE", ("FEMALE", "Kimono Girls (as in Heart & Soul)")),
     ("GIRL", ("GIRL", "")),
     ("SUSPICIOUS", ("SUSPICIOUS", "")),
     ("INTENSE", ("INTENSE", "")),
     ("COOL", ("COOL", "")),
-    ("ROCKET", ("DANGEROUS", "Team Rocket: FireRed's Rocket theme (HGSS: MUS_HG_ENCOUNTER_ROCKET)")),
+    ("ROCKET", ("HG_ROCKET", "Team Rocket: MUS_HG_ENCOUNTER_ROCKET")),
     ("MAGMA", ("MAGMA", "")),
     ("SWIMMER", ("SWIMMER", "")),
     ("TWINS", ("TWINS", "")),
     ("ELITE_FOUR", ("ELITE_FOUR", "Elite Four")),
     ("HIKER", ("HIKER", "")),
-    ("SILVER", ("INTENSE", "Silver (HGSS: MUS_HG_ENCOUNTER_RIVAL)")),
+    ("SILVER", ("HG_RIVAL", "Silver: MUS_HG_ENCOUNTER_RIVAL")),
     ("RICH", ("RICH", "")),
-    ("HG_CHAMPION", ("ELITE_FOUR", "Lance, Red (HGSS: MUS_HG_VS_CHAMPION)")),
-    ("HG_BOY_1", ("SERIOUS", "Youngsters, Bug Catchers, Leaders... (HGSS: MUS_HG_ENCOUNTER_BOY_1)")),
-    ("HG_BOY_2", ("SERIOUS", "Bikers, Swimmers, Officers (HGSS: MUS_HG_ENCOUNTER_BOY_2)")),
-    ("HG_GIRL_1", ("CUTE", "Lasses, Picnickers, Twins (HGSS: MUS_HG_ENCOUNTER_GIRL_1)")),
-    ("HG_GIRL_2", ("FEMALE", "Beauties, female Cooltrainers, Swimmers (HGSS: MUS_HG_ENCOUNTER_GIRL_2)")),
-    ("HG_SUSPICIOUS_1", ("DANGEROUS", "Super Nerds, Jugglers (HGSS: MUS_HG_ENCOUNTER_SUSPICIOUS_1)")),
-    ("HG_SUSPICIOUS_2", ("HIKER", "Hikers, Fishermen, Black Belts, Sailors (HGSS: MUS_HG_ENCOUNTER_SUSPICIOUS_2)")),
-    ("HG_SAGE", ("SUSPICIOUS", "Sages, Mediums (HGSS: MUS_HG_ENCOUNTER_SAGE)")),
+    ("HG_CHAMPION", ("HG_CHAMPION", "Lance, Red: MUS_HG_VS_CHAMPION")),
+    ("HG_BOY_1", ("HG_BOY_1", "Youngsters, Bug Catchers, Leaders...: MUS_HG_ENCOUNTER_BOY_1")),
+    ("HG_BOY_2", ("HG_BOY_2", "Bikers, Swimmers, Officers: MUS_HG_ENCOUNTER_BOY_2")),
+    ("HG_GIRL_1", ("HG_GIRL_1", "Lasses, Picnickers, Twins: MUS_HG_ENCOUNTER_GIRL_1")),
+    ("HG_GIRL_2", ("HG_GIRL_2", "Beauties, female Cooltrainers, Swimmers: MUS_HG_ENCOUNTER_GIRL_2")),
+    ("HG_SUSPICIOUS_1", ("HG_SUSPICIOUS_1", "Super Nerds, Jugglers: MUS_HG_ENCOUNTER_SUSPICIOUS_1")),
+    ("HG_SUSPICIOUS_2", ("HG_SUSPICIOUS_2", "Hikers, Fishermen, Black Belts, Sailors: MUS_HG_ENCOUNTER_SUSPICIOUS_2")),
+    ("HG_SAGE", ("HG_SAGE", "Sages, Mediums: MUS_HG_ENCOUNTER_SAGE")),
 ])
 # Heal locations with no Pokémon Center at the door: (respawn map, healer local id, x, y), or another
 # heal location whose respawn to use. Local id 1 in a house = Mom (EventScript_AfterWhiteOutMomHeal).
@@ -1722,9 +1738,19 @@ OLD_TRAINERBATTLE = {"TRAINER_BATTLE_CONTINUE_SCRIPT", "TRAINER_BATTLE_CONTINUE_
 
 # Heart & Soul's overworld sprites (OBJ_EVENT_GFX_HNS_*): see hns_sprites.py.
 import hns_sprites  # noqa: E402  (next to this script)
+# Heart & Soul's HGSS songs, voicegroups and samples: see hns_music.py.
+import hns_music  # noqa: E402
 
-# HGSS songs -> closest song we have, until the HGSS music is imported.
+# Songs Heart & Soul's maps/scripts play that hns_music.py doesn't bring over (not HGSS songs):
+# the closest song we have.
 MUSIC_STANDIN = {
+    # Platinum's Fight Area theme (Trainer Hill courtyard): would need DPPt's whole voicegroup set
+    "MUS_PL_FIGHT_AREA_DAY": "MUS_DPP_LEAGUE_OUTSIDE",
+    # Ruby/Sapphire's heavy-rain theme, which Emerald replaced with MUS_ABNORMAL_WEATHER
+    "MUS_WEATHER_KYOGRE": "MUS_ABNORMAL_WEATHER",
+}
+# Before stage 4 (HGSS music), the HGSS songs played as these; kept only as a record.
+OLD_HGSS_STANDIN = {
     "MUS_HG_PALLET": "MUS_RG_PALLET", "MUS_HG_ROUTE1": "MUS_RG_ROUTE1", "MUS_HG_PEWTER": "MUS_RG_PEWTER",
     "MUS_HG_CERULEAN": "MUS_RG_ROUTE24", "MUS_HG_VERMILION": "MUS_RG_VERMILLION", "MUS_HG_LAVENDER": "MUS_RG_LAVENDER",
     "MUS_HG_CELADON": "MUS_RG_CELADON", "MUS_HG_CINNABAR": "MUS_RG_CINNABAR", "MUS_HG_ROUTE3": "MUS_RG_ROUTE3",
@@ -1748,8 +1774,7 @@ MUSIC_STANDIN = {
     "MUS_HG_DANCE_THEATER": "MUS_CONTEST_LOBBY", "MUS_HG_KIMONO_GIRL": "MUS_CONTEST_LOBBY",
     "MUS_HG_KIMONO_GIRL_DANCE": "MUS_CONTEST", "MUS_HG_EUSINE": "MUS_ENCOUNTER_SUSPICIOUS",
     "MUS_HG_POKEGEAR_REGISTERED": "MUS_REGISTER_MATCH_CALL", "MUS_HG_VS_HO_OH": "MUS_RG_VS_LEGEND",
-    "MUS_HG_VS_LUGIA": "MUS_RG_VS_LEGEND", "MUS_PL_FIGHT_AREA_DAY": "MUS_DPP_LEAGUE_OUTSIDE",
-    "MUS_WEATHER_KYOGRE": "MUS_ABNORMAL_WEATHER",
+    "MUS_HG_VS_LUGIA": "MUS_RG_VS_LEGEND",
 }
 
 

@@ -672,11 +672,22 @@ enum TrainerApproachMusic
     TRAINER_ENCOUNTER_MUSIC_CUTE,       // Used in FRLG for Beauties, Picknickers, Twins, Lasses, Ladies, Breeder, female Swimmers and Leaders
     TRAINER_ENCOUNTER_MUSIC_SERIOUS,    // Used in FRLG for most trainers
     TRAINER_ENCOUNTER_MUSIC_DANGEROUS,  // Used in FRLG for Burglars, Channelers, Poké Maniacs, Super Nerds and Rockets
+    // Pokémon World: HGSS's encounter themes (Heart & Soul's Johto and later-Kanto trainers)
+    TRAINER_ENCOUNTER_MUSIC_HG_ROCKET,
+    TRAINER_ENCOUNTER_MUSIC_HG_RIVAL,       // Silver
+    TRAINER_ENCOUNTER_MUSIC_HG_CHAMPION,    // Lance, Red (Heart & Soul plays the champion battle theme)
+    TRAINER_ENCOUNTER_MUSIC_HG_BOY_1,
+    TRAINER_ENCOUNTER_MUSIC_HG_BOY_2,
+    TRAINER_ENCOUNTER_MUSIC_HG_GIRL_1,
+    TRAINER_ENCOUNTER_MUSIC_HG_GIRL_2,
+    TRAINER_ENCOUNTER_MUSIC_HG_SUSPICIOUS_1,
+    TRAINER_ENCOUNTER_MUSIC_HG_SUSPICIOUS_2,
+    TRAINER_ENCOUNTER_MUSIC_HG_SAGE,
 
-    TRAINER_ENCOUNTER_MUSIC_COUNT
+    TRAINER_ENCOUNTER_MUSIC_COUNT // at most 32: struct Trainer's encounterMusic is 5 bits
 };
 
-// Pokémon World: Heart & Soul's encounter music, mapped to the styles above until HGSS music (generated)
+// Pokémon World: Heart & Soul's encounter music, as the styles above (generated)
 #include "constants/trainer_music_hns.h"
 
 #define TRAINER_GENDER_MALE   0

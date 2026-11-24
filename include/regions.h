@@ -3,6 +3,7 @@
 
 #include "global.h"
 #include "constants/regions.h"
+#include "constants/map_groups_hns.h"
 
 enum KantoSubRegion GetKantoSubregion(u32 mapSecId);
 
@@ -29,6 +30,43 @@ static inline enum Region GetRegionForSectionId(u32 sectionId)
 static inline enum Region GetCurrentRegion(void)
 {
     return GetRegionForSectionId(gMapHeader.regionMapSectionId);
+}
+
+// Pokémon World: whose music a place uses for battles, victories and fanfares.
+// Kanto has FireRed's maps and Heart & Soul's Gold/Silver-era ("3 years later") maps, which share
+// map sections; Heart & Soul's maps are told apart by their map groups (constants/map_groups_hns.h).
+enum MusicStyle
+{
+    MUSIC_STYLE_HOENN,      // Emerald
+    MUSIC_STYLE_FRLG,       // FireRed's Kanto
+    MUSIC_STYLE_SINNOH,     // the Sinnoh port's
+    MUSIC_STYLE_HGSS_JOHTO, // Heart & Soul's Johto
+    MUSIC_STYLE_HGSS_KANTO, // Heart & Soul's later Kanto
+};
+
+static inline bool32 IsHnsMapGroup(u32 mapGroup)
+{
+    return mapGroup >= HNS_MAP_GROUP_FIRST && mapGroup <= HNS_MAP_GROUP_LAST;
+}
+
+static inline enum MusicStyle GetCurrentMusicStyle(void)
+{
+    switch (GetCurrentRegion())
+    {
+    case REGION_JOHTO:
+        return MUSIC_STYLE_HGSS_JOHTO;
+    case REGION_KANTO:
+        return IsHnsMapGroup(gSaveBlock1Ptr->location.mapGroup) ? MUSIC_STYLE_HGSS_KANTO : MUSIC_STYLE_FRLG;
+    case REGION_SINNOH:
+        return MUSIC_STYLE_SINNOH;
+    default:
+        return MUSIC_STYLE_HOENN;
+    }
+}
+
+static inline bool32 IsHgssMusicStyle(enum MusicStyle style)
+{
+    return style == MUSIC_STYLE_HGSS_JOHTO || style == MUSIC_STYLE_HGSS_KANTO;
 }
 
 #endif // GUARD_REGIONS_H

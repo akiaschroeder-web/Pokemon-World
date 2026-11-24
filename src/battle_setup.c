@@ -646,7 +646,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_LUGIA:
     case SPECIES_HO_OH:
     default:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        // Pokémon World: Lugia, Ho-Oh and the legendary beasts get their HGSS themes in Johto and the later Kanto
+        if (GetHgssLegendaryBGM(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES)))
+            CreateBattleStartTask(B_TRANSITION_BLUR, GetHgssLegendaryBGM(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES)));
+        else
+            CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);

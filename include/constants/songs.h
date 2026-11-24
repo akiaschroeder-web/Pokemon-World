@@ -606,4 +606,7 @@
 #define MUS_DPP_OPENING               655
 #define MUS_DPP_TITLE                 656
 
+// Pokémon World: Heart & Soul's HGSS songs (Johto, later Kanto), numbered after all the songs above
+#include "constants/songs_hns.h"
+
 #endif  // GUARD_CONSTANTS_SONGS_H

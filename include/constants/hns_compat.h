@@ -3,71 +3,10 @@
 #define GUARD_CONSTANTS_HNS_COMPAT_H
 
 // Stand-ins for things Heart & Soul has and we don't have yet. TODO: replace each
-// with the real thing in a later stage (HGSS music, Johto sprites, Johto key items).
+// with the real thing in a later stage.
 
-// Music: Heart & Soul's HGSS songs, played as an existing song for now.
-#define MUS_HG_AZALEA                      MUS_VERDANTURF
-#define MUS_HG_BELL_TOWER                  MUS_MT_PYRE
-#define MUS_HG_BURNED_TOWER                MUS_MT_PYRE
-#define MUS_HG_CELADON                     MUS_RG_CELADON
-#define MUS_HG_CERULEAN                    MUS_RG_ROUTE24
-#define MUS_HG_CHERRYGROVE                 MUS_OLDALE
-#define MUS_HG_CIANWOOD                    MUS_DEWFORD
-#define MUS_HG_CINNABAR                    MUS_RG_CINNABAR
-#define MUS_HG_DANCE_THEATER               MUS_CONTEST_LOBBY
-#define MUS_HG_DRAGONS_DEN                 MUS_SEALED_CHAMBER
-#define MUS_HG_ECRUTEAK                    MUS_FORTREE
-#define MUS_HG_ELM_LAB                     MUS_BIRCH_LAB
-#define MUS_HG_ENCOUNTER_RIVAL             MUS_RG_ENCOUNTER_RIVAL
-#define MUS_HG_EUSINE                      MUS_ENCOUNTER_SUSPICIOUS
-#define MUS_HG_FOLLOW_ME_1                 MUS_RG_FOLLOW_ME
-#define MUS_HG_GAME_CORNER                 MUS_RG_GAME_CORNER
-#define MUS_HG_GOLDENROD                   MUS_RUSTBORO
-#define MUS_HG_GYM                         MUS_RG_GYM
-#define MUS_HG_ICE_PATH                    MUS_RG_SEVII_CAVE
-#define MUS_HG_KIMONO_GIRL                 MUS_CONTEST_LOBBY
-#define MUS_HG_KIMONO_GIRL_DANCE           MUS_CONTEST
-#define MUS_HG_LAVENDER                    MUS_RG_LAVENDER
-#define MUS_HG_LIGHTHOUSE                  MUS_RG_POKE_TOWER
-#define MUS_HG_MT_MOON_SQUARE              MUS_RG_MT_MOON
-#define MUS_HG_NATIONAL_PARK               MUS_PETALBURG_WOODS
-#define MUS_HG_NEW_BARK                    MUS_LITTLEROOT
-#define MUS_HG_OAK                         MUS_RG_OAK
-#define MUS_HG_PALLET                      MUS_RG_PALLET
-#define MUS_HG_PEWTER                      MUS_RG_PEWTER
-#define MUS_HG_POKEGEAR_REGISTERED         MUS_REGISTER_MATCH_CALL
-#define MUS_HG_POKEMON_LEAGUE              MUS_EVER_GRANDE
-#define MUS_HG_POKE_CENTER                 MUS_RG_POKE_CENTER
-#define MUS_HG_POKE_MART                   MUS_POKE_MART
-#define MUS_HG_RADIO_POKE_FLUTE            MUS_RG_POKE_FLUTE
-#define MUS_HG_RADIO_ROCKET                MUS_RG_SILPH
-#define MUS_HG_RIVAL_EXIT                  MUS_RG_RIVAL_EXIT
-#define MUS_HG_ROCKET_TAKEOVER             MUS_RG_SILPH
-#define MUS_HG_ROCK_TUNNEL                 MUS_RG_MT_MOON
-#define MUS_HG_ROUTE1                      MUS_RG_ROUTE1
-#define MUS_HG_ROUTE11                     MUS_RG_ROUTE11
-#define MUS_HG_ROUTE24                     MUS_RG_ROUTE24
-#define MUS_HG_ROUTE26                     MUS_ROUTE113
-#define MUS_HG_ROUTE29                     MUS_ROUTE101
-#define MUS_HG_ROUTE3                      MUS_RG_ROUTE3
-#define MUS_HG_ROUTE30                     MUS_ROUTE104
-#define MUS_HG_ROUTE34                     MUS_ROUTE110
-#define MUS_HG_ROUTE38                     MUS_GSC_ROUTE38
-#define MUS_HG_ROUTE42                     MUS_ROUTE119
-#define MUS_HG_ROUTE47                     MUS_ROUTE120
-#define MUS_HG_RUINS_OF_ALPH               MUS_SEALED_CHAMBER
-#define MUS_HG_SAFARI_ZONE                 MUS_SAFARI_ZONE
-#define MUS_HG_SAFARI_ZONE_GATE            MUS_SAFARI_ZONE
-#define MUS_HG_SPROUT_TOWER                MUS_MT_PYRE
-#define MUS_HG_SS_AQUA                     MUS_RG_SS_ANNE
-#define MUS_HG_TEAM_ROCKET_HQ              MUS_RG_ROCKET_HIDEOUT
-#define MUS_HG_UNION_CAVE                  MUS_RG_SEVII_CAVE
-#define MUS_HG_VERMILION                   MUS_RG_VERMILLION
-#define MUS_HG_VICTORY_ROAD                MUS_RG_VICTORY_ROAD
-#define MUS_HG_VIOLET                      MUS_PETALBURG
-#define MUS_HG_VIRIDIAN_FOREST             MUS_RG_VIRIDIAN_FOREST
-#define MUS_HG_VS_HO_OH                    MUS_RG_VS_LEGEND
-#define MUS_HG_VS_LUGIA                    MUS_RG_VS_LEGEND
+// Music: songs Heart & Soul plays that aren't HGSS songs (those are in constants/songs_hns.h),
+// played as the closest song we have.
 #define MUS_PL_FIGHT_AREA_DAY              MUS_DPP_LEAGUE_OUTSIDE
 #define MUS_WEATHER_KYOGRE                 MUS_ABNORMAL_WEATHER
 
