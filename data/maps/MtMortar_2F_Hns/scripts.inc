@@ -5,7 +5,7 @@ MtMortar_2F_Hns_MapScripts::
 	.byte 0
 
 MtMortar_2F_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 MtMortar_2F_Hns_EventScript_Item_Iron::

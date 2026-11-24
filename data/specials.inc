@@ -670,20 +670,37 @@ gSpecials::
 	def_special StickerManGetBragFlags
 	def_special CheckAddCoins
 
-@ Pokémon World: stand-ins for Heart & Soul specials (src/hns_stubs.c, TODO)
-	def_special HnsStub_CheckAerodactyl
-	def_special HnsStub_CheckCelebi
-	def_special HnsStub_CheckHooh
-	def_special HnsStub_CheckKabuto
-	def_special HnsStub_CheckOmanyte
-	def_special HnsStub_CheckTogepi
-	def_special HnsStub_DoSlidingPuzzle
-	def_special HnsStub_EnterBugContestMode
-	def_special HnsStub_GetBattleFrontierTutorMoveIndex
-	def_special HnsStub_GetDaycareCost
-	def_special HnsStub_GetMaxPartySize
-	def_special HnsStub_HaircutBrother1
-	def_special HnsStub_NameRival
-	def_special HnsStub_ShowBugContestChosenMon
-	def_special HnsStub_SwitchMonAbility
-	def_special HnsStub_ToggleShinyColors
+@ Pokémon World: Heart & Soul's specials for Johto (src/hns_specials.c, hns_bug_contest.c,
+@ hns_sliding_puzzle.c); tools/pokemon_world/import_hns.py points its scripts at these.
+	def_special Hns_CheckAerodactyl
+	def_special Hns_CheckCelebi
+	def_special Hns_CheckHooh
+	def_special Hns_CheckKabuto
+	def_special Hns_CheckOmanyte
+	def_special Hns_CheckTogepi
+	def_special Hns_DoSlidingPuzzle
+	def_special Hns_GetBattleFrontierTutorMoveIndex
+	def_special Hns_BufferBattleFrontierTutorMoveName
+	def_special Hns_GetDaycareCost
+	def_special Hns_GetMaxPartySize
+	def_special Hns_HaircutBrother1
+	def_special Hns_SwitchMonAbility
+	def_special Hns_SetHpIvs
+	def_special Hns_SetAtkIvs
+	def_special Hns_SetDefIvs
+	def_special Hns_SetSpdIvs
+	def_special Hns_SetSpAtkIvs
+	def_special Hns_SetSpDefIvs
+	def_special Hns_SetHpEvs
+	def_special Hns_SetAtkEvs
+	def_special Hns_SetDefEvs
+	def_special Hns_SetSpdEvs
+	def_special Hns_SetSpAtkEvs
+	def_special Hns_SetSpDefEvs
+	def_special Hns_EnterBugContestMode
+	def_special Hns_ExitBugContestMode
+	def_special Hns_JudgeBugContestMon
+	def_special Hns_TransferBugContestMon
+	def_special Hns_RemoveSafariBalls
+	def_special Hns_ShowBugContestChosenMon
+	def_special Hns_NameRival

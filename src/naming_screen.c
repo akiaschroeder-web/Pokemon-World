@@ -1379,6 +1379,7 @@ static void NamingScreen_CreateMonIcon(void);
 static void NamingScreen_CreateWaldaDadIcon(void);
 static void NamingScreen_CreateCodeIcon(void);
 static void NamingScreen_CreateRivalIcon(void);
+static void NamingScreen_CreateJohtoRivalIcon(void);
 
 static void (*const sIconFunctions[])(void) =
 {
@@ -1389,6 +1390,7 @@ static void (*const sIconFunctions[])(void) =
     NamingScreen_CreateWaldaDadIcon,
     NamingScreen_CreateCodeIcon,
     NamingScreen_CreateRivalIcon,
+    NamingScreen_CreateJohtoRivalIcon,
 };
 
 static void CreateInputTargetIcon(void)
@@ -1490,6 +1492,14 @@ static void NamingScreen_CreateRivalIcon(void)
     LoadSpritePalette(&palette);
     spriteId = CreateSprite(&template, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
+}
+
+// Pokémon World: Johto's rival (Heart & Soul's Silver overworld sprite)
+static void NamingScreen_CreateJohtoRivalIcon(void)
+{
+    u8 spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_HNS_SILVER, SpriteCallbackDummy, 56, 37, 0);
+    gSprites[spriteId].oam.priority = 3;
+    StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }
 
 //--------------------------------------------------
@@ -1806,7 +1816,8 @@ static void (*const sDrawTextEntryBoxFuncs[])(void) =
     [NAMING_SCREEN_NICKNAME]   = DrawMonTextEntryBox,
     [NAMING_SCREEN_WALDA]      = DrawNormalTextEntryBox,
     [NAMING_SCREEN_CODE]       = DrawNormalTextEntryBox,
-    [NAMING_SCREEN_RIVAL]      = DrawNormalTextEntryBox
+    [NAMING_SCREEN_RIVAL]      = DrawNormalTextEntryBox,
+    [NAMING_SCREEN_JOHTO_RIVAL] = DrawNormalTextEntryBox,
 };
 
 static void DrawTextEntryBox(void)
@@ -2229,6 +2240,17 @@ static const struct NamingScreenTemplate sRivalNamingScreenTemplate =
     .title = sText_RivalsName,
 };
 
+// Pokémon World: Johto's rival (named when Heart & Soul's NameRival runs, in Elm's lab)
+static const struct NamingScreenTemplate sJohtoRivalNamingScreenTemplate =
+{
+    .copyExistingString = FALSE,
+    .maxChars = PLAYER_NAME_LENGTH,
+    .iconFunction = 7,
+    .addGenderIcon = FALSE,
+    .initialPage = KBPAGE_LETTERS_UPPER,
+    .title = sText_RivalsName,
+};
+
 static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
 {
     [NAMING_SCREEN_PLAYER]     = &sPlayerNamingScreenTemplate,
@@ -2238,6 +2260,7 @@ static const struct NamingScreenTemplate *const sNamingScreenTemplates[] =
     [NAMING_SCREEN_WALDA]      = &sWaldaWordsScreenTemplate,
     [NAMING_SCREEN_CODE]       = &sCodeScreenTemplate,
     [NAMING_SCREEN_RIVAL]      = &sRivalNamingScreenTemplate,
+    [NAMING_SCREEN_JOHTO_RIVAL] = &sJohtoRivalNamingScreenTemplate,
 };
 
 static const struct OamData sOam_8x8 =

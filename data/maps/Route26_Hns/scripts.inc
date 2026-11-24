@@ -5,7 +5,7 @@ Route26_Hns_MapScripts::
 	.byte 0
 
 Route26_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route26_Hns_EventScript_Jake::
@@ -75,7 +75,7 @@ Route26_Hns_Text_CooltrainerfJoyceAfter:
     .string "I'll have to try harder next time.$"
 
 Route26_Hns_Text_CooltrainerfBethSeen:
-    .string "I lost to a trainer named {RIVAL}.\p"
+    .string "I lost to a trainer named {JOHTO_RIVAL}.\p"
     .string "He was really strong, but…\p"
     .string "It was as if he absolutely had to\n"
     .string "win at any cost.\p"

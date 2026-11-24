@@ -16418,6 +16418,77 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_CoinCase,
         .iconPalette = gItemIconPalette_CoinCase,
     },
+
+// Pokémon World: Johto key items, from Heart & Soul (names, descriptions, icons and uses
+// are Heart & Soul's; the GS Ball is a key item here, see PROJECT_CREDITS.md).
+#define HNS_KEY_ITEM(_name, _desc, _icon)                    \
+    {                                                        \
+        .name = ITEM_NAME(_name),                            \
+        .price = 0,                                          \
+        .description = COMPOUND_STRING(_desc),               \
+        .importance = 1,                                     \
+        .pocket = POCKET_KEY_ITEMS,                          \
+        .type = ITEM_USE_BAG_MENU,                           \
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,        \
+        .iconPic = gItemIcon_##_icon##_Hns,                  \
+        .iconPalette = gItemIconPalette_##_icon##_Hns,       \
+    }
+    [ITEM_GS_BALL]      = HNS_KEY_ITEM("GS Ball", "A mysterious Ball.\nMaybe KURT can\nidentify it.", GSBall),
+    [ITEM_MACHINE_PART] = HNS_KEY_ITEM("Machine Part", "Important machine\npart stolen from\nthe POWER PLANT.", MachinePart),
+    [ITEM_LOST_ITEM]    = HNS_KEY_ITEM("Lost Item", "The POKé DOLL lost\nby the COPYCAT.", LostItem),
+    [ITEM_PASS]         = HNS_KEY_ITEM("Pass", "A ticket for\nriding the Magnet\nTrain.", Pass),
+    [ITEM_RED_SCALE]    = HNS_KEY_ITEM("Red Scale", "A scale from the\nred GYARADOS.\nIt glows red.", RedScale),
+    [ITEM_RAINBOW_WING] = HNS_KEY_ITEM("Rainbow Wing", "A mystical\nrainbow feather\nthat sparkles.", RainbowWing),
+    [ITEM_SILVER_WING]  = HNS_KEY_ITEM("Silver Wing", "A strange silvery\nfeather that\nsparkles.", SilverWing),
+    [ITEM_CLEAR_BELL]   = HNS_KEY_ITEM("Clear Bell", "Old-fashioned bell\nthat makes a\ngentle ringing.", ClearBell),
+    [ITEM_TIDAL_BELL]   = HNS_KEY_ITEM("Tidal Bell", "Old-fashioned bell\nwith a gentle,\nsoothing sound.", TidalBell),
+    [ITEM_MYSTERY_EGG]  = HNS_KEY_ITEM("Mystery Egg", "Obtained from MR.\nPOKéMON. Who knows\nwhat's inside?", MysteryEgg),
+#undef HNS_KEY_ITEM
+
+    [ITEM_SQUIRT_BOTTLE] =
+    {
+        .name = ITEM_NAME("SquirtBottle"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A bottle used for\n"
+            "watering plants\n"
+            "in loamy soil."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_WailmerPail, // Heart & Soul: waters Berries like the Wailmer Pail
+        .iconPic = gItemIcon_WailmerPail,
+        .iconPalette = gItemIconPalette_WailmerPail,
+    },
+
+    [ITEM_RADIO] =
+    {
+        .name = ITEM_NAME("Radio"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A shiny new radio\n"
+            "that plays music."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_HnsRadio,
+        .iconPic = gItemIcon_Radio_Hns,
+        .iconPalette = gItemIconPalette_Radio_Hns,
+    },
+
+    [ITEM_HM_WHIRLPOOL] =
+    {
+        .name = ITEM_NAME("HM09"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Traps and hurts the\n"
+            "foe in a whirlpool\n"
+            "for 4-5 turns."),
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
 };
 
 #undef ITEM_NAME

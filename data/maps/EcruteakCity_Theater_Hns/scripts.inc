@@ -789,7 +789,7 @@ EcruteakCity_Theater_Hns_EventScript_BeatGauntlet::
 	return
 
 EcruteakCity_Theater_Hns_EventScript_Lugia::
-	giveitem ITEM_HNS_TIDAL_BELL
+	giveitem ITEM_TIDAL_BELL
 	closemessage
 	playse SE_M_RAZOR_WIND
 	setvar VAR_0x8004, 1 @ vertical pan
@@ -835,7 +835,7 @@ EcruteakCity_Theater_Hns_EventScript_Lugia::
 	release
 	end
 EcruteakCity_Theater_Hns_EventScript_Hooh::
-	giveitem ITEM_HNS_CLEAR_BELL
+	giveitem ITEM_CLEAR_BELL
 	closemessage
 	playse SE_M_RAZOR_WIND
 	setvar VAR_0x8004, 1 @ vertical pan

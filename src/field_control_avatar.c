@@ -38,6 +38,7 @@
 #include "vs_seeker.h"
 #include "wild_encounter.h"
 #include "wild_encounter_ow.h"
+#include "bug_contest_hns.h" // Pokémon World: Bug-Catching Contest (Heart & Soul)
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/field_poison.h"
@@ -489,6 +490,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
     }
     if (MetatileBehavior_IsPC(metatileBehavior) == TRUE)
         return EventScript_PC;
+    if (MetatileBehavior_IsHeadbuttTree(metatileBehavior) == TRUE) // Pokémon World: Johto (Heart & Soul)
+        return EventScript_Headbutt_Hns;
     if (MetatileBehavior_IsClosedSootopolisDoor(metatileBehavior) == TRUE)
         return EventScript_ClosedSootopolisDoor;
     if (MetatileBehavior_IsSkyPillarClosedDoor(metatileBehavior) == TRUE)
@@ -817,6 +820,8 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     }
 
     if (SafariZoneTakeStep() == TRUE)
+        return TRUE;
+    if (Hns_BugContestCheckTimeLimit() == TRUE) // Pokémon World: Johto's Bug-Catching Contest
         return TRUE;
     if (CountSSTidalStep(1) == TRUE)
     {

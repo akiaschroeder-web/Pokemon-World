@@ -561,45 +561,46 @@
 #define FLAG_SAFARI_ZONE_WEST_EXPANSION                              (JOHTO_FLAGS_START+0x229) // HnS 0x0307
 #define FLAG_SHOWN_ELM_TOGEPI                                        (JOHTO_FLAGS_START+0x22A) // HnS 0x02ED
 #define FLAG_SUMMONED_MTMOON_JIRACHI                                 (JOHTO_FLAGS_START+0x22B) // HnS 0x035E
-#define FLAG_HNS_SYS_GAME_CLEAR                                      (JOHTO_FLAGS_START+0x22C) // HnS 0x0864
-#define FLAG_SYS_LAKE_OF_RAGE_TIDE                                   (JOHTO_FLAGS_START+0x22D) // HnS 0x089A
-#define FLAG_SYS_NO_CATCHING                                         (JOHTO_FLAGS_START+0x22E) // HnS 0x0024
-#define FLAG_SYS_PC_BILL                                             (JOHTO_FLAGS_START+0x22F) // HnS 0x08AB
-#define FLAG_UNLOCKED_GOLDENROD_UNDERGROUND_DOOR                     (JOHTO_FLAGS_START+0x230) // HnS 0x0395
-#define FLAG_VIOLET_NPC_TRADE_COMPLETED                              (JOHTO_FLAGS_START+0x231) // HnS 0x02DF
-#define FLAG_VISITED_AZALEA_TOWN                                     (JOHTO_FLAGS_START+0x232) // HnS 0x0872
-#define FLAG_VISITED_BLACKTHORN_CITY                                 (JOHTO_FLAGS_START+0x233) // HnS 0x087A
-#define FLAG_VISITED_CELADON_CITY                                    (JOHTO_FLAGS_START+0x234) // HnS 0x0882
-#define FLAG_VISITED_CERULEAN_CITY                                   (JOHTO_FLAGS_START+0x235) // HnS 0x087F
-#define FLAG_VISITED_CHERRYGROVE_CITY                                (JOHTO_FLAGS_START+0x236) // HnS 0x0870
-#define FLAG_VISITED_CIANWOOD_CITY                                   (JOHTO_FLAGS_START+0x237) // HnS 0x0876
-#define FLAG_VISITED_CINNABAR_ISLAND                                 (JOHTO_FLAGS_START+0x238) // HnS 0x0885
-#define FLAG_VISITED_ECRUTEAK_CITY                                   (JOHTO_FLAGS_START+0x239) // HnS 0x0874
-#define FLAG_VISITED_FUCHSIA_CITY                                    (JOHTO_FLAGS_START+0x23A) // HnS 0x0884
-#define FLAG_VISITED_GOLDENROD_CITY                                  (JOHTO_FLAGS_START+0x23B) // HnS 0x0873
-#define FLAG_VISITED_INDIGO_PLATEAU                                  (JOHTO_FLAGS_START+0x23C) // HnS 0x087B
-#define FLAG_VISITED_KANTO                                           (JOHTO_FLAGS_START+0x23D) // HnS 0x0359
-#define FLAG_VISITED_LAKE_OF_RAGE                                    (JOHTO_FLAGS_START+0x23E) // HnS 0x0879
-#define FLAG_VISITED_LAVENDER_TOWN                                   (JOHTO_FLAGS_START+0x23F) // HnS 0x0881
-#define FLAG_VISITED_MAHOGANY_TOWN                                   (JOHTO_FLAGS_START+0x240) // HnS 0x0878
-#define FLAG_VISITED_MT_SILVER                                       (JOHTO_FLAGS_START+0x241) // HnS 0x0886
-#define FLAG_VISITED_NEWBARK_TOWN                                    (JOHTO_FLAGS_START+0x242) // HnS 0x086F
-#define FLAG_VISITED_OLIVINE_CITY                                    (JOHTO_FLAGS_START+0x243) // HnS 0x0875
-#define FLAG_VISITED_PALLET_TOWN                                     (JOHTO_FLAGS_START+0x244) // HnS 0x087C
-#define FLAG_VISITED_PEWTER_CITY                                     (JOHTO_FLAGS_START+0x245) // HnS 0x087E
-#define FLAG_VISITED_RECEPTION_GATE                                  (JOHTO_FLAGS_START+0x246) // HnS 0x0887
-#define FLAG_VISITED_SAFARI_ZONE_GATE                                (JOHTO_FLAGS_START+0x247) // HnS 0x0877
-#define FLAG_VISITED_SAFFRON_CITY                                    (JOHTO_FLAGS_START+0x248) // HnS 0x0883
-#define FLAG_VISITED_VERMILION_CITY                                  (JOHTO_FLAGS_START+0x249) // HnS 0x0880
-#define FLAG_VISITED_VIOLET_CITY                                     (JOHTO_FLAGS_START+0x24A) // HnS 0x0871
-#define FLAG_VISITED_VIRIDIAN_CITY                                   (JOHTO_FLAGS_START+0x24B) // HnS 0x087D
-#define FLAG_DAILY_BEAT_SILVER                                       (JOHTO_FLAGS_START+0x24C) // not defined in Heart & Soul's flags.h
-#define FLAG_DAILY_BUG_CONTEST_COMPLETED                             (JOHTO_FLAGS_START+0x24D) // not defined in Heart & Soul's flags.h
-#define FLAG_DAILY_DAISY_GROOMED                                     (JOHTO_FLAGS_START+0x24E) // not defined in Heart & Soul's flags.h
-#define FLAG_DAILY_HAIRCUT1_RECEIVED                                 (JOHTO_FLAGS_START+0x24F) // not defined in Heart & Soul's flags.h
-#define FLAG_DAILY_HAIRCUT2_RECEIVED                                 (JOHTO_FLAGS_START+0x250) // not defined in Heart & Soul's flags.h
+#define FLAG_SYS_BUG_CONTEST_MODE                                    (JOHTO_FLAGS_START+0x22C) // HnS 0x088E
+#define FLAG_HNS_SYS_GAME_CLEAR                                      (JOHTO_FLAGS_START+0x22D) // HnS 0x0864
+#define FLAG_SYS_LAKE_OF_RAGE_TIDE                                   (JOHTO_FLAGS_START+0x22E) // HnS 0x089A
+#define FLAG_SYS_NO_CATCHING                                         (JOHTO_FLAGS_START+0x22F) // HnS 0x0024
+#define FLAG_SYS_PC_BILL                                             (JOHTO_FLAGS_START+0x230) // HnS 0x08AB
+#define FLAG_UNLOCKED_GOLDENROD_UNDERGROUND_DOOR                     (JOHTO_FLAGS_START+0x231) // HnS 0x0395
+#define FLAG_VIOLET_NPC_TRADE_COMPLETED                              (JOHTO_FLAGS_START+0x232) // HnS 0x02DF
+#define FLAG_VISITED_AZALEA_TOWN                                     (JOHTO_FLAGS_START+0x233) // HnS 0x0872
+#define FLAG_VISITED_BLACKTHORN_CITY                                 (JOHTO_FLAGS_START+0x234) // HnS 0x087A
+#define FLAG_VISITED_CELADON_CITY                                    (JOHTO_FLAGS_START+0x235) // HnS 0x0882
+#define FLAG_VISITED_CERULEAN_CITY                                   (JOHTO_FLAGS_START+0x236) // HnS 0x087F
+#define FLAG_VISITED_CHERRYGROVE_CITY                                (JOHTO_FLAGS_START+0x237) // HnS 0x0870
+#define FLAG_VISITED_CIANWOOD_CITY                                   (JOHTO_FLAGS_START+0x238) // HnS 0x0876
+#define FLAG_VISITED_CINNABAR_ISLAND                                 (JOHTO_FLAGS_START+0x239) // HnS 0x0885
+#define FLAG_VISITED_ECRUTEAK_CITY                                   (JOHTO_FLAGS_START+0x23A) // HnS 0x0874
+#define FLAG_VISITED_FUCHSIA_CITY                                    (JOHTO_FLAGS_START+0x23B) // HnS 0x0884
+#define FLAG_VISITED_GOLDENROD_CITY                                  (JOHTO_FLAGS_START+0x23C) // HnS 0x0873
+#define FLAG_VISITED_INDIGO_PLATEAU                                  (JOHTO_FLAGS_START+0x23D) // HnS 0x087B
+#define FLAG_VISITED_KANTO                                           (JOHTO_FLAGS_START+0x23E) // HnS 0x0359
+#define FLAG_VISITED_LAKE_OF_RAGE                                    (JOHTO_FLAGS_START+0x23F) // HnS 0x0879
+#define FLAG_VISITED_LAVENDER_TOWN                                   (JOHTO_FLAGS_START+0x240) // HnS 0x0881
+#define FLAG_VISITED_MAHOGANY_TOWN                                   (JOHTO_FLAGS_START+0x241) // HnS 0x0878
+#define FLAG_VISITED_MT_SILVER                                       (JOHTO_FLAGS_START+0x242) // HnS 0x0886
+#define FLAG_VISITED_NEWBARK_TOWN                                    (JOHTO_FLAGS_START+0x243) // HnS 0x086F
+#define FLAG_VISITED_OLIVINE_CITY                                    (JOHTO_FLAGS_START+0x244) // HnS 0x0875
+#define FLAG_VISITED_PALLET_TOWN                                     (JOHTO_FLAGS_START+0x245) // HnS 0x087C
+#define FLAG_VISITED_PEWTER_CITY                                     (JOHTO_FLAGS_START+0x246) // HnS 0x087E
+#define FLAG_VISITED_RECEPTION_GATE                                  (JOHTO_FLAGS_START+0x247) // HnS 0x0887
+#define FLAG_VISITED_SAFARI_ZONE_GATE                                (JOHTO_FLAGS_START+0x248) // HnS 0x0877
+#define FLAG_VISITED_SAFFRON_CITY                                    (JOHTO_FLAGS_START+0x249) // HnS 0x0883
+#define FLAG_VISITED_VERMILION_CITY                                  (JOHTO_FLAGS_START+0x24A) // HnS 0x0880
+#define FLAG_VISITED_VIOLET_CITY                                     (JOHTO_FLAGS_START+0x24B) // HnS 0x0871
+#define FLAG_VISITED_VIRIDIAN_CITY                                   (JOHTO_FLAGS_START+0x24C) // HnS 0x087D
+#define FLAG_DAILY_BEAT_SILVER                                       (JOHTO_FLAGS_START+0x24D) // not defined in Heart & Soul's flags.h
+#define FLAG_DAILY_BUG_CONTEST_COMPLETED                             (JOHTO_FLAGS_START+0x24E) // not defined in Heart & Soul's flags.h
+#define FLAG_DAILY_DAISY_GROOMED                                     (JOHTO_FLAGS_START+0x24F) // not defined in Heart & Soul's flags.h
+#define FLAG_DAILY_HAIRCUT1_RECEIVED                                 (JOHTO_FLAGS_START+0x250) // not defined in Heart & Soul's flags.h
+#define FLAG_DAILY_HAIRCUT2_RECEIVED                                 (JOHTO_FLAGS_START+0x251) // not defined in Heart & Soul's flags.h
 
-#define JOHTO_FLAGS_USED 0x251
+#define JOHTO_FLAGS_USED 0x252
 
 // Shared with the rest of the game (same meaning): FLAG_DAILY_PICKED_LOTO_TICKET, FLAG_PENDING_DAYCARE_EGG, FLAG_SET_WALL_CLOCK, FLAG_SYS_B_DASH, FLAG_SYS_CTRL_OBJ_DELETE, FLAG_SYS_CYCLING_ROAD, FLAG_SYS_NATIONAL_DEX, FLAG_SYS_POKEDEX_GET, FLAG_SYS_POKEMON_GET, FLAG_SYS_POKENAV_GET, FLAG_TEMP_1, FLAG_TEMP_10, FLAG_TEMP_2, FLAG_TEMP_3, FLAG_TEMP_4, FLAG_TEMP_5, FLAG_TEMP_6, FLAG_TEMP_7, FLAG_TEMP_8, FLAG_TEMP_9, FLAG_TEMP_A, FLAG_TEMP_HIDE_FOLLOWER
 

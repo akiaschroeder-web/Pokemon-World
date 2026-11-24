@@ -23,7 +23,7 @@ MrPokemonHouse_EventScript_GiveEgg_Hns::
 	waitmovement 0
 	msgbox MrPokemonHouse_Text_Intro2_Hns, MSGBOX_DEFAULT
 
-	giveitem ITEM_HNS_MYSTERY_EGG
+	giveitem ITEM_MYSTERY_EGG
 
 	msgbox MrPokemonHouse_Text_Intro3_Hns, MSGBOX_DEFAULT
 	msgbox MrPokemonHouse_Text_Intro4_Hns, MSGBOX_DEFAULT
@@ -83,7 +83,7 @@ MrPokemonHouse_EventScript_GiveNatDexRandomizer_Hns::
 MrPokemonHouse_EventScript_MrPokemon_Hns::
 	lock
 	faceplayer
-	checkitem ITEM_HNS_RED_SCALE
+	checkitem ITEM_RED_SCALE
 	goto_if_eq VAR_RESULT, TRUE, MrPokemonHouse_EventScript_MrPokemon_RedScale_Hns
 	msgbox MrPokemonHouse_Text_AlwaysNewDiscoveries_Hns, MSGBOX_DEFAULT
 	closemessage
@@ -99,7 +99,7 @@ MrPokemonHouse_EventScript_MrPokemon_RedScale_Hns::
 	end	
 
 MrPokemonHouse_EventScript_MrPokemon_RedScale_Accepted_Hns::
-	removeitem ITEM_HNS_RED_SCALE
+	removeitem ITEM_RED_SCALE
 	giveitem ITEM_EXP_SHARE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	release

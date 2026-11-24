@@ -29,7 +29,7 @@ FuchsiaCity_SafariZoneEntrance_Hns_EventScript_ExitSafari::
 	special ExitSafariMode
 	setvar VAR_SAFARI_ZONE_STATE, 1
 	setflag FLAG_HNS_GOOD_LUCK_SAFARI_ZONE
-	msgbox SafariZone_South_Text_ExitEarlyThankYouForPlaying_Hns
+	msgbox SafariZone_South_Text_ExitEarlyThankYouForPlaying
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, FuchsiaCity_SafariZoneEntrance_Hns_Movement_ExitSafariZone
 	waitmovement 0

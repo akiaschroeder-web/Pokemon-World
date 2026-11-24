@@ -5,7 +5,7 @@ MtSilver_Snow_Hns_MapScripts::
 	.byte 0
 
 MtSilver_Snow_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 MtSilver_Snow_Hns_EventScript_RareCandy::

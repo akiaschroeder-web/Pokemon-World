@@ -5,7 +5,7 @@ Route33_Hns_MapScripts::
 	.byte 0
 
 Route33_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route33_Hns_EventScript_HikerAnthony::

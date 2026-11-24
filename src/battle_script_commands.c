@@ -56,6 +56,7 @@
 #include "data.h"
 #include "config_changes.h"
 #include "move.h"
+#include "bug_contest_hns.h" // Pokémon World: Bug-Catching Contest (Heart & Soul)
 #include "constants/abilities.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_move_effects.h"
@@ -2157,7 +2158,8 @@ static void Cmd_getexp(void)
     case 0: // check if should receive exp at all
         if (IsOnPlayerSide(gBattlerFainted)
             || IsAiVsAiBattle()
-            || !BattleTypeAllowsExp())
+            || !BattleTypeAllowsExp()
+            || Hns_GetBugContestFlag()) // Pokémon World: no Exp. in the Bug-Catching Contest (Heart & Soul)
         {
             gBattleScripting.getexpState = 6; // goto last case
         }

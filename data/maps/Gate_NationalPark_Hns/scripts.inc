@@ -36,7 +36,7 @@ Gate_NationalPark_Hns_EventScript_AttendantStart::
 	call_if_eq VAR_FACING, DIR_NORTH, Gate_NationalPark_Hns_EventScript_AttendantEnterBot
 	playse SE_EXIT
 	clearflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
-	special HnsStub_EnterBugContestMode
+	special Hns_EnterBugContestMode
 	setvar VAR_BUG_CONTEST_STATE, 1
 	warp MAP_NATIONAL_PARK_BUG_CONTEST_HNS, 1
 	waitstate
@@ -54,7 +54,7 @@ Gate_NationalPark_Hns_EventScript_OnlyOneMon::
 	call_if_eq VAR_FACING, DIR_NORTH, Gate_NationalPark_Hns_EventScript_AttendantEnterBot
 	playse SE_EXIT
 	clearflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
-	special HnsStub_EnterBugContestMode
+	special Hns_EnterBugContestMode
 	setvar VAR_BUG_CONTEST_STATE, 1
 	warp MAP_NATIONAL_PARK_BUG_CONTEST_HNS, 1
 	waitstate
@@ -146,7 +146,7 @@ Gate_NationalPark_Hns_EventScript_BAttendantStart::
 	call_if_eq VAR_FACING, DIR_EAST, Gate_NationalPark_Hns_EventScript_AttendantBEnterTop
 	call_if_eq VAR_FACING, DIR_NORTH, Gate_NationalPark_Hns_EventScript_AttendantBEnterBot
 	playse SE_EXIT
-	special HnsStub_EnterBugContestMode
+	special Hns_EnterBugContestMode
 	setflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
 	setvar VAR_BUG_CONTEST_STATE, 5
 	warp MAP_NATIONAL_PARK_BUG_CONTEST_HNS, 40, 19
@@ -164,7 +164,7 @@ Gate_NationalPark_Hns_EventScript_OnlyOneMonB::
 	call_if_eq VAR_FACING, DIR_EAST, Gate_NationalPark_Hns_EventScript_AttendantBEnterTop
 	call_if_eq VAR_FACING, DIR_NORTH, Gate_NationalPark_Hns_EventScript_AttendantBEnterBot
 	playse SE_EXIT
-	special HnsStub_EnterBugContestMode
+	special Hns_EnterBugContestMode
 	setflag FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE
 	setvar VAR_BUG_CONTEST_STATE, 5
 	warp MAP_NATIONAL_PARK_BUG_CONTEST_HNS, 40, 19

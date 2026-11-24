@@ -503,6 +503,24 @@ const u8 *GetRivalName(void)
     return ExpandPlaceholder_RivalName();
 }
 
+// Pokémon World: Johto's rival (Silver's story), named in Elm's lab; "SILVER" until then.
+// Kept apart from the Hoenn/Sinnoh rival above.
+const u8 *GetJohtoRivalName(void)
+{
+    static const u8 sText_Silver[] = _("SILVER");
+    const u8 *name = gSaveBlock3Ptr->johtoRivalName;
+    u32 i;
+
+    for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
+    {
+        if (name[i] == EOS)
+            return i > 0 ? name : sText_Silver;
+        if (name[i] >= CHAR_DYNAMIC || name[i] == CHAR_PROMPT_SCROLL || name[i] == CHAR_PROMPT_CLEAR || name[i] == CHAR_NEWLINE)
+            break;
+    }
+    return sText_Silver;
+}
+
 static const u8 *ExpandPlaceholder_Version(void)
 {
     return gText_ExpandedPlaceholder_Emerald;
@@ -567,6 +585,7 @@ const u8 *GetExpandedPlaceholder(u32 id)
         [PLACEHOLDER_ID_KYOGRE]       = ExpandPlaceholder_Kyogre,
         [PLACEHOLDER_ID_GROUDON]      = ExpandPlaceholder_Groudon,
         [PLACEHOLDER_ID_REGION]       = ExpandPlaceholder_Region,
+        [PLACEHOLDER_ID_JOHTO_RIVAL]  = GetJohtoRivalName,
     };
 
     if (id >= ARRAY_COUNT(funcs))

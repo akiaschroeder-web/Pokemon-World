@@ -8,7 +8,7 @@ Route36_Hns_MapScripts::
 	.byte 0
 
 Route36_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route36_Hns_EventScript_RockSmashGuy::
@@ -92,7 +92,7 @@ Route36_Hns_EventScript_ArthurCompleted::
 Route36_Hns_EventScript_SudoWoodo::
 	lock
 	msgbox Route36_Hns_Text_OddTree, MSGBOX_DEFAULT
-	checkitem ITEM_HNS_SQUIRT_BOTTLE
+	checkitem ITEM_SQUIRT_BOTTLE
 	goto_if_eq VAR_RESULT, TRUE, Route36_Hns_EventScript_SudoWoodoChoice
 	closemessage
 	release

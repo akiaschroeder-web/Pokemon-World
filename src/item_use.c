@@ -1647,3 +1647,219 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
 }
 
 #undef tUsingRegisteredKeyItem
+
+// ---------------------------------------------------------------------------------------
+// Pokémon World: Johto's Radio key item, ported from Heart & Soul (its texts and logic).
+// Music: the HGSS radio songs come with the HGSS music (later stage); until then the
+// closest songs we have play.
+#include "random.h"
+#include "regions.h"
+#define HNS_RADIO_MUS_UNOWN      MUS_SEALED_CHAMBER
+#define HNS_RADIO_MUS_POKE_FLUTE MUS_RG_POKE_FLUTE
+#define HNS_RADIO_MUS_ROCKET     MUS_RG_ROCKET_HIDEOUT
+#define HNS_RADIO_MUS_OAK        MUS_RG_OAK
+
+static const u8 sHnsText_RadioNoSignal[] = _("There's no signal here, try\nsomewhere else.{PAUSE_UNTIL_PRESS}");
+static const u8 sHnsText_UnownMessage[] = _("??????????????????????????????????\l??????????????????????????????????\l??????????????????????????????????\l??????????????????????????????????{PAUSE_UNTIL_PRESS}");
+static const u8 sHnsText_RadioKantoPokeFlute[] = _("POKé FLUTE RADIO.{PAUSE_UNTIL_PRESS}");
+static const u8 sHnsText_OakTalk_Clefairy[] = _(
+    "MARY: Tonight on POKéMON TALK,\n"
+    "a rare moonlight moment!\l"
+    "OAK: We're spotlighting the\l"
+    "mystical CLEFAIRY!\l"
+    "Trainers say they gather at\l"
+    "MT. MOON under full moons.\l"
+    "MARY: They DANCE in circles!\l"
+    "So adorably weird!\l"
+    "OAK: A timeless mystery\l"
+    "and a sight to behold!\l"
+    "MARY: Don't miss the chance!\l"
+    "Bring a camera!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_Lapras[] = _(
+    "MARY: A gentle giant takes the\n"
+    "stage on today's show!\l"
+    "OAK: It's the ocean ferry,\l"
+    "our beloved LAPRAS!\l"
+    "Seen in UNION CAVE, but only\l"
+    "on Evenings. How curious!\l"
+    "MARY: So rare and peaceful!\l"
+    "And it sings, too!\l"
+    "OAK: Some say its songs calm\l"
+    "the soul of the sea.\l"
+    "MARY: We love you, LAPRAS!\l"
+    "Don't ever change!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_Ampharos[] = _(
+    "MARY: Welcome back, everyone!\n"
+    "Time for POKéMON TALK!\l"
+    "OAK: Let's shine a light on\l"
+    "our friend AMPHAROS!\l"
+    "Its bright tail glows through\l"
+    "fog to guide lost folks.\l"
+    "MARY: It's powerful, elegant,\l"
+    "and undeniably friendly!\l"
+    "OAK: And it's a key part of\l"
+    "many lighthouse stories!\l"
+    "MARY: More tales soon!\l"
+    "Don't touch that dial!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_Sudowoodo[] = _(
+    "MARY: Up next is a real oddball\n"
+    "on ROUTE 36...\l"
+    "OAK: SUDOWOODO! Looks like a\l"
+    "tree, but isn't one!\l"
+    "It blocks the road and won't\l"
+    "budge without water.\l"
+    "MARY: Trainers report it reacts\l"
+    "only to a SQUIRTBOTTLE!\l"
+    "OAK: That's no bush it's a\l"
+    "rock - type in disguise!\l"
+    "MARY: Don't be fooled!\l"
+    "Give it a splash!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_RedGyarados[] = _(
+    "MARY: Today's story is a\n"
+    "shocking one from JOHTO!\l"
+    "OAK: Trainers spotted a RED\l"
+    "GYARADOS at LAKE OF RAGE!\l"
+    "Unlike the usual blue ones,\l"
+    "this one's bright crimson!\l"
+    "MARY: People say it's linked to\l"
+    "some strange radio waves!\l"
+    "OAK: A mysterious evolution...\l"
+    "Possibly unnatural.\l"
+    "MARY: Whatever the cause,\l"
+    "it's making waves!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_Unown[] = _(
+    "MARY: Ever visited the RUINS\n"
+    "OF ALPH? Spooky stuff!\l"
+    "OAK: Strange symbols line the\l"
+    "walls - like ancient runes.\l"
+    "Inside, you'll find UNOWN...\l"
+    "each shaped like letters!\l"
+    "MARY: They spell things, maybe?\l"
+    "Or just freak us out!\l"
+    "OAK: A true puzzle of nature,\l"
+    "still unsolved to this day.\l"
+    "MARY: Let us know what you\l"
+    "think they mean!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_Snubbull[] = _(
+    "MARY: GOLDENROD residents are\n"
+    "searching high and low!\l"
+    "OAK: A SNUBBULL has gone rogue\l"
+    "and is on the run!\l"
+    "Usually shy and fussy, it's\l"
+    "been seen near the station.\l"
+    "MARY: Maybe it's chasing love...\l"
+    "or just adventure!\l"
+    "OAK: Either way, keep your eyes\l"
+    "peeled - and your leash ready.\l"
+    "MARY: SNUBBULL, come home!\l"
+    "We miss you!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_Slowpoke[] = _(
+    "MARY: Big news from AZALEA\n"
+    "TOWN this week!\l"
+    "OAK: SLOWPOKE have returned to\l"
+    "their well after a crisis!\l"
+    "Team ROCKET had been cutting\l"
+    "off their tails - horrible!\l"
+    "MARY: But a brave young trainer\l"
+    "shut them down!\l"
+    "OAK: The SLOWPOKE are safe now\l"
+    "and happily dozing again.\l"
+    "MARY: Justice served and nap\l"
+    "time restored!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_LavenderTower[] = _(
+    "MARY: LAVENDER TOWN's tower\n"
+    "has changed tunes!\l"
+    "OAK: The old ghost tower is\l"
+    "now a RADIO STATION!\l"
+    "Some locals say it still\l"
+    "feels... spooky.\l"
+    "MARY: I swear I saw a GASTLY\l"
+    "near the mic booth!\l"
+    "OAK: Might be static... or\l"
+    "specters!\l"
+    "MARY: Either way, great music!\l"
+    "Probably. Eep!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sHnsText_OakTalk_TentacruelWhirl[] = _(
+    "MARY: Weird news from the\n"
+    "WHIRL ISLANDS today!\l"
+    "OAK: TENTACRUEL have been seen\l"
+    "surrounding cave entrances!\l"
+    "They're massive - and acting\l"
+    "almost territorial.\l"
+    "MARY: Trainers say they block\l"
+    "the way without attacking...\l"
+    "OAK: As if guarding something\l"
+    "deep beneath the waves.\l"
+    "MARY: What are they hiding?\l"
+    "Or protecting?{PAUSE_UNTIL_PRESS}");
+
+
+static const u8 sHnsText_RocketRadio[] = _("... ... Ahem, we are\nTEAM ROCKET!\lAfter three years of preparation,\lwe have risen again from the ashes!\lGIOVANNI! Can you hear us?\lWe did it!\lWhere is our boss?\lIs he listening?{PAUSE_UNTIL_PRESS}");
+
+void ItemUseOutOfBattle_HnsRadio(u8 taskId)
+{
+    bool8 registered = gTasks[taskId].data[3]; // tUsingRegisteredKeyItem
+
+    // Ruins of Alph: the Unown signal, indoors or out
+    if (gMapHeader.regionMapSectionId == MAPSEC_RUINS_OF_ALPH)
+    {
+        DisplayCannotUseItemMessage(taskId, registered, sHnsText_UnownMessage);
+        PlayBGM(HNS_RADIO_MUS_UNOWN);
+        return;
+    }
+    if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
+    {
+        DisplayCannotUseItemMessage(taskId, registered, sHnsText_RadioNoSignal);
+        return;
+    }
+    if (GetCurrentRegion() == REGION_KANTO)
+    {
+        if (!FlagGet(FLAG_KANTO_RADIO_GOT))
+        {
+            DisplayCannotUseItemMessage(taskId, registered, sHnsText_RadioNoSignal);
+        }
+        else
+        {
+            DisplayCannotUseItemMessage(taskId, registered, sHnsText_RadioKantoPokeFlute);
+            PlayBGM(HNS_RADIO_MUS_POKE_FLUTE);
+        }
+        return;
+    }
+    if (GetCurrentRegion() != REGION_JOHTO)
+    {
+        DisplayCannotUseItemMessage(taskId, registered, sHnsText_RadioNoSignal);
+        return;
+    }
+    if (!FlagGet(FLAG_HIDE_GOLDENROD_ROCKETS))
+    {
+        DisplayCannotUseItemMessage(taskId, registered, sHnsText_RocketRadio);
+        PlayBGM(HNS_RADIO_MUS_ROCKET);
+    }
+    else
+    {
+        static const u8 *const sOakRadioMessages[] =
+        {
+            sHnsText_OakTalk_Clefairy,
+            sHnsText_OakTalk_Lapras,
+            sHnsText_OakTalk_Ampharos,
+            sHnsText_OakTalk_Sudowoodo,
+            sHnsText_OakTalk_RedGyarados,
+            sHnsText_OakTalk_Unown,
+            sHnsText_OakTalk_Snubbull,
+            sHnsText_OakTalk_Slowpoke,
+            sHnsText_OakTalk_LavenderTower,
+            sHnsText_OakTalk_TentacruelWhirl,
+        };
+        DisplayCannotUseItemMessage(taskId, registered, sOakRadioMessages[Random() % ARRAY_COUNT(sOakRadioMessages)]);
+        PlayBGM(HNS_RADIO_MUS_OAK);
+    }
+}

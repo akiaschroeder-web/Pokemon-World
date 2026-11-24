@@ -29,7 +29,7 @@ SaffronStation_EventScript_Attendant_Hns::
 	lock
 	faceplayer
 	goto_if_unset FLAG_RETURNED_MACHINE_PART, SaffronStation_EventScript_AttendantTrainNotRunning_Hns
-	checkitem ITEM_HNS_PASS
+	checkitem ITEM_PASS
 	goto_if_eq VAR_RESULT, TRUE, SaffronStation_EventScript_BoardTrain_Hns
 	goto_if_set FLAG_RETURNED_MACHINE_PART, SaffronStation_EventScript_Attendant2_Hns
 	msgbox SaffronMagnetTrainStation_Text_OfficerNoRailPass_Hns, MSGBOX_DEFAULT

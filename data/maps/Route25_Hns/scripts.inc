@@ -11,7 +11,7 @@ Route25_Hns_MapScripts::
 	.byte 0
 
 Route25_Hns_MapScript_OnTransition::
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	goto_if_eq VAR_SUICUNE_ENCOUNTERS, 7, Route25_Hns_EventScript_SetSuicuneSceneMid
 	end
 

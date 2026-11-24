@@ -3,10 +3,11 @@ GoldenrodCity_House1_Hns_MapScripts::
 	.byte 0
 
 GoldenrodCity_Hns_NameRatersHouse_EventScript_ToggleShinies::
+	end @ Pokémon World: Heart & Soul's shiny-colour option isn't brought over
 	lock
 	msgbox GoldenrodCity_Hns_NameRatersHouse_Text_AskToggleShinies, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_Hns_NameRatersHouse_EventScript_ToggleShiniesRefused
-	special HnsStub_ToggleShinyColors
+	@ Pokémon World: removed (special ToggleShinyColors): Heart & Soul's shiny-colour option isn't brought over
 	msgbox GoldenrodCity_Hns_NameRatersHouse_Text_ToggleShinies, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -28,7 +29,7 @@ GoldenrodCity_Hns_NameRatersHouse_Text_ToggleShinies:
 GoldenrodCity_Hns_NameRatersHouse_EventScript_RenameRival::
 	msgbox GoldenrodCity_Hns_NameRatersHouse_Text_RenameRival, MSGBOX_DEFAULT
 	closemessage
-	special HnsStub_NameRival
+	special Hns_NameRival
 	waitstate
 	end
 

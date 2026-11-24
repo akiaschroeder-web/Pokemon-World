@@ -5,7 +5,7 @@ DarkCave_NorthSide_Hns_MapScripts::
 	.byte 0
 
 DarkCave_NorthSide_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 DarkCave2_EventScript_Item_BlackFlute_Hns::

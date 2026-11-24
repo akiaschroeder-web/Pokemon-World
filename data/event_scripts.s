@@ -76,6 +76,7 @@
 #include "constants/weather.h"
 #include "constants/speaker_names.h"
 #include "constants/sinnoh_scene.h"
+#include "constants/sliding_puzzles_hns.h" // Pokémon World: Ruins of Alph puzzles (Heart & Soul)
 #include "constants/hns_compat.h" // Pokémon World: Heart & Soul stand-ins (generated)
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"

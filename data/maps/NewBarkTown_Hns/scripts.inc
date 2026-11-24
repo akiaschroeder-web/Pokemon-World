@@ -30,12 +30,12 @@ NewBarkTown_Hns_OnTransition::
 NewBarkTown_Hns_Set_TalkToElm::
 	clearflag FLAG_HIDE_SILVER_NEWBARKTOWN
 	setobjectxyperm LOCALID_HNS_LASS, 0, 11
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 NewBarkTown_Hns_Set_TalkToMom::
 	setobjectxyperm LOCALID_HNS_LASS, 0, 11
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 NewBarkTown_Hns_EventScript_LabSign::

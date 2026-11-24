@@ -9,7 +9,7 @@ IcePath_B3F_Hns_MapScripts::
 	.byte 0
 
 IcePath_B3F_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 IcePath_B3F_Hns_Trigger_Swinub_Jump::

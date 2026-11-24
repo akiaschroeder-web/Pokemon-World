@@ -10,7 +10,7 @@ Route24_Hns_MapScripts::
 
 Route24_Hns_OnTransition:
 	call_if_eq VAR_KANTO_ROCKET_STORY_STATE, 4, Route24_Hns_MapScript_SetRocketScene
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route24_Hns_MapScript_SetRocketScene:

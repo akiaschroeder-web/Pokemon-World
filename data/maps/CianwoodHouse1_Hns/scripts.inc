@@ -7,7 +7,7 @@ CianwoodHouse1_Hns_EventScript_Hermit::
 	faceplayer
 	msgbox CianwoodCity_Hns_Text_OldManIntro, MSGBOX_DEFAULT
 	goto_if_eq VAR_LUGIA_OR_HOOH, 2, CianwoodHouse1_Hns_EventScript_HermitHooh
-	checkitem ITEM_HNS_TIDAL_BELL
+	checkitem ITEM_TIDAL_BELL
 	goto_if_eq VAR_RESULT, TRUE, CianwoodHouse1_Hns_EventScript_HermitTidalBell
 	msgbox CianwoodCity_Hns_Text_WhirlIslandsStory, MSGBOX_DEFAULT
 	closemessage
@@ -21,7 +21,7 @@ CianwoodHouse1_Hns_EventScript_HermitTidalBell::
 	end
 
 CianwoodHouse1_Hns_EventScript_HermitHooh::
-	checkitem ITEM_HNS_CLEAR_BELL
+	checkitem ITEM_CLEAR_BELL
 	goto_if_eq VAR_RESULT, TRUE, CianwoodHouse1_Hns_EventScript_HermitClearBell
 	msgbox CianwoodCity_Hns_Text_BellTowerStory, MSGBOX_DEFAULT
 	closemessage

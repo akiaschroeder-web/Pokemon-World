@@ -48,7 +48,7 @@ PalletTown_House2_Hns_EventScript_DaisyGrooming::
 	fadescreen FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
-	special HnsStub_HaircutBrother1
+	special Hns_HaircutBrother1
 	fadescreen FADE_FROM_BLACK
 	special BufferMonNickname
 	msgbox PalletTown_House2_Hns_Text_AllDone

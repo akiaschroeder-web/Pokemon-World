@@ -9,6 +9,7 @@ void ItemUseOutOfBattle_PokeRadar(u8 taskId);
 void ItemUseOutOfBattle_PokeblockCase(u8 taskId);
 void ItemUseOutOfBattle_CoinCase(u8 taskId);
 void ItemUseOutOfBattle_BadgeCase(u8 taskId);
+void ItemUseOutOfBattle_HnsRadio(u8 taskId); // Pokémon World: Johto Radio (Heart & Soul)
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId);
 void ItemUseOutOfBattle_PowderJar(u8 taskId);
 void ItemUseOutOfBattle_WailmerPail(u8 taskId);

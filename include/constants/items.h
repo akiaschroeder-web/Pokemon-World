@@ -821,6 +821,7 @@ enum __attribute__((packed)) Item
     ITEM_HM06 = 687,
     ITEM_HM07 = 688,
     ITEM_HM08 = 689,
+    ITEM_HM09 = 898, // Pokémon World: HM Whirlpool (Johto); after the key items below so no IDs move
 
     /* Expands to:
      *   ITEM_TM_FOCUS_PUNCH = ITEM_TM01,
@@ -1065,7 +1066,22 @@ enum __attribute__((packed)) Item
     ITEM_OLD_CHARM = 884,
     ITEM_BADGE_CASE = 885, // Pokémon World: shows the badges from every region
 
-    ITEMS_COUNT,
+    // Pokémon World: Johto key items, from Heart & Soul
+    ITEM_GS_BALL = 886,
+    ITEM_SQUIRT_BOTTLE = 887,
+    ITEM_MACHINE_PART = 888,
+    ITEM_LOST_ITEM = 889,
+    ITEM_PASS = 890,
+    ITEM_RADIO = 891,
+    ITEM_RED_SCALE = 892,
+    ITEM_RAINBOW_WING = 893,
+    ITEM_SILVER_WING = 894,
+    ITEM_CLEAR_BELL = 895,
+    ITEM_TIDAL_BELL = 896,
+    ITEM_MYSTERY_EGG = 897,
+    // 898 = ITEM_HM09 (HM Whirlpool), above
+
+    ITEMS_COUNT = ITEM_HM09 + 1,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };
 

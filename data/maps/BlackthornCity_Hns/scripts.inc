@@ -25,7 +25,7 @@ BlackthornCity_Hns_OnFrame::
 
 BlackthornCity_Hns_EventScript_CityEnter:: 
 	setflag FLAG_VISITED_BLACKTHORN_CITY
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 BlackthornCity_Hns_EventScript_Call::

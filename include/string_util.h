@@ -28,6 +28,7 @@ u8 *StringCopy_Nickname(u8 *dest, const u8 *src);
 u8 *StringGet_Nickname(u8 *str);
 u8 *StringCopy_PlayerName(u8 *dest, const u8 *src);
 const u8 *GetRivalName(void);
+const u8 *GetJohtoRivalName(void); // Pokémon World: Johto's rival (Silver)
 u8 *StringCopy(u8 *dest, const u8 *src);
 u8 *StringAppend(u8 *dest, const u8 *src);
 u8 *StringCopyN(u8 *dest, const u8 *src, u8 n);

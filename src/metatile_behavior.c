@@ -1511,6 +1511,12 @@ bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
         return FALSE;
 }
 
+// Pokémon World: Johto's Headbutt trees (Heart & Soul)
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
+{
+    return metatileBehavior == MB_HEADBUTT_TREE;
+}
+
 bool8 MetatileBehavior_IsRockClimbable(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ROCK_CLIMB)

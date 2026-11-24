@@ -239,7 +239,7 @@ AzaleaTown_Hns_EventScript_GSBall::
 	closemessage
 	playse SE_M_PETAL_DANCE
 	msgbox AzaleaTown_Hns_Text_Kurt2, MSGBOX_DEFAULT
-	giveitem ITEM_HNS_GS_BALL
+	giveitem ITEM_GS_BALL
 	waitse
 	playse SE_M_PETAL_DANCE
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT_GS, DIR_WEST

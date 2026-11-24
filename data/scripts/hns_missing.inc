@@ -3,3 +3,15 @@
 @ (Heart & Soul's data/scripts/*.inc or Emerald maps it changed). TODO: bring the real
 @ scripts over; for now each one does nothing.
 
+BugContest_EventScript_TimesUp::
+	releaseall
+	end
+
+BugContest_EventScript_WhiteOut::
+	releaseall
+	end
+
+EventScript_Headbutt::
+	releaseall
+	end
+

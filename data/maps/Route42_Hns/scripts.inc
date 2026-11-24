@@ -9,7 +9,7 @@ Route42_Hns_MapScripts::
 
 Route42_Hns_MapScript_OnTransition::
 	call_if_set FLAG_HIDE_ROUTE42_SUICUNE, Route42_Hns_MapScript_HideTrigger
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route42_Hns_MapScript_HideTrigger::

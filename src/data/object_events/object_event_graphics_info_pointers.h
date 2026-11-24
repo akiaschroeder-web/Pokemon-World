@@ -510,6 +510,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohJasmi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBuck;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRiley;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCheryl;
+#include "object_event_graphics_info_pointers_hns_extern.h" // Pokémon World: Heart & Soul's sprites (generated)
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -1011,6 +1012,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SINNOH_BUCK] = &gObjectEventGraphicsInfo_SinnohBuck,
     [OBJ_EVENT_GFX_SINNOH_RILEY] = &gObjectEventGraphicsInfo_SinnohRiley,
     [OBJ_EVENT_GFX_SINNOH_CHERYL] = &gObjectEventGraphicsInfo_SinnohCheryl,
+#include "object_event_graphics_info_pointers_hns.h" // Pokémon World: Heart & Soul's sprites (generated)
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

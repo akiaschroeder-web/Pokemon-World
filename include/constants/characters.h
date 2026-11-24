@@ -270,6 +270,7 @@
 #define PLACEHOLDER_ID_KYOGRE        0xC
 #define PLACEHOLDER_ID_GROUDON       0xD
 #define PLACEHOLDER_ID_REGION        0xE
+#define PLACEHOLDER_ID_JOHTO_RIVAL   0xF // Pokémon World: Johto's rival (gSaveBlock3Ptr->johtoRivalName)
 
 // battle placeholders are located in battle_message.h
 

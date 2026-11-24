@@ -8,7 +8,7 @@ MtMoon_Cave_Hns_MapScripts::
 	.byte 0
 
 MtMoon_Cave_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 

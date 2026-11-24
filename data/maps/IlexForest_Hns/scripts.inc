@@ -17,7 +17,7 @@ IlexForest_Hns_MapScripts::
 IlexForest_Hns_OnTransition: 
 	call_if_eq VAR_ILEX_FOREST_FARFETCHD, 1, IlexForest_Hns_EventScript_ReenterWhenFarfetchdLeaving
 	call_if_eq VAR_ILEX_FOREST_FARFETCHD, 2, IlexForest_Hns_EventScript_ReenterDuringCutScene
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end	
 
 IlexForest_Hns_EventScript_ReenterWhenFarfetchdLeaving::

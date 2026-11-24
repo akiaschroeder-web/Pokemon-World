@@ -6,7 +6,7 @@ TohjoFalls_GiovanniRoom_Hns_MapScripts::
 	.byte 0
 
 TohjoFalls_GiovanniRoom_Hns_OnTransition::
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, TRUE, TohjoFalls_GiovanniRoom_Hns_SetScene
 	setvar VAR_TOHJO_FALLS_GIOVANNI_STATE, 0
 	end
@@ -33,7 +33,7 @@ TohjoFalls_GiovanniRoom_Hns_CancelScene::
 	end
 
 TohjoFalls_EventScript_GiovanniSceneRight_Hns::
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, TohjoFalls_GiovanniRoom_Hns_CancelScene
 	lock
 	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1_Hns
@@ -43,7 +43,7 @@ TohjoFalls_EventScript_GiovanniSceneRight_Hns::
 	goto TohjoFalls_EventScript_GiovanniScene_Hns
 
 TohjoFalls_EventScript_GiovanniSceneLeft_Hns::
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, TohjoFalls_GiovanniRoom_Hns_CancelScene
 	lock
 	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1_Hns
@@ -53,7 +53,7 @@ TohjoFalls_EventScript_GiovanniSceneLeft_Hns::
 	goto TohjoFalls_EventScript_GiovanniScene_Hns
 
 TohjoFalls_EventScript_GiovanniScene_Hns::
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, TohjoFalls_GiovanniRoom_Hns_CancelScene
 	lock
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, TohjoFalls_Movement_CelebiBegin_Hns

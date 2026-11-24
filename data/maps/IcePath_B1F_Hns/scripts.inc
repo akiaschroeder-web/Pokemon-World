@@ -12,13 +12,13 @@ IcePath_B1F_Hns_MapScripts::
 
 IcePath_B1F_Hns_OnTransition: 
 	copyvar VAR_ICE_STEP_COUNT, 1
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 IcePath_B1F_Hns_SetHoleWarp:
 	setstepcallback STEP_CB_CRACKED_FLOOR
 	setholewarp MAP_ICE_PATH_B2F_HNS
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 IcePath_B1F_Hns_EventScript_PuzzleSkipButton::

@@ -9668,3 +9668,5 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalPwDawnFieldMo
     .anims = sAnimTable_FieldMove,
     .images = sPicTable_PwDawnFieldMove,
 };
+
+#include "object_event_graphics_info_hns.h" // Pokémon World: Heart & Soul's sprites (generated)

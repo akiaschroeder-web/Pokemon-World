@@ -101,7 +101,7 @@ AzaleaTown_KurtsHouse_Hns_EventScript_ReturnFromWell::
 	end
 
 AzaleaTown_KurtsHouse_Hns_EventScript_KurtCheckGSBall::
-	checkitem ITEM_HNS_GS_BALL
+	checkitem ITEM_GS_BALL
 	goto_if_eq VAR_RESULT, TRUE, AzaleaTown_KurtsHouse_Hns_EventScript_KurtGsBall
 	return
 
@@ -312,7 +312,7 @@ AzaleaTown_KurtsHouse_Hns_EventScript_KurtCancel::
 AzaleaTown_KurtsHouse_Hns_EventScript_KurtGsBall::
 	msgbox KurtsHouse_Text_KurtWhatIsThat_Hns, MSGBOX_DEFAULT
 	closemessage
-	removeitem ITEM_HNS_GS_BALL
+	removeitem ITEM_GS_BALL
 	playse SE_BANG
 	applymovement LOCALID_HNS_AZALEA_TOWN_KURT, AzaleaTownKurt_Movement_Making_Ball_Hns
 	waitmovement 0

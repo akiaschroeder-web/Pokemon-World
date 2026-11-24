@@ -23,11 +23,11 @@ BattleFrontier_Lounge9_Heal_Hns::
 BugContestEventScript_Judging_Hns::
 	msgbox BugContest_Text_Judging1_Hns, MSGBOX_DEFAULT
 	closemessage
-	@ Pokémon World: removed (special JudgeBugContestMon) TODO
+	special Hns_JudgeBugContestMon
 	call_if_eq VAR_RESULT, 1, BugContest_EventScript_First_Hns
 	call_if_eq VAR_RESULT, 2, BugContest_EventScript_Second_Hns
 	call_if_eq VAR_RESULT, 3, BugContest_EventScript_Third_Hns
-	@ Pokémon World: removed (special TransferBugContestMon) TODO
+	special Hns_TransferBugContestMon
 	delay 20
 	giveitem VAR_0x8005
 	msgbox BugContest_Text_TransferAndReturn_Hns, MSGBOX_DEFAULT
@@ -62,6 +62,16 @@ BugContest_EventScript_TimesUp_Hns::
 	fadescreen FADE_TO_BLACK
 	warp MAP_NATIONAL_PARK_BUG_CONTEST_HNS, 5
 	delay 90
+	end
+
+
+@ from Heart & Soul's data/scripts/bug_contest.inc
+BugContest_EventScript_WhiteOut_Hns::
+	lockall
+	delay 200
+	msgbox BugContest_Text_WhiteOut_Hns, MSGBOX_DEFAULT
+	closemessage
+	goto BugContest_EventScript_End_Hns
 	end
 
 
@@ -108,6 +118,33 @@ Common_Movement_WalkRight1_Hns:
 Common_Movement_WalkUp1_Hns:
 	walk_up
 	step_end
+
+@ from Heart & Soul's data/scripts/field_move_scripts.inc
+EventScript_Headbutt_Hns::
+	lockall
+	goto_if_unset FLAG_GET_HEADBUTT, EventScript_CantHeadbuttTree_Hns
+	hnscheckpartymove MOVE_HEADBUTT @ Pokémon World: was checkpartymove MOVE_HEADBUTT
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantHeadbuttTree_Hns
+	bufferpartymonnick STR_VAR_1, VAR_RESULT
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox Text_MonUsedHeadbutt_Hns, MSGBOX_DEFAULT
+	closemessage
+EventScript_HeadbuttCommon_Hns:
+	@ check if follower should use the field move
+	IsFollowerFieldMoveUser VAR_0x8004
+EventScript_HeadbuttTree_Hns:: @ fallthrough
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	applymovement VAR_LAST_TALKED, Movement_HeadbuttTree_Hns
+	playse SE_M_HEADBUTT
+	waitmovement 0
+	special RockSmashWildEncounter
+	goto EventScript_EndHeadbutt_Hns
+	waitstate
+	releaseall
+	end
+
+
 
 @ from Heart & Soul's data/scripts/field_move_scripts.inc
 EventScript_RockSmashHeartscale_Hns::
@@ -194,96 +231,6 @@ Route121_SafariZoneGate_SafariZoneEntrance_Text_YouNeedPokeblockCase_Hns:
 	.string "You may obtain a {POKEBLOCK} CASE from\n"
 	.string "the JOHTO SAFARI ZONE.$"
 
-SafariZone_South_Text_StillHaveTimeExit_Hns:
-	.string "You still have time left. Would you like\n"
-	.string "to exit the SAFARI ZONE now?$"
-
-SafariZone_South_Text_EnjoyTheRestOfYourAdventure_Hns:
-	.string "Please enjoy the rest of your wild\n"
-	.string "adventure!$"
-
-SafariZone_South_Text_ExitEarlyThankYouForPlaying_Hns:
-	.string "Okay.\p"
-	.string "I'll take back your remaining SAFARI\n"
-	.string "BALLS.\p"
-	.string "Thank you for playing.\n"
-	.string "We hope to see you again.$"
-
-SafariZone_South_Text_GoodLuck_Hns:
-	.string "Good luck!\p"
-	.string "If you need anything, don't hesitate\n"
-	.string "to tell me, please!$"
-
-SafariZone_South_Text_Boy_Hns:
-	.string "Did you know?\p"
-	.string "If you put a {POKEBLOCK} in that square box,\n"
-	.string "POKéMON gather around.$"
-
-SafariZone_South_Text_Man_Hns:
-	.string "I want to keep going deeper, but I\n"
-	.string "forgot to bring a BIKE.\p"
-	.string "Something tells me that rare POKéMON\n"
-	.string "live in the outlying areas.$"
-
-SafariZone_Southwest_Text_Woman_Hns:
-	.string "Sometimes, when I toss a {POKEBLOCK} at \n"
-	.string "POKéMON, it gets ignored.\p"
-	.string "Do POKéMON have likes and dislikes\n"
-	.string "about what they eat?$"
-
-SafariZone_Northwest_Text_Man_Hns:
-	.string "Gasp… Gasp…\n"
-	.string "I…made it out here…but…\p"
-	.string "I'm exhausted… I don't have the\n"
-	.string "energy to catch POKéMON…$"
-
-SafariZone_North_Text_Fisherman_Hns:
-	.string "I'm on a mission to find WATER POKéMON\n"
-	.string "you don't see in HOENN.\p"
-	.string "Do you have any idea where the lake is?$"
-
-SafariZone_North_Text_Man_Hns:
-	.string "I'm going to catch a lot of rare POKéMON\n"
-	.string "here and trade them with my friends!$"
-
-SafariZone_South_Text_Youngster_Hns:
-	.string "I put a {POKEBLOCK} on the {POKEBLOCK} FEEDER.\n"
-	.string "But it seems to have disappeared.\p"
-	.string "I guess POKéMON must have eaten it\n"
-	.string "without me noticing.$"
-
-Route121_SafariZoneGate_SafariZoneEntrance_Text_TrainerTip_Hns:
-	.string "SAFARI ZONE TRAINER TIP!\p"
-	.string "Throw {POKEBLOCK}S at wild POKéMON to make\n"
-	.string "them less likely to flee.$"
-
-SafariZone_Southwest_Text_RestHouseSign_Hns:
-	.string "“Relieve your tired feet.”\n"
-	.string "REST HOUSE$"
-
-SafariZone_RestHouse_Text_Youngster_Hns:
-	.string "I don't have any {POKEBLOCK}S, but I caught\n"
-	.string "a good number of POKéMON.\p"
-	.string "You can improve your chances of making\n"
-	.string "a catch by getting closer to them\l"
-	.string "before throwing a SAFARI BALL.$"
-
-SafariZone_RestHouse_Text_PsychicM_Hns:
-	.string "If you use {POKEBLOCK}S, wild POKéMON won't\n"
-	.string "be so quick to run away.\p"
-	.string "It's not much use to give {POKEBLOCK}S to\n"
-	.string "POKéMON that don't flee easily.$"
-
-SafariZone_RestHouse_Text_FatMan_Hns:
-	.string "If you put a {POKEBLOCK} on the FEEDER,\n"
-	.string "POKéMON are attracted to it.\p"
-	.string "I think POKéMON with the same sort of\n"
-	.string "nature are drawn by a certain {POKEBLOCK}.$"
-
-SafariZone_South_Text_AreaOffLimits1_Hns:
-	.string "This area is still under construction.\n"
-	.string "It's off-limits, sorry!$"
-
 
 @ from Heart & Soul's data/scripts/safari_zone.inc
 Route121_SafariZoneGate_SafariZoneEntrance_Text_NotEnoughMoney_Hns:
@@ -309,7 +256,7 @@ Route121_SafariZoneGate_SafariZoneEntrance_Text_WouldYouLikeToPlay_Hns:
 
 @ from Heart & Soul's data/scripts/field_move_scripts.inc
 SetTimeEncounters_Hns::
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	return
 
 
@@ -344,9 +291,9 @@ BugContest_EventScript_Didntcatch_Hns::
 BugContest_EventScript_End_Hns::
 	special HealPlayerParty
 	special LoadPlayerParty
-	@ Pokémon World: removed (special ExitBugContestMode) TODO
+	special Hns_ExitBugContestMode
 	setvar VAR_BUG_CONTEST_STATE, 0
-	@ Pokémon World: removed (special RemoveSafariBalls) TODO
+	special Hns_RemoveSafariBalls
 	goto_if_eq VAR_TEMP_1, 1, BugContest_EventScript_SideEnd_Hns
 	warp MAP_GATE_NATIONAL_PARK_HNS, 7, 2
 	releaseall
@@ -529,9 +476,22 @@ Common_EventScript_RecieveMonPartyNamed_Hns::
 
 
 @ from Heart & Soul's data/scripts/field_move_scripts.inc
+EventScript_CantHeadbuttTree_Hns::
+	msgbox Text_CantHeadbutt_Hns, MSGBOX_DEFAULT
+	releaseall
+	end
+
+
+@ from Heart & Soul's data/scripts/field_move_scripts.inc
 EventScript_CantWhirlpool_Hns::
 	msgbox Text_CantWhirlpool_Hns, MSGBOX_DEFAULT
 	closemessage
+	releaseall
+	end
+
+
+@ from Heart & Soul's data/scripts/field_move_scripts.inc
+EventScript_EndHeadbutt_Hns::
 	releaseall
 	end
 
@@ -573,126 +533,11 @@ MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnceFinite_Hns:
 	.string "This move can be learned only\n"
 	.string "once. Is that okay?$"
 
-MoveTutor_Text_SwaggerTeach_Hns:
-	.string "Heh! My POKéMON totally rules!\n"
-	.string "It's cooler than any POKéMON!\p"
-	.string "I was lipping off with a swagger in\n"
-	.string "my step like that when the CHAIRMAN\l"
-	.string "chewed me out.\p"
-	.string "That took the swagger out of my step.\p"
-	.string "If you'd like, I'll teach the move\n"
-	.string "SWAGGER to a POKéMON of yours.$"
 
-MoveTutor_Text_SwaggerDeclined_Hns:
-	.string "What, no? Can't you get into\n"
-	.string "the spirit of things?$"
-
-MoveTutor_Text_SwaggerWhichMon_Hns:
-	.string "All right, which POKéMON wants to\n"
-	.string "learn how to SWAGGER?$"
-
-MoveTutor_Text_SwaggerTaught_Hns:
-	.string "I'll just praise my POKéMON from now\n"
-	.string "on without the swagger.$"
-
-MoveTutor_Text_RolloutTeach_Hns:
-	.string "Did you know that you can go from\n"
-	.string "here a long way in that direction\l"
-	.string "without changing direction?\p"
-	.string "I might even be able to roll\n"
-	.string "that way.\p"
-	.string "Do you think your POKéMON will\n"
-	.string "want to roll, too?\p"
-	.string "I can teach one the move ROLLOUT\n"
-	.string "if you'd like.$"
-
-MoveTutor_Text_RolloutDeclined_Hns:
-	.string "You don't need to be shy about it.\n"
-	.string "Let's roll!$"
-
-MoveTutor_Text_RolloutWhichMon_Hns:
-	.string "Ehehe, sure thing! It'd be great if\n"
-	.string "the POKéMON looked like me.$"
-
-MoveTutor_Text_RolloutTaught_Hns:
-	.string "Rolling around in the grass makes me\n"
-	.string "happy. Come on, let's roll!$"
-
-MoveTutor_Text_FuryCutterTeach_Hns:
-	.string "There's a move that gets stronger\n"
-	.string "when you keep using it in a row.\p"
-	.string "It's a BUG-type move, and it is\n"
-	.string "wickedly cool.\p"
-	.string "It's called FURY CUTTER.\n"
-	.string "Want me to teach it to a POKéMON?$"
-
-MoveTutor_Text_FuryCutterDeclined_Hns:
-	.string "We're not on the same wavelength.$"
-
-MoveTutor_Text_FuryCutterWhichMon_Hns:
-	.string "Yay!\n"
-	.string "Show me which POKéMON I should teach.$"
-
-MoveTutor_Text_FuryCutterTaught_Hns:
-	.string "I get a thrill watching to see if\n"
-	.string "the move keeps hitting in succession!$"
-
-MoveTutor_MimicTeach_Hns:
-	.string "Ah, young one!\p"
-	.string "I am also a young one, but I mimic\n"
-	.string "the styles and speech of the elderly\l"
-	.string "folks of this town.\p"
-	.string "What do you say, young one?\n"
-	.string "Would you agree to it if I were to\l"
-	.string "offer to teach the move MIMIC?$"
-
-MoveTutor_MimicDeclined_Hns:
-	.string "Oh, boo! I wanted to teach MIMIC\n"
-	.string "to your POKéMON!$"
-
-MoveTutor_Text_MimicWhichMon_Hns:
-	.string "Fwofwo! And so I shall!\n"
-	.string "Let me see the POKéMON\l"
-	.string "you wish me to teach.$"
-
-MoveTutor_Text_MimicTaught_Hns:
-	.string "MIMIC is a move of great depth.\p"
-	.string "Could you execute it to perfection\n"
-	.string "as well as me…?$"
-
-MoveTutor_Text_MetronomeTeach_Hns:
-	.string "I want all sorts of things!\n"
-	.string "But I used up my allowance…\p"
-	.string "Wouldn't it be nice if there were\n"
-	.string "a spell that made money appear when\l"
-	.string "you waggle a finger?\p"
-	.string "If you want, I can teach your POKéMON\n"
-	.string "the move METRONOME.\p"
-	.string "Money won't appear, but your POKéMON\n"
-	.string "will waggle a finger. Yes?$"
-
-MoveTutor_Text_MetronomeDeclined_Hns:
-	.string "Okay. I'll be here if you change\n"
-	.string "your mind.$"
-
-MoveTutor_Text_MetronomeWhichMon_Hns:
-	.string "Okay! I'll teach it!\n"
-	.string "Which POKéMON should I teach?$"
-
-MoveTutor_Text_MetronomeTaught_Hns:
-	.string "When a POKéMON waggles its finger\n"
-	.string "like a METRONOME, all sorts of nice\l"
-	.string "things happen.\p"
-	.string "Wouldn't it be nice if we could\n"
-	.string "use it, too?$"
-
-MoveTutor_Text_SleepTalkTeach_Hns:
-	.string "Humph! My wife relies on HIDDEN\n"
-	.string "POWER to stay awake.\p"
-	.string "She should just take a nap like I do,\n"
-	.string "and SLEEP TALK.\p"
-	.string "I can teach your POKéMON how to\n"
-	.string "SLEEP TALK instead. Interested?$"
+@ from Heart & Soul's data/scripts/field_move_scripts.inc
+Movement_HeadbuttTree_Hns:
+	rock_smash_break
+	step_end
 
 
 @ from Heart & Soul's data/maps/Route104_PrettyPetalFlowerShop/scripts.inc
@@ -797,6 +642,12 @@ SSTidalRooms_EventScript_Bed_PokecenterChallenge_Hns::
 	end
 
 
+@ from Heart & Soul's data/scripts/field_move_scripts.inc
+Text_MonUsedHeadbutt_Hns::
+	.string "{STR_VAR_1} used HEADBUTT!$"
+
+
+
 @ from Heart & Soul's data/maps/BattleFrontier_Lounge9/scripts.inc
 BattleFrontier_Lounge9_EV_No_TEXT_Hns:
 	.string "No? Okay.$"
@@ -872,118 +723,17 @@ SSTidalRooms_Text_TakeRestOnBed_PokecenterChallenge_Hns:
 	.string "Sorry, you are playing with\n"
 	.string "the POKéCENTER challenge!$"
 
-SSTidalRooms_Text_TakeRestOnBed_Hns:
-	.string "There's a bed…\n"
-	.string "Let's take a rest.$"
 
-SSTidalRooms_Text_ColtonIntro_Hns:
-	.string "I often sail to LILYCOVE CITY.\p"
-	.string "I enjoy attending CONTESTS,\n"
-	.string "you see.$"
-
-SSTidalRooms_Text_ColtonDefeat_Hns:
-	.string "That was an enjoyable match!$"
-
-SSTidalRooms_Text_ColtonPostBattle_Hns:
-	.string "I get so excited imagining what kinds\n"
-	.string "of POKéMON I'll get to see in the next\l"
-	.string "CONTEST. The anticipation of it thrills!$"
-
-SSTidalRooms_Text_MicahIntro_Hns:
-	.string "Are your friends strong?$"
-
-SSTidalRooms_Text_MicahDefeat_Hns:
-	.string "Your friends are, indeed, strong.$"
-
-SSTidalRooms_Text_MicahPostBattle_Hns:
-	.string "Friends need not be human.\n"
-	.string "For me, POKéMON are treasured friends!$"
-
-SSTidalRooms_Text_ThomasIntro_Hns:
-	.string "Child…\n"
-	.string "Did you knock on the door?$"
-
-SSTidalRooms_Text_ThomasDefeat_Hns:
-	.string "A loss is to be accepted without haste\n"
-	.string "or panic.$"
-
-SSTidalRooms_Text_ThomasPostBattle_Hns:
-	.string "To be never ruffled in any situation is\n"
-	.string "the GENTLEMAN's code of conduct.$"
-
-SSTidalRooms_Text_JedIntro_Hns:
-	.string "JED: I feel a little shy about this, but…\n"
-	.string "We'll show you our lovey-dovey power!$"
-
-SSTidalRooms_Text_JedDefeat_Hns:
-	.string "JED: Sigh…$"
-
-SSTidalRooms_Text_JedPostBattle_Hns:
-	.string "JED: It's the first time that our lovey-\n"
-	.string "dovey power couldn't prevail!\l"
-	.string "You must be an awesome TRAINER!$"
-
-SSTidalRooms_Text_JedNotEnoughMons_Hns:
-	.string "JED: You only have one POKéMON?\n"
-	.string "Isn't that just too lonesome?$"
-
-SSTidalRooms_Text_LeaIntro_Hns:
-	.string "LEA: I feel a little silly, but…\n"
-	.string "We'll show you our lovey-dovey power!$"
-
-SSTidalRooms_Text_LeaDefeat_Hns:
-	.string "LEA: Oh, boo!$"
-
-SSTidalRooms_Text_LeaPostBattle_Hns:
-	.string "LEA: I can't believe it!\n"
-	.string "Our lovey-dovey power failed…\l"
-	.string "You must be an awesome TRAINER!$"
-
-SSTidalRooms_Text_LeaNotEnoughMons_Hns:
-	.string "LEA: I wanted to battle…\n"
-	.string "But you don't even have two POKéMON…$"
-
-SSTidalRooms_Text_GarretIntro_Hns:
-	.string "Ah, you've come just in time.\p"
-	.string "I'm bored, you see.\n"
-	.string "You may entertain me.$"
-
-SSTidalRooms_Text_GarretDefeat_Hns:
-	.string "…That will do.$"
-
-SSTidalRooms_Text_GarretPostBattle_Hns:
-	.string "Perhaps I shall get Father to acquire\n"
-	.string "a yacht for me.\l"
-	.string "A yacht for me and POKéMON!$"
+@ from Heart & Soul's data/scripts/field_move_scripts.inc
+Text_CantHeadbutt_Hns:
+	.string "It's a small tree, but a wild\n"
+	.string "POKéMON may be living within.$"
 
 
 @ from Heart & Soul's data/scripts/field_move_scripts.inc
 Text_CantWhirlpool_Hns:
 	.string "The water is swirling and spinning\n"
 	.string "around with a mighty roar.$"
-
-Text_CantDive_Hns:
-	.string "The sea is deep here. A POKéMON\n"
-	.string "may be able to go underwater.$"
-
-Text_WantToDive_Hns:
-	.string "The sea is deep here.\n"
-	.string "Would you like to use DIVE?$"
-
-Text_MonUsedDive_Hns:
-	.string "{STR_VAR_1} used WHIRLPOOL.$"
-
-Text_CantSurface_Hns:
-	.string "Light is filtering down from above.\n"
-	.string "A POKéMON may be able to surface.$"
-
-Text_WantToSurface_Hns:
-	.string "Light is filtering down from above.\n"
-	.string "Would you like to use DIVE?$"
-
-EventScript_FailSweetScent_Hns::
-	msgbox Text_FailSweetScent, MSGBOX_SIGN
-	end
 
 
 @ from Heart & Soul's data/maps/BattleFrontier_Lounge9/scripts.inc
@@ -1496,7 +1246,7 @@ BattleFrontier_Lounge9_Ability_Continue_Hns:
 	closemessage
 	special ChoosePartyMon
 	waitstate
-	special HnsStub_SwitchMonAbility
+	special Hns_SwitchMonAbility
 	compare VAR_RESULT, TRUE
 	goto_if_eq BattleFrontier_Lounge9_Ability_Finish_Hns
 	compare VAR_RESULT, FALSE
@@ -1517,12 +1267,12 @@ BattleFrontier_Lounge9_EV_SetZeroProceed_Hns::
 	setvar VAR_0x8003, 0
 	setvar VAR_0x8005, 0
 	setvar VAR_0x8006, 0
-	@ Pokémon World: removed (special SetHpEvs) TODO
-	@ Pokémon World: removed (special SetAtkEvs) TODO
-	@ Pokémon World: removed (special SetDefEvs) TODO
-	@ Pokémon World: removed (special SetSpdEvs) TODO
-	@ Pokémon World: removed (special SetSpAtkEvs) TODO
-	@ Pokémon World: removed (special SetSpDefEvs) TODO
+	special Hns_SetHpEvs
+	special Hns_SetAtkEvs
+	special Hns_SetDefEvs
+	special Hns_SetSpdEvs
+	special Hns_SetSpAtkEvs
+	special Hns_SetSpDefEvs
 	msgbox BattleFrontier_Lounge9_EV_SetZeroText3_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1616,12 +1366,12 @@ BattleFrontier_Lounge9_IV_SetMax_Hns::
 	setvar VAR_0x800A, 31
 	setvar VAR_0x800B, 31
 	setvar VAR_UNUSED_0x8014, 31
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpdIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1655,12 +1405,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Bug_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1681,12 +1431,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Dark_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1707,12 +1457,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Dragon_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1733,12 +1483,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Electric_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1759,12 +1509,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Fairy_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1785,12 +1535,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Fighting_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1811,12 +1561,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Fire_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1837,12 +1587,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Flying_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1863,12 +1613,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Ghost_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1889,12 +1639,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Grass_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1915,12 +1665,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Ground_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1941,12 +1691,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Ice_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1967,12 +1717,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Poison_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -1993,12 +1743,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Psychic_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -2019,12 +1769,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Rock_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 30 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -2045,12 +1795,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Steel_Hns::
 	setvar VAR_0x800B, 31 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 30 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall
@@ -2071,12 +1821,12 @@ BattleFrontier_Lounge9_MultichoiceIVs_SetType_Water_Hns::
 	setvar VAR_0x800B, 30 @SP. ATK
 	setvar VAR_UNUSED_0x8014, 31 @SP. DEF
 	setvar VAR_0x800A, 31 @SPD
-	@ Pokémon World: removed (special SetHpIvs) TODO
-	@ Pokémon World: removed (special SetAtkIvs) TODO
-	@ Pokémon World: removed (special SetDefIvs) TODO
-	@ Pokémon World: removed (special SetSpAtkIvs) TODO
-	@ Pokémon World: removed (special SetSpDefIvs) TODO
-	@ Pokémon World: removed (special SetSpdIvs) TODO
+	special Hns_SetHpIvs
+	special Hns_SetAtkIvs
+	special Hns_SetDefIvs
+	special Hns_SetSpAtkIvs
+	special Hns_SetSpDefIvs
+	special Hns_SetSpdIvs
 	msgbox BattleFrontier_Lounge9_IV_Finish_Hns, MSGBOX_DEFAULT
 	closemessage
 	releaseall

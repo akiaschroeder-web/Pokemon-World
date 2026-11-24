@@ -14,7 +14,7 @@ VioletCity_Hns_OnFrame::
 	.2byte 0
 
 VioletCity_Hns_OnTransition::
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 VioletCity_Hns_EventScript_Trigger::

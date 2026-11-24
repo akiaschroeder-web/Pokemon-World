@@ -5,7 +5,7 @@ Route29_Hns_MapScripts::
 	.byte 0
 
 Route29_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route29_Hns_Trigger_Monview::

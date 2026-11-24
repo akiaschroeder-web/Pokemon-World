@@ -52,6 +52,7 @@
 #include "vs_seeker.h"
 #include "wild_encounter_ow.h"
 #include "window.h"
+#include "bug_contest_hns.h" // Pokémon World: Bug-Catching Contest (Heart & Soul)
 #include "constants/battle_frontier.h"
 #include "constants/battle_special.h"
 #include "constants/event_objects.h"
@@ -359,6 +360,8 @@ void BattleSetup_StartWildBattle(void)
         DoGhostBattle();
     else
         DoStandardWildBattle(FALSE);
+    if (Hns_GetBugContestFlag()) // Pokémon World: Johto's Bug-Catching Contest (Heart & Soul)
+        gMain.savedCallback = Hns_CB2_EndBugContestBattle;
 }
 
 void BattleSetup_StartDoubleWildBattle(void)

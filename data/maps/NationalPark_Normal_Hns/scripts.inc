@@ -5,7 +5,7 @@ NationalPark_Normal_Hns_MapScripts::
 	.byte 0
 
 NationalPark_Normal_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 NationalPark_Normal_Hns_EventScript_Lass::

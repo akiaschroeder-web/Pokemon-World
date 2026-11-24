@@ -285,6 +285,9 @@ struct SaveBlock3
     // Pokémon World: flags and vars of the regions added after Hoenn and Sinnoh
     u8 regionFlags[NUM_REGION_FLAG_BYTES];
     u16 regionVars[REGION_VARS_COUNT];
+    // Johto's rival (Silver's story), named in Elm's lab. Not SaveBlock1's rivalName, which
+    // is the Hoenn/Sinnoh rival chosen before the intro. Empty = "SILVER". {JOHTO_RIVAL} in text.
+    u8 johtoRivalName[PLAYER_NAME_LENGTH + 1];
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
 #endif

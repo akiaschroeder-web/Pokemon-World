@@ -7,7 +7,7 @@ SproutTower_3F_Hns_MapScripts::
 	.byte 0
 
 SproutTower_3F_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 
@@ -185,7 +185,7 @@ SproutTower_Text_RivalOnlyCaresStrong_Hns:
 	.string "about weak POKéMON.$"
 
 SproutTower_Text_RivalUsedEscapeRope_Hns:
-	.string "{RIVAL} used an ESCAPE ROPE!$"
+	.string "{JOHTO_RIVAL} used an ESCAPE ROPE!$"
 
 SproutTower_Text_SageLi_Seen_Hns:
 	.string "So good of you to come here!\p"

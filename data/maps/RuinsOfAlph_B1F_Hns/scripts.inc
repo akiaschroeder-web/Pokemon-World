@@ -50,7 +50,7 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_OldAmber::
 	end
 
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_GSBALL::
-	finditem ITEM_HNS_GS_BALL
+	finditem ITEM_GS_BALL
 	end
 
 RuinsOfAlph_B1F_Hns_Text_Presence:

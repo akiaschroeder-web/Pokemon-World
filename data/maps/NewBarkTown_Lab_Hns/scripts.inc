@@ -365,7 +365,7 @@ NewBarkTown_Lab_Hns_EventScript_PoliceNo::
 
 NewBarkTown_Lab_Hns_EventScript_PoliceYes::
 	closemessage
-	special HnsStub_NameRival
+	special Hns_NameRival
 	waitstate
 	msgbox NewBarkTown_Lab_Hns_Text_Officer2_1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, NewBarkTown_Lab_Hns_EventScript_PoliceYes
@@ -396,7 +396,7 @@ NewBarkTown_Lab_Hns_EventScript_PoliceYes::
 	clearflag FLAG_HIDE_MOMS_FRIEND2
 	setflag FLAG_HNS_ADVENTURE_STARTED
 	setflag FLAG_EXP_SHARE
-	removeitem ITEM_HNS_MYSTERY_EGG
+	removeitem ITEM_MYSTERY_EGG
 	end
 
 NewBarkTown_Lab_Hns_EventScript_ElmState5::
@@ -480,7 +480,7 @@ NewBarkTown_Lab_Hns_EventScript_Elm_Check_WhereIsEgg::
 	end
 
 NewBarkTown_Lab_Hns_EventScript_Elm_Check_Togepi::
-	specialvar VAR_RESULT, HnsStub_CheckTogepi
+	specialvar VAR_RESULT, Hns_CheckTogepi
 	goto_if_eq VAR_RESULT, TRUE, NewBarkTown_Lab_Hns_EventScript_Elm_Togepi_Seen
 	return
 
@@ -970,7 +970,7 @@ NewBarkTown_Lab_Hns_Text_Officer1:
 	.string "name?$"
 
 NewBarkTown_Lab_Hns_Text_Officer2_1:
-	.string "OK! So {RIVAL} was his name?$"
+	.string "OK! So {JOHTO_RIVAL} was his name?$"
 
 NewBarkTown_Lab_Hns_Text_Officer2:
 	.string "Thanks for helping my\n"

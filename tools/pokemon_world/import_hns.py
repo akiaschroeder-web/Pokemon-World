@@ -34,7 +34,11 @@ What it writes (all generated: edit this script, not the output):
   include/constants/vars_hns.h              ... vars (JOHTO_VARS_START)
   include/constants/opponents_hns.h         ... trainer IDs (JOHTO_TRAINERS_START)
   include/constants/metatile_labels_hns.h   METATILE_Hns_*
-  include/constants/hns_compat.h            temporary music/sprite/item stand-ins
+  include/constants/hns_compat.h            temporary music/item stand-ins, Heart & Soul sprites = ours
+  include/constants/event_objects.h         OBJ_EVENT_GFX_HNS_* and OBJ_EVENT_PAL_TAG_HNS_* (between its
+                                            "// BEGIN HNS_OBJ_EVENT_..." / "// END" lines), with
+  src/data/object_events/*_hns.h            Heart & Soul's overworld sprites we lacked (hns_sprites.py)
+  graphics/object_events/{pics,palettes}/hns/   ... their pictures and palettes
   include/constants/region_map_sections_hns.h    JOHTO_/KANTO_HNS_ map section ranges
   src/data/trainers_hns.party               trainers (parties, AI flags, items; classes and
                                             pics ours where the same, else Heart & Soul's)
@@ -55,7 +59,8 @@ What it writes (all generated: edit this script, not the output):
   tools/pokemon_world/hns_import_state.json what was added to the shared JSON files,
                                             so a re-run can take it out first
 Hand-written companions: asm/macros/hns_compat.inc (HnS script commands),
-src/hns_stubs.c (stub specials/natives), src/data/tilesets/tileset_anims_hns.h.
+src/hns_specials.c, src/hns_bug_contest.c, src/hns_sliding_puzzle.c (the specials/natives they call,
+Hns_*), src/data/tilesets/tileset_anims_hns.h.
 
 Run from the repo root (reads Heart & Soul read-only; needs a host gcc to read our
 own constant values):
@@ -227,6 +232,7 @@ class Importer:
         self.H = hns
         self.state = json.load(open(STATE)) if os.path.exists(STATE) else {}
         self.new_state = {}
+        self.hns_gfx_used = set()   # Heart & Soul object sprites we don't have (hns_sprites.py)
 
     # --- maps -------------------------------------------------------------------
     def load_maps(self):
@@ -442,7 +448,7 @@ class Importer:
     def collect_used(self):
         txt = "".join(rd(f"{self.H}/data/maps/{m}/scripts.inc") for m in self.maps)
         js = "".join(json.dumps(self.mapjson[m]) for m in self.maps)
-        self.used_flags = sorted(set(re.findall(r"\bFLAG_\w+", txt + js)))
+        self.used_flags = sorted(set(re.findall(r"\bFLAG_\w+", txt + js)) | set(ENGINE_FLAGS))
         self.used_vars = sorted(set(re.findall(r"\bVAR_\w+", txt + js)))
         self.used_trainers = sorted(set(re.findall(r"\bTRAINER_\w+", txt)) -
                                     {"TRAINER_TYPE_NONE", "TRAINER_TYPE_NORMAL", "TRAINER_TYPE_SEE_ALL_DIRECTIONS",
@@ -644,10 +650,11 @@ class Importer:
             return f"OBJ_EVENT_GFX_SPECIES{'_SHINY' if m.group(2) else ''}({m.group(1)})"
         if g in self.our_gfx:
             return g
-        if g in GFX_STANDIN:
-            note("object sprites with a stand-in (OBJ_EVENT_GFX_HNS_*)", f"{g} -> {GFX_STANDIN[g]}")
+        if g in hns_sprites.available(self.H):
+            # Heart & Soul's sprite (or the same one of ours): gen_object_sprites() in run()
+            self.hns_gfx_used.add(g)
             return "OBJ_EVENT_GFX_HNS_" + g[len("OBJ_EVENT_GFX_"):]
-        note("object sprites with no stand-in (became OBJ_EVENT_GFX_BOY_1)", g)
+        note("object sprites Heart & Soul has no graphics for (became OBJ_EVENT_GFX_BOY_1)", g)
         return "OBJ_EVENT_GFX_BOY_1"
 
     def item(self, it):
@@ -726,7 +733,9 @@ class Importer:
         # split code / string / comment
         m = re.match(r'^(\s*\.string\s+)(".*)$', line)
         if m:
-            return line
+            # Heart & Soul's {RIVAL} is Silver: Johto's own rival name (named in Elm's lab),
+            # not our {RIVAL} (the Hoenn/Sinnoh rival chosen before the intro)
+            return line.replace("{RIVAL}", "{JOHTO_RIVAL}")
         code, comment = line, ""
         cm = re.search(r'\s@|^@|//', line)
         if cm and '"' not in line[:cm.start()]:
@@ -743,27 +752,35 @@ class Importer:
             if mm and mm.group(1).startswith("specialvar"):
                 dest = mm.group(1).split()[1].rstrip(",")
             return f"\tsetvar {self.token_sub(dest)}, FALSE @ Pokémon World: was {s} (not brought over)"
+        mm = re.match(r"^\s*(\w+)::?\s*$", code)
+        if mm and mm.group(1) in DROPPED_SCRIPTS:
+            note("scripts emptied (Heart & Soul options not brought over)", mm.group(1))
+            return self.token_sub(code) + comment + f"\n\tend @ Pokémon World: {DROPPED_SCRIPTS[mm.group(1)]}"
         mm = re.match(r"(special|specialvar\s+\w+\s*,)\s*(\w+)\s*$", s)
-        if mm and mm.group(2) in STUB_SPECIALS:
-            note("stub specials (src/hns_stubs.c, TODO)", mm.group(2))
+        if mm and mm.group(2) in DROPPED_SPECIALS:
+            note("specials left out (Heart & Soul options not brought over)", mm.group(2))
+            return f"\t@ Pokémon World: removed ({s}): {DROPPED_SPECIALS[mm.group(2)]}"
+        if mm and mm.group(2) in HNS_SPECIALS:
+            note("Heart & Soul specials ported (src/hns_specials.c etc., Hns_*)", mm.group(2))
             self.stub_specials.add(mm.group(2))
-            return self.token_sub(code.replace(mm.group(2), "HnsStub_" + mm.group(2))) + comment
-        if mm and mm.group(2) not in self.our_specials and mm.group(2) not in STUB_SPECIALS:
+            return self.token_sub(code.replace(mm.group(2), "Hns_" + mm.group(2))) + comment
+        if mm and mm.group(2) not in self.our_specials and mm.group(2) not in HNS_SPECIALS:
             note("specials we don't have (call removed)", mm.group(2))
             return f"\t@ Pokémon World: removed ({s}) TODO"
         mm = re.match(r"callnative\s+(\w+)", s)
         if mm:
             fn = mm.group(1)
-            if fn in STUB_NATIVES:
-                note("stub natives (src/hns_stubs.c, TODO)", fn)
-                self.stub_natives.add(fn)
-                return self.token_sub(code.replace(fn, "HnsStub_" + fn)) + comment
+            if fn in DROPPED_NATIVES:
+                note("natives left out", f"{fn}: {DROPPED_NATIVES[fn]}")
+                return f"\t@ Pokémon World: removed ({s}): {DROPPED_NATIVES[fn]}"
             if not re.search(r"\b" + fn + r"\s*\(", self.our_c):
                 note("natives we don't have (call removed)", fn)
                 return f"\t@ Pokémon World: removed ({s}) TODO"
         mm = re.match(r"checkpartymove\s+MOVE_(\w+)", s)
-        if mm:
+        if mm and mm.group(1) in self.our_field_moves:
             return f"\tcheckfieldmove FIELD_MOVE_{mm.group(1)} @ Pokémon World: was {s}"
+        if mm:   # not a field move here (Headbutt): Heart & Soul's rule, asm/macros/hns_compat.inc
+            return f"\thnscheckpartymove MOVE_{mm.group(1)} @ Pokémon World: was {s}"
         mm = re.match(r"^(\s+)([A-Z][A-Z0-9_]*)\b(.*)$", code)
         if mm and mm.group(2).lower() in self.our_macros:
             code = mm.group(1) + mm.group(2).lower() + mm.group(3)   # Heart & Soul's assembler ignored case
@@ -796,6 +813,7 @@ class Importer:
         self.used_metatiles, self.missing_songs, self.missing_items = set(), set(), set()
         self.stub_specials, self.stub_natives = set(), set()
         self.our_specials = set(re.findall(r"def_special\s+(\w+)", rd("data/specials.inc")))
+        self.our_field_moves = set(re.findall(r"\bFIELD_MOVE_(\w+)", rd("include/constants/field_move.h")))
         self.our_macros = set()
         for r, _, fs in os.walk("asm"):
             for f in fs:
@@ -836,9 +854,10 @@ class Importer:
                         s = o.get("script")
                         if s and s not in ("NULL", "0", "0x0"):
                             refs.add(self.labels.get(s, s))
+            refs |= set(C_SCRIPTS)   # Heart & Soul scripts our C code runs
             newdefs = set(self.labels.values())
             missing = sorted(r for r in refs if r not in newdefs and r not in self.our_labels
-                             and not r.startswith(("METATILE_", "OBJ_EVENT_GFX_", "LOCALID_", "HnsStub_", "VAR_", "FLAG_"))
+                             and not r.startswith(("METATILE_", "OBJ_EVENT_GFX_", "LOCALID_", "Hns_", "VAR_", "FLAG_"))
                              and not re.search(r"\b" + r + r"\b", self.our_c))
             found = [r for r in missing if r in shared and r not in covered]
             if not found:
@@ -849,8 +868,8 @@ class Importer:
                 where, block, labs = shared[r]
                 for k, l in enumerate(block):
                     mm = re.match(r"^\s*(\w+)::?", l)
-                    if k and mm and mm.group(1) in covered:
-                        block = block[:k]   # the rest is already brought over
+                    if k and mm and (mm.group(1) in covered or mm.group(1) in self.our_labels):
+                        block = block[:k]   # the rest is already brought over (or is ours)
                         labs = labs[:labs.index(mm.group(1))]
                         break
                 extra[r] = (where, block)
@@ -1231,9 +1250,11 @@ class Importer:
                 note("songs with no hand-picked stand-in", s)
             note("music played as a stand-in song", f"{s} -> {alt}")
             out.append(f"#define {s:<34} {alt}\n")
-        out.append("\n// Object sprites Heart & Soul has and we don't.\n")
-        for g, alt in sorted(GFX_STANDIN.items()):
-            out.append(f"#define OBJ_EVENT_GFX_HNS_{g[len('OBJ_EVENT_GFX_'):]:<24} {alt}\n")
+        out.append("\n// Heart & Soul object sprites that are the same as one of ours (the others are\n"
+                   "// Heart & Soul's own, in constants/event_objects.h; tools/pokemon_world/hns_sprites.py).\n")
+        for g, ours in sorted(self.gfx_of.items()):
+            if ours != "OBJ_EVENT_GFX_HNS_" + g[len("OBJ_EVENT_GFX_"):]:
+                out.append(f"#define OBJ_EVENT_GFX_HNS_{g[len('OBJ_EVENT_GFX_'):]:<24} {ours}\n")
         out.append("\n// Items with no expansion counterpart (Johto key items etc.).\n")
         for it in sorted(self.missing_items):
             out.append(f"#define ITEM_HNS_{it[5:]:<24} ITEM_NONE\n")
@@ -1556,6 +1577,7 @@ class Importer:
         self.gen_wild()
         self.gen_multichoices()
         self.find_unknown_constants()
+        self.gfx_of = hns_sprites.gen_object_sprites(self.H, sorted(self.hns_gfx_used), self.state, self.new_state, note)
         self.gen_compat()
         json.dump(self.new_state, open(STATE, "w"), indent=1)
         open(STATE, "a").write("\n")
@@ -1601,12 +1623,25 @@ SHARED_FLAGS = {"FLAG_SYS_B_DASH", "FLAG_SYS_CTRL_OBJ_DELETE", "FLAG_SYS_CYCLING
 SHARED_VARS = {"VAR_ICE_STEP_COUNT", "VAR_SAFARI_ZONE_STATE", "VAR_TRAINER_HILL_IS_ACTIVE",
                "VAR_POKELOT_PRIZE_ITEM", "VAR_POKELOT_PRIZE_PLACE"}
 
-# Heart & Soul specials for real Johto features: stubbed (src/hns_stubs.c) until a later stage.
-STUB_SPECIALS = ["CheckAerodactyl", "CheckCelebi", "CheckHooh", "CheckKabuto", "CheckOmanyte", "CheckTogepi",
-                 "DoSlidingPuzzle", "EnterBugContestMode", "GetBattleFrontierTutorMoveIndex", "GetDaycareCost",
-                 "GetMaxPartySize", "HaircutBrother1", "NameRival", "ShowBugContestChosenMon", "SwitchMonAbility",
-                 "ToggleShinyColors"]
-STUB_NATIVES = ["SetTimeBasedEncounters"]
+# Heart & Soul specials for Johto features we don't have, ported as Hns_<name> (src/hns_specials.c,
+# src/hns_bug_contest.c, src/hns_sliding_puzzle.c); the scripts call Hns_<name>.
+HNS_SPECIALS = ["CheckAerodactyl", "CheckCelebi", "CheckHooh", "CheckKabuto", "CheckOmanyte", "CheckTogepi",
+                "DoSlidingPuzzle", "GetBattleFrontierTutorMoveIndex", "BufferBattleFrontierTutorMoveName",
+                "GetDaycareCost", "GetMaxPartySize", "HaircutBrother1", "NameRival", "SwitchMonAbility",
+                "EnterBugContestMode", "ExitBugContestMode", "JudgeBugContestMon", "TransferBugContestMon",
+                "RemoveSafariBalls", "ShowBugContestChosenMon",
+                "SetHpIvs", "SetAtkIvs", "SetDefIvs", "SetSpdIvs", "SetSpAtkIvs", "SetSpDefIvs",
+                "SetHpEvs", "SetAtkEvs", "SetDefEvs", "SetSpdEvs", "SetSpAtkEvs", "SetSpDefEvs"]
+# Heart & Soul specials / natives / scripts that only serve its own options: left out.
+DROPPED_SPECIALS = {"ToggleShinyColors": "Heart & Soul's shiny-colour option isn't brought over"}
+DROPPED_NATIVES = {"SetTimeBasedEncounters": "day/night tables are expansion's time-of-day encounters"}
+DROPPED_SCRIPTS = {"GoldenrodCity_NameRatersHouse_EventScript_ToggleShinies":
+                   "Heart & Soul's shiny-colour option isn't brought over"}
+# Heart & Soul scripts our C code starts (the Bug-Catching Contest's timer and whiteout).
+C_SCRIPTS = ["BugContest_EventScript_TimesUp", "BugContest_EventScript_WhiteOut",
+             "EventScript_Headbutt"]   # Headbutt trees (MB_HEADBUTT_TREE, field_control_avatar.c)
+# Heart & Soul engine flags our ported C code uses (given Johto flags like the scripts' ones).
+ENGINE_FLAGS = ["FLAG_SYS_BUG_CONTEST_MODE"]
 
 # Tileset animations ported to src/data/tilesets/tileset_anims_hns.h
 ANIM_PORTED = {"InitTilesetAnim_JohtoGeneral": "InitTilesetAnim_JohtoGeneral_Hns"}
@@ -1685,29 +1720,8 @@ CONST_STANDIN = {"MOVEMENT_TYPE_TOWER_BEAM": "MOVEMENT_TYPE_NONE",
 OLD_TRAINERBATTLE = {"TRAINER_BATTLE_CONTINUE_SCRIPT", "TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC",
                      "TRAINER_BATTLE_SET_TRAINER_A", "TRAINER_BATTLE_SET_TRAINER_B", "TRAINER_BATTLE_SINGLE"}
 
-GFX_STANDIN = {
-    "OBJ_EVENT_GFX_ARCHER": "OBJ_EVENT_GFX_ROCKET_M", "OBJ_EVENT_GFX_ARIANA": "OBJ_EVENT_GFX_ROCKET_F",
-    "OBJ_EVENT_GFX_ATTENDANT": "OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST",
-    "OBJ_EVENT_GFX_ATTENDANT_M": "OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST",
-    "OBJ_EVENT_GFX_BATTLE_GIRL": "OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL", "OBJ_EVENT_GFX_BIG_SNORLAX": "OBJ_EVENT_GFX_SNORLAX",
-    "OBJ_EVENT_GFX_BUGSY": "OBJ_EVENT_GFX_BUG_CATCHER", "OBJ_EVENT_GFX_BURGLAR": "OBJ_EVENT_GFX_MAN_3",
-    "OBJ_EVENT_GFX_CHUCK": "OBJ_EVENT_GFX_BLACK_BELT", "OBJ_EVENT_GFX_CLAIR": "OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER",
-    "OBJ_EVENT_GFX_ENGINEER": "OBJ_EVENT_GFX_WORKER_M", "OBJ_EVENT_GFX_EUSINE": "OBJ_EVENT_GFX_GENTLEMAN",
-    "OBJ_EVENT_GFX_FALKNER": "OBJ_EVENT_GFX_SINNOH_BIRD_KEEPER", "OBJ_EVENT_GFX_FIREBREATHER": "OBJ_EVENT_GFX_MAN_5",
-    "OBJ_EVENT_GFX_JANINE": "OBJ_EVENT_GFX_LASS", "OBJ_EVENT_GFX_JASMINE": "OBJ_EVENT_GFX_SINNOH_JASMINE",
-    "OBJ_EVENT_GFX_JUGGLER": "OBJ_EVENT_GFX_SINNOH_CLOWN", "OBJ_EVENT_GFX_KAREN": "OBJ_EVENT_GFX_BEAUTY",
-    "OBJ_EVENT_GFX_KIMONO_GIRL": "OBJ_EVENT_GFX_WOMAN_5", "OBJ_EVENT_GFX_KURT": "OBJ_EVENT_GFX_OLD_MAN_1",
-    "OBJ_EVENT_GFX_LEGENDARY_SHADOW": "OBJ_EVENT_GFX_LUGIA", "OBJ_EVENT_GFX_MORTY": "OBJ_EVENT_GFX_MAN_2",
-    "OBJ_EVENT_GFX_NURSE_CHANSEY": "OBJ_EVENT_GFX_CHANSEY", "OBJ_EVENT_GFX_PETREL": "OBJ_EVENT_GFX_ROCKET_M",
-    "OBJ_EVENT_GFX_PROF_ELM": "OBJ_EVENT_GFX_SCIENTIST", "OBJ_EVENT_GFX_PROTON": "OBJ_EVENT_GFX_ROCKET_M",
-    "OBJ_EVENT_GFX_PRYCE": "OBJ_EVENT_GFX_OLD_MAN_2", "OBJ_EVENT_GFX_SAGE": "OBJ_EVENT_GFX_OLD_MAN",
-    "OBJ_EVENT_GFX_SCIENTIST_F": "OBJ_EVENT_GFX_SINNOH_SCIENTIST_F", "OBJ_EVENT_GFX_SCIENTIST_M": "OBJ_EVENT_GFX_SCIENTIST",
-    "OBJ_EVENT_GFX_SHINY_GYARADOS": "OBJ_EVENT_GFX_SPECIES_SHINY(GYARADOS)", "OBJ_EVENT_GFX_SILVER": "OBJ_EVENT_GFX_BLUE",
-    "OBJ_EVENT_GFX_SLOWPOKE_NO_TAIL": "OBJ_EVENT_GFX_SLOWPOKE", "OBJ_EVENT_GFX_SUPER_NERD": "OBJ_EVENT_GFX_POKE_MANIAC_FRLG",
-    "OBJ_EVENT_GFX_SURGE": "OBJ_EVENT_GFX_LT_SURGE", "OBJ_EVENT_GFX_TRAIN_BACK": "OBJ_EVENT_GFX_CABLE_CAR",
-    "OBJ_EVENT_GFX_TRAIN_FRONT": "OBJ_EVENT_GFX_CABLE_CAR", "OBJ_EVENT_GFX_WHIRLPOOL": "OBJ_EVENT_GFX_SUBMARINE_SHADOW",
-    "OBJ_EVENT_GFX_WHITNEY": "OBJ_EVENT_GFX_GIRL_3", "OBJ_EVENT_GFX_WILL": "OBJ_EVENT_GFX_PSYCHIC_M",
-}
+# Heart & Soul's overworld sprites (OBJ_EVENT_GFX_HNS_*): see hns_sprites.py.
+import hns_sprites  # noqa: E402  (next to this script)
 
 # HGSS songs -> closest song we have, until the HGSS music is imported.
 MUSIC_STANDIN = {

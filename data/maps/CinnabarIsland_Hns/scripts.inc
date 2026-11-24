@@ -9,7 +9,7 @@ CinnabarIsland_Hns_MapScripts::
 	
 CinnabarIsland_Hns_OnTransition:
 	setflag FLAG_VISITED_CINNABAR_ISLAND
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 CinnabarIsland_Hns_EventScript_Blaine::

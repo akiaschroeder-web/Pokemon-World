@@ -8,7 +8,7 @@ EcruteakCity_Hns_MapScripts::
 	.byte 0
 
 EcruteakCity_Hns_OnTransition::
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 EcruteakCity_Hns_Test_Lugia::
@@ -124,12 +124,12 @@ EcruteakCity_Hns_Text_Silver1:
 	.string "THUD!!$"
 
 EcruteakCity_Hns_Text_Silver2:
-	.string "{RIVAL}: How...? How is this\n"
+	.string "{JOHTO_RIVAL}: How...? How is this\n"
 	.string "possible? How can I lose to mere\l"
 	.string "KIMONO GIRLS...?$"
 
 EcruteakCity_Hns_Text_Silver3:
-	.string "{RIVAL}: You were watching me,\n"
+	.string "{JOHTO_RIVAL}: You were watching me,\n"
 	.string "{PLAYER}...\p"
 	.string "Yeah, that's right!\p"
 	.string "I never thought defeating five\n"

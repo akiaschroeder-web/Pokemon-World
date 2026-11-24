@@ -47,6 +47,7 @@
 #include "union_room.h"
 #include "dexnav.h"
 #include "wild_encounter.h"
+#include "bug_contest_hns.h" // Pokémon World: Bug-Catching Contest (Heart & Soul)
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -304,7 +305,7 @@ static void BuildStartMenuActions(void)
     {
         BuildUnionRoomStartMenu();
     }
-    else if (GetSafariZoneFlag() == TRUE)
+    else if (GetSafariZoneFlag() == TRUE || Hns_GetBugContestFlag()) // Pokémon World: + Bug-Catching Contest
     {
         BuildSafariZoneStartMenu();
     }
@@ -826,7 +827,10 @@ static bool8 StartMenuSafariZoneRetireCallback(void)
 {
     RemoveExtraStartMenuWindows();
     HideStartMenu();
-    SafariZoneRetirePrompt();
+    if (Hns_GetBugContestFlag()) // Pokémon World: Johto's Bug-Catching Contest
+        Hns_BugContestRetirePrompt();
+    else
+        SafariZoneRetirePrompt();
 
     return TRUE;
 }

@@ -13,7 +13,7 @@ GoldenrodCity_TrainStation_Hns_OnFrame::
 GoldenrodCity_TrainStation_Hns_EventScript_Attendant::
 	lock
 	faceplayer
-	checkitem ITEM_HNS_PASS
+	checkitem ITEM_PASS
 	goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_TrainStation_Hns_EventScript_BoardTrain
 	goto_if_set FLAG_RETURNED_MACHINE_PART, GoldenrodCity_TrainStation_Hns_EventScript_Attendant2
 	msgbox GoldenrodMagnetTrainStation_Text_OfficerTrainHasntComeIn_Hns, MSGBOX_DEFAULT

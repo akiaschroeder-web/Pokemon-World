@@ -8,7 +8,7 @@ OlivineCity_Hns_MapScripts::
 	.byte 0
 
 OlivineCity_Hns_MapScript_OnTransition::
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	goto_if_ge VAR_OLIVINE_CITY_STATE, 5, OlivineCity_Hns_MapScript_ClearWeather
 	end
 

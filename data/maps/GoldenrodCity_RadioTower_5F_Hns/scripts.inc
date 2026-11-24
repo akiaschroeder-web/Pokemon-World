@@ -220,14 +220,14 @@ GoldenrodCity_RadioTower_5F_Hns_EventScript_WingBot::
 	end
 
 GoldenrodCity_RadioTower_5F_Hns_EventScript_GiveTidalWing::
-	giveitem ITEM_HNS_SILVER_WING
+	giveitem ITEM_SILVER_WING
 	msgbox GoldenrodCity_RadioTower_5F_Hns_Text_DirectorTidalWingExplanation, MSGBOX_DEFAULT
 	closemessage
 	release
 	return
 
 GoldenrodCity_RadioTower_5F_Hns_EventScript_GiveClearWing::
-	giveitem ITEM_HNS_RAINBOW_WING
+	giveitem ITEM_RAINBOW_WING
 	msgbox GoldenrodCity_RadioTower_5F_Hns_Text_DirectorClearWingExplanation, MSGBOX_DEFAULT
 	closemessage
 	release

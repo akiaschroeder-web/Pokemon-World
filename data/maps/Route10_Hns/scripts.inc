@@ -8,7 +8,7 @@ Route10_Hns_MapScripts::
 	.byte 0
 
 Route10_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route10_Hns_EventScript_Surge::

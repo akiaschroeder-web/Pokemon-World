@@ -418,7 +418,7 @@ TrainerHill_Courtyard_Hns_EventScript_CancelChooseMon::
 TrainerHill_Courtyard_Hns_EventScript_ConfirmMoveSelection::
 	copyvar VAR_0x8004, VAR_TEMP_FRONTIER_TUTOR_SELECTION
 	copyvar VAR_0x8005, VAR_TEMP_FRONTIER_TUTOR_ID
-	special BufferBattleFrontierTutorMoveName
+	special Hns_BufferBattleFrontierTutorMoveName
 	buffernumberstring STR_VAR_2, VAR_0x8008
 	copyvar VAR_0x8004, VAR_TEMP_C
 	msgbox TrainerHill_Courtyard_Hns_Text_MoveWillBeXBattlePoints, MSGBOX_YESNO
@@ -431,7 +431,7 @@ TrainerHill_Courtyard_Hns_EventScript_ConfirmMoveSelection::
 
 TrainerHill_Courtyard_Hns_EventScript_TeachTutorMove::
 	msgbox TrainerHill_Courtyard_Hns_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
-	special HnsStub_GetBattleFrontierTutorMoveIndex
+	special Hns_GetBattleFrontierTutorMoveIndex
 	fadescreen FADE_TO_BLACK
 	special CloseBattlePointsWindow
 	special CloseBattleFrontierTutorWindow

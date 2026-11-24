@@ -5,7 +5,7 @@ MtSilver_1F_WaterfallRoom_Hns_MapScripts::
 	.byte 0
 
 MtSilver_1F_WaterfallRoom_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 MtSilver_1F_WaterfallRoom_Hns_EventScript_MaxPotion::

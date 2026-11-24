@@ -71,65 +71,16 @@
 #define MUS_PL_FIGHT_AREA_DAY              MUS_DPP_LEAGUE_OUTSIDE
 #define MUS_WEATHER_KYOGRE                 MUS_ABNORMAL_WEATHER
 
-// Object sprites Heart & Soul has and we don't.
-#define OBJ_EVENT_GFX_HNS_ARCHER                   OBJ_EVENT_GFX_ROCKET_M
-#define OBJ_EVENT_GFX_HNS_ARIANA                   OBJ_EVENT_GFX_ROCKET_F
-#define OBJ_EVENT_GFX_HNS_ATTENDANT                OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST
-#define OBJ_EVENT_GFX_HNS_ATTENDANT_M              OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST
-#define OBJ_EVENT_GFX_HNS_BATTLE_GIRL              OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL
-#define OBJ_EVENT_GFX_HNS_BIG_SNORLAX              OBJ_EVENT_GFX_SNORLAX
-#define OBJ_EVENT_GFX_HNS_BUGSY                    OBJ_EVENT_GFX_BUG_CATCHER
-#define OBJ_EVENT_GFX_HNS_BURGLAR                  OBJ_EVENT_GFX_MAN_3
-#define OBJ_EVENT_GFX_HNS_CHUCK                    OBJ_EVENT_GFX_BLACK_BELT
-#define OBJ_EVENT_GFX_HNS_CLAIR                    OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER
-#define OBJ_EVENT_GFX_HNS_ENGINEER                 OBJ_EVENT_GFX_WORKER_M
-#define OBJ_EVENT_GFX_HNS_EUSINE                   OBJ_EVENT_GFX_GENTLEMAN
-#define OBJ_EVENT_GFX_HNS_FALKNER                  OBJ_EVENT_GFX_SINNOH_BIRD_KEEPER
-#define OBJ_EVENT_GFX_HNS_FIREBREATHER             OBJ_EVENT_GFX_MAN_5
-#define OBJ_EVENT_GFX_HNS_JANINE                   OBJ_EVENT_GFX_LASS
-#define OBJ_EVENT_GFX_HNS_JASMINE                  OBJ_EVENT_GFX_SINNOH_JASMINE
-#define OBJ_EVENT_GFX_HNS_JUGGLER                  OBJ_EVENT_GFX_SINNOH_CLOWN
-#define OBJ_EVENT_GFX_HNS_KAREN                    OBJ_EVENT_GFX_BEAUTY
-#define OBJ_EVENT_GFX_HNS_KIMONO_GIRL              OBJ_EVENT_GFX_WOMAN_5
-#define OBJ_EVENT_GFX_HNS_KURT                     OBJ_EVENT_GFX_OLD_MAN_1
-#define OBJ_EVENT_GFX_HNS_LEGENDARY_SHADOW         OBJ_EVENT_GFX_LUGIA
-#define OBJ_EVENT_GFX_HNS_MORTY                    OBJ_EVENT_GFX_MAN_2
-#define OBJ_EVENT_GFX_HNS_NURSE_CHANSEY            OBJ_EVENT_GFX_CHANSEY
-#define OBJ_EVENT_GFX_HNS_PETREL                   OBJ_EVENT_GFX_ROCKET_M
-#define OBJ_EVENT_GFX_HNS_PROF_ELM                 OBJ_EVENT_GFX_SCIENTIST
-#define OBJ_EVENT_GFX_HNS_PROTON                   OBJ_EVENT_GFX_ROCKET_M
-#define OBJ_EVENT_GFX_HNS_PRYCE                    OBJ_EVENT_GFX_OLD_MAN_2
-#define OBJ_EVENT_GFX_HNS_SAGE                     OBJ_EVENT_GFX_OLD_MAN
-#define OBJ_EVENT_GFX_HNS_SCIENTIST_F              OBJ_EVENT_GFX_SINNOH_SCIENTIST_F
+// Heart & Soul object sprites that are the same as one of ours (the others are
+// Heart & Soul's own, in constants/event_objects.h; tools/pokemon_world/hns_sprites.py).
+#define OBJ_EVENT_GFX_HNS_ATTENDANT                OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST
+#define OBJ_EVENT_GFX_HNS_BATTLE_GIRL              OBJ_EVENT_GFX_CRUSH_GIRL
 #define OBJ_EVENT_GFX_HNS_SCIENTIST_M              OBJ_EVENT_GFX_SCIENTIST
-#define OBJ_EVENT_GFX_HNS_SHINY_GYARADOS           OBJ_EVENT_GFX_SPECIES_SHINY(GYARADOS)
-#define OBJ_EVENT_GFX_HNS_SILVER                   OBJ_EVENT_GFX_BLUE
-#define OBJ_EVENT_GFX_HNS_SLOWPOKE_NO_TAIL         OBJ_EVENT_GFX_SLOWPOKE
 #define OBJ_EVENT_GFX_HNS_SUPER_NERD               OBJ_EVENT_GFX_POKE_MANIAC_FRLG
-#define OBJ_EVENT_GFX_HNS_SURGE                    OBJ_EVENT_GFX_LT_SURGE
-#define OBJ_EVENT_GFX_HNS_TRAIN_BACK               OBJ_EVENT_GFX_CABLE_CAR
-#define OBJ_EVENT_GFX_HNS_TRAIN_FRONT              OBJ_EVENT_GFX_CABLE_CAR
-#define OBJ_EVENT_GFX_HNS_WHIRLPOOL                OBJ_EVENT_GFX_SUBMARINE_SHADOW
-#define OBJ_EVENT_GFX_HNS_WHITNEY                  OBJ_EVENT_GFX_GIRL_3
-#define OBJ_EVENT_GFX_HNS_WILL                     OBJ_EVENT_GFX_PSYCHIC_M
 
 // Items with no expansion counterpart (Johto key items etc.).
-#define ITEM_HNS_CLEAR_BELL               ITEM_NONE
-#define ITEM_HNS_GS_BALL                  ITEM_NONE
-#define ITEM_HNS_HM_WHIRLPOOL             ITEM_NONE
-#define ITEM_HNS_LOST_ITEM                ITEM_NONE
-#define ITEM_HNS_MACHINE_PART             ITEM_NONE
-#define ITEM_HNS_MYSTERY_EGG              ITEM_NONE
-#define ITEM_HNS_PASS                     ITEM_NONE
-#define ITEM_HNS_RADIO                    ITEM_NONE
-#define ITEM_HNS_RAINBOW_WING             ITEM_NONE
-#define ITEM_HNS_RED_SCALE                ITEM_NONE
-#define ITEM_HNS_SILVER_WING              ITEM_NONE
-#define ITEM_HNS_SQUIRT_BOTTLE            ITEM_NONE
-#define ITEM_HNS_TIDAL_BELL               ITEM_NONE
 
 // Other constants Heart & Soul's scripts use that we don't have (Heart & Soul's values).
-#define BERRIES_POCKET                           3
 #define BERRY_TREE_ASPEAR_1                      98
 #define BERRY_TREE_ASPEAR_2                      99
 #define BERRY_TREE_CHERI_1                       90
@@ -170,10 +121,6 @@
 #define MON_UNSATISFACTORY                       1
 #define MOVEMENT_TYPE_TOWER_BEAM                 MOVEMENT_TYPE_NONE
 #define SCROLL_MULTI_BF_MOVE_TUTOR_3             SCROLL_MULTI_BF_MOVE_TUTOR_1
-#define SLIDING_PUZZLE_AERODACTYL                2
-#define SLIDING_PUZZLE_HO_OH                     3
-#define SLIDING_PUZZLE_KABUTO                    0
-#define SLIDING_PUZZLE_OMANYTE                   1
 #define SPECIAL_BATTLE_LANCE                     SPECIAL_BATTLE_MULTI
 #define TUTOR_MOVE_HEADBUTT                      0
 

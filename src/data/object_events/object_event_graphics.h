@@ -880,3 +880,5 @@ const u32 gObjectEventPic_PwDawnUnderwater[] = INCGFX_U32("graphics/object_event
 const u32 gObjectEventPic_PwDawnFishing[] = INCGFX_U32("graphics/object_events/pics/people/dawn/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_PwDawnWatering[] = INCGFX_U32("graphics/object_events/pics/people/dawn/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_PwDawnDecorating[] = INCGFX_U32("graphics/object_events/pics/people/dawn/decorating.png", ".4bpp");
+
+#include "object_event_graphics_hns.h" // Pokémon World: Heart & Soul's sprites (generated)

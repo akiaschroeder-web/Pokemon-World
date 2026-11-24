@@ -3041,3 +3041,5 @@ static const struct SpriteFrameImage sPicTable_PwDawnWatering[] = {
 static const struct SpriteFrameImage sPicTable_PwDawnDecorating[] = {
     obj_frame_tiles(gObjectEventPic_PwDawnDecorating),
 };
+
+#include "object_event_pic_tables_hns.h" // Pokémon World: Heart & Soul's sprites (generated)

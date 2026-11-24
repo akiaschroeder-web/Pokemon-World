@@ -176,7 +176,7 @@ GoldenrodUnderground_EventScript_Haircut1_Hns::
 	fadescreen FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
-	special HnsStub_HaircutBrother1
+	special Hns_HaircutBrother1
 	fadescreen FADE_FROM_BLACK
 	special BufferMonNickname
 	msgbox GoldenrodUnderground_Text_OlderBrotherAllDone_Hns
@@ -238,7 +238,7 @@ GoldenrodUnderground_EventScript_Haircut2_Hns::
 	fadescreen FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
-	special HnsStub_HaircutBrother1
+	special Hns_HaircutBrother1
 	fadescreen FADE_FROM_BLACK
 	special BufferMonNickname
 	msgbox GoldenrodUnderground_Text_YoungerBrotherAllDone_Hns

@@ -57,7 +57,7 @@ VermilionCity_FanClub_Hns_EventScript_ClefairyGiveDoll::
 	setflag FLAG_HIDE_FAN_CLUB_CLEFAIRY_DOLL
 	removeobject LOCALID_HNS_FAN_CLUB_CLEFAIRY_DOLL
 	fadescreenswapbuffers FADE_FROM_BLACK
-	giveitem ITEM_HNS_LOST_ITEM
+	giveitem ITEM_LOST_ITEM
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setvar VAR_FAN_CLUB_CLEFAIRY, 2
 	msgbox PokemonFanClub_Text_ClefairyGuy_GoingToGetOne_Hns, MSGBOX_DEFAULT

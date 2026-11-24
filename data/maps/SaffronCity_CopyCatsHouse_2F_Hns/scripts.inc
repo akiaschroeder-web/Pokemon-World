@@ -147,12 +147,12 @@ SaffronCity_CopyCatsHouse_2F_Hns_EventScript_CopycatReturnedMachinePart_Female::
 SaffronCity_CopyCatsHouse_2F_Hns_EventScript_CopycatReturnDoll::
 	msgbox Copycat_Text_GiveDoll_Hns, MSGBOX_DEFAULT
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeitem ITEM_HNS_LOST_ITEM
+	removeitem ITEM_LOST_ITEM
 	clearflag FLAG_HIDE_COPYCAT_CLEFAIRY_DOLL
 	addobject LOCALID_HNS_COPYCAT_CLEFAIRY
 	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox Copycat_Text_GivePass_Hns, MSGBOX_DEFAULT
-	giveitem ITEM_HNS_PASS
+	giveitem ITEM_PASS
 	msgbox Copycat_Text_ExplainPass_Hns, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_FAN_CLUB_CLEFAIRY, 3

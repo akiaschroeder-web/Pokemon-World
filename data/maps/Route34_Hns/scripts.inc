@@ -9,7 +9,7 @@ Route34_Hns_MapScripts::
 Route34_Hns_OnTransition: 
 	specialvar VAR_RESULT, GetDaycareState
 	call_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, Route34_Hns_MapScript_EggReady
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end	
 
 Route34_Hns_MapScript_EggReady::

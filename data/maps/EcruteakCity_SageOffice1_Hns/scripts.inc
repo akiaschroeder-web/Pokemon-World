@@ -25,7 +25,7 @@ EcruteakCity_SageOffice2_Hns_EventScript_SageA::
 	lock
 	faceplayer
 	goto_if_set FLAG_HIDE_TINTOWER_GUARD, EcruteakCity_SageOffice2_Hns_EventScript_SageA4
-	checkitem ITEM_HNS_CLEAR_BELL
+	checkitem ITEM_CLEAR_BELL
 	goto_if_eq VAR_RESULT, TRUE, EcruteakCity_SageOffice2_Hns_EventScript_SageA2
 	msgbox EcruteakTinTowerEntrance_Text_SageNoBadge_Hns, MSGBOX_DEFAULT
 	closemessage

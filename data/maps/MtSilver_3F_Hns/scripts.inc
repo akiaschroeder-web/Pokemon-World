@@ -5,6 +5,6 @@ MtSilver_3F_Hns_MapScripts::
 	.byte 0
 
 MtSilver_3F_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	setescapewarp MAP_MT_SILVER_OUTSIDE_HNS, 17, 8
 	end

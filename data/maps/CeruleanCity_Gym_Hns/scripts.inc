@@ -67,7 +67,7 @@ CeruleanCity_Gym_Hns_EventScript_MachinePart::
 CeruleanCity_Gym_Hns_EventScript_MachinePartItem::
 	goto_if_lt VAR_KANTO_ROCKET_STORY_STATE, 5, CeruleanCity_Gym_Hns_EventScript_DoNothing
 	goto_if_ge VAR_KANTO_ROCKET_STORY_STATE, 6, CeruleanCity_Gym_Hns_EventScript_DoNothing
-	finditem ITEM_HNS_MACHINE_PART
+	finditem ITEM_MACHINE_PART
 	setvar VAR_KANTO_ROCKET_STORY_STATE, 6
 	setflag FLAG_HIDDEN_ITEM_MACHINE_PART
 	end

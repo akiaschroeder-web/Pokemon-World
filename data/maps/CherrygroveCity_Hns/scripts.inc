@@ -8,7 +8,7 @@ CherrygroveCity_Hns_MapScripts::
 	.byte 0
 
 CherryGroveCity_OnTransition_Hns::
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 CherryGroveCity_EventScript_TriggerGent_Top_Hns::

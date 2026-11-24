@@ -6,7 +6,7 @@ Route43_Hns_MapScripts::
 
 Route43_Hns_MapScript_OnTransition::
 	call_if_set FLAG_HIDE_ROUTE42_SUICUNE, Route42_Hns_MapScript_HideTrigger
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route43_Hns_EventScript_Ben::
@@ -78,7 +78,7 @@ Route43_Hns_Text_PokemaniacBrentAfter:
 
 Route43_Hns_Text_PokemaniacRonSeen:
     .string "Would you get this?\p"
-    .string "Some {RIVAL} guy made fun of my\n"
+    .string "Some {JOHTO_RIVAL} guy made fun of my\n"
     .string "POKéMON!\p"
     .string "Darn it! My POKéMON's great!$"
 

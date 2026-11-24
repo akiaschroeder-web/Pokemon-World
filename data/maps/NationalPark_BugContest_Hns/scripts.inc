@@ -88,7 +88,7 @@ NationalPark_BugContest_Hns_EventScript_Trash::
 	end
 
 NationalPark_BugContest_Hns_EventScript_JudgeScene::
-	special HnsStub_ShowBugContestChosenMon
+	special Hns_ShowBugContestChosenMon
 	setobjectxyperm VAR_RESULT, 20, 29
 	setobjectxyperm LOCALID_HNS_BUGCONTEST_BUG1, 24, 29
 	setobjectxyperm LOCALID_HNS_BUGCONTEST_BUG2, 22, 29

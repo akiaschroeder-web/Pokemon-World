@@ -2112,3 +2112,27 @@ const u16 gItemIconPalette_SwapSnack[] = INCGFX_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_TwiceSpicedRadish[] = INCGFX_U32("graphics/items/icons/twice_spiced_radish.png", ".4bpp.smol");
 const u16 gItemIconPalette_TwiceSpicedRadish[] = INCGFX_U16("graphics/items/icon_palettes/twice_spiced_radish.pal", ".gbapal");
+
+// Pokémon World: Johto key items (icons from Heart & Soul)
+const u32 gItemIcon_GSBall_Hns[] = INCGFX_U32("graphics/items/icons/hns/gs_ball.png", ".4bpp.smol");
+const u16 gItemIconPalette_GSBall_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/gs_ball.pal", ".gbapal");
+const u32 gItemIcon_ClearBell_Hns[] = INCGFX_U32("graphics/items/icons/hns/clearbell.png", ".4bpp.smol");
+const u16 gItemIconPalette_ClearBell_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/clearbell.pal", ".gbapal");
+const u32 gItemIcon_LostItem_Hns[] = INCGFX_U32("graphics/items/icons/hns/lostitem.png", ".4bpp.smol");
+const u16 gItemIconPalette_LostItem_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/lostitem.pal", ".gbapal");
+const u32 gItemIcon_MachinePart_Hns[] = INCGFX_U32("graphics/items/icons/hns/machinepart.png", ".4bpp.smol");
+const u16 gItemIconPalette_MachinePart_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/machinepart.pal", ".gbapal");
+const u32 gItemIcon_MysteryEgg_Hns[] = INCGFX_U32("graphics/items/icons/hns/mysteryegg.png", ".4bpp.smol");
+const u16 gItemIconPalette_MysteryEgg_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/mysteryegg.pal", ".gbapal");
+const u32 gItemIcon_Pass_Hns[] = INCGFX_U32("graphics/items/icons/hns/pass.png", ".4bpp.smol");
+const u16 gItemIconPalette_Pass_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/pass.pal", ".gbapal");
+const u32 gItemIcon_RainbowWing_Hns[] = INCGFX_U32("graphics/items/icons/hns/rainbowwing.png", ".4bpp.smol");
+const u16 gItemIconPalette_RainbowWing_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/rainbowwing.pal", ".gbapal");
+const u32 gItemIcon_RedScale_Hns[] = INCGFX_U32("graphics/items/icons/hns/redscale.png", ".4bpp.smol");
+const u16 gItemIconPalette_RedScale_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/redscale.pal", ".gbapal");
+const u32 gItemIcon_SilverWing_Hns[] = INCGFX_U32("graphics/items/icons/hns/silverwing.png", ".4bpp.smol");
+const u16 gItemIconPalette_SilverWing_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/silverwing.pal", ".gbapal");
+const u32 gItemIcon_TidalBell_Hns[] = INCGFX_U32("graphics/items/icons/hns/tidalbell.png", ".4bpp.smol");
+const u16 gItemIconPalette_TidalBell_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/tidalbell.pal", ".gbapal");
+const u32 gItemIcon_Radio_Hns[] = INCGFX_U32("graphics/items/icons/hns/radio.png", ".4bpp.smol");
+const u16 gItemIconPalette_Radio_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/radio.pal", ".gbapal");

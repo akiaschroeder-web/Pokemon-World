@@ -257,6 +257,12 @@ const u8 *GetTrainerNameFromId(u16 trainerId)
      && (!StringCompare(trainer->trainerName, gText_ExpandedPlaceholder_May)
       || !StringCompare(trainer->trainerName, gText_ExpandedPlaceholder_Brendan)))
         return GetRivalName();
+    // Pokémon World: Johto's rival (Heart & Soul's trainers named SILVER) uses the name the
+    // player gave him in Elm's lab.
+    if (trainerId >= JOHTO_TRAINERS_START && trainerId < JOHTO_TRAINERS_START + JOHTO_TRAINERS_COUNT
+     && trainer->trainerClass == TRAINER_CLASS_RIVAL
+     && !StringCompare(trainer->trainerName, COMPOUND_STRING("SILVER")))
+        return GetJohtoRivalName();
     return trainer->trainerName;
 }
 

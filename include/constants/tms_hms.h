@@ -104,7 +104,8 @@
     F(DEFOG) /* Proyecto Sinnoh: MO05 Despejar (Destello es la MT70) */ \
     F(ROCK_SMASH) \
     F(WATERFALL) \
-    F(DIVE)
+    F(DIVE) \
+    F(WHIRLPOOL) /* Pokémon World: Johto's HM (Heart & Soul), ITEM_HM09 */
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

@@ -12,12 +12,12 @@ VermilionCity_Hns_MapScript_OnTransition::
 	setflag FLAG_VISITED_VERMILION_CITY
 	goto_if_eq VAR_SUICUNE_ENCOUNTERS, 3, VermilionCity_Hns_EventScript_SetSuicuneScene
 	setflag FLAG_HIDE_VERMILION_EUSINE_SUICUNE
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 VermilionCity_Hns_EventScript_SetSuicuneScene::
 	clearflag FLAG_HIDE_VERMILION_EUSINE_SUICUNE
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 VermilionCity_Hns_EventScript_OldSeaMap::

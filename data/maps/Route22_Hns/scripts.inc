@@ -8,7 +8,7 @@ Route22_Hns_MapScripts::
 	.byte 0
 
 Route22_Hns_OnTransition: 
-	callnative HnsStub_SetTimeBasedEncounters
+	@ Pokémon World: removed (callnative SetTimeBasedEncounters): day/night tables are expansion's time-of-day encounters
 	end
 
 Route22_Hns_EventScript_Sign::
@@ -29,19 +29,19 @@ Route22_Hns_EventScript_DoNothing::
 
 Route22_Hns_EventScript_TriggerBottom::
 	goto_if_ne VAR_ROUTE22_GIOVANNI_STATE, 0, Route22_Hns_EventScript_DoNothing
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, Route22_Hns_EventScript_DoNothing
 	goto Route22_Hns_EventScript_Scene
 	
 Route22_Hns_EventScript_TriggerTop::
 	goto_if_ne VAR_ROUTE22_GIOVANNI_STATE, 0, Route22_Hns_EventScript_DoNothing
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, Route22_Hns_EventScript_DoNothing
 	goto Route22_Hns_EventScript_Scene
 
 Route22_Hns_EventScript_TriggerMid::
 	goto_if_ne VAR_ROUTE22_GIOVANNI_STATE, 0, Route22_Hns_EventScript_DoNothing
-	specialvar VAR_RESULT, HnsStub_CheckCelebi
+	specialvar VAR_RESULT, Hns_CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, Route22_Hns_EventScript_DoNothing
 	goto Route22_Hns_EventScript_Scene
 
@@ -287,7 +287,7 @@ Route22_Hns_Movement_CelebiPush:
 
 
 Route22_Hns_Text_Silver1:
-	.string "{RIVAL}: You told me...\n"
+	.string "{JOHTO_RIVAL}: You told me...\n"
 	.string "you were the number one in the whole\l"
 	.string "world!\p"
 	.string "Are you gonna quit?\p"
@@ -302,7 +302,7 @@ Route22_Hns_Text_Giovanni1:
 	.string "stronger organization!$"
 
 Route22_Hns_Text_Silver2:
-	.string "{RIVAL}: What aspect of you was\n"
+	.string "{JOHTO_RIVAL}: What aspect of you was\n"
 	.string "number one?\p"
 	.string "Gathering so many only to be\n"
 	.string "defeated by a mere child!$"
@@ -319,7 +319,7 @@ Route22_Hns_Text_Giovanni2:
 	.string "revival of me and my TEAM ROCKET!$"
 
 Route22_Hns_Text_Silver3:
-	.string "{RIVAL}: I don't understand you!\p"
+	.string "{JOHTO_RIVAL}: I don't understand you!\p"
 	.string "You don't make any sense!$"
 
 Route22_Hns_Text_Giovanni3:
@@ -328,7 +328,7 @@ Route22_Hns_Text_Giovanni3:
 	.string "understand.$"
 
 Route22_Hns_Text_Silver4:
-	.string "{RIVAL}: I don't want to\n"
+	.string "{JOHTO_RIVAL}: I don't want to\n"
 	.string "Understand you!\p"
 	.string "I will never become someone like\n"
 	.string "you.\p"
@@ -343,4 +343,4 @@ Route22_Hns_Text_Silver5:
 	.string "ALL BY MYSELF!$"
 
 Route22_Hns_Text_Silver6:
-	.string "{RIVAL}: ... What are you staring at?$"
+	.string "{JOHTO_RIVAL}: ... What are you staring at?$"

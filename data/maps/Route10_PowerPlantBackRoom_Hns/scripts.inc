@@ -33,9 +33,9 @@ Route10_PowerPlantBackRoom_Hns_EventScript_ManagerDuringRocket::
 	end
 
 Route10_PowerPlantBackRoom_Hns_EventScript_ManagerCheckPart::
-	checkitem ITEM_HNS_MACHINE_PART
+	checkitem ITEM_MACHINE_PART
 	goto_if_eq VAR_RESULT, FALSE, Route10_PowerPlantBackRoom_Hns_EventScript_ManagerDuringRocket
-	removeitem ITEM_HNS_MACHINE_PART
+	removeitem ITEM_MACHINE_PART
 	msgbox Route10_PowerPlantBackRoom_Hns_Text_ManagerThatsThePart, MSGBOX_DEFAULT
 	msgbox Route10_PowerPlantBackRoom_Hns_Text_ManagerTakeThisTM, MSGBOX_DEFAULT
 	giveitem ITEM_TM_THUNDER

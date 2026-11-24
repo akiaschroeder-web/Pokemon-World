@@ -103,13 +103,13 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_KabutoPuzzle::
 	setvar VAR_0x8004, SLIDING_PUZZLE_KABUTO
 	goto_if_set FLAG_COMPLETED_KABUTO_PUZZLE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_KabutoPuzzleCompleted
 	setvar VAR_0x8005, FALSE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_KabutoSuccess
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_KabutoPuzzleCompleted::
 	setvar VAR_0x8005, TRUE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_KabutoSuccess::
@@ -149,13 +149,13 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_OmanytePuzzle::
 	setvar VAR_0x8004, SLIDING_PUZZLE_OMANYTE
 	goto_if_set FLAG_COMPLETED_OMANYTE_PUZZLE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_OmanytePuzzleCompleted
 	setvar VAR_0x8005, FALSE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_OmanyteSuccess
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_OmanytePuzzleCompleted::
 	setvar VAR_0x8005, TRUE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_OmanyteSuccess::
@@ -188,13 +188,13 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_AerodactylPuzzle::
 	setvar VAR_0x8004, SLIDING_PUZZLE_AERODACTYL
 	goto_if_set FLAG_COMPLETED_AERODACTYL_PUZZLE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_AerodactylPuzzleCompleted
 	setvar VAR_0x8005, FALSE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_AerodactylSuccess
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_AerodactylPuzzleCompleted::
 	setvar VAR_0x8005, TRUE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_AerodactylSuccess::
@@ -227,13 +227,13 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_HooHPuzzle::
 	setvar VAR_0x8004, SLIDING_PUZZLE_HO_OH
 	goto_if_set FLAG_COMPLETED_HOOH_PUZZLE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_HoohPuzzleCompleted
 	setvar VAR_0x8005, FALSE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_HoohSuccess
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_HoohPuzzleCompleted::
 	setvar VAR_0x8005, TRUE// or TRUE if you want to display the solved puzzle
-	special HnsStub_DoSlidingPuzzle
+	special Hns_DoSlidingPuzzle
 	waitstate
 	end
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_HoohSuccess::
@@ -263,7 +263,7 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_MapScript_HoohSuccess::
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_CheckHooh::
 	lock
 	goto_if_set FLAG_HOOH_BROUGHT, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardGotten
-	specialvar VAR_RESULT, HnsStub_CheckHooh
+	specialvar VAR_RESULT, Hns_CheckHooh
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardHooh
 	msgbox RuinsOfAlph_PuzzleAndRewardChambers_Hns_Text_Mon, MSGBOX_SIGN
 	closemessage
@@ -288,7 +288,7 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardHooh::
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_CheckAerodactyl::
 	lock
 	goto_if_set FLAG_AERODACTYL_BROUGHT, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardGotten
-	specialvar VAR_RESULT, HnsStub_CheckAerodactyl
+	specialvar VAR_RESULT, Hns_CheckAerodactyl
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardAerodactyl
 	msgbox RuinsOfAlph_PuzzleAndRewardChambers_Hns_Text_Mon, MSGBOX_SIGN
 	closemessage
@@ -313,7 +313,7 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardAerodactyl::
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_CheckKabuto::
 	lock
 	goto_if_set FLAG_KABUTO_BROUGHT, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardGotten
-	specialvar VAR_RESULT, HnsStub_CheckKabuto
+	specialvar VAR_RESULT, Hns_CheckKabuto
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardKabuto
 	msgbox RuinsOfAlph_PuzzleAndRewardChambers_Hns_Text_Mon, MSGBOX_SIGN
 	closemessage
@@ -338,7 +338,7 @@ RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardKabuto::
 RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_CheckOmanyte::
 	lock
 	goto_if_set FLAG_OMANYTE_BROUGHT, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardGotten
-	specialvar VAR_RESULT, HnsStub_CheckOmanyte
+	specialvar VAR_RESULT, Hns_CheckOmanyte
 	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_PuzzleAndRewardChambers_Hns_EventScript_RewardOmanyte
 	msgbox RuinsOfAlph_PuzzleAndRewardChambers_Hns_Text_Mon, MSGBOX_SIGN
 	closemessage

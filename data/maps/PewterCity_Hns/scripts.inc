@@ -23,22 +23,22 @@ PewterCity_Hns_EventScript_Gramps::
 	end
 
 PewterCity_Hns_EventScript_GrampsRainbowWing::
-	checkitem ITEM_HNS_RAINBOW_WING
+	checkitem ITEM_RAINBOW_WING
 	goto_if_eq VAR_RESULT, TRUE, PewterCity_Hns_EventScript_GrampsDone
 	msgbox PewterCity_Hns_Text_Gramps, MSGBOX_DEFAULT
 	setvar VAR_COMPLETED_HO_OH, 4
-	giveitem ITEM_HNS_RAINBOW_WING
+	giveitem ITEM_RAINBOW_WING
 	setflag FLAG_HIDE_TINTOWER_GUARD
 	closemessage
 	release
 	end
 
 PewterCity_Hns_EventScript_GrampsSilverWing::
-	checkitem ITEM_HNS_SILVER_WING
+	checkitem ITEM_SILVER_WING
 	goto_if_eq VAR_RESULT, TRUE, PewterCity_Hns_EventScript_GrampsDone
 	msgbox PewterCity_Hns_Text_Gramps, MSGBOX_DEFAULT
 	setvar VAR_COMPLETED_LUGIA, 4
-	giveitem ITEM_HNS_SILVER_WING
+	giveitem ITEM_SILVER_WING
 	setflag FLAG_HIDE_WHIRL_ISLANDS_TENTACRUEL
 	closemessage
 	release

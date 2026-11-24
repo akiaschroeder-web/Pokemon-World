@@ -223,7 +223,7 @@ enum {
     MB_UNUSED_DA,
     MB_UNUSED_DB,
     MB_UNUSED_DC,
-    MB_UNUSED_DD,
+    MB_HEADBUTT_TREE, // Pokémon World: Johto's Headbutt trees (Heart & Soul), in the old unused 0xDD slot
     MB_UNUSED_DE,
     MB_UNUSED_DF,
     MB_PICTURE_BOOK_SHELF,

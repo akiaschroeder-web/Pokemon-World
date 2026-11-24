@@ -1,6 +1,6 @@
 @ Pokémon World: script commands that Heart & Soul added to its event script engine,
 @ so its Johto and later-Kanto map scripts assemble. Each one is a native call with the
-@ same arguments; the natives in src/hns_stubs.c are stubs for now (TODO, later stages).
+@ same arguments, ported in src/hns_specials.c (HnsNative_*).
 
 	@ Heart & Soul's applymovement with a 2-byte local id: ours already takes one.
 	.macro applymovement2 localId:req, movements:req, map
@@ -63,13 +63,28 @@
 	.2byte \level
 	.endm
 
-	@ TODO: Heart & Soul makes this one shiny.
+	@ Like setwildbattle, but the Pokémon is shiny (Lake of Rage's red Gyarados).
 	.macro setwildbattleshiny species:req, level:req, item=ITEM_NONE
-	setwildbattle \species, \level, \item
+	callnative HnsNative_SetWildBattleShiny
+	.2byte \species
+	.byte \level
+	.2byte \item
 	.endm
 
-	@ Heart & Soul: lets the player pick an item from a bag pocket (VAR_ITEM_ID).
+	@ Heart & Soul: lets the player pick an item from a bag pocket (VAR_ITEM_ID; ITEM_NONE if
+	@ cancelled). Its maps only ever ask for a Berry, so this is expansion's Berry chooser.
 	.macro chooseitem pocket:req
-	callnative HnsNative_ChooseItem
-	.2byte \pocket
+	.if \pocket != BERRIES_POCKET
+	.error "chooseitem: only BERRIES_POCKET is supported"
+	.endif
+	fadescreen FADE_TO_BLACK
+	special Bag_ChooseBerry
+	.endm
+
+	@ Heart & Soul's checkpartymove for moves that aren't expansion field moves (Headbutt):
+	@ VAR_RESULT = the first party slot whose Pokémon knows the move, or failing that can learn
+	@ it from a tutor/TM (Heart & Soul's rule), else PARTY_SIZE; VAR_0x8004 = its species.
+	.macro hnscheckpartymove move:req
+	callnative HnsNative_CheckPartyMove
+	.2byte \move
 	.endm

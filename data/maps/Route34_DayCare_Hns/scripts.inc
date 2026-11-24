@@ -220,7 +220,7 @@ Route34_Hns_EventScript_DaycareEggWaiting::
 	end
 
 Route34_Hns_EventScript_DaycareAcceptEgg::
-	specialvar VAR_0x8004, HnsStub_GetMaxPartySize @ tx_randomizer_and_challenges
+	specialvar VAR_0x8004, Hns_GetMaxPartySize @ tx_randomizer_and_challenges
 	specialvar VAR_RESULT, CalculatePlayerPartyCount
 	goto_if_ne VAR_RESULT, VAR_0x8004, Route34_Hns_EventScript_DaycareReceiveEgg
 	msgbox Route34_Hns_Text_YouHaveNoRoomForIt, MSGBOX_DEFAULT
@@ -359,7 +359,7 @@ Route34_DayCare_Hns_EventScript_OneMonInDaycare::
 	end
 
 Route34_DayCare_Hns_EventScript_TryRetrieveMon::
-	specialvar VAR_0x8004, HnsStub_GetMaxPartySize @ tx_randomizer_and_challenges
+	specialvar VAR_0x8004, Hns_GetMaxPartySize @ tx_randomizer_and_challenges
 	specialvar VAR_RESULT, CalculatePlayerPartyCount
 	goto_if_eq VAR_RESULT, VAR_0x8004, Route34_DayCare_Hns_EventScript_NoRoom
 	specialvar VAR_RESULT, GetDaycareState
@@ -373,7 +373,7 @@ Route34_DayCare_Hns_EventScript_TryRetrieveMon::
 	end
 
 Route34_DayCare_Hns_EventScript_CostPrompt::
-	special HnsStub_GetDaycareCost
+	special Hns_GetDaycareCost
 	msgbox Route34_DayCare_Hns_Text_ItWillCostX, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Route34_DayCare_Hns_EventScript_CheckEnoughMoney
 	goto Route34_DayCare_Hns_EventScript_ComeAgain

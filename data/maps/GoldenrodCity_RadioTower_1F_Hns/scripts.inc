@@ -127,7 +127,7 @@ RadioTower1F_EventScript_ReceptionGiveRadio_Hns::
 	msgbox RadioTower1F_Text_QuizWin_Hns, MSGBOX_DEFAULT
 	closemessage
 	playfanfare MUS_OBTAIN_ITEM
-	giveitem ITEM_HNS_RADIO
+	giveitem ITEM_RADIO
 	waitfanfare
 	msgbox RadioTower1F_Text_TuneIn_Hns, MSGBOX_DEFAULT
 	closemessage
