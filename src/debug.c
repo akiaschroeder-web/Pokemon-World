@@ -110,6 +110,7 @@ enum FlagsVarsDebugMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_KANTO_TIME_SKIP, // Pokémon World
 };
 
 enum DebugBattleType
@@ -341,6 +342,7 @@ static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId);
+static void DebugAction_FlagsVars_ToggleKantoTimeSkip(u8 taskId);
 
 static void DebugAction_Give_MaxMoney(u8 taskId);
 static void DebugAction_Give_MaxCoins(u8 taskId);
@@ -371,6 +373,7 @@ extern const u8 Debug_FlagsNotSetBattleConfigMessage[];
 extern const u8 Debug_VarsNotSetBattleConfigMessage[];
 extern const u8 Debug_FlagsAndVarNotSetBattleConfigMessage[];
 extern const u8 Debug_EventScript_FontTest[];
+extern const u8 Debug_EventScript_PwKantoTimeSkip[];
 extern const u8 Debug_EventScript_CheckEVs[];
 extern const u8 Debug_EventScript_CheckIVs[];
 extern const u8 Debug_EventScript_GivePokerus[];
@@ -758,6 +761,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = { COMPOUND_STRING("Toggle {STR_VAR_1}Trainer See OFF"), DebugAction_ToggleFlag, DebugAction_FlagsVars_TrainerSeeOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = { COMPOUND_STRING("Toggle {STR_VAR_1}Catching OFF"),    DebugAction_ToggleFlag, DebugAction_FlagsVars_CatchingOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Bag Use OFF"),     DebugAction_ToggleFlag, DebugAction_FlagsVars_BagUseOnOff },
+    // Pokémon World: on = Kanto is the Gold/Silver-era one (as after becoming Johto's Champion)
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_KANTO_TIME_SKIP] = { COMPOUND_STRING("Toggle {STR_VAR_1}Kanto time skip"), DebugAction_ToggleFlag, DebugAction_FlagsVars_ToggleKantoTimeSkip },
     { NULL }
 };
 
@@ -1724,6 +1729,9 @@ static u32 Debug_CheckToggleFlags(u8 id)
         result = VarGet(B_VAR_NO_BAG_USE);
         if (result >= NO_BAG_INVALID_VALUE)
             result = NO_BAG_INVALID_VALUE;
+        break;
+    case DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_KANTO_TIME_SKIP:
+        result = FlagGet(FLAG_PW_KANTO_TIME_SKIP);
         break;
     default:
         result = DEBUG_OPTION_CANT_BE_TOGGLED;
@@ -3188,6 +3196,23 @@ static void DebugAction_FlagsVars_ToggleGameClear(u8 taskId)
     else
         PlaySE(SE_PC_LOGIN);
     FlagToggle(FLAG_SYS_GAME_CLEAR);
+}
+
+// Pokémon World: switch Kanto between FireRed's and the Gold/Silver-era one. Turning it on does
+// what becoming Johto's Champion does (EventScript_PwKantoTimeSkip, which also sets up Heart &
+// Soul's later Kanto again); it applies from the next warp.
+static void DebugAction_FlagsVars_ToggleKantoTimeSkip(u8 taskId)
+{
+    if (FlagGet(FLAG_PW_KANTO_TIME_SKIP))
+    {
+        PlaySE(SE_PC_OFF);
+        FlagClear(FLAG_PW_KANTO_TIME_SKIP);
+    }
+    else
+    {
+        PlaySE(SE_PC_LOGIN);
+        RunScriptImmediately(Debug_EventScript_PwKantoTimeSkip);
+    }
 }
 
 static void DebugAction_FlagsVars_ToggleFrontierPass(u8 taskId)

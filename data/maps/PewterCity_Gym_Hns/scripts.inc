@@ -15,6 +15,7 @@ PewterCity_Gym_Hns_EventScript_Brock::
 	goto_if_set FLAG_DEFEATED_PEWTER_GYM, PewterCity_Gym_Hns_EventScript_Brock_Defeated
 	msgbox PewterCity_Gym_Hns_Text_Brock_Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BROCK, PewterCity_Gym_Hns_Text_Brock_WinLoss
+	goto_if_set FLAG_KANTO_BADGE01_GET, PewterCity_Gym_Hns_EventScript_Brock_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message PewterCity_Gym_Hns_Text_ReceivedBoulderBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -26,6 +27,19 @@ PewterCity_Gym_Hns_EventScript_Brock::
 	setvar VAR_0x8008, 9
 	call Common_EventScript_SetGymTrainers
 	clearflag FLAG_HIDE_DIGLETT_BROCK
+	closemessage
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+PewterCity_Gym_Hns_EventScript_Brock_PwRematch::
+	setflag FLAG_DEFEATED_PEWTER_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 9
+	call Common_EventScript_SetGymTrainers
+	clearflag FLAG_HIDE_DIGLETT_BROCK
+	msgbox PewterCity_Gym_Hns_Text_Brock_FightDone, MSGBOX_DEFAULT
 	closemessage
 	release
 	end

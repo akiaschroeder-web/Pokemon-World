@@ -187,6 +187,7 @@ CeruleanCity_Gym_Hns_EventScript_Misty::
 	goto_if_set FLAG_DEFEATED_CERULEAN_GYM, CeruleanCity_Gym_Hns_EventScript_Misty_Defeated
 	msgbox CeruleanGym_Text_MistyIntro_Hns, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_MISTY, CeruleanGym_Text_MistyWinLoss_Hns
+	goto_if_set FLAG_KANTO_BADGE02_GET, CeruleanCity_Gym_Hns_EventScript_Misty_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message CeruleanGym_Text_ReceivedBadge_Hns
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -199,6 +200,20 @@ CeruleanCity_Gym_Hns_EventScript_Misty::
 	giveitem ITEM_TM_WATER_PULSE
 	clearflag FLAG_HIDE_CAPE_MISTY
 	call_if_eq VAR_SUICUNE_ENCOUNTERS, 5, CeruleanCity_Gym_Hns_SetSuicuneScene
+	closemessage
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+CeruleanCity_Gym_Hns_EventScript_Misty_PwRematch::
+	setflag FLAG_DEFEATED_CERULEAN_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 10
+	call Common_EventScript_SetGymTrainers
+	clearflag FLAG_HIDE_CAPE_MISTY
+	call_if_eq VAR_SUICUNE_ENCOUNTERS, 5, CeruleanCity_Gym_Hns_SetSuicuneScene
+	msgbox CeruleanGym_Text_MistyFightDone_Hns, MSGBOX_DEFAULT
 	closemessage
 	release
 	end

@@ -76,6 +76,7 @@
 #include "vs_seeker.h"
 #include "frontier_util.h"
 #include "bug_contest_hns.h" // Pokémon World: Bug-Catching Contest (Heart & Soul)
+#include "kanto_time_skip.h" // Pokémon World: FireRed's Kanto -> the Gold/Silver-era one
 #include "constants/abilities.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
@@ -224,6 +225,8 @@ EWRAM_DATA struct WarpData gLastUsedWarp = {0};
 EWRAM_DATA static struct WarpData sWarpDestination = {0};  // new warp position
 EWRAM_DATA static struct WarpData sFixedDiveWarp = {0};
 EWRAM_DATA static struct WarpData sFixedHoleWarp = {0};
+// Pokémon World: TRUE while walking across a map connection (those aren't redirected)
+EWRAM_DATA static bool8 sNoKantoTimeSkipRedirect = FALSE;
 EWRAM_DATA static mapsec_u16_t sLastMapSectionId = 0;
 EWRAM_DATA static struct InitialPlayerAvatarState sInitialPlayerAvatarState = {0};
 EWRAM_DATA static enum Species sAmbientCrySpecies = SPECIES_NONE;
@@ -617,8 +620,17 @@ const struct MapLayout *GetMapLayout(u16 mapLayoutId)
     return gMapLayouts[mapLayoutId - 1];
 }
 
+// Pokémon World: after Kanto's time skip, a warp into FireRed's Kanto goes to the matching
+// Gold/Silver-era map (src/kanto_time_skip.c). Done here, where every warp passes.
+static void RedirectWarpDestination(void)
+{
+    if (!sNoKantoTimeSkipRedirect)
+        KantoTimeSkip_RedirectWarp(&sWarpDestination);
+}
+
 void ApplyCurrentWarp(void)
 {
+    RedirectWarpDestination();
     gLastUsedWarp = gSaveBlock1Ptr->location;
     gSaveBlock1Ptr->location = sWarpDestination;
     sFixedDiveWarp = sDummyWarpData;
@@ -663,6 +675,7 @@ struct MapHeader const *const Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u
 
 struct MapHeader const *const GetDestinationWarpMapHeader(void)
 {
+    RedirectWarpDestination();
     return Overworld_GetMapHeaderByGroupAndId(sWarpDestination.mapGroup, sWarpDestination.mapNum);
 }
 
@@ -751,6 +764,7 @@ static bool32 IsWhiteoutCutscene(void)
 
 void SetWarpDestinationToLastHealLocation(void)
 {
+    KantoTimeSkip_RedirectWarp(&gSaveBlock1Ptr->lastHealLocation); // Pokémon World: whiteout after the time skip
     if (IsWhiteoutCutscene())
         SetWhiteoutRespawnWarpAndHealerNPC(&sWarpDestination);
     else
@@ -759,6 +773,7 @@ void SetWarpDestinationToLastHealLocation(void)
 
 void SetWarpDestinationForTeleport(void)
 {
+    KantoTimeSkip_RedirectWarp(&gSaveBlock1Ptr->lastHealLocation); // Pokémon World
     sWarpDestination = gSaveBlock1Ptr->lastHealLocation;
 }
 
@@ -874,12 +889,14 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
+    sNoKantoTimeSkipRedirect = TRUE;
 
     // Dont transition map music between BF Outside West/East
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
         TransitionMapMusic();
 
     ApplyCurrentWarp();
+    sNoKantoTimeSkipRedirect = FALSE;
     LoadCurrentMapData();
     LoadObjEventTemplatesFromHeader();
     TrySetMapSaveWarpStatus();
@@ -1266,6 +1283,7 @@ u16 GetCurrLocationDefaultMusic(void)
 
 u16 GetWarpDestinationMusic(void)
 {
+    RedirectWarpDestination();
     u16 music = GetLocationMusic(&sWarpDestination);
     if (music != MUS_ROUTE118)
     {

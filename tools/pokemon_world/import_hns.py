@@ -63,6 +63,10 @@ What it writes (all generated: edit this script, not the output):
                                             files we don't import (TODO list)
   tools/pokemon_world/hns_import_state.json what was added to the shared JSON files,
                                             so a re-run can take it out first
+Our own changes to Heart & Soul's scripts (Kanto's time skip at the first Hall of Fame, the later
+Kanto's set-up moved off the S.S. Aqua, gym leaders who don't give a Kanto badge twice, the Seagallop
+at Vermilion port): pw_script_patches() and MENU_EXTRA, near the end. The FireRed -> later-Kanto map
+table is tools/pokemon_world/gen_kanto_time_skip.py (re-run it after this script).
 Hand-written companions: asm/macros/hns_compat.inc (HnS script commands),
 src/hns_specials.c, src/hns_bug_contest.c, src/hns_sliding_puzzle.c (the specials/natives they call,
 Hns_*), src/data/tilesets/tileset_anims_hns.h.
@@ -881,6 +885,7 @@ class Importer:
                 for lab in labs:
                     self.labels[lab] = lab + "_Hns"
                     covered.add(lab)
+        pw_script_patches(outs)
         for m, t in outs.items():
             wr(f"data/maps/{m}_Hns/scripts.inc", t)
         wr("data/scripts/hns_shared.inc", shared_txt)
@@ -1174,6 +1179,9 @@ class Importer:
                     continue
                 sm = re.search(r"const u8 " + t + r"\[\]\s*=\s*_\(\"([^\"]*)\"\)", hstr)
                 items.append(f'COMPOUND_STRING("{sm.group(1)}")' if sm else 'COMPOUND_STRING("???")')
+            for pos, it in MENU_EXTRA.get(mu, []):
+                items.insert(pos, it)
+                note("multichoice menus given extra choices (MENU_EXTRA)", f"{mu}: {it}")
             lists.append(f"static const struct MenuAction {ln}_Hns[] =\n{{\n" +
                          "".join(f"    {{{it}}},\n" for it in items) + "};\n\n")
             entries.append(f"    [{mu}] = MULTICHOICE({ln}_Hns),\n")
@@ -1776,6 +1784,118 @@ OLD_HGSS_STANDIN = {
     "MUS_HG_POKEGEAR_REGISTERED": "MUS_REGISTER_MATCH_CALL", "MUS_HG_VS_HO_OH": "MUS_RG_VS_LEGEND",
     "MUS_HG_VS_LUGIA": "MUS_RG_VS_LEGEND",
 }
+
+
+# ---------------------------------------------------------------------------------
+# Pokémon World changes to Heart & Soul's (converted) scripts: Kanto's time skip and the later
+# Kanto (stage 5). Each one must match exactly, so a Heart & Soul update can't skip one silently.
+
+# Extra multichoice choices: menu -> [(position, item)]
+MENU_EXTRA = {
+    # Vermilion port: FireRed's Seagallop ferries to the Sevii Islands (VermilionPort_EventScript_ChoseSeagallop_Hns)
+    "MULTI_VERMILION_HARBOR": [(1, 'COMPOUND_STRING("SEVII ISLANDS")')],
+}
+
+# Later-Kanto gyms: map -> badge. With that Kanto badge already (from FireRed's Kanto), the
+# leader's battle is a rematch: no badge, no fanfare, no badge TM / prize.
+KANTO_GYMS = {"PewterCity_Gym": 1, "CeruleanCity_Gym": 2, "VermilionCity_Gym": 3, "CeladonCity_Gym": 4,
+              "SaffronCity_Gym": 5, "FuchsiaCity_Gym": 6, "SeafoamIslands_Gym": 7, "ViridianCity_Gym": 8}
+# what the badge-and-prize part of a leader's script is made of (left out of the rematch)
+GYM_PRIZE_LINE = re.compile(r"\t(message|waitmessage|msgbox|giveitem|checkitem)\b|"
+                            r"\tcall Common_EventScript_PlayGymBadgeFanfare\b|"
+                            r"\tsetflag FLAG_KANTO_BADGE0\d_GET\b|\tcall_if_(eq|ne) VAR_RESULT\b")
+
+
+def pw_script_patches(outs):
+    def sub(m, old, new):
+        n = outs[m].count(old)
+        if n != 1:
+            sys.exit(f"pw_script_patches: {m}: expected '{old.strip()}' once, found it {n} times")
+        outs[m] = outs[m].replace(old, new)
+
+    # 1. Becoming Johto's Champion (the first Hall of Fame) is Kanto's time skip
+    sub("PokemonLeague_HallOfFame", "\tsetflag FLAG_HNS_IS_CHAMPION\n",
+        "\tsetflag FLAG_HNS_IS_CHAMPION\n"
+        "\tcall EventScript_PwKantoTimeSkip @ Pokémon World: Kanto's time skip (data/scripts/kanto_time_skip.inc)\n")
+
+    # 2. Heart & Soul sets up its later Kanto (the "flag heap") when the S.S. Aqua first docks in
+    #    Vermilion. Here Kanto can be reached other ways after the switch (Seagallop, Fly, whiteout),
+    #    so it runs at the time skip instead, and without taking away the Kanto badges.
+    t = outs["SSAqua_1F"]
+    a, b = t.find("\t@Kanto FLAGHEAP\n"), t.find("\t@end flagheap\n")
+    if a < 0 or b < 0:
+        sys.exit("pw_script_patches: SSAqua_1F: Kanto flag heap not found")
+    heap = t[a:b]
+    heap, n = re.subn(r"\tclearflag FLAG_KANTO_BADGE0\d_GET\n", "", heap)
+    if n != 8:
+        sys.exit(f"pw_script_patches: SSAqua_1F: expected 8 Kanto badge clears, found {n}")
+    outs["SSAqua_1F"] = (t[:a] + "\t@ Pokémon World: the Kanto flag heap runs at the time skip (SSAqua_1F_Hns_EventScript_KantoFlagHeap)\n"
+                         + t[b:].rstrip("\n") + "\n\n"
+                         "@ Pokémon World: Heart & Soul's later-Kanto set-up, run by EventScript_PwKantoTimeSkip\n"
+                         "@ (it ran when the S.S. Aqua first docked). The Kanto badges are kept: they're the same\n"
+                         "@ in both Kantos.\n"
+                         "SSAqua_1F_Hns_EventScript_KantoFlagHeap::\n" + heap + "\treturn\n")
+
+    # 3. Kanto gym leaders: rematch, without the badge, if the player already has it
+    for m, badge in KANTO_GYMS.items():
+        lines = outs[m].split("\n")
+        k = next(i for i, l in enumerate(lines) if l.startswith(f"\tsetflag FLAG_KANTO_BADGE0{badge}_GET"))
+        tb = max(i for i in range(k) if lines[i].startswith("\ttrainerbattle_no_intro "))
+        st = max(i for i in range(tb) if re.match(r"^\w+::", lines[i]))
+        en = next(i for i in range(k, len(lines)) if lines[i].strip() == "end")
+        leader = lines[st].rstrip(":")
+        done = [re.match(r"\tgoto_if_set FLAG_DEFEATED_\w+, (\w+)", l) for l in lines[st:tb]]
+        done = [d.group(1) for d in done if d]
+        done = next((d for d in done if d.endswith("_Defeated")), done[-1])
+        dl = next(i for i, l in enumerate(lines) if l.rstrip() == done + "::")
+        after = next(l for l in lines[dl:] if l.startswith("\tmsgbox ")).split(",")[0].split()[1]
+        rematch = [l for l in lines[tb + 1:en + 1] if l.strip() and not GYM_PRIZE_LINE.match(l)]
+        c = next(i for i, l in enumerate(rematch) if l.strip() in ("closemessage", "release"))
+        rematch.insert(c, f"\tmsgbox {after}, MSGBOX_DEFAULT")
+        lab = f"{leader}_PwRematch"
+        new = (lines[:tb + 1]
+               + [f"\tgoto_if_set FLAG_KANTO_BADGE0{badge}_GET, {lab} @ Pokémon World: badge already won in FireRed's Kanto"]
+               + lines[tb + 1:en + 1]
+               + ["", f"@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in",
+                  "@ both Kantos): a rematch, with no badge and no badge prize.", f"{lab}::"] + rematch
+               + lines[en + 1:])
+        outs[m] = "\n".join(new)
+
+    # 4. Vermilion port: FireRed's Seagallop to the Sevii Islands (data/scripts/seagallop.inc).
+    #    It's choice 2 on the harbour menu (MENU_EXTRA); before the S.S. Aqua sails from here
+    #    (or with the Machine Part missing) the sailor offers it by itself.
+    m = "VermilionCity_PortInside"
+    t = outs[m]
+    mm = re.search(r"(\tmultichoice 20, 0, MULTI_VERMILION_HARBOR, FALSE\n\tswitch VAR_RESULT\n)((?:\tcase \d+, \w+\n)+)", t)
+    if not mm:
+        sys.exit("pw_script_patches: VermilionCity_PortInside: harbour menu not found")
+    cases = re.sub(r"\tcase (\d+),", lambda c: f"\tcase {int(c.group(1)) + (int(c.group(1)) >= 1)},", mm.group(2))
+    cases = cases.replace("\tcase 2,", "\tcase 1, VermilionPort_EventScript_ChoseSeagallop_Hns @ Pokémon World\n\tcase 2,", 1)
+    outs[m] = t[:mm.start(2)] + cases + t[mm.end(2):]
+    sub(m, "VermilionPort_EventScript_Sailor_Hns::\n\tlock\n\tfaceplayer\n",
+        "VermilionPort_EventScript_Sailor_Hns::\n\tlock\n\tfaceplayer\n"
+        "\t@ Pokémon World: the Seagallop, when the harbour menu (with it) isn't offered yet\n"
+        "\tgoto_if_lt VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionPort_EventScript_SailorAqua_Hns\n"
+        "\tgoto_if_unset FLAG_RETURNED_MACHINE_PART, VermilionPort_EventScript_AskSeagallop_Hns\n"
+        "\tgoto_if_ge VAR_SSAQUA_STATE, 7, VermilionPort_EventScript_SailorAqua_Hns\n"
+        "VermilionPort_EventScript_AskSeagallop_Hns::\n"
+        "\tmsgbox VermilionPort_Text_AskSeagallop_Hns, MSGBOX_YESNO\n"
+        "\tgoto_if_eq VAR_RESULT, TRUE, VermilionPort_EventScript_ChoseSeagallop_Hns\n"
+        "VermilionPort_EventScript_SailorAqua_Hns::\n")
+    outs[m] = outs[m].rstrip("\n") + "\n\n" + (
+        "@ Pokémon World: FireRed's Seagallop ferries (data/scripts/seagallop.inc), as from FireRed's\n"
+        "@ Vermilion harbour: the Tri-Pass or Rainbow Pass decides where they go. The ferry back docks here\n"
+        "@ after the time skip (src/seagallop.c).\n"
+        "VermilionPort_EventScript_ChoseSeagallop_Hns::\n"
+        "\tsetvar VAR_0x8004, SEAGALLOP_VERMILION_CITY\n"
+        "\tgoto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 5, VermilionCity_EventScript_ChooseSeagallopDestRainbowPass\n"
+        "\tgoto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionCity_EventScript_ChooseSeagallopDestTriPass\n"
+        "\tmsgbox VermilionCity_Text_TheShipSetSail, MSGBOX_DEFAULT\n"
+        "\trelease\n"
+        "\tend\n\n"
+        "VermilionPort_Text_AskSeagallop_Hns:\n"
+        "\t.string \"Would you like to take a SEAGALLOP\\n\"\n"
+        "\t.string \"ferry to the SEVII ISLANDS?$\"\n")
 
 
 if __name__ == "__main__":

@@ -255,6 +255,7 @@ VermilionCity_Gym_Hns_EventScript_Surge::
 	goto_if_set FLAG_DEFEATED_VERMILION_GYM, VermilionCity_Gym_Hns_EventScript_Surge_Defeated
 	msgbox VermilionGym_Text_LtSurgeIntro_Hns, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_LTSURGE, VermilionGym_Text_LtSurgeWinLoss_Hns
+	goto_if_set FLAG_KANTO_BADGE03_GET, VermilionCity_Gym_Hns_EventScript_Surge_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message VermilionGym_Text_ReceivedThunderBadge_Hns
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -268,6 +269,19 @@ VermilionCity_Gym_Hns_EventScript_Surge::
 	call_if_eq VAR_RESULT, TRUE, VermilionCity_Gym_Hns_EventScript_GiveThunderstone
 	call_if_eq VAR_RESULT, FALSE, VermilionCity_Gym_Hns_EventScript_GiveTM
 	clearflag FLAG_HIDE_PLANT_SURGE
+	closemessage
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+VermilionCity_Gym_Hns_EventScript_Surge_PwRematch::
+	setflag FLAG_DEFEATED_VERMILION_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 11
+	call Common_EventScript_SetGymTrainers
+	clearflag FLAG_HIDE_PLANT_SURGE
+	msgbox VermilionGym_Text_LtSurgePostBattle_Hns, MSGBOX_DEFAULT
 	closemessage
 	release
 	end

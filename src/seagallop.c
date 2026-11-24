@@ -3,6 +3,7 @@
 #include "event_data.h"
 #include "field_screen_effect.h"
 #include "field_weather.h"
+#include "kanto_time_skip.h"
 #include "gpu_regs.h"
 #include "main.h"
 #include "malloc.h"
@@ -313,7 +314,12 @@ static void Task_Seagallop_3(void)
         gSpecialVar_0x8006 = 0;
 
     warpInfo = sSeag[gSpecialVar_0x8006];
-    SetWarpDestination(warpInfo[0], warpInfo[1], -1, warpInfo[2], warpInfo[3]);
+    // Pokémon World: after Kanto's time skip the Seagallop docks at the Gold/Silver-era
+    // Vermilion port (Heart & Soul's), next to its sailor
+    if (gSpecialVar_0x8006 == SEAGALLOP_VERMILION_CITY && KantoTimeSkip_IsActive())
+        SetWarpDestination(MAP_GROUP(MAP_VERMILION_CITY_PORT_INSIDE_HNS), MAP_NUM(MAP_VERMILION_CITY_PORT_INSIDE_HNS), WARP_ID_NONE, 8, 9);
+    else
+        SetWarpDestination(warpInfo[0], warpInfo[1], -1, warpInfo[2], warpInfo[3]);
     PlayRainStoppingSoundEffect();
     PlaySE(SE_EXIT);
     gFieldCallback = FieldCB_DefaultWarpExit;

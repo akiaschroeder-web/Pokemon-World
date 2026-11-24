@@ -37,6 +37,7 @@ SaffronCity_Gym_Hns_EventScript_Sabrina::
 	goto_if_set FLAG_DEFEATED_SAFFRON_GYM, SaffronCity_Gym_Hns_EventScript_Sabrina_Defeated
 	msgbox SaffronCity_Gym_Hns_Text_SabrinaIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_SABRINA, SaffronCity_Gym_Hns_Text_SabrinaWinLoss
+	goto_if_set FLAG_KANTO_BADGE05_GET, SaffronCity_Gym_Hns_EventScript_Sabrina_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message SaffronCity_Gym_Hns_Text_ReceivedMarshBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -46,6 +47,19 @@ SaffronCity_Gym_Hns_EventScript_Sabrina::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 13
 	call Common_EventScript_SetGymTrainers
+	closemessage
+	clearflag FLAG_HIDE_OLIVINE_SABRINA
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+SaffronCity_Gym_Hns_EventScript_Sabrina_PwRematch::
+	setflag FLAG_DEFEATED_SAFFRON_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 13
+	call Common_EventScript_SetGymTrainers
+	msgbox SaffronCity_Gym_Hns_Text_SabrinaPostBattle, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_OLIVINE_SABRINA
 	release

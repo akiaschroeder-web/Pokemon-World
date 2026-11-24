@@ -118,6 +118,7 @@ static const struct MenuAction MultichoiceList_PrizeMons_Hns[] =
 static const struct MenuAction MultichoiceList_VermilionHarbor_Hns[] =
 {
     {COMPOUND_STRING("OLIVINE")},
+    {COMPOUND_STRING("SEVII ISLANDS")},
     {gText_SouthernIsland},
     {gText_BirthIsland},
     {gText_FarawayIsland},

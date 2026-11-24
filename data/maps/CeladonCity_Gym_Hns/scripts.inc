@@ -9,6 +9,7 @@ CeladonCity_Gym_Hns_EventScript_Erika::
 	goto_if_set FLAG_DEFEATED_CELADON_GYM, CeladonCity_Gym_Hns_EventScript_Erika_Defeated
 	msgbox CeladonCity_Gym_Hns_Text_ErikaBeforeBattle, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_ERIKA, CeladonCity_Gym_Hns_Text_ErikaBeaten
+	goto_if_set FLAG_KANTO_BADGE04_GET, CeladonCity_Gym_Hns_EventScript_Erika_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message CeladonCity_Gym_Hns_Text_PlayerReceivedRainbowBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -20,6 +21,19 @@ CeladonCity_Gym_Hns_EventScript_Erika::
 	setvar VAR_0x8008, 12
 	call Common_EventScript_SetGymTrainers
 	clearflag FLAG_HIDE_FOUNTAIN_ERIKA
+	closemessage
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+CeladonCity_Gym_Hns_EventScript_Erika_PwRematch::
+	setflag FLAG_DEFEATED_CELADON_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 12
+	call Common_EventScript_SetGymTrainers
+	clearflag FLAG_HIDE_FOUNTAIN_ERIKA
+	msgbox CeladonCity_Gym_Hns_Text_ErikaAfterBattle, MSGBOX_DEFAULT
 	closemessage
 	release
 	end

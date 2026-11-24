@@ -1670,6 +1670,10 @@
 #define FLAG_SINNOH_BADGE06_GET                     (PW_FLAGS_START + 0x15) // Mine
 #define FLAG_SINNOH_BADGE07_GET                     (PW_FLAGS_START + 0x16) // Icicle
 #define FLAG_SINNOH_BADGE08_GET                     (PW_FLAGS_START + 0x17) // Beacon
+// Kanto's time skip: set when the player becomes Johto's Champion (Heart & Soul's first Hall of
+// Fame, EventScript_PwKantoTimeSkip). From then on Kanto is the Gold/Silver-era one ("3 years
+// later", the *_Hns maps): every way into FireRed's Kanto leads there instead (src/kanto_time_skip.c).
+#define FLAG_PW_KANTO_TIME_SKIP                     (PW_FLAGS_START + 0x18)
 #define PW_FLAGS_END                                (PW_FLAGS_START + 0xFF)
 
 #define FLAGS_COUNT (PW_FLAGS_END + 1)

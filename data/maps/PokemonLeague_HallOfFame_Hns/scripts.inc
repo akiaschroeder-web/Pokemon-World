@@ -58,6 +58,7 @@ PokemonLeague_HallOfFame_Hns_EventScript_CutsceneKantoChamp::
 PokemonLeague_HallOfFame_Hns_EventScript_SetFirstGameClearFlags::
 	clearflag FLAG_HIDE_LEAGUE_BLACKBELT
 	setflag FLAG_HNS_IS_CHAMPION
+	call EventScript_PwKantoTimeSkip @ Pokémon World: Kanto's time skip (data/scripts/kanto_time_skip.inc)
 	setflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
 	setvar VAR_LEAGUE_STATE, 1
 	setvar VAR_NEWBARK_TOWN_STATE, 6

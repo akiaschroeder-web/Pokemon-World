@@ -10,6 +10,7 @@ ViridianCity_Gym_Hns_EventScript_Blue::
 	goto_if_set FLAG_DEFEATED_VIRIDIAN_GYM, ViridianCity_Gym_Hns_EventScript_Blue_Defeated
 	msgbox ViridianCity_Gym_Hns_Text_LeaderBlue_Before, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BLUE, ViridianCity_Gym_Hns_Text_LeaderBlue_Win
+	goto_if_set FLAG_KANTO_BADGE08_GET, ViridianCity_Gym_Hns_EventScript_Blue_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message ViridianCity_Gym_Hns_Text_ReceivedEarthBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -20,6 +21,22 @@ ViridianCity_Gym_Hns_EventScript_Blue::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 16
 	call Common_EventScript_SetGymTrainers
+	closemessage
+	setflag FLAG_HIDE_LEAGUE_BLACKBELT
+	setflag FLAG_HIDE_CERULEANCAVE_GUARD
+	setflag FLAG_HIDE_SEAFOAM_BLAINE
+	clearflag FLAG_HIDE_CINNABAR_BLAINE
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+ViridianCity_Gym_Hns_EventScript_Blue_PwRematch::
+	setflag FLAG_DEFEATED_VIRIDIAN_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 16
+	call Common_EventScript_SetGymTrainers
+	msgbox ViridianCity_Gym_Hns_Text_LeaderBlue_Epilogue, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_HIDE_LEAGUE_BLACKBELT
 	setflag FLAG_HIDE_CERULEANCAVE_GUARD

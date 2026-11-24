@@ -6,6 +6,7 @@
 #include "hall_of_fame_frlg.h"
 #include "load_save.h"
 #include "overworld.h"
+#include "regions.h"
 #include "script_pokemon_util.h"
 #include "tv.h"
 #include "constants/heal_locations.h"
@@ -36,7 +37,10 @@ int GameClear(void)
 
     SetContinueGameWarpStatus();
 
-    if (gSaveBlock2Ptr->playerGender == MALE)
+    // Pokémon World: after Johto's Hall of Fame (Heart & Soul's), continue at home in New Bark Town
+    if (IsHnsMapGroup(gSaveBlock1Ptr->location.mapGroup))
+        SetContinueGameWarpToHealLocation(HEAL_LOCATION_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS);
+    else if (gSaveBlock2Ptr->playerGender == MALE)
         SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
     else
         SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);

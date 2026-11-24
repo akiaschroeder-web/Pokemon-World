@@ -13,6 +13,7 @@ SeafoamIslands_Gym_Hns_EventScript_Blaine::
 	goto_if_set FLAG_DEFEATED_CINNABAR_ISLAND_GYM, SeafoamIslands_Gym_Hns_EventScript_Blaine_Defeated
 	msgbox SeafoamIslands_Gym_Hns_Text_BlaineIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BLAINE, SeafoamIslands_Gym_Hns_Text_BlaineWinLoss
+	goto_if_set FLAG_KANTO_BADGE07_GET, SeafoamIslands_Gym_Hns_EventScript_Blaine_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message SeafoamIslands_Gym_Hns_Text_ReceivedVolcanoBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -24,6 +25,19 @@ SeafoamIslands_Gym_Hns_EventScript_Blaine::
 	setvar VAR_0x8008, 15
 	clearflag FLAG_HIDE_SEAFOAM_GYMGUY
 	call Common_EventScript_SetGymTrainers
+	closemessage
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+SeafoamIslands_Gym_Hns_EventScript_Blaine_PwRematch::
+	setflag FLAG_DEFEATED_CINNABAR_ISLAND_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 15
+	clearflag FLAG_HIDE_SEAFOAM_GYMGUY
+	call Common_EventScript_SetGymTrainers
+	msgbox SeafoamIslands_Gym_Hns_Text_BlaineAfterBattle, MSGBOX_DEFAULT
 	closemessage
 	release
 	end

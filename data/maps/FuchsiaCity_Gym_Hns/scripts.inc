@@ -59,6 +59,7 @@ FuchsiaCity_Gym_Hns_EventScript_Janine::
 	goto_if_set FLAG_DEFEATED_FUCHSIA_GYM, FuchsiaCity_Gym_Hns_EventScript_Janine_Defeated
 	msgbox FuchsiaCity_Gym_Hns_Text_Janine_DisappointYou, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_JANINE, FuchsiaCity_Gym_Hns_Text_Janine_ToughOne
+	goto_if_set FLAG_KANTO_BADGE06_GET, FuchsiaCity_Gym_Hns_EventScript_Janine_PwRematch @ Pokémon World: badge already won in FireRed's Kanto
 	message FuchsiaCity_Gym_Hns_Text_ReceivedSoulBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -86,6 +87,35 @@ FuchsiaCity_Gym_Hns_EventScript_Janine::
 	clearflag FLAG_TEMP_5
 	clearflag FLAG_TEMP_7
 	clearflag FLAG_HIDE_ROUTE22_JANINE
+	closemessage
+	release
+	end
+
+@ Pokémon World: the player already has this Kanto badge (Kanto's badges are the same in
+@ both Kantos): a rematch, with no badge and no badge prize.
+FuchsiaCity_Gym_Hns_EventScript_Janine_PwRematch::
+	setflag FLAG_DEFEATED_FUCHSIA_GYM
+	addvar VAR_NUM_BADGES, 1
+	setvar VAR_0x8008, 14
+	call Common_EventScript_SetGymTrainers
+	removeobject LOCALID_HNS_FUCHSIAGYM_ALICE_J
+	removeobject LOCALID_HNS_FUCHSIAGYM_CINDY_J
+	removeobject LOCALID_HNS_FUCHSIAGYM_LINDA_J
+	removeobject LOCALID_HNS_FUCHSIAGYM_BARRY_J
+	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_4
+	setflag FLAG_TEMP_6
+	setflag FLAG_TEMP_8
+	addobject LOCALID_HNS_FUCHSIAGYM_ALICE
+	addobject LOCALID_HNS_FUCHSIAGYM_CINDY
+	addobject LOCALID_HNS_FUCHSIAGYM_LINDA
+	addobject LOCALID_HNS_FUCHSIAGYM_BARRY
+	clearflag FLAG_TEMP_1
+	clearflag FLAG_TEMP_3
+	clearflag FLAG_TEMP_5
+	clearflag FLAG_TEMP_7
+	clearflag FLAG_HIDE_ROUTE22_JANINE
+	msgbox FuchsiaCity_Gym_Hns_Text_Janine_ApplyMyself, MSGBOX_DEFAULT
 	closemessage
 	release
 	end

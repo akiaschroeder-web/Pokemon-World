@@ -23,6 +23,14 @@ VermilionPort_Text_SuperNerd_Hns:
 VermilionPort_EventScript_Sailor_Hns::
 	lock
 	faceplayer
+	@ Pokémon World: the Seagallop, when the harbour menu (with it) isn't offered yet
+	goto_if_lt VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionPort_EventScript_SailorAqua_Hns
+	goto_if_unset FLAG_RETURNED_MACHINE_PART, VermilionPort_EventScript_AskSeagallop_Hns
+	goto_if_ge VAR_SSAQUA_STATE, 7, VermilionPort_EventScript_SailorAqua_Hns
+VermilionPort_EventScript_AskSeagallop_Hns::
+	msgbox VermilionPort_Text_AskSeagallop_Hns, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, TRUE, VermilionPort_EventScript_ChoseSeagallop_Hns
+VermilionPort_EventScript_SailorAqua_Hns::
 	goto_if_unset FLAG_RETURNED_MACHINE_PART, VermilionPort_EventScript_SailorCantSail_Hns
 	goto_if_ge VAR_SSAQUA_STATE, 7, VermilionPort_EventScript_Sailor_AfterKanto_Hns
 	msgbox VermilionPort_Text_AskBoard_Hns, MSGBOX_YESNO
@@ -45,11 +53,12 @@ VermilionPort_EventScript_Sailor_AfterKanto_Hns::
 	multichoice 20, 0, MULTI_VERMILION_HARBOR, FALSE
 	switch VAR_RESULT
 	case 0, VermilionPort_EventScript_ChoseOlivine_Hns
-	case 1, VermilionPort_EventScript_ChoseSouthernIsland_Hns
-	case 2, VermilionPort_EventScript_ChoseBirthIsland_Hns
-	case 3, VermilionPort_EventScript_ChoseFarawayIsland_Hns
-	case 4, VermilionPort_EventScript_ChoseBattleFrontier_Hns
-	case 5, VermilionPort_EventScript_Sailor_Refused_Hns
+	case 1, VermilionPort_EventScript_ChoseSeagallop_Hns @ Pokémon World
+	case 2, VermilionPort_EventScript_ChoseSouthernIsland_Hns
+	case 3, VermilionPort_EventScript_ChoseBirthIsland_Hns
+	case 4, VermilionPort_EventScript_ChoseFarawayIsland_Hns
+	case 5, VermilionPort_EventScript_ChoseBattleFrontier_Hns
+	case 6, VermilionPort_EventScript_Sailor_Refused_Hns
 	case MULTI_B_PRESSED, VermilionPort_EventScript_Sailor_Refused_Hns
 	release
 	end
@@ -208,3 +217,18 @@ VermilionPort_Text_NoTicket_Hns:
     .string "Sorry!\n"
     .string "You may board only\l"
     .string "if you have an S.S.TICKET.$"
+
+@ Pokémon World: FireRed's Seagallop ferries (data/scripts/seagallop.inc), as from FireRed's
+@ Vermilion harbour: the Tri-Pass or Rainbow Pass decides where they go. The ferry back docks here
+@ after the time skip (src/seagallop.c).
+VermilionPort_EventScript_ChoseSeagallop_Hns::
+	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 5, VermilionCity_EventScript_ChooseSeagallopDestRainbowPass
+	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionCity_EventScript_ChooseSeagallopDestTriPass
+	msgbox VermilionCity_Text_TheShipSetSail, MSGBOX_DEFAULT
+	release
+	end
+
+VermilionPort_Text_AskSeagallop_Hns:
+	.string "Would you like to take a SEAGALLOP\n"
+	.string "ferry to the SEVII ISLANDS?$"
