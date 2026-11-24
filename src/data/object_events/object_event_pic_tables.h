@@ -3042,4 +3042,114 @@ static const struct SpriteFrameImage sPicTable_PwDawnDecorating[] = {
     obj_frame_tiles(gObjectEventPic_PwDawnDecorating),
 };
 
+// Pokémon World: Ethan and Kris (Heart & Soul's player characters) as player characters and rivals
+static const struct SpriteFrameImage sPicTable_PwEthanNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwEthanNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwEthanMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwEthanAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanSurfing[] = {
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwEthanSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwEthanFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwEthanUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwEthanFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanWatering[] = {
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwEthanWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwEthanDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwEthanDecorating),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwKrisNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwKrisMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwKrisAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisSurfing[] = {
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwKrisSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwKrisFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwKrisUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwKrisFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisWatering[] = {
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwKrisWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwKrisDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwKrisDecorating),
+};
+
 #include "object_event_pic_tables_hns.h" // Pokémon World: Heart & Soul's sprites (generated)

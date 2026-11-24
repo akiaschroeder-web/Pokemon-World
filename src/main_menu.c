@@ -43,6 +43,21 @@
 #include "window.h"
 #include "mystery_gift_menu.h"
 
+// Pokémon World: a game that starts in Johto gets Heart & Soul's intro on Birch's stage:
+// Prof. Oak with a Wooper, its texts (data/text/birch_speech.inc) and HGSS's new-game music.
+extern const u8 gText_Oak_Welcome[];
+extern const u8 gText_Oak_MainSpeech[];
+extern const u8 gText_Oak_WhatsYourName[];
+extern const u8 gText_Oak_SoItsPlayer[];
+extern const u8 gText_Oak_YourePlayer[];
+extern const u8 gText_Oak_AreYouReady[];
+#define PROF_TEXT(name) (PW_GetStartRegion() == REGION_JOHTO ? gText_Oak_##name : gText_Birch_##name)
+
+static u16 BirchSpeech_GetMonSpecies(void)
+{
+    return PW_GetStartRegion() == REGION_JOHTO ? SPECIES_WOOPER : SPECIES_LOTAD;
+}
+
 /*
  * Main menu state machine
  * -----------------------
@@ -196,6 +211,7 @@ static void Task_HandleMainMenuBPressed(u8);
 static void Task_NewGameBirchSpeech_Init(u8);
 static void Task_DisplayMainMenuInvalidActionError(u8);
 static void AddBirchSpeechObjects(u8);
+static void BirchSpeech_CreateProfessorAndMon(u8);
 static void Task_NewGameBirchSpeech_WaitToShowBirch(u8);
 static void Task_PwSetup_Start(u8);
 static void NewGameBirchSpeech_StartFadeInTarget1OutTarget2(u8, u8);
@@ -417,9 +433,9 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
     {
         .bg = 0,
         .tilemapLeft = 3,
-        .tilemapTop = 2,
+        .tilemapTop = 1,  // Pokémon World: room for six designs above the text box
         .width = 9,
-        .height = 10,
+        .height = 12,     // 0x85 + 9 * 12 tiles stops short of the frame tiles at 0xF3
         .paletteNum = 15,
         .baseBlock = 0x85
     },
@@ -1355,26 +1371,23 @@ static EWRAM_DATA struct
 static const u8 sText_PwSetup_Region[] = _("Where will your journey begin?");
 static const u8 sText_PwSetup_Player[] = _("Which TRAINER are you?");
 static const u8 sText_PwSetup_Rival[] = _("And who is your rival?");
-static const u8 sText_PwSetup_SameAsYou[] = _("That's you! Pick someone else\nas your rival.");
 
 static const struct MenuAction sPwSetupRegionActions[] =
 {
     {COMPOUND_STRING("HOENN"),  {NULL}},
     {COMPOUND_STRING("SINNOH"), {NULL}},
+    {COMPOUND_STRING("JOHTO"),  {NULL}},
 };
-static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH};
+static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH, REGION_JOHTO};
 
-// Player choices are the first four entries; the rival can also be Barry.
-static const struct MenuAction sPwSetupDesignActions[] =
+// The designs in menu order: the player picks from the playable ones; the rival from all
+// but the player's own (so both lists have at most PW_DESIGN_COUNT - 2 entries).
+static const u8 sPwSetupDesignOrder[] =
 {
-    {COMPOUND_STRING("BRENDAN"), {NULL}},
-    {COMPOUND_STRING("MAY"),     {NULL}},
-    {COMPOUND_STRING("LUCAS"),   {NULL}},
-    {COMPOUND_STRING("DAWN"),    {NULL}},
-    {COMPOUND_STRING("BARRY"),   {NULL}},
+    PW_DESIGN_BRENDAN, PW_DESIGN_MAY, PW_DESIGN_LUCAS, PW_DESIGN_DAWN, PW_DESIGN_ETHAN, PW_DESIGN_KRIS, PW_DESIGN_BARRY,
 };
-static const u8 sPwSetupDesigns[] = {PW_DESIGN_BRENDAN, PW_DESIGN_MAY, PW_DESIGN_LUCAS, PW_DESIGN_DAWN, PW_DESIGN_BARRY};
-#define PW_PLAYABLE_DESIGN_COUNT 4
+static EWRAM_DATA struct MenuAction sPwSetupDesignActions[ARRAY_COUNT(sPwSetupDesignOrder)] = {0};
+static EWRAM_DATA u8 sPwSetupDesigns[ARRAY_COUNT(sPwSetupDesignOrder)] = {0};
 
 static void Task_PwSetup_ShowPrompt(u8 taskId);
 static void Task_PwSetup_WaitPrompt(u8 taskId);
@@ -1390,10 +1403,22 @@ static void PwSetup_PrintMessage(const u8 *text)
 
 static void PwSetup_ShowMenu(void)
 {
-    const struct MenuAction *actions = sPwSetup.step == PW_SETUP_REGION ? sPwSetupRegionActions : sPwSetupDesignActions;
-    u8 count = sPwSetup.step == PW_SETUP_REGION ? ARRAY_COUNT(sPwSetupRegionActions)
-             : sPwSetup.step == PW_SETUP_PLAYER ? PW_PLAYABLE_DESIGN_COUNT
-             : ARRAY_COUNT(sPwSetupDesignActions);
+    const struct MenuAction *actions = sPwSetupRegionActions;
+    u8 count = ARRAY_COUNT(sPwSetupRegionActions);
+
+    if (sPwSetup.step != PW_SETUP_REGION)
+    {
+        u32 i;
+        actions = sPwSetupDesignActions;
+        for (i = 0, count = 0; i < ARRAY_COUNT(sPwSetupDesignOrder); i++)
+        {
+            u8 design = sPwSetupDesignOrder[i];
+            if (sPwSetup.step == PW_SETUP_PLAYER ? !gPwDesigns[design].playable : design == sPwSetup.player)
+                continue;
+            sPwSetupDesignActions[count].text = gPwDesigns[design].name;
+            sPwSetupDesigns[count++] = design;
+        }
+    }
 
     DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[2], 0xF3);
     FillWindowPixelBuffer(2, PIXEL_FILL(1));
@@ -1401,6 +1426,15 @@ static void PwSetup_ShowMenu(void)
     InitMenuInUpperLeftCornerNormal(2, count, 0);
     PutWindowTilemap(2);
     CopyWindowToVram(2, COPYWIN_FULL);
+}
+
+// The professor and his Pokémon were made before the region was chosen (Birch and Lotad, or
+// Heart & Soul's Oak and Wooper for Johto).
+static void PwSetup_RecreateProfessorSprites(u8 taskId)
+{
+    DestroySprite(&gSprites[gTasks[taskId].tBirchSpriteId]);
+    FreeAndDestroyMonPicSprite(gTasks[taskId].tLotadSpriteId);
+    BirchSpeech_CreateProfessorAndMon(taskId);
 }
 
 // Birch's player sprites were made before the character was chosen.
@@ -1487,15 +1521,7 @@ static void Task_PwSetup_HandleInput(u8 taskId)
     case PW_SETUP_PLAYER:
         sPwSetup.player = sPwSetupDesigns[input];
         break;
-    case PW_SETUP_RIVAL:
-        if (sPwSetupDesigns[input] == sPwSetup.player)
-        {
-            PlaySE(SE_FAILURE);
-            NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
-            PwSetup_PrintMessage(sText_PwSetup_SameAsYou);
-            gTasks[taskId].func = Task_PwSetup_WaitPrompt;
-            return;
-        }
+    case PW_SETUP_RIVAL: // the player's own design isn't in the list
         sPwSetup.rival = sPwSetupDesigns[input];
         break;
     }
@@ -1523,12 +1549,16 @@ static void Task_PwSetup_HandleInput(u8 taskId)
     else
     {
         // Hoenn: carry on with Birch's speech; it shows its own text windows.
+        // Johto: the same, as Heart & Soul's Prof. Oak (PROF_TEXT, AddBirchSpeechObjects).
         // Clear what the menus left on BG0 first (window borders), or it stays on screen.
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
         CpuFill16(0, (void *)BG_SCREEN_ADDR(GetBgAttribute(0, BG_ATTR_MAPBASEINDEX)), BG_SCREEN_SIZE);
         FreeAllWindowBuffers();
         UnsetBgTilemapBuffer(0); // freed above; InitWindows would otherwise reuse the stale pointer
+        PwSetup_RecreateProfessorSprites(taskId);
         PwSetup_RecreatePlayerSprites(taskId);
+        if (sPwSetup.region == REGION_JOHTO)
+            PlayBGM(MUS_HG_NEW_GAME);
         gTasks[taskId].tTimer = 0x40;
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
     }
@@ -1587,7 +1617,7 @@ static void Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome(u8 taskId)
             PutWindowTilemap(0);
             CopyWindowToVram(0, COPYWIN_GFX);
             NewGameBirchSpeech_ClearWindow(0);
-            StringExpandPlaceholders(gStringVar4, gText_Birch_Welcome);
+            StringExpandPlaceholders(gStringVar4, PROF_TEXT(Welcome));
             AddTextPrinterForMessage(TRUE);
             gTasks[taskId].func = Task_NewGameBirchSpeech_ThisIsAPokemon;
         }
@@ -1609,7 +1639,7 @@ static void Task_NewGameBirchSpeech_MainSpeech(u8 taskId)
 {
     if (!RunTextPrintersAndIsPrinter0Active())
     {
-        StringExpandPlaceholders(gStringVar4, gText_Birch_MainSpeech);
+        StringExpandPlaceholders(gStringVar4, PROF_TEXT(MainSpeech));
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = Task_NewGameBirchSpeech_AndYouAre;
     }
@@ -1626,7 +1656,7 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_LOTAD);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, BirchSpeech_GetMonSpecies());
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }
@@ -1840,7 +1870,7 @@ static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8 taskId)
 static void Task_NewGameBirchSpeech_WhatsYourName(u8 taskId)
 {
     NewGameBirchSpeech_ClearWindow(0);
-    StringExpandPlaceholders(gStringVar4, gText_Birch_WhatsYourName);
+    StringExpandPlaceholders(gStringVar4, PROF_TEXT(WhatsYourName));
     AddTextPrinterForMessage(TRUE);
     gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint;
 }
@@ -1875,7 +1905,7 @@ static void Task_NewGameBirchSpeech_StartNamingScreen(u8 taskId)
 static void Task_NewGameBirchSpeech_SoItsPlayerName(u8 taskId)
 {
     NewGameBirchSpeech_ClearWindow(0);
-    StringExpandPlaceholders(gStringVar4, gText_Birch_SoItsPlayer);
+    StringExpandPlaceholders(gStringVar4, PROF_TEXT(SoItsPlayer));
     AddTextPrinterForMessage(TRUE);
     gTasks[taskId].func = Task_NewGameBirchSpeech_CreateNameYesNo;
 }
@@ -1941,7 +1971,7 @@ static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8 taskId)
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);
         NewGameBirchSpeech_ClearWindow(0);
-        StringExpandPlaceholders(gStringVar4, gText_Birch_YourePlayer);
+        StringExpandPlaceholders(gStringVar4, PROF_TEXT(YourePlayer));
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter;
     }
@@ -1989,7 +2019,7 @@ static void Task_NewGameBirchSpeech_AreYouReady(u8 taskId)
         gTasks[taskId].tPlayerSpriteId = spriteId;
         NewGameBirchSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
         NewGameBirchSpeech_StartFadePlatformOut(taskId, 1);
-        StringExpandPlaceholders(gStringVar4, gText_Birch_AreYouReady);
+        StringExpandPlaceholders(gStringVar4, PROF_TEXT(AreYouReady));
         AddTextPrinterForMessage(TRUE);
         gTasks[taskId].func = Task_NewGameBirchSpeech_ShrinkPlayer;
     }
@@ -2138,17 +2168,19 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_LOTAD, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(BirchSpeech_GetMonSpecies(), FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
-static void AddBirchSpeechObjects(u8 taskId)
+static void BirchSpeech_CreateProfessorAndMon(u8 taskId)
 {
     u8 birchSpriteId;
     u8 lotadSpriteId;
-    u8 brendanSpriteId;
-    u8 maySpriteId;
 
-    birchSpriteId = AddNewGameBirchObject(0x88, 0x3C, 1);
+    // Pokémon World: Heart & Soul's Prof. Oak when the game starts in Johto
+    if (PW_GetStartRegion() == REGION_JOHTO)
+        birchSpriteId = AddNewGameOakObject(0x88, 0x3C, 1);
+    else
+        birchSpriteId = AddNewGameBirchObject(0x88, 0x3C, 1);
     gSprites[birchSpriteId].callback = SpriteCB_Null;
     gSprites[birchSpriteId].oam.priority = 0;
     gSprites[birchSpriteId].invisible = TRUE;
@@ -2158,6 +2190,14 @@ static void AddBirchSpeechObjects(u8 taskId)
     gSprites[lotadSpriteId].oam.priority = 0;
     gSprites[lotadSpriteId].invisible = TRUE;
     gTasks[taskId].tLotadSpriteId = lotadSpriteId;
+}
+
+static void AddBirchSpeechObjects(u8 taskId)
+{
+    u8 brendanSpriteId;
+    u8 maySpriteId;
+
+    BirchSpeech_CreateProfessorAndMon(taskId);
     // Pokémon World: show the chosen character in place of Brendan/May.
     brendanSpriteId = CreateTrainerSprite(gPwDesigns[PW_GetPlayerDesign()].gender == MALE ? PW_GetPlayerTrainerPic(FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN)) : FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN), 120, 60, 0, NULL);
     gSprites[brendanSpriteId].callback = SpriteCB_Null;

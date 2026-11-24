@@ -11,8 +11,8 @@ Pokémon World is a fan game that puts the main-series regions into one game you
 |---|---|---|
 | Hoenn | pokeemerald-expansion (Emerald) | In the game |
 | Sinnoh | LiderMorti00's Sinnoh port on pokeemerald-expansion | In the game (flag split still partly to do) |
-| Kanto | FireRed (pokefirered), merged in | Maps, scripts, trainers and encounters in; groundwork done |
-| Johto | The Heart & Soul pokeemerald-expansion project | Planned, next big region |
+| Kanto | FireRed (pokefirered), merged in; after the time skip, Heart & Soul's Gold/Silver-era Kanto | In the game: FireRed's Kanto first, then the Gold/Silver-era one after Johto's Champion |
+| Johto | The Heart & Soul pokeemerald-expansion project | In the game (maps, story, trainers, wild Pokémon, HGSS music); can be the starting region |
 | Unova | Probably built mostly by the owner | Future |
 | Kalos, Galar | To be looked at | Future |
 | Alola | The owner is worried about it | Maybe |
@@ -21,14 +21,17 @@ Pokémon World is a fan game that puts the main-series regions into one game you
 The Heart & Soul and Sinnoh developers gave permission to use their work as long as they're credited. **Credits are required:** keep PROJECT_CREDITS.md and in-game credits up to date. That includes pokeemerald-multiplatform (MIT), which the web port draws on.
 
 ### How it plays (design decisions already made)
-- **Character select before anything else.** Before the professor's speech, the player chooses:
-  1. the **starting region**;
-  2. their **player character**, from any region's player designs (Brendan, May, Lucas, Dawn and so on), not just the region they start in, and carried through the whole game;
-  3. their **rival's design and gender**. The rival can't be the same design as the player.
+- **One engine everywhere.** pokeemerald-expansion's species, moves, items, battle engine and overworld systems (e.g. following Pokémon, Poké Balls, Berries) are used in every region. Where expansion already has a feature or item, imported content is pointed at expansion's rather than porting a second copy.
+- **Character select before anything else.** Before the professor's speech, the player chooses (`src/main_menu.c`, `Task_PwSetup_*`; designs in `src/pokemon_world.c`, `gPwDesigns`):
+  1. the **starting region**: Hoenn (Birch's speech, then the truck), Sinnoh (Rowan's intro, Twinleaf) or Johto (Heart & Soul's Prof. Oak speech on Birch's stage, then the player's room in New Bark Town). `WarpToTruck()` in `src/new_game.c` picks the start map;
+  2. their **player character**, from any region's player designs (Brendan, May, Lucas, Dawn, Ethan, Kris), not just the region they start in, and carried through the whole game;
+  3. their **rival's design**: any design but the player's own (Barry is rival-only for now).
   - Stretch goal: let the player be any normal rival character (e.g. Barry) and the other way round.
-  - Hoenn's rival uses the chosen rival and their name.
-- **Only one Kanto, and it changes over time.** FireRed's Kanto comes first, then switches to its "3 years later" state (HGSS-era) after Johto's story.
-- **Kanto's badges stay the same whatever order you play in.** Whether Kanto or Johto is done first, there are no redone gyms for Mt. Silver.
+  - Hoenn's (and Sinnoh's) rival uses the chosen rival and their name.
+  - **Johto's rival is Silver**, plays his own story, and is named by the player in Elm's lab (`{JOHTO_RIVAL}`, `SaveBlock3.johtoRivalName`); the rival chosen at the start stays the Hoenn/Sinnoh rival.
+- **Only one Kanto, and it changes over time.** FireRed's Kanto comes first, then switches to its "3 years later" state (Heart & Soul's Gold/Silver-era maps) when the player first becomes **Johto's Champion** (`FLAG_PW_KANTO_TIME_SKIP`, `src/kanto_time_skip.c`): from then on every warp into FireRed's mainland Kanto lands in the matching later-Kanto map.
+- **Kanto's badges stay the same whatever order you play in.** Whether Kanto or Johto is done first, there are no redone gyms for Mt. Silver: a later-Kanto gym leader gives the Kanto badge only if the player doesn't have it yet; otherwise the battle is a rematch (no badge, fanfare or TM).
+- **The Sevii Islands stay reachable** after the time skip (the Seagallop from the later Vermilion port), and are planned to become the **hub between regions**.
 - **Badge Case** key item that shows the badges collected in every region, with badge artwork.
 - **Region-specific items:** items that would clash stay separate per region, e.g. a Hoenn Town Map, a Sinnoh Town Map and a Kanto Town Map, each showing its own region.
 - **Battles and wild encounters** run on pokeemerald-expansion's battle engine everywhere. Battle music follows the current region and the kind of battle or encounter.
@@ -60,6 +63,33 @@ The Heart & Soul and Sinnoh developers gave permission to use their work as long
 - `render_bg.py`: draws a BG from a `vram` dump.
 - `smoke_test.js`: the CI check.
 
+## In-game debug menu (R+Start; keyboard S+Enter in the web build)
+- **Warp to town…** → Kanto… (FireRed's), Kanto (3 yrs later)… (Heart & Soul's Gold/Silver-era towns), Johto…, Hoenn…, Sinnoh… (`src/debug.c`, `sDebugMenu_Actions_WarpRegion`). With the time skip on, a warp into FireRed's Kanto lands in the later one anyway.
+- **Flags & Vars… → Toggle Kanto time skip**: on does what becoming Johto's Champion does (`Debug_EventScript_PwKantoTimeSkip`, which also runs Heart & Soul's later-Kanto set-up); it applies from the next warp. Off goes back to FireRed's Kanto.
+
+## Johto and the later Kanto: the Heart & Soul import
+Heart & Soul (a pokeemerald-expansion project; read-only copy at `~/ref/pokemonHnS`, never built or run) is converted by generators. **Generated files are changed in the generator, never by hand**, so the import stays re-runnable.
+- `tools/pokemon_world/import_hns.py` (its docstring lists every file it writes): maps, layouts, tilesets, door animations, map sections, heal locations, Johto's flags/vars/trainer IDs (in Johto's region ranges), map scripts and the shared scripts they need, trainers and trainer classes/pics, wild encounters, multichoice menus, Heart & Soul's new-game set-up (`data/scripts/hns_new_game.inc`), and the Ethan/Kris/Prof. Oak pictures. Everything from Heart & Soul gets `_Hns`/`_HNS` names. Our own changes to its scripts are `pw_script_patches()` near the end (time skip at the Hall of Fame, later-Kanto set-up moved off the S.S. Aqua, gym rematches, Seagallop at Vermilion, Kurt's berry-to-ball bag check). Tables it uses are near the end too (`SHARED_FLAGS`, `HNS_SPECIALS`, `CLASS_MAP`, `MUSIC_STANDIN`, ...).
+- `tools/pokemon_world/hns_sprites.py` (overworld sprites we lacked) and `hns_music.py` (HGSS songs, voicegroups, samples) are called by the importer.
+- `tools/pokemon_world/gen_kanto_time_skip.py`: the FireRed → later-Kanto map table; re-run it after the importer.
+- `tools/pokemon_world/gen_kanto_ids.py`: Kanto's (FireRed's) region ID headers.
+- Hand-written companions: `asm/macros/hns_compat.inc` (Heart & Soul's script commands), `src/hns_specials.c`, `src/hns_bug_contest.c`, `src/hns_sliding_puzzle.c`, `src/data/tilesets/tileset_anims_hns.h`, `src/kanto_time_skip.c`, `data/scripts/kanto_time_skip.inc`.
+- **Re-running:** from the repo root, `python3 tools/pokemon_world/import_hns.py` (optional `--hns <path>`; needs a host gcc to read our constants), then `python3 tools/pokemon_world/gen_kanto_time_skip.py`. It takes out what it added before (`tools/pokemon_world/hns_import_state.json`) and prints a report of what was stubbed or mapped at the end. Then build.
+- Every new game runs Johto's starting flags (`EventScript_ResetAllMapFlags_Hns`) next to Hoenn's/Sinnoh's and Kanto's, whatever the starting region; a Johto start also gets Heart & Soul's starting items (`EventScript_NewGameItems_Hns`).
+- Kurt (Azalea) makes Poké Balls from Berries, as in Heart & Soul: 5 Pecha → Love, 5 Rawst → Lure, 5 Cheri → Friend, 5 Oran → Heavy, 5 Chesto → Moon, 5 Aspear → Fast, 5 Persim → Level Ball, straight away (no daily wait). These are expansion's balls and Berries.
+- **Following Pokémon** are expansion's (`OW_FOLLOWERS_ENABLED` in `include/config/overworld.h`, on in every region). Heart & Soul uses the same system, so its scripts' `UpdateFollowingPokemon` / follower field moves are expansion's own. Species without an overworld sprite show expansion's placeholder (`OW_SUBSTITUTE_PLACEHOLDER`).
+
+## Known gaps / not yet played (Johto stages 1–7)
+- Wild battles sometimes reported as doubles: cause not found. Double wild battles only come from `TryDoDoubleWildBattle` (`src/wild_encounter.c`): the chance and force flag are 0/off, so the remaining path is the follower-NPC partner (`FollowerNPCIsBattlePartner`, `FNPC_FLAG_PARTNER_WILD_BATTLES = FNPC_ALWAYS` with `FNPC_NPC_FOLLOWER_WILD_BATTLE_VS_2`), which needs `SaveBlock3.NPCfollower` to say a partner NPC follows. New games clear it; a save from before a SaveBlock3 layout change could carry stale data there.
+- The GS Ball can't be thrown.
+- A tutor menu's description window (Heart & Soul's move tutors) isn't right yet.
+- Two non-HGSS songs Heart & Soul plays use stand-ins (`MUSIC_STANDIN` in the importer): Platinum's Fight Area theme (Trainer Hill courtyard) → `MUS_DPP_LEAGUE_OUTSIDE`, and Ruby/Sapphire's heavy-rain theme → `MUS_ABNORMAL_WEATHER`.
+- Fly to Kanto/Johto isn't set up: `src/region_map.c` only handles Hoenn.
+- The Sevii passes: if FireRed's story is skipped, the Tri-Pass/Rainbow Pass may never be given, so the Seagallop can't go to Sevii. To decide together with the Sevii hub.
+- The GBA ROM hasn't been built since the Johto import (the web build is what's tested).
+- Not played through: the Johto story beyond New Bark, Kurt's balls, the Hall of Fame time skip, later-Kanto gym rematches, the Seagallop, Ethan/Kris on bikes/surfing/fishing and in battle, the credits roll (it's longer now; Emerald's credits music may end before it does).
+- Heart & Soul's female player is **Kris** (Crystal), not Lyra: it has no Lyra sprites. Lyra would need new overworld and battle sprites.
+
 ## Status (Nov 22, 2026)
 Working in the browser: boot, intro, title, main menu, the PW character select, Birch's speech with its text box, and the naming screen.
 
@@ -72,13 +102,13 @@ Working in the browser: boot, intro, title, main menu, the PW character select, 
 3. Sound: port pokeemerald-multiplatform's music_player.c, sound_mixer.c and cgb_audio.c (MIT, credited), adapted to expansion's m4a structs and compressed cries. Output through Web Audio.
 4. A PC (desktop) build of the same portable code.
 5. Game work:
-   - the Johto port from Heart & Soul
-   - the Kanto time change
+   - ~~the Johto port from Heart & Soul~~ (done, Johto stages 1–7; see the known gaps below)
+   - ~~the Kanto time change~~ (done: at Johto's first Hall of Fame)
+   - ~~region-based battle music~~ (done, Johto stage 4)
    - the rest of the Sinnoh flag split
-   - a Town Map per region
+   - a Town Map per region, and Fly between regions (`src/region_map.c` is Hoenn-only)
    - the Badge Case
-   - travel between regions
-   - region-based battle music
+   - travel between regions (the Sevii Islands as the hub)
 
 ## Region IDs (from the Kanto groundwork)
 - **Flags:** region flags are 0x1000–0x1EFF (Kanto from 0x1000, Johto from 0x1400). Region trainer flags start at 0x1900 (`REGION_TRAINER_FLAGS_START`).

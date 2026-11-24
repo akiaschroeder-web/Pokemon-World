@@ -36,3 +36,16 @@ $(OBJEVENTGFXDIR)/people/dawn/walking.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/dawn/running.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+# Pokémon World: Ethan and Kris (Heart & Soul's player characters)
+$(OBJEVENTGFXDIR)/people/ethan_hns/walking.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ethan_hns/running.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/kris_hns/walking.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/kris_hns/running.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

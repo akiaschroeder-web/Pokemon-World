@@ -18,6 +18,8 @@ static const u8 sText_May[] = _("MAY");
 static const u8 sText_Lucas[] = _("LUCAS");
 static const u8 sText_Dawn[] = _("DAWN");
 static const u8 sText_Barry[] = _("BARRY");
+static const u8 sText_Ethan[] = _("ETHAN");
+static const u8 sText_Kris[] = _("KRIS");
 
 const struct PwDesignInfo gPwDesigns[PW_DESIGN_COUNT] =
 {
@@ -26,6 +28,9 @@ const struct PwDesignInfo gPwDesigns[PW_DESIGN_COUNT] =
     [PW_DESIGN_LUCAS]   = { sText_Lucas,   MALE,   TRUE,  TRAINER_PIC_SINNOH_LUCAS },
     [PW_DESIGN_DAWN]    = { sText_Dawn,    FEMALE, TRUE,  TRAINER_PIC_SINNOH_DAWN },
     [PW_DESIGN_BARRY]   = { sText_Barry,   MALE,   FALSE, TRAINER_PIC_SINNOH_BARRY },
+    // Heart & Soul's player characters (its Brendan/May redrawn as Ethan and Kris)
+    [PW_DESIGN_ETHAN]   = { sText_Ethan,   MALE,   TRUE,  TRAINER_PIC_PW_ETHAN },
+    [PW_DESIGN_KRIS]    = { sText_Kris,    FEMALE, TRUE,  TRAINER_PIC_PW_KRIS },
 };
 
 // ---------------------------------------------------------------- choices
@@ -42,6 +47,11 @@ void PW_SetPendingChoices(enum Region region, enum PwDesign player, enum PwDesig
     sPending.region = region;
     sPending.player = player;
     sPending.rival = rival;
+    // The save loaded at the main menu may hold an older game's choice in these vars, and they
+    // win over the pending one: clear them (NewGameInitData stores the new choice).
+    VarSet(VAR_PW_START_REGION, 0);
+    VarSet(VAR_PW_PLAYER_DESIGN, 0);
+    VarSet(VAR_PW_RIVAL_DESIGN, 0);
 }
 
 // Called at the end of NewGameInitData(), after the save (and its vars) were cleared.
@@ -120,6 +130,12 @@ PW_GFX_SET(gObjectEventGraphicsInfo_RivalBrendan)
 PW_GFX_SET(gObjectEventGraphicsInfo_RivalMay)
 PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwLucas)
 PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwDawn)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwEthan)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwEthan)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwKris)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwKris)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwEthan)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwKris)
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBarry;
 
 #define PLAYER_SET(prefix)                               \
@@ -158,6 +174,8 @@ static const struct ObjectEventGraphicsInfo *const sPlayerGfx[PW_DESIGN_COUNT][P
     [PW_DESIGN_MAY]     = PLAYER_SET(gObjectEventGraphicsInfo_May),
     [PW_DESIGN_LUCAS]   = PLAYER_SET(gObjectEventGraphicsInfo_PwLucas),
     [PW_DESIGN_DAWN]    = PLAYER_SET(gObjectEventGraphicsInfo_PwDawn),
+    [PW_DESIGN_ETHAN]   = PLAYER_SET(gObjectEventGraphicsInfo_PwEthan),
+    [PW_DESIGN_KRIS]    = PLAYER_SET(gObjectEventGraphicsInfo_PwKris),
 };
 
 static const struct ObjectEventGraphicsInfo *const sRivalGfx[PW_DESIGN_COUNT][PW_STATE_COUNT] =
@@ -167,6 +185,8 @@ static const struct ObjectEventGraphicsInfo *const sRivalGfx[PW_DESIGN_COUNT][PW
     [PW_DESIGN_LUCAS]   = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwLucas),
     [PW_DESIGN_DAWN]    = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwDawn),
     [PW_DESIGN_BARRY]   = SINGLE_SET(gObjectEventGraphicsInfo_SinnohBarry),
+    [PW_DESIGN_ETHAN]   = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwEthan),
+    [PW_DESIGN_KRIS]    = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwKris),
 };
 
 enum { ROLE_NONE, ROLE_PLAYER, ROLE_RIVAL };

@@ -386,6 +386,31 @@ static const struct SpriteTemplate sSpriteTemplate_NewGameBirch =
     .images = sPicTable_NewGameBirch,
 };
 
+// Pokémon World: Heart & Soul's Prof. Oak, for the intro of a game that starts in Johto
+// (copied by tools/pokemon_world/import_hns.py).
+static const u32 sNewGameOak_Gfx[] = INCGFX_U32("graphics/birch_speech/oak_hns.png", ".4bpp");
+static const u16 sNewGameOak_Pal[16] = INCGFX_U16("graphics/birch_speech/oak_hns.png", ".gbapal");
+
+static const struct SpriteFrameImage sPicTable_NewGameOak[] =
+{
+    obj_frame_tiles(sNewGameOak_Gfx)
+};
+
+static const struct SpritePalette sSpritePalette_NewGameOak =
+{
+    .data = sNewGameOak_Pal,
+    .tag = 0x1F40 // not a field-effect tag (0x1007 is the Poké Ball glow)
+};
+
+static const struct SpriteTemplate sSpriteTemplate_NewGameOak =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = 0x1F40,
+    .oam = &sOam_64x64,
+    .anims = sAnimTable_NewGameBirch,
+    .images = sPicTable_NewGameOak,
+};
+
 const struct SpritePalette gSpritePalette_PokeballGlow =
 {
     .data = sPokeballGlow_Pal,
@@ -1026,6 +1051,12 @@ u8 AddNewGameBirchObject(s16 x, s16 y, u8 subpriority)
 {
     LoadSpritePalette(&sSpritePalette_NewGameBirch);
     return CreateSprite(&sSpriteTemplate_NewGameBirch, x, y, subpriority);
+}
+
+u8 AddNewGameOakObject(s16 x, s16 y, u8 subpriority)
+{
+    LoadSpritePalette(&sSpritePalette_NewGameOak);
+    return CreateSprite(&sSpriteTemplate_NewGameOak, x, y, subpriority);
 }
 
 u8 CreateMonSprite_PicBox(enum Species species, s16 x, s16 y, u8 subpriority)

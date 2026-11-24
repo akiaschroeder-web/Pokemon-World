@@ -15,6 +15,8 @@ enum PwDesign
     PW_DESIGN_LUCAS,
     PW_DESIGN_DAWN,
     PW_DESIGN_BARRY,    // rival only, until Barry has a full set of player sprites
+    PW_DESIGN_ETHAN,    // Heart & Soul's player characters (after Barry: saves keep their numbers)
+    PW_DESIGN_KRIS,
     PW_DESIGN_COUNT
 };
 

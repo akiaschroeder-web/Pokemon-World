@@ -906,6 +906,11 @@ enum
 #define OBJ_EVENT_PAL_TAG_PW_DAWN                 0x1F02
 #define OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION     0x1F03
 #define OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION      0x1F04
+// Pokémon World: Ethan and Kris (Heart & Soul's player characters)
+#define OBJ_EVENT_PAL_TAG_PW_ETHAN                0x1F05
+#define OBJ_EVENT_PAL_TAG_PW_KRIS                 0x1F06
+#define OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION     0x1F07
+#define OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION      0x1F08
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

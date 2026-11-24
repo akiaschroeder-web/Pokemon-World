@@ -38,6 +38,7 @@
 	song mus_hg_mt_moon_square, MUSIC_PLAYER_BGM, 0
 	song mus_hg_national_park, MUSIC_PLAYER_BGM, 0
 	song mus_hg_new_bark, MUSIC_PLAYER_BGM, 0
+	song mus_hg_new_game, MUSIC_PLAYER_BGM, 0
 	song mus_hg_oak, MUSIC_PLAYER_BGM, 0
 	song mus_hg_obtain_badge, MUSIC_PLAYER_BGM, 0
 	song mus_hg_obtain_berry, MUSIC_PLAYER_BGM, 0

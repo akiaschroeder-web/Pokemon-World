@@ -420,3 +420,4 @@
 	.include "data/maps/Saffron_Temp_Hns/scripts.inc"
 	.include "data/scripts/hns_shared.inc"
 	.include "data/scripts/hns_missing.inc"
+	.include "data/scripts/hns_new_game.inc"

@@ -52,11 +52,14 @@
 #include "union_room_chat.h"
 #include "constants/map_groups.h"
 #include "constants/items.h"
+#include "constants/heal_locations.h"
 #include "difficulty.h"
 #include "follower_npc.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 extern const u8 EventScript_ResetAllMapFlagsFrlg[];
+extern const u8 EventScript_ResetAllMapFlags_Hns[];
+extern const u8 EventScript_NewGameItems_Hns[];
 
 static void ClearFrontierRecord(void);
 static void WarpToTruck(void);
@@ -139,7 +142,15 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     if (PW_GetStartRegion() == REGION_SINNOH)
+    {
         SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), MAP_NUM(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), WARP_ID_NONE, -1, -1);
+    }
+    else if (PW_GetStartRegion() == REGION_JOHTO)
+    {
+        // Where Heart & Soul's new game begins: the player's room in New Bark Town (its warp 1).
+        SetWarpDestination(MAP_GROUP(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), MAP_NUM(MAP_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS), 1, -1, -1);
+        SetLastHealLocationWarp(HEAL_LOCATION_NEW_BARK_TOWN_PLAYERS_HOUSE_2F_HNS);
+    }
     else
         SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
     WarpIntoMap();
@@ -215,6 +226,9 @@ void NewGameInitData(void)
     if (!IS_FRLG)
         RunScriptImmediately(EventScript_ResetAllMapFlags);
     RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg); // Pokémon World: Kanto's starting flags too
+    RunScriptImmediately(EventScript_ResetAllMapFlags_Hns); // and Johto's (data/scripts/hns_new_game.inc)
+    if (PW_GetStartRegion() == REGION_JOHTO)
+        RunScriptImmediately(EventScript_NewGameItems_Hns); // the items Heart & Soul's new game gives
     StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();

@@ -881,4 +881,28 @@ const u32 gObjectEventPic_PwDawnFishing[] = INCGFX_U32("graphics/object_events/p
 const u32 gObjectEventPic_PwDawnWatering[] = INCGFX_U32("graphics/object_events/pics/people/dawn/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_PwDawnDecorating[] = INCGFX_U32("graphics/object_events/pics/people/dawn/decorating.png", ".4bpp");
 
+// Pokémon World: Ethan and Kris (Heart & Soul's player characters) as player characters and rivals
+const u32 gObjectEventPic_PwEthanNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/ethan_hns/walking.4bpp", "graphics/object_events/pics/people/ethan_hns/running.4bpp");
+const u32 gObjectEventPic_PwEthanMachBike[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanSurfing[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanFishing[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanWatering[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwEthanDecorating[] = INCGFX_U32("graphics/object_events/pics/people/ethan_hns/decorating.png", ".4bpp");
+const u16 gObjectEventPal_PwEthan[] = INCGFX_U16("graphics/object_events/palettes/ethan_hns.pal", ".gbapal");
+const u16 gObjectEventPal_PwEthanReflection[] = INCGFX_U16("graphics/object_events/palettes/ethan_hns_reflection.pal", ".gbapal");
+const u32 gObjectEventPic_PwKrisNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/kris_hns/walking.4bpp", "graphics/object_events/pics/people/kris_hns/running.4bpp");
+const u32 gObjectEventPic_PwKrisMachBike[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/mach_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisAcroBike[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/acro_bike.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisSurfing[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/surfing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisFieldMove[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/field_move.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisFishing[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/fishing.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisWatering[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/watering.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_PwKrisDecorating[] = INCGFX_U32("graphics/object_events/pics/people/kris_hns/decorating.png", ".4bpp");
+const u16 gObjectEventPal_PwKris[] = INCGFX_U16("graphics/object_events/palettes/kris_hns.pal", ".gbapal");
+const u16 gObjectEventPal_PwKrisReflection[] = INCGFX_U16("graphics/object_events/palettes/kris_hns_reflection.pal", ".gbapal");
+
 #include "object_event_graphics_hns.h" // Pokémon World: Heart & Soul's sprites (generated)

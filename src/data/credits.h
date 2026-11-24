@@ -1,5 +1,20 @@
 enum
 {
+    // Pokémon World: the projects it's built from (see PROJECT_CREDITS.md), before Emerald's credits
+    PAGE_PW_TITLE,
+    PAGE_PW_ENGINE,
+    PAGE_PW_DECOMPS,
+    PAGE_PW_KANTO,
+    PAGE_PW_JOHTO_1,
+    PAGE_PW_JOHTO_2,
+    PAGE_PW_HNS_BASE,
+    PAGE_PW_HNS_SPRITES,
+    PAGE_PW_HNS_TILESETS,
+    PAGE_PW_HNS_MAPS,
+    PAGE_PW_HNS_GAMEPLAY,
+    PAGE_PW_HNS_MUSIC,
+    PAGE_PW_SINNOH,
+    PAGE_PW_WEB,
     PAGE_TITLE,
     PAGE_DIRECTOR,
     PAGE_ART_DIRECTOR,
@@ -222,6 +237,58 @@ static const u8 sCreditsText_NicolaPrattBarlow[]              = _("Nicola Pratt-
 static const u8 sCreditsText_ShellieDow[]                     = _("Shellie Dow");
 static const u8 sCreditsText_ErikJohnson[]                    = _("Erik Johnson");
 static const struct CreditsEntry sCreditsEntry_EmptyString                      = { 0, FALSE, sCreditsText_EmptyString};
+
+// Pokémon World: the projects it's built from, and who they credit (PROJECT_CREDITS.md). Keep both up to date.
+static const struct CreditsEntry sCreditsEntry_PwTitle            = { 0,  TRUE, COMPOUND_STRING("POKéMON WORLD")};
+static const struct CreditsEntry sCreditsEntry_PwBuiltFrom        = { 0, FALSE, COMPOUND_STRING("Built from the work of")};
+static const struct CreditsEntry sCreditsEntry_PwCommunity        = { 0, FALSE, COMPOUND_STRING("the POKéMON ROM hacking community")};
+static const struct CreditsEntry sCreditsEntry_PwEngine           = { 0,  TRUE, COMPOUND_STRING("Engine")};
+static const struct CreditsEntry sCreditsEntry_PwExpansion        = { 0, FALSE, COMPOUND_STRING("pokeemerald-expansion")};
+static const struct CreditsEntry sCreditsEntry_PwRHH              = { 0, FALSE, COMPOUND_STRING("Rom Hacking Hideout (RHH)")};
+static const struct CreditsEntry sCreditsEntry_PwExpansionContrib = { 0, FALSE, COMPOUND_STRING("and all its contributors")};
+static const struct CreditsEntry sCreditsEntry_PwDecomps          = { 0,  TRUE, COMPOUND_STRING("Decompilations")};
+static const struct CreditsEntry sCreditsEntry_PwPokeemerald      = { 0, FALSE, COMPOUND_STRING("pokeemerald and pokefirered")};
+static const struct CreditsEntry sCreditsEntry_PwPret             = { 0, FALSE, COMPOUND_STRING("pret")};
+static const struct CreditsEntry sCreditsEntry_PwKanto            = { 0,  TRUE, COMPOUND_STRING("Kanto & Sevii Islands")};
+static const struct CreditsEntry sCreditsEntry_PwFromFirered      = { 0, FALSE, COMPOUND_STRING("from pokefirered by pret")};
+static const struct CreditsEntry sCreditsEntry_PwJohto            = { 0,  TRUE, COMPOUND_STRING("Johto: POKéMON Heart & Soul")};
+static const struct CreditsEntry sCreditsEntry_PwLilDill          = { 0, FALSE, COMPOUND_STRING("Lil Dill")};
+static const struct CreditsEntry sCreditsEntry_PwTixoRebel        = { 0, FALSE, COMPOUND_STRING("TixoRebel")};
+static const struct CreditsEntry sCreditsEntry_PwInfiniteBacon42  = { 0, FALSE, COMPOUND_STRING("InfiniteBacon42")};
+static const struct CreditsEntry sCreditsEntry_PwExclsior         = { 0, FALSE, COMPOUND_STRING("Exclsior")};
+static const struct CreditsEntry sCreditsEntry_PwPhantonomy       = { 0, FALSE, COMPOUND_STRING("Phantonomy")};
+static const struct CreditsEntry sCreditsEntry_PwDaniRainbow      = { 0, FALSE, COMPOUND_STRING("DaniRainbow")};
+static const struct CreditsEntry sCreditsEntry_PwHnsBase          = { 0,  TRUE, COMPOUND_STRING("Heart & Soul's Engine Base")};
+static const struct CreditsEntry sCreditsEntry_PwModernEmerald    = { 0, FALSE, COMPOUND_STRING("Modern Emerald: Resetes12")};
+static const struct CreditsEntry sCreditsEntry_PwHnsSurf          = { 0,  TRUE, COMPOUND_STRING("Surfing POKéMON Sprites")};
+static const struct CreditsEntry sCreditsEntry_PwSlawter666       = { 0, FALSE, COMPOUND_STRING("slawter666")};
+static const struct CreditsEntry sCreditsEntry_PwWally217         = { 0, FALSE, COMPOUND_STRING("wally-217")};
+static const struct CreditsEntry sCreditsEntry_PwHnsSprites       = { 0,  TRUE, COMPOUND_STRING("Heart & Soul's Sprites")};
+static const struct CreditsEntry sCreditsEntry_PwCesareCBass      = { 0, FALSE, COMPOUND_STRING("Cesare_CBass")};
+static const struct CreditsEntry sCreditsEntry_PwAveonTrainer     = { 0, FALSE, COMPOUND_STRING("AveonTrainer")};
+static const struct CreditsEntry sCreditsEntry_PwPurpleZaffre     = { 0, FALSE, COMPOUND_STRING("PurpleZaffre")};
+static const struct CreditsEntry sCreditsEntry_PwBatimaTheBat     = { 0, FALSE, COMPOUND_STRING("BatimaTheBat")};
+static const struct CreditsEntry sCreditsEntry_PwHnsTilesets      = { 0,  TRUE, COMPOUND_STRING("Heart & Soul's Tilesets")};
+static const struct CreditsEntry sCreditsEntry_PwKertra           = { 0, FALSE, COMPOUND_STRING("Crystal Advance: Kertra")};
+static const struct CreditsEntry sCreditsEntry_PwEkat99           = { 0, FALSE, COMPOUND_STRING("Ekat99")};
+static const struct CreditsEntry sCreditsEntry_PwDeadHeroAlistair = { 0, FALSE, COMPOUND_STRING("TheDeadHeroAlistair")};
+static const struct CreditsEntry sCreditsEntry_PwJohtoRedrawn     = { 0, FALSE, COMPOUND_STRING("Johto Redrawn Team")};
+static const struct CreditsEntry sCreditsEntry_PwHnsMaps          = { 0,  TRUE, COMPOUND_STRING("Heart & Soul's Maps")};
+static const struct CreditsEntry sCreditsEntry_PwBlackfragrant    = { 0, FALSE, COMPOUND_STRING("Fire Gold: blackfragrant")};
+static const struct CreditsEntry sCreditsEntry_PwSkidMarc25       = { 0, FALSE, COMPOUND_STRING("SkidMarc25")};
+static const struct CreditsEntry sCreditsEntry_PwHnsGameplay      = { 0,  TRUE, COMPOUND_STRING("Heart & Soul's Gameplay")};
+static const struct CreditsEntry sCreditsEntry_PwCrystalLegacy    = { 0, FALSE, COMPOUND_STRING("Crystal Legacy: TSP")};
+static const struct CreditsEntry sCreditsEntry_PwTheSmithPlays    = { 0, FALSE, COMPOUND_STRING("(TheSmithPlays)")};
+static const struct CreditsEntry sCreditsEntry_PwHgssMusic        = { 0,  TRUE, COMPOUND_STRING("HeartGold & SoulSilver Music")};
+static const struct CreditsEntry sCreditsEntry_PwGameFreak        = { 0, FALSE, COMPOUND_STRING("GAME FREAK")};
+static const struct CreditsEntry sCreditsEntry_PwHgssArranged     = { 0, FALSE, COMPOUND_STRING("as arranged in Heart & Soul")};
+static const struct CreditsEntry sCreditsEntry_PwSinnoh           = { 0,  TRUE, COMPOUND_STRING("Sinnoh")};
+static const struct CreditsEntry sCreditsEntry_PwSinnohProject    = { 0, FALSE, COMPOUND_STRING("Sinnoh pokeemerald-expansion")};
+static const struct CreditsEntry sCreditsEntry_PwLiderMorti00     = { 0, FALSE, COMPOUND_STRING("LiderMorti00")};
+static const struct CreditsEntry sCreditsEntry_PwWeb              = { 0,  TRUE, COMPOUND_STRING("Web & PC Version")};
+static const struct CreditsEntry sCreditsEntry_PwMultiplatform    = { 0, FALSE, COMPOUND_STRING("pokeemerald-multiplatform")};
+static const struct CreditsEntry sCreditsEntry_PwGradenGnostic    = { 0, FALSE, COMPOUND_STRING("gradenGnostic")};
+static const struct CreditsEntry sCreditsEntry_PwPretPortable     = { 0, FALSE, COMPOUND_STRING("and the pret community")};
 static const struct CreditsEntry sCreditsEntry_PkmnEmeraldVersion               = { 7,  TRUE, sCreditsText_PkmnEmeraldVersion};
 static const struct CreditsEntry sCreditsEntry_Credits                          = {11,  TRUE, sCreditsText_Credits};
 static const struct CreditsEntry sCreditsEntry_ExecutiveDirector                = { 8,  TRUE, sCreditsText_ExecutiveDirector};
@@ -384,6 +451,104 @@ static const struct CreditsEntry sCreditsEntry_ErikJohnson                      
 #define _ &sCreditsEntry_EmptyString
 static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][ENTRIES_PER_PAGE] =
 {
+    [PAGE_PW_TITLE] = {
+        _,
+        &sCreditsEntry_PwTitle,
+        &sCreditsEntry_PwBuiltFrom,
+        &sCreditsEntry_PwCommunity,
+        _,
+    },
+    [PAGE_PW_ENGINE] = {
+        _,
+        &sCreditsEntry_PwEngine,
+        &sCreditsEntry_PwExpansion,
+        &sCreditsEntry_PwRHH,
+        &sCreditsEntry_PwExpansionContrib,
+    },
+    [PAGE_PW_DECOMPS] = {
+        _,
+        &sCreditsEntry_PwDecomps,
+        &sCreditsEntry_PwPokeemerald,
+        &sCreditsEntry_PwPret,
+        _,
+    },
+    [PAGE_PW_KANTO] = {
+        _,
+        &sCreditsEntry_PwKanto,
+        &sCreditsEntry_PwFromFirered,
+        _,
+        _,
+    },
+    [PAGE_PW_JOHTO_1] = {
+        &sCreditsEntry_PwJohto,
+        &sCreditsEntry_PwLilDill,
+        &sCreditsEntry_PwTixoRebel,
+        &sCreditsEntry_PwInfiniteBacon42,
+        &sCreditsEntry_PwExclsior,
+    },
+    [PAGE_PW_JOHTO_2] = {
+        _,
+        &sCreditsEntry_PwJohto,
+        &sCreditsEntry_PwPhantonomy,
+        &sCreditsEntry_PwDaniRainbow,
+        _,
+    },
+    [PAGE_PW_HNS_BASE] = {
+        &sCreditsEntry_PwHnsBase,
+        &sCreditsEntry_PwModernEmerald,
+        &sCreditsEntry_PwHnsSurf,
+        &sCreditsEntry_PwSlawter666,
+        &sCreditsEntry_PwWally217,
+    },
+    [PAGE_PW_HNS_SPRITES] = {
+        &sCreditsEntry_PwHnsSprites,
+        &sCreditsEntry_PwCesareCBass,
+        &sCreditsEntry_PwAveonTrainer,
+        &sCreditsEntry_PwPurpleZaffre,
+        &sCreditsEntry_PwBatimaTheBat,
+    },
+    [PAGE_PW_HNS_TILESETS] = {
+        &sCreditsEntry_PwHnsTilesets,
+        &sCreditsEntry_PwKertra,
+        &sCreditsEntry_PwEkat99,
+        &sCreditsEntry_PwDeadHeroAlistair,
+        &sCreditsEntry_PwJohtoRedrawn,
+    },
+    [PAGE_PW_HNS_MAPS] = {
+        _,
+        &sCreditsEntry_PwHnsMaps,
+        &sCreditsEntry_PwKertra,
+        &sCreditsEntry_PwBlackfragrant,
+        &sCreditsEntry_PwSkidMarc25,
+    },
+    [PAGE_PW_HNS_GAMEPLAY] = {
+        _,
+        &sCreditsEntry_PwHnsGameplay,
+        &sCreditsEntry_PwCrystalLegacy,
+        &sCreditsEntry_PwTheSmithPlays,
+        _,
+    },
+    [PAGE_PW_HNS_MUSIC] = {
+        _,
+        &sCreditsEntry_PwHgssMusic,
+        &sCreditsEntry_PwGameFreak,
+        &sCreditsEntry_PwHgssArranged,
+        _,
+    },
+    [PAGE_PW_SINNOH] = {
+        _,
+        &sCreditsEntry_PwSinnoh,
+        &sCreditsEntry_PwSinnohProject,
+        &sCreditsEntry_PwLiderMorti00,
+        _,
+    },
+    [PAGE_PW_WEB] = {
+        _,
+        &sCreditsEntry_PwWeb,
+        &sCreditsEntry_PwMultiplatform,
+        &sCreditsEntry_PwGradenGnostic,
+        &sCreditsEntry_PwPretPortable,
+    },
     [PAGE_TITLE] = {
         _,
         &sCreditsEntry_PkmnEmeraldVersion,

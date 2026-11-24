@@ -61,6 +61,12 @@ What it writes (all generated: edit this script, not the output):
   data/scripts/hns_maps.inc                 includes every *_Hns scripts.inc
   data/scripts/hns_missing.inc              stub labels for scripts HnS shares from
                                             files we don't import (TODO list)
+  data/scripts/hns_new_game.inc             HnS's new-game flags/vars/berry trees (every new game)
+                                            and items (Johto start): gen_new_game()
+  graphics/object_events/pics/people/{ethan,kris}_hns/, graphics/object_events/palettes/{ethan,kris}_hns*.pal,
+  graphics/trainers/{front_pics,back_pics,palettes}/{ethan,kris}_hns.*, graphics/birch_speech/oak_hns.png
+                                            HnS's player characters (Ethan, Kris) and intro Oak:
+                                            copy_player_designs()
   tools/pokemon_world/hns_import_state.json what was added to the shared JSON files,
                                             so a re-run can take it out first
 Our own changes to Heart & Soul's scripts (Kanto's time skip at the first Hall of Fame, the later
@@ -908,6 +914,7 @@ class Importer:
             inc.append(f'\t.include "data/maps/{m}_Hns/scripts.inc"\n')
         inc.append('\t.include "data/scripts/hns_shared.inc"\n')
         inc.append('\t.include "data/scripts/hns_missing.inc"\n')
+        inc.append('\t.include "data/scripts/hns_new_game.inc"\n')
         wr("data/scripts/hns_maps.inc", "".join(inc))
 
     def hns_shared_blocks(self):
@@ -1602,6 +1609,8 @@ class Importer:
         self.find_unknown_constants()
         self.gfx_of = hns_sprites.gen_object_sprites(self.H, sorted(self.hns_gfx_used), self.state, self.new_state, note)
         self.gen_compat()
+        gen_new_game(self.H, self.rename, note)
+        copy_player_designs(self.H)
         json.dump(self.new_state, open(STATE, "w"), indent=1)
         open(STATE, "a").write("\n")
         print(f"Heart & Soul import: {len(self.maps)} maps, {len(self.layout_const)} layouts, "
@@ -1896,6 +1905,84 @@ def pw_script_patches(outs):
         "VermilionPort_Text_AskSeagallop_Hns:\n"
         "\t.string \"Would you like to take a SEAGALLOP\\n\"\n"
         "\t.string \"ferry to the SEVII ISLANDS?$\"\n")
+
+    # 5. Kurt's balls from berries: Heart & Soul gives the 5 balls, takes the 5 berries, then checks
+    #    VAR_RESULT, which removeitem has overwritten by then, so a full bag lost the berries. Check
+    #    the giveitem first, and only take the berries once the balls are in the bag.
+    m = "AzaleaTown_KurtsHouse"
+    outs[m], n = re.subn(r"(\tgiveitem ITEM_\w+_BALL, 5\n)(\tremoveitem ITEM_\w+_BERRY, 5\n)"
+                         r"(\tgoto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull\n)",
+                         r"\1\3\2", outs[m])
+    if n != 7:
+        sys.exit(f"pw_script_patches: {m}: expected 7 berry-to-ball trades, found {n}")
+
+
+def gen_new_game(H, rename, note):
+    """Heart & Soul's new-game set-up (its EventScript_ResetAllMapFlags and EventScript_ResetAllBerries in
+    data/scripts/new_game.inc), for the Johto and later-Kanto part of the world:
+      EventScript_ResetAllMapFlags_Hns   its hide flags, flag/var resets and Johto berry trees; run at every
+                                         new game (src/new_game.c), whatever the starting region
+      EventScript_NewGameItems_Hns       the items its new game gives; only when the game starts in Johto
+    Only flags/vars/berry trees of Johto's own range are kept (Hoenn's and engine ones are ours)."""
+    src = rd(f"{H}/data/scripts/new_game.inc").split("\n")
+
+    def block(label):
+        i = next(k for k, l in enumerate(src) if l.startswith(label + "::"))
+        j = next(k for k in range(i + 1, len(src)) if src[k].strip() in ("end", "return"))
+        return src[i + 1:j]
+    johto = set(re.findall(r"#define\s+(\w+)", rd("include/constants/flags_hns.h") + rd("include/constants/vars_hns.h")))
+    trees = set(re.findall(r"#define\s+(BERRY_TREE_\w+)", rd("include/constants/hns_compat.h")))
+    flags, items, dropped = [], [], []
+    for l in block("EventScript_ResetAllMapFlags") + block("EventScript_ResetAllBerries"):
+        s = re.sub(r"\s*@.*$", "", l).strip()
+        mm = re.match(r"(setflag|clearflag|setvar|setberrytree|additem)\s+(\w+)(.*)$", s)
+        if not mm:
+            if s and not s.startswith("call EventScript_ResetAllBerries"):
+                dropped.append(s)
+            continue
+        cmd, name, rest = mm.groups()
+        new = rename.get(name, name)
+        if cmd == "additem":
+            items.append(f"\tadditem {name}{rest}")
+        elif cmd == "setberrytree" and name in trees:
+            # our setberrytree takes a BERRY_ID_* (Heart & Soul's took ITEM_TO_BERRY(ITEM_*_BERRY))
+            rest = re.sub(r"ITEM_TO_BERRY\(\s*ITEM_(\w+)_BERRY\s*\)", r"BERRY_ID_\1", rest)
+            flags.append(f"\t{cmd} {name}{rest}")
+        elif cmd != "setberrytree" and new in johto:
+            flags.append(f"\t{cmd} {new}{rest}")
+        else:
+            dropped.append(s)
+    for s in dropped:
+        note("Heart & Soul new-game lines left out (not Johto's; data/scripts/hns_new_game.inc)", s)
+    wr("data/scripts/hns_new_game.inc", GEN_ASM +
+       "@ Heart & Soul's new-game set-up (its data/scripts/new_game.inc), Johto's and the later Kanto's part.\n\n"
+       "@ Run at every new game (src/new_game.c), so Johto is set up whichever region the game starts in.\n"
+       "EventScript_ResetAllMapFlags_Hns::\n" + "\n".join(flags) + "\n\tend\n\n"
+       "@ Only when the game starts in Johto (src/new_game.c).\n"
+       "EventScript_NewGameItems_Hns::\n" + "\n".join(items) + "\n\tend\n")
+
+
+# Heart & Soul's player characters (it redrew Brendan and May as Ethan (Gold) and Kris) and its
+# intro's Prof. Oak: copied under our own names for the Ethan/Kris designs (src/pokemon_world.c)
+# and the Johto intro (src/main_menu.c). Unchanged Emerald files (decorating, underwater, watering)
+# come along so each design has a full set.
+PLAYER_DESIGNS = {"ethan": "brendan", "kris": "may"}
+
+
+def copy_player_designs(H):
+    for ours, hns in PLAYER_DESIGNS.items():
+        d = f"graphics/object_events/pics/people/{ours}_hns"
+        os.makedirs(d, exist_ok=True)
+        for f in sorted(os.listdir(f"{H}/graphics/object_events/pics/people/{hns}")):
+            if f.endswith(".png"):
+                shutil.copyfile(f"{H}/graphics/object_events/pics/people/{hns}/{f}", f"{d}/{f}")
+        for suf in ("", "_reflection"):
+            shutil.copyfile(f"{H}/graphics/object_events/palettes/{hns}{suf}.pal",
+                            f"graphics/object_events/palettes/{ours}_hns{suf}.pal")
+        shutil.copyfile(f"{H}/graphics/trainers/front_pics/{hns}.png", f"graphics/trainers/front_pics/{ours}_hns.png")
+        shutil.copyfile(f"{H}/graphics/trainers/back_pics/{hns}.png", f"graphics/trainers/back_pics/{ours}_hns.png")
+        shutil.copyfile(f"{H}/graphics/trainers/palettes/{hns}.pal", f"graphics/trainers/palettes/{ours}_hns.pal")
+    shutil.copyfile(f"{H}/graphics/birch_speech/birch.png", "graphics/birch_speech/oak_hns.png")
 
 
 if __name__ == "__main__":

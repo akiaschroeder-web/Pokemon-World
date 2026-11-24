@@ -144,8 +144,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Love::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_LOVE_BALL, 5
-	removeitem ITEM_PECHA_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_PECHA_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH
@@ -168,8 +168,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Lure::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_LURE_BALL, 5
-	removeitem ITEM_RAWST_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_RAWST_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH
@@ -192,8 +192,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Friend::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_FRIEND_BALL, 5
-	removeitem ITEM_CHERI_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_CHERI_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH
@@ -216,8 +216,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Heavy::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_HEAVY_BALL, 5
-	removeitem ITEM_ORAN_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_ORAN_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH
@@ -240,8 +240,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Moon::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_MOON_BALL, 5
-	removeitem ITEM_CHESTO_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_CHESTO_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH
@@ -264,8 +264,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Fast::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_FAST_BALL, 5
-	removeitem ITEM_ASPEAR_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_ASPEAR_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH
@@ -288,8 +288,8 @@ AzaleaTown_KurtsHouse_Hns_EventScript_Kurt_Level::
 	msgbox KurtsHouse_Text_KurtJustFinishedYourBall_Hns, MSGBOX_DEFAULT
 	waitmessage
 	giveitem ITEM_LEVEL_BALL, 5
-	removeitem ITEM_PERSIM_BERRY, 5
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	removeitem ITEM_PERSIM_BERRY, 5
 	msgbox KurtsHouse_Text_KurtTurnedOutGreat_Hns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_HNS_AZALEA_TOWN_KURT, DIR_NORTH

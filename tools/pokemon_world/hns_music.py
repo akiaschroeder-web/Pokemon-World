@@ -49,6 +49,8 @@ ENGINE_SONGS = [
     "MUS_HG_POKEGEAR_REGISTERED",
     # radio
     "MUS_HG_RADIO_UNOWN", "MUS_HG_RADIO_POKE_FLUTE", "MUS_HG_RADIO_ROCKET", "MUS_HG_RADIO_OAK",
+    # Prof. Oak's intro when the game starts in Johto (main_menu.c)
+    "MUS_HG_NEW_GAME",
 ]
 
 

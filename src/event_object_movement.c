@@ -511,6 +511,10 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_PwLucasReflection,     OBJ_EVENT_PAL_TAG_PW_LUCAS_REFLECTION},
     {gObjectEventPal_PwDawn,                OBJ_EVENT_PAL_TAG_PW_DAWN},
     {gObjectEventPal_PwDawnReflection,      OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION},
+    {gObjectEventPal_PwEthan,               OBJ_EVENT_PAL_TAG_PW_ETHAN},
+    {gObjectEventPal_PwEthanReflection,     OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION},
+    {gObjectEventPal_PwKris,                OBJ_EVENT_PAL_TAG_PW_KRIS},
+    {gObjectEventPal_PwKrisReflection,      OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
     {gObjectEventPal_PlayerUnderwater,      OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER},
     {gObjectEventPal_QuintyPlump,           OBJ_EVENT_PAL_TAG_QUINTY_PLUMP},
@@ -736,6 +740,20 @@ static const u16 sReflectionPaletteTags_PwDawn[] = {
     OBJ_EVENT_PAL_TAG_PW_DAWN_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_PwEthan[] = {
+    OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_PwKris[] = {
+    OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
@@ -746,6 +764,8 @@ static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
 static const struct PairedPalettes sPlayerReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PW_LUCAS,          sReflectionPaletteTags_PwLucas},
     {OBJ_EVENT_PAL_TAG_PW_DAWN,           sReflectionPaletteTags_PwDawn},
+    {OBJ_EVENT_PAL_TAG_PW_ETHAN,          sReflectionPaletteTags_PwEthan},
+    {OBJ_EVENT_PAL_TAG_PW_KRIS,           sReflectionPaletteTags_PwKris},
     {OBJ_EVENT_PAL_TAG_BRENDAN,           sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,               sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER, sReflectionPaletteTags_PlayerUnderwater},
@@ -832,6 +852,8 @@ static const u16 sReflectionPaletteTags_RedLeaf[] = {
 static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PW_LUCAS,          sReflectionPaletteTags_PwLucas},
     {OBJ_EVENT_PAL_TAG_PW_DAWN,           sReflectionPaletteTags_PwDawn},
+    {OBJ_EVENT_PAL_TAG_PW_ETHAN,          sReflectionPaletteTags_PwEthan},
+    {OBJ_EVENT_PAL_TAG_PW_KRIS,           sReflectionPaletteTags_PwKris},
     {OBJ_EVENT_PAL_TAG_BRENDAN,          sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,              sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_QUINTY_PLUMP,     sReflectionPaletteTags_QuintyPlump},
