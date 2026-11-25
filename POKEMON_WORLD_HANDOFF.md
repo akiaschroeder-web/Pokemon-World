@@ -48,7 +48,8 @@ The Heart & Soul and Sinnoh developers gave permission to use their work as long
 - `PORTABLE` define: the GBA hardware (IO regs, palette, VRAM, OAM, flash) becomes arrays in `src/platform/bios.c`. DMA goes through `PlatformDmaSet` (`src/platform/dma.c`). The renderer is `src/platform/gba_fast_draw.c`. Browser glue is `src/platform/web.c`. Page side: `platform/web/shell.html`, `platform/web/pokeworld.js`, with touch buttons, keyboard, localStorage saves and save export/import that also takes emulator .sav files.
 - Data `.s` files are assembled with host `as --32` and converted by `tools/web/elf2wasm.py`. Function signatures come from `tools/web/wasm_functypes.py`, and cross-file constants from `--abs data_constants.txt`.
 - Asyncify: `VBlankIntrWait` draws the frame, runs the V-blank interrupt, then yields to the browser.
-- Sound is silent stubs for now (`src/platform/gba_asm_stubs.c`).
+- Sound: `src/m4a_1.s` is replaced by C. `src/platform/m4a_engine.c` is the sequencer and `SoundMain`; `sound_mixer.c` mixes the PCM channels (envelopes, reverb, reversed and compressed cries) in float at 42048 Hz, 704 samples per frame; `cgb_audio.c` plays the Game Boy channels from the `REG_NRxx` registers that `CgbSound` (in `src/m4a.c`, unchanged) writes. `VBlankIntrWait` hands each frame's samples to `Module.pwQueueAudio` in `platform/web/pokeworld.js`, which queues about 70 ms and plays it through an AudioWorklet (or a ScriptProcessorNode). The AudioContext starts on the first touch or key press. In turbo mode sound is dropped.
+  - Testing: `AUDIOLOG=1` makes the page log loudness, active channels and cries once a second; the drive.js step `["audio", "name", frames]` writes `name.wav`.
 - CI: `.github/workflows/build-web.yml` runs when the commit message contains `[web]` or from manual dispatch. It builds (with a build cache), runs a smoke test, publishes to Pages, and force-pushes screenshots, `build-errors.txt` and the built site to the `web-screenshots` branch.
 - `.github/workflows/build-rom.yml` still builds the GBA ROM and reports its size.
 
@@ -107,7 +108,7 @@ Working in the browser: boot, intro, title, main menu, the PW character select, 
 ## Next
 1. Fix the naming-screen crash. Then reach the truck and Littleroot, test walking, and test saving and loading.
 2. Test the Sinnoh start (Rowan's intro) the same way.
-3. Sound: port pokeemerald-multiplatform's music_player.c, sound_mixer.c and cgb_audio.c (MIT, credited), adapted to expansion's m4a structs and compressed cries. Output through Web Audio.
+3. Sound: done (see above). Still to check by ear on an iPhone: levels, Game Boy channel accuracy, latency.
 4. A PC (desktop) build of the same portable code.
 5. Game work:
    - ~~the Johto port from Heart & Soul~~ (done, Johto stages 1–7; see the known gaps below)

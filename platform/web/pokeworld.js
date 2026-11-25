@@ -179,6 +179,155 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     r.readAsArrayBuffer(file);
   };
 
+  // Sound. Each V-blank the game hands over one frame of sound (stereo float samples at
+  // 42048 Hz, src/platform/sound_mixer.c). It goes into a small queue that a Web Audio node
+  // (an AudioWorklet, or a ScriptProcessorNode where there is none) plays from, resampled to
+  // the device's rate. The queue absorbs the uneven timing of frames; its length is kept near
+  // the target by playing very slightly faster or slower. Browsers (Safari above all) only
+  // allow sound to start from a touch or key press, so the AudioContext is made then.
+  // Without Web Audio the game just runs silently. In turbo mode sound is dropped.
+  // The same queue code runs inside the worklet, so it must not use anything from outside.
+  function makeAudioQueue(srcRate, dstRate, targetSec) {
+    var N = 1 << 15, buf = new Float32Array(N * 2); // 0.78 s of stereo samples
+    var written = 0, read = 0, playing = false, target = Math.round(targetSec * srcRate);
+    var q = { underruns: 0, dropped: 0 };
+    q.push = function (s) { // s: interleaved stereo
+      var n = s.length >> 1;
+      if (written + n - read > N - 4) { q.dropped++; read = written + n - target; } // far behind: skip ahead
+      for (var i = 0; i < n; i++) {
+        var j = ((written + i) & (N - 1)) * 2;
+        buf[j] = s[i * 2]; buf[j + 1] = s[i * 2 + 1];
+      }
+      written += n;
+    };
+    q.buffered = function () { return written - read; };
+    q.pull = function (L, R) {
+      var n = L.length, i = 0, avail = written - read;
+      if (!playing && avail >= target) playing = true;
+      if (playing) {
+        // drift correction: up to ±0.3% faster or slower
+        var adj = (avail - target) / target * 0.003;
+        var step = srcRate / dstRate * (1 + Math.max(-0.003, Math.min(0.003, adj)));
+        for (; i < n; i++) {
+          if (written - read < 2) { playing = false; q.underruns++; break; }
+          var k = Math.floor(read), f = read - k, a = (k & (N - 1)) * 2, b = ((k + 1) & (N - 1)) * 2;
+          L[i] = buf[a] + (buf[b] - buf[a]) * f;
+          R[i] = buf[a + 1] + (buf[b + 1] - buf[a + 1]) * f;
+          read += step;
+        }
+      }
+      for (; i < n; i++) { L[i] = 0; R[i] = 0; }
+    };
+    return q;
+  }
+
+  var AUDIO_TARGET_SEC = 0.07; // ~4 frames of sound queued
+  var audio = { ctx: null, send: null, mode: 'none', failed: false, info: null, starting: false };
+  var audioStats = { frames: 0, sumSq: 0, peak: 0, nonZero: 0, cryFrames: 0, cryRms: 0, ds: 0, cgb: 0 };
+
+  function setUpAudioOutput(ctx) {
+    var srcRate = 42048;
+    function useScriptProcessor() {
+      var q = makeAudioQueue(srcRate, ctx.sampleRate, AUDIO_TARGET_SEC + 4096 / ctx.sampleRate);
+      var sp = ctx.createScriptProcessor(2048, 1, 2); // (older WebKit wants an input channel)
+      sp.onaudioprocess = function (e) { q.pull(e.outputBuffer.getChannelData(0), e.outputBuffer.getChannelData(1)); };
+      sp.connect(ctx.destination);
+      audio.sp = sp; // keep it from being collected
+      audio.send = function (s) { q.push(s); };
+      audio.info = function () { return { buffered: q.buffered(), underruns: q.underruns, dropped: q.dropped }; };
+      audio.mode = 'scriptprocessor';
+    }
+    if (!ctx.audioWorklet || typeof AudioWorkletNode === 'undefined' || !window.Blob || !window.URL) {
+      useScriptProcessor();
+      return;
+    }
+    var src = makeAudioQueue.toString() +
+      'class PwAudio extends AudioWorkletProcessor {' +
+      ' constructor(o) { super(); var p = o.processorOptions, self = this;' +
+      '  this.q = makeAudioQueue(p.srcRate, sampleRate, p.target); this.n = 0;' +
+      '  this.port.onmessage = function (e) { self.q.push(e.data); }; }' +
+      ' process(inputs, outputs) { var o = outputs[0]; this.q.pull(o[0], o[1] || o[0]);' +
+      '  if (++this.n % 375 === 0) this.port.postMessage({ buffered: this.q.buffered(), underruns: this.q.underruns, dropped: this.q.dropped });' +
+      '  return true; } }' +
+      'registerProcessor("pw-audio", PwAudio);';
+    var url = URL.createObjectURL(new Blob([src], { type: 'application/javascript' }));
+    audio.mode = 'loading';
+    ctx.audioWorklet.addModule(url).then(function () {
+      var node = new AudioWorkletNode(ctx, 'pw-audio', {
+        numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2],
+        processorOptions: { srcRate: srcRate, target: AUDIO_TARGET_SEC }
+      });
+      var last = { buffered: 0, underruns: 0, dropped: 0 };
+      node.port.onmessage = function (e) { last = e.data; };
+      node.connect(ctx.destination);
+      audio.node = node;
+      audio.send = function (s) { node.port.postMessage(s, [s.buffer]); };
+      audio.info = function () { return last; };
+      audio.mode = 'worklet';
+    }).catch(function (e) {
+      console.warn('AudioWorklet unavailable, using ScriptProcessorNode', e);
+      try { useScriptProcessor(); } catch (e2) { audio.failed = true; audio.mode = 'none'; }
+    });
+  }
+
+  function startAudio() {
+    if (audio.failed) return;
+    try {
+      if (!audio.ctx) {
+        var AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) { audio.failed = true; return; }
+        // iPhone: play like a music app, so the ring/silent switch doesn't mute the game (Safari 17+)
+        try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
+        try { audio.ctx = new AC({ latencyHint: 'interactive' }); } catch (e) { audio.ctx = new AC(); }
+        setUpAudioOutput(audio.ctx);
+        // older iOS: playing something from the touch unlocks sound
+        var b = audio.ctx.createBufferSource();
+        b.buffer = audio.ctx.createBuffer(1, 1, 22050);
+        b.connect(audio.ctx.destination);
+        b.start(0);
+      }
+      if (audio.ctx.state !== 'running' && audio.ctx.resume) audio.ctx.resume().catch(function () {});
+    } catch (e) {
+      console.warn('No sound', e);
+      audio.failed = true;
+    }
+  }
+  ['touchstart', 'touchend', 'mousedown', 'keydown', 'click'].forEach(function (t) {
+    window.addEventListener(t, startAudio, { capture: true, passive: true });
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden && audio.ctx && audio.ctx.state !== 'running') audio.ctx.resume().catch(function () {});
+  });
+
+  // Called by the game every V-blank (src/platform/web.c).
+  Module.pwQueueAudio = function (ptr, count, rate) {
+    var s = HEAPF32.subarray(ptr >> 2, (ptr >> 2) + count * 2);
+    if (Module.pwAudioLog || Module.pwAudioCapture) {
+      // testing aid (tools/web/drive.js): loudness once a second, and capture of the samples
+      var sumSq = 0, peak = 0, nz = 0;
+      for (var i = 0; i < s.length; i++) { var v = s[i]; sumSq += v * v; if (v !== 0) nz++; if (v > peak) peak = v; else if (-v > peak) peak = -v; }
+      audioStats.frames++; audioStats.sumSq += sumSq; audioStats.nonZero += nz; if (peak > audioStats.peak) audioStats.peak = peak;
+      var d = Module._Web_GetAudio() >> 2; // what was playing (src/platform/web.c)
+      if (HEAPU32[d + 5] > 0) { audioStats.cryFrames++; audioStats.cryRms = Math.max(audioStats.cryRms, HEAPU32[d + 5] / 1e6); }
+      audioStats.ds = Math.max(audioStats.ds, HEAPU32[d + 6]); audioStats.cgb = Math.max(audioStats.cgb, HEAPU32[d + 7]);
+      if (Module.pwAudioCapture && Module.pwAudioCapture.length < 3600) Module.pwAudioCapture.push(new Float32Array(s));
+      if (Module.pwAudioLog && audioStats.frames >= 60) {
+        var rms = Math.sqrt(audioStats.sumSq / (audioStats.frames * count * 2));
+        console.log('[audio] frame ' + Module.pwFrameCount + ' rms ' + rms.toFixed(5) + ' peak ' + audioStats.peak.toFixed(4) +
+                    ' nonzero ' + audioStats.nonZero + ' chans ' + audioStats.ds + '+' + audioStats.cgb + 'gb' +
+                    ' cry ' + audioStats.cryFrames + 'f/' + audioStats.cryRms.toFixed(5) +
+                    ' out ' + audio.mode + '/' + (audio.ctx ? audio.ctx.state : 'none'));
+        audioStats = { frames: 0, sumSq: 0, peak: 0, nonZero: 0, cryFrames: 0, cryRms: 0, ds: 0, cgb: 0 };
+      }
+    }
+    if (Module.pwTurbo || !audio.send || !audio.ctx || audio.ctx.state !== 'running') return;
+    audio.send(new Float32Array(s));
+  };
+  Module.pwAudioInfo = function () {
+    return { mode: audio.mode, state: audio.ctx ? audio.ctx.state : 'none', sampleRate: audio.ctx ? audio.ctx.sampleRate : 0,
+             queue: audio.info ? audio.info() : null };
+  };
+
   Module.print = function (t) { console.log(t); };
   Module.printErr = function (t) { console.warn(t); };
 })();
