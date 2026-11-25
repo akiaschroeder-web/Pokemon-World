@@ -2319,6 +2319,11 @@ void ResetRecvBuffer(void)
 
 bool32 ShouldCheckForUnionRoom(void)
 {
+#ifdef PLATFORM_WEB
+    // Pokémon World (web build): there is no wireless adapter in a browser, and the stubbed
+    // wireless link never answers, so the Union Room check on entering a Pokémon Center hung the game.
+    return FALSE;
+#endif
     if (OW_UNION_DISABLE_CHECK)
         return FALSE;
 
