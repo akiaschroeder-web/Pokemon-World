@@ -723,13 +723,16 @@ const u16 gTrainerPalette_SinnohCommanderSaturn[] = INCGFX_U16("graphics/trainer
 const u32 gTrainerFrontPic_SinnohGalacticBossCyrus[] = INCGFX_U32("graphics/trainers/front_pics/sinnoh/galactic_boss_cyrus.png", ".4bpp.smol");
 const u16 gTrainerPalette_SinnohGalacticBossCyrus[] = INCGFX_U16("graphics/trainers/front_pics/sinnoh/galactic_boss_cyrus.png", ".gbapal");
 
-// Pokémon World: Ethan and Kris, Heart & Soul's player characters (copied by tools/pokemon_world/import_hns.py)
+// Pokémon World: Ethan and Kris, Heart & Soul's player characters (copied by tools/pokemon_world/import_hns.py).
+// Their back pics have their own colours, in a different order from the front pics' palettes.
 const u32 gTrainerFrontPic_PwEthan[] = INCGFX_U32("graphics/trainers/front_pics/ethan_hns.png", ".4bpp.smol");
 const u16 gTrainerPalette_PwEthan[] = INCGFX_U16("graphics/trainers/palettes/ethan_hns.pal", ".gbapal");
 const u8 gTrainerBackPic_PwEthan[] = INCGFX_U8("graphics/trainers/back_pics/ethan_hns.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwEthan[] = INCGFX_U16("graphics/trainers/back_pics/ethan_hns.png", ".gbapal");
 const u32 gTrainerFrontPic_PwKris[] = INCGFX_U32("graphics/trainers/front_pics/kris_hns.png", ".4bpp.smol");
 const u16 gTrainerPalette_PwKris[] = INCGFX_U16("graphics/trainers/palettes/kris_hns.pal", ".gbapal");
 const u8 gTrainerBackPic_PwKris[] = INCGFX_U8("graphics/trainers/back_pics/kris_hns.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwKris[] = INCGFX_U16("graphics/trainers/back_pics/kris_hns.png", ".gbapal");
 
 #include "trainers_hns_gfx.h" // Pokémon World: Heart & Soul's front pics (generated)
 
@@ -1646,12 +1649,12 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_PW_ETHAN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwEthan, gTrainerPalette_PwEthan),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwEthan, gTrainerPalette_PwEthan, sBackAnims_Hoenn),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwEthan, gTrainerBackPicPalette_PwEthan, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_PW_KRIS] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwKris, gTrainerPalette_PwKris),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwKris, gTrainerPalette_PwKris, sBackAnims_Hoenn),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwKris, gTrainerBackPicPalette_PwKris, sBackAnims_Hoenn),
     },
 #include "trainers_hns_table.h" // Pokémon World: Heart & Soul's front pics (generated)
 };

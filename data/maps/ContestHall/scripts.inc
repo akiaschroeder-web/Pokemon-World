@@ -410,26 +410,31 @@ ContestHall_EventScript_SetExitWarp::
 	return
 
 ContestHall_EventScript_SetExitWarpNormalContest::
+	goto_if_eq VAR_PW_CONTEST_LOBBY, 1, ContestHall_EventScript_PwExitToHearthome14
 	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpSuperContest::
+	goto_if_eq VAR_PW_CONTEST_LOBBY, 1, ContestHall_EventScript_PwExitToHearthome14
 	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpHyperContest::
+	goto_if_eq VAR_PW_CONTEST_LOBBY, 1, ContestHall_EventScript_PwExitToHearthome14
 	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpMasterContest::
+	goto_if_eq VAR_PW_CONTEST_LOBBY, 1, ContestHall_EventScript_PwExitToHearthome14
 	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 14, 4
 	waitstate
 	end
 
 ContestHall_EventScript_SetExitWarpLinkContest::
+	goto_if_eq VAR_PW_CONTEST_LOBBY, 1, ContestHall_EventScript_PwExitToHearthome15
 	warp MAP_LILYCOVE_CITY_CONTEST_LOBBY, 15, 4
 	waitstate
 	end
@@ -448,3 +453,14 @@ LilycoveCity_ContestLobby_EventScript_SetPlayerGfxMay::
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
 	return
 
+@ Pokémon World: back to Hearthome's lobby when the contest was entered there
+ContestHall_EventScript_PwExitToHearthome14::
+	warp MAP_HEARTHOME_CITY_CONTEST_LOBBY, 14, 4
+	waitstate
+	end
+
+@ Pokémon World: back to Hearthome's lobby when the contest was entered there
+ContestHall_EventScript_PwExitToHearthome15::
+	warp MAP_HEARTHOME_CITY_CONTEST_LOBBY, 15, 4
+	waitstate
+	end

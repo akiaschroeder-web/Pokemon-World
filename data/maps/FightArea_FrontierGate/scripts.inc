@@ -112,3 +112,37 @@ FightArea_FrontierGate_EventScript_PtNpc6::
 	msgbox FightArea_FrontierGate_Text_PtNpc6_0, MSGBOX_DEFAULT
 	release
 	end
+
+@ Pokémon World: the Battle Frontier is Hoenn's, across the sea, so the gate's north exit is the ferry dock.
+@ The Frontier's S.S. Tidal attendant takes the player back (data/maps/BattleFrontier_OutsideWest).
+FightArea_FrontierGate_EventScript_PwFerry::
+	lockall
+	msgbox FightArea_FrontierGate_Text_PwFerryAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FightArea_FrontierGate_EventScript_PwFerryNo
+	msgbox FightArea_FrontierGate_Text_PwFerryBoard, MSGBOX_DEFAULT
+	closemessage
+	playse SE_EXIT
+	fadescreen FADE_TO_BLACK
+	warp MAP_BATTLE_FRONTIER_OUTSIDE_WEST, 19, 67
+	waitstate
+	releaseall
+	end
+
+FightArea_FrontierGate_EventScript_PwFerryNo::
+	closemessage
+	applymovement LOCALID_PLAYER, FightArea_FrontierGate_Movement_PwStepBack
+	waitmovement 0
+	releaseall
+	end
+
+FightArea_FrontierGate_Movement_PwStepBack:
+	walk_down
+	step_end
+
+FightArea_FrontierGate_Text_PwFerryAsk:
+	.string "The ferry to the Battle Frontier\n"
+	.string "in Hoenn leaves from here.\p"
+	.string "Would you like to board?$"
+
+FightArea_FrontierGate_Text_PwFerryBoard:
+	.string "Please watch your step!$"

@@ -279,6 +279,7 @@
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
+#define VAR_PW_CONTEST_LOBBY VAR_UNUSED_0x40FE // Pokémon World: 1 when the contest lobby last entered is Hearthome's, 0 for Lilycove's
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 
 #define VARS_END                                         0x40FF

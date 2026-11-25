@@ -356,7 +356,8 @@
     "SandgemTown_House1",
     "SandgemTown_PokemonCenter_1F",
     "SandgemTown_PokemonCenter_2F",
-    "SandgemTown_Mart"
+    "SandgemTown_Mart",
+    "SandgemTown_PokemonLab"
   ],
   "gMapGroup_IndoorJubilife": [
     "JubilifeCity_PokemonSchool",
@@ -440,7 +441,9 @@
     "HearthomeCity_EastGate",
     "HearthomeCity_Mart",
     "HearthomeCity_Gym",
-    "HearthomeCity_PokemonFanClub"
+    "HearthomeCity_PokemonFanClub",
+    "HearthomeCity_ContestLobby",
+    "HearthomeCity_ContestHall"
   ],
   "gMapGroup_IndoorSolaceon": [
     "SolaceonTown_House1",

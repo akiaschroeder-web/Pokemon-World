@@ -8,9 +8,10 @@ BattleFrontier_OutsideWest_OnTransition:
 	end
 
 BattleFrontier_OutsideWest_EventScript_FerryAttendant::
-	goto BattleFrontier_OutsideWest_EventScript_SinnohFerry
 	lock
 	faceplayer
+	goto_if_set FLAG_SINNOH_VISITED_FIGHT_AREA, BattleFrontier_OutsideWest_EventScript_PwOfferFightArea
+BattleFrontier_OutsideWest_EventScript_PwHoennFerry::
 	msgbox BattleFrontier_OutsideWest_Text_MayISeeYourTicket, MSGBOX_DEFAULT
 	checkitem ITEM_SS_TICKET
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_OutsideWest_EventScript_NoSSTicket
@@ -517,11 +518,11 @@ BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "to find the delightful creature!$"
 
 
-BattleFrontier_OutsideWest_EventScript_SinnohFerry::
-	lock
-	faceplayer
-	msgbox BattleFrontier_OutsideWest_Text_SinnohBackToFightArea, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_SinnohFerryNo
+@ Pokémon World: Sinnoh's Fight Area is a ferry ride away (its Frontier gate has the other end, data/maps/FightArea_FrontierGate).
+@ Offered once the player has been to the Fight Area; no S.S. Ticket needed, so a Sinnoh player can always get home.
+BattleFrontier_OutsideWest_EventScript_PwOfferFightArea::
+	msgbox BattleFrontier_OutsideWest_Text_PwSailToFightArea, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_PwHoennFerry
 	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
 	call BattleFrontier_OutsideWest_EventScript_BoardFerry
 	warp MAP_FIGHT_AREA_FRONTIER_GATE, 4, 2
@@ -529,10 +530,6 @@ BattleFrontier_OutsideWest_EventScript_SinnohFerry::
 	release
 	end
 
-BattleFrontier_OutsideWest_EventScript_SinnohFerryNo::
-	release
-	end
-
-BattleFrontier_OutsideWest_Text_SinnohBackToFightArea:
-	.string "Would you like to go back to the\n"
-	.string "FIGHT AREA?$"
+BattleFrontier_OutsideWest_Text_PwSailToFightArea:
+	.string "Would you like to sail to the\n"
+	.string "FIGHT AREA in SINNOH?$"

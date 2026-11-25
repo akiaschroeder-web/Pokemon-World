@@ -300,6 +300,8 @@ gStdScripts_End::
 	.include "data/maps/LilycoveCity_LilycoveMuseum_2F/scripts.inc"
 	.include "data/maps/LilycoveCity_ContestLobby/scripts.inc"
 	.include "data/maps/LilycoveCity_ContestHall/scripts.inc"
+	.include "data/maps/HearthomeCity_ContestLobby/scripts.inc"
+	.include "data/maps/HearthomeCity_ContestHall/scripts.inc"
 	.include "data/maps/LilycoveCity_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/LilycoveCity_PokemonCenter_2F/scripts.inc"
 	.include "data/maps/LilycoveCity_UnusedMart/scripts.inc"
@@ -1854,6 +1856,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/SandgemTown_PokemonCenter_2F/scripts.inc"
 
 	.include "data/maps/SandgemTown_Mart/scripts.inc"
+	.include "data/maps/SandgemTown_PokemonLab/scripts.inc"
 
 	.include "data/maps/JubilifeCity_PokemonSchool/scripts.inc"
 

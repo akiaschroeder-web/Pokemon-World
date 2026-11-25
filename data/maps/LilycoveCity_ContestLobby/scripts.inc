@@ -6,7 +6,7 @@ LilycoveCity_ContestLobby_MapScripts::
 @ Some scripts for this room are split into data/scripts/contest_hall and data/scripts/berry_blender
 
 LilycoveCity_ContestLobby_OnTransition:
-	call LilycoveCity_ContestLobby_EventScript_SNVis_FANTINA
+	setvar VAR_PW_CONTEST_LOBBY, 0
 	call LilycoveCity_ContestLobby_EventScript_TryShowContestReporter
 	call LilycoveCity_ContestLobby_EventScript_TryShowBlendMaster
 	end
@@ -1073,38 +1073,3 @@ LilycoveCity_ContestLobby_Text_MadePokeblocksWithFamily:
 	.string "Big Sister. They turned out great!\p"
 	.string "I bet you can make smoother, better\n"
 	.string "{POKEBLOCK}S if you have more people.$"
-
-LilycoveCity_ContestLobby_EventScript_SNVis_FANTINA:
-	setflag FLAG_SN_HIDE_FANTINA
-	goto_if_set FLAG_SN_MET_FANTINA, LilycoveCity_ContestLobby_EventScript_SNVis_FANTINA_End
-	goto_if_set FLAG_SINNOH_BADGE03_GET, LilycoveCity_ContestLobby_EventScript_SNVis_FANTINA_End
-	clearflag FLAG_SN_HIDE_FANTINA
-LilycoveCity_ContestLobby_EventScript_SNVis_FANTINA_End:
-	return
-
-LilycoveCity_ContestLobby_EventScript_SNFantina::
-	lock
-	faceplayer
-	msgbox LilycoveCity_ContestLobby_EventScript_SNFantina_T, MSGBOX_DEFAULT
-	closemessage
-	setflag FLAG_SN_MET_FANTINA
-	sn_walkto LOCALID_SN_FANTINA, 14, 11, SN_SPEED_NORMAL, 0, 0, 0
-	waitmovement LOCALID_SN_FANTINA
-	removeobject LOCALID_SN_FANTINA
-	setflag FLAG_SN_HIDE_FANTINA
-	release
-	end
-
-LilycoveCity_ContestLobby_EventScript_SNFantina_T:
-	.string "Yes? I beg your pardon?\p"
-	.string "Ah, oui, Contests you are here for? I\n"
-	.string "hope very much you enjoy them.\p"
-	.string "Incidentally, Fantina, the Gym Leader\n"
-	.string "of Hearthome, is also a Contestant.\p"
-	.string "She is, how do you say, très\n"
-	.string "fantastique!\p"
-	.string "Fantina being myself, of course!\p"
-	.string "Mmm, let me see... You also seem to be\n"
-	.string "très strong.\p"
-	.string "Enfin, so it shall be. I wait for you at\n"
-	.string "the Gym!$"

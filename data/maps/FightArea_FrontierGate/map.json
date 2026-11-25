@@ -100,15 +100,18 @@
       "elevation": 0,
       "dest_map": "MAP_FIGHT_AREA",
       "dest_warp_id": "0"
-    },
+    }
+  ],
+  "coord_events": [
     {
+      "type": "trigger",
       "x": 4,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "dest_warp_id": "11"
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "FightArea_FrontierGate_EventScript_PwFerry"
     }
   ],
-  "coord_events": [],
   "bg_events": []
 }
