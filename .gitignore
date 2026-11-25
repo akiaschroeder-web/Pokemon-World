@@ -71,3 +71,6 @@ __pycache__
 # Pokémon World web build
 !platform/web/*.js
 !tools/web/*.js
+
+# Pokémon World: DS game files (read from where they are for converters; never committed)
+*.nds

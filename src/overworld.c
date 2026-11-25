@@ -77,6 +77,7 @@
 #include "frontier_util.h"
 #include "bug_contest_hns.h" // Pokémon World: Bug-Catching Contest (Heart & Soul)
 #include "kanto_time_skip.h" // Pokémon World: FireRed's Kanto -> the Gold/Silver-era one
+#include "region_map.h"
 #include "constants/abilities.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
@@ -904,6 +905,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     ResetDexNavSearch();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
+    SetSinnohVisitedFlag(); // Pokémon World: Sinnoh's Fly flags (src/region_map.c)
 #if FREE_MATCH_CALL == FALSE
     TryUpdateRandomTrainerRematches(mapGroup, mapNum);
 #endif //FREE_MATCH_CALL
@@ -971,6 +973,7 @@ static void LoadMapFromWarp(bool32 a1)
     sHoursOverride = 0;
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
+    SetSinnohVisitedFlag(); // Pokémon World: Sinnoh's Fly flags (src/region_map.c)
 #if FREE_MATCH_CALL == FALSE
     TryUpdateRandomTrainerRematches(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum);
 #endif //FREE_MATCH_CALL

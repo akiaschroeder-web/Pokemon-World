@@ -1674,6 +1674,26 @@
 // Fame, EventScript_PwKantoTimeSkip). From then on Kanto is the Gold/Silver-era one ("3 years
 // later", the *_Hns maps): every way into FireRed's Kanto leads there instead (src/kanto_time_skip.c).
 #define FLAG_PW_KANTO_TIME_SKIP                     (PW_FLAGS_START + 0x18)
+// Sinnoh's places Fly can go to, once visited. The Sinnoh port's maps set no such flags: entering
+// the place sets its flag (SetSinnohVisitedFlag, src/region_map.c).
+#define FLAG_SINNOH_VISITED_TWINLEAF_TOWN           (PW_FLAGS_START + 0x20)
+#define FLAG_SINNOH_VISITED_SANDGEM_TOWN            (PW_FLAGS_START + 0x21)
+#define FLAG_SINNOH_VISITED_JUBILIFE_CITY           (PW_FLAGS_START + 0x22)
+#define FLAG_SINNOH_VISITED_OREBURGH_CITY           (PW_FLAGS_START + 0x23)
+#define FLAG_SINNOH_VISITED_FLOAROMA_TOWN           (PW_FLAGS_START + 0x24)
+#define FLAG_SINNOH_VISITED_ETERNA_CITY             (PW_FLAGS_START + 0x25)
+#define FLAG_SINNOH_VISITED_HEARTHOME_CITY          (PW_FLAGS_START + 0x26)
+#define FLAG_SINNOH_VISITED_SOLACEON_TOWN           (PW_FLAGS_START + 0x27)
+#define FLAG_SINNOH_VISITED_VEILSTONE_CITY          (PW_FLAGS_START + 0x28)
+#define FLAG_SINNOH_VISITED_PASTORIA_CITY           (PW_FLAGS_START + 0x29)
+#define FLAG_SINNOH_VISITED_CELESTIC_TOWN           (PW_FLAGS_START + 0x2A)
+#define FLAG_SINNOH_VISITED_CANALAVE_CITY           (PW_FLAGS_START + 0x2B)
+#define FLAG_SINNOH_VISITED_SNOWPOINT_CITY          (PW_FLAGS_START + 0x2C)
+#define FLAG_SINNOH_VISITED_SUNYSHORE_CITY          (PW_FLAGS_START + 0x2D)
+#define FLAG_SINNOH_VISITED_POKEMON_LEAGUE          (PW_FLAGS_START + 0x2E)
+#define FLAG_SINNOH_VISITED_FIGHT_AREA              (PW_FLAGS_START + 0x2F)
+#define FLAG_SINNOH_VISITED_SURVIVAL_AREA           (PW_FLAGS_START + 0x30)
+#define FLAG_SINNOH_VISITED_RESORT_AREA             (PW_FLAGS_START + 0x31)
 #define PW_FLAGS_END                                (PW_FLAGS_START + 0xFF)
 
 #define FLAGS_COUNT (PW_FLAGS_END + 1)

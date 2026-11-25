@@ -39,7 +39,7 @@ WEB_C_EXCLUDE := $(C_SUBDIR)/libisagbprn.c $(C_SUBDIR)/librfu_intr.c $(C_SUBDIR)
 	$(C_SUBDIR)/agb_flash_mx.c $(C_SUBDIR)/agb_flash.c $(C_SUBDIR)/siirtc.c
 WEB_C_SRCS := $(filter-out $(WEB_C_EXCLUDE),$(C_SRCS))
 WEB_C_OBJS := $(patsubst $(C_SUBDIR)/%.c,$(C_BUILDDIR)/%.o,$(WEB_C_SRCS))
-WEB_DATA_OBJS := $(DATA_ASM_OBJS) $(MID_OBJS)
+WEB_DATA_OBJS := $(DATA_ASM_OBJS) $(MID_OBJS) $(SONG_OBJS)
 WEB_OBJS := $(WEB_C_OBJS) $(WEB_DATA_OBJS)
 
 $(shell mkdir -p $(sort $(dir $(WEB_OBJS))) $(WEB_SITE))
@@ -79,6 +79,10 @@ $(WEB_SOUND_INC)/MPlayDef.s: sound/MPlayDef.s
 $(MID_BUILDDIR)/%.elf.o: $(MID_ASM_DIR)/%.s $(WEB_SOUND_INC)/MPlayDef.s
 	$(WEB_AS_COMMENTS) < $< | $(WEB_HOST_AS) $(WEB_ASFLAGS) -I $(WEB_SOUND_INC) -I sound -o $@
 
+# songs written in assembly (sound/songs/*.s, Makefile SONG_OBJS)
+$(SONG_OBJS:.o=.elf.o): $(SONG_BUILDDIR)/%.elf.o: $(SONG_SUBDIR)/%.s $(WEB_SOUND_INC)/MPlayDef.s
+	$(WEB_AS_COMMENTS) < $< | $(WEB_HOST_AS) $(WEB_ASFLAGS) -I $(WEB_SOUND_INC) -I sound -o $@
+
 WEB_ABSYMS := $(OBJ_DIR)/data_constants.txt
 WEB_DATA_ELFS := $(WEB_DATA_OBJS:.o=.elf.o)
 $(WEB_ABSYMS): $(WEB_DATA_ELFS) tools/web/elf2wasm.py
@@ -91,6 +95,9 @@ $(DATA_ASM_BUILDDIR)/%.o: $(DATA_ASM_BUILDDIR)/%.wasmasm
 	$(WEB_CC) -c -x assembler $< -o $@
 
 $(MID_BUILDDIR)/%.o: $(MID_BUILDDIR)/%.wasmasm
+	$(WEB_CC) -c -x assembler $< -o $@
+
+$(SONG_OBJS): $(SONG_BUILDDIR)/%.o: $(SONG_BUILDDIR)/%.wasmasm
 	$(WEB_CC) -c -x assembler $< -o $@
 
 # --- link

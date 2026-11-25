@@ -1746,8 +1746,8 @@ MOVE_RENAME = {"MOVE_SMELLING_SALT": "MOVE_SMELLING_SALTS"}
 # Heart & Soul engine values whose number means something else here.
 CONST_STANDIN = {"MOVEMENT_TYPE_TOWER_BEAM": "MOVEMENT_TYPE_NONE",
                  "SPECIAL_BATTLE_LANCE": "SPECIAL_BATTLE_MULTI",
-                 "TUTOR_MOVE_HEADBUTT": "0",
-                 "SCROLL_MULTI_BF_MOVE_TUTOR_3": "SCROLL_MULTI_BF_MOVE_TUTOR_1"}
+                 # Heart & Soul's tutor-move index; our ChooseMonForMoveTutor takes the move itself
+                 "TUTOR_MOVE_HEADBUTT": "MOVE_HEADBUTT"}
 # Heart & Soul's raw trainerbattle types -> our trainerbattle_single (expansion pairs up
 # two approaching trainers by itself, so SET_TRAINER_A/B become ordinary battles).
 OLD_TRAINERBATTLE = {"TRAINER_BATTLE_CONTINUE_SCRIPT", "TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC",
@@ -1758,13 +1758,10 @@ import hns_sprites  # noqa: E402  (next to this script)
 # Heart & Soul's HGSS songs, voicegroups and samples: see hns_music.py.
 import hns_music  # noqa: E402
 
-# Songs Heart & Soul's maps/scripts play that hns_music.py doesn't bring over (not HGSS songs):
-# the closest song we have.
+# Songs Heart & Soul's maps/scripts play that hns_music.py doesn't bring over: the closest song
+# we have. (Empty now: Platinum's Fight Area theme and Ruby/Sapphire's heavy-rain theme come over
+# with their own instruments, hns_music.py OTHER_SETS.)
 MUSIC_STANDIN = {
-    # Platinum's Fight Area theme (Trainer Hill courtyard): would need DPPt's whole voicegroup set
-    "MUS_PL_FIGHT_AREA_DAY": "MUS_DPP_LEAGUE_OUTSIDE",
-    # Ruby/Sapphire's heavy-rain theme, which Emerald replaced with MUS_ABNORMAL_WEATHER
-    "MUS_WEATHER_KYOGRE": "MUS_ABNORMAL_WEATHER",
 }
 # Before stage 4 (HGSS music), the HGSS songs played as these; kept only as a record.
 OLD_HGSS_STANDIN = {
@@ -1905,6 +1902,12 @@ def pw_script_patches(outs):
         "VermilionPort_Text_AskSeagallop_Hns:\n"
         "\t.string \"Would you like to take a SEAGALLOP\\n\"\n"
         "\t.string \"ferry to the SEVII ISLANDS?$\"\n")
+
+    # 4b. Goldenrod Bill starts FireRed's Sevii story for a player who never got the Tri-Pass
+    #     (FireRed's Bill scene at Cinnabar is gone after the time skip): data/scripts/kanto_time_skip.inc
+    sub("GoldenrodCity_BillsHouse", "\tgoto_if_unset FLAG_HNS_GOT_EEVEE, GoldenrodCity_BillsHouse_Hns_EventScript_Bill_Eevee\n",
+        "\tgoto_if_unset FLAG_HNS_GOT_EEVEE, GoldenrodCity_BillsHouse_Hns_EventScript_Bill_Eevee\n"
+        "\tcall EventScript_PwBillSeviiOffer @ Pokémon World: the Tri-Pass, if FireRed's Sevii story wasn't played\n")
 
     # 5. Kurt's balls from berries: Heart & Soul gives the 5 balls, takes the 5 berries, then checks
     #    VAR_RESULT, which removeitem has overwritten by then, so a full bag lost the berries. Check

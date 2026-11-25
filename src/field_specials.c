@@ -2454,6 +2454,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_BF_MOVE_TUTOR_3:
+        task->tMaxItemsOnScreen = 4;
+        task->tNumItems = 4;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 8;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     case SCROLL_MULTI_SS_TIDAL_DESTINATION:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
@@ -2635,6 +2645,13 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("ICE PUNCH{CLEAR_TO 78}48BP"),
         COMPOUND_STRING("THUNDERPUNCH{CLEAR_TO 78}48BP"),
         COMPOUND_STRING("FIRE PUNCH{CLEAR_TO 78}48BP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_MOVE_TUTOR_3] =
+    {
+        COMPOUND_STRING("FRENZY PLANT{CLEAR_TO 78}64BP"),
+        COMPOUND_STRING("BLAST BURN{CLEAR_TO 78}64BP"),
+        COMPOUND_STRING("HYDRO CANNON{CLEAR_TO 78}64BP"),
         gText_Exit
     },
     [SCROLL_MULTI_SS_TIDAL_DESTINATION] =
@@ -3197,7 +3214,7 @@ static void ShowBattleFrontierTutorWindow(enum ScrollMulti menu, u16 selection)
         .baseBlock = 28,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
     {
         if (gSpecialVar_0x8006 == 0)
         {
@@ -3240,11 +3257,22 @@ static void ShowBattleFrontierTutorMoveDescription(enum ScrollMulti menu, u16 se
         gText_Exit,
     };
 
-    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
+    // Heart & Soul's third tutor (Trainer Hill courtyard): the starters' strongest moves
+    static const u8 *const sBattleFrontier_TutorMoveDescriptions3[] =
+    {
+        TrainerHill_Courtyard_Hns_Text_StrongElementalMoveDesc,
+        TrainerHill_Courtyard_Hns_Text_StrongElementalMoveDesc,
+        TrainerHill_Courtyard_Hns_Text_StrongElementalMoveDesc,
+        gText_Exit,
+    };
+
+    if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_1 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_2 || menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
     {
         FillWindowPixelRect(sTutorMoveAndElevatorWindowId, PIXEL_FILL(1), 0, 0, 96, 48);
         if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_2)
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions2[selection], 0, 1, 0, NULL);
+        else if (menu == SCROLL_MULTI_BF_MOVE_TUTOR_3)
+            AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions3[selection], 0, 1, 0, NULL);
         else
             AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sBattleFrontier_TutorMoveDescriptions1[selection], 0, 1, 0, NULL);
     }

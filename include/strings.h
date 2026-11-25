@@ -538,6 +538,7 @@ extern const u8 BattleFrontier_Lounge7_Text_RockSlideDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_CounterDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_ThunderWaveDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_SwordsDanceDesc[];
+extern const u8 TrainerHill_Courtyard_Hns_Text_StrongElementalMoveDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_DefenseCurlDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_SnoreDesc[];
 extern const u8 BattleFrontier_Lounge7_Text_MudSlapDesc[];

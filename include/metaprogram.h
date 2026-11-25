@@ -215,6 +215,14 @@ Input must be of the form (upper << lower) where upper can be up to 7, lower up 
  *
  * Because 'cond' must be known at compile-time, this is rarely useful
  * outside macros. */
+#if defined(__clang__)
+// Pokémon World (web build): clang folds the GCC trick below the wrong way. '*(int *)0' is
+// undefined behaviour, so clang's optimiser treats the whole thing as a constant and always
+// takes the branch: every RandomPercentage() became a coin flip, whatever the percentage
+// (checked with emcc -O2), e.g. the 0% wild double battle chance gave doubles half the time.
+#define if_comptime(cond) if (__builtin_constant_p(cond) && (cond))
+#else
 #define if_comptime(cond) if (__builtin_constant_p((cond) ? 0 : *(int *)0))
+#endif
 
 #endif

@@ -54,6 +54,7 @@ enum ScrollMulti
     SCROLL_MULTI_BATTLE_TENT_RULES,
     SCROLL_MULTI_BADGES,
     SCROLL_MULTI_SILPHCO_FLOORS,
+    SCROLL_MULTI_BF_MOVE_TUTOR_3, // Pokémon World: Heart & Soul's third Frontier tutor (Trainer Hill courtyard)
 };
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6

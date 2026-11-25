@@ -80,13 +80,21 @@ Heart & Soul (a pokeemerald-expansion project; read-only copy at `~/ref/pokemonH
 - **Following Pokémon** are expansion's (`OW_FOLLOWERS_ENABLED` in `include/config/overworld.h`, on in every region). Heart & Soul uses the same system, so its scripts' `UpdateFollowingPokemon` / follower field moves are expansion's own. Species without an overworld sprite show expansion's placeholder (`OW_SUBSTITUTE_PLACEHOLDER`).
 
 ## Known gaps / not yet played (Johto stages 1–7)
-- Wild battles sometimes reported as doubles: cause not found. Double wild battles only come from `TryDoDoubleWildBattle` (`src/wild_encounter.c`): the chance and force flag are 0/off, so the remaining path is the follower-NPC partner (`FollowerNPCIsBattlePartner`, `FNPC_FLAG_PARTNER_WILD_BATTLES = FNPC_ALWAYS` with `FNPC_NPC_FOLLOWER_WILD_BATTLE_VS_2`), which needs `SaveBlock3.NPCfollower` to say a partner NPC follows. New games clear it; a save from before a SaveBlock3 layout change could carry stale data there.
-- The GS Ball can't be thrown.
-- A tutor menu's description window (Heart & Soul's move tutors) isn't right yet.
-- Two non-HGSS songs Heart & Soul plays use stand-ins (`MUSIC_STANDIN` in the importer): Platinum's Fight Area theme (Trainer Hill courtyard) → `MUS_DPP_LEAGUE_OUTSIDE`, and Ruby/Sapphire's heavy-rain theme → `MUS_ABNORMAL_WEATHER`.
-- Fly to Kanto/Johto isn't set up: `src/region_map.c` only handles Hoenn.
-- The Sevii passes: if FireRed's story is skipped, the Tri-Pass/Rainbow Pass may never be given, so the Seagallop can't go to Sevii. To decide together with the Sevii hub.
-- The GBA ROM hasn't been built since the Johto import (the web build is what's tested).
+- ~~Wild battles turning into doubles~~ (fixed): a web-only compiler problem. Expansion's `if_comptime` (`include/metaprogram.h`) relies on a GCC trick that clang (Emscripten) folds the other way, so in the browser every `RandomPercentage()` was a coin flip (the 0% double-battle chance gave doubles half the time; battle effect chances too). It now has a clang version. The GBA build (GCC) was never affected.
+- ~~The GS Ball can't be thrown~~ (fixed): it's a Poké Ball again, as in Heart & Soul (`BALL_GS`, a sure catch, Heart & Soul's ball sprite), in the Poké Balls pocket and still Kurt's Celebi item (can't be sold or tossed). A follower caught in it comes out of an ordinary Poké Ball (no overworld GS Ball sprite).
+- ~~Tutor menus~~ (fixed): the Trainer Hill courtyard's third Frontier tutor (Frenzy Plant / Blast Burn / Hydro Cannon) has its own list and descriptions (`SCROLL_MULTI_BF_MOVE_TUTOR_3`), and the Ilex Forest tutor teaches Headbutt (it was set to no move).
+- ~~Music stand-ins~~ (fixed): Platinum's Fight Area theme and Ruby/Sapphire's heavy-rain theme now come over with their own Heart & Soul instruments (`hns_music.py` OTHER_SETS, `sound/voicegroups/hns_other.inc`). The heavy-rain theme is an assembly song (`sound/songs/*.s`, new `SONG_OBJS` in Makefile/web.mk).
+- ~~Garbled names in battle~~ (fixed): web-only. `src/text.c` shifted 32-bit values by 32 (undefined in C; the GBA gives 0, WebAssembly doesn't), which drew letters twice (ghost letters, doubled gender sign) and erased 8-pixel-wide ones ("Lv"). A sanitizer build (`-fsanitize=shift-exponent`) found no other bad shifts through a new game, save/load, a Johto start and a long battle.
+- Town Map / Fly map per region (done, `src/region_map.c`): Hoenn's map is back; Sinnoh has the Sinnoh port's map, Johto Heart & Soul's Johto-only map, Kanto (both eras) and the Sevii Islands FireRed's maps. What's left / not checked:
+  - Fly only goes to the places on the map shown (`sFlyLocations`), never to another region, and from the Sevii maps only to the islands on that map (One–Three, Four–Five, Six–Seven).
+  - Sinnoh's towns set no visited flags in their scripts, so entering a Sinnoh fly place sets `FLAG_SINNOH_VISITED_*` (`SetSinnohVisitedFlag`, called from `src/overworld.c`). Saves from before this only get them on the next visit. Sinnoh's Pokémon League lands at the south Pokémon Center (so Fly can't skip Victory Road).
+  - Kanto counts FireRed's `FLAG_WORLD_MAP_*` or Heart & Soul's `FLAG_VISITED_*`, and lands at FireRed's heal locations (the time skip moves them to the later Kanto). Route 28 (later Kanto only) sits west of Route 22 on FireRed's map; `MAPSEC_KANTO_ABANDONED_SHIP` (only Heart & Soul's unused test maps) has no place.
+  - Heart & Soul's map sections have the coordinates of its combined Johto+Kanto map in `region_map_sections.json`; the region map reads their places from the layout of the map shown instead (`GetRegionMapSectionRect`). The S.S. Aqua shows at Olivine, Johto's Safari Zone at its gate. Fixing the json in `import_hns.py` would be cleaner.
+  - Heart & Soul's Trainer Hill courtyard uses Hoenn's `MAPSEC_TRAINER_HILL`, so its Town Map shows Hoenn. The Sinnoh map also shows Hoenn's Battle Frontier section (named only, no Fly).
+  - The PokéNav's city zoom maps are Hoenn's only. The player icon follows the chosen character (Brendan, May, Lucas, Dawn, Ethan, Kris).
+  - Checked in the headless driver (new Hoenn game, debug warps + Toggle Fly Flags): the Fly map of Hoenn, Sinnoh, Kanto and Johto with the cursor and icon on the player's town, and a Fly from New Bark to Cherrygrove. Not checked: the Town Map item / wall maps, the Pokédex area screen outside Hoenn, the Sevii maps, Fly in the later Kanto.
+- Sevii passes (done): after the time skip, a player who never started FireRed's Sevii story gets the Tri-Pass and Bill's Meteorite from Bill in Goldenrod (`EventScript_PwBillSeviiOffer`, data/scripts/kanto_time_skip.inc); FireRed's Sevii story then goes on from One Island as usual. Not played.
+- The GBA ROM hasn't been built since the Johto import: WSL has no ARM toolchain yet (`sudo apt install gcc-arm-none-eabi binutils-arm-none-eabi libnewlib-arm-none-eabi`).
 - Not played through: the Johto story beyond New Bark, Kurt's balls, the Hall of Fame time skip, later-Kanto gym rematches, the Seagallop, Ethan/Kris on bikes/surfing/fishing and in battle, the credits roll (it's longer now; Emerald's credits music may end before it does).
 - Heart & Soul's female player is **Kris** (Crystal), not Lyra: it has no Lyra sprites. Lyra would need new overworld and battle sprites.
 
@@ -106,7 +114,8 @@ Working in the browser: boot, intro, title, main menu, the PW character select, 
    - ~~the Kanto time change~~ (done: at Johto's first Hall of Fame)
    - ~~region-based battle music~~ (done, Johto stage 4)
    - the rest of the Sinnoh flag split
-   - a Town Map per region, and Fly between regions (`src/region_map.c` is Hoenn-only)
+   - ~~a Town Map per region~~ (done: each region's Town Map / Fly map; Fly stays within the region, see the known gaps)
+   - Sinnoh's visited flags in its own map scripts, as part of the Sinnoh flag split (for now entering a place sets them)
    - the Badge Case
    - travel between regions (the Sevii Islands as the hub)
 

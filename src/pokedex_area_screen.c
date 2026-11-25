@@ -44,6 +44,13 @@
 #define MAP_GROUP_DUNGEONS_FRLG MAP_GROUP(MAP_VIRIDIAN_FOREST)
 #define MAP_GROUP_SPECIAL_AREA MAP_GROUP(MAP_SAFARI_ZONE_NORTHWEST)
 #define MAP_GROUP_SPECIAL_AREA_FRLG MAP_GROUP(MAP_NAVEL_ROCK_EXTERIOR_FRLG)
+// Pokémon World: the Sinnoh port's and Heart & Soul's groups (Johto and the later Kanto)
+#define MAP_GROUP_TOWNS_AND_ROUTES_SINNOH MAP_GROUP(MAP_TWINLEAF_TOWN)
+#define MAP_GROUP_SPECIAL_AREA_SINNOH MAP_GROUP(MAP_LAKE_VERITY)
+#define MAP_GROUP_DUNGEONS_SINNOH MAP_GROUP(MAP_OREBURGH_GATE_1F)
+#define MAP_GROUP_TOWNS_AND_ROUTES_HNS MAP_GROUP(MAP_NEW_BARK_TOWN_HNS)
+#define MAP_GROUP_DUNGEONS_HNS MAP_GROUP(MAP_DARK_CAVE_SOUTH_SIDE_HNS)
+#define MAP_GROUP_SPECIAL_AREA_HNS MAP_GROUP(MAP_SSAQUA_1F_HNS)
 
 #define AREA_SCREEN_WIDTH 32
 #define AREA_SCREEN_HEIGHT 20
@@ -346,12 +353,18 @@ static void FindMapsWithMon(enum Species species)
             {
             case MAP_GROUP_TOWNS_AND_ROUTES:
             case MAP_GROUP_TOWNS_AND_ROUTES_FRLG:
+            case MAP_GROUP_TOWNS_AND_ROUTES_SINNOH:
+            case MAP_GROUP_TOWNS_AND_ROUTES_HNS:
                 SetAreaHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
                 break;
             case MAP_GROUP_DUNGEONS:
             case MAP_GROUP_DUNGEONS_FRLG:
             case MAP_GROUP_SPECIAL_AREA:
             case MAP_GROUP_SPECIAL_AREA_FRLG:
+            case MAP_GROUP_SPECIAL_AREA_SINNOH:
+            case MAP_GROUP_DUNGEONS_SINNOH:
+            case MAP_GROUP_DUNGEONS_HNS:
+            case MAP_GROUP_SPECIAL_AREA_HNS:
                 SetSpecialMapHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
                 break;
             }
@@ -952,11 +965,15 @@ static void CreateAreaMarkerSprites(void)
     numSprites = 0;
     for (i = 0; i < sPokedexAreaScreen->numSpecialAreas; i++)
     {
+        u16 secX, secY, secWidth, secHeight;
+
         mapSecId = sPokedexAreaScreen->specialAreaRegionMapSectionIds[i];
-        x = 8 * (gRegionMapEntries[mapSecId].x + 1) + 4;
-        y = 8 * (gRegionMapEntries[mapSecId].y) + 28;
-        x += 4 * (gRegionMapEntries[mapSecId].width - 1);
-        y += 4 * (gRegionMapEntries[mapSecId].height - 1);
+        // Pokémon World: where the section is on the map shown (region_map.c)
+        GetRegionMapSectionRect(mapSecId, &secX, &secY, &secWidth, &secHeight);
+        x = 8 * (secX + 1) + 4;
+        y = 8 * (secY) + 28;
+        x += 4 * (secWidth - 1);
+        y += 4 * (secHeight - 1);
         spriteId = CreateSpriteUnchecked(&sAreaMarkerSpriteTemplate, x, y, 0);
         if (spriteId != MAX_SPRITES)
         {

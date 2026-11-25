@@ -97,3 +97,5 @@
 	song mus_hg_vs_trainer_kanto, MUSIC_PLAYER_BGM, 0
 	song mus_hg_vs_wild, MUSIC_PLAYER_BGM, 0
 	song mus_hg_vs_wild_kanto, MUSIC_PLAYER_BGM, 0
+	song mus_pl_fight_area_day, MUSIC_PLAYER_BGM, 0
+	song mus_weather_kyogre, MUSIC_PLAYER_BGM, 0

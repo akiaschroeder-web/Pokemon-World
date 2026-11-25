@@ -14,9 +14,9 @@ SPECIAL_OUTDIRS += $(SOUND_BIN_DIR) $(SOUND_BIN_DIR)/direct_sound_samples/phonem
 $(shell mkdir -p $(SPECIAL_OUTDIRS) )
 
 # Assembly song compilation
-$(SONG_BUILDDIR)/%.o: $(SONG_SUBDIR)/%.s $(EXPANSION_BATTLE_CONFIG)
-	$(AS) $(ASFLAGS) -I sound -o $@ $<
 ifneq ($(PLATFORM),web) # the web build assembles songs itself (web.mk)
+$(SONG_OBJS): $(SONG_BUILDDIR)/%.o: $(SONG_SUBDIR)/%.s $(EXPANSION_BATTLE_CONFIG)
+	$(AS) $(ASFLAGS) -I sound -o $@ $<
 $(MID_BUILDDIR)/%.o: $(MID_ASM_DIR)/%.s
 	$(AS) $(ASFLAGS) -I sound -o $@ $<
 endif

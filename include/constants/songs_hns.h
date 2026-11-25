@@ -103,7 +103,9 @@
 #define MUS_HG_VS_TRAINER_KANTO            751
 #define MUS_HG_VS_WILD                     752
 #define MUS_HG_VS_WILD_KANTO               753
-#define HNS_SONGS_END   753
+#define MUS_PL_FIGHT_AREA_DAY              754
+#define MUS_WEATHER_KYOGRE                 755
+#define HNS_SONGS_END   755
 
 // For the debug menu's sound test (SOUND_LIST_BGM in src/debug.c)
 #define HNS_SOUND_LIST_BGM \
@@ -204,6 +206,8 @@
     X(MUS_HG_VS_TRAINER_KANTO) \
     X(MUS_HG_VS_WILD) \
     X(MUS_HG_VS_WILD_KANTO) \
+    X(MUS_PL_FIGHT_AREA_DAY) \
+    X(MUS_WEATHER_KYOGRE) \
 
 
 #endif

@@ -178,13 +178,84 @@ def _strip(line):
     return line.split("@", 1)[0].rstrip()
 
 
+# Songs Heart & Soul plays that aren't HGSS songs, each with the instrument set it is built with,
+# written as voicegroups of their own (<prefix>, <prefix>_*) in OTHER_VOICEGROUPS:
+#   Platinum's Fight Area theme (Trainer Hill courtyard): DPPt instruments, voicegroup191
+#   Ruby/Sapphire's heavy-rain theme (Route 19 cave): voicegroup089; an assembly song, not a MIDI
+OTHER_SETS = [
+    ("voicegroup191", "dppt", ["MUS_PL_FIGHT_AREA_DAY"]),
+    ("voicegroup089", "rs_weather", ["MUS_WEATHER_KYOGRE"]),
+]
+OTHER_VOICEGROUPS = "sound/voicegroups/hns_other.inc"
+ASM_SONG_DIR = "sound/songs"  # assembly songs (built by Makefile/web.mk SONG_OBJS)
+
+
+def _asm_song_group(H, low):
+    """The voicegroup an assembly song of Heart & Soul's uses (None if there's no such song)."""
+    p = f"{H}/sound/songs/{low}.s"
+    if not os.path.exists(p):
+        return None
+    m = re.search(r"(?m)^\s*\.equ\s+" + low + r"_grp\s*,\s*(voicegroup\d+)", _rd(p))
+    return m.group(1) if m else None
+
+
+def _song_set(H, s, args):
+    """(root voicegroup, prefix, is_asm) for a song we can bring over, else None."""
+    low = s.lower()
+    if low in args and "-G229" in args[low] and os.path.exists(f"{H}/sound/songs/midi/{low}.mid"):
+        return HGSS_GROUP, "hgss", False
+    for root, prefix, names in OTHER_SETS:
+        if s not in names:
+            continue
+        if low in args and "-G" + root[len("voicegroup"):].lstrip("0") in args[low] \
+                and os.path.exists(f"{H}/sound/songs/midi/{low}.mid"):
+            return root, prefix, False
+        if _asm_song_group(H, low) == root:
+            return root, prefix, True
+    return None
+
+
 def available(H):
-    """HnS song constants we can bring over (built with Heart & Soul's HGSS voicegroup)."""
-    out = set()
-    for s, a in _song_args(H).items():
-        if "-G229" in a and os.path.exists(f"{H}/sound/songs/midi/{s}.mid"):
-            out.add(s.upper())
+    """HnS song constants we can bring over (built with Heart & Soul's HGSS voicegroup, or one of
+    OTHER_SETS)."""
+    args = _song_args(H)
+    out = {s.upper() for s in args if _song_set(H, s.upper(), args)}
+    out |= {s for _, _, names in OTHER_SETS for s in names if _song_set(H, s, args)}
     return out
+
+
+def _voicegroup_tree(order, vg, root, prefix):
+    """The Heart & Soul voicegroups `root` uses, and our names for them: (names, block, others,
+    keysplit tables, samples). `block` is root and the groups after it that it runs into (written
+    together, in order); `others` are the rest it refers to."""
+    names, ks_used, samples = {root: prefix}, set(), set()
+    seen, todo = set(), [root]
+    while todo:
+        g = todo.pop(0)
+        if g in seen:
+            continue
+        seen.add(g)
+        for l in vg[g]:
+            code = _strip(l)
+            for r in re.findall(r"\b(voicegroup\d+)", code):
+                todo.append(r)
+                cm = l.split("@", 1)[1] if "@" in l else ""
+                if r not in names and _slug(cm):
+                    names[r] = prefix + "_" + _slug(cm)
+            ks_used |= set(re.findall(r"\bKeySplitTable\d+", code))
+            samples |= set(re.findall(r"DirectSoundWaveData_(\w+)", code))
+    i0 = order.index(root)
+    block = [order[i] for i in range(i0, max(order.index(g) for g in seen) + 1)]
+    others = sorted((g for g in seen if g not in block), key=order.index)
+    for g in block + others:
+        names.setdefault(g, prefix + "_" + g[len("voicegroup"):])
+    if len(set(names.values())) != len(names):
+        sys.exit(f"hns_music: two Heart & Soul voicegroups got the same name ({prefix})")
+    for g in block:  # also bring the in-between groups' samples, in case a song runs into them
+        for l in vg[g]:
+            samples |= set(re.findall(r"DirectSoundWaveData_(\w+)", _strip(l)))
+            ks_used |= set(re.findall(r"\bKeySplitTable\d+", _strip(l)))
+    return names, block, others, seen, ks_used, samples
 
 
 def import_music(H, wanted, note):
@@ -192,6 +263,8 @@ def import_music(H, wanted, note):
     Returns the song constants brought over."""
     args = _song_args(H)
     songs = sorted(s for s in set(wanted) | set(ENGINE_SONGS) if s in available(H))
+    song_set = {s: _song_set(H, s, args) for s in songs}
+    asm_songs = [s for s in songs if song_set[s][2]]
 
     # --- song ids: after every song we have, so the include must stay last in song_table.inc
     songs_h = _rd("include/constants/songs.h")
@@ -210,11 +283,25 @@ def import_music(H, wanted, note):
             os.remove(f"sound/songs/midi/{f}")
     cfg = []
     for s in songs:
+        if song_set[s][2]:
+            continue
         low = s.lower()
         shutil.copyfile(f"{H}/sound/songs/midi/{low}.mid", f"sound/songs/midi/{low}.mid")
-        opts = " ".join("-G_hgss" if a.startswith("-G") else a for a in args[low])
+        opts = " ".join("-G_" + song_set[s][1] if a.startswith("-G") else a for a in args[low])
         cfg.append(f"{low + '.mid:':<40}{opts}\n")
     _wr(MIDI_CFG, "".join(cfg))
+    # assembly songs: Heart & Soul's file, on our voicegroup's name
+    for _, _, names in OTHER_SETS:
+        for s in names:
+            if s not in asm_songs and os.path.exists(f"{ASM_SONG_DIR}/{s.lower()}.s"):
+                os.remove(f"{ASM_SONG_DIR}/{s.lower()}.s")
+    for s in asm_songs:
+        low = s.lower()
+        root, prefix, _ = song_set[s]
+        src = _rd(f"{H}/sound/songs/{low}.s")
+        src = re.sub(r"(?m)^(\s*\.equ\s+" + low + r"_grp\s*,\s*)" + root + r"\b", r"\1voicegroup_" + prefix, src)
+        _wr(f"{ASM_SONG_DIR}/{low}.s", "@ Heart & Soul's " + low + ".s (brought over by tools/pokemon_world/"
+            "hns_music.py; edit that script, not this file)\n" + src)
 
     h = [GEN_C, "#ifndef GUARD_CONSTANTS_SONGS_HNS_H\n#define GUARD_CONSTANTS_SONGS_HNS_H\n\n",
          "// Heart & Soul's HGSS songs (Johto and the later Kanto), numbered after all our other songs:\n",
@@ -229,50 +316,27 @@ def import_music(H, wanted, note):
     _wr("sound/song_table_hns.inc", GEN_ASM + "@ Heart & Soul HGSS songs (ids in include/constants/songs_hns.h)\n"
         + "".join(f"\tsong {s.lower()}, MUSIC_PLAYER_BGM, 0\n" for s in songs))
 
-    # --- voicegroups
+    # --- voicegroups: HGSS's, then the other sets the songs above need
     order = re.findall(r"voicegroups/(\w+)\.inc", _rd(f"{H}/sound/voice_groups.inc"))
     vg = {n: [l for l in _rd(f"{H}/sound/voicegroups/{n}.inc").split("\n") if re.match(r"\s*voice_", _strip(l))]
           for n in order}
-    names, ks_used, samples = {HGSS_GROUP: "hgss"}, set(), set()
-    seen, todo = set(), [HGSS_GROUP]
-    while todo:
-        g = todo.pop(0)
-        if g in seen:
-            continue
-        seen.add(g)
-        for l in vg[g]:
-            code = _strip(l)
-            for r in re.findall(r"\b(voicegroup\d+)", code):
-                todo.append(r)
-                cm = l.split("@", 1)[1] if "@" in l else ""
-                if r not in names and _slug(cm):
-                    names[r] = "hgss_" + _slug(cm)
-            ks_used |= set(re.findall(r"\bKeySplitTable\d+", code))
-            samples |= set(re.findall(r"DirectSoundWaveData_(\w+)", code))
-    # the groups after voicegroup229 that it runs into are written with it, in order
-    i0 = order.index(HGSS_GROUP)
-    block = [order[i] for i in range(i0, max(order.index(g) for g in seen) + 1)]
-    others = sorted((g for g in seen if g not in block), key=order.index)
-    for g in block + others:
-        names.setdefault(g, "hgss_" + g[len("voicegroup"):])
-    if len(set(names.values())) != len(names):
-        sys.exit("hns_music: two Heart & Soul voicegroups got the same name")
-    for g in block:  # also bring the in-between groups' samples, in case a song runs into them
-        for l in vg[g]:
-            samples |= set(re.findall(r"DirectSoundWaveData_(\w+)", _strip(l)))
-            ks_used |= set(re.findall(r"\bKeySplitTable\d+", _strip(l)))
+    sets = [(HGSS_GROUP, "hgss")] + [(root, prefix) for root, prefix, _ in OTHER_SETS
+                                     if any(song_set[s][1] == prefix for s in songs)]
+    trees = {prefix: _voicegroup_tree(order, vg, root, prefix) for root, prefix in sets}
+    samples = set().union(*(t[5] for t in trees.values()))
 
     # keysplit tables: Heart & Soul's ".set KeySplitTableN, . - start" + one .byte per note
     kst = _rd(f"{H}/sound/keysplit_tables.inc")
     tables = {}
     for m in re.finditer(r"(?m)^\.set (KeySplitTable\d+), \. - (\d+)[^\n]*\n((?:[ \t]*\.byte[^\n]*\n)*)", kst):
         tables[m.group(1)] = (int(m.group(2)), [int(x) for x in re.findall(r"\.byte\s+(\d+)", m.group(3))])
-    for g in others:  # a keysplit group that isn't in the block must have room for every index
-        for parent in seen:
-            for l in vg[parent]:
-                mm = re.search(r"voice_keysplit\s+" + g + r"\s*,\s*(KeySplitTable\d+)", _strip(l))
-                if mm and max(tables[mm.group(1)][1]) >= len(vg[g]):
-                    sys.exit(f"hns_music: {mm.group(1)} goes past the end of {g}")
+    for _, block, others, seen, _, _ in trees.values():
+        for g in others:  # a keysplit group that isn't in the block must have room for every index
+            for parent in seen:
+                for l in vg[parent]:
+                    mm = re.search(r"voice_keysplit\s+" + g + r"\s*,\s*(KeySplitTable\d+)", _strip(l))
+                    if mm and max(tables[mm.group(1)][1]) >= len(vg[g]):
+                        sys.exit(f"hns_music: {mm.group(1)} goes past the end of {g}")
 
     # --- samples
     ours = {}
@@ -301,29 +365,48 @@ def import_music(H, wanted, note):
         dsd.append(f"\n\t.align 2\nDirectSoundWaveData_{label[s]}::\n\t.incbin \"{SAMPLE_DIR}/{label[s]}.bin\"\n")
     _wr("sound/direct_sound_data_hgss.inc", "".join(dsd))
 
-    # --- sound/voicegroups/hgss.inc
-    def conv(line):
-        code = _strip(line).strip()
-        code = re.sub(r"\b(voicegroup\d+)\b", lambda m: "voicegroup_" + names[m.group(1)], code)
-        code = re.sub(r"\bKeySplitTable(\d+)\b", r"keysplit_hgss_\1", code)
-        code = re.sub(r"DirectSoundWaveData_(\w+)", lambda m: "DirectSoundWaveData_" + label[m.group(1)], code)
-        return "\t" + code + "\n"
-    out = [GEN_ASM, "@ Heart & Soul HGSS instruments: its voicegroup229 (here voicegroup_hgss) and the groups\n",
-           "@ after it, kept together in its order (a program or drum key past the end of a group plays\n",
-           "@ the next group entries), then the other groups it uses. Then the keysplit tables.\n"]
-    for g in block + others:
-        out.append(f"\n@ Heart & Soul {g}\nvoice_group {names[g]}\n")
-        out += [conv(l) for l in vg[g]]
-    out.append("\n@ Heart & Soul key split tables (KeySplitTableN -> keysplit_hgss_N)\n")
-    for k in sorted(ks_used, key=lambda x: int(x[13:])):
-        start, vals = tables[k]
-        out.append(f"\nkeysplit hgss_{k[13:]}{', ' + str(start) if start else ''}\n")
-        for j, v in enumerate(vals):
-            if j + 1 == len(vals) or vals[j + 1] != v:
-                out.append(f"\tsplit {v}, {start + j + 1}\n")
-    _wr("sound/voicegroups/hgss.inc", "".join(out))
+    # --- sound/voicegroups/hgss.inc and OTHER_VOICEGROUPS
+    def write_groups(prefix):
+        names, block, others, _, ks_used, _ = trees[prefix]
 
-    note("HGSS music brought over", f"{len(songs)} songs, {len(block) + len(others)} voicegroups, "
-         f"{len(ks_used)} keysplit tables, {len(samples) - len(reused)} samples (+{len(reused)} of ours reused: "
+        def conv(line):
+            code = _strip(line).strip()
+            code = re.sub(r"\b(voicegroup\d+)\b", lambda m: "voicegroup_" + names[m.group(1)], code)
+            code = re.sub(r"\bKeySplitTable(\d+)\b", r"keysplit_" + prefix + r"_\1", code)
+            code = re.sub(r"DirectSoundWaveData_(\w+)", lambda m: "DirectSoundWaveData_" + label[m.group(1)], code)
+            return "\t" + code + "\n"
+        out = []
+        for g in block + others:
+            out.append(f"\n@ Heart & Soul {g}\nvoice_group {names[g]}\n")
+            out += [conv(l) for l in vg[g]]
+        out.append(f"\n@ Heart & Soul key split tables (KeySplitTableN -> keysplit_{prefix}_N)\n")
+        for k in sorted(ks_used, key=lambda x: int(x[13:])):
+            start, vals = tables[k]
+            out.append(f"\nkeysplit {prefix}_{k[13:]}{', ' + str(start) if start else ''}\n")
+            for j, v in enumerate(vals):
+                if j + 1 == len(vals) or vals[j + 1] != v:
+                    out.append(f"\tsplit {v}, {start + j + 1}\n")
+        return out
+    _wr("sound/voicegroups/hgss.inc", "".join(
+        [GEN_ASM, "@ Heart & Soul HGSS instruments: its voicegroup229 (here voicegroup_hgss) and the groups\n",
+         "@ after it, kept together in its order (a program or drum key past the end of a group plays\n",
+         "@ the next group entries), then the other groups it uses. Then the keysplit tables.\n"]
+        + write_groups("hgss")))
+    other = [GEN_ASM, "@ Heart & Soul's other instrument sets, for its songs that aren't HGSS songs\n",
+             "@ (hns_music.py OTHER_SETS). Each set: its main group and the groups after it, in order, then\n",
+             "@ the other groups it uses, then its keysplit tables.\n"]
+    for root, prefix in sets[1:]:
+        other.append(f"\n@ ---- {prefix}: Heart & Soul {root} ----\n")
+        other += write_groups(prefix)
+    _wr(OTHER_VOICEGROUPS, "".join(other))
+
+    hg = trees["hgss"]
+    note("HGSS music brought over", f"{len(songs)} songs, {len(hg[1]) + len(hg[2])} voicegroups, "
+         f"{len(hg[4])} keysplit tables, {len(samples) - len(reused)} samples (+{len(reused)} of ours reused: "
          f"{', '.join(reused) or 'none'})")
+    for root, prefix in sets[1:]:
+        t = trees[prefix]
+        note("Heart & Soul's other instrument sets brought over", f"{prefix} ({root}): {len(t[1]) + len(t[2])} "
+             f"voicegroups, for {', '.join(s for s in songs if song_set[s][1] == prefix)}")
     return set(songs)
+

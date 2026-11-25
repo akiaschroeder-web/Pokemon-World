@@ -7835,7 +7835,7 @@ static void ObjectEventSetPokeballGfx(struct ObjectEvent *objEvent)
             ball = BALL_STRANGE;
     }
 
-    if (ball != BALL_POKE && ball < POKEBALL_COUNT)
+    if (ball != BALL_POKE && ball != BALL_GS && ball < POKEBALL_COUNT)
     {
         const struct ObjectEventGraphicsInfo *info = &gPokeballGraphics[ball];
         if (info->tileTag == TAG_NONE)

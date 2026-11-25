@@ -7,8 +7,6 @@
 
 // Music: songs Heart & Soul plays that aren't HGSS songs (those are in constants/songs_hns.h),
 // played as the closest song we have.
-#define MUS_PL_FIGHT_AREA_DAY              MUS_DPP_LEAGUE_OUTSIDE
-#define MUS_WEATHER_KYOGRE                 MUS_ABNORMAL_WEATHER
 
 // Heart & Soul object sprites that are the same as one of ours (the others are
 // Heart & Soul's own, in constants/event_objects.h; tools/pokemon_world/hns_sprites.py).
@@ -59,8 +57,7 @@
 #define MON_SATISFACTORY                         2
 #define MON_UNSATISFACTORY                       1
 #define MOVEMENT_TYPE_TOWER_BEAM                 MOVEMENT_TYPE_NONE
-#define SCROLL_MULTI_BF_MOVE_TUTOR_3             SCROLL_MULTI_BF_MOVE_TUTOR_1
 #define SPECIAL_BATTLE_LANCE                     SPECIAL_BATTLE_MULTI
-#define TUTOR_MOVE_HEADBUTT                      0
+#define TUTOR_MOVE_HEADBUTT                      MOVE_HEADBUTT
 
 #endif // GUARD_CONSTANTS_HNS_COMPAT_H

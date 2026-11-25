@@ -29,6 +29,7 @@ GoldenrodCity_BillsHouse_Hns_EventScript_Bill::
 	lock
 	faceplayer
 	goto_if_unset FLAG_HNS_GOT_EEVEE, GoldenrodCity_BillsHouse_Hns_EventScript_Bill_Eevee
+	call EventScript_PwBillSeviiOffer @ Pokémon World: the Tri-Pass, if FireRed's Sevii story wasn't played
 	msgbox BillHouse_Text_PopWontWork_Hns, MSGBOX_DEFAULT
 	closemessage
 	release

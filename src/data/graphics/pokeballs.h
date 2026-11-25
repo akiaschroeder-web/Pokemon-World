@@ -81,5 +81,8 @@ const u16 gBallPal_Beast[] = INCGFX_U16("graphics/balls/beast.png", ".gbapal");
 
 const u32 gBallGfx_Cherish[] = INCGFX_U32("graphics/balls/cherish.png", ".4bpp.smol");
 const u16 gBallPal_Cherish[] = INCGFX_U16("graphics/balls/cherish.png", ".gbapal");
+// Pokémon World: Heart & Soul's GS Ball
+const u32 gBallGfx_GS[] = INCGFX_U32("graphics/balls/gs.png", ".4bpp.smol");
+const u16 gBallPal_GS[] = INCGFX_U16("graphics/balls/gs.png", ".gbapal");
 
 const u32 gOpenPokeballGfx[] = INCGFX_U32("graphics/balls/open.png", ".4bpp.smol");

@@ -749,10 +749,13 @@ static u32 OffsetCurrGlyph(u32 shiftWidth)
 
     if (gCurGlyph.width <= 8)
     {
+        // Pokémon World: shifting a u32 by 32 (shiftWidth 8) is undefined. The GBA gives 0;
+        // WebAssembly shifts by 32 % 32 = 0 and kept the glyph, so it was drawn twice (the
+        // doubled gender sign in battle name boxes).
         for (u32 i = 0; i < 8; i++)
         {
-            gCurGlyph.gfxBufferTop[i] = gCurGlyph.gfxBufferTop[i] >> (4 * shiftWidth);
-            gCurGlyph.gfxBufferBottom[i] = gCurGlyph.gfxBufferBottom[i] >> (4 * shiftWidth);
+            gCurGlyph.gfxBufferTop[i] = shiftWidth >= 8 ? 0 : gCurGlyph.gfxBufferTop[i] >> (4 * shiftWidth);
+            gCurGlyph.gfxBufferBottom[i] = shiftWidth >= 8 ? 0 : gCurGlyph.gfxBufferBottom[i] >> (4 * shiftWidth);
         }
     }
     else
@@ -784,7 +787,10 @@ inline static void GLYPH_COPY(u8 *windowTiles, u32 widthOffset, u32 x0, u32 y0, 
     if (width <= 0)
         return;
 
-    u32 widthMask = (1 << (width * 4)) - 1;
+    // Pokémon World: no shifts by 32 here (undefined in C). The GBA gives 0 for them, which this
+    // code relies on; WebAssembly shifts by 32 % 32 = 0 instead, which lost 8-pixel-wide glyph
+    // columns and copied tile-aligned glyphs into the next tile too (ghost letters in text).
+    u32 widthMask = width >= 8 ? 0xFFFFFFFF : (1u << (width * 4)) - 1;
 
     u32 shift0 = (x0 % 8) * 4, shift8 = 32 - shift0;
 
@@ -801,8 +807,8 @@ inline static void GLYPH_COPY(u8 *windowTiles, u32 widthOffset, u32 x0, u32 y0, 
         mask = mask & 0x11111111;
         mask = mask * 0xF;
 
-        u32 pixels0 = pixels << shift0, pixels8 = pixels >> shift8;
-        u32 mask0 = mask << shift0, mask8 = mask >> shift8;
+        u32 pixels0 = pixels << shift0, pixels8 = shift0 == 0 ? 0 : pixels >> shift8;
+        u32 mask0 = mask << shift0, mask8 = shift0 == 0 ? 0 : mask >> shift8;
 
         u32 *alignedWindowTiles = (u32 *)((u8 *)alignedWindowTilesX + ((y / 8) * widthOffset) + ((y % 8) * 4));
 

@@ -12,7 +12,10 @@ enum RegionMapType
     REGION_MAP_KANTO,
     REGION_MAP_SEVII123,
     REGION_MAP_SEVII45,
-    REGION_MAP_SEVII67
+    REGION_MAP_SEVII67,
+    REGION_MAP_SINNOH, // Pokémon World
+    REGION_MAP_JOHTO,
+    REGION_MAP_COUNT
 };
 
 enum
@@ -136,6 +139,8 @@ void TrySetPlayerIconBlink(void);
 void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
 enum RegionMapType GetRegionMapType(u32 mapSecId);
+void GetRegionMapSectionRect(u32 mapSecId, u16 *x, u16 *y, u16 *width, u16 *height);
+void SetSinnohVisitedFlag(void);
 
 //Pokenav Fly funcs
 u32 FilterFlyDestination(struct RegionMap* regionMap);

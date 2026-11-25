@@ -7829,6 +7829,7 @@ static void ComputeBallData(u32 wildMonBattler, u32 playerBattler, struct BallDa
         ball->multiplier = 200;
         break;
     case BALL_MASTER:
+    case BALL_GS: // Pokémon World: Heart & Soul's GS Ball
         ball->guaranteedCapture = TRUE;
         break;
     case BALL_NET:
