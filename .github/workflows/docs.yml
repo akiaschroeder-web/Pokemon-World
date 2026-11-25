@@ -1,8 +1,8 @@
 name: Docs
+# Pokémon World: GitHub Pages hosts the game (build-web.yml), so expansion's docs
+# don't publish there on every push any more; run this by hand if ever wanted.
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
   deploy:
