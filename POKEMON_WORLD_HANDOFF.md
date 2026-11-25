@@ -13,7 +13,7 @@ Pokémon World is a fan game that puts the main-series regions into one game you
 | Sinnoh | LiderMorti00's Sinnoh port on pokeemerald-expansion | In the game (flag split still partly to do) |
 | Kanto | FireRed (pokefirered), merged in; after the time skip, Heart & Soul's Gold/Silver-era Kanto | In the game: FireRed's Kanto first, then the Gold/Silver-era one after Johto's Champion |
 | Johto | The Heart & Soul pokeemerald-expansion project | In the game (maps, story, trainers, wild Pokémon, HGSS music); can be the starting region |
-| Unova | Probably built mostly by the owner | Future |
+| Unova | Pokémon Black (the owner's ROM), drawn in 3D | Stage 1: Nuvema Town and its houses, walkable (debug warp only); see “Unova” below |
 | Kalos, Galar | To be looked at | Future |
 | Alola | The owner is worried about it | Maybe |
 | Orre (Colosseum/XD) | Looks tough | Maybe; Shadow Pokémon might come later, but first decide how Shadow Lugia would affect Johto's story |
@@ -79,6 +79,34 @@ Heart & Soul (a pokeemerald-expansion project; read-only copy at `~/ref/pokemonH
 - Every new game runs Johto's starting flags (`EventScript_ResetAllMapFlags_Hns`) next to Hoenn's/Sinnoh's and Kanto's, whatever the starting region; a Johto start also gets Heart & Soul's starting items (`EventScript_NewGameItems_Hns`).
 - Kurt (Azalea) makes Poké Balls from Berries, as in Heart & Soul: 5 Pecha → Love, 5 Rawst → Lure, 5 Cheri → Friend, 5 Oran → Heavy, 5 Chesto → Moon, 5 Aspear → Fast, 5 Persim → Level Ball, straight away (no daily wait). These are expansion's balls and Berries.
 - **Following Pokémon** are expansion's (`OW_FOLLOWERS_ENABLED` in `include/config/overworld.h`, on in every region). Heart & Soul uses the same system, so its scripts' `UpdateFollowingPokemon` / follower field moves are expansion's own. Species without an overworld sprite show expansion's placeholder (`OW_SUBSTITUTE_PLACEHOLDER`).
+
+## Unova: Pokémon Black's real 3D maps
+Unova isn't drawn by the GBA layers. The page draws Pokémon Black's own map models with WebGL
+(`platform/web/unova3d.js`), using BW's field camera, and the game's picture goes on top with its empty parts
+transparent. Our engine still runs everything: walking, collision, doors, scripts, battles, and the player
+sprite chosen at setup.
+- **Converter:** `PYTHONPATH=~/pylib python3 tools/pokemon_world/import_bw.py "<Pokemon Black .nds>"` (needs ndspy:
+  `pip install --target ~/pylib ndspy`). It writes `graphics/unova/` (meshes `.pwm` + `.json` with cameras,
+  textures for all four seasons, and tile heights), a GBA map per zone (`data/maps/Unova_*`, the
+  `gMapGroup_Unova` group, layouts on the invisible `gTileset_Unova3D` tilesets that only carry behaviours),
+  the warps, `src/data/unova_zones.h` and the `MAPSEC_NUVEMA_TOWN` place name. NITRO model/texture reader:
+  `tools/pokemon_world/bw/nitro.py`.
+- **Game side:** `src/platform/web3d.c`. Map sprites (the ones with `coordOffsetEnabled`) leave the 2D picture
+  and go to the page with their pixels and positions, and stand in the 3D scene as upright billboards.
+  Hooks: `sprite.c` (BuildOamBuffer, LoadOam), `overworld.c` (camera start), `gba_fast_draw.c` (skip those
+  sprites; empty backdrop keeps bit 15 clear), `web.c` (transparent pixels). Palette fades are applied to
+  the 3D picture too. Seasons follow the real month like BW (January = spring).
+- **Converted so far:** all of Unova's 426 zones as 450 maps (zones that aren't rectangles are split; the
+  pieces are joined with map connections, and the 3D view draws the neighbouring chunks, so walking is
+  seamless), with BW's doors and stairs, wild Pokémon (grass, surfing, fishing; one table per season,
+  picked by the month in `src/wild_encounter.c`), BW's people with their own sprites
+  (`bw/sprites.py` → `graphics/object_events/pics/unova`, `OBJ_EVENT_GFX_UNOVA_OBJ<n>`) and signs, with
+  what they say taken from BW's scripts and text (`bw/scripts.py`). Debug menu → Warp to town →
+  Unova… → Nuvema Town.
+- **Not yet:** story scripts and flags (NPCs that BW shows or hides with story flags are left out for now,
+  and people only say their first lines), trainer battles, items on the ground, marts, BW's music
+  (placeholder Emerald music), map/building animations, Unova as a starting region, the Town Map.
+- BW zone ids, area/texture sets and formats: see the converter's comments.
 
 ## Known gaps / not yet played (Johto stages 1–7)
 - ~~Wild battles turning into doubles~~ (fixed): a web-only compiler problem. Expansion's `if_comptime` (`include/metaprogram.h`) relies on a GCC trick that clang (Emscripten) folds the other way, so in the browser every `RandomPercentage()` was a coin flip (the 0% double-battle chance gave doubles half the time; battle effect chances too). It now has a clang version. The GBA build (GCC) was never affected.

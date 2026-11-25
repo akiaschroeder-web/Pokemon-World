@@ -906,3 +906,4 @@ const u16 gObjectEventPal_PwKris[] = INCGFX_U16("graphics/object_events/palettes
 const u16 gObjectEventPal_PwKrisReflection[] = INCGFX_U16("graphics/object_events/palettes/kris_hns_reflection.pal", ".gbapal");
 
 #include "object_event_graphics_hns.h" // Pokémon World: Heart & Soul's sprites (generated)
+#include "object_event_graphics_unova.h" // Pokémon World: Pokémon Black's Unova characters (generated)

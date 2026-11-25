@@ -1,0 +1,94 @@
+{
+  "id": "MAP_UNOVA_ICIRRUS_CITY_2",
+  "name": "Unova_IcirrusCity_2",
+  "layout": "LAYOUT_UNOVA_ICIRRUS_CITY_2",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_ICIRRUS_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_ICIRRUS_CITY_1",
+      "offset": -32,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE8",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ84",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_IcirrusCity_2_EventScript_Npc18",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 18,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_ICIRRUS_CITY_Z118",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_IcirrusCity_2_EventScript_Sign4"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_IcirrusCity_2_EventScript_Sign5"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_IcirrusCity_2_EventScript_Sign6"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_IcirrusCity_2_EventScript_Sign9"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_IcirrusCity_2_EventScript_Sign10"
+    }
+  ]
+}

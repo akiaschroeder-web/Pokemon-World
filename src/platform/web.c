@@ -6,7 +6,7 @@
 // (Emscripten's Asyncify turns the wait into a pause instead of a busy loop).
 //
 // Video: src/platform/gba_fast_draw.c renders the GBA picture into a buffer that the
-// page copies onto a canvas. Sound: the V-blank interrupt runs the sound driver, which mixes
+// page copies onto a canvas (in Unova on top of the 3D map, src/platform/web3d.c). Sound: the V-blank interrupt runs the sound driver, which mixes
 // one frame of sound (src/platform/sound_mixer.c); that goes to the page, which plays it
 // through Web Audio. Input comes from the keyboard or on-screen buttons
 // (platform/web/pokeworld.js). Saves are kept in the browser (localStorage).
@@ -21,6 +21,7 @@
 #include "platform/dma.h"
 #include "platform/framedraw.h"
 #include "platform/sound.h"
+#include "platform/web3d.h"
 
 extern IntrFunc gIntrTable[];
 extern unsigned char gPlatformFlash[];
@@ -176,9 +177,15 @@ static void SendAudio(void)
 static void ConvertFrame(void)
 {
     u32 i;
+    bool32 see3D = Web3D_IsActive();
     for (i = 0; i < DISPLAY_WIDTH * DISPLAY_HEIGHT; i++)
     {
         u16 c = sGbaFrame[i];
+        if (see3D && !(c & 0x8000))
+        {
+            sRgbaFrame[i] = 0; // nothing drawn here: the 3D map shows through (src/platform/web3d.c)
+            continue;
+        }
         u32 r = (c & 0x1F) * 255 / 31;
         u32 g = ((c >> 5) & 0x1F) * 255 / 31;
         u32 b = ((c >> 10) & 0x1F) * 255 / 31;
@@ -190,6 +197,7 @@ void VBlankIntrWait(void)
 {
     // Draw the picture (this runs the H-blank and V-count interrupts line by line).
     memset(sGbaFrame, 0, sizeof(sGbaFrame));
+    Web3D_EndFrame(); // Unova: what the 3D view shows, and which sprites it takes from the 2D picture
     DrawFrame(sGbaFrame);
     ConvertFrame();
     Web_PresentFrame(sRgbaFrame);

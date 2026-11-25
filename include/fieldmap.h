@@ -12,7 +12,11 @@
 #define NUM_METATILES_TOTAL 1024
 #define NUM_TILES_TOTAL 1024
 #define NUM_PALS_TOTAL 13
+#ifdef PLATFORM_WEB
+#define MAX_MAP_DATA_SIZE 40000 // Pokémon World: Unova's zones are up to 4x4 BW chunks (128x128 tiles)
+#else
 #define MAX_MAP_DATA_SIZE 10240
+#endif
 
 #define NUM_TILES_PER_METATILE 8
 

@@ -705,6 +705,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SinnohRiley, OBJ_EVENT_PAL_TAG_SINNOH_RILEY},
     {gObjectEventPal_SinnohCheryl, OBJ_EVENT_PAL_TAG_SINNOH_CHERYL},
 #include "data/object_events/object_event_palettes_hns.h" // Pokémon World: Heart & Soul's sprite palettes (generated)
+#include "data/object_events/object_event_palettes_unova.h" // Pokémon World: Pokémon Black's Unova characters (generated)
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
     {}, // BUG: FindObjectEventPaletteIndexByTag looks for OBJ_EVENT_PAL_TAG_NONE and not 0x0.

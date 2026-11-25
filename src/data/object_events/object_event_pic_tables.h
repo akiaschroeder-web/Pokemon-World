@@ -3153,3 +3153,4 @@ static const struct SpriteFrameImage sPicTable_PwKrisDecorating[] = {
 };
 
 #include "object_event_pic_tables_hns.h" // Pokémon World: Heart & Soul's sprites (generated)
+#include "object_event_pic_tables_unova.h" // Pokémon World: Pokémon Black's Unova characters (generated)

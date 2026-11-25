@@ -1,0 +1,8743 @@
+{
+"0": {
+"op": 0,
+"params": [],
+"Name": "VMNop",
+"Brief": "Does nothing.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "Nop"
+},
+"1": {
+"op": 1,
+"params": [],
+"Name": "VMNop2",
+"Brief": "Does nothing.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "Nop2"
+},
+"2": {
+"op": 2,
+"params": [],
+"Name": "VMHalt",
+"CommandType": "End",
+"Brief": "Ends a script.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "Halt"
+},
+"3": {
+"op": 3,
+"params": [
+{
+"Name": "num",
+"Type": "const ushort"
+}
+],
+"Name": "VMSleep",
+"Brief": "Pauses execution for num frames. (30 frames in the overworld = 1 second).",
+"PSPackage": "system.Runtime",
+"PSName": "Sleep"
+},
+"4": {
+"op": 4,
+"params": [
+{
+"Name": "addr",
+"Type": "int"
+}
+],
+"Name": "VMCall",
+"CommandType": "Call",
+"Brief": "Jumps to a relative script branch and transfers the program counter to it.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "_Call"
+},
+"5": {
+"op": 5,
+"params": [],
+"Name": "VMReturn",
+"CommandType": "Return",
+"Brief": "Ends the current script branch and returns the program counter to the original script (?).",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "_Return"
+},
+"6": {
+"op": 6,
+"params": [
+{
+"Name": "unused",
+"Type": "ushort"
+}
+],
+"Name": "DebugPrint",
+"Brief": "TODO",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "DebugPrint"
+},
+"7": {
+"op": 7,
+"params": [
+{
+"Name": "unused",
+"Type": "ushort"
+}
+],
+"Name": "DebugStack",
+"Brief": "TODO",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "DebugStack"
+},
+"8": {
+"op": 8,
+"params": [
+{
+"Name": "value",
+"Type": "const ushort"
+}
+],
+"Name": "StackPushConst",
+"Brief": "Pushes a variable onto the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "PushConst"
+},
+"9": {
+"op": 9,
+"params": [
+{
+"Name": "var",
+"Type": "ushort"
+}
+],
+"Name": "StackPush",
+"Brief": "Pushes a variable's value onto the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "Push"
+},
+"10": {
+"op": 10,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort"
+}
+],
+"Name": "StackPop",
+"Brief": "Removes a variable from the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "PopTo"
+},
+"11": {
+"op": 11,
+"params": [],
+"Name": "StackDiscard",
+"Brief": "Clears the stack (?).",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "Pop"
+},
+"12": {
+"op": 12,
+"params": [],
+"Name": "StackAdd",
+"Brief": "Adds two variables on the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "StackAdd"
+},
+"13": {
+"op": 13,
+"params": [],
+"Name": "StackSub",
+"Brief": "Subtracts two variables on the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "StackSub"
+},
+"14": {
+"op": 14,
+"params": [],
+"Name": "StackMul",
+"Brief": "Multiplies two variables on the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "StackMul"
+},
+"15": {
+"op": 15,
+"params": [],
+"Name": "StackDiv",
+"Brief": "Divides two variables on the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "StackDiv"
+},
+"16": {
+"op": 16,
+"params": [
+{
+"Name": "flag",
+"Type": "ushort"
+}
+],
+"Name": "StackPushFlag",
+"Brief": "Stores the flag on the stack(?).",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "PushFlag"
+},
+"17": {
+"op": 17,
+"params": [
+{
+"Name": "cond",
+"Type": "const ushort"
+}
+],
+"Name": "StackCmp",
+"Brief": "Compares the two topmost elements of the stack based on a condition and pushes the result back onto the stack.",
+"PSPackage": "pokescript.vm.StackCtrl",
+"PSName": "StackCmp"
+},
+"18": {
+"op": 18,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkAnd",
+"Brief": "var &= operand",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "And"
+},
+"19": {
+"op": 19,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkOr",
+"Brief": "var |= operand",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "Or"
+},
+"20": {
+"op": 20,
+"params": [
+{
+"Name": "dstReg",
+"Type": "byte"
+},
+{
+"Name": "val",
+"Type": "byte"
+}
+],
+"Name": "VMRegSet8",
+"Brief": "Stores an 8-bit integer in a global variable (referenced by id).",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "RegSet8"
+},
+"21": {
+"op": 21,
+"params": [
+{
+"Name": "dstReg",
+"Type": "byte"
+},
+{
+"Name": "val",
+"Type": "int"
+}
+],
+"Name": "VMRegSet32",
+"Brief": "Stores a 32-bit integer in a global variable (referenced by id).",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "RegSet32"
+},
+"22": {
+"op": 22,
+"params": [
+{
+"Name": "dstReg",
+"Type": "byte"
+},
+{
+"Name": "srcReg",
+"Type": "byte"
+}
+],
+"Name": "VMRegMov",
+"Brief": "TODO",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "RegMov"
+},
+"23": {
+"op": 23,
+"params": [
+{
+"Name": "lhsReg",
+"Type": "byte"
+},
+{
+"Name": "rhsReg",
+"Type": "byte"
+}
+],
+"Name": "VMRegCmp8",
+"WritesCondition": "true",
+"Brief": "Compares the values of two global variables (referenced by id).",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "RegCmp8"
+},
+"24": {
+"op": 24,
+"params": [
+{
+"Name": "reg",
+"Type": "byte"
+},
+{
+"Name": "value",
+"Type": "byte"
+}
+],
+"Name": "VMRegCmpConst8",
+"WritesCondition": "true",
+"Brief": "Compares the values of a global variable and a user supplied variable.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "RegCmpConst8"
+},
+"25": {
+"op": 25,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "value",
+"Type": "const ushort"
+}
+],
+"Name": "WorkCmpConst",
+"WritesCondition": "true",
+"Brief": "Compares the values of a variable and a user supplied number.",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "CmpVarConst"
+},
+"26": {
+"op": 26,
+"params": [
+{
+"Name": "lhsVar",
+"Type": "ref ushort"
+},
+{
+"Name": "rhsVar",
+"Type": "ref ushort"
+}
+],
+"Name": "WorkCmpWork",
+"WritesCondition": "true",
+"Brief": "Compares the values of two variables.",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "CmpVarVar"
+},
+"27": {
+"op": 27,
+"params": [
+{
+"Name": "scrId",
+"Type": "const ushort"
+}
+],
+"Name": "RTCallGlobalAsync",
+"CommandType": "Call",
+"ExternCall": "true",
+"Brief": "Calls a common script alongside the currently running script.",
+"PSPackage": "system.Runtime",
+"PSName": "GlobalCallAsync"
+},
+"28": {
+"op": 28,
+"params": [
+{
+"Name": "scrId",
+"Type": "const ushort"
+}
+],
+"Name": "RTCallGlobal",
+"CommandType": "Call",
+"ExternCall": "true",
+"Brief": "Calls a common script and waits until it completes.",
+"PSPackage": "system.Runtime",
+"PSName": "GlobalCall"
+},
+"29": {
+"op": 29,
+"params": [],
+"Name": "RTEndGlobal",
+"CommandType": "End",
+"Brief": "Stops the standard function.",
+"PSPackage": "system.Runtime",
+"PSName": "GlobalEnd"
+},
+"30": {
+"op": 30,
+"params": [
+{
+"Name": "addr",
+"Type": "int"
+}
+],
+"Name": "VMJump",
+"CommandType": "Jump",
+"Brief": "Jumps to and sets the program counter to a relative script branch (whose distance is specified in addr).",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "_Jump"
+},
+"31": {
+"op": 31,
+"params": [
+{
+"Name": "cond",
+"Type": "byte"
+},
+{
+"Name": "addr",
+"Type": "int"
+}
+],
+"Name": "VMJumpIf",
+"CommandType": "Jump",
+"HasCondition": "true",
+"Brief": "Jumps to and sets the program counter to a relative script branch (whose distance is specified in addr), if the given condition is true.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "_JumpIf"
+},
+"32": {
+"op": 32,
+"params": [
+{
+"Name": "cond",
+"Type": "byte"
+},
+{
+"Name": "addr",
+"Type": "int"
+}
+],
+"Name": "VMCallIf",
+"CommandType": "Call",
+"HasCondition": "true",
+"Brief": "Jumps to but doesn't set the program counter to a relative script branch (whose distance is specified in addr), if the given condition is true.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "_CallIf"
+},
+"33": {
+"op": 33,
+"params": [
+{
+"Name": "scrId",
+"Type": "const ushort"
+}
+],
+"Name": "RTReserveScript",
+"Brief": "Reserves the next executed SCRID to a constant value. Can be used across a warp as well to start another script automatically.",
+"PSPackage": "system.Runtime",
+"PSName": "ReserveScript"
+},
+"34": {
+"op": 34,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "FieldGetContinueFlag",
+"Brief": "TODO"
+},
+"35": {
+"op": 35,
+"params": [
+{
+"Name": "flag",
+"Type": "ushort"
+}
+],
+"Name": "FlagSet",
+"Brief": "Sets a given system flag to TRUE (1).",
+"PSPackage": "system.EventFlags",
+"PSName": "Set"
+},
+"36": {
+"op": 36,
+"params": [
+{
+"Name": "flag",
+"Type": "ushort"
+}
+],
+"Name": "FlagReset",
+"Brief": "Clears the state of a given system flag.",
+"PSPackage": "system.EventFlags",
+"PSName": "Clear"
+},
+"37": {
+"op": 37,
+"params": [
+{
+"Name": "flag",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "FlagGet",
+"Brief": "Reads the value of a flag, and stores it in var.",
+"PSPackage": "system.EventFlags",
+"PSName": "Get"
+},
+"38": {
+"op": 38,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkAdd",
+"Brief": "Accesses the second variable, grabs the value of the variable, then adds it to the value in the first variable.",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "Add"
+},
+"39": {
+"op": 39,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkSub",
+"Brief": "Accesses the second variable, grabs the value of the variable, then subtracts it from the value in the first variable.",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "Sub"
+},
+"40": {
+"op": 40,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "value",
+"Type": "const ushort"
+}
+],
+"Name": "WorkSetConst",
+"Brief": "Stores val in the specified variable.",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "SetConst"
+},
+"41": {
+"op": 41,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "src",
+"Type": "ref ushort"
+}
+],
+"Name": "WorkGet",
+"Brief": "Copies the value in src to the variable dest. Also known as: var.value = src.value",
+"PSPackage": "system.EventWorks",
+"PSName": "Get"
+},
+"42": {
+"op": 42,
+"params": [
+{
+"Name": "dst",
+"Type": "ref ushort"
+},
+{
+"Name": "src",
+"Type": "ushort"
+}
+],
+"Name": "WorkSet",
+"Brief": "Copies the value in src to the variable dest. Also known as: var.value = src.value (?)",
+"PSPackage": "system.EventWorks",
+"PSName": "Set"
+},
+"43": {
+"op": 43,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkMul",
+"Brief": "Multiplies the value of var by val. Also known as: var.value *= val",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "Mul"
+},
+"44": {
+"op": 44,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkDiv",
+"Brief": "Divides the value of var by val. Also known as: var.value /= val",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "Div"
+},
+"45": {
+"op": 45,
+"params": [
+{
+"Name": "var",
+"Type": "ref ushort"
+},
+{
+"Name": "operand",
+"Type": "ushort"
+}
+],
+"Name": "WorkMod",
+"Brief": "Divides the value of var by val and returns the remainder of the operation. Also known as: var.value %= val",
+"PSPackage": "pokescript.vm.Math",
+"PSName": "Mod"
+},
+"46": {
+"op": 46,
+"params": [],
+"Name": "ActorPauseAll",
+"Brief": "Freezes all NPCs.",
+"PSPackage": "event.actors.Actor",
+"PSName": "PauseAll"
+},
+"47": {
+"op": 47,
+"params": [],
+"Name": "ActorUnlockAll",
+"Brief": "Unfreezes all NPCs.",
+"PSPackage": "event.actors.Actor",
+"PSName": "UnpauseAll"
+},
+"48": {
+"op": 48,
+"params": [],
+"Name": "RTFinishSubEvents",
+"Brief": "TODO",
+"PSPackage": "system.Runtime",
+"PSName": "FinishSubEvents"
+},
+"49": {
+"op": 49,
+"params": [],
+"Name": "InputWaitAB",
+"Brief": "Waits until \\\"A\\\" or \\\"B\\\" is pressed.",
+"PSPackage": "system.Input",
+"PSName": "ABKeyWait"
+},
+"50": {
+"op": 50,
+"params": [],
+"Name": "InputWaitLast",
+"Brief": "Waits until any key is pressed.",
+"PSPackage": "system.Input",
+"PSName": "LastKeyWait"
+},
+"51": {
+"op": 51,
+"params": [
+{
+"Name": "enabled",
+"Type": "const ushort"
+}
+],
+"Name": "MsgSetAutoscrolls",
+"Brief": "Opens a message with music.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "SetAutoscrolls"
+},
+"52": {
+"op": 52,
+"params": [
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "const ushort"
+}
+],
+"Name": "MsgSystem",
+"Brief": "Opens an event-gray message box.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "System"
+},
+"53": {
+"op": 53,
+"params": [
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "const ushort"
+}
+],
+"Name": "MsgSystemAsync",
+"Brief": "Opens another event-gray message box.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "SystemAsync"
+},
+"54": {
+"op": 54,
+"params": [],
+"Name": "MsgSystemClose",
+"Brief": "Closes an event-gray message box.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CloseSystem"
+},
+"55": {
+"op": 55,
+"params": [
+{
+"Name": "hide",
+"Type": "ushort"
+}
+],
+"Name": "MsgSetLoadingSpinner",
+"Brief": "Shows/hides a loading spinner at the current message box.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "SetLoadingSpinner"
+},
+"56": {
+"op": 56,
+"params": [
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "byte"
+}
+],
+"Name": "MsgInfo",
+"Brief": "Opens a message which isn't associated with an NPC.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "Info"
+},
+"57": {
+"op": 57,
+"params": [],
+"Name": "MsgInfoClose",
+"Brief": "Closes the message which isn't associated with an NPC.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CloseInfo"
+},
+"58": {
+"op": 58,
+"params": [
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "handle",
+"Type": "ushort"
+}
+],
+"Name": "MsgMulti",
+"Brief": "Opens a message at position (x, y). The coordinates are based on screen hardware tiles. ",
+"PSPackage": "event.dialogs.Message",
+"PSName": "Multi"
+},
+"59": {
+"op": 59,
+"params": [
+{
+"Name": "handle",
+"Type": "const ushort"
+}
+],
+"Name": "MsgWinCloseNo",
+"Brief": "Closes the positional message.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CloseWin"
+},
+"60": {
+"op": 60,
+"params": [
+{
+"Name": "textFile",
+"Type": "ushort"
+},
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "ushort"
+},
+{
+"Name": "type",
+"Type": "ushort"
+}
+],
+"Name": "MsgActorEx",
+"Brief": "Prints a message with a tail for an NPC. The NPC is manually determined.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "ActorEx"
+},
+"61": {
+"op": 61,
+"params": [
+{
+"Name": "textFile",
+"Type": "ushort"
+},
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "ushort"
+},
+{
+"Name": "type",
+"Type": "ushort"
+}
+],
+"Name": "MsgActor",
+"Brief": "Prints a message with a tail for an NPC. The NPC is automatically determined.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "Actor"
+},
+"62": {
+"op": 62,
+"params": [],
+"Name": "MsgActorClose",
+"Brief": "Closes a message when a key is pressed.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CloseActor"
+},
+"63": {
+"op": 63,
+"params": [],
+"Name": "MsgWinCloseAll",
+"Brief": "Closes a message when a key is pressed. Not sure what makes this different just yet.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CloseAll"
+},
+"64": {
+"op": 64,
+"params": [
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+}
+],
+"Name": "MoneyWinDisp",
+"Brief": "Shows the money box at coords (x, y).",
+"PSPackage": "event.dialogs.MoneyWin",
+"PSName": "Show"
+},
+"65": {
+"op": 65,
+"params": [],
+"Name": "MoneyWinClose",
+"Brief": "Closes the money box.",
+"PSPackage": "event.dialogs.MoneyWin",
+"PSName": "Close"
+},
+"66": {
+"op": 66,
+"params": [],
+"Name": "MoneyWinUpdate",
+"Brief": "Updates the values in the money box.",
+"PSPackage": "event.dialogs.MoneyWin",
+"PSName": "Update"
+},
+"67": {
+"op": 67,
+"params": [
+{
+"Name": "msgId",
+"Type": "ushort"
+},
+{
+"Name": "type",
+"Type": "const ushort"
+}
+],
+"Name": "MsgPlaceSign",
+"Brief": "Opens a message with a border.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "PlaceSign"
+},
+"68": {
+"op": 68,
+"params": [],
+"Name": "MsgPlaceSignClose",
+"Brief": "Closes the bordered message.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "ClosePlaceSign"
+},
+"69": {
+"op": 69,
+"params": [
+{
+"Name": "msgId",
+"Type": "const ushort"
+},
+{
+"Name": "posX",
+"Type": "byte"
+},
+{
+"Name": "posY",
+"Type": "byte"
+},
+{
+"Name": "unused",
+"Type": "const ushort"
+}
+],
+"Name": "MsgCheckerBG",
+"Brief": "Opens a message with a checkerboard background.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CheckerMsg"
+},
+"70": {
+"op": 70,
+"params": [],
+"Name": "MsgCheckerBGClose",
+"Brief": "Closes the checkerboard message.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "CloseCheckerMsg"
+},
+"71": {
+"op": 71,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "YesNoWin",
+"Brief": "Opens a box with two options, yes or no. The result of the choice made by the player is stored in var.",
+"PSPackage": "event.dialogs.YesNoWin",
+"PSName": "Show"
+},
+"72": {
+"op": 72,
+"params": [
+{
+"Name": "textFile",
+"Type": "ushort"
+},
+{
+"Name": "msgIdM",
+"Type": "ushort"
+},
+{
+"Name": "msgIdF",
+"Type": "ushort"
+},
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "ushort"
+},
+{
+"Name": "type",
+"Type": "ushort"
+}
+],
+"Name": "MsgActorGendered",
+"Brief": "A message which changes depending on the player's gender.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "ActorGendered"
+},
+"73": {
+"op": 73,
+"params": [
+{
+"Name": "textFile",
+"Type": "ushort"
+},
+{
+"Name": "msgIdW",
+"Type": "ushort"
+},
+{
+"Name": "msgIdB",
+"Type": "ushort"
+},
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "ushort"
+},
+{
+"Name": "type",
+"Type": "ushort"
+}
+],
+"Name": "MsgActorVersioned",
+"Brief": "A message which changes depending on whether the game is Black or White.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "ActorVersioned"
+},
+"74": {
+"op": 74,
+"params": [
+{
+"Name": "id",
+"Type": "ushort"
+},
+{
+"Name": "pos",
+"Type": "byte"
+}
+],
+"Name": "MsgScream",
+"Brief": "Opens a message with a spiked border. Known as the angry message by some.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "Spiked"
+},
+"75": {
+"op": 75,
+"params": [],
+"Name": "MsgWaitAdvance",
+"Brief": "Closes all messages on screen.",
+"PSPackage": "event.dialogs.Message",
+"PSName": "WaitAdvance"
+},
+"76": {
+"op": 76,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+}
+],
+"Name": "WordSetPlayerName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPlayerName"
+},
+"77": {
+"op": 77,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "itemId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetItemName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadItemName"
+},
+"78": {
+"op": 78,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "amount",
+"Type": "ushort"
+},
+{
+"Name": "article",
+"Type": "byte"
+}
+],
+"Name": "WordSetItemNameEx",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadItemNameEx"
+},
+"79": {
+"op": 79,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "itemId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetItemNameWithArticle",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadItemNameWithArticle"
+},
+"80": {
+"op": 80,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "itemId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetTMMoveName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadTMMoveName"
+},
+"81": {
+"op": 81,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "moveId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetMoveName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadMoveName"
+},
+"82": {
+"op": 82,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "itemId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetItemPocketName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadItemPocketName"
+},
+"83": {
+"op": 83,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPartyPokeSpecies",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPartyPokeSpecies"
+},
+"84": {
+"op": 84,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPartyPokeName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPartyPokeName"
+},
+"85": {
+"op": 85,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "WordSetDaycarePokeSpecies",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadDaycarePokeSpecies"
+},
+"86": {
+"op": 86,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "typeId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPokeTypeName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPokeTypeName"
+},
+"87": {
+"op": 87,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "species",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPokeSpecies",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPokeSpecies"
+},
+"88": {
+"op": 88,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "species",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPokeSpeciesWithArticle",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPokeSpeciesWithArticle"
+},
+"89": {
+"op": 89,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "zoneId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPlaceName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPlaceName"
+},
+"90": {
+"op": 90,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "trendId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetTrendName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadTrendName"
+},
+"91": {
+"op": 91,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "species",
+"Type": "ushort"
+}
+],
+"Name": "WordSetDaycarePokeName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadDaycarePokeName"
+},
+"92": {
+"op": 92,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "value",
+"Type": "ushort"
+},
+{
+"Name": "magnitude",
+"Type": "ushort"
+}
+],
+"Name": "WordSetNumber",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadNumber"
+},
+"93": {
+"op": 93,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "type",
+"Type": "byte"
+},
+{
+"Name": "index",
+"Type": "ushort"
+}
+],
+"Name": "WordSetMusicalInfo",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadMusicalInfo"
+},
+"94": {
+"op": 94,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "countryId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetCountry",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadCountry"
+},
+"95": {
+"op": 95,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "hobbyId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetHobbyName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadHobbyName"
+},
+"96": {
+"op": 96,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "passPowerId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetPassPowerName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadPassPowerName"
+},
+"97": {
+"op": 97,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "classId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetTrainerClassName",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadTrainerClassName"
+},
+"98": {
+"op": 98,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "classId",
+"Type": "ushort"
+}
+],
+"Name": "WordSetTrainerClassNameWithArticle",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadTrainerClassWithArticle"
+},
+"99": {
+"op": 99,
+"params": [
+{
+"Name": "strbufIdx",
+"Type": "byte"
+},
+{
+"Name": "answerIdx",
+"Type": "ushort"
+}
+],
+"Name": "WordSetSurveyAnswer",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadSurveyAnswer"
+},
+"100": {
+"op": 100,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "addr",
+"Type": "int"
+}
+],
+"Name": "ActorCmdExec",
+"CommandType": "CallActionSeq",
+"Brief": "Makes the NPC with the ID $id perform a series of actions, relatively located at $addr.",
+"PSPackage": "pokescript.vm.VM",
+"PSName": "_ActionBranch"
+},
+"101": {
+"op": 101,
+"params": [],
+"Name": "ActorCmdWait",
+"Brief": "Waits for any NPC movement to stop before continuing script execution.",
+"PSPackage": "event.actors.Actor",
+"PSName": "WaitActionFinish"
+},
+"102": {
+"op": 102,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "ActorGetMoveCode",
+"Brief": "Gets an Actor's MoveCode.",
+"PSPackage": "event.actors.Actor",
+"PSName": "GetMoveCode"
+},
+"103": {
+"op": 103,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "pX",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pZ",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ActorGetGPos",
+"Brief": "Stores an Actor's XY grid location to two variables.",
+"PSPackage": "event.actors.Actor",
+"PSName": "GetGPos/GetGPosX/GetGPosZ"
+},
+"104": {
+"op": 104,
+"params": [
+{
+"Name": "pX",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pZ",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PlayerGetGPos",
+"Brief": "Stores the player's XY grid location to two variables.",
+"PSPackage": "event.actors.Player",
+"PSName": "GetGPos/GetGPosX/GetGPosZ"
+},
+"105": {
+"op": 105,
+"params": [
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+},
+{
+"Name": "dir",
+"Type": "ushort"
+},
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "objCode",
+"Type": "ushort"
+},
+{
+"Name": "moveCode",
+"Type": "ushort"
+}
+],
+"Name": "ActorNew",
+"Brief": "Spawns a new NPC with $id and $objcode at $x $y $z with MoveCode $moveCode.",
+"PSPackage": "event.actors.Actor",
+"PSName": "New"
+},
+"106": {
+"op": 106,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ActorGetSpawnFlag",
+"Brief": "TODO",
+"PSPackage": "event.actors.Actor",
+"PSName": "GetSpawnFlag"
+},
+"107": {
+"op": 107,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "ActorAdd",
+"Brief": "Shows the hidden NPC with the id ID.",
+"PSPackage": "event.actors.Actor",
+"PSName": "Show"
+},
+"108": {
+"op": 108,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "ActorDelete",
+"Brief": "Hides the NPC with the id ID.",
+"PSPackage": "event.actors.Actor",
+"PSName": "Hide"
+},
+"109": {
+"op": 109,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+},
+{
+"Name": "dir",
+"Type": "ushort"
+}
+],
+"Name": "ActorSetGPos",
+"Brief": "Sets an Actor's grid position and direction.",
+"PSPackage": "event.actors.Actor",
+"PSName": "SetGPos"
+},
+"110": {
+"op": 110,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PlayerGetDir",
+"Brief": "Gets the direction of the player.",
+"PSPackage": "event.actors.Player",
+"PSName": "GetDirection"
+},
+"111": {
+"op": 111,
+"params": [
+{
+"Name": "pActorId",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "PlayerGetActorInFront",
+"Brief": "TODO",
+"PSPackage": "event.actors.Player",
+"PSName": "GetFacingActor/GetFacingActorID/HasFacingActor"
+},
+"112": {
+"op": 112,
+"params": [
+{
+"Name": "pActorId",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "ActorFindByGPos",
+"Brief": "TODO",
+"PSPackage": "event.actors.Actor",
+"PSName": "FindByGPos/FindIDByGPos/IsActorAtGPos"
+},
+"113": {
+"op": 113,
+"params": [
+{
+"Name": "pLineId",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pPosFront",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pPosSide",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PlayerGetRailPos",
+"Brief": "Gets the player's rail position.",
+"PSPackage": "event.actors.Player",
+"PSName": "GetRailPos/GetRailLineID/GetRailPosFront/GetRailPosSide"
+},
+"114": {
+"op": 114,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "pLineId",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pPosFront",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pPosSide",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ActorGetRailPos",
+"Brief": "Gets an Actor's rail position. Behavior is undefined if the actor is on grid.",
+"PSPackage": "event.actors.Actor",
+"PSName": "GetRailPos/GetRailLineID/GetRailPosFront/GetRailPosSide"
+},
+"115": {
+"op": 115,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "moveCode",
+"Type": "ushort"
+}
+],
+"Name": "ActorSetMoveCode",
+"Brief": "Sets an Actor's MoveCode.",
+"PSPackage": "event.actors.Actor",
+"PSName": "SetMoveCode"
+},
+"116": {
+"op": 116,
+"params": [],
+"Name": "ActorSetEyeToEye",
+"Brief": "Causes both the player and the NPC that this script is assigned to face each other.",
+"PSPackage": "event.actors.Actor",
+"PSName": "FacePlayer"
+},
+"117": {
+"op": 117,
+"params": [
+{
+"Name": "seqId",
+"Type": "const ushort"
+}
+],
+"Name": "PlayerSetSpecialSequence",
+"Brief": "TODO",
+"PSPackage": "event.actors.Player",
+"PSName": "SetSpecialSequence"
+},
+"118": {
+"op": 118,
+"params": [
+{
+"Name": "direction",
+"Type": "ushort"
+},
+{
+"Name": "interval",
+"Type": "ushort"
+},
+{
+"Name": "destY",
+"Type": "ushort"
+},
+{
+"Name": "isYPositive",
+"Type": "ushort"
+}
+],
+"Name": "PlayerMoveToYAsync",
+"Brief": "TODO",
+"PSPackage": "event.actors.Player",
+"PSName": "AnimateY"
+},
+"119": {
+"op": 119,
+"params": [],
+"Name": "PlayerTurnByTrigger",
+"Brief": "If the player is currently standing in the area of a trigger with a direction value set, they will turn in that direction.",
+"PSPackage": "event.actors.Player",
+"PSName": "TurnByTrigger"
+},
+"120": {
+"op": 120,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "PlayerGetExState",
+"Brief": "TODO",
+"PSPackage": "event.actors.Player",
+"PSName": "GetExState"
+},
+"121": {
+"op": 121,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "paramIdx",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ActorGetUserParam",
+"Brief": "TODO",
+"PSPackage": "event.actors.Actor",
+"PSName": "GetUserParam"
+},
+"122": {
+"op": 122,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "ActorPlayRailSlipdown",
+"Brief": "Overlay 131 - rail_slipdown.c",
+"PSPackage": "event.actors.ActorSequences",
+"PSName": "RailSlipdown"
+},
+"123": {
+"op": 123,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "ActorJumpToGPos",
+"Brief": "Moves NPC to specified XYZ coordinates on map (in that order).",
+"PSPackage": "event.actors.Actor",
+"PSName": "JumpToGPos"
+},
+"124": {
+"op": 124,
+"params": [
+{
+"Name": "lineId",
+"Type": "ushort"
+},
+{
+"Name": "posFront",
+"Type": "ushort"
+},
+{
+"Name": "posSide",
+"Type": "ushort"
+}
+],
+"Name": "PlayerSetRailPos",
+"Brief": "TODO",
+"PSPackage": "event.actors.Player",
+"PSName": "SetRailPos"
+},
+"125": {
+"op": 125,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+},
+{
+"Name": "lineId",
+"Type": "ushort"
+},
+{
+"Name": "posFront",
+"Type": "ushort"
+},
+{
+"Name": "posSide",
+"Type": "ushort"
+}
+],
+"Name": "ActorSetRailPos",
+"Brief": "TODO",
+"PSPackage": "event.actors.Actor",
+"PSName": "SetRailPos"
+},
+"126": {
+"op": 126,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "ActorPlayTeleportSeq",
+"Brief": "TODO",
+"PSPackage": "event.actors.ActorSequences",
+"PSName": "Teleport"
+},
+"127": {
+"op": 127,
+"params": [
+{
+"Name": "trSlotId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerEyeGetTrainerID",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "GetTrainerID"
+},
+"128": {
+"op": 128,
+"params": [
+{
+"Name": "trSlotId",
+"Type": "ushort"
+}
+],
+"Name": "TrainerEyeEventInit",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "InitEvent"
+},
+"129": {
+"op": 129,
+"params": [],
+"Name": "TrainerEyeEventStart",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "StartEvent"
+},
+"130": {
+"op": 130,
+"params": [
+{
+"Name": "trSlotId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerEyeGetActorID",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "GetActorID"
+},
+"131": {
+"op": 131,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerEyeGetBattleType",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "GetBtlType"
+},
+"132": {
+"op": 132,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ActorGetTrainerID",
+"Brief": "TODO",
+"PSPackage": "event.actors.Actor",
+"PSName": "GetTrainerID"
+},
+"133": {
+"op": 133,
+"params": [
+{
+"Name": "trId1",
+"Type": "ushort"
+},
+{
+"Name": "trId2",
+"Type": "ushort"
+},
+{
+"Name": "flags",
+"Type": "ushort"
+}
+],
+"Name": "CallTrainerBattle",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "CallTrainerBattle"
+},
+"134": {
+"op": 134,
+"params": [
+{
+"Name": "allyId",
+"Type": "ushort"
+},
+{
+"Name": "trId1",
+"Type": "ushort"
+},
+{
+"Name": "trId2",
+"Type": "ushort"
+},
+{
+"Name": "flags",
+"Type": "ushort"
+}
+],
+"Name": "CallTrainerMultiBattle",
+"Brief": "Begins a Multi Battle against two Trainers specified by params 2 and 3, with an ally specified by param 1. Win/loss logic is decided by parameter 4.",
+"PSPackage": "event.Battle",
+"PSName": "CallTrainerMultiBattle"
+},
+"135": {
+"op": 135,
+"params": [
+{
+"Name": "trSlotId",
+"Type": "ushort"
+},
+{
+"Name": "msgType",
+"Type": "ushort"
+},
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "TrainerEyeSayMessage",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "SayMessage"
+},
+"136": {
+"op": 136,
+"params": [
+{
+"Name": "pIdBeforeBtl",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pIdDefeated",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pIdReject",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerEyeGetMessageTypes",
+"Brief": "TODO",
+"PSPackage": "event.TrainerEye",
+"PSName": "GetFieldMessageIDs/GetClashMsgID/GetDefeatMsgID/GetRejectBtlMsgID"
+},
+"138": {
+"op": 138,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerGetBattleType",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "GetBtlType"
+},
+"139": {
+"op": 139,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+}
+],
+"Name": "TrainerBGMPlayPush",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "PlayBGMPush"
+},
+"140": {
+"op": 140,
+"params": [],
+"Name": "CallTrainerLose",
+"Brief": "Calls the blackout sequence after the player is defeated in a Trainer battle.",
+"PSPackage": "event.Battle",
+"PSName": "CallTrainerLose"
+},
+"141": {
+"op": 141,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "TrainerBattleIsVictory",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "IsTrainerVictory"
+},
+"142": {
+"op": 142,
+"params": [],
+"Name": "CallTrainerBattleEnd",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "EndTrainerBattle"
+},
+"146": {
+"op": 146,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerGetFieldAction",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "GetFieldAction"
+},
+"147": {
+"op": 147,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerGetPrizeItem",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "GetPrizeItem"
+},
+"148": {
+"op": 148,
+"params": [
+{
+"Name": "trId1",
+"Type": "ushort"
+},
+{
+"Name": "trId2",
+"Type": "ushort"
+},
+{
+"Name": "flags",
+"Type": "ushort"
+},
+{
+"Name": "savePkmIdx",
+"Type": "ushort"
+}
+],
+"Name": "CallTradedPokemonBattle",
+"Brief": "Starts a trainer battle using a previously traded Pok\u00e9mon as the opponent.",
+"PSPackage": "event.Battle",
+"PSName": "CallTradedBattle"
+},
+"149": {
+"op": 149,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+}
+],
+"Name": "TrainerFlagSet",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "FlagGet"
+},
+"150": {
+"op": 150,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+}
+],
+"Name": "TrainerFlagReset",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "FlagReset"
+},
+"151": {
+"op": 151,
+"params": [
+{
+"Name": "trId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "TrainerFlagGet",
+"Brief": "TODO",
+"PSPackage": "event.Trainer",
+"PSName": "FlagSet"
+},
+"152": {
+"op": 152,
+"params": [
+{
+"Name": "sndId",
+"Type": "const ushort"
+}
+],
+"Name": "BGMPlay",
+"Brief": "Plays a music track corresponding to id in swan_sound_data.sdat.",
+"PSPackage": "system.Sound",
+"PSName": "BGMPlay"
+},
+"155": {
+"op": 155,
+"params": [
+{
+"Name": "sndId",
+"Type": "const ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "BGMIsPlaying",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "BGMIsPlaying"
+},
+"158": {
+"op": 158,
+"params": [],
+"Name": "BGMChangeMap",
+"Brief": "Fades out currently playing BGM track and plays the track assigned to the current map.",
+"PSPackage": "system.Field",
+"PSName": "PlayMapBGM"
+},
+"159": {
+"op": 159,
+"params": [
+{
+"Name": "sndId",
+"Type": "ushort"
+}
+],
+"Name": "BGMPlayPush",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "BGMPlayPush"
+},
+"160": {
+"op": 160,
+"params": [],
+"Name": "BGMWait",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "BGMWait"
+},
+"161": {
+"op": 161,
+"params": [
+{
+"Name": "fadeOutTime",
+"Type": "ushort"
+}
+],
+"Name": "BGMPush",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "BGMPush"
+},
+"162": {
+"op": 162,
+"params": [
+{
+"Name": "fadeOutTime",
+"Type": "ushort"
+},
+{
+"Name": "fadeInTime",
+"Type": "ushort"
+}
+],
+"Name": "BGMPop",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "BGMPop"
+},
+"163": {
+"op": 163,
+"params": [
+{
+"Name": "switchIndex",
+"Type": "ushort"
+}
+],
+"Name": "ISSSwitchEnable",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "ISSSwitchEnable"
+},
+"164": {
+"op": 164,
+"params": [
+{
+"Name": "switchIndex",
+"Type": "ushort"
+}
+],
+"Name": "ISSSwitchDisable",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "ISSSwitchDisable"
+},
+"165": {
+"op": 165,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "switchIndex",
+"Type": "ushort"
+}
+],
+"Name": "ISSSwitchQuery",
+"Brief": "TODO",
+"PSPackage": "system.Sound",
+"PSName": "ISSSwitchQuery"
+},
+"166": {
+"op": 166,
+"params": [
+{
+"Name": "sndId",
+"Type": "ushort"
+}
+],
+"Name": "SEPlay",
+"Brief": "Plays a sound effect corresponding to id in swan_sound_data.sdat.",
+"PSPackage": "system.Sound",
+"PSName": "SEPlay"
+},
+"167": {
+"op": 167,
+"params": [],
+"Name": "SEStop",
+"Brief": "Stops a currently playing sound effect.",
+"PSPackage": "system.Sound",
+"PSName": "SEStop"
+},
+"168": {
+"op": 168,
+"params": [],
+"Name": "SEWait",
+"Brief": "Pauses execution until the sound effect ends.",
+"PSPackage": "system.Sound",
+"PSName": "SEWait"
+},
+"169": {
+"op": 169,
+"params": [
+{
+"Name": "sndId",
+"Type": "ushort"
+}
+],
+"Name": "MEPlay",
+"Brief": "Plays a fanfare corresponding to id in swan_sound_data.sdat.",
+"PSPackage": "system.Sound",
+"PSName": "MEPlay"
+},
+"170": {
+"op": 170,
+"params": [],
+"Name": "MEWait",
+"Brief": "Pauses execution until the fanfare being played ends.",
+"PSPackage": "system.Sound",
+"PSName": "MEWait"
+},
+"171": {
+"op": 171,
+"params": [
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+}
+],
+"Name": "PVPlay",
+"Brief": "Plays a cry corresponding to id in swan_sound_data.sdat.",
+"PSPackage": "system.Sound",
+"PSName": "PVPlay"
+},
+"172": {
+"op": 172,
+"params": [],
+"Name": "PVWait",
+"Brief": "Pauses execution until the cry being played ends.",
+"PSPackage": "system.Sound",
+"PSName": "PVWait"
+},
+"173": {
+"op": 173,
+"params": [
+{
+"Name": "x",
+"Type": "byte"
+},
+{
+"Name": "y",
+"Type": "byte"
+},
+{
+"Name": "defaultIdx",
+"Type": "ushort"
+},
+{
+"Name": "cancellable",
+"Type": "byte"
+},
+{
+"Name": "pDlgResult",
+"Type": "ref ushort"
+}
+],
+"Name": "ListMenuInitCommon",
+"Brief": "Uses common text file 410 instead of zonedata text.",
+"PSPackage": "event.dialogs.ListMenu",
+"PSName": "InitCommon"
+},
+"174": {
+"op": 174,
+"params": [
+{
+"Name": "x",
+"Type": "byte"
+},
+{
+"Name": "y",
+"Type": "byte"
+},
+{
+"Name": "defaultIdx",
+"Type": "ushort"
+},
+{
+"Name": "cancellable",
+"Type": "byte"
+},
+{
+"Name": "pDlgResult",
+"Type": "ref ushort"
+}
+],
+"Name": "ListMenuInitTL",
+"Brief": "TODO",
+"PSPackage": "event.dialogs.ListMenu",
+"PSName": "InitLeftAnchor"
+},
+"175": {
+"op": 175,
+"params": [
+{
+"Name": "optionMsgId",
+"Type": "const ushort"
+},
+{
+"Name": "hintMsgId",
+"Type": "const ushort"
+},
+{
+"Name": "uid",
+"Type": "ushort"
+}
+],
+"Name": "ListMenuAdd",
+"Brief": "TODO",
+"PSPackage": "event.dialogs.ListMenu",
+"PSName": "AddItem"
+},
+"176": {
+"op": 176,
+"params": [],
+"Name": "ListMenuShow",
+"Brief": "TODO",
+"PSPackage": "event.dialogs.ListMenu",
+"PSName": "ShowDialog"
+},
+"177": {
+"op": 177,
+"params": [],
+"Name": "ListMenuShow2",
+"Brief": "TODO",
+"PSPackage": "event.dialogs.ListMenu",
+"PSName": "ShowDialog_"
+},
+"178": {
+"op": 178,
+"params": [
+{
+"Name": "x",
+"Type": "byte"
+},
+{
+"Name": "y",
+"Type": "byte"
+},
+{
+"Name": "defaultIdx",
+"Type": "ushort"
+},
+{
+"Name": "cancellable",
+"Type": "byte"
+},
+{
+"Name": "pDlgResult",
+"Type": "ref ushort"
+}
+],
+"Name": "ListMenuInitTR",
+"Brief": "TODO",
+"PSPackage": "event.dialogs.ListMenu",
+"PSName": "InitRightAnchor"
+},
+"179": {
+"op": 179,
+"params": [
+{
+"Name": "mode",
+"Type": "const ushort"
+},
+{
+"Name": "brightnessStart",
+"Type": "const ushort"
+},
+{
+"Name": "brightnessEnd",
+"Type": "const ushort"
+},
+{
+"Name": "slowness",
+"Type": "const ushort"
+}
+],
+"Name": "FadeEx",
+"Brief": "Mode - 1=Engine A/Black, 2=Engine B/Black, 4=Engine A/White, 8=Engine B/White. Can be ORed together. Slowness = amount of frames between each fade tick. Negative values allow for more fade ticks per update, but are not attainable in the unsigned scripting paradigma.",
+"PSPackage": "system.Fade",
+"PSName": "FadeEx"
+},
+"180": {
+"op": 180,
+"params": [],
+"Name": "FadeExWait",
+"Brief": "TODO",
+"PSPackage": "system.Fade",
+"PSName": "FadeExWait"
+},
+"181": {
+"op": 181,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "amount",
+"Type": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "ItemAdd",
+"Brief": "TODO",
+"PSPackage": "player.Bag",
+"PSName": "GiveItem"
+},
+"182": {
+"op": 182,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "amount",
+"Type": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "ItemSub",
+"Brief": "TODO",
+"PSPackage": "player.Bag",
+"PSName": "TakeItem"
+},
+"183": {
+"op": 183,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "amount",
+"Type": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "ItemCheckSpace",
+"Brief": "TODO",
+"PSPackage": "player.Bag",
+"PSName": "CheckSpace"
+},
+"184": {
+"op": 184,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "amount",
+"Type": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "ItemCheckCount",
+"Brief": "TODO",
+"PSPackage": "player.Bag",
+"PSName": "CheckItemCount"
+},
+"185": {
+"op": 185,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ItemGetCount",
+"Brief": "TODO",
+"PSPackage": "player.Bag",
+"PSName": "GetItemQuantity"
+},
+"186": {
+"op": 186,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "ItemIsTMHM",
+"Brief": "TODO",
+"PSPackage": "pokemon.Item",
+"PSName": "IsTMHM"
+},
+"187": {
+"op": 187,
+"params": [
+{
+"Name": "itemId",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ItemGetPocket",
+"Brief": "TODO",
+"PSPackage": "pokemon.Item",
+"PSName": "GetPocket"
+},
+"188": {
+"op": 188,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PhenomenonGetItemID",
+"Brief": "TODO",
+"PSPackage": "event.Phenomenon",
+"PSName": "MakeItemID"
+},
+"189": {
+"op": 189,
+"params": [
+{
+"Name": "item",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "ItemGetClass",
+"Brief": "TODO",
+"PSPackage": "pokemon.Item",
+"PSName": "GetClass"
+},
+"190": {
+"op": 190,
+"params": [
+{
+"Name": "zoneId",
+"Type": "const ushort"
+},
+{
+"Name": "x",
+"Type": "const ushort"
+},
+{
+"Name": "z",
+"Type": "const ushort"
+},
+{
+"Name": "dir",
+"Type": "const ushort"
+}
+],
+"Name": "MapChangeFake",
+"Brief": "A warp. Seems to detach followers, however.",
+"PSPackage": "system.Field",
+"PSName": "ChangeMapFake"
+},
+"191": {
+"op": 191,
+"params": [
+{
+"Name": "zoneId",
+"Type": "const ushort"
+},
+{
+"Name": "x",
+"Type": "const ushort"
+},
+{
+"Name": "z",
+"Type": "const ushort"
+},
+{
+"Name": "dir",
+"Type": "const ushort"
+}
+],
+"Name": "MapChangeWarpPad",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "ChangeMapWarpPad"
+},
+"192": {
+"op": 192,
+"params": [
+{
+"Name": "zoneId",
+"Type": "const ushort"
+},
+{
+"Name": "lineId",
+"Type": "const ushort"
+},
+{
+"Name": "posFront",
+"Type": "const ushort"
+},
+{
+"Name": "posSide",
+"Type": "const ushort"
+},
+{
+"Name": "dir",
+"Type": "const ushort"
+}
+],
+"Name": "MapChangeWarpRail",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "ChangeMapWarpRail"
+},
+"193": {
+"op": 193,
+"params": [
+{
+"Name": "zoneId",
+"Type": "const ushort"
+},
+{
+"Name": "x",
+"Type": "const ushort"
+},
+{
+"Name": "z",
+"Type": "const ushort"
+}
+],
+"Name": "MapChangeQuicksand",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "ChangeMapQuicksand"
+},
+"194": {
+"op": 194,
+"params": [
+{
+"Name": "zoneId",
+"Type": "const ushort"
+},
+{
+"Name": "x",
+"Type": "const ushort"
+},
+{
+"Name": "z",
+"Type": "const ushort"
+},
+{
+"Name": "dir",
+"Type": "const ushort"
+}
+],
+"Name": "MapChangeWarp",
+"Brief": "The warp that's generally used when in a script",
+"PSPackage": "system.Field",
+"PSName": "ChangeMapWarp"
+},
+"195": {
+"op": 195,
+"params": [],
+"Name": "MapChangeUnionRoom",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "ChangeMapUnionRoom"
+},
+"196": {
+"op": 196,
+"params": [
+{
+"Name": "zoneId",
+"Type": "const ushort"
+},
+{
+"Name": "x",
+"Type": "const ushort"
+},
+{
+"Name": "y",
+"Type": "const ushort"
+},
+{
+"Name": "z",
+"Type": "const ushort"
+},
+{
+"Name": "dir",
+"Type": "const ushort"
+}
+],
+"Name": "MapChangeCore",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "ChangeMap"
+},
+"197": {
+"op": 197,
+"params": [],
+"Name": "HMCallSurf",
+"Brief": "TODO",
+"PSPackage": "event.actors.HMSequences",
+"PSName": "Surf"
+},
+"198": {
+"op": 198,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "HMCallWaterfall",
+"Brief": "TODO",
+"PSPackage": "event.actors.HMSequences",
+"PSName": "Waterfall"
+},
+"199": {
+"op": 199,
+"params": [],
+"Name": "HMCallCut",
+"Brief": "TODO",
+"PSPackage": "event.actors.HMSequences",
+"PSName": "Cut"
+},
+"200": {
+"op": 200,
+"params": [
+{
+"Name": "isOut",
+"Type": "ushort"
+}
+],
+"Name": "HMCallDiving",
+"Brief": "TODO",
+"PSPackage": "event.actors.HMSequences",
+"PSName": "Dive"
+},
+"201": {
+"op": 201,
+"params": [],
+"Name": "CMD_C9",
+"Brief": "TODO"
+},
+"202": {
+"op": 202,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_CA",
+"Brief": "TODO"
+},
+"203": {
+"op": 203,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "bound",
+"Type": "ushort"
+}
+],
+"Name": "Random",
+"Brief": "TODO",
+"PSPackage": "system.System",
+"PSName": "Random"
+},
+"204": {
+"op": 204,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "RTGetTextFile",
+"Brief": "TODO",
+"PSPackage": "system.Runtime",
+"PSName": "GetTextFile"
+},
+"205": {
+"op": 205,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "RTCGetDayPart",
+"Brief": "TODO",
+"PSPackage": "system.RTC",
+"PSName": "GetDayPart"
+},
+"206": {
+"op": 206,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_CE",
+"Brief": "TODO"
+},
+"207": {
+"op": 207,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "RTCGetWeekDay",
+"Brief": "TODO",
+"PSPackage": "system.RTC",
+"PSName": "GetDayOfWeek"
+},
+"208": {
+"op": 208,
+"params": [
+{
+"Name": "pMonth",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pDay",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "RTCGetDate",
+"Brief": "TODO",
+"PSPackage": "system.RTC",
+"PSName": "GetDate/GetMonthOfYear/GetDayOfMonth"
+},
+"209": {
+"op": 209,
+"params": [
+{
+"Name": "pHour",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pMinute",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "RTCGetTime",
+"Brief": "TODO",
+"PSPackage": "system.RTC",
+"PSName": "GetTime/GetHourOfDay/GetMinuteOfHour"
+},
+"210": {
+"op": 210,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "RTCGetSeason",
+"Brief": "TODO",
+"PSPackage": "system.RTC",
+"PSName": "GetSeason"
+},
+"211": {
+"op": 211,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "FieldGetZoneID",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "GetZoneID"
+},
+"212": {
+"op": 212,
+"params": [
+{
+"Name": "pMonth",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pDay",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerCardGetBirthDate",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "GetBirthDate/GetBirthMonth/GetBirthDay"
+},
+"213": {
+"op": 213,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "badgeNo",
+"Type": "ushort"
+}
+],
+"Name": "TrainerCardHasBadge",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "HasBadge"
+},
+"214": {
+"op": 214,
+"params": [
+{
+"Name": "badgeNo",
+"Type": "ushort"
+}
+],
+"Name": "TrainerCardAddBadge",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "AddBadge"
+},
+"215": {
+"op": 215,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerCardGetBadgeCount",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "GetBadgeCount"
+},
+"216": {
+"op": 216,
+"params": [
+{
+"Name": "id",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "MapReplaceIsEventSet",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "GetMapReplaceState"
+},
+"217": {
+"op": 217,
+"params": [
+{
+"Name": "tpZoneSlot",
+"Type": "ushort"
+}
+],
+"Name": "FieldSetTeleportZone",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "SetRespawnZone"
+},
+"218": {
+"op": 218,
+"params": [
+{
+"Name": "id",
+"Type": "ushort"
+},
+{
+"Name": "isEnabled",
+"Type": "ushort"
+},
+{
+"Name": "doReload",
+"Type": "ushort"
+}
+],
+"Name": "MapReplaceSetEvent",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "SetMapReplace"
+},
+"219": {
+"op": 219,
+"params": [],
+"Name": "FieldSetNextZoneHere",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "SetNextZoneHere"
+},
+"220": {
+"op": 220,
+"params": [
+{
+"Name": "zoneId",
+"Type": "ushort"
+},
+{
+"Name": "dir",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "FieldSetNextZone",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "SetNextZone"
+},
+"221": {
+"op": 221,
+"params": [
+{
+"Name": "caughtOnly",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PokeDexGetCount",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "GetDexCount"
+},
+"222": {
+"op": 222,
+"params": [
+{
+"Name": "mode",
+"Type": "ushort"
+},
+{
+"Name": "species",
+"Type": "ushort"
+}
+],
+"Name": "PokeDexRegist",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "RegisterSpecies"
+},
+"223": {
+"op": 223,
+"params": [
+{
+"Name": "caughtOnly",
+"Type": "ushort"
+},
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "PokeDexIsRegist",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "IsSpeciesRegistered"
+},
+"224": {
+"op": 224,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "GameGetVersion",
+"Brief": "TODO",
+"PSPackage": "system.Game",
+"PSName": "GetVersion"
+},
+"225": {
+"op": 225,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "TrainerCardGetSex",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "GetSex"
+},
+"226": {
+"op": 226,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "SaveDataCheckRequired",
+"Brief": "TODO",
+"PSPackage": "system.SaveData",
+"PSName": "CheckRequired"
+},
+"227": {
+"op": 227,
+"params": [],
+"Name": "PlayerEnableRunningShoes",
+"Brief": "TODO",
+"PSPackage": "event.actors.Player",
+"PSName": "EnableRunningShoes"
+},
+"228": {
+"op": 228,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_E4",
+"Brief": "TODO"
+},
+"229": {
+"op": 229,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_E5",
+"Brief": "TODO"
+},
+"230": {
+"op": 230,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_E6",
+"Brief": "TODO"
+},
+"231": {
+"op": 231,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "ActivateRelocator",
+"Brief": "TODO"
+},
+"232": {
+"op": 232,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_E8",
+"Brief": "TODO"
+},
+"233": {
+"op": 233,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_E9",
+"Brief": "TODO"
+},
+"234": {
+"op": 234,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "HOFCheckIntegrity",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "CheckHOFDataIntegrity"
+},
+"235": {
+"op": 235,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "DayCareCheckSpawnFlag",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "CheckSpawnFlag"
+},
+"236": {
+"op": 236,
+"params": [],
+"Name": "DayCareBreed",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "Breed"
+},
+"237": {
+"op": 237,
+"params": [],
+"Name": "DayCareResetSeed",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "ResetSeed"
+},
+"238": {
+"op": 238,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "DayCareGetPkmCount",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetPkmCount"
+},
+"239": {
+"op": 239,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "DayCareCalcEggSpawnChance",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "CalcEggSpawnChance"
+},
+"240": {
+"op": 240,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "DayCareDeposit",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "DepositPkm"
+},
+"241": {
+"op": 241,
+"params": [
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareWithdraw",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "WithdrawPkm"
+},
+"242": {
+"op": 242,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareGetSpecies",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetPkmSpecies"
+},
+"243": {
+"op": 243,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareGetForme",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetPkmForme"
+},
+"244": {
+"op": 244,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareCalcNewLevel",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetPkmGrowLevel"
+},
+"245": {
+"op": 245,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareCalcLevelGain",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetPkmLevelGain"
+},
+"246": {
+"op": 246,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareCalcWithdrawCost",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetWithdrawalFee"
+},
+"247": {
+"op": 247,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "DayCareCallPokeSelect",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "CallPokeSelect"
+},
+"248": {
+"op": 248,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "daycareSlot",
+"Type": "ushort"
+}
+],
+"Name": "DayCareGetSex",
+"Brief": "TODO",
+"PSPackage": "pokemon.Daycare",
+"PSName": "GetPkmSex"
+},
+"249": {
+"op": 249,
+"params": [
+{
+"Name": "amount",
+"Type": "ushort"
+}
+],
+"Name": "MoneyAdd",
+"Brief": "TODO",
+"PSPackage": "player.Wallet",
+"PSName": "AddMoney"
+},
+"250": {
+"op": 250,
+"params": [
+{
+"Name": "amount",
+"Type": "ushort"
+}
+],
+"Name": "MoneySub",
+"Brief": "TODO",
+"PSPackage": "player.Wallet",
+"PSName": "SubMoney"
+},
+"251": {
+"op": 251,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "neededAmount",
+"Type": "ushort"
+}
+],
+"Name": "MoneyCheck",
+"Brief": "Checks if the player has a sufficient amount of money.",
+"PSPackage": "player.Wallet",
+"PSName": "CanAfford"
+},
+"252": {
+"op": 252,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartySetHappiness",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetHappiness"
+},
+"253": {
+"op": 253,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "mode",
+"Type": "ushort"
+},
+{
+"Name": "value",
+"Type": "const ushort"
+}
+],
+"Name": "PokePartyAdjustHappiness",
+"Brief": "Manipulates a Pok\u00e9mon's Happiness value. Mode 0/1/2 means Set/Add/Subtract.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "AdjustHappiness"
+},
+"254": {
+"op": 254,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetSpecies",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetSpecies"
+},
+"255": {
+"op": 255,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetForme",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetForme"
+},
+"256": {
+"op": 256,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "PokePartyCheckPokerus",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "IsPokerusAny"
+},
+"257": {
+"op": 257,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyIsFullHP",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "IsFullHP"
+},
+"258": {
+"op": 258,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyIsEgg",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "IsEgg"
+},
+"259": {
+"op": 259,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "mode",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetCount",
+"Brief": "Returns the number of Pok\u00e9mon in the party that match a certain conditon. (All/NonEgg/Battling-capable/Eggs/SanityEggs)",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetPkmCount"
+},
+"260": {
+"op": 260,
+"params": [],
+"Name": "PokePartyRecoverAll",
+"Brief": "Fully heals the player's party.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "RecoverAll"
+},
+"261": {
+"op": 261,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "poke",
+"Type": "ushort"
+},
+{
+"Name": "transition",
+"Type": "ushort"
+}
+],
+"Name": "CallPokeNameInput",
+"Brief": "Pops up a dialog for renaming a party Pok\u00e9mon and stores its result.",
+"PSPackage": "event.app.PokeApp",
+"PSName": "CallRename"
+},
+"262": {
+"op": 262,
+"params": [
+{
+"Name": "pPartyIdx",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "CallEggHatch",
+"Brief": "TODO",
+"PSPackage": "event.FieldDemo",
+"PSName": "CallEggHatch"
+},
+"263": {
+"op": 263,
+"params": [
+{
+"Name": "wantEgg",
+"Type": "const ushort"
+},
+{
+"Name": "pDlgSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "pPartyIdx",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "unused",
+"Type": "ushort"
+}
+],
+"Name": "CallPokeSelect",
+"Brief": "TODO",
+"PSPackage": "event.app.PokeApp",
+"PSName": "CallPokeSelect"
+},
+"264": {
+"op": 264,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetMoveCount",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetLearnedMoveCount"
+},
+"265": {
+"op": 265,
+"params": [
+{
+"Name": "pDlgSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "pForgetMoveIdx",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "newMoveId",
+"Type": "ushort"
+}
+],
+"Name": "CallPokeMoveReplace",
+"Brief": "TODO",
+"PSPackage": "event.app.PokeApp",
+"PSName": "CallMoveReplace"
+},
+"266": {
+"op": 266,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "moveId",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetMove",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetMove"
+},
+"267": {
+"op": 267,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "moveIdx",
+"Type": "ushort"
+},
+{
+"Name": "moveId",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyLearnMove",
+"Brief": "Teaches a move to a Pok\u00e9mon. (wazaID == 0 > unlearn)",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "LearnMove"
+},
+"268": {
+"op": 268,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+},
+{
+"Name": "level",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyAdd",
+"Brief": "A convenience method for AddPoke.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "AddPkm"
+},
+"269": {
+"op": 269,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "cond",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetMemberByType",
+"Brief": "Returns the index of the first Pok\u00e9mon that is either an egg (1) or fainted (2).",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetMemberByType"
+},
+"270": {
+"op": 270,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+},
+{
+"Name": "level",
+"Type": "ushort"
+},
+{
+"Name": "abilChoice",
+"Type": "ushort"
+},
+{
+"Name": "gender",
+"Type": "ushort"
+},
+{
+"Name": "isShiny",
+"Type": "ushort"
+},
+{
+"Name": "heldItem",
+"Type": "ushort"
+},
+{
+"Name": "ball",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyAddEx",
+"Brief": "Adds a Pok\u00e9mon to the player's party. Fails if the party is full.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "AddPkmEx"
+},
+"271": {
+"op": 271,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyAddEgg",
+"Brief": "Adds a Pok\u00e9mon Egg to the player's party. Fails if the party is full.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "AddEgg"
+},
+"272": {
+"op": 272,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "paramId",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetParam",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetParam"
+},
+"273": {
+"op": 273,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "paramId",
+"Type": "ushort"
+},
+{
+"Name": "value",
+"Type": "ushort"
+}
+],
+"Name": "PokePartySetIV",
+"Brief": "Sets the IV of a Pok\u00e9mon to a given value. The IV field is 70 to 75.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "SetIV"
+},
+"274": {
+"op": 274,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetEVTotal",
+"Brief": "Returns the sum of all EVs of a party Pok\u00e9mon.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetEVTotal"
+},
+"275": {
+"op": 275,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyIsOriginGame",
+"Brief": "Checks if the party Pok\u00e9mon belongs to the player and was caught in this game version.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "IsOriginGame"
+},
+"276": {
+"op": 276,
+"params": [
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PokePartyGetCountBySpecies",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetPkmCountBySpecies"
+},
+"277": {
+"op": 277,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "moveId",
+"Type": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyHasMove",
+"Brief": "Checks if a party Pok\u00e9mon knows a given move.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "HasMove"
+},
+"278": {
+"op": 278,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "moveId",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyHasMoveAny",
+"Brief": "Checks if any party Pok\u00e9mon knows a given move.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "HasMoveAny"
+},
+"279": {
+"op": 279,
+"params": [
+{
+"Name": "poke",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+}
+],
+"Name": "PokePartySetForme",
+"Brief": "Changes a party Pok\u00e9mon's forme.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "SetForme"
+},
+"280": {
+"op": 280,
+"params": [
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "pPartyIdx",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "PokePartyFind",
+"Brief": "Gets the index of the first Pok\u00e9mon of a species in the party.",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "FindPkm"
+},
+"281": {
+"op": 281,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "poke",
+"Type": "ushort"
+},
+{
+"Name": "locIndex",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyIsFromWhiteForest",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "IsFromWhiteForest"
+},
+"282": {
+"op": 282,
+"params": [
+{
+"Name": "pYear",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pMonth",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pDay",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetMetDate",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetMetDate/GetMetYear/GetMetMonth/GetMetDay"
+},
+"283": {
+"op": 283,
+"params": [
+{
+"Name": "pType1",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pType2",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyGetTypes",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "GetTypes/GetPrimaryType/GetSecondaryType"
+},
+"284": {
+"op": 284,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "signatureMoveSlot",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+}
+],
+"Name": "PokePartyChangeRotomForme",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "ChangeRotomForme"
+},
+"285": {
+"op": 285,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "TrainerCardSetFavePokemon",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "SetFavePokemon"
+},
+"286": {
+"op": 286,
+"params": [
+{
+"Name": "badgeNo",
+"Type": "ushort"
+}
+],
+"Name": "TrainerCardSaveGymVictoryParty",
+"Brief": "TODO",
+"PSPackage": "player.TrainerCard",
+"PSName": "SaveGymVictoryParty"
+},
+"287": {
+"op": 287,
+"params": [
+{
+"Name": "badgeNo",
+"Type": "ushort"
+},
+{
+"Name": "pPartyCount",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "WordSetGymVictoryParty",
+"Brief": "TODO",
+"PSPackage": "system.text.WordSet",
+"PSName": "LoadGymVictoryParty"
+},
+"288": {
+"op": 288,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+},
+{
+"Name": "savePkmIdx",
+"Type": "ushort"
+}
+],
+"Name": "FieldTradeSavePokemon",
+"Brief": "TODO",
+"PSPackage": "event.FieldTrade",
+"PSName": "RememberPkmAs"
+},
+"289": {
+"op": 289,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "mode",
+"Type": "ushort"
+}
+],
+"Name": "BoxGetCount",
+"Brief": "Gets the number of Pok\u00e9mon in the PC box that match a certain criteria. (0/1/2/3/4/5=All/Normal/Ditto/Non-normal/Free slots/0)",
+"PSPackage": "pokemon.Box",
+"PSName": "GetPkmCount"
+},
+"290": {
+"op": 290,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+},
+{
+"Name": "level",
+"Type": "ushort"
+}
+],
+"Name": "BoxAdd",
+"Brief": "Adds a Pok\u00e9mon to the Pok\u00e9mon Storage System Box and registers it in the Pok\u00e9dex. Fails if box is full (cap at 720).",
+"PSPackage": "pokemon.Box",
+"PSName": "AddPkm"
+},
+"291": {
+"op": 291,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+},
+{
+"Name": "level",
+"Type": "ushort"
+},
+{
+"Name": "abilChoice",
+"Type": "ushort"
+},
+{
+"Name": "gender",
+"Type": "ushort"
+},
+{
+"Name": "isShiny",
+"Type": "ushort"
+},
+{
+"Name": "heldItem",
+"Type": "ushort"
+},
+{
+"Name": "ball",
+"Type": "ushort"
+}
+],
+"Name": "BoxAddEx",
+"Brief": "TODO",
+"PSPackage": "pokemon.Box",
+"PSName": "AddPkmEx"
+},
+"292": {
+"op": 292,
+"params": [
+{
+"Name": "handle",
+"Type": "ushort"
+},
+{
+"Name": "anmIdx",
+"Type": "ushort"
+}
+],
+"Name": "BMHndAnmPlay",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "HndPlayAnm"
+},
+"293": {
+"op": 293,
+"params": [],
+"Name": "BMPlayHOFMachineSeq",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "PlayHOFMachineSeq"
+},
+"294": {
+"op": 294,
+"params": [
+{
+"Name": "bmType",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+},
+{
+"Name": "mdlId",
+"Type": "ushort"
+}
+],
+"Name": "BMChangeMdlID",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "ChangeMdlID"
+},
+"295": {
+"op": 295,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "bmType",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "BMCreateHandleByGPos",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "CreateHandle"
+},
+"296": {
+"op": 296,
+"params": [
+{
+"Name": "handle",
+"Type": "ushort"
+}
+],
+"Name": "BMReleaseHandle",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "ReleaseHandle"
+},
+"297": {
+"op": 297,
+"params": [
+{
+"Name": "handle",
+"Type": "ushort"
+},
+{
+"Name": "anmIdx",
+"Type": "ushort"
+}
+],
+"Name": "BMHndAudioVisualAnmPlay",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "HndPlayAudioVisualAnm"
+},
+"298": {
+"op": 298,
+"params": [
+{
+"Name": "handle",
+"Type": "ushort"
+}
+],
+"Name": "BMHndAnmWait",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "HndWaitAnm"
+},
+"299": {
+"op": 299,
+"params": [
+{
+"Name": "bmType",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "BMAnmPlayInv",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "PlayAnmInv"
+},
+"300": {
+"op": 300,
+"params": [
+{
+"Name": "handle",
+"Type": "ushort"
+}
+],
+"Name": "BMHndAnmPause",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "HndPauseAnm"
+},
+"301": {
+"op": 301,
+"params": [
+{
+"Name": "bmType",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+},
+{
+"Name": "visible",
+"Type": "ushort"
+}
+],
+"Name": "BMSetVisible",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "SetVisible"
+},
+"302": {
+"op": 302,
+"params": [
+{
+"Name": "bmType",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "BMAnmPlay",
+"Brief": "TODO",
+"PSPackage": "event.StaticProp",
+"PSName": "PlayAnm"
+},
+"303": {
+"op": 303,
+"params": [
+{
+"Name": "healPkmCount",
+"Type": "ushort"
+}
+],
+"Name": "PokecenPlayHealingSequence",
+"Brief": "TODO",
+"PSPackage": "event.facilities.Pokecen",
+"PSName": "PlayHealingSeq"
+},
+"304": {
+"op": 304,
+"params": [],
+"Name": "PokecenPCOpen",
+"Brief": "TODO",
+"PSPackage": "event.facilities.Pokecen",
+"PSName": "PCOpen"
+},
+"305": {
+"op": 305,
+"params": [],
+"Name": "PokecenPCIdle",
+"Brief": "TODO",
+"PSPackage": "event.facilities.Pokecen",
+"PSName": "PCIdle"
+},
+"306": {
+"op": 306,
+"params": [
+{
+"Name": "skipWaitForSfx",
+"Type": "ushort"
+}
+],
+"Name": "PokecenPCClose",
+"Brief": "TODO",
+"PSPackage": "event.facilities.Pokecen",
+"PSName": "PCClose"
+},
+"308": {
+"op": 308,
+"params": [],
+"Name": "CasteliaRushInit",
+"Brief": "TODO",
+"PSPackage": "event.gimmick.C03",
+"PSName": "StreetRushInit"
+},
+"309": {
+"op": 309,
+"params": [
+{
+"Name": "type",
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "FieldSetWeather",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "SetWeather"
+},
+"310": {
+"op": 310,
+"params": [
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "SaveDataWrite",
+"Brief": "TODO",
+"PSPackage": "system.SaveData",
+"PSName": "Write"
+},
+"311": {
+"op": 311,
+"params": [
+{
+"Name": "pAnotherSavePresent",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "pSaveStatus",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pLotsOfData",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "SaveDataGetStatus",
+"Brief": "TODO",
+"PSPackage": "system.SaveData",
+"PSName": "GetStatus"
+},
+"312": {
+"op": 312,
+"params": [
+{
+"Name": "pResult",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "GameCommDisconnect",
+"Brief": "TODO",
+"PSPackage": "system.GameComm",
+"PSName": "Disconnect"
+},
+"313": {
+"op": 313,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "GameCommGetStatus",
+"Brief": "TODO",
+"PSPackage": "system.GameComm",
+"PSName": "GetStatus"
+},
+"314": {
+"op": 314,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "GameCommCheckDSiWiFi",
+"Brief": "TODO",
+"PSPackage": "system.GameComm",
+"PSName": "CheckDSiWiFi"
+},
+"315": {
+"op": 315,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_13b",
+"Brief": "TODO"
+},
+"316": {
+"op": 316,
+"params": [],
+"Name": "CMD_13c",
+"Brief": "TODO"
+},
+"317": {
+"op": 317,
+"params": [],
+"Name": "CMD_13d",
+"Brief": "TODO"
+},
+"318": {
+"op": 318,
+"params": [],
+"Name": "CMD_13e",
+"Brief": "TODO"
+},
+"319": {
+"op": 319,
+"params": [],
+"Name": "EVCameraInit",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "Init"
+},
+"320": {
+"op": 320,
+"params": [],
+"Name": "EVCameraEnd",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "End"
+},
+"321": {
+"op": 321,
+"params": [],
+"Name": "EVCameraUnbind",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "Unbind"
+},
+"322": {
+"op": 322,
+"params": [],
+"Name": "EVCameraRebind",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "Rebind"
+},
+"323": {
+"op": 323,
+"params": [
+{
+"Name": "pitch",
+"Type": "fx16"
+},
+{
+"Name": "yaw",
+"Type": "fx16"
+},
+{
+"Name": "distance",
+"Type": "fx32"
+},
+{
+"Name": "targetX",
+"Type": "fx32"
+},
+{
+"Name": "targetY",
+"Type": "fx32"
+},
+{
+"Name": "targetZ",
+"Type": "fx32"
+},
+{
+"Name": "interval",
+"Type": "const ushort"
+}
+],
+"Name": "EVCameraMoveTo",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "MoveTo"
+},
+"324": {
+"op": 324,
+"params": [
+{
+"Name": "interval",
+"Type": "const ushort"
+}
+],
+"Name": "EVCameraReturn",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "Return"
+},
+"325": {
+"op": 325,
+"params": [],
+"Name": "EVCameraWait",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "Wait"
+},
+"326": {
+"op": 326,
+"params": [
+{
+"Name": "id",
+"Type": "const ushort"
+},
+{
+"Name": "interval",
+"Type": "const ushort"
+}
+],
+"Name": "EVCameraMoveToCommon",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "MoveToCommon"
+},
+"327": {
+"op": 327,
+"params": [
+{
+"Name": "interval",
+"Type": "const ushort"
+}
+],
+"Name": "EVCameraMoveToDefault",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "MoveToDefault"
+},
+"328": {
+"op": 328,
+"params": [
+{
+"Name": "intensityH",
+"Type": "ushort"
+},
+{
+"Name": "intensityW",
+"Type": "ushort"
+},
+{
+"Name": "loopLength",
+"Type": "ushort"
+},
+{
+"Name": "loopCount",
+"Type": "ushort"
+},
+{
+"Name": "decayX",
+"Type": "ushort"
+},
+{
+"Name": "decayY",
+"Type": "ushort"
+},
+{
+"Name": "decayStartLoop",
+"Type": "ushort"
+},
+{
+"Name": "decayStepLength",
+"Type": "ushort"
+}
+],
+"Name": "EVCameraShake",
+"Brief": "TODO",
+"PSPackage": "event.EVCamera",
+"PSName": "Shake"
+},
+"329": {
+"op": 329,
+"params": [
+{
+"Name": "shopId",
+"Type": "ushort"
+},
+{
+"Name": "unused",
+"Type": "ref ushort"
+}
+],
+"Name": "CallFriendlyShopBuy",
+"Brief": "TODO",
+"PSPackage": "event.Shop",
+"PSName": "Call"
+},
+"330": {
+"op": 330,
+"params": [],
+"Name": "FieldOpen",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "Open"
+},
+"331": {
+"op": 331,
+"params": [],
+"Name": "FieldClose",
+"Brief": "TODO",
+"PSPackage": "system.Field",
+"PSName": "Close"
+},
+"332": {
+"op": 332,
+"params": [],
+"Name": "RTFreeUserHeap",
+"Brief": "TODO",
+"PSPackage": "system.Runtime",
+"PSName": "FreeUserHeap"
+},
+"333": {
+"op": 333,
+"params": [
+{
+"Name": "mode",
+"Type": "ushort"
+},
+{
+"Name": "pForceQuit",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "CallRecordSystem",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallRecordSystem"
+},
+"334": {
+"op": 334,
+"params": [
+{
+"Name": "mode",
+"Type": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "pSelectedItem",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "CallBag",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallBag"
+},
+"335": {
+"op": 335,
+"params": [
+{
+"Name": "pForceQuit",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "mode",
+"Type": "ushort"
+}
+],
+"Name": "CallPC",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallPC"
+},
+"336": {
+"op": 336,
+"params": [
+{
+"Name": "pForceQuit",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "CallMailbox",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallMailbox"
+},
+"337": {
+"op": 337,
+"params": [
+{
+"Name": "diplomaId",
+"Type": "ushort"
+},
+{
+"Name": "soundOff",
+"Type": "ushort"
+}
+],
+"Name": "CallPokedexDiploma",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallPokedexDiploma"
+},
+"338": {
+"op": 338,
+"params": [],
+"Name": "CallGeonet",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallGeonet"
+},
+"339": {
+"op": 339,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "CallPoke3Select",
+"Brief": "TODO",
+"PSPackage": "event.app.PokeApp",
+"PSName": "CallPoke3Select"
+},
+"340": {
+"op": 340,
+"params": [
+{
+"Name": "seqId",
+"Type": "ushort"
+},
+{
+"Name": "userParam",
+"Type": "ushort"
+}
+],
+"Name": "Call3DDemo",
+"Brief": "TODO",
+"PSPackage": "event.FieldDemo",
+"PSName": "Call3DDemo"
+},
+"341": {
+"op": 341,
+"params": [
+{
+"Name": "sceneId",
+"Type": "ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CallXTransceiver",
+"Brief": "TODO",
+"PSPackage": "event.FieldDemo",
+"PSName": "CallXTransceiver"
+},
+"342": {
+"op": 342,
+"params": [
+{
+"Name": "repeated",
+"Type": "ushort"
+}
+],
+"Name": "CallGameClear",
+"Brief": "TODO",
+"PSPackage": "event.FieldDemo",
+"PSName": "CallGameClear"
+},
+"343": {
+"op": 343,
+"params": [],
+"Name": "CMD_157",
+"Brief": "TODO"
+},
+"344": {
+"op": 344,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_158",
+"Brief": "TODO"
+},
+"345": {
+"op": 345,
+"params": [],
+"Name": "CMD_159",
+"Brief": "TODO"
+},
+"346": {
+"op": 346,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_15a",
+"Brief": "TODO"
+},
+"347": {
+"op": 347,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_15b",
+"Brief": "TODO"
+},
+"348": {
+"op": 348,
+"params": [],
+"Name": "CMD_15c",
+"Brief": "TODO"
+},
+"349": {
+"op": 349,
+"params": [],
+"Name": "NetConnectWiFiClub",
+"Brief": "TODO",
+"PSPackage": "event.app.NetApp",
+"PSName": "ConnectWiFiClub"
+},
+"350": {
+"op": 350,
+"params": [],
+"Name": "NetConnectGTS",
+"Brief": "TODO",
+"PSPackage": "event.app.NetApp",
+"PSName": "ConnectGTS"
+},
+"351": {
+"op": 351,
+"params": [],
+"Name": "CMD_15F",
+"Brief": "TODO"
+},
+"352": {
+"op": 352,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "NetConnectWiFiBattle",
+"Brief": "TODO",
+"PSPackage": "event.app.NetApp",
+"PSName": "ConnectWiFiBattle"
+},
+"353": {
+"op": 353,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "NetConnectBattleVideo",
+"Brief": "TODO",
+"PSPackage": "event.app.NetApp",
+"PSName": "ConnectBattleVideo"
+},
+"354": {
+"op": 354,
+"params": [],
+"Name": "NetConnectGTSNegotiation",
+"Brief": "TODO",
+"PSPackage": "event.app.NetApp",
+"PSName": "ConnectGTSNegotiation"
+},
+"355": {
+"op": 355,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "byte"
+}
+],
+"Name": "CMD_163",
+"Brief": "TODO"
+},
+"356": {
+"op": 356,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_164",
+"Brief": "TODO"
+},
+"357": {
+"op": 357,
+"params": [
+{
+"Type": "byte"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_165",
+"Brief": "TODO"
+},
+"358": {
+"op": 358,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "byte"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_166",
+"Brief": "TODO"
+},
+"359": {
+"op": 359,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "byte"
+}
+],
+"Name": "CMD_167",
+"Brief": "TODO"
+},
+"360": {
+"op": 360,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_168",
+"Brief": "TODO"
+},
+"361": {
+"op": 361,
+"params": [
+{
+"Type": "byte"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_169",
+"Brief": "TODO"
+},
+"362": {
+"op": 362,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "byte"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_16a",
+"Brief": "TODO"
+},
+"363": {
+"op": 363,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_16b",
+"Brief": "TODO"
+},
+"364": {
+"op": 364,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_16c",
+"Brief": "TODO"
+},
+"365": {
+"op": 365,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_16d",
+"Brief": "TODO"
+},
+"366": {
+"op": 366,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_16e",
+"Brief": "TODO"
+},
+"367": {
+"op": 367,
+"params": [],
+"Name": "CMD_16f",
+"Brief": "TODO"
+},
+"368": {
+"op": 368,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_170",
+"Brief": "TODO"
+},
+"369": {
+"op": 369,
+"params": [],
+"Name": "CMD_171",
+"Brief": "TODO"
+},
+"370": {
+"op": 370,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_172",
+"Brief": "TODO"
+},
+"371": {
+"op": 371,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_173",
+"Brief": "TODO"
+},
+"372": {
+"op": 372,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_174",
+"Brief": "TODO"
+},
+"373": {
+"op": 373,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_175",
+"Brief": "TODO"
+},
+"374": {
+"op": 374,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_176",
+"Brief": "TODO"
+},
+"375": {
+"op": 375,
+"params": [],
+"Name": "CMD_177",
+"Brief": "TODO"
+},
+"376": {
+"op": 376,
+"params": [
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "level",
+"Type": "ushort"
+},
+{
+"Name": "flags",
+"Type": "ushort"
+}
+],
+"Name": "CallWildBattle",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "CallWildBattle"
+},
+"377": {
+"op": 377,
+"params": [],
+"Name": "CallWildBattleEnd",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "EndWildBattle"
+},
+"378": {
+"op": 378,
+"params": [],
+"Name": "CallWildLose",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "CallWildLose"
+},
+"379": {
+"op": 379,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "WildBattleIsVictory",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "IsWildVictory"
+},
+"380": {
+"op": 380,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+}
+],
+"Name": "WildBattleGetResult",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "GetWildBattleResult"
+},
+"381": {
+"op": 381,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_17d",
+"Brief": "TODO",
+"PSPackage": "event.Battle",
+"PSName": "CallCaptureDemo"
+},
+"382": {
+"op": 382,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_17e",
+"Brief": "TODO"
+},
+"383": {
+"op": 383,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_17f",
+"Brief": "TODO"
+},
+"384": {
+"op": 384,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_180",
+"Brief": "TODO"
+},
+"385": {
+"op": 385,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_181",
+"Brief": "TODO"
+},
+"386": {
+"op": 386,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_182",
+"Brief": "TODO"
+},
+"387": {
+"op": 387,
+"params": [],
+"Name": "CMD_183",
+"Brief": "TODO"
+},
+"388": {
+"op": 388,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_184",
+"Brief": "TODO"
+},
+"389": {
+"op": 389,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_185",
+"Brief": "TODO"
+},
+"390": {
+"op": 390,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_186",
+"Brief": "TODO"
+},
+"391": {
+"op": 391,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_187",
+"Brief": "TODO"
+},
+"392": {
+"op": 392,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_188",
+"Brief": "TODO"
+},
+"393": {
+"op": 393,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_189",
+"Brief": "TODO"
+},
+"394": {
+"op": 394,
+"params": [],
+"Name": "CMD_18a",
+"Brief": "TODO"
+},
+"395": {
+"op": 395,
+"params": [],
+"Name": "CMD_18b",
+"Brief": "TODO"
+},
+"396": {
+"op": 396,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_18c",
+"Brief": "TODO"
+},
+"397": {
+"op": 397,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_18d",
+"Brief": "TODO"
+},
+"398": {
+"op": 398,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_18e",
+"Brief": "TODO"
+},
+"399": {
+"op": 399,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_18f",
+"Brief": "TODO"
+},
+"400": {
+"op": 400,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_190",
+"Brief": "TODO"
+},
+"401": {
+"op": 401,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_191",
+"Brief": "TODO"
+},
+"402": {
+"op": 402,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_192",
+"Brief": "TODO"
+},
+"403": {
+"op": 403,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_193",
+"Brief": "TODO"
+},
+"404": {
+"op": 404,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_194",
+"Brief": "TODO"
+},
+"405": {
+"op": 405,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_195",
+"Brief": "TODO"
+},
+"406": {
+"op": 406,
+"params": [],
+"Name": "CMD_196",
+"Brief": "TODO"
+},
+"407": {
+"op": 407,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_197",
+"Brief": "TODO"
+},
+"408": {
+"op": 408,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_198",
+"Brief": "TODO"
+},
+"409": {
+"op": 409,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_199",
+"Brief": "TODO"
+},
+"410": {
+"op": 410,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_19a",
+"Brief": "TODO"
+},
+"411": {
+"op": 411,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_19b",
+"Brief": "TODO"
+},
+"412": {
+"op": 412,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_19c",
+"Brief": "TODO"
+},
+"413": {
+"op": 413,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_19d",
+"Brief": "TODO"
+},
+"414": {
+"op": 414,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_19e",
+"Brief": "TODO"
+},
+"415": {
+"op": 415,
+"params": [
+{
+"Name": "effectNo",
+"Type": "const ushort"
+}
+],
+"Name": "PlayFieldEffect",
+"Brief": "TODO",
+"PSPackage": "event.Effects",
+"PSName": "Play"
+},
+"416": {
+"op": 416,
+"params": [
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "PlayHMCutInEffect",
+"Brief": "TODO",
+"PSPackage": "event.actors.HMSequences",
+"PSName": "PlayCutIn"
+},
+"417": {
+"op": 417,
+"params": [
+{
+"Name": "actorId",
+"Type": "ushort"
+}
+],
+"Name": "PlayAlderFlyEffect",
+"Brief": "TODO",
+"PSPackage": "event.actors.ActorSequences",
+"PSName": "AlderFly"
+},
+"418": {
+"op": 418,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1a2",
+"Brief": "TODO"
+},
+"419": {
+"op": 419,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1a3",
+"Brief": "TODO"
+},
+"420": {
+"op": 420,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1a4",
+"Brief": "TODO"
+},
+"421": {
+"op": 421,
+"params": [],
+"Name": "CMD_1a5",
+"Brief": "TODO"
+},
+"422": {
+"op": 422,
+"params": [],
+"Name": "CMD_1a6",
+"Brief": "TODO"
+},
+"423": {
+"op": 423,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1a7",
+"Brief": "TODO"
+},
+"424": {
+"op": 424,
+"params": [],
+"Name": "CMD_1a8",
+"Brief": "TODO"
+},
+"425": {
+"op": 425,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1a9",
+"Brief": "TODO"
+},
+"426": {
+"op": 426,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1aa",
+"Brief": "TODO"
+},
+"427": {
+"op": 427,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1ab",
+"Brief": "TODO"
+},
+"428": {
+"op": 428,
+"params": [],
+"Name": "CMD_1ac",
+"Brief": "TODO"
+},
+"429": {
+"op": 429,
+"params": [],
+"Name": "CMD_1ad",
+"Brief": "TODO"
+},
+"430": {
+"op": 430,
+"params": [],
+"Name": "CMD_1ae",
+"Brief": "TODO"
+},
+"431": {
+"op": 431,
+"params": [],
+"Name": "CMD_1af",
+"Brief": "TODO"
+},
+"432": {
+"op": 432,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1b0",
+"Brief": "TODO"
+},
+"433": {
+"op": 433,
+"params": [],
+"Name": "CMD_1b1",
+"Brief": "TODO"
+},
+"434": {
+"op": 434,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1b2",
+"Brief": "TODO"
+},
+"435": {
+"op": 435,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1b3",
+"Brief": "TODO"
+},
+"436": {
+"op": 436,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1b4",
+"Brief": "TODO"
+},
+"437": {
+"op": 437,
+"params": [],
+"Name": "CMD_1b5",
+"Brief": "TODO"
+},
+"438": {
+"op": 438,
+"params": [],
+"Name": "CMD_1b6",
+"Brief": "TODO"
+},
+"439": {
+"op": 439,
+"params": [],
+"Name": "CMD_1b7",
+"Brief": "TODO"
+},
+"440": {
+"op": 440,
+"params": [],
+"Name": "CMD_1b8",
+"Brief": "TODO"
+},
+"441": {
+"op": 441,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1b9",
+"Brief": "TODO"
+},
+"442": {
+"op": 442,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1ba",
+"Brief": "TODO"
+},
+"443": {
+"op": 443,
+"params": [],
+"Name": "CMD_1bb",
+"Brief": "TODO"
+},
+"444": {
+"op": 444,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1bc",
+"Brief": "TODO"
+},
+"445": {
+"op": 445,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1bd",
+"Brief": "TODO"
+},
+"446": {
+"op": 446,
+"params": [
+{
+"Name": "tradeNo",
+"Type": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "FieldTradeStart",
+"Brief": "TODO",
+"PSPackage": "event.FieldTrade",
+"PSName": "Start"
+},
+"447": {
+"op": 447,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "tradeNo",
+"Type": "ushort"
+},
+{
+"Name": "partyIdx",
+"Type": "ushort"
+}
+],
+"Name": "FieldTradeCheck",
+"Brief": "TODO",
+"PSPackage": "event.FieldTrade",
+"PSName": "IsEligible"
+},
+"449": {
+"op": 449,
+"params": [
+{
+"Name": "offset",
+"Type": "int"
+}
+],
+"Name": "ElevatorSetTablePtr",
+"Brief": "TODO",
+"PSPackage": "event.Elevator",
+"PSName": "SetTablePtr"
+},
+"450": {
+"op": 450,
+"params": [],
+"Name": "ElevatorBuildListMenu",
+"Brief": "TODO",
+"PSPackage": "event.Elevator",
+"PSName": "BuildListMenu"
+},
+"451": {
+"op": 451,
+"params": [
+{
+"Name": "floorIdx",
+"Type": "ushort"
+}
+],
+"Name": "ElevatorChangeMap",
+"Brief": "TODO",
+"PSPackage": "event.Elevator",
+"PSName": "CallWarp"
+},
+"452": {
+"op": 452,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+},
+{
+"Name": "mode",
+"Type": "ushort"
+}
+],
+"Name": "PokeDexIsComplete",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "IsComplete"
+},
+"453": {
+"op": 453,
+"params": [
+{
+"Name": "mode",
+"Type": "ushort"
+},
+{
+"Name": "destMsgId",
+"Type": "ref ushort"
+},
+{
+"Name": "destCaughtNo",
+"Type": "ref ushort"
+},
+{
+"Name": "destMEId",
+"Type": "ref ushort"
+}
+],
+"Name": "PokeDexGetEvaluationParams",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "GetEvaluationParams"
+},
+"454": {
+"op": 454,
+"params": [],
+"Name": "PokeDexGiveNational",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "EnableNational"
+},
+"455": {
+"op": 455,
+"params": [
+{
+"Name": "dest",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "PokeDexHaveNational",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "IsNationalEnabled"
+},
+"456": {
+"op": 456,
+"params": [],
+"Name": "PokeDexEnable",
+"Brief": "TODO",
+"PSPackage": "pokemon.Pokedex",
+"PSName": "EnableRegional"
+},
+"457": {
+"op": 457,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_1c9",
+"Brief": "TODO"
+},
+"458": {
+"op": 458,
+"params": [],
+"Name": "CMD_1ca",
+"Brief": "TODO"
+},
+"459": {
+"op": 459,
+"params": [
+{
+"Type": "int"
+}
+],
+"Name": "CMD_1cb",
+"Brief": "TODO"
+},
+"460": {
+"op": 460,
+"params": [],
+"Name": "CMD_1cc",
+"Brief": "TODO"
+},
+"461": {
+"op": 461,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1cd",
+"Brief": "TODO"
+},
+"462": {
+"op": 462,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1ce",
+"Brief": "TODO"
+},
+"463": {
+"op": 463,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1cf",
+"Brief": "TODO"
+},
+"464": {
+"op": 464,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1d0",
+"Brief": "TODO"
+},
+"465": {
+"op": 465,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1d1",
+"Brief": "TODO"
+},
+"466": {
+"op": 466,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1d2",
+"Brief": "TODO"
+},
+"467": {
+"op": 467,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1d3",
+"Brief": "TODO"
+},
+"468": {
+"op": 468,
+"params": [],
+"Name": "CMD_1d4",
+"Brief": "TODO"
+},
+"469": {
+"op": 469,
+"params": [],
+"Name": "CMD_1d5",
+"Brief": "TODO"
+},
+"470": {
+"op": 470,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1d6",
+"Brief": "TODO"
+},
+"471": {
+"op": 471,
+"params": [
+{
+"Name": "proxyIndex",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "ObjInitProxyGPos",
+"Brief": "TODO",
+"PSPackage": "event.ObjInit",
+"PSName": "SetProxyGPos"
+},
+"472": {
+"op": 472,
+"params": [
+{
+"Name": "warpIndex",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "ObjInitWarpGPos",
+"Brief": "TODO",
+"PSPackage": "event.ObjInit",
+"PSName": "SetWarpGPos"
+},
+"473": {
+"op": 473,
+"params": [
+{
+"Name": "npcIndex",
+"Type": "ushort"
+},
+{
+"Name": "dir",
+"Type": "ushort"
+},
+{
+"Name": "x",
+"Type": "ushort"
+},
+{
+"Name": "y",
+"Type": "ushort"
+},
+{
+"Name": "z",
+"Type": "ushort"
+}
+],
+"Name": "ObjInitNPCGPos",
+"Brief": "TODO",
+"PSPackage": "event.ObjInit",
+"PSName": "SetNPCGPos"
+},
+"474": {
+"op": 474,
+"params": [
+{
+"Name": "questionId",
+"Type": "ushort"
+},
+{
+"Name": "pAnswerId",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "CallPhraseSelect",
+"Brief": "TODO",
+"PSPackage": "event.app.AppCall",
+"PSName": "CallPhraseSelect"
+},
+"475": {
+"op": 475,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1db",
+"Brief": "TODO"
+},
+"476": {
+"op": 476,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1dc",
+"Brief": "TODO"
+},
+"477": {
+"op": 477,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1dd",
+"Brief": "TODO"
+},
+"478": {
+"op": 478,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1de",
+"Brief": "TODO"
+},
+"479": {
+"op": 479,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1df",
+"Brief": "TODO"
+},
+"480": {
+"op": 480,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1e0",
+"Brief": "TODO"
+},
+"481": {
+"op": 481,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1e1",
+"Brief": "TODO"
+},
+"482": {
+"op": 482,
+"params": [],
+"Name": "CMD_1e2",
+"Brief": "TODO"
+},
+"483": {
+"op": 483,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1e3",
+"Brief": "TODO"
+},
+"484": {
+"op": 484,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1e4",
+"Brief": "TODO"
+},
+"485": {
+"op": 485,
+"params": [],
+"Name": "CMD_1e5",
+"Brief": "TODO"
+},
+"486": {
+"op": 486,
+"params": [],
+"Name": "CMD_1e6",
+"Brief": "TODO"
+},
+"487": {
+"op": 487,
+"params": [],
+"Name": "CMD_1e7",
+"Brief": "TODO"
+},
+"488": {
+"op": 488,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1e8",
+"Brief": "TODO"
+},
+"489": {
+"op": 489,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1e9",
+"Brief": "TODO"
+},
+"490": {
+"op": 490,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1ea",
+"Brief": "TODO"
+},
+"491": {
+"op": 491,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1eb",
+"Brief": "TODO"
+},
+"492": {
+"op": 492,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1ec",
+"Brief": "TODO"
+},
+"493": {
+"op": 493,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1ed",
+"Brief": "TODO"
+},
+"494": {
+"op": 494,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1ee",
+"Brief": "TODO"
+},
+"495": {
+"op": 495,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1ef",
+"Brief": "TODO"
+},
+"496": {
+"op": 496,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1f0",
+"Brief": "TODO"
+},
+"497": {
+"op": 497,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1f1",
+"Brief": "TODO"
+},
+"498": {
+"op": 498,
+"params": [],
+"Name": "CMD_1f2",
+"Brief": "TODO"
+},
+"499": {
+"op": 499,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1f3",
+"Brief": "TODO"
+},
+"500": {
+"op": 500,
+"params": [],
+"Name": "CMD_1f4",
+"Brief": "TODO"
+},
+"501": {
+"op": 501,
+"params": [],
+"Name": "CMD_1f5",
+"Brief": "TODO"
+},
+"502": {
+"op": 502,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1f6",
+"Brief": "TODO"
+},
+"503": {
+"op": 503,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1f7",
+"Brief": "TODO"
+},
+"504": {
+"op": 504,
+"params": [],
+"Name": "CMD_1f8",
+"Brief": "TODO"
+},
+"505": {
+"op": 505,
+"params": [],
+"Name": "CMD_1f9",
+"Brief": "TODO"
+},
+"506": {
+"op": 506,
+"params": [],
+"Name": "CMD_1fa",
+"Brief": "TODO"
+},
+"507": {
+"op": 507,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1fb",
+"Brief": "TODO"
+},
+"508": {
+"op": 508,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1fc",
+"Brief": "TODO"
+},
+"509": {
+"op": 509,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_1fd",
+"Brief": "TODO"
+},
+"510": {
+"op": 510,
+"params": [],
+"Name": "CMD_1fe",
+"Brief": "TODO"
+},
+"511": {
+"op": 511,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_1ff",
+"Brief": "TODO"
+},
+"512": {
+"op": 512,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_200",
+"Brief": "TODO"
+},
+"513": {
+"op": 513,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_201",
+"Brief": "TODO"
+},
+"514": {
+"op": 514,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_202",
+"Brief": "TODO"
+},
+"515": {
+"op": 515,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_203",
+"Brief": "TODO"
+},
+"516": {
+"op": 516,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_204",
+"Brief": "TODO"
+},
+"517": {
+"op": 517,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_205",
+"Brief": "TODO"
+},
+"518": {
+"op": 518,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_206",
+"Brief": "TODO"
+},
+"519": {
+"op": 519,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_207",
+"Brief": "TODO"
+},
+"520": {
+"op": 520,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_208",
+"Brief": "TODO"
+},
+"521": {
+"op": 521,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_209",
+"Brief": "TODO"
+},
+"522": {
+"op": 522,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_20a",
+"Brief": "TODO"
+},
+"523": {
+"op": 523,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_20b",
+"Brief": "TODO"
+},
+"524": {
+"op": 524,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_20c",
+"Brief": "TODO"
+},
+"525": {
+"op": 525,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_20d",
+"Brief": "TODO"
+},
+"526": {
+"op": 526,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_20e",
+"Brief": "TODO"
+},
+"527": {
+"op": 527,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_20f",
+"Brief": "TODO"
+},
+"528": {
+"op": 528,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_210",
+"Brief": "TODO"
+},
+"529": {
+"op": 529,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_211",
+"Brief": "TODO"
+},
+"530": {
+"op": 530,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_212",
+"Brief": "TODO"
+},
+"531": {
+"op": 531,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_213",
+"Brief": "TODO"
+},
+"532": {
+"op": 532,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_214",
+"Brief": "TODO"
+},
+"533": {
+"op": 533,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_215",
+"Brief": "TODO"
+},
+"534": {
+"op": 534,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_216",
+"Brief": "TODO"
+},
+"535": {
+"op": 535,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_217",
+"Brief": "TODO"
+},
+"536": {
+"op": 536,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_218",
+"Brief": "TODO"
+},
+"537": {
+"op": 537,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_219",
+"Brief": "TODO"
+},
+"538": {
+"op": 538,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_21a",
+"Brief": "TODO"
+},
+"539": {
+"op": 539,
+"params": [],
+"Name": "CMD_21b",
+"Brief": "TODO"
+},
+"540": {
+"op": 540,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_21c",
+"Brief": "TODO"
+},
+"541": {
+"op": 541,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_21d",
+"Brief": "TODO"
+},
+"542": {
+"op": 542,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_21e",
+"Brief": "TODO"
+},
+"543": {
+"op": 543,
+"params": [],
+"Name": "CMD_21f",
+"Brief": "TODO"
+},
+"544": {
+"op": 544,
+"params": [
+{
+"Name": "species",
+"Type": "ushort"
+},
+{
+"Name": "forme",
+"Type": "ushort"
+},
+{
+"Name": "pPartyIdx",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "ushort"
+},
+{
+"Name": "pSuccess",
+"Type": "ref ushort",
+"IsReturn": "true",
+"ReturnType": "bool"
+}
+],
+"Name": "PokePartyFindEx",
+"Brief": "TODO",
+"PSPackage": "pokemon.PokeParty",
+"PSName": "FindPkmEx"
+},
+"545": {
+"op": 545,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_221",
+"Brief": "TODO"
+},
+"546": {
+"op": 546,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_222",
+"Brief": "TODO"
+},
+"547": {
+"op": 547,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_223",
+"Brief": "TODO"
+},
+"548": {
+"op": 548,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_224",
+"Brief": "TODO"
+},
+"549": {
+"op": 549,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_225",
+"Brief": "TODO"
+},
+"550": {
+"op": 550,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_226",
+"Brief": "TODO"
+},
+"551": {
+"op": 551,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_227",
+"Brief": "TODO"
+},
+"552": {
+"op": 552,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_228",
+"Brief": "TODO"
+},
+"553": {
+"op": 553,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_229",
+"Brief": "TODO"
+},
+"554": {
+"op": 554,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_22a",
+"Brief": "TODO"
+},
+"555": {
+"op": 555,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_22b",
+"Brief": "TODO"
+},
+"557": {
+"op": 557,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_22d",
+"Brief": "TODO"
+},
+"558": {
+"op": 558,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_22e",
+"Brief": "TODO"
+},
+"559": {
+"op": 559,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_22f",
+"Brief": "TODO"
+},
+"560": {
+"op": 560,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_230",
+"Brief": "TODO"
+},
+"561": {
+"op": 561,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_231",
+"Brief": "TODO"
+},
+"562": {
+"op": 562,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_232",
+"Brief": "TODO"
+},
+"563": {
+"op": 563,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_233",
+"Brief": "TODO"
+},
+"564": {
+"op": 564,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_234",
+"Brief": "TODO"
+},
+"565": {
+"op": 565,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_235",
+"Brief": "TODO"
+},
+"566": {
+"op": 566,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_236",
+"Brief": "TODO"
+},
+"567": {
+"op": 567,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_237",
+"Brief": "TODO"
+},
+"568": {
+"op": 568,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_238",
+"Brief": "TODO"
+},
+"569": {
+"op": 569,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_239",
+"Brief": "TODO"
+},
+"570": {
+"op": 570,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_23a",
+"Brief": "TODO"
+},
+"571": {
+"op": 571,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_23b",
+"Brief": "TODO"
+},
+"572": {
+"op": 572,
+"params": [],
+"Name": "CMD_23c",
+"Brief": "TODO"
+},
+"573": {
+"op": 573,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_23d",
+"Brief": "TODO"
+},
+"574": {
+"op": 574,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_23e",
+"Brief": "TODO"
+},
+"575": {
+"op": 575,
+"params": [],
+"Name": "CMD_23f",
+"Brief": "TODO"
+},
+"576": {
+"op": 576,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_240",
+"Brief": "TODO"
+},
+"577": {
+"op": 577,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_241",
+"Brief": "TODO"
+},
+"578": {
+"op": 578,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_242",
+"Brief": "TODO"
+},
+"579": {
+"op": 579,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_243",
+"Brief": "TODO"
+},
+"580": {
+"op": 580,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_244",
+"Brief": "TODO"
+},
+"581": {
+"op": 581,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_245",
+"Brief": "TODO"
+},
+"582": {
+"op": 582,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_246",
+"Brief": "TODO"
+},
+"583": {
+"op": 583,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_247",
+"Brief": "TODO"
+},
+"584": {
+"op": 584,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_248",
+"Brief": "TODO"
+},
+"585": {
+"op": 585,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_249",
+"Brief": "TODO"
+},
+"586": {
+"op": 586,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_24a",
+"Brief": "TODO"
+},
+"587": {
+"op": 587,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_24b",
+"Brief": "TODO"
+},
+"588": {
+"op": 588,
+"params": [
+{
+"Type": "ref ushort"
+}
+],
+"Name": "CMD_24c",
+"Brief": "TODO"
+},
+"589": {
+"op": 589,
+"params": [],
+"Name": "CMD_24d",
+"Brief": "TODO"
+},
+"590": {
+"op": 590,
+"params": [
+{
+"Type": "ref ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_24e",
+"Brief": "TODO"
+},
+"591": {
+"op": 591,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_24f",
+"Brief": "TODO"
+},
+"592": {
+"op": 592,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_250",
+"Brief": "TODO"
+},
+"593": {
+"op": 593,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_251",
+"Brief": "TODO"
+},
+"594": {
+"op": 594,
+"params": [],
+"Name": "CMD_252",
+"Brief": "TODO"
+},
+"595": {
+"op": 595,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_253",
+"Brief": "TODO"
+},
+"596": {
+"op": 596,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_254",
+"Brief": "TODO"
+},
+"597": {
+"op": 597,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_255",
+"Brief": "TODO"
+},
+"598": {
+"op": 598,
+"params": [
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+},
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_256",
+"Brief": "TODO"
+},
+"599": {
+"op": 599,
+"params": [],
+"Name": "CMD_257",
+"Brief": "TODO"
+},
+"600": {
+"op": 600,
+"params": [],
+"Name": "CMD_258",
+"Brief": "TODO"
+},
+"601": {
+"op": 601,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_259",
+"Brief": "TODO"
+},
+"602": {
+"op": 602,
+"params": [
+{
+"Type": "ushort"
+}
+],
+"Name": "CMD_25a",
+"Brief": "TODO"
+},
+"603": {
+"op": 603,
+"params": [],
+"Name": "CMD_25b",
+"Brief": "TODO"
+},
+"604": {
+"op": 604,
+"params": [
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+},
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_25c",
+"Brief": "TODO"
+},
+"605": {
+"op": 605,
+"params": [
+{
+"Type": "const ushort"
+}
+],
+"Name": "CMD_25d",
+"Brief": "TODO"
+},
+"606": {
+"op": 606,
+"params": [],
+"Name": "CMD_25e",
+"Brief": "TODO"
+},
+"607": {
+"op": 607,
+"params": [],
+"Name": "CMD_25f",
+"Brief": "TODO"
+},
+"608": {
+"op": 608,
+"params": [],
+"Name": "CMD_260",
+"Brief": "TODO"
+}
+}

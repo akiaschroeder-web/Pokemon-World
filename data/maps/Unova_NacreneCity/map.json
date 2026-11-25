@@ -1,0 +1,242 @@
+{
+  "id": "MAP_UNOVA_NACRENE_CITY",
+  "name": "Unova_NacreneCity",
+  "layout": "LAYOUT_UNOVA_NACRENE_CITY",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_NACRENE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_PINWHEEL_FOREST_1",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_UNOVA_PINWHEEL_FOREST_2",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE3_2",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ132",
+      "x": 21,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NacreneCity_EventScript_Npc0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ49",
+      "x": 28,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NacreneCity_EventScript_Npc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ22",
+      "x": 46,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NacreneCity_EventScript_Npc2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ19",
+      "x": 16,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NacreneCity_EventScript_Npc3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ27",
+      "x": 18,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NacreneCity_EventScript_Npc4",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 49,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z22",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 50,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z21",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z23",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z24",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z25",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z20",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z26",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z24",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 43,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z23",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 52,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z22",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 63,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_GATE_Z27",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 63,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_GATE_Z27",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 63,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_GATE_Z27",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 36,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_NACRENE_CITY_Z17",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_NacreneCity_EventScript_Sign0"
+    },
+    {
+      "type": "sign",
+      "x": 59,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_NacreneCity_EventScript_Sign1"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_NacreneCity_EventScript_Sign2"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_NacreneCity_EventScript_Sign3"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_NacreneCity_EventScript_Sign4"
+    }
+  ]
+}

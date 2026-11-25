@@ -10148,3 +10148,4 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalPwKrisFieldMo
 };
 
 #include "object_event_graphics_info_hns.h" // Pokémon World: Heart & Soul's sprites (generated)
+#include "object_event_graphics_info_unova.h" // Pokémon World: Pokémon Black's Unova characters (generated)

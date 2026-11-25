@@ -14,6 +14,7 @@ enum
     PAGE_PW_HNS_GAMEPLAY,
     PAGE_PW_HNS_MUSIC,
     PAGE_PW_SINNOH,
+    PAGE_PW_UNOVA,
     PAGE_PW_WEB,
     PAGE_TITLE,
     PAGE_DIRECTOR,
@@ -285,6 +286,10 @@ static const struct CreditsEntry sCreditsEntry_PwHgssArranged     = { 0, FALSE, 
 static const struct CreditsEntry sCreditsEntry_PwSinnoh           = { 0,  TRUE, COMPOUND_STRING("Sinnoh")};
 static const struct CreditsEntry sCreditsEntry_PwSinnohProject    = { 0, FALSE, COMPOUND_STRING("Sinnoh pokeemerald-expansion")};
 static const struct CreditsEntry sCreditsEntry_PwLiderMorti00     = { 0, FALSE, COMPOUND_STRING("LiderMorti00")};
+static const struct CreditsEntry sCreditsEntry_PwUnova            = { 0,  TRUE, COMPOUND_STRING("Unova")};
+static const struct CreditsEntry sCreditsEntry_PwUnovaMaps        = { 0, FALSE, COMPOUND_STRING("3D maps from Pokémon Black")};
+static const struct CreditsEntry sCreditsEntry_PwUnovaNitro       = { 0, FALSE, COMPOUND_STRING("apicula, noclip, nitrog3d, GBATEK")};
+static const struct CreditsEntry sCreditsEntry_PwUnovaMapTools    = { 0, FALSE, COMPOUND_STRING("CTRMapV, PDSMS, DS hacking docs")};
 static const struct CreditsEntry sCreditsEntry_PwWeb              = { 0,  TRUE, COMPOUND_STRING("Web & PC Version")};
 static const struct CreditsEntry sCreditsEntry_PwMultiplatform    = { 0, FALSE, COMPOUND_STRING("pokeemerald-multiplatform")};
 static const struct CreditsEntry sCreditsEntry_PwGradenGnostic    = { 0, FALSE, COMPOUND_STRING("gradenGnostic")};
@@ -541,6 +546,13 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_PwSinnohProject,
         &sCreditsEntry_PwLiderMorti00,
         _,
+    },
+    [PAGE_PW_UNOVA] = {
+        _,
+        &sCreditsEntry_PwUnova,
+        &sCreditsEntry_PwUnovaMaps,
+        &sCreditsEntry_PwUnovaNitro,
+        &sCreditsEntry_PwUnovaMapTools,
     },
     [PAGE_PW_WEB] = {
         _,

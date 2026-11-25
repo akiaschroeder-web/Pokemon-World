@@ -1,0 +1,97 @@
+{
+  "id": "MAP_UNOVA_LACUNOSA_TOWN",
+  "name": "Unova_LacunosaTown",
+  "layout": "LAYOUT_UNOVA_LACUNOSA_TOWN",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_LACUNOSA_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_ROUTE12",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE13_1",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE13_2",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 20,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_LACUNOSA_TOWN_Z407",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_LACUNOSA_TOWN_Z408",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_LACUNOSA_TOWN_Z409",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_LACUNOSA_TOWN_Z410",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_LACUNOSA_TOWN_Z411",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_LacunosaTown_EventScript_Sign0"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_LacunosaTown_EventScript_Sign1"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_LacunosaTown_EventScript_Sign2"
+    }
+  ]
+}

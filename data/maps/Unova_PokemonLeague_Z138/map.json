@@ -1,0 +1,44 @@
+{
+  "id": "MAP_UNOVA_POKEMON_LEAGUE_Z138",
+  "name": "Unova_PokemonLeague_Z138",
+  "layout": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z138",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_POKEMON_LEAGUE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 31,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_POKEMON_LEAGUE_Z144",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 32,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_POKEMON_LEAGUE_Z144",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 82,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_PokemonLeague_Z138_EventScript_Sign0"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "MAP_UNOVA_MISTRALTON_CITY_Z291_1",
+  "name": "Unova_MistraltonCity_Z291_1",
+  "layout": "LAYOUT_UNOVA_MISTRALTON_CITY_Z291_1",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_MISTRALTON_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_MISTRALTON_CITY_Z291_2",
+      "offset": 32,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_UNOVA_CHARGESTONE_CAVE_Z297",
+      "offset": 64,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE7_Z306_2",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ61",
+      "x": 16,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MistraltonCity_Z291_1_EventScript_Npc0",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "platform/web3d.h"
 #include "battle_pyramid.h"
 #include "bg.h"
 #include "fieldmap.h"
@@ -773,6 +774,9 @@ bool8 CameraMove(s32 x, s32 y)
         gCamera.active = TRUE;
         gCamera.x = old_x - gSaveBlock1Ptr->pos.x;
         gCamera.y = old_y - gSaveBlock1Ptr->pos.y;
+#ifdef PLATFORM_WEB
+        Web3D_ShiftCamera(-gCamera.x * 16, -gCamera.y * 16);
+#endif
         gSaveBlock1Ptr->pos.x += x;
         gSaveBlock1Ptr->pos.y += y;
         MoveMapViewToBackup(direction);

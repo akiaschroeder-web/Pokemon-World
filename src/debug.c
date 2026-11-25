@@ -888,6 +888,12 @@ static const struct DebugMenuOption sDebugMenu_Actions_WarpKantoLater[] =
     { NULL }
 };
 
+static const struct DebugMenuOption sDebugMenu_Actions_WarpUnova[] =
+{
+    { COMPOUND_STRING("Nuvema Town"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_NUVEMA_TOWN) },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_Actions_WarpRegion[] =
 {
     { COMPOUND_STRING("Kanto…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpKanto },
@@ -895,6 +901,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_WarpRegion[] =
     { COMPOUND_STRING("Johto…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpJohto },
     { COMPOUND_STRING("Hoenn…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpHoenn },
     { COMPOUND_STRING("Sinnoh…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpSinnoh },
+    { COMPOUND_STRING("Unova…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_WarpUnova },
     { NULL }
 };
 

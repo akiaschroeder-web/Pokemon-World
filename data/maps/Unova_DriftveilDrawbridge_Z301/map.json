@@ -1,0 +1,35 @@
+{
+  "id": "MAP_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z301",
+  "name": "Unova_DriftveilDrawbridge_Z301",
+  "layout": "LAYOUT_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z301",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_DRIFTVEIL_DRAWBRIDGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 211,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_ROUTE5_Z304",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 44,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_DRIFTVEIL_CITY_Z290_2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

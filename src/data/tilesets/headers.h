@@ -1950,4 +1950,28 @@ const struct Tileset gTileset_OreburghMuseum =
     .metatileAttributes = gMetatileAttributes_OreburghMuseum,
     .callback = NULL,
 };
+// Pokémon World: Unova's invisible tilesets. The 3D map is the picture (src/platform/web3d.c);
+// these metatiles only carry behaviours (tools/pokemon_world/import_bw.py writes them).
+const struct Tileset gTileset_Unova3D =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Unova3D,
+    .palettes = gTilesetPalettes_Unova3D,
+    .metatiles = gMetatiles_Unova3D,
+    .metatileAttributes = gMetatileAttributes_Unova3D,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Unova3D_2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Unova3D_2,
+    .palettes = gTilesetPalettes_Unova3D_2,
+    .metatiles = gMetatiles_Unova3D_2,
+    .metatileAttributes = gMetatileAttributes_Unova3D_2,
+    .callback = NULL,
+};
+
 #include "headers_hns.h" // Pokémon World: Heart & Soul tilesets (generated)

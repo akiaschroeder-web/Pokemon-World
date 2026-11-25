@@ -1,4 +1,5 @@
 #include "global.h"
+#include "platform/web3d.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
@@ -2166,6 +2167,12 @@ void CB2_ContinueSavedGame(void)
         ResetWinStreaks();
 
     LoadSaveblockMapHeader();
+#ifdef PLATFORM_WEB
+    // the saved objects are placed from the camera at the saved position (Unova's 3D view needs it)
+    gTotalCameraPixelOffsetX = 0;
+    gTotalCameraPixelOffsetY = 0;
+    Web3D_ResetCamera();
+#endif
     ClearDiveAndHoleWarps();
     trainerHillMapId = GetCurrentTrainerHillMapId();
     if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
@@ -2650,6 +2657,9 @@ static void InitObjectEventsLink(void)
 {
     gTotalCameraPixelOffsetX = 0;
     gTotalCameraPixelOffsetY = 0;
+#ifdef PLATFORM_WEB
+    Web3D_ResetCamera();
+#endif
     ResetObjectEvents();
     TrySpawnObjectEvents(0, 0);
     TryRunOnWarpIntoMapScript();
@@ -2662,6 +2672,9 @@ static void InitObjectEventsLocal(void)
 
     gTotalCameraPixelOffsetX = 0;
     gTotalCameraPixelOffsetY = 0;
+#ifdef PLATFORM_WEB
+    Web3D_ResetCamera();
+#endif
     ResetObjectEvents();
     GetCameraFocusCoords(&x, &y);
     player = GetInitialPlayerAvatarState();

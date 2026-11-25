@@ -1,0 +1,129 @@
+{
+  "id": "MAP_UNOVA_UNDELLA_TOWN",
+  "name": "Unova_UndellaTown",
+  "layout": "LAYOUT_UNOVA_UNDELLA_TOWN",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_UNDELLA_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_UNDELLA_BAY",
+      "offset": -32,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE13_3",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE13_4",
+      "offset": 32,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE14_1",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ17",
+      "x": 42,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 56,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_TOWN_Z413",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_TOWN_Z414",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_TOWN_Z415",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 32,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_TOWN_Z416",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 48,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_GATE_Z372",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 49,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_GATE_Z372",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 50,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_GATE_Z372",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 40,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_TOWN_Z417",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 44,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_UndellaTown_EventScript_Sign0"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_UndellaTown_EventScript_Sign1"
+    }
+  ]
+}

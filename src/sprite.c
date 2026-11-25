@@ -1,4 +1,5 @@
 #include "global.h"
+#include "platform/web3d.h"
 #include "sprite.h"
 #include "main.h"
 #include "overworld.h"
@@ -386,10 +387,19 @@ void BuildOamBuffer(void)
     oamLoadDisabled = gMain.oamLoadDisabled;
     gMain.oamLoadDisabled = TRUE;
 
+#ifdef PLATFORM_WEB
+    Web3D_BeginOamBuffer();
+#endif
     for (i = 0, oamIndex = 0; i < toSort; i++)
     {
+#ifdef PLATFORM_WEB
+        u8 firstOam = oamIndex;
+#endif
         if (AddSpriteToOamBuffer(&gSprites[spritePriorities[i] & 0xFF], &oamIndex))
             break;
+#ifdef PLATFORM_WEB
+        Web3D_MarkOam(&gSprites[spritePriorities[i] & 0xFF], firstOam, oamIndex);
+#endif
     }
 
     for (i = oamIndex; i < sOamDummyIndex; i++)
@@ -593,7 +603,12 @@ void ResetOamRange(u32 start, u32 end)
 void LoadOam(void)
 {
     if (!gMain.oamLoadDisabled)
+    {
         CpuCopy32(gMain.oamBuffer, (void *)OAM, sizeof(gMain.oamBuffer));
+#ifdef PLATFORM_WEB
+        Web3D_LatchOam();
+#endif
+    }
 }
 
 void ClearSpriteCopyRequests(void)

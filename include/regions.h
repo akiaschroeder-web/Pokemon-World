@@ -13,8 +13,13 @@ enum KantoSubRegion GetKantoSubregion(u32 mapSecId);
 #define SINNOH_MAPSEC_START MAPSEC_TWINLEAF_TOWN
 #define SINNOH_MAPSEC_END   MAPSEC_SN_POKEMON_MANSION
 
+// Unova's map sections come after everything else, from Nuvema Town on (tools/pokemon_world/import_bw.py).
+#define UNOVA_MAPSEC_START MAPSEC_UNOVA_NUVEMA_TOWN
+
 static inline enum Region GetRegionForSectionId(u32 sectionId)
 {
+    if (sectionId >= UNOVA_MAPSEC_START && sectionId < MAPSEC_NONE)
+        return REGION_UNOVA;
     if (sectionId >= SINNOH_MAPSEC_START && sectionId <= SINNOH_MAPSEC_END)
         return REGION_SINNOH;
     if (sectionId >= KANTO_MAPSEC_START && sectionId < KANTO_MAPSEC_END && KANTO_MAPSEC_COUNT > 0)

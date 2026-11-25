@@ -1,0 +1,45 @@
+{
+  "id": "MAP_UNOVA_VICTORY_ROAD_Z222",
+  "name": "Unova_VictoryRoad_Z222",
+  "layout": "LAYOUT_UNOVA_VICTORY_ROAD_Z222",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_VICTORY_ROAD",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_VICTORY_ROAD_Z223",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_VictoryRoad_Z222_EventScript_Sign0"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_VictoryRoad_Z222_EventScript_Sign1"
+    }
+  ]
+}

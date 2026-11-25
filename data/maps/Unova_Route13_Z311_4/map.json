@@ -1,0 +1,53 @@
+{
+  "id": "MAP_UNOVA_ROUTE13_Z311_4",
+  "name": "Unova_Route13_Z311_4",
+  "layout": "LAYOUT_UNOVA_ROUTE13_Z311_4",
+  "music": "MUS_ROUTE101",
+  "region_map_section": "MAPSEC_UNOVA_ROUTE_13",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_ROUTE13_Z311_3",
+      "offset": -32,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_UNOVA_UNDELLA_TOWN_Z316",
+      "offset": -32,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 15,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_Route13_Z311_4_EventScript_Npc0",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_UNDELLA_TOWN_Z316",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

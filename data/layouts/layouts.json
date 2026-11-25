@@ -17960,6 +17960,4506 @@
       "border_filepath": "data/layouts/Saffron_Temp_Hns/border.bin",
       "blockdata_filepath": "data/layouts/Saffron_Temp_Hns/map.bin",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z0",
+      "name": "Unova_BlackCity_Z0_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z0/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z0/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z1",
+      "name": "Unova_BlackCity_Z1_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z2",
+      "name": "Unova_BlackCity_Z2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z3",
+      "name": "Unova_BlackCity_Z3_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z3/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z3/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z4",
+      "name": "Unova_BlackCity_Z4_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z4/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z4/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z5",
+      "name": "Unova_BlackCity_Z5_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z5/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z5/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY",
+      "name": "Unova_StriatonCity_Layout",
+      "width": 96,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z7",
+      "name": "Unova_StriatonCity_Z7_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z7/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z7/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z8",
+      "name": "Unova_StriatonCity_Z8_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z8/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z8/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z9",
+      "name": "Unova_StriatonCity_Z9_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z9/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z9/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z10",
+      "name": "Unova_StriatonCity_Z10_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z10/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z10/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z11",
+      "name": "Unova_StriatonCity_Z11_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z11/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z11/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z12",
+      "name": "Unova_StriatonCity_Z12_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z12/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z12/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z13",
+      "name": "Unova_StriatonCity_Z13_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z13/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z13/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z14",
+      "name": "Unova_StriatonCity_Z14_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z14/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z14/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_STRIATON_CITY_Z15",
+      "name": "Unova_StriatonCity_Z15_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_StriatonCity_Z15/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_StriatonCity_Z15/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY",
+      "name": "Unova_NacreneCity_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z17",
+      "name": "Unova_NacreneCity_Z17_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z17/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z17/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z18",
+      "name": "Unova_NacreneCity_Z18_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z18/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z18/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z19",
+      "name": "Unova_NacreneCity_Z19_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z19/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z19/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z20",
+      "name": "Unova_NacreneCity_Z20_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z20/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z20/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z21",
+      "name": "Unova_NacreneCity_Z21_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z21/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z21/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z22",
+      "name": "Unova_NacreneCity_Z22_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z22/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z22/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z23",
+      "name": "Unova_NacreneCity_Z23_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z23/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z23/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z24",
+      "name": "Unova_NacreneCity_Z24_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z24/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z24/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z25",
+      "name": "Unova_NacreneCity_Z25_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z25/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z25/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_CITY_Z26",
+      "name": "Unova_NacreneCity_Z26_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneCity_Z26/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneCity_Z26/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NACRENE_GATE_Z27",
+      "name": "Unova_NacreneGate_Z27_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NacreneGate_Z27/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NacreneGate_Z27/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z28",
+      "name": "Unova_CasteliaCity_Z28_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z28/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z28/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z29",
+      "name": "Unova_CasteliaCity_Z29_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z29/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z29/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z30",
+      "name": "Unova_CasteliaCity_Z30_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z30/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z30/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z31",
+      "name": "Unova_CasteliaCity_Z31_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z31/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z31/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z32",
+      "name": "Unova_CasteliaCity_Z32_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z32/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z32/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z33",
+      "name": "Unova_CasteliaCity_Z33_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z33/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z33/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z34",
+      "name": "Unova_CasteliaCity_Z34_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z34/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z34/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z35",
+      "name": "Unova_CasteliaCity_Z35_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z35/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z35/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z36",
+      "name": "Unova_CasteliaCity_Z36_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z36/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z36/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z37",
+      "name": "Unova_CasteliaCity_Z37_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z37/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z37/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z38",
+      "name": "Unova_CasteliaCity_Z38_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z38/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z38/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z39",
+      "name": "Unova_CasteliaCity_Z39_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z39/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z39/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z40",
+      "name": "Unova_CasteliaCity_Z40_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z40/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z40/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z41",
+      "name": "Unova_CasteliaCity_Z41_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z41/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z41/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z42",
+      "name": "Unova_CasteliaCity_Z42_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z42/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z42/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z43",
+      "name": "Unova_CasteliaCity_Z43_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z43/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z43/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z44",
+      "name": "Unova_CasteliaCity_Z44_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z44/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z44/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z45",
+      "name": "Unova_CasteliaCity_Z45_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z45/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z45/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z46",
+      "name": "Unova_CasteliaCity_Z46_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z46/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z46/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z47",
+      "name": "Unova_CasteliaCity_Z47_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z47/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z47/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z48",
+      "name": "Unova_CasteliaCity_Z48_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z48/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z48/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z49",
+      "name": "Unova_CasteliaCity_Z49_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z49/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z49/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z50",
+      "name": "Unova_CasteliaCity_Z50_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z50/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z50/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_GATE_Z51",
+      "name": "Unova_CasteliaGate_Z51_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaGate_Z51/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaGate_Z51/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROYAL_UNOVA_Z52",
+      "name": "Unova_RoyalUnova_Z52_Layout",
+      "width": 160,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RoyalUnova_Z52/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RoyalUnova_Z52/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z53",
+      "name": "Unova_CasteliaCity_Z53_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z53/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z53/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z54",
+      "name": "Unova_CasteliaCity_Z54_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z54/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z54/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z55",
+      "name": "Unova_CasteliaCity_Z55_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z55/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z55/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z56",
+      "name": "Unova_CasteliaCity_Z56_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z56/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z56/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z57",
+      "name": "Unova_CasteliaCity_Z57_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z57/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z57/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z58",
+      "name": "Unova_CasteliaCity_Z58_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z58/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z58/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z59",
+      "name": "Unova_CasteliaCity_Z59_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z59/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z59/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z60",
+      "name": "Unova_CasteliaCity_Z60_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z60/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z60/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CASTELIA_CITY_Z61",
+      "name": "Unova_CasteliaCity_Z61_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CasteliaCity_Z61/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CasteliaCity_Z61/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY",
+      "name": "Unova_NimbasaCity_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z63",
+      "name": "Unova_NimbasaCity_Z63_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z63/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z63/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z64",
+      "name": "Unova_NimbasaCity_Z64_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z64/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z64/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z65",
+      "name": "Unova_NimbasaCity_Z65_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z65/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z65/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z66",
+      "name": "Unova_GearStation_Z66_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z66/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z66/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z67",
+      "name": "Unova_GearStation_Z67_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z67/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z67/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z68",
+      "name": "Unova_GearStation_Z68_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z68/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z68/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z69",
+      "name": "Unova_GearStation_Z69_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z69/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z69/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z70",
+      "name": "Unova_GearStation_Z70_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z70/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z70/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z71",
+      "name": "Unova_GearStation_Z71_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z71/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z71/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z72",
+      "name": "Unova_GearStation_Z72_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z72/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z72/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z73",
+      "name": "Unova_GearStation_Z73_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z73/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z73/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GEAR_STATION_Z74",
+      "name": "Unova_GearStation_Z74_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GearStation_Z74/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GearStation_Z74/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BATTLE_SUBWAY_Z75",
+      "name": "Unova_BattleSubway_Z75_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BattleSubway_Z75/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BattleSubway_Z75/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BATTLE_SUBWAY_Z76",
+      "name": "Unova_BattleSubway_Z76_Layout",
+      "width": 96,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BattleSubway_Z76/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BattleSubway_Z76/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MUSICAL_THEATER_Z77",
+      "name": "Unova_MusicalTheater_Z77_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MusicalTheater_Z77/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MusicalTheater_Z77/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MUSICAL_THEATER_Z78",
+      "name": "Unova_MusicalTheater_Z78_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MusicalTheater_Z78/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MusicalTheater_Z78/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z79",
+      "name": "Unova_NimbasaCity_Z79_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z79/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z79/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z80",
+      "name": "Unova_NimbasaCity_Z80_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z80/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z80/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z81",
+      "name": "Unova_NimbasaCity_Z81_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z81/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z81/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z82",
+      "name": "Unova_NimbasaCity_Z82_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z82/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z82/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z83",
+      "name": "Unova_NimbasaCity_Z83_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z83/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z83/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z84",
+      "name": "Unova_NimbasaCity_Z84_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z84/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z84/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z85",
+      "name": "Unova_NimbasaCity_Z85_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z85/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z85/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z86",
+      "name": "Unova_NimbasaCity_Z86_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z86/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z86/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z87",
+      "name": "Unova_NimbasaCity_Z87_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z87/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z87/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z88",
+      "name": "Unova_NimbasaCity_Z88_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z88/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z88/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z89",
+      "name": "Unova_NimbasaCity_Z89_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z89/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z89/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_GATE_Z90",
+      "name": "Unova_NimbasaGate_Z90_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaGate_Z90/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaGate_Z90/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_GATE_Z91",
+      "name": "Unova_NimbasaGate_Z91_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaGate_Z91/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaGate_Z91/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_GATE_Z92",
+      "name": "Unova_NimbasaGate_Z92_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaGate_Z92/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaGate_Z92/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z93",
+      "name": "Unova_NimbasaCity_Z93_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z93/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z93/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z94",
+      "name": "Unova_NimbasaCity_Z94_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z94/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z94/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z95",
+      "name": "Unova_NimbasaCity_Z95_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z95/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z95/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_1",
+      "name": "Unova_DriftveilCity_1_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_2",
+      "name": "Unova_DriftveilCity_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z97",
+      "name": "Unova_DriftveilCity_Z97_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z97/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z97/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z98",
+      "name": "Unova_DriftveilCity_Z98_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z98/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z98/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z99",
+      "name": "Unova_DriftveilCity_Z99_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z99/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z99/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z100",
+      "name": "Unova_DriftveilCity_Z100_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z100/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z100/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z101",
+      "name": "Unova_DriftveilCity_Z101_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z101/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z101/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z102",
+      "name": "Unova_DriftveilCity_Z102_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z102/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z102/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z103",
+      "name": "Unova_DriftveilCity_Z103_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z103/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z103/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z104",
+      "name": "Unova_DriftveilCity_Z104_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z104/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z104/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z105",
+      "name": "Unova_DriftveilCity_Z105_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z105/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z105/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z106",
+      "name": "Unova_DriftveilCity_Z106_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z106/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z106/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_1",
+      "name": "Unova_MistraltonCity_1_Layout",
+      "width": 32,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_2",
+      "name": "Unova_MistraltonCity_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z108",
+      "name": "Unova_MistraltonCity_Z108_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z108/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z108/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z109",
+      "name": "Unova_MistraltonCity_Z109_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z109/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z109/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z110",
+      "name": "Unova_MistraltonCity_Z110_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z110/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z110/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z111",
+      "name": "Unova_MistraltonCity_Z111_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z111/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z111/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z112",
+      "name": "Unova_MistraltonCity_Z112_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z112/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z112/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_1",
+      "name": "Unova_IcirrusCity_1_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_2",
+      "name": "Unova_IcirrusCity_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z114",
+      "name": "Unova_IcirrusCity_Z114_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z114/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z114/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z115",
+      "name": "Unova_IcirrusCity_Z115_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z115/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z115/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z116",
+      "name": "Unova_IcirrusCity_Z116_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z116/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z116/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z117",
+      "name": "Unova_IcirrusCity_Z117_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z117/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z117/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z118",
+      "name": "Unova_IcirrusCity_Z118_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z118/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z118/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z119",
+      "name": "Unova_IcirrusCity_Z119_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z119/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z119/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY",
+      "name": "Unova_OpelucidCity_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z121",
+      "name": "Unova_OpelucidCity_Z121_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z121/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z121/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z122",
+      "name": "Unova_OpelucidCity_Z122_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z122/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z122/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z123",
+      "name": "Unova_OpelucidCity_Z123_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z123/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z123/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z124",
+      "name": "Unova_OpelucidCity_Z124_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z124/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z124/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z125",
+      "name": "Unova_OpelucidCity_Z125_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z125/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z125/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z126",
+      "name": "Unova_OpelucidCity_Z126_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z126/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z126/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z127",
+      "name": "Unova_OpelucidCity_Z127_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z127/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z127/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z128",
+      "name": "Unova_OpelucidCity_Z128_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z128/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z128/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z129",
+      "name": "Unova_OpelucidCity_Z129_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z129/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z129/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z130",
+      "name": "Unova_OpelucidCity_Z130_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z130/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z130/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_GATE_Z131",
+      "name": "Unova_OpelucidGate_Z131_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidGate_Z131/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidGate_Z131/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_GATE_Z132",
+      "name": "Unova_OpelucidGate_Z132_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidGate_Z132/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidGate_Z132/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_GATE_Z133",
+      "name": "Unova_OpelucidGate_Z133_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidGate_Z133/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidGate_Z133/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z134",
+      "name": "Unova_OpelucidCity_Z134_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z134/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z134/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z135",
+      "name": "Unova_OpelucidCity_Z135_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z135/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z135/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z136",
+      "name": "Unova_PokemonLeague_Z136_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z136/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z136/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z137",
+      "name": "Unova_PokemonLeague_Z137_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z137/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z137/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z138",
+      "name": "Unova_PokemonLeague_Z138_Layout",
+      "width": 64,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z138/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z138/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z139",
+      "name": "Unova_PokemonLeague_Z139_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z139/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z139/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z140",
+      "name": "Unova_PokemonLeague_Z140_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z140/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z140/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z141",
+      "name": "Unova_PokemonLeague_Z141_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z141/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z141/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z142",
+      "name": "Unova_PokemonLeague_Z142_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z142/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z142/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z143",
+      "name": "Unova_PokemonLeague_Z143_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z143/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z143/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z144",
+      "name": "Unova_PokemonLeague_Z144_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z144/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z144/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z145",
+      "name": "Unova_PokemonLeague_Z145_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z145/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z145/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z146",
+      "name": "Unova_PokemonLeague_Z146_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokemonLeague_Z146/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokemonLeague_Z146/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNITY_TOWER",
+      "name": "Unova_UnityTower_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UnityTower/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UnityTower/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNITY_TOWER_Z148",
+      "name": "Unova_UnityTower_Z148_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UnityTower_Z148/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UnityTower_Z148/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNITY_TOWER_Z149",
+      "name": "Unova_UnityTower_Z149_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UnityTower_Z149/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UnityTower_Z149/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA__Z150",
+      "name": "Unova__Z150_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova__Z150/border.bin",
+      "blockdata_filepath": "data/layouts/Unova__Z150/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA__Z151",
+      "name": "Unova__Z151_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova__Z151/border.bin",
+      "blockdata_filepath": "data/layouts/Unova__Z151/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DREAMYARD_Z152",
+      "name": "Unova_Dreamyard_Z152_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Dreamyard_Z152/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Dreamyard_Z152/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DREAMYARD_Z153",
+      "name": "Unova_Dreamyard_Z153_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Dreamyard_Z153/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Dreamyard_Z153/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_PINWHEEL_FOREST_1",
+      "name": "Unova_PinwheelForest_1_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PinwheelForest_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PinwheelForest_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_PINWHEEL_FOREST_2",
+      "name": "Unova_PinwheelForest_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PinwheelForest_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PinwheelForest_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_PINWHEEL_FOREST_Z155",
+      "name": "Unova_PinwheelForest_Z155_Layout",
+      "width": 128,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PinwheelForest_Z155/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PinwheelForest_Z155/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RUMINATION_FIELD_Z156",
+      "name": "Unova_RuminationField_Z156_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RuminationField_Z156/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RuminationField_Z156/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DESERT_RESORT",
+      "name": "Unova_DesertResort_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DesertResort/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DesertResort/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DESERT_RESORT_Z158",
+      "name": "Unova_DesertResort_Z158_Layout",
+      "width": 96,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DesertResort_Z158/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DesertResort_Z158/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE_GATE_Z159",
+      "name": "Unova_RouteGate_Z159_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RouteGate_Z159/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RouteGate_Z159/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z160",
+      "name": "Unova_RelicCastle_Z160_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z160/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z160/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z161",
+      "name": "Unova_RelicCastle_Z161_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z161/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z161/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z162",
+      "name": "Unova_RelicCastle_Z162_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z162/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z162/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z163",
+      "name": "Unova_RelicCastle_Z163_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z163/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z163/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z164",
+      "name": "Unova_RelicCastle_Z164_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z164/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z164/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z165",
+      "name": "Unova_RelicCastle_Z165_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z165/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z165/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z166",
+      "name": "Unova_RelicCastle_Z166_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z166/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z166/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z167",
+      "name": "Unova_RelicCastle_Z167_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z167/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z167/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z168",
+      "name": "Unova_RelicCastle_Z168_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z168/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z168/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z169",
+      "name": "Unova_RelicCastle_Z169_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z169/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z169/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z170",
+      "name": "Unova_RelicCastle_Z170_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z170/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z170/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z171",
+      "name": "Unova_RelicCastle_Z171_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z171/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z171/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z172",
+      "name": "Unova_RelicCastle_Z172_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z172/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z172/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z173",
+      "name": "Unova_RelicCastle_Z173_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z173/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z173/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z174",
+      "name": "Unova_RelicCastle_Z174_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z174/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z174/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z175",
+      "name": "Unova_RelicCastle_Z175_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z175/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z175/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z176",
+      "name": "Unova_RelicCastle_Z176_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z176/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z176/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z177",
+      "name": "Unova_RelicCastle_Z177_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z177/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z177/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z178",
+      "name": "Unova_RelicCastle_Z178_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z178/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z178/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z179",
+      "name": "Unova_RelicCastle_Z179_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z179/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z179/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z180",
+      "name": "Unova_RelicCastle_Z180_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z180/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z180/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z181",
+      "name": "Unova_RelicCastle_Z181_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z181/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z181/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z182",
+      "name": "Unova_RelicCastle_Z182_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z182/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z182/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z183",
+      "name": "Unova_RelicCastle_Z183_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z183/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z183/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z184",
+      "name": "Unova_RelicCastle_Z184_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z184/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z184/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z185",
+      "name": "Unova_RelicCastle_Z185_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z185/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z185/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z186",
+      "name": "Unova_RelicCastle_Z186_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z186/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z186/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z187",
+      "name": "Unova_RelicCastle_Z187_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z187/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z187/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z188",
+      "name": "Unova_RelicCastle_Z188_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z188/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z188/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z189",
+      "name": "Unova_RelicCastle_Z189_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z189/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z189/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_RELIC_CASTLE_Z190",
+      "name": "Unova_RelicCastle_Z190_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RelicCastle_Z190/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RelicCastle_Z190/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_COLD_STORAGE",
+      "name": "Unova_ColdStorage_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ColdStorage/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ColdStorage/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_COLD_STORAGE_Z192",
+      "name": "Unova_ColdStorage_Z192_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ColdStorage_Z192/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ColdStorage_Z192/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_COLD_STORAGE_Z193",
+      "name": "Unova_ColdStorage_Z193_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ColdStorage_Z193/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ColdStorage_Z193/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHARGESTONE_CAVE",
+      "name": "Unova_ChargestoneCave_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChargestoneCave/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChargestoneCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHARGESTONE_CAVE_Z195",
+      "name": "Unova_ChargestoneCave_Z195_Layout",
+      "width": 96,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChargestoneCave_Z195/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChargestoneCave_Z195/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHARGESTONE_CAVE_Z196",
+      "name": "Unova_ChargestoneCave_Z196_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChargestoneCave_Z196/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChargestoneCave_Z196/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHARGESTONE_CAVE_Z197",
+      "name": "Unova_ChargestoneCave_Z197_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChargestoneCave_Z197/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChargestoneCave_Z197/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN",
+      "name": "Unova_TwistMountain_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z199",
+      "name": "Unova_TwistMountain_Z199_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z199/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z199/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z200",
+      "name": "Unova_TwistMountain_Z200_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z200/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z200/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z201",
+      "name": "Unova_TwistMountain_Z201_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z201/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z201/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z202",
+      "name": "Unova_TwistMountain_Z202_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z202/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z202/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z203",
+      "name": "Unova_TwistMountain_Z203_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z203/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z203/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z204",
+      "name": "Unova_TwistMountain_Z204_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z204/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z204/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER",
+      "name": "Unova_DragonspiralTower_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z206",
+      "name": "Unova_DragonspiralTower_Z206_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z206/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z206/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z207",
+      "name": "Unova_DragonspiralTower_Z207_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z207/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z207/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z208",
+      "name": "Unova_DragonspiralTower_Z208_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z208/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z208/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z209",
+      "name": "Unova_DragonspiralTower_Z209_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z209/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z209/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z210",
+      "name": "Unova_DragonspiralTower_Z210_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z210/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z210/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z211",
+      "name": "Unova_DragonspiralTower_Z211_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z211/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z211/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z212",
+      "name": "Unova_DragonspiralTower_Z212_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z212/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z212/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z213",
+      "name": "Unova_DragonspiralTower_Z213_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z213/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z213/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z214",
+      "name": "Unova_VictoryRoad_Z214_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z214/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z214/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z215",
+      "name": "Unova_VictoryRoad_Z215_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z215/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z215/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z216",
+      "name": "Unova_VictoryRoad_Z216_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z216/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z216/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z217",
+      "name": "Unova_VictoryRoad_Z217_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z217/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z217/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z218",
+      "name": "Unova_VictoryRoad_Z218_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z218/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z218/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z219",
+      "name": "Unova_VictoryRoad_Z219_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z219/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z219/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z220",
+      "name": "Unova_VictoryRoad_Z220_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z220/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z220/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z221",
+      "name": "Unova_VictoryRoad_Z221_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z221/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z221/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z222",
+      "name": "Unova_VictoryRoad_Z222_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z222/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z222/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z223",
+      "name": "Unova_VictoryRoad_Z223_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z223/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z223/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z224",
+      "name": "Unova_VictoryRoad_Z224_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z224/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z224/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z225",
+      "name": "Unova_VictoryRoad_Z225_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z225/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z225/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z226",
+      "name": "Unova_VictoryRoad_Z226_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z226/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z226/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z227",
+      "name": "Unova_VictoryRoad_Z227_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z227/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z227/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VICTORY_ROAD_Z228",
+      "name": "Unova_VictoryRoad_Z228_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VictoryRoad_Z228/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VictoryRoad_Z228/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TRIAL_CHAMBER_Z229",
+      "name": "Unova_TrialChamber_Z229_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TrialChamber_Z229/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TrialChamber_Z229/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GIANT_CHASM",
+      "name": "Unova_GiantChasm_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GiantChasm/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GiantChasm/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GIANT_CHASM_Z231",
+      "name": "Unova_GiantChasm_Z231_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GiantChasm_Z231/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GiantChasm_Z231/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GIANT_CHASM_Z232",
+      "name": "Unova_GiantChasm_Z232_Layout",
+      "width": 96,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GiantChasm_Z232/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GiantChasm_Z232/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GIANT_CHASM_Z233",
+      "name": "Unova_GiantChasm_Z233_Layout",
+      "width": 96,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GiantChasm_Z233/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GiantChasm_Z233/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GIANT_CHASM_Z234",
+      "name": "Unova_GiantChasm_Z234_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GiantChasm_Z234/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GiantChasm_Z234/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LIBERTY_GARDEN",
+      "name": "Unova_LibertyGarden_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LibertyGarden/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LibertyGarden/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LIBERTY_GARDEN_Z236",
+      "name": "Unova_LibertyGarden_Z236_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LibertyGarden_Z236/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LibertyGarden_Z236/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LIBERTY_GARDEN_Z237",
+      "name": "Unova_LibertyGarden_Z237_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LibertyGarden_Z237/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LibertyGarden_Z237/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_P2LABORATORY",
+      "name": "Unova_P2Laboratory_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_P2Laboratory/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_P2Laboratory/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_P2LABORATORY_Z239",
+      "name": "Unova_P2Laboratory_Z239_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_P2Laboratory_Z239/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_P2Laboratory_Z239/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_BAY",
+      "name": "Unova_UndellaBay_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaBay/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaBay/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z241",
+      "name": "Unova_AbyssalRuins_Z241_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z241/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z241/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z242",
+      "name": "Unova_AbyssalRuins_Z242_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z242/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z242/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z243",
+      "name": "Unova_AbyssalRuins_Z243_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z243/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z243/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z244",
+      "name": "Unova_AbyssalRuins_Z244_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z244/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z244/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z245",
+      "name": "Unova_AbyssalRuins_Z245_Layout",
+      "width": 160,
+      "height": 160,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z245/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z245/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z246",
+      "name": "Unova_AbyssalRuins_Z246_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z246/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z246/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z247",
+      "name": "Unova_AbyssalRuins_Z247_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z247/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z247/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z248",
+      "name": "Unova_AbyssalRuins_Z248_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbyssalRuins_Z248/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbyssalRuins_Z248/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_SKYARROW_BRIDGE_Z249",
+      "name": "Unova_SkyarrowBridge_Z249_Layout",
+      "width": 64,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_SkyarrowBridge_Z249/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_SkyarrowBridge_Z249/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z250",
+      "name": "Unova_BridgeGate_Z250_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z250/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z250/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z251",
+      "name": "Unova_BridgeGate_Z251_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z251/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z251/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z252",
+      "name": "Unova_BridgeGate_Z252_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z252/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z252/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z253",
+      "name": "Unova_DriftveilDrawbridge_Z253_Layout",
+      "width": 256,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilDrawbridge_Z253/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilDrawbridge_Z253/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TUBELINE_BRIDGE_Z254",
+      "name": "Unova_TubelineBridge_Z254_Layout",
+      "width": 32,
+      "height": 192,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TubelineBridge_Z254/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TubelineBridge_Z254/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z255",
+      "name": "Unova_VillageBridge_Z255_Layout",
+      "width": 96,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z255/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z255/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z256",
+      "name": "Unova_VillageBridge_Z256_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z256/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z256/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z257",
+      "name": "Unova_VillageBridge_Z257_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z257/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z257/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z258",
+      "name": "Unova_VillageBridge_Z258_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z258/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z258/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z259",
+      "name": "Unova_VillageBridge_Z259_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z259/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z259/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z260",
+      "name": "Unova_VillageBridge_Z260_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z260/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z260/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z261",
+      "name": "Unova_VillageBridge_Z261_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z261/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z261/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_VILLAGE_BRIDGE_Z262",
+      "name": "Unova_VillageBridge_Z262_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_VillageBridge_Z262/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_VillageBridge_Z262/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MARVELOUS_BRIDGE_Z263",
+      "name": "Unova_MarvelousBridge_Z263_Layout",
+      "width": 192,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MarvelousBridge_Z263/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MarvelousBridge_Z263/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z264",
+      "name": "Unova_NSCastle_Z264_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z264/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z264/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z265",
+      "name": "Unova_NSCastle_Z265_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z265/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z265/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z266",
+      "name": "Unova_NSCastle_Z266_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z266/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z266/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z267",
+      "name": "Unova_NSCastle_Z267_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z267/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z267/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z268",
+      "name": "Unova_NSCastle_Z268_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z268/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z268/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z269",
+      "name": "Unova_NSCastle_Z269_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z269/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z269/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z270",
+      "name": "Unova_NSCastle_Z270_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z270/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z270/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z271",
+      "name": "Unova_NSCastle_Z271_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z271/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z271/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z272",
+      "name": "Unova_NSCastle_Z272_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z272/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z272/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z273",
+      "name": "Unova_NSCastle_Z273_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z273/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z273/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z274",
+      "name": "Unova_NSCastle_Z274_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z274/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z274/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z275",
+      "name": "Unova_NSCastle_Z275_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z275/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z275/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z276",
+      "name": "Unova_NSCastle_Z276_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z276/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z276/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z277",
+      "name": "Unova_NSCastle_Z277_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z277/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z277/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NSCASTLE_Z278",
+      "name": "Unova_NSCastle_Z278_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NSCastle_Z278/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NSCastle_Z278/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTRALINK_Z279",
+      "name": "Unova_Entralink_Z279_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Entralink_Z279/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Entralink_Z279/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z280",
+      "name": "Unova_EntreeForest_Z280_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z280/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z280/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z281",
+      "name": "Unova_EntreeForest_Z281_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z281/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z281/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z282",
+      "name": "Unova_EntreeForest_Z282_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z282/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z282/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z283",
+      "name": "Unova_EntreeForest_Z283_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z283/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z283/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z284",
+      "name": "Unova_EntreeForest_Z284_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z284/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z284/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z285",
+      "name": "Unova_EntreeForest_Z285_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z285/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z285/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z286",
+      "name": "Unova_EntreeForest_Z286_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z286/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z286/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z287",
+      "name": "Unova_EntreeForest_Z287_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z287/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z287/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ENTREE_FOREST_Z288",
+      "name": "Unova_EntreeForest_Z288_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_EntreeForest_Z288/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_EntreeForest_Z288/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NIMBASA_CITY_Z289",
+      "name": "Unova_NimbasaCity_Z289_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NimbasaCity_Z289/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NimbasaCity_Z289/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z290_1",
+      "name": "Unova_DriftveilCity_Z290_1_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z290_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z290_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z290_2",
+      "name": "Unova_DriftveilCity_Z290_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilCity_Z290_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilCity_Z290_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z291_1",
+      "name": "Unova_MistraltonCity_Z291_1_Layout",
+      "width": 32,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z291_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z291_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CITY_Z291_2",
+      "name": "Unova_MistraltonCity_Z291_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCity_Z291_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCity_Z291_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z292_1",
+      "name": "Unova_IcirrusCity_Z292_1_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z292_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z292_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ICIRRUS_CITY_Z292_2",
+      "name": "Unova_IcirrusCity_Z292_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_IcirrusCity_Z292_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_IcirrusCity_Z292_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_OPELUCID_CITY_Z293",
+      "name": "Unova_OpelucidCity_Z293_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_OpelucidCity_Z293/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_OpelucidCity_Z293/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_CITY_Z294",
+      "name": "Unova_BlackCity_Z294_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackCity_Z294/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackCity_Z294/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_WHITE_FOREST_Z295",
+      "name": "Unova_WhiteForest_Z295_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_WhiteForest_Z295/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_WhiteForest_Z295/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_COLD_STORAGE_Z296",
+      "name": "Unova_ColdStorage_Z296_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ColdStorage_Z296/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ColdStorage_Z296/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHARGESTONE_CAVE_Z297",
+      "name": "Unova_ChargestoneCave_Z297_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChargestoneCave_Z297/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChargestoneCave_Z297/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TWIST_MOUNTAIN_Z298",
+      "name": "Unova_TwistMountain_Z298_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TwistMountain_Z298/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TwistMountain_Z298/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z299",
+      "name": "Unova_DragonspiralTower_Z299_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DragonspiralTower_Z299/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DragonspiralTower_Z299/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z301",
+      "name": "Unova_DriftveilDrawbridge_Z301_Layout",
+      "width": 256,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_DriftveilDrawbridge_Z301/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_DriftveilDrawbridge_Z301/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_TUBELINE_BRIDGE_Z302",
+      "name": "Unova_TubelineBridge_Z302_Layout",
+      "width": 32,
+      "height": 192,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_TubelineBridge_Z302/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_TubelineBridge_Z302/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MARVELOUS_BRIDGE_Z303",
+      "name": "Unova_MarvelousBridge_Z303_Layout",
+      "width": 192,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MarvelousBridge_Z303/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MarvelousBridge_Z303/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE5_Z304",
+      "name": "Unova_Route5_Z304_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route5_Z304/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route5_Z304/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE6_Z305_1",
+      "name": "Unova_Route6_Z305_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route6_Z305_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route6_Z305_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE6_Z305_2",
+      "name": "Unova_Route6_Z305_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route6_Z305_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route6_Z305_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE7_Z306_1",
+      "name": "Unova_Route7_Z306_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route7_Z306_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route7_Z306_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE7_Z306_2",
+      "name": "Unova_Route7_Z306_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route7_Z306_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route7_Z306_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE8_Z307",
+      "name": "Unova_Route8_Z307_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route8_Z307/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route8_Z307/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE9_Z308",
+      "name": "Unova_Route9_Z308_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route9_Z308/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route9_Z308/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE11_Z309",
+      "name": "Unova_Route11_Z309_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route11_Z309/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route11_Z309/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE12_Z310",
+      "name": "Unova_Route12_Z310_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route12_Z310/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route12_Z310/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_Z311_1",
+      "name": "Unova_Route13_Z311_1_Layout",
+      "width": 32,
+      "height": 128,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_Z311_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_Z311_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_Z311_2",
+      "name": "Unova_Route13_Z311_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_Z311_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_Z311_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_Z311_3",
+      "name": "Unova_Route13_Z311_3_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_Z311_3/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_Z311_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_Z311_4",
+      "name": "Unova_Route13_Z311_4_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_Z311_4/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_Z311_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE14_Z312_1",
+      "name": "Unova_Route14_Z312_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route14_Z312_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route14_Z312_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE14_Z312_2",
+      "name": "Unova_Route14_Z312_2_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route14_Z312_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route14_Z312_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE15_Z313",
+      "name": "Unova_Route15_Z313_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route15_Z313/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route15_Z313/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE16_Z314",
+      "name": "Unova_Route16_Z314_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route16_Z314/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route16_Z314/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN_Z315",
+      "name": "Unova_LacunosaTown_Z315_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown_Z315/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown_Z315/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN_Z316",
+      "name": "Unova_UndellaTown_Z316_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown_Z316/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown_Z316/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE1_1",
+      "name": "Unova_Route1_1_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route1_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route1_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE1_2",
+      "name": "Unova_Route1_2_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route1_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route1_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE_GATE_Z318",
+      "name": "Unova_RouteGate_Z318_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_RouteGate_Z318/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_RouteGate_Z318/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE2_1",
+      "name": "Unova_Route2_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route2_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route2_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE2_2",
+      "name": "Unova_Route2_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route2_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_GATE_Z320",
+      "name": "Unova_AccumulaGate_Z320_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaGate_Z320/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaGate_Z320/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE3_1",
+      "name": "Unova_Route3_1_Layout",
+      "width": 96,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route3_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route3_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE3_2",
+      "name": "Unova_Route3_2_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route3_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route3_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE3_Z322",
+      "name": "Unova_Route3_Z322_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route3_Z322/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route3_Z322/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE3_Z323",
+      "name": "Unova_Route3_Z323_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route3_Z323/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route3_Z323/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_WELLSPRING_CAVE_Z324",
+      "name": "Unova_WellspringCave_Z324_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_WellspringCave_Z324/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_WellspringCave_Z324/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_WELLSPRING_CAVE_Z325",
+      "name": "Unova_WellspringCave_Z325_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_WellspringCave_Z325/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_WellspringCave_Z325/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE4_1",
+      "name": "Unova_Route4_1_Layout",
+      "width": 32,
+      "height": 128,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route4_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route4_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE4_2",
+      "name": "Unova_Route4_2_Layout",
+      "width": 32,
+      "height": 96,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route4_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route4_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE4_Z327",
+      "name": "Unova_Route4_Z327_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route4_Z327/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route4_Z327/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE4_Z328",
+      "name": "Unova_Route4_Z328_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route4_Z328/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route4_Z328/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE5",
+      "name": "Unova_Route5_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route5/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route5/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE5_Z330",
+      "name": "Unova_Route5_Z330_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route5_Z330/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route5_Z330/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE6_1",
+      "name": "Unova_Route6_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route6_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route6_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE6_2",
+      "name": "Unova_Route6_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route6_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route6_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE6_Z332",
+      "name": "Unova_Route6_Z332_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route6_Z332/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route6_Z332/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CAVE_Z333",
+      "name": "Unova_MistraltonCave_Z333_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCave_Z333/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCave_Z333/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MISTRALTON_CAVE_Z334",
+      "name": "Unova_MistraltonCave_Z334_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MistraltonCave_Z334/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MistraltonCave_Z334/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_GUIDANCE_CHAMBER_Z335",
+      "name": "Unova_GuidanceChamber_Z335_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_GuidanceChamber_Z335/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_GuidanceChamber_Z335/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE6_Z336",
+      "name": "Unova_Route6_Z336_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route6_Z336/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route6_Z336/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE7_1",
+      "name": "Unova_Route7_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route7_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route7_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE7_2",
+      "name": "Unova_Route7_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route7_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route7_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CELESTIAL_TOWER_Z338",
+      "name": "Unova_CelestialTower_Z338_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CelestialTower_Z338/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CelestialTower_Z338/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CELESTIAL_TOWER_Z339",
+      "name": "Unova_CelestialTower_Z339_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CelestialTower_Z339/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CelestialTower_Z339/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CELESTIAL_TOWER_Z340",
+      "name": "Unova_CelestialTower_Z340_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CelestialTower_Z340/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CelestialTower_Z340/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CELESTIAL_TOWER_Z341",
+      "name": "Unova_CelestialTower_Z341_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CelestialTower_Z341/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CelestialTower_Z341/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CELESTIAL_TOWER_Z342",
+      "name": "Unova_CelestialTower_Z342_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_CelestialTower_Z342/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_CelestialTower_Z342/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE7_Z343",
+      "name": "Unova_Route7_Z343_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route7_Z343/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route7_Z343/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE7_Z344",
+      "name": "Unova_Route7_Z344_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route7_Z344/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route7_Z344/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE8",
+      "name": "Unova_Route8_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route8/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route8/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_MOOR_OF_ICIRRUS_Z346",
+      "name": "Unova_MoorOfIcirrus_Z346_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_MoorOfIcirrus_Z346/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_MoorOfIcirrus_Z346/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z347",
+      "name": "Unova_BridgeGate_Z347_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z347/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z347/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE9",
+      "name": "Unova_Route9_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route9/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route9/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z349",
+      "name": "Unova_BridgeGate_Z349_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z349/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z349/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_SHOPPING_MALL_Z350",
+      "name": "Unova_ShoppingMall_Z350_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ShoppingMall_Z350/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ShoppingMall_Z350/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_SHOPPING_MALL_Z351",
+      "name": "Unova_ShoppingMall_Z351_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ShoppingMall_Z351/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ShoppingMall_Z351/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHALLENGER_SCAVE_Z352",
+      "name": "Unova_ChallengerSCave_Z352_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChallengerSCave_Z352/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChallengerSCave_Z352/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHALLENGER_SCAVE_Z353",
+      "name": "Unova_ChallengerSCave_Z353_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChallengerSCave_Z353/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChallengerSCave_Z353/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_CHALLENGER_SCAVE_Z354",
+      "name": "Unova_ChallengerSCave_Z354_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_ChallengerSCave_Z354/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_ChallengerSCave_Z354/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10",
+      "name": "Unova_Route10_Layout",
+      "width": 96,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z356",
+      "name": "Unova_Route10_Z356_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z356/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z356/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z357",
+      "name": "Unova_Route10_Z357_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z357/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z357/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z358",
+      "name": "Unova_Route10_Z358_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z358/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z358/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z359",
+      "name": "Unova_Route10_Z359_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z359/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z359/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z360",
+      "name": "Unova_Route10_Z360_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z360/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z360/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z361",
+      "name": "Unova_Route10_Z361_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z361/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z361/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z362",
+      "name": "Unova_Route10_Z362_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z362/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z362/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z363",
+      "name": "Unova_Route10_Z363_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z363/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z363/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE10_Z364",
+      "name": "Unova_Route10_Z364_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route10_Z364/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route10_Z364/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE11",
+      "name": "Unova_Route11_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route11/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route11/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z366",
+      "name": "Unova_BridgeGate_Z366_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z366/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z366/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE11_Z367",
+      "name": "Unova_Route11_Z367_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route11_Z367/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route11_Z367/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE12",
+      "name": "Unova_Route12_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route12/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route12/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z369",
+      "name": "Unova_BridgeGate_Z369_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z369/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z369/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_1",
+      "name": "Unova_Route13_1_Layout",
+      "width": 32,
+      "height": 128,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_2",
+      "name": "Unova_Route13_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_3",
+      "name": "Unova_Route13_3_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_3/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_4",
+      "name": "Unova_Route13_4_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_4/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_Z371",
+      "name": "Unova_Route13_Z371_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_Z371/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_Z371/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_GATE_Z372",
+      "name": "Unova_UndellaGate_Z372_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaGate_Z372/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaGate_Z372/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE13_Z373",
+      "name": "Unova_Route13_Z373_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route13_Z373/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route13_Z373/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE14_1",
+      "name": "Unova_Route14_1_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route14_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route14_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE14_2",
+      "name": "Unova_Route14_2_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route14_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route14_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_GATE_Z375",
+      "name": "Unova_BlackGate_Z375_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackGate_Z375/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackGate_Z375/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABUNDANT_SHRINE_Z376",
+      "name": "Unova_AbundantShrine_Z376_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbundantShrine_Z376/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbundantShrine_Z376/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ABUNDANT_SHRINE_Z377",
+      "name": "Unova_AbundantShrine_Z377_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AbundantShrine_Z377/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AbundantShrine_Z377/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE15",
+      "name": "Unova_Route15_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route15/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route15/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BLACK_GATE_Z379",
+      "name": "Unova_BlackGate_Z379_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BlackGate_Z379/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BlackGate_Z379/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z380",
+      "name": "Unova_BridgeGate_Z380_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z380/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z380/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_POKE_TRANSFER_LAB_Z381",
+      "name": "Unova_PokeTransferLab_Z381_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_PokeTransferLab_Z381/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_PokeTransferLab_Z381/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE15_Z382",
+      "name": "Unova_Route15_Z382_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route15_Z382/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route15_Z382/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE16",
+      "name": "Unova_Route16_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route16/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route16/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_BRIDGE_GATE_Z384",
+      "name": "Unova_BridgeGate_Z384_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_BridgeGate_Z384/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_BridgeGate_Z384/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LOSTLORN_FOREST_Z385",
+      "name": "Unova_LostlornForest_Z385_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LostlornForest_Z385/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LostlornForest_Z385/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LOSTLORN_FOREST_Z386",
+      "name": "Unova_LostlornForest_Z386_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LostlornForest_Z386/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LostlornForest_Z386/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE18",
+      "name": "Unova_Route18_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route18/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route18/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE18_Z388",
+      "name": "Unova_Route18_Z388_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route18_Z388/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route18_Z388/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN",
+      "name": "Unova_NuvemaTown_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_1F",
+      "name": "Unova_NuvemaTown_PlayersHouse_1F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_PlayersHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_PlayersHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F",
+      "name": "Unova_NuvemaTown_PlayersHouse_2F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_PlayersHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_PlayersHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_HOUSE2_1F",
+      "name": "Unova_NuvemaTown_House2_1F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_House2_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_House2_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_HOUSE2_2F",
+      "name": "Unova_NuvemaTown_House2_2F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_House2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_House2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_HOUSE3_1F",
+      "name": "Unova_NuvemaTown_House3_1F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_House3_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_House3_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_HOUSE3_2F",
+      "name": "Unova_NuvemaTown_House3_2F_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_House3_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_House3_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_NUVEMA_TOWN_JUNIPERS_LAB",
+      "name": "Unova_NuvemaTown_JunipersLab_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_NuvemaTown_JunipersLab/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_NuvemaTown_JunipersLab/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN",
+      "name": "Unova_AccumulaTown_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z398",
+      "name": "Unova_AccumulaTown_Z398_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z398/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z398/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z399",
+      "name": "Unova_AccumulaTown_Z399_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z399/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z399/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z400",
+      "name": "Unova_AccumulaTown_Z400_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z400/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z400/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z401",
+      "name": "Unova_AccumulaTown_Z401_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z401/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z401/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z402",
+      "name": "Unova_AccumulaTown_Z402_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z402/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z402/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z403",
+      "name": "Unova_AccumulaTown_Z403_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z403/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z403/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z404",
+      "name": "Unova_AccumulaTown_Z404_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z404/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z404/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z405",
+      "name": "Unova_AccumulaTown_Z405_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AccumulaTown_Z405/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AccumulaTown_Z405/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN",
+      "name": "Unova_LacunosaTown_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN_Z407",
+      "name": "Unova_LacunosaTown_Z407_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown_Z407/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown_Z407/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN_Z408",
+      "name": "Unova_LacunosaTown_Z408_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown_Z408/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown_Z408/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN_Z409",
+      "name": "Unova_LacunosaTown_Z409_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown_Z409/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown_Z409/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN_Z410",
+      "name": "Unova_LacunosaTown_Z410_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown_Z410/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown_Z410/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_LACUNOSA_TOWN_Z411",
+      "name": "Unova_LacunosaTown_Z411_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_LacunosaTown_Z411/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_LacunosaTown_Z411/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN",
+      "name": "Unova_UndellaTown_Layout",
+      "width": 64,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN_Z413",
+      "name": "Unova_UndellaTown_Z413_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown_Z413/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown_Z413/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN_Z414",
+      "name": "Unova_UndellaTown_Z414_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown_Z414/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown_Z414/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN_Z415",
+      "name": "Unova_UndellaTown_Z415_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown_Z415/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown_Z415/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN_Z416",
+      "name": "Unova_UndellaTown_Z416_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown_Z416/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown_Z416/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_UNDELLA_TOWN_Z417",
+      "name": "Unova_UndellaTown_Z417_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_UndellaTown_Z417/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_UndellaTown_Z417/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ANVILLE_TOWN_Z418",
+      "name": "Unova_AnvilleTown_Z418_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AnvilleTown_Z418/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AnvilleTown_Z418/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ANVILLE_TOWN_Z419",
+      "name": "Unova_AnvilleTown_Z419_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AnvilleTown_Z419/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AnvilleTown_Z419/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ANVILLE_TOWN_Z420",
+      "name": "Unova_AnvilleTown_Z420_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AnvilleTown_Z420/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AnvilleTown_Z420/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ANVILLE_TOWN_Z421",
+      "name": "Unova_AnvilleTown_Z421_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_AnvilleTown_Z421/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_AnvilleTown_Z421/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA__Z422",
+      "name": "Unova__Z422_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova__Z422/border.bin",
+      "blockdata_filepath": "data/layouts/Unova__Z422/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE17_1",
+      "name": "Unova_Route17_1_Layout",
+      "width": 32,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route17_1/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route17_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_ROUTE17_2",
+      "name": "Unova_Route17_2_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_Route17_2/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_Route17_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_WHITE_FOREST_Z424",
+      "name": "Unova_WhiteForest_Z424_Layout",
+      "width": 64,
+      "height": 64,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_WhiteForest_Z424/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_WhiteForest_Z424/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_WHITE_FOREST_Z425",
+      "name": "Unova_WhiteForest_Z425_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_WhiteForest_Z425/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_WhiteForest_Z425/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNOVA_WHITE_FOREST_Z426",
+      "name": "Unova_WhiteForest_Z426_Layout",
+      "width": 32,
+      "height": 32,
+      "primary_tileset": "gTileset_Unova3D",
+      "secondary_tileset": "gTileset_Unova3D_2",
+      "border_filepath": "data/layouts/Unova_WhiteForest_Z426/border.bin",
+      "blockdata_filepath": "data/layouts/Unova_WhiteForest_Z426/map.bin"
     }
   ]
 }

@@ -1,0 +1,58 @@
+{
+  "id": "MAP_UNOVA_CHARGESTONE_CAVE_Z297",
+  "name": "Unova_ChargestoneCave_Z297",
+  "layout": "LAYOUT_UNOVA_CHARGESTONE_CAVE_Z297",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_CHARGESTONE_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_UNOVA_MISTRALTON_CITY_Z291_1",
+      "offset": -64,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_UNOVA_MISTRALTON_CITY_Z291_2",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_UNOVA_ROUTE6_Z305_1",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 11,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_ChargestoneCave_Z297_EventScript_Npc0",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_MISTRALTON_CITY_Z291_2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

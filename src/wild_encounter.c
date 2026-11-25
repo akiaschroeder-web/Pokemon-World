@@ -1,4 +1,6 @@
 #include "global.h"
+#include "rtc.h"
+#include "regions.h"
 #include "sinnoh_radar.h"
 #include "sinnoh_specials.h"
 #include "battle_setup.h"
@@ -442,6 +444,15 @@ u16 GetCurrentMapWildMonHeaderId(void)
                     alteringCaveId = 0;
 
                 i += alteringCaveId;
+            }
+            // Pokémon World: Unova's tables come in fours, one per season (tools/pokemon_world/bw/encounters.py);
+            // like Black and White, the season follows the month (January, May and September are spring)
+            else if (GetRegionForSectionId(gMapHeader.regionMapSectionId) == REGION_UNOVA)
+            {
+                u32 season = (GetMonth() - MONTH_JAN) % 4;
+                if (gWildMonHeaders[i + 3].mapGroup == gWildMonHeaders[i].mapGroup
+                 && gWildMonHeaders[i + 3].mapNum == gWildMonHeaders[i].mapNum)
+                    i += season;
             }
             // Proyecto Sinnoh: tras la Liga se usa la tabla siguiente del mismo mapa, si existe
             else if (FlagGet(FLAG_SYS_GAME_CLEAR)

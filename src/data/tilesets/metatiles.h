@@ -502,4 +502,9 @@ const u16 gMetatileAttributes_Church[] = INCBIN_U16("data/tilesets/secondary/chu
 
 const u16 gMetatiles_OreburghMuseum[] = INCBIN_U16("data/tilesets/secondary/oreburgh_museum/metatiles.bin");
 const u16 gMetatileAttributes_OreburghMuseum[] = INCBIN_U16("data/tilesets/secondary/oreburgh_museum/metatile_attributes.bin");
+const u16 gMetatiles_Unova3D[] = INCBIN_U16("data/tilesets/primary/unova3d/metatiles.bin");
+const u16 gMetatileAttributes_Unova3D[] = INCBIN_U16("data/tilesets/primary/unova3d/metatile_attributes.bin");
+const u16 gMetatiles_Unova3D_2[] = INCBIN_U16("data/tilesets/secondary/unova3d_2/metatiles.bin");
+const u16 gMetatileAttributes_Unova3D_2[] = INCBIN_U16("data/tilesets/secondary/unova3d_2/metatile_attributes.bin");
+
 #include "metatiles_hns.h" // Pokémon World: Heart & Soul tilesets (generated)

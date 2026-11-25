@@ -3765,3 +3765,48 @@ const u16 gTilesetPalettes_OreburghMuseum[][16] =
 
 const u32 gTilesetTiles_OreburghMuseum[] = INCGFX_U32("data/tilesets/secondary/oreburgh_museum/tiles.png", ".4bpp.fastSmol");
 #include "graphics_hns.h" // Pokémon World: Heart & Soul tilesets (generated)
+
+// Pokémon World: Unova's invisible tilesets (blank: the 3D map is the picture)
+const u16 ALIGNED(4) gTilesetPalettes_Unova3D[][16] =
+{
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/unova3d/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_Unova3D[] = INCGFX_U32("data/tilesets/primary/unova3d/tiles.png", ".4bpp.smol");
+
+const u16 ALIGNED(4) gTilesetPalettes_Unova3D_2[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/unova3d_2/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_Unova3D_2[] = INCGFX_U32("data/tilesets/secondary/unova3d_2/tiles.png", ".4bpp.smol");

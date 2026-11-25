@@ -2778,6 +2778,338 @@
     {
       "id": "MAPSEC_KANTO_ABANDONED_SHIP",
       "name": "KANTO ABANDONED SHIP"
+    },
+    {
+      "id": "MAPSEC_UNOVA_NUVEMA_TOWN",
+      "name": "NUVEMA TOWN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_BLACK_CITY",
+      "name": "BLACK CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_STRIATON_CITY",
+      "name": "STRIATON CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_NACRENE_CITY",
+      "name": "NACRENE CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_NACRENE_GATE",
+      "name": "NACRENE GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_CASTELIA_CITY",
+      "name": "CASTELIA CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_CASTELIA_GATE",
+      "name": "CASTELIA GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROYAL_UNOVA",
+      "name": "ROYAL UNOVA"
+    },
+    {
+      "id": "MAPSEC_UNOVA_NIMBASA_CITY",
+      "name": "NIMBASA CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_GEAR_STATION",
+      "name": "GEAR STATION"
+    },
+    {
+      "id": "MAPSEC_UNOVA_BATTLE_SUBWAY",
+      "name": "BATTLE SUBWAY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_MUSICAL_THEATER",
+      "name": "MUSICAL THEATER"
+    },
+    {
+      "id": "MAPSEC_UNOVA_NIMBASA_GATE",
+      "name": "NIMBASA GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_DRIFTVEIL_CITY",
+      "name": "DRIFTVEIL CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_MISTRALTON_CITY",
+      "name": "MISTRALTON CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ICIRRUS_CITY",
+      "name": "ICIRRUS CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_OPELUCID_CITY",
+      "name": "OPELUCID CITY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_OPELUCID_GATE",
+      "name": "OPELUCID GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_POKEMON_LEAGUE",
+      "name": "POKéMON LEAGUE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_UNITY_TOWER",
+      "name": "UNITY TOWER"
+    },
+    {
+      "id": "MAPSEC_UNOVA_UNOVA",
+      "name": "UNOVA"
+    },
+    {
+      "id": "MAPSEC_UNOVA_DREAMYARD",
+      "name": "DREAMYARD"
+    },
+    {
+      "id": "MAPSEC_UNOVA_PINWHEEL_FOREST",
+      "name": "PINWHEEL FOREST"
+    },
+    {
+      "id": "MAPSEC_UNOVA_RUMINATION_FIELD",
+      "name": "RUMINATION FIELD"
+    },
+    {
+      "id": "MAPSEC_UNOVA_DESERT_RESORT",
+      "name": "DESERT RESORT"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_GATE",
+      "name": "ROUTE GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_RELIC_CASTLE",
+      "name": "RELIC CASTLE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_COLD_STORAGE",
+      "name": "COLD STORAGE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_CHARGESTONE_CAVE",
+      "name": "CHARGESTONE CAVE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_TWIST_MOUNTAIN",
+      "name": "TWIST MOUNTAIN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_DRAGONSPIRAL_TOWER",
+      "name": "DRAGONSPIRAL TOWER"
+    },
+    {
+      "id": "MAPSEC_UNOVA_VICTORY_ROAD",
+      "name": "VICTORY ROAD"
+    },
+    {
+      "id": "MAPSEC_UNOVA_TRIAL_CHAMBER",
+      "name": "TRIAL CHAMBER"
+    },
+    {
+      "id": "MAPSEC_UNOVA_GIANT_CHASM",
+      "name": "GIANT CHASM"
+    },
+    {
+      "id": "MAPSEC_UNOVA_LIBERTY_GARDEN",
+      "name": "LIBERTY GARDEN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_P2_LABORATORY",
+      "name": "P2 LABORATORY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_UNDELLA_BAY",
+      "name": "UNDELLA BAY"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ABYSSAL_RUINS",
+      "name": "ABYSSAL RUINS"
+    },
+    {
+      "id": "MAPSEC_UNOVA_SKYARROW_BRIDGE",
+      "name": "SKYARROW BRIDGE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_BRIDGE_GATE",
+      "name": "BRIDGE GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_DRIFTVEIL_DRAWBRIDGE",
+      "name": "DRIFTVEIL DRAWBRIDGE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_TUBELINE_BRIDGE",
+      "name": "TUBELINE BRIDGE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_VILLAGE_BRIDGE",
+      "name": "VILLAGE BRIDGE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_MARVELOUS_BRIDGE",
+      "name": "MARVELOUS BRIDGE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_N_S_CASTLE",
+      "name": "N'S CASTLE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ENTRALINK",
+      "name": "ENTRALINK"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ENTREE_FOREST",
+      "name": "ENTREE FOREST"
+    },
+    {
+      "id": "MAPSEC_UNOVA_WHITE_FOREST",
+      "name": "WHITE FOREST"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_5",
+      "name": "ROUTE 5"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_6",
+      "name": "ROUTE 6"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_7",
+      "name": "ROUTE 7"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_8",
+      "name": "ROUTE 8"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_9",
+      "name": "ROUTE 9"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_11",
+      "name": "ROUTE 11"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_12",
+      "name": "ROUTE 12"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_13",
+      "name": "ROUTE 13"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_14",
+      "name": "ROUTE 14"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_15",
+      "name": "ROUTE 15"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_16",
+      "name": "ROUTE 16"
+    },
+    {
+      "id": "MAPSEC_UNOVA_LACUNOSA_TOWN",
+      "name": "LACUNOSA TOWN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_UNDELLA_TOWN",
+      "name": "UNDELLA TOWN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_1",
+      "name": "ROUTE 1"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_2",
+      "name": "ROUTE 2"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ACCUMULA_GATE",
+      "name": "ACCUMULA GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_3",
+      "name": "ROUTE 3"
+    },
+    {
+      "id": "MAPSEC_UNOVA_WELLSPRING_CAVE",
+      "name": "WELLSPRING CAVE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_4",
+      "name": "ROUTE 4"
+    },
+    {
+      "id": "MAPSEC_UNOVA_MISTRALTON_CAVE",
+      "name": "MISTRALTON CAVE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_GUIDANCE_CHAMBER",
+      "name": "GUIDANCE CHAMBER"
+    },
+    {
+      "id": "MAPSEC_UNOVA_CELESTIAL_TOWER",
+      "name": "CELESTIAL TOWER"
+    },
+    {
+      "id": "MAPSEC_UNOVA_MOOR_OF_ICIRRUS",
+      "name": "MOOR OF ICIRRUS"
+    },
+    {
+      "id": "MAPSEC_UNOVA_SHOPPING_MALL",
+      "name": "SHOPPING MALL"
+    },
+    {
+      "id": "MAPSEC_UNOVA_CHALLENGER_S_CAVE",
+      "name": "CHALLENGER'S CAVE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_10",
+      "name": "ROUTE 10"
+    },
+    {
+      "id": "MAPSEC_UNOVA_UNDELLA_GATE",
+      "name": "UNDELLA GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_BLACK_GATE",
+      "name": "BLACK GATE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ABUNDANT_SHRINE",
+      "name": "ABUNDANT SHRINE"
+    },
+    {
+      "id": "MAPSEC_UNOVA_POKE_TRANSFER_LAB",
+      "name": "POKé TRANSFER LAB"
+    },
+    {
+      "id": "MAPSEC_UNOVA_LOSTLORN_FOREST",
+      "name": "LOSTLORN FOREST"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_18",
+      "name": "ROUTE 18"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ACCUMULA_TOWN",
+      "name": "ACCUMULA TOWN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ANVILLE_TOWN",
+      "name": "ANVILLE TOWN"
+    },
+    {
+      "id": "MAPSEC_UNOVA_ROUTE_17",
+      "name": "ROUTE 17"
     }
   ]
 }

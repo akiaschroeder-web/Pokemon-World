@@ -56,6 +56,15 @@ Used with permission of **LiderMorti00 (Morti)** — https://github.com/LiderMor
 
 Includes its Sinnoh Town Map / Fly map and Pokédex area map (`graphics/pokenav/region_map/map_sinnoh.*`, `graphics/pokedex/region_map_sinnoh.*`, `src/data/region_map/region_map_layout_sinnoh.h`) and its Lucas and Dawn region map icons (`graphics/pokenav/region_map/{lucas,dawn}_icon.png`).
 
+### Unova — from Pokémon Black
+Unova's maps (3D models, textures, collision, doors, cameras) are converted from the owner's own copy of
+**Pokémon Black** (Game Freak / Nintendo / The Pokémon Company) by `tools/pokemon_world/import_bw.py`; the ROM
+itself is never in the repository. The file formats were worked out from these open projects (no code copied):
+- NITRO 3D models and textures: **scurest/apicula** and its **nsbmd_docs**, **noclip.website** (magcius), **Fexty12573/nitrog3d** (MIT), and **GBATEK** (Martin Korth)
+- Gen V maps, zones, areas, buildings, cameras and warps: **CTRMapV / CTRMap-CE** (kingdom-of-ds-hacking, HelloOO7), **Pokémon DS Map Studio** (Trifindo), and the **ds-pokemon-hacking** docs (Gonhex, Trifindo)
+- Gen V text, scripts and overworld sprites: **CTRMapV**, and **PokeScriptSDK5**'s BW script command list (ds-pokemon-hacking), copied as `tools/pokemon_world/bw/bw_script_commands.json`
+- Wild encounter and trainer data: **Universal Pokémon Randomizer ZX** (Dabomstew and contributors) and **PokeFinder** (Admiral-Fish)
+
 ### Web/PC version — from pokeemerald-multiplatform
 MIT License — https://github.com/gradenGnostic/pokeemerald-multiplatform
 

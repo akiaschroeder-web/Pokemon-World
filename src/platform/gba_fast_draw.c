@@ -1,6 +1,7 @@
 // Pokémon World web/PC build: draws a GBA frame (backgrounds, sprites, windows, blending) into a 240x160 buffer.
 // From pokeemerald-multiplatform (MIT, see PROJECT_CREDITS.md), adapted for pokeemerald-expansion.
 #include "global.h"
+#include "platform/web3d.h"
 #include <stdbool.h>
 #include "platform/dma.h"
 
@@ -2453,6 +2454,10 @@ static void DrawSprites(struct scanlineData* scanline, uint16_t vcount, bool win
             continue;
         if (oam->objMode == 2)
             continue;
+#ifdef PLATFORM_WEB
+        if (gWeb3DWorldOam[SpriteIndex]) // drawn in Unova's 3D view (src/platform/web3d.c)
+            continue;
+#endif
         
         if (oam->affineMode & 1 || oam->bpp & 1 || oam->mosaic == 1)
             DrawAffineSprite(SpriteIndex, scanline, vcount, windowsEnabled, pixels, IsInsideWinIn);
@@ -2711,6 +2716,11 @@ void DrawFrame(uint16_t *pixels)
             }
         }
         
+#ifdef PLATFORM_WEB
+        // In Unova the empty backdrop shows the 3D map: keep its bit 15 clear (every drawn pixel has it set)
+        if (Web3D_IsActive())
+            backdropColor &= 0x7FFF;
+#endif
         memsetu16(&pixels[i*DISPLAY_WIDTH], backdropColor, DISPLAY_WIDTH);
         DrawScanline(&pixels[i*DISPLAY_WIDTH], i);
         

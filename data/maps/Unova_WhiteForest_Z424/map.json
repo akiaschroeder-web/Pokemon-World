@@ -1,0 +1,120 @@
+{
+  "id": "MAP_UNOVA_WHITE_FOREST_Z424",
+  "name": "Unova_WhiteForest_Z424",
+  "layout": "LAYOUT_UNOVA_WHITE_FOREST_Z424",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_WHITE_FOREST",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ14",
+      "x": 53,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_WhiteForest_Z424_EventScript_Npc0",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ24",
+      "x": 7,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_WhiteForest_Z424_EventScript_Npc1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 50,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z379",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 51,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z379",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 52,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z379",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 53,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z379",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 43,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_WHITE_FOREST_Z425",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 50,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z375",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z375",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 52,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_BLACK_GATE_Z375",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 46,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_WHITE_FOREST_Z426",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 35,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Unova_WhiteForest_Z424_EventScript_Sign0"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "MAP_UNOVA_MARVELOUS_BRIDGE_Z303",
+  "name": "Unova_MarvelousBridge_Z303",
+  "layout": "LAYOUT_UNOVA_MARVELOUS_BRIDGE_Z303",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_UNOVA_MARVELOUS_BRIDGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_ROUTE16_Z314",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 161,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_UNOVA_ROUTE15_Z313",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -27,7 +27,10 @@ const steps = JSON.parse(stepsJson);
 fs.mkdirSync(out, { recursive: true });
 
 (async () => {
-  const browser = await chromium.launch({ dumpio: !!process.env.DUMPIO, args: process.env.JSFLAGS ? ['--js-flags=' + process.env.JSFLAGS] : [] });
+  // WebGL in headless Chromium (Unova's 3D maps): SwiftShader
+  const args = ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'];
+  if (process.env.JSFLAGS) args.push('--js-flags=' + process.env.JSFLAGS);
+  const browser = await chromium.launch({ dumpio: !!process.env.DUMPIO, args });
   const page = await browser.newPage({ viewport: { width: 800, height: 700 } });
   page.on('pageerror', (e) => console.log(`[pageerror] ${e.message}\n${e.stack}`));
   page.on('console', (m) => {
@@ -137,7 +140,7 @@ fs.mkdirSync(out, { recursive: true });
                     `dc ${r.dc.toFixed(5)} zero crossings/s ${(r.zc / Math.max(secs, 1e-9)).toFixed(0)}; ${describe(await state())}`);
       }
       else if (op === 'shot') {
-        await page.locator('#screen').screenshot({ path: path.join(out, `${a}.png`), timeout: 5000 });
+        await page.locator('#screen-stack').screenshot({ path: path.join(out, `${a}.png`), timeout: 5000 }); // the picture and, in Unova, the 3D map under it
         console.log(`shot ${a}: ${describe(await state())}`);
       } else if (op === 'vram') {
         // raw dump: IO regs (0x400), palette (0x400), VRAM (0x18000), OAM (0x400)

@@ -89,7 +89,43 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     }
     image.data.set(HEAPU8.subarray(ptr, ptr + W * H * 4));
     ctx.putImageData(image, 0, 0);
+    draw3D();
   };
+
+  // Unova (src/platform/web3d.c, platform/web/unova3d.js): the game says which BW zone is on
+  // screen, where its camera is and which map sprites it left out of the picture; draw them in 3D.
+  var stack3D, on3D = false, ok3D = null;
+  var SPRITE_FOOT = 8;        // a map sprite's feet are this far above its bottom edge (GBA pixels)
+  function draw3D() {
+    if (!Module._Web_Get3DScene || !window.PW3D) return;
+    var p = Module._Web_Get3DScene() >> 2, u = HEAPU32, s = HEAP32;
+    var zone = u[p];
+    if (!stack3D) stack3D = document.getElementById('screen-stack');
+    if (!zone) {
+      if (on3D) { stack3D.classList.remove('three-d'); on3D = false; }
+      return;
+    }
+    if (ok3D === null) ok3D = PW3D.init(document.getElementById('screen3d'));
+    if (!ok3D) return;
+    if (!on3D) { stack3D.classList.add('three-d'); on3D = true; }
+    var season = new Date().getMonth() % 4;   // like Black/White: January is spring
+    PW3D.setScene(zone, u[p + 8], season);
+    // screen pixel -> world units in BW's map matrix (the map's tile (0, 0) is map tile (7, 7),
+    // and its top-left chunk is at (chunkX, chunkY) in the matrix)
+    var camX = s[p + 1] - 7 * 16 + u[p + 9] * 512, camY = s[p + 2] - 7 * 16 + u[p + 10] * 512;
+    var count = u[p + 5], sp = u[p + 6], px = u[p + 7];
+    var sprites = [];
+    for (var i = 0; i < count; i++) {
+      var o = sp + 16 * i;
+      var x = HEAP16[o >> 1], y = HEAP16[(o >> 1) + 1], w = HEAPU16[(o >> 1) + 2], h = HEAPU16[(o >> 1) + 3];
+      var off = u[(o >> 2) + 2], order = HEAPU16[(o >> 1) + 6];
+      var wx = camX + x + w / 2, wz = camY + y + h - SPRITE_FOOT;
+      sprites.push({ x: wx, z: wz, y: PW3D.groundHeight(wx, wz), w: w, h: h, order: order,
+                     image: HEAPU8.subarray(px + 4 * off, px + 4 * (off + w * h)) });
+    }
+    var tx = camX + 120, tz = camY + 80 + 16;      // the player: centre of the screen
+    PW3D.draw([tx, PW3D.groundHeight(tx, tz), tz], sprites, u[p + 3], u[p + 4]);
+  }
 
   // Testing aids (tools/web/drive.js): hold keys for an exact number of frames, and
   // "turbo" (?turbo in the address, or Module.pwTurbo = true): run as fast as possible
