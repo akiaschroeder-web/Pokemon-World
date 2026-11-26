@@ -20,6 +20,11 @@ static const u8 sText_Dawn[] = _("DAWN");
 static const u8 sText_Barry[] = _("BARRY");
 static const u8 sText_Ethan[] = _("ETHAN");
 static const u8 sText_Kris[] = _("KRIS");
+static const u8 sText_Hilbert[] = _("HILBERT");
+static const u8 sText_Hilda[] = _("HILDA");
+static const u8 sText_Lyra[] = _("LYRA");
+static const u8 sText_Nate[] = _("NATE");
+static const u8 sText_Rosa[] = _("ROSA");
 
 const struct PwDesignInfo gPwDesigns[PW_DESIGN_COUNT] =
 {
@@ -31,6 +36,12 @@ const struct PwDesignInfo gPwDesigns[PW_DESIGN_COUNT] =
     // Heart & Soul's player characters (its Brendan/May redrawn as Ethan and Kris)
     [PW_DESIGN_ETHAN]   = { sText_Ethan,   MALE,   TRUE,  TRAINER_PIC_PW_ETHAN },
     [PW_DESIGN_KRIS]    = { sText_Kris,    FEMALE, TRUE,  TRAINER_PIC_PW_KRIS },
+    // Unova's and Johto's other heroes, as Gen 3 style sprites
+    [PW_DESIGN_HILBERT] = { sText_Hilbert, MALE,   TRUE,  TRAINER_PIC_PW_HILBERT },
+    [PW_DESIGN_HILDA]   = { sText_Hilda,   FEMALE, TRUE,  TRAINER_PIC_PW_HILDA },
+    [PW_DESIGN_LYRA]    = { sText_Lyra,    FEMALE, TRUE,  TRAINER_PIC_PW_LYRA },
+    [PW_DESIGN_NATE]    = { sText_Nate,    MALE,   TRUE,  TRAINER_PIC_PW_NATE },
+    [PW_DESIGN_ROSA]    = { sText_Rosa,    FEMALE, TRUE,  TRAINER_PIC_PW_ROSA },
 };
 
 // ---------------------------------------------------------------- choices
@@ -136,6 +147,21 @@ PW_GFX_SET(gObjectEventGraphicsInfo_PwKris)
 PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwKris)
 PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwEthan)
 PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwKris)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwHilbert)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwHilbert)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwHilbert)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwHilda)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwHilda)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwHilda)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwLyra)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwLyra)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwLyra)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwNate)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwNate)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwNate)
+PW_GFX_SET(gObjectEventGraphicsInfo_PwRosa)
+PW_GFX_SET_PLAYER_EXTRA(gObjectEventGraphicsInfo_PwRosa)
+PW_GFX_SET(gObjectEventGraphicsInfo_RivalPwRosa)
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBarry;
 
 #define PLAYER_SET(prefix)                               \
@@ -176,6 +202,11 @@ static const struct ObjectEventGraphicsInfo *const sPlayerGfx[PW_DESIGN_COUNT][P
     [PW_DESIGN_DAWN]    = PLAYER_SET(gObjectEventGraphicsInfo_PwDawn),
     [PW_DESIGN_ETHAN]   = PLAYER_SET(gObjectEventGraphicsInfo_PwEthan),
     [PW_DESIGN_KRIS]    = PLAYER_SET(gObjectEventGraphicsInfo_PwKris),
+    [PW_DESIGN_HILBERT] = PLAYER_SET(gObjectEventGraphicsInfo_PwHilbert),
+    [PW_DESIGN_HILDA]   = PLAYER_SET(gObjectEventGraphicsInfo_PwHilda),
+    [PW_DESIGN_LYRA]    = PLAYER_SET(gObjectEventGraphicsInfo_PwLyra),
+    [PW_DESIGN_NATE]    = PLAYER_SET(gObjectEventGraphicsInfo_PwNate),
+    [PW_DESIGN_ROSA]    = PLAYER_SET(gObjectEventGraphicsInfo_PwRosa),
 };
 
 static const struct ObjectEventGraphicsInfo *const sRivalGfx[PW_DESIGN_COUNT][PW_STATE_COUNT] =
@@ -187,6 +218,11 @@ static const struct ObjectEventGraphicsInfo *const sRivalGfx[PW_DESIGN_COUNT][PW
     [PW_DESIGN_BARRY]   = SINGLE_SET(gObjectEventGraphicsInfo_SinnohBarry),
     [PW_DESIGN_ETHAN]   = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwEthan),
     [PW_DESIGN_KRIS]    = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwKris),
+    [PW_DESIGN_HILBERT] = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwHilbert),
+    [PW_DESIGN_HILDA]   = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwHilda),
+    [PW_DESIGN_LYRA]    = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwLyra),
+    [PW_DESIGN_NATE]    = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwNate),
+    [PW_DESIGN_ROSA]    = RIVAL_SET(gObjectEventGraphicsInfo_RivalPwRosa),
 };
 
 enum { ROLE_NONE, ROLE_PLAYER, ROLE_RIVAL };

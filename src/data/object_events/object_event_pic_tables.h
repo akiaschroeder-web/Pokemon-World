@@ -3151,6 +3151,276 @@ static const struct SpriteFrameImage sPicTable_PwKrisWatering[] = {
 static const struct SpriteFrameImage sPicTable_PwKrisDecorating[] = {
     obj_frame_tiles(gObjectEventPic_PwKrisDecorating),
 };
+static const struct SpriteFrameImage sPicTable_PwHilbertNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHilbertNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHilbertMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHilbertAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertSurfing[] = {
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwHilbertSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHilbertFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHilbertUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHilbertFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertWatering[] = {
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwHilbertWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwHilbertDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwHilbertDecorating),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHildaNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHildaMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHildaAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaSurfing[] = {
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwHildaSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHildaFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHildaUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwHildaFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaWatering[] = {
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwHildaWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwHildaDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwHildaDecorating),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwLyraNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwLyraMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwLyraAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraSurfing[] = {
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwLyraSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwLyraFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwLyraUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwLyraFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraWatering[] = {
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwLyraWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwLyraDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwLyraDecorating),
+};
+static const struct SpriteFrameImage sPicTable_PwNateNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwNateNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwNateMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwNateMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwNateAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwNateAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwNateSurfing[] = {
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwNateSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwNateFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwNateFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwNateUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwNateUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwNateFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwNateFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwNateWatering[] = {
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwNateWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwNateDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwNateDecorating),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaNormal[] = {
+    overworld_ascending_frames(gObjectEventPic_PwRosaNormalRunning, 2, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaMachBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwRosaMachBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaAcroBike[] = {
+    overworld_ascending_frames(gObjectEventPic_PwRosaAcroBike, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaSurfing[] = {
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwRosaSurfing, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaFieldMove[] = {
+    overworld_ascending_frames(gObjectEventPic_PwRosaFieldMove, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaUnderwater[] = {
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwRosaUnderwater, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaFishing[] = {
+    overworld_ascending_frames(gObjectEventPic_PwRosaFishing, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaWatering[] = {
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 0),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 2),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 4),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 1),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 3),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 5),
+    overworld_frame(gObjectEventPic_PwRosaWatering, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_PwRosaDecorating[] = {
+    obj_frame_tiles(gObjectEventPic_PwRosaDecorating),
+};
 
 #include "object_event_pic_tables_hns.h" // Pokémon World: Heart & Soul's sprites (generated)
 #include "object_event_pic_tables_unova.h" // Pokémon World: Pokémon Black's Unova characters (generated)

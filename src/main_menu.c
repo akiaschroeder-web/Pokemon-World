@@ -51,10 +51,13 @@ extern const u8 gText_Oak_WhatsYourName[];
 extern const u8 gText_Oak_SoItsPlayer[];
 extern const u8 gText_Oak_YourePlayer[];
 extern const u8 gText_Oak_AreYouReady[];
-#define PROF_TEXT(name) (PW_GetStartRegion() == REGION_JOHTO ? gText_Oak_##name : gText_Birch_##name)
+#define PW_OAK_INTRO() (PW_GetStartRegion() == REGION_JOHTO || PW_GetStartRegion() == REGION_KANTO)
+#define PROF_TEXT(name) (PW_OAK_INTRO() ? gText_Oak_##name : gText_Birch_##name)
 
 static u16 BirchSpeech_GetMonSpecies(void)
 {
+    if (PW_GetStartRegion() == REGION_KANTO)
+        return SPECIES_NIDORAN_F; // FireRed & LeafGreen's Oak shows a Nidoran F
     return PW_GetStartRegion() == REGION_JOHTO ? SPECIES_WOOPER : SPECIES_LOTAD;
 }
 
@@ -1366,6 +1369,9 @@ static EWRAM_DATA struct
     u8 region;
     u8 player;
     u8 rival;
+    u8 listTaskId;
+    u8 arrowTaskId;
+    u16 scroll;
 } sPwSetup = {0};
 
 static const u8 sText_PwSetup_Region[] = _("Where will your journey begin?");
@@ -1378,17 +1384,20 @@ static const struct MenuAction sPwSetupRegionActions[] =
     {COMPOUND_STRING("SINNOH"), {NULL}},
     {COMPOUND_STRING("JOHTO"),  {NULL}},
     {COMPOUND_STRING("UNOVA"),  {NULL}},
+    {COMPOUND_STRING("KANTO"),  {NULL}},
 };
-static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH, REGION_JOHTO, REGION_UNOVA};
+static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH, REGION_JOHTO, REGION_UNOVA, REGION_KANTO};
 
 // The designs in menu order: the player picks from the playable ones; the rival from all
 // but the player's own (so both lists have at most PW_DESIGN_COUNT - 2 entries).
 static const u8 sPwSetupDesignOrder[] =
 {
-    PW_DESIGN_BRENDAN, PW_DESIGN_MAY, PW_DESIGN_LUCAS, PW_DESIGN_DAWN, PW_DESIGN_ETHAN, PW_DESIGN_KRIS, PW_DESIGN_BARRY,
+    PW_DESIGN_BRENDAN, PW_DESIGN_MAY, PW_DESIGN_LUCAS, PW_DESIGN_DAWN, PW_DESIGN_ETHAN, PW_DESIGN_KRIS,
+    PW_DESIGN_LYRA, PW_DESIGN_HILBERT, PW_DESIGN_HILDA, PW_DESIGN_NATE, PW_DESIGN_ROSA, PW_DESIGN_BARRY,
 };
-static EWRAM_DATA struct MenuAction sPwSetupDesignActions[ARRAY_COUNT(sPwSetupDesignOrder)] = {0};
-static EWRAM_DATA u8 sPwSetupDesigns[ARRAY_COUNT(sPwSetupDesignOrder)] = {0};
+// The menu is a scrolling list (six rows fit above the text box).
+#define PW_SETUP_ROWS 6
+static EWRAM_DATA struct ListMenuItem sPwSetupItems[ARRAY_COUNT(sPwSetupDesignOrder)] = {0};
 
 static void Task_PwSetup_ShowPrompt(u8 taskId);
 static void Task_PwSetup_WaitPrompt(u8 taskId);
@@ -1404,29 +1413,61 @@ static void PwSetup_PrintMessage(const u8 *text)
 
 static void PwSetup_ShowMenu(void)
 {
-    const struct MenuAction *actions = sPwSetupRegionActions;
-    u8 count = ARRAY_COUNT(sPwSetupRegionActions);
+    struct ListMenuTemplate tmpl = {0};
+    u32 i, count = 0;
 
-    if (sPwSetup.step != PW_SETUP_REGION)
+    if (sPwSetup.step == PW_SETUP_REGION)
     {
-        u32 i;
-        actions = sPwSetupDesignActions;
-        for (i = 0, count = 0; i < ARRAY_COUNT(sPwSetupDesignOrder); i++)
+        for (i = 0; i < ARRAY_COUNT(sPwSetupRegionActions); i++)
+        {
+            sPwSetupItems[count].name = sPwSetupRegionActions[i].text;
+            sPwSetupItems[count++].id = sPwSetupRegions[i];
+        }
+    }
+    else
+    {
+        for (i = 0; i < ARRAY_COUNT(sPwSetupDesignOrder); i++)
         {
             u8 design = sPwSetupDesignOrder[i];
             if (sPwSetup.step == PW_SETUP_PLAYER ? !gPwDesigns[design].playable : design == sPwSetup.player)
                 continue;
-            sPwSetupDesignActions[count].text = gPwDesigns[design].name;
-            sPwSetupDesigns[count++] = design;
+            sPwSetupItems[count].name = gPwDesigns[design].name;
+            sPwSetupItems[count++].id = design;
         }
     }
 
     DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[2], 0xF3);
     FillWindowPixelBuffer(2, PIXEL_FILL(1));
-    PrintMenuTable(2, count, actions);
-    InitMenuInUpperLeftCornerNormal(2, count, 0);
+    tmpl.items = sPwSetupItems;
+    tmpl.totalItems = count;
+    tmpl.maxShowed = count < PW_SETUP_ROWS ? count : PW_SETUP_ROWS;
+    tmpl.windowId = 2;
+    tmpl.item_X = 8;
+    tmpl.cursor_X = 0;
+    tmpl.upText_Y = 1;
+    tmpl.cursorPal = 2;
+    tmpl.fillValue = 1;
+    tmpl.cursorShadowPal = 3;
+    tmpl.scrollMultiple = LIST_NO_MULTIPLE_SCROLL;
+    tmpl.fontId = FONT_NORMAL;
+    tmpl.cursorKind = CURSOR_BLACK_ARROW;
+    sPwSetup.scroll = 0;
+    sPwSetup.listTaskId = ListMenuInit(&tmpl, 0, 0);
+    sPwSetup.arrowTaskId = TASK_NONE;
+    if (count > PW_SETUP_ROWS)
+        sPwSetup.arrowTaskId = AddScrollIndicatorArrowPairParameterized(SCROLL_ARROW_UP, 60, 6, 108,
+                                                                        count - PW_SETUP_ROWS, 0x1234, 0x1234, &sPwSetup.scroll);
     PutWindowTilemap(2);
     CopyWindowToVram(2, COPYWIN_FULL);
+}
+
+static void PwSetup_CloseMenu(void)
+{
+    DestroyListMenuTask(sPwSetup.listTaskId, NULL, NULL);
+    if (sPwSetup.arrowTaskId != TASK_NONE)
+        RemoveScrollIndicatorArrowPair(sPwSetup.arrowTaskId);
+    sPwSetup.arrowTaskId = TASK_NONE;
+    NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
 }
 
 // The professor and his Pokémon were made before the region was chosen (Birch and Lotad, or
@@ -1497,18 +1538,20 @@ static void Task_PwSetup_WaitPrompt(u8 taskId)
 
 static void Task_PwSetup_HandleInput(u8 taskId)
 {
-    s8 input = Menu_ProcessInputNoWrap();
+    s32 input = ListMenu_ProcessInput(sPwSetup.listTaskId);
+    u16 cursor;
 
-    if (input == MENU_NOTHING_CHOSEN)
+    ListMenuGetScrollAndRow(sPwSetup.listTaskId, &sPwSetup.scroll, &cursor);
+    if (input == LIST_NOTHING_CHOSEN)
         return;
 
-    if (input == MENU_B_PRESSED)
+    if (input == LIST_CANCEL)
     {
         // Step back to the previous question.
         if (sPwSetup.step == PW_SETUP_REGION)
             return;
         PlaySE(SE_SELECT);
-        NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
+        PwSetup_CloseMenu();
         sPwSetup.step--;
         gTasks[taskId].func = Task_PwSetup_ShowPrompt;
         return;
@@ -1517,17 +1560,17 @@ static void Task_PwSetup_HandleInput(u8 taskId)
     switch (sPwSetup.step)
     {
     case PW_SETUP_REGION:
-        sPwSetup.region = sPwSetupRegions[input];
+        sPwSetup.region = input;
         break;
     case PW_SETUP_PLAYER:
-        sPwSetup.player = sPwSetupDesigns[input];
+        sPwSetup.player = input;
         break;
     case PW_SETUP_RIVAL: // the player's own design isn't in the list
-        sPwSetup.rival = sPwSetupDesigns[input];
+        sPwSetup.rival = input;
         break;
     }
     PlaySE(SE_SELECT);
-    NewGameBirchSpeech_ClearGenderWindow(2, TRUE);
+    PwSetup_CloseMenu();
 
     if (sPwSetup.step != PW_SETUP_RIVAL)
     {
@@ -1560,6 +1603,8 @@ static void Task_PwSetup_HandleInput(u8 taskId)
         PwSetup_RecreatePlayerSprites(taskId);
         if (sPwSetup.region == REGION_JOHTO)
             PlayBGM(MUS_HG_NEW_GAME);
+        else if (sPwSetup.region == REGION_KANTO)
+            PlayBGM(MUS_RG_NEW_GAME_INTRO);
         gTasks[taskId].tTimer = 0x40;
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
     }
@@ -2177,8 +2222,8 @@ static void BirchSpeech_CreateProfessorAndMon(u8 taskId)
     u8 birchSpriteId;
     u8 lotadSpriteId;
 
-    // Pokémon World: Heart & Soul's Prof. Oak when the game starts in Johto
-    if (PW_GetStartRegion() == REGION_JOHTO)
+    // Pokémon World: Prof. Oak when the game starts in Johto or Kanto
+    if (PW_OAK_INTRO())
         birchSpriteId = AddNewGameOakObject(0x88, 0x3C, 1);
     else
         birchSpriteId = AddNewGameBirchObject(0x88, 0x3C, 1);

@@ -516,6 +516,16 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_PwEthanReflection,     OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION},
     {gObjectEventPal_PwKris,                OBJ_EVENT_PAL_TAG_PW_KRIS},
     {gObjectEventPal_PwKrisReflection,      OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION},
+    {gObjectEventPal_PwHilbert,                OBJ_EVENT_PAL_TAG_PW_HILBERT},
+    {gObjectEventPal_PwHilbertReflection,      OBJ_EVENT_PAL_TAG_PW_HILBERT_REFLECTION},
+    {gObjectEventPal_PwHilda,                  OBJ_EVENT_PAL_TAG_PW_HILDA},
+    {gObjectEventPal_PwHildaReflection,        OBJ_EVENT_PAL_TAG_PW_HILDA_REFLECTION},
+    {gObjectEventPal_PwLyra,                   OBJ_EVENT_PAL_TAG_PW_LYRA},
+    {gObjectEventPal_PwLyraReflection,         OBJ_EVENT_PAL_TAG_PW_LYRA_REFLECTION},
+    {gObjectEventPal_PwNate,                   OBJ_EVENT_PAL_TAG_PW_NATE},
+    {gObjectEventPal_PwNateReflection,         OBJ_EVENT_PAL_TAG_PW_NATE_REFLECTION},
+    {gObjectEventPal_PwRosa,                   OBJ_EVENT_PAL_TAG_PW_ROSA},
+    {gObjectEventPal_PwRosaReflection,         OBJ_EVENT_PAL_TAG_PW_ROSA_REFLECTION},
     {gObjectEventPal_BridgeReflection,      OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION},
     {gObjectEventPal_PlayerUnderwater,      OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER},
     {gObjectEventPal_QuintyPlump,           OBJ_EVENT_PAL_TAG_QUINTY_PLUMP},
@@ -756,6 +766,41 @@ static const u16 sReflectionPaletteTags_PwKris[] = {
     OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION,
 };
 
+static const u16 sReflectionPaletteTags_PwHilbert[] = {
+    OBJ_EVENT_PAL_TAG_PW_HILBERT_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_HILBERT_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_HILBERT_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_HILBERT_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_PwHilda[] = {
+    OBJ_EVENT_PAL_TAG_PW_HILDA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_HILDA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_HILDA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_HILDA_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_PwLyra[] = {
+    OBJ_EVENT_PAL_TAG_PW_LYRA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_LYRA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_LYRA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_LYRA_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_PwNate[] = {
+    OBJ_EVENT_PAL_TAG_PW_NATE_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_NATE_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_NATE_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_NATE_REFLECTION,
+};
+
+static const u16 sReflectionPaletteTags_PwRosa[] = {
+    OBJ_EVENT_PAL_TAG_PW_ROSA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_ROSA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_ROSA_REFLECTION,
+    OBJ_EVENT_PAL_TAG_PW_ROSA_REFLECTION,
+};
+
 static const u16 sReflectionPaletteTags_PlayerUnderwater[] = {
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
     OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER,
@@ -768,6 +813,11 @@ static const struct PairedPalettes sPlayerReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PW_DAWN,           sReflectionPaletteTags_PwDawn},
     {OBJ_EVENT_PAL_TAG_PW_ETHAN,          sReflectionPaletteTags_PwEthan},
     {OBJ_EVENT_PAL_TAG_PW_KRIS,           sReflectionPaletteTags_PwKris},
+    {OBJ_EVENT_PAL_TAG_PW_HILBERT,       sReflectionPaletteTags_PwHilbert},
+    {OBJ_EVENT_PAL_TAG_PW_HILDA,         sReflectionPaletteTags_PwHilda},
+    {OBJ_EVENT_PAL_TAG_PW_LYRA,          sReflectionPaletteTags_PwLyra},
+    {OBJ_EVENT_PAL_TAG_PW_NATE,          sReflectionPaletteTags_PwNate},
+    {OBJ_EVENT_PAL_TAG_PW_ROSA,          sReflectionPaletteTags_PwRosa},
     {OBJ_EVENT_PAL_TAG_BRENDAN,           sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,               sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER, sReflectionPaletteTags_PlayerUnderwater},
@@ -856,6 +906,11 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_PW_DAWN,           sReflectionPaletteTags_PwDawn},
     {OBJ_EVENT_PAL_TAG_PW_ETHAN,          sReflectionPaletteTags_PwEthan},
     {OBJ_EVENT_PAL_TAG_PW_KRIS,           sReflectionPaletteTags_PwKris},
+    {OBJ_EVENT_PAL_TAG_PW_HILBERT,       sReflectionPaletteTags_PwHilbert},
+    {OBJ_EVENT_PAL_TAG_PW_HILDA,         sReflectionPaletteTags_PwHilda},
+    {OBJ_EVENT_PAL_TAG_PW_LYRA,          sReflectionPaletteTags_PwLyra},
+    {OBJ_EVENT_PAL_TAG_PW_NATE,          sReflectionPaletteTags_PwNate},
+    {OBJ_EVENT_PAL_TAG_PW_ROSA,          sReflectionPaletteTags_PwRosa},
     {OBJ_EVENT_PAL_TAG_BRENDAN,          sReflectionPaletteTags_Brendan},
     {OBJ_EVENT_PAL_TAG_MAY,              sReflectionPaletteTags_May},
     {OBJ_EVENT_PAL_TAG_QUINTY_PLUMP,     sReflectionPaletteTags_QuintyPlump},

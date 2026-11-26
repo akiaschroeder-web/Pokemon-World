@@ -141,6 +141,16 @@ static const u16 sRegionMapPlayerIcon_EthanPal[] = INCGFX_U16("graphics/pokenav/
 static const u8 sRegionMapPlayerIcon_EthanGfx[] = INCGFX_U8("graphics/pokenav/region_map/ethan_icon.png", ".4bpp");
 static const u16 sRegionMapPlayerIcon_KrisPal[] = INCGFX_U16("graphics/pokenav/region_map/kris_icon.png", ".gbapal");
 static const u8 sRegionMapPlayerIcon_KrisGfx[] = INCGFX_U8("graphics/pokenav/region_map/kris_icon.png", ".4bpp");
+static const u16 sRegionMapPlayerIcon_HilbertPal[] = INCGFX_U16("graphics/pokenav/region_map/hilbert_icon.png", ".gbapal");
+static const u8 sRegionMapPlayerIcon_HilbertGfx[] = INCGFX_U8("graphics/pokenav/region_map/hilbert_icon.png", ".4bpp");
+static const u16 sRegionMapPlayerIcon_HildaPal[] = INCGFX_U16("graphics/pokenav/region_map/hilda_icon.png", ".gbapal");
+static const u8 sRegionMapPlayerIcon_HildaGfx[] = INCGFX_U8("graphics/pokenav/region_map/hilda_icon.png", ".4bpp");
+static const u16 sRegionMapPlayerIcon_LyraPal[] = INCGFX_U16("graphics/pokenav/region_map/lyra_icon.png", ".gbapal");
+static const u8 sRegionMapPlayerIcon_LyraGfx[] = INCGFX_U8("graphics/pokenav/region_map/lyra_icon.png", ".4bpp");
+static const u16 sRegionMapPlayerIcon_NatePal[] = INCGFX_U16("graphics/pokenav/region_map/nate_icon.png", ".gbapal");
+static const u8 sRegionMapPlayerIcon_NateGfx[] = INCGFX_U8("graphics/pokenav/region_map/nate_icon.png", ".4bpp");
+static const u16 sRegionMapPlayerIcon_RosaPal[] = INCGFX_U16("graphics/pokenav/region_map/rosa_icon.png", ".gbapal");
+static const u8 sRegionMapPlayerIcon_RosaGfx[] = INCGFX_U8("graphics/pokenav/region_map/rosa_icon.png", ".4bpp");
 
 #include "data/region_map/region_map_layout.h"
 #include "data/region_map/region_map_layout_kanto.h"
@@ -1974,6 +1984,26 @@ void CreateRegionMapPlayerIcon(u16 tileTag, u16 paletteTag)
         case PW_DESIGN_KRIS:
             sheet.data = sRegionMapPlayerIcon_KrisGfx;
             palette.data = sRegionMapPlayerIcon_KrisPal;
+            break;
+        case PW_DESIGN_HILBERT:
+            sheet.data = sRegionMapPlayerIcon_HilbertGfx;
+            palette.data = sRegionMapPlayerIcon_HilbertPal;
+            break;
+        case PW_DESIGN_HILDA:
+            sheet.data = sRegionMapPlayerIcon_HildaGfx;
+            palette.data = sRegionMapPlayerIcon_HildaPal;
+            break;
+        case PW_DESIGN_LYRA:
+            sheet.data = sRegionMapPlayerIcon_LyraGfx;
+            palette.data = sRegionMapPlayerIcon_LyraPal;
+            break;
+        case PW_DESIGN_NATE:
+            sheet.data = sRegionMapPlayerIcon_NateGfx;
+            palette.data = sRegionMapPlayerIcon_NatePal;
+            break;
+        case PW_DESIGN_ROSA:
+            sheet.data = sRegionMapPlayerIcon_RosaGfx;
+            palette.data = sRegionMapPlayerIcon_RosaPal;
             break;
         default: // nothing chosen (old saves): Brendan or May, as above
             break;

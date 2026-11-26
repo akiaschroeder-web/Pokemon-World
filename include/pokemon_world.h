@@ -17,6 +17,11 @@ enum PwDesign
     PW_DESIGN_BARRY,    // rival only, until Barry has a full set of player sprites
     PW_DESIGN_ETHAN,    // Heart & Soul's player characters (after Barry: saves keep their numbers)
     PW_DESIGN_KRIS,
+    PW_DESIGN_HILBERT,  // the owner's Gen 3 style sprites (tools/pokemon_world/new_designs.py)
+    PW_DESIGN_HILDA,
+    PW_DESIGN_LYRA,
+    PW_DESIGN_NATE,
+    PW_DESIGN_ROSA,
     PW_DESIGN_COUNT
 };
 

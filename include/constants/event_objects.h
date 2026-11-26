@@ -1241,6 +1241,17 @@ enum
 #define OBJ_EVENT_PAL_TAG_PW_KRIS                 0x1F06
 #define OBJ_EVENT_PAL_TAG_PW_ETHAN_REFLECTION     0x1F07
 #define OBJ_EVENT_PAL_TAG_PW_KRIS_REFLECTION      0x1F08
+// Pokémon World: Hilbert, Hilda, Lyra, Nate and Rosa (tools/pokemon_world/new_designs.py)
+#define OBJ_EVENT_PAL_TAG_PW_HILBERT              0x1F40
+#define OBJ_EVENT_PAL_TAG_PW_HILBERT_REFLECTION   0x1F41
+#define OBJ_EVENT_PAL_TAG_PW_HILDA                0x1F42
+#define OBJ_EVENT_PAL_TAG_PW_HILDA_REFLECTION     0x1F43
+#define OBJ_EVENT_PAL_TAG_PW_LYRA                 0x1F44
+#define OBJ_EVENT_PAL_TAG_PW_LYRA_REFLECTION      0x1F45
+#define OBJ_EVENT_PAL_TAG_PW_NATE                 0x1F46
+#define OBJ_EVENT_PAL_TAG_PW_NATE_REFLECTION      0x1F47
+#define OBJ_EVENT_PAL_TAG_PW_ROSA                 0x1F48
+#define OBJ_EVENT_PAL_TAG_PW_ROSA_REFLECTION      0x1F49
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

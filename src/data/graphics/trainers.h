@@ -734,6 +734,29 @@ const u16 gTrainerPalette_PwKris[] = INCGFX_U16("graphics/trainers/palettes/kris
 const u8 gTrainerBackPic_PwKris[] = INCGFX_U8("graphics/trainers/back_pics/kris_hns.png", ".4bpp");
 const u16 gTrainerBackPicPalette_PwKris[] = INCGFX_U16("graphics/trainers/back_pics/kris_hns.png", ".gbapal");
 
+// Pokémon World: Hilbert, Hilda (Pokémon Black), Nate, Rosa (Black 2) and Lyra (HeartGold)
+// (tools/pokemon_world/new_design_pics.py)
+const u32 gTrainerFrontPic_PwHilbert[] = INCGFX_U32("graphics/trainers/front_pics/hilbert.png", ".4bpp.smol");
+const u16 gTrainerPalette_PwHilbert[] = INCGFX_U16("graphics/trainers/front_pics/hilbert.png", ".gbapal");
+const u8 gTrainerBackPic_PwHilbert[] = INCGFX_U8("graphics/trainers/back_pics/hilbert.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwHilbert[] = INCGFX_U16("graphics/trainers/back_pics/hilbert.png", ".gbapal");
+const u32 gTrainerFrontPic_PwHilda[] = INCGFX_U32("graphics/trainers/front_pics/hilda.png", ".4bpp.smol");
+const u16 gTrainerPalette_PwHilda[] = INCGFX_U16("graphics/trainers/front_pics/hilda.png", ".gbapal");
+const u8 gTrainerBackPic_PwHilda[] = INCGFX_U8("graphics/trainers/back_pics/hilda.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwHilda[] = INCGFX_U16("graphics/trainers/back_pics/hilda.png", ".gbapal");
+const u32 gTrainerFrontPic_PwLyra[] = INCGFX_U32("graphics/trainers/front_pics/lyra.png", ".4bpp.smol");
+const u16 gTrainerPalette_PwLyra[] = INCGFX_U16("graphics/trainers/front_pics/lyra.png", ".gbapal");
+const u8 gTrainerBackPic_PwLyra[] = INCGFX_U8("graphics/trainers/back_pics/lyra.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwLyra[] = INCGFX_U16("graphics/trainers/back_pics/lyra.png", ".gbapal");
+const u32 gTrainerFrontPic_PwNate[] = INCGFX_U32("graphics/trainers/front_pics/nate.png", ".4bpp.smol");
+const u16 gTrainerPalette_PwNate[] = INCGFX_U16("graphics/trainers/front_pics/nate.png", ".gbapal");
+const u8 gTrainerBackPic_PwNate[] = INCGFX_U8("graphics/trainers/back_pics/nate.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwNate[] = INCGFX_U16("graphics/trainers/back_pics/nate.png", ".gbapal");
+const u32 gTrainerFrontPic_PwRosa[] = INCGFX_U32("graphics/trainers/front_pics/rosa.png", ".4bpp.smol");
+const u16 gTrainerPalette_PwRosa[] = INCGFX_U16("graphics/trainers/front_pics/rosa.png", ".gbapal");
+const u8 gTrainerBackPic_PwRosa[] = INCGFX_U8("graphics/trainers/back_pics/rosa.png", ".4bpp");
+const u16 gTrainerBackPicPalette_PwRosa[] = INCGFX_U16("graphics/trainers/back_pics/rosa.png", ".gbapal");
+
 #include "trainers_hns_gfx.h" // Pokémon World: Heart & Soul's front pics (generated)
 #include "trainers_unova_gfx.h" // Pokémon World: Pokémon Black's battle pictures (generated)
 
@@ -1656,6 +1679,31 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwKris, gTrainerPalette_PwKris),
         .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwKris, gTrainerBackPicPalette_PwKris, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_PW_HILBERT] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwHilbert, gTrainerPalette_PwHilbert),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwHilbert, gTrainerBackPicPalette_PwHilbert, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_PW_HILDA] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwHilda, gTrainerPalette_PwHilda),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwHilda, gTrainerBackPicPalette_PwHilda, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_PW_LYRA] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwLyra, gTrainerPalette_PwLyra),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwLyra, gTrainerBackPicPalette_PwLyra, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_PW_NATE] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwNate, gTrainerPalette_PwNate),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwNate, gTrainerBackPicPalette_PwNate, sBackAnims_Hoenn),
+    },
+    [TRAINER_PIC_PW_ROSA] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PwRosa, gTrainerPalette_PwRosa),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwRosa, gTrainerBackPicPalette_PwRosa, sBackAnims_Hoenn),
     },
 #include "trainers_hns_table.h" // Pokémon World: Heart & Soul's front pics (generated)
 #include "trainers_unova_table.h" // Pokémon World: Pokémon Black's battle pictures (generated)
