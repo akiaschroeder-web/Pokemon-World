@@ -143,8 +143,7 @@ static struct
     bool8 locked;
     bool8 immediate;     // a map's on-load script: nothing waits, nothing is shown
     u16 temps[BW_TEMP_VARS];
-    u8 movement[64];     // our movement actions for the NPC being moved
-    u8 movementActor;    // our local id
+    u8 movementActor;    // our local id (the last one moved)
     u16 reserved;        // RTReserveScript: run after this one ends
     u16 cameraFrames;    // frames left of the event camera's move (EVCameraWait)
     u16 menuDest, menuDefault;
@@ -153,6 +152,33 @@ static struct
     u16 partyDest;
     struct ListMenuItem *menuItems;
 } sVm;
+
+// Our movement actions, one list per moving actor: BW often starts several actors' movements
+// before waiting, and a movement script reads its list while it runs.
+#define BW_MOVE_SLOTS 16
+static u8 sMoveLists[BW_MOVE_SLOTS][64];
+static u16 sMoveOwner[BW_MOVE_SLOTS];  // local id + 1 (the player is 0xFF), 0 = free
+static u8 sMoveNext;
+
+// Each actor keeps its own list: the engine's movement script for an actor keeps pointing at it
+// even after it's done, so another actor's list must never be written there.
+static u8 *MoveListFor(u8 localId)
+{
+    u32 i;
+    for (i = 0; i < BW_MOVE_SLOTS; i++)
+        if (sMoveOwner[i] == localId + 1)
+            return sMoveLists[i];
+    for (i = 0; i < BW_MOVE_SLOTS; i++)
+        if (sMoveOwner[i] == 0)
+            break;
+    if (i == BW_MOVE_SLOTS)
+    {
+        i = sMoveNext;
+        sMoveNext = (sMoveNext + 1) % BW_MOVE_SLOTS;
+    }
+    sMoveOwner[i] = localId + 1;
+    return sMoveLists[i];
+}
 
 // Actors BW's scripts add with ActorNew: BW actor id -> our local id, for this map.
 #define BW_DYN_ACTORS 8
@@ -380,7 +406,8 @@ static void StartMovement(u16 actor, const u8 *list, u32 limit)
 {
     u32 n = 0, i;
     u8 localId = LocalIdOf(actor);
-    while (limit >= 4 && n < sizeof(sVm.movement) - 1)
+    u8 *moves = localId ? MoveListFor(localId) : sMoveLists[BW_MOVE_SLOTS - 1];
+    while (limit >= 4 && n < 64 - 1)
     {
         u16 code = list[0] | (list[1] << 8);
         u16 count = list[2] | (list[3] << 8);
@@ -390,26 +417,35 @@ static void StartMovement(u16 actor, const u8 *list, u32 limit)
         if (code >= 0x00 && code <= 0x3B)
         {
             u8 a = MovementAction(code, &per);
-            for (i = 0; i < (count ? count : 1) && n < sizeof(sVm.movement) - 1; i++)
-                sVm.movement[n++] = a;
+            for (i = 0; i < (count ? count : 1) && n < 64 - 1; i++)
+                moves[n++] = a;
         }
         else if (code == 0x4B || code == 0x45)
         {
-            sVm.movement[n++] = MovementAction(code, &per);
+            moves[n++] = MovementAction(code, &per);
         }
         else
         {
-            for (i = 0; i < count && n < sizeof(sVm.movement) - 1; i++)
-                sVm.movement[n++] = MOVEMENT_ACTION_DELAY_1;   // waits (counted in frames)
+            for (i = 0; i < count && n < 64 - 1; i++)
+                moves[n++] = MOVEMENT_ACTION_DELAY_1;   // waits (counted in frames)
         }
         list += 4;
         limit -= 4;
     }
-    sVm.movement[n] = MOVEMENT_ACTION_STEP_END;
+    moves[n] = MOVEMENT_ACTION_STEP_END;
     if (localId == 0 || n == 0)
         return;
     sVm.movementActor = localId;
-    ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sVm.movement);
+    BW_TRACE("[bw] move %d: %d actions: %d %d %d %d %d %d", localId, n, moves[0], moves[1], moves[2], moves[3], moves[4], moves[5]);
+#if BW_TRACE_ON
+    {
+        u32 k;
+        for (k = 0; k < OBJECT_EVENTS_COUNT; k++)
+            if (gObjectEvents[k].active && gObjectEvents[k].localId < 3)
+                BW_TRACE("[bw]   obj %d at %d,%d", gObjectEvents[k].localId, gObjectEvents[k].currentCoords.x - MAP_OFFSET, gObjectEvents[k].currentCoords.y - MAP_OFFSET);
+    }
+#endif
+    ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, moves);
 }
 
 static void SetActorVisible(u16 actor, bool32 visible)
@@ -806,6 +842,14 @@ static bool32 Waiting(void)
 static void EndScript(void)
 {
     BW_TRACE("[bw] end");
+#if BW_TRACE_ON
+    {
+        u32 i;
+        for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+            if (gObjectEvents[i].active)
+                BW_TRACE("[bw] obj %d at %d,%d facing %d", gObjectEvents[i].localId, gObjectEvents[i].currentCoords.x - MAP_OFFSET, gObjectEvents[i].currentCoords.y - MAP_OFFSET, gObjectEvents[i].facingDirection);
+    }
+#endif
     if (sVm.messageOpen)
         HideFieldMessageBox();
     if (sVm.locked)
@@ -1482,7 +1526,8 @@ u16 BwSeasonMusic(u16 song)
 void BwScript_OnEnterMap(void)
 {
     u32 i;
-    memset(sDynActors, 0, sizeof(sDynActors));   // ActorNew's actors belong to the map they were added on
+    memset(sDynActors, 0, sizeof(sDynActors));
+    memset(sMoveOwner, 0, sizeof(sMoveOwner));   // ActorNew's actors belong to the map they were added on
     Web3D_EventCamera(0, 0, 0, 0, 0, 0, 0, 1);
     if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA || FlagGet(FLAG_UNOVA_INITIALIZED))
         return;

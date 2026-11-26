@@ -114,6 +114,8 @@ def picture(files, k):
     ncell, btype = struct.unpack_from('<HH', c, cb)
     cell = cb + u32(c, cb + 4)
     noam, _, ooff = struct.unpack_from('<HHI', c, cell)
+    two_d = u32(c, cb + 8) == 4          # 2D mapping: a part's tiles are a block of the sheet (Cheren, Bianca, N)
+    seq = 0
     oams = cell + ncell * (16 if btype else 8) + ooff
     idx = bytearray(6400)
     for j in range(noam):
@@ -123,7 +125,10 @@ def picture(files, k):
         x = a1 & 0x1FF
         x = x - 512 if x >= 256 else x
         w, h = SHAPES[(a0 >> 14, a1 >> 14)]
-        t0 = (a2 & 0x3FF) * 2
+        # 1D: the part's first tile, in 2-tile units. 2D cells: the file holds the parts' tiles one
+        # after another, in the cell's order (the 2D tile numbers are VRAM positions)
+        t0 = seq if two_d else (a2 & 0x3FF) * 2
+        seq += (w // 8) * (h // 8)
         for ty in range(h // 8):
             for tx in range(w // 8):
                 t = t0 + ty * (w // 8) + tx
@@ -139,6 +144,103 @@ def picture(files, k):
     pl = files[8 * k + 7]
     pal = [u16(pl, 16 + 0x18 + 2 * i) for i in range(16)]
     return bytes(idx), pal
+
+
+def drop_fragments(idx):
+    """BW's cells sometimes hold another animation frame's part off to the side: drop detached
+    pieces that touch the picture's edge and are much smaller than the figure."""
+    comp = [0] * 6400
+    sizes, edge = {}, {}
+    n = 0
+    for start in range(6400):
+        if not idx[start] or comp[start]:
+            continue
+        n += 1
+        stack = [start]
+        comp[start] = n
+        cnt, touches = 0, False
+        while stack:
+            p = stack.pop()
+            cnt += 1
+            x, y = p % 80, p // 80
+            if x in (0, 79) or y == 0:
+                touches = True
+            for dy in (-1, 0, 1):
+                for dx in (-1, 0, 1):
+                    q = (y + dy) * 80 + x + dx
+                    if 0 <= x + dx < 80 and 0 <= y + dy < 80 and idx[q] and not comp[q]:
+                        comp[q] = n
+                        stack.append(q)
+        sizes[n], edge[n] = cnt, touches
+    if not sizes:
+        return idx
+    big = max(sizes.values())
+    main = max(sizes, key=sizes.get)
+    # near the figure: within 3 pixels of its biggest piece (held items, sparkles stay)
+    near = bytearray(6400)
+    for p in range(6400):
+        if comp[p] == main:
+            x, y = p % 80, p // 80
+            for yy in range(max(0, y - 3), min(80, y + 4)):
+                for xx in range(max(0, x - 3), min(80, x + 4)):
+                    near[yy * 80 + xx] = 1
+    close = {c: False for c in sizes}
+    for p in range(6400):
+        if comp[p] and near[p]:
+            close[comp[p]] = True
+    out = bytearray(idx)
+    for p in range(6400):
+        c = comp[p]
+        if c and c != main and ((edge[c] and sizes[c] < big * 0.2) or (not close[c] and sizes[c] < big * 0.12)):
+            out[p] = 0
+    return bytes(out)
+
+
+def fit_to_64(idx, pal):
+    """80x80 -> 64x64: crop to the figure (feet stay at the bottom); shrink only if it's bigger than 64."""
+    idx = drop_fragments(idx)
+    xs = [p % 80 for p in range(6400) if idx[p]]
+    ys = [p // 80 for p in range(6400) if idx[p]]
+    if not xs:
+        return bytes(4096)
+    x0, x1, y0, y1 = min(xs), max(xs) + 1, min(ys), max(ys) + 1
+    w, h = x1 - x0, y1 - y0
+    if w <= 64 and h <= 64:
+        out = bytearray(4096)
+        ox = (64 - w) // 2
+        oy = 64 - h - max(0, min(64 - h, 80 - y1))      # keep its distance from the bottom where it can
+        oy = max(0, min(64 - h, oy))
+        for y in range(h):
+            for x in range(w):
+                out[(oy + y) * 64 + ox + x] = idx[(y0 + y) * 80 + x0 + x]
+        return bytes(out)
+    # bigger than 64: crop to a square around it, then shrink that
+    side = max(w, h)
+    cx = max(0, min(80 - side, (x0 + x1 - side) // 2))
+    cy = max(0, min(80 - side, y1 - side))
+    sub = bytearray(side * side)
+    for y in range(side):
+        for x in range(side):
+            sx, sy = cx + x, cy + y
+            sub[y * side + x] = idx[sy * 80 + sx] if 0 <= sx < 80 and 0 <= sy < 80 else 0
+    return scale_square(bytes(sub), side, pal)
+
+
+def scale_square(src, side, pal):
+    out = bytearray(64 * 64)
+    f = side / 64
+    for y in range(64):
+        for x in range(64):
+            votes = {}
+            y0, y1, x0, x1 = y * f, (y + 1) * f, x * f, (x + 1) * f
+            for sy in range(int(y0), min(side, int(y1 + 0.999))):
+                wy = min(y1, sy + 1) - max(y0, sy)
+                for sx in range(int(x0), min(side, int(x1 + 0.999))):
+                    wx = min(x1, sx + 1) - max(x0, sx)
+                    c = src[sy * side + sx]
+                    votes[c] = votes.get(c, 0) + wx * wy * (1.35 if c and pal_dark(pal[c]) else 1.0)
+            out[y * 64 + x] = max(votes, key=votes.get)
+    return bytes(out)
 
 
 def scale_to_64(idx, pal):
@@ -280,7 +382,7 @@ def write(rom, decode_text, item_of, species_of):
     import sprites
     for p in used_pics:
         idx, pal = picture(pic_files, p)
-        small = scale_to_64(idx, pal)
+        small = fit_to_64(idx, pal)
         name = '%d_%s' % (p, pic_name.get(p, 'p').lower())
         path = '%s/%s.png' % (PIC_DIR, name)
         sprites.png_indexed(path, 64, 64, [small], pal)

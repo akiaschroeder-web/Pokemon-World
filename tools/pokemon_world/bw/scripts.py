@@ -103,8 +103,41 @@ def script_messages(rom, zone, scrid, female=False):
     return out
 
 
+def every_instruction(d, starts):
+    """All instructions reachable from the start offsets, following every branch: [(opcode, args)]."""
+    cmds = commands()
+    out, todo, seen = [], list(starts), set()
+    while todo:
+        pc = todo.pop()
+        while 0 <= pc < len(d) - 1 and pc not in seen:
+            seen.add(pc)
+            op = struct.unpack_from('<H', d, pc)[0]
+            if op not in cmds:
+                break
+            p, args = pc + 2, []
+            for t in cmds[op]:
+                n = SIZES[t]
+                if p + n > len(d):
+                    break
+                args.append(d[p] if n == 1 else struct.unpack_from('<H' if t != 'fx16' else '<h', d, p)[0] if n == 2
+                            else struct.unpack_from('<i', d, p)[0])
+                p += n
+            if len(args) != len(cmds[op]):
+                break
+            out.append((op, args))
+            if op in (0x02, 0x05, 0x1D):
+                break
+            if op == 0x1E:
+                pc = p + args[-1]
+                continue
+            if op in (0x04, 0x1F, 0x20):
+                todo.append(p + args[-1])
+            pc = p
+    return out
+
+
 def flags_cleared(rom):
-    """Flags any BW script clears (FlagReset with a constant flag)."""
+    """Flags any BW script clears (FlagReset with a constant flag), on any branch."""
     out = set()
     for d in rom.narc('a/0/5/7'):
         try:
@@ -112,11 +145,10 @@ def flags_cleared(rom):
         except Exception:
             continue
         if len(es) > 3000:
-            continue
-        for e in es:
-            for op, args in walk(d, e):
-                if op == 0x24 and args[0] < 0x4000:
-                    out.add(args[0])
+            es = es[:3000]
+        for op, args in every_instruction(d, es):
+            if op == 0x24 and args[0] < 0x4000:
+                out.add(args[0])
     return out
 
 

@@ -147,7 +147,7 @@ static void WarpToTruck(void)
     }
     else if (PW_GetStartRegion() == REGION_UNOVA)
     {
-        SetWarpDestination(MAP_GROUP(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), 0, -1, -1);
+        SetWarpDestination(MAP_GROUP(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 7, 3); // in the room, off the stairs (BW keeps you upstairs until you open the present)
         SetLastHealLocationWarp(HEAL_LOCATION_NUVEMA_TOWN);
     }
     else if (PW_GetStartRegion() == REGION_JOHTO)
