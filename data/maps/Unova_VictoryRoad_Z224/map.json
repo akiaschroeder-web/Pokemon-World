@@ -56,14 +56,14 @@
   ],
   "warp_events": [
     {
-      "x": 13,
+      "x": 12,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_VICTORY_ROAD_Z225",
       "dest_warp_id": "1"
     },
     {
-      "x": 8,
+      "x": 9,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_VICTORY_ROAD_Z223",

@@ -31,11 +31,17 @@ MAX_BONES = 60         # per draw call (WebGL 1 uniform space)
 # demo id -> the name its resource group's files start with (a/1/6/0), from the zones whose
 # scripts call it: Royal Unova, Nimbasa, Castelia's harbour, the League, N's Castle, Dragonspiral
 # Tower, Route 5 (the Driftveil Drawbridge)
+INTRO_DEMO = 100       # our id for it (src/bw_script.c: BW_INTRO_DEMO)
+ONLY_PREFIX = {INTRO_DEMO}
 DEMOS = {2: 'c_cruiser_port', 3: 'f_wheel', 4: 'g_ship_port', 6: 'n_demo',
          # N's Castle: the player's legendary awakens (Black: Reshiram), then meets N's
          9: 'n_legend_born_b_', 10: 'n_legend_born_w_', 11: 'n_legend_meat_b_', 12: 'n_legend_meat_w_',
          # Dragonspiral Tower: N's legendary arrives (Black: Zekrom)
-         13: 'n_legend_come_b_', 14: 'n_legend_come_w_', 15: 'riza_bridge', 16: 'v_boat_port'}
+         13: 'n_legend_come_b_', 14: 'n_legend_come_w_', 15: 'riza_bridge', 16: 'v_boat_port',
+         # not a script's: the new game's flight over Nuvema Town to the player's house (BW's intro
+         # plays it after Juniper's speech); its group also holds another demo's models, so only
+         # the intro_town ones are taken (ONLY_PREFIX)
+         INTRO_DEMO: 'intro_town'}
 
 
 def u16(b, o): return struct.unpack_from('<H', b, o)[0]
@@ -471,6 +477,8 @@ def write(rom):
         camera = [list(struct.unpack_from('<6f', cam, 8 + 24 * k)) for k in range(n)]
         # models and the animations next to them (anims named like the model; BCA/BMA come before it)
         units, pending = [], []
+        if demo in ONLY_PREFIX:
+            g = [(m, d) for m, d in g if (first_name(d) or '').startswith(prefix)]
         for magic, d in g:
             if magic == b'BMD0':
                 units.append({'bmd': d, 'anims': pending})

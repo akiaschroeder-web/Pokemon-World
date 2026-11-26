@@ -27,8 +27,8 @@ YESNO = 0x47
 def commands():
     global _CMDS
     if _CMDS is None:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'bw_script_commands.json')
-        _CMDS = {int(k): [p['Type'] for p in v['params']] for k, v in json.load(open(path)).items()}
+        import param_sizes      # the command list with its parameter sizes corrected
+        _CMDS = param_sizes.param_types()
     return _CMDS
 
 

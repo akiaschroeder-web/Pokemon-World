@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bw_script.h"
 #include "pokemon_world.h"
 #include "clock.h"
 #include "new_game.h"
@@ -149,6 +150,7 @@ static void WarpToTruck(void)
     {
         SetWarpDestination(MAP_GROUP(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 7, 3); // in the room, off the stairs (BW keeps you upstairs until you open the present)
         SetLastHealLocationWarp(HEAL_LOCATION_NUVEMA_TOWN);
+        gBwIntroDemoPending = TRUE;
     }
     else if (PW_GetStartRegion() == REGION_JOHTO)
     {

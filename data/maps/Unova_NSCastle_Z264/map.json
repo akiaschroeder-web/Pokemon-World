@@ -199,28 +199,28 @@
   ],
   "warp_events": [
     {
-      "x": 43,
+      "x": 42,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z265",
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
+      "x": 42,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z265",
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
+      "x": 42,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z265",
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
+      "x": 42,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z265",

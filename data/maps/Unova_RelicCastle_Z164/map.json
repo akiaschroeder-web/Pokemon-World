@@ -56,14 +56,14 @@
   ],
   "warp_events": [
     {
-      "x": 12,
+      "x": 11,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_RELIC_CASTLE_Z163",
       "dest_warp_id": "1"
     },
     {
-      "x": 6,
+      "x": 7,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_RELIC_CASTLE_Z165",

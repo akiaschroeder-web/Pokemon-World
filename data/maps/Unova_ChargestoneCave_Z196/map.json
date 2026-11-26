@@ -173,28 +173,28 @@
   ],
   "warp_events": [
     {
-      "x": 23,
+      "x": 24,
       "y": 42,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_CHARGESTONE_CAVE_Z195",
       "dest_warp_id": "3"
     },
     {
-      "x": 61,
+      "x": 60,
       "y": 50,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_CHARGESTONE_CAVE_Z195",
       "dest_warp_id": "2"
     },
     {
-      "x": 53,
+      "x": 52,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_CHARGESTONE_CAVE_Z195",
       "dest_warp_id": "4"
     },
     {
-      "x": 41,
+      "x": 42,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_CHARGESTONE_CAVE_Z197",

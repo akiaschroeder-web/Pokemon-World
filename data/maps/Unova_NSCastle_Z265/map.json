@@ -16,56 +16,56 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 6,
+      "x": 7,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z264",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
+      "x": 7,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z264",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
+      "x": 7,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z264",
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
+      "x": 7,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z264",
       "dest_warp_id": "0"
     },
     {
-      "x": 42,
+      "x": 43,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z269",
       "dest_warp_id": "0"
     },
     {
-      "x": 42,
+      "x": 43,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z269",
       "dest_warp_id": "0"
     },
     {
-      "x": 42,
+      "x": 43,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z269",
       "dest_warp_id": "0"
     },
     {
-      "x": 42,
+      "x": 43,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_UNOVA_NSCASTLE_Z269",

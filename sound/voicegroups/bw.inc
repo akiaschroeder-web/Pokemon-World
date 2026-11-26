@@ -5039,6 +5039,18 @@ voice_group bw_se_sys_82
 	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 39, 194
 
 
+@ SEQ_SE_SYS_80 (bank 1880)
+voice_group bw_se_sys_80
+	voice_keysplit voicegroup_bw_se_sys_80_s0, keysplit_bw_se_sys_80_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 39, 194
+
+voice_group bw_se_sys_80_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1880_0_69, 255, 248, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1880_1_81, 255, 248, 0, 205
+	.global keysplit_bw_se_sys_80_s0
+keysplit_bw_se_sys_80_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
 @ SEQ_SE_FLD_87 (bank 1751)
 voice_group bw_se_fld_87
 	voice_directsound 60, 0, DirectSoundWaveData_bw_1751_0_60, 62, 0, 255, 223
@@ -5128,6 +5140,11 @@ voice_group bw_se_fld_158
 voice_group bw_se_fld_78
 	voice_directsound 60, 0, DirectSoundWaveData_bw_1740_0_60, 40, 0, 255, 223
 	voice_directsound 60, 0, DirectSoundWaveData_bw_1740_0_60, 40, 0, 255, 223
+
+
+@ SEQ_SE_FLD_145 (bank 1913)
+voice_group bw_se_fld_145
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1913_0_60, 255, 255, 0, 230
 
 
 @ SEQ_ME_ASA (bank 1300)
@@ -5502,6 +5519,11 @@ voice_group bw_se_fld_160
 	voice_directsound 60, 0, DirectSoundWaveData_bw_1805_0_60, 47, 235, 255, 209
 
 
+@ SEQ_SE_FLD_161 (bank 1805)
+voice_group bw_se_fld_161
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1805_0_60, 47, 235, 255, 209
+
+
 @ SEQ_ME_TAMAGO_GET (bank 1317)
 voice_group bw_me_tamago_get
 	voice_keysplit voicegroup_bw_me_tamago_get_s0, keysplit_bw_me_tamago_get_s0
@@ -5572,10 +5594,53 @@ voice_group bw_me_item_s4
 keysplit_bw_me_item_s4:
 	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
+@ SEQ_SE_SAVE (bank 1369)
+voice_group bw_se_save
+	voice_keysplit voicegroup_bw_se_save_s0, keysplit_bw_se_save_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 39, 194
+
+voice_group bw_se_save_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1369_0_69, 255, 248, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1369_1_81, 255, 248, 0, 205
+	.global keysplit_bw_se_save_s0
+keysplit_bw_se_save_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
 @ SEQ_SE_FLD_22 (bank 1633)
 voice_group bw_se_fld_22
 	voice_directsound 60, 0, DirectSoundWaveData_bw_1633_0_60, 255, 0, 255, 177
 
+
+@ SEQ_ME_WASURE (bank 1309)
+voice_group bw_me_wasure
+	voice_keysplit voicegroup_bw_me_wasure_s0, keysplit_bw_me_wasure_s0
+	voice_keysplit voicegroup_bw_me_wasure_s1, keysplit_bw_me_wasure_s1
+	voice_keysplit voicegroup_bw_me_wasure_s2, keysplit_bw_me_wasure_s2
+
+voice_group bw_me_wasure_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_9_60, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_8_69, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_11_77, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_10_84, 255, 246, 0, 205
+	.global keysplit_bw_me_wasure_s0
+keysplit_bw_me_wasure_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_me_wasure_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_0_60, 255, 246, 0, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_1_72, 255, 246, 0, 209
+	.global keysplit_bw_me_wasure_s1
+keysplit_bw_me_wasure_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_wasure_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_2_48, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_5_55, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_3_60, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_6_67, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_4_72, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_7_79, 255, 249, 0, 213
+	.global keysplit_bw_me_wasure_s2
+keysplit_bw_me_wasure_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5
 
 @ SEQ_ME_LVUP (bank 1301)
 voice_group bw_me_lvup
@@ -8499,37 +8564,6 @@ voice_group bw_me_shinkaome_s7
 	.global keysplit_bw_me_shinkaome_s7
 keysplit_bw_me_shinkaome_s7:
 	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-
-@ SEQ_ME_WASURE (bank 1309)
-voice_group bw_me_wasure
-	voice_keysplit voicegroup_bw_me_wasure_s0, keysplit_bw_me_wasure_s0
-	voice_keysplit voicegroup_bw_me_wasure_s1, keysplit_bw_me_wasure_s1
-	voice_keysplit voicegroup_bw_me_wasure_s2, keysplit_bw_me_wasure_s2
-
-voice_group bw_me_wasure_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_9_60, 255, 246, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_8_69, 255, 246, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_11_77, 255, 246, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_10_84, 255, 246, 0, 205
-	.global keysplit_bw_me_wasure_s0
-keysplit_bw_me_wasure_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
-voice_group bw_me_wasure_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_0_60, 255, 246, 0, 209
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_1_72, 255, 246, 0, 209
-	.global keysplit_bw_me_wasure_s1
-keysplit_bw_me_wasure_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_wasure_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_2_48, 255, 248, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_5_55, 255, 248, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_3_60, 255, 248, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_6_67, 255, 248, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_4_72, 255, 248, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1309_7_79, 255, 249, 0, 213
-	.global keysplit_bw_me_wasure_s2
-keysplit_bw_me_wasure_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5
 
 @ SEQ_ME_KINOMI (bank 1310)
 voice_group bw_me_kinomi

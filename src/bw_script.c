@@ -967,6 +967,7 @@ static bool32 Waiting(void)
         if (gMain.callback2 != CB2_Overworld)
             return TRUE;
         BwVarSet(sVm.battleDest, gSpecialVar_Result);
+        FlagSet(FLAG_SYS_POKEMON_GET);   // BW gives the menu its POKéMON entry with the starter
         break;
     }
     sVm.wait = BW_WAIT_NONE;
@@ -1371,6 +1372,8 @@ again:
             level = BwFlex(Read16());
             (void)form;
             BwVarSet(dest, sp && ScriptGiveMon(sp, level, ITEM_NONE) != MON_CANT_GIVE);
+            if (gPlayerPartyCount)
+                FlagSet(FLAG_SYS_POKEMON_GET);
             break;
         }
         case 0x10E: // PokePartyAddEx
@@ -1383,6 +1386,8 @@ again:
                 u16 item = Item(Read16());
                 Read16();
                 BwVarSet(dest, sp && ScriptGiveMon(sp, level, item) != MON_CANT_GIVE);
+                if (gPlayerPartyCount)
+                    FlagSet(FLAG_SYS_POKEMON_GET);
             }
             break;
         }
@@ -1561,11 +1566,10 @@ again:
             BwVarSet(dest, has);
             break;
         }
-        case 0x107: // CallPokeSelect: wantEgg, -> chose one, -> slot
+        case 0x107: // CallPokeSelect: wantEgg, -> chose one, -> slot (3 parameters: bw/param_sizes.py)
             Read16();
             sVm.battleDest = Read16();
             sVm.partyDest = Read16();
-            Read16();
             if (sVm.messageOpen)
             {
                 HideFieldMessageBox();
@@ -1638,6 +1642,28 @@ static bool8 BwScript_Native(void)
     return Run() == FALSE;
 }
 
+// BW's intro ends by flying over Nuvema Town to the player's house (bw/demos.py's INTRO_DEMO):
+// a new game in Unova plays it before the room's first scene (new_game.c sets this).
+#define BW_INTRO_DEMO 100
+EWRAM_DATA bool8 gBwIntroDemoPending = FALSE;
+
+static void StartIntroDemo(void)
+{
+    u32 i;
+    gBwIntroDemoPending = FALSE;
+    for (i = 0; i < ARRAY_COUNT(sBwDemoFrames); i++)
+    {
+        if (sBwDemoFrames[i][0] == BW_INTRO_DEMO)
+        {
+            sVm.demoFrames = sBwDemoFrames[i][1];
+            sVm.demoWaited = 0;
+            Web3D_PlayDemo(BW_INTRO_DEMO);
+            sVm.wait = BW_WAIT_DEMO;
+            return;
+        }
+    }
+}
+
 static bool32 Start(struct ScriptContext *ctx, bool32 immediate)
 {
     u16 zone = ScriptReadHalfword(ctx);
@@ -1650,7 +1676,11 @@ static bool32 Start(struct ScriptContext *ctx, bool32 immediate)
     BW_TRACE("[bw] start zone %d script %d%s", zone, scrid, immediate ? " (load)" : "");
     if (!immediate)
         SpawnCompanionsHere();
-    return PushScript(scrid, sBwZones[zone].scripts, sBwZones[zone].text, FALSE);
+    if (!PushScript(scrid, sBwZones[zone].scripts, sBwZones[zone].text, FALSE))
+        return FALSE;
+    if (!immediate && gBwIntroDemoPending)
+        StartIntroDemo();
+    return TRUE;
 }
 
 // bwscript <zone>, <script id>: runs BW script `id` of BW zone `zone` (asm/macros/event.inc).

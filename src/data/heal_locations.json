@@ -791,6 +791,116 @@
       "respawn_npc": "0",
       "respawn_x": 6,
       "respawn_y": 9
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_ACCUMULA_TOWN",
+      "map": "MAP_UNOVA_ACCUMULA_TOWN",
+      "x": 28,
+      "y": 18,
+      "respawn_map": "MAP_UNOVA_ACCUMULA_TOWN_Z398",
+      "respawn_npc": "2",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_STRIATON_CITY",
+      "map": "MAP_UNOVA_STRIATON_CITY",
+      "x": 45,
+      "y": 12,
+      "respawn_map": "MAP_UNOVA_STRIATON_CITY_Z8",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_NACRENE_CITY",
+      "map": "MAP_UNOVA_NACRENE_CITY",
+      "x": 29,
+      "y": 22,
+      "respawn_map": "MAP_UNOVA_NACRENE_CITY_Z20",
+      "respawn_npc": "2",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_NIMBASA_CITY",
+      "map": "MAP_UNOVA_NIMBASA_CITY",
+      "x": 22,
+      "y": 52,
+      "respawn_map": "MAP_UNOVA_NIMBASA_CITY_Z65",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_DRIFTVEIL_CITY",
+      "map": "MAP_UNOVA_DRIFTVEIL_CITY_1",
+      "x": 27,
+      "y": 29,
+      "respawn_map": "MAP_UNOVA_DRIFTVEIL_CITY_Z99",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_MISTRALTON_CITY",
+      "map": "MAP_UNOVA_MISTRALTON_CITY_2",
+      "x": 12,
+      "y": 17,
+      "respawn_map": "MAP_UNOVA_MISTRALTON_CITY_Z109",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_ICIRRUS_CITY",
+      "map": "MAP_UNOVA_ICIRRUS_CITY_1",
+      "x": 24,
+      "y": 36,
+      "respawn_map": "MAP_UNOVA_ICIRRUS_CITY_Z115",
+      "respawn_npc": "1",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_OPELUCID_CITY",
+      "map": "MAP_UNOVA_OPELUCID_CITY",
+      "x": 41,
+      "y": 45,
+      "respawn_map": "MAP_UNOVA_OPELUCID_CITY_Z122",
+      "respawn_npc": "4",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_LACUNOSA_TOWN",
+      "map": "MAP_UNOVA_LACUNOSA_TOWN",
+      "x": 20,
+      "y": 25,
+      "respawn_map": "MAP_UNOVA_LACUNOSA_TOWN_Z407",
+      "respawn_npc": "5",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_UNDELLA_TOWN",
+      "map": "MAP_UNOVA_UNDELLA_TOWN",
+      "x": 56,
+      "y": 12,
+      "respawn_map": "MAP_UNOVA_UNDELLA_TOWN_Z413",
+      "respawn_npc": "5",
+      "respawn_x": 7,
+      "respawn_y": 12
+    },
+    {
+      "id": "HEAL_LOCATION_UNOVA_BLACK_CITY",
+      "map": "MAP_UNOVA_BLACK_CITY_Z0",
+      "x": 43,
+      "y": 37,
+      "respawn_map": "MAP_UNOVA_BLACK_CITY_Z1",
+      "respawn_npc": "5",
+      "respawn_x": 7,
+      "respawn_y": 12
     }
   ]
 }

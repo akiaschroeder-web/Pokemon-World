@@ -24,6 +24,7 @@ static const struct Fanfare sFanfaresBWAll[] = {
     { MUS_BW_ME_QUIZ, 73 },
     { MUS_BW_ME_TAMAGO_GET, 420 },
     { MUS_BW_ME_ITEM, 199 },
+    { MUS_BW_ME_WASURE, 116 },
     { MUS_BW_ME_LVUP, 51 },
     { MUS_BW_ME_ITEM_MYSTERY, 210 },
     { MUS_BW_ME_WAZA, 164 },
@@ -34,6 +35,5 @@ static const struct Fanfare sFanfaresBWAll[] = {
     { MUS_BW_ME_HYOUKA4, 420 },
     { MUS_BW_ME_HYOUKA5, 420 },
     { MUS_BW_ME_SHINKAOME, 229 },
-    { MUS_BW_ME_WASURE, 116 },
     { MUS_BW_ME_KINOMI, 92 },
 };

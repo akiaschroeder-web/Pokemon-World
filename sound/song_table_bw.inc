@@ -83,10 +83,12 @@
 	song mus_bw_se_fld_55, MUSIC_PLAYER_SE2, 0
 	song mus_bw_me_call, MUSIC_PLAYER_SE2, 2
 	song mus_bw_se_sys_82, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_sys_80, MUSIC_PLAYER_SE2, 0
 	song mus_bw_se_fld_87, MUSIC_PLAYER_SE2, 0
 	song mus_bw_me_pokeget, MUSIC_PLAYER_SE2, 2
 	song mus_bw_se_fld_158, MUSIC_PLAYER_SE2, 0
 	song mus_bw_se_fld_78, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_145, MUSIC_PLAYER_SE2, 0
 	song mus_bw_me_asa, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_bpget, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_hyouka6, MUSIC_PLAYER_SE2, 2
@@ -126,9 +128,12 @@
 	song mus_bw_se_fld_94, MUSIC_PLAYER_SE2, 0
 	song mus_bw_se_w017_01, MUSIC_PLAYER_SE2, 0
 	song mus_bw_se_fld_160, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_161, MUSIC_PLAYER_SE2, 0
 	song mus_bw_me_tamago_get, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_item, MUSIC_PLAYER_SE2, 2
+	song mus_bw_se_save, MUSIC_PLAYER_SE2, 0
 	song mus_bw_se_fld_22, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_wasure, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_lvup, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_item_mystery, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_waza, MUSIC_PLAYER_SE2, 2
@@ -178,5 +183,4 @@
 	song mus_bw_eye_13, MUSIC_PLAYER_BGM, 0
 	song mus_bw_eye_plasma, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_shinkaome, MUSIC_PLAYER_SE2, 2
-	song mus_bw_me_wasure, MUSIC_PLAYER_SE2, 2
 	song mus_bw_me_kinomi, MUSIC_PLAYER_SE2, 2

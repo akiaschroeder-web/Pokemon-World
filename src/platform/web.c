@@ -113,6 +113,27 @@ EMSCRIPTEN_KEEPALIVE const u32 *Web_DebugAddresses(void)
     return sAddrs;
 }
 
+// Debugging (the test harness): where the player is and what blocks each direction.
+#include "event_object_movement.h"
+#include "field_player_avatar.h"
+#include "script.h"
+EMSCRIPTEN_KEEPALIVE void Web_DebugPlayer(void)
+{
+    struct ObjectEvent *p = &gObjectEvents[gPlayerAvatar.objectEventId];
+    emscripten_log(1, "[player] map %d.%d at %d,%d elev %d/%d facing %d locked %d frozen %d script %d coll S%d N%d W%d E%d",
+        gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum,
+        p->currentCoords.x - 7, p->currentCoords.y - 7, p->currentElevation, p->previousElevation, p->facingDirection,
+        ArePlayerFieldControlsLocked(), p->frozen, ScriptContext_IsEnabled(),
+        GetCollisionInDirection(p, DIR_SOUTH), GetCollisionInDirection(p, DIR_NORTH),
+        GetCollisionInDirection(p, DIR_WEST), GetCollisionInDirection(p, DIR_EAST));
+}
+
+// The harness: 1 while a script or message has the player (it presses A until this is 0).
+EMSCRIPTEN_KEEPALIVE int Web_PlayerBusy(void)
+{
+    return ArePlayerFieldControlsLocked() || ScriptContext_IsEnabled();
+}
+
 unsigned int gWebTrace;
 EMSCRIPTEN_KEEPALIVE void Web_SetTrace(int on)
 {

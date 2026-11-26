@@ -888,11 +888,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_WarpKantoLater[] =
     { NULL }
 };
 
-static const struct DebugMenuOption sDebugMenu_Actions_WarpUnova[] =
-{
-    { COMPOUND_STRING("Nuvema Town"),       DebugAction_Util_WarpToTown, DEBUG_HEAL_LOCATION(HEAL_LOCATION_NUVEMA_TOWN) },
-    { NULL }
-};
+#include "data/bw_debug_warps.h"   // sDebugMenu_Actions_WarpUnova (tools/pokemon_world/bw/heal.py)
 
 static const struct DebugMenuOption sDebugMenu_Actions_WarpRegion[] =
 {

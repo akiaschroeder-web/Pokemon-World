@@ -43,6 +43,8 @@ import movement as bw_movement  # noqa: E402
 import scenes as bw_scenes  # noqa: E402
 import rails as bw_rails  # noqa: E402
 import demos as bw_demos  # noqa: E402
+import heal as bw_heal  # noqa: E402
+import param_sizes as bw_param_sizes  # noqa: E402
 import export3d    # noqa: E402
 import nitro       # noqa: E402
 
@@ -304,7 +306,8 @@ INDOORS_PER_GROUP = 120   # the engine keeps map numbers in s8 (WarpData): at mo
 METATILES = ['MB_NORMAL', 'MB_TALL_GRASS', 'MB_DEEP_WATER', 'MB_JUMP_EAST', 'MB_JUMP_WEST', 'MB_JUMP_NORTH',
              'MB_JUMP_SOUTH', 'MB_NON_ANIMATED_DOOR', 'MB_SOUTH_ARROW_WARP', 'MB_NORTH_ARROW_WARP',
              'MB_WEST_ARROW_WARP', 'MB_EAST_ARROW_WARP', 'MB_LONG_GRASS', 'MB_POND_WATER', 'MB_ICE',
-             'MB_SAND', 'MB_COUNTER', 'MB_PC', 'MB_TELEVISION', 'MB_BOOKSHELF', 'MB_TRASH_CAN', 'MB_SHOP_SHELF']
+             'MB_SAND', 'MB_COUNTER', 'MB_PC', 'MB_TELEVISION', 'MB_BOOKSHELF', 'MB_TRASH_CAN', 'MB_SHOP_SHELF',
+             'MB_UP_RIGHT_STAIR_WARP', 'MB_UP_LEFT_STAIR_WARP', 'MB_DOWN_RIGHT_STAIR_WARP', 'MB_DOWN_LEFT_STAIR_WARP']
 MT = {b: i for i, b in enumerate(METATILES)}
 ARROW = {1: 'MB_SOUTH_ARROW_WARP', 2: 'MB_NORTH_ARROW_WARP', 3: 'MB_EAST_ARROW_WARP', 4: 'MB_WEST_ARROW_WARP'}
 
@@ -403,6 +406,39 @@ def zone_warps(rom, zone):
         tx, ty = x // 16, z // 16
         out.append(([(tx + i, ty + j) for j in range(max(h, 1)) for i in range(max(w, 1))], tz, tw, face, trans))
     return out
+
+
+STAIR_TRANSITION = 2                 # BW warp transition 2: stairs
+FACING_STEP = {1: (0, 1), 2: (0, -1), 3: (1, 0), 4: (-1, 0)}   # warp facing: S, N, E, W
+
+
+def stair_warp(gm, lx, ly, face, trans, dest_zone, zone_id):
+    """A BW stairs warp (a solid square the player walks into) -> (x, y, behaviour) of the floor
+    square in front of it, where our warp goes; None if this isn't one.
+
+    East/west stairs get FRLG's stair warps (the player slides up or down the stairs, and slides
+    off them on arriving: field_screen_effect.c); north/south ones an arrow warp. Up or down: BW
+    numbers a building's floors upwards (Nuvema's house: 1F zone 390, 2F 391)."""
+    if trans != STAIR_TRANSITION or face not in FACING_STEP:
+        return None
+    t = gm.tiles[ly][lx]
+    if not isinstance(t[0], int) or not tile_block(*t) & (1 << 10):
+        return None
+    dx, dy = FACING_STEP[face]
+    fx, fy = lx - dx, ly - dy
+    if not (0 <= fy < len(gm.tiles) and 0 <= fx < len(gm.tiles[0])):
+        return None
+    f = gm.tiles[fy][fx]
+    if not isinstance(f[0], int) or tile_block(*f) & (1 << 10):
+        return None
+    up = dest_zone > zone_id
+    if face == 3:
+        behaviour = 'MB_UP_RIGHT_STAIR_WARP' if up else 'MB_DOWN_RIGHT_STAIR_WARP'
+    elif face == 4:
+        behaviour = 'MB_UP_LEFT_STAIR_WARP' if up else 'MB_DOWN_LEFT_STAIR_WARP'
+    else:
+        behaviour = ARROW[face]
+    return fx, fy, behaviour
 
 
 class GameMap:
@@ -514,6 +550,15 @@ def main():
                 for gm in by_zone[z.id]:
                     if gm.contains(tx, ty):
                         lx, ly = gm.local(tx, ty)
+                        stairs = stair_warp(gm, lx, ly, face, trans, tz, z.id)
+                        if stairs:
+                            # BW's stairs are a blocked square you walk into: the warp goes on the
+                            # floor square in front of them (where you also arrive), the stairs stay solid
+                            fx, fy, behaviour = stairs
+                            warp_event.setdefault((z.id, wi), (gm, len(gm.warps)))
+                            gm.tiles[fy][fx] = ('stairs', behaviour)
+                            gm.warps.append((fx, fy, tz, tw))
+                            break
                         warp_event.setdefault((z.id, wi), (gm, len(gm.warps)))
                         if trans == 3 or (z.exterior and trans != 1):
                             gm.tiles[ly][lx] = ('door', None)
@@ -588,6 +633,8 @@ def main():
         ZONE_MUSIC[z.id] = songs.get(n) or ('MUS_NONE' if n and 'SILENCE' in n else None)
     write_tileset()
     write_game_maps(maps, warp_event, places)
+    bw_param_sizes.write_header()                    # the interpreter's parameter sizes (corrected list)
+    bw_heal.main()                                   # heal locations + debug warp list, from the maps just written
     label = {gm.const: 'g' + gm.name for gm in maps}
     n = encounters.write(rom, [(gm.const, gm.zone) for gm in maps], label.get)
     print('%d wild encounter tables' % n)
@@ -607,7 +654,7 @@ def check_scenes(rom, zones, by_zone, places):
             if gm.contains(x, z):
                 lx, ly = gm.local(x, z)
                 t = gm.tiles[ly][lx]
-                if t[0] in ('door', 'arrow'):
+                if t[0] in ('door', 'arrow', 'stairs'):
                     return False
                 return bool(tile_block(*t) & (1 << 10))
         return None
@@ -921,6 +968,8 @@ def write_game_maps(maps, warp_event, places):
                     out.append(MT['MB_NON_ANIMATED_DOOR'] | 3 << 12)
                 elif t[0] == 'arrow':
                     out.append(MT[ARROW.get(t[1], 'MB_SOUTH_ARROW_WARP')] | 3 << 12)
+                elif t[0] == 'stairs':
+                    out.append(MT[t[1]] | 3 << 12)
                 else:
                     out.append(tile_block(*t))
             grid.append(out)
