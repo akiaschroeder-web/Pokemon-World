@@ -37,6 +37,27 @@ BACKS = {
 }
 
 
+# The DS draws the arm of the standing pose as separate parts (the loose arm pieces at the right of each
+# sheet), laid over the first pose: (piece's box on the sheet, x, y in the pose's own coordinates).
+# Frame 1 (before the throw) holds the ball up in front:
+ARMS_BALL = {
+    "hilbert": [((195, 82, 223, 126), 10, 30)],
+    "hilda":   [((193, 84, 216, 123), 16, 36)],
+    "nate":    [((203, 81, 232, 126), 8, 30)],
+    "rosa":    [((217, 83, 229, 121), 24, 30)],
+    "lyra":    [((201, 69, 224, 108), 12, 30)],
+}
+# Frame 4 (after the throw): the empty arm hangs down. BW's is in two pieces (upper arm, then forearm
+# and fist from the elbow), BW2's in one.
+ARMS = {
+    "hilbert": [((194, 42, 211, 71), 18, 38), ((218, 40, 234, 70), 10, 64)],
+    "hilda":   [((199, 42, 212, 71), 22, 44), ((218, 40, 233, 70), 14, 70)],
+    "nate":    [((236, 68, 254, 127), 22, 38)],
+    "rosa":    [((233, 63, 252, 123), 25, 36)],
+    "lyra":    [((207, 27, 220, 56), 18, 37), ((226, 25, 241, 55), 10, 63)],
+}
+
+
 def rgb555(c):
     return ((c & 31) << 3, ((c >> 5) & 31) << 3, ((c >> 10) & 31) << 3)
 
@@ -163,16 +184,25 @@ def back_pic(name):
     fn, bg, s = BACKS[name]
     im = keyed(os.path.join(SRC, fn), bg)
     ps = poses(im)
+    # give the standing pose its arm: holding the ball (frame 1), and hanging after the throw (frame 4)
+    fig, x0, y0 = ps[0]
+    for arms in (ARMS_BALL, ARMS):
+        f = fig.copy()
+        for box, dx, dy in arms[name]:
+            f.alpha_composite(im.crop((box[0], box[1], box[2] + 1, box[3] + 1)), (dx, dy))
+        ps.append((f, x0, y0))
+    # (figure, x, y, the figure its placement is measured on: the armless pose for frames 1 and 4)
+    ps = [ps[3] + (fig,), ps[1] + (ps[1][0],), ps[2] + (ps[2][0],), ps[4] + (fig,)]
     frames = []
     # the poses share the sheet's baseline: keep their vertical offsets; the head of the first pose
-    # sits 12 pixels from the top (a crouching pose only half as far down). Horizontally each pose's torso (its widest row near the cut) stays put.
-    base_y = min(y for _, _, y in ps)
-    for fig, x0, y0 in ps:
-        sm = downscale(fig, s)
+    # sits 12 pixels from the top (a crouching pose only half as far down). Horizontally each pose's
+    # torso (the middle of its row at the bottom of the frame) stays put.
+    base_y = min(p[2] for p in ps)
+    for fig_, x0, y0, measure in ps:
+        sm = downscale(fig_, s)
         oy = 12 + round((y0 - base_y) * s * 0.5)
-        # torso centre: the middle of the opaque run on the row at the bottom of the frame
         row = 63 - oy
-        px = sm.load()
+        px = downscale(measure, s).load()
         xs = [x for x in range(sm.width) if 0 <= row < sm.height and px[x, row][3] >= 128]
         cx = (min(xs) + max(xs)) / 2 if xs else sm.width / 2
         ox = round(30 - cx)
@@ -180,7 +210,6 @@ def back_pic(name):
         tmp.alpha_composite(sm, (sm.width + ox, oy))
         fr = tmp.crop((sm.width, 0, sm.width + 64, 64))
         frames.append(fr)
-    frames = [frames[0], frames[1], frames[2], frames[0]]
     pal = palette_of(frames)
     save_indexed(os.path.join(BACK, name + ".png"), frames, 64, 64, pal)
 
