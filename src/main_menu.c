@@ -41,6 +41,9 @@
 #include "text_window.h"
 #include "title_screen.h"
 #include "window.h"
+#include "util.h"
+#include "dma3.h"
+#include "trainer.h"
 #include "mystery_gift_menu.h"
 
 // Pokémon World: a game that starts in Johto gets Heart & Soul's intro on Birch's stage:
@@ -584,6 +587,7 @@ static void VBlankCB_MainMenu(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
+    ScanlineEffect_InitHBlankDmaTransfer();   // Pokémon World: the character select spotlight
 }
 
 void CB2_InitMainMenu(void)
@@ -1461,8 +1465,229 @@ static void PwSetup_ShowMenu(void)
     CopyWindowToVram(2, COPYWIN_FULL);
 }
 
+// ---------------------------------------------------------------------------
+// Pokémon World: choosing your character and your rival. The room goes dark, a spotlight falls on
+// the platform, and the trainers slide through it: left/right (or up/down) to the next one, A to
+// pick, B to go back. The one in the light is named in the text box.
+// ---------------------------------------------------------------------------
+
+#define PW_CAROUSEL_X        120
+#define PW_CAROUSEL_Y        60
+#define PW_CAROUSEL_SPACING  72
+#define PW_CAROUSEL_FRAMES   8      // frames a slide takes
+#define PW_CAROUSEL_DIM      10     // how dark the trainers beside the spotlight are (of 16)
+#define PW_SPOTLIGHT_BOTTOM  106    // the beam reaches down to the platform's far edge
+
+static EWRAM_DATA struct
+{
+    bool8 active;
+    u8 count;
+    u8 cursor;
+    s8 dir;                 // while sliding: +1 towards the next trainer, -1 towards the previous
+    u8 timer;
+    u8 designs[ARRAY_COUNT(sPwSetupDesignOrder)];
+    u8 spriteIds[4];        // previous, current, next, and the one sliding in from the side
+    u16 bgPalette[32];      // the background's two palettes while the room is dark
+} sPwCarousel = {0};
+
+static u32 PwCarousel_Wrap(s32 index)
+{
+    s32 n = sPwCarousel.count;
+    return ((index % n) + n) % n;
+}
+
+static u8 PwCarousel_CreateTrainer(u32 index, s16 x, bool32 dim)
+{
+    // the trainer pic sprite system handles every pic's format (CreateTrainerSprite, which Birch's
+    // speech uses for Brendan and May, garbled the other designs' pics)
+    enum TrainerPicID pic = gPwDesigns[sPwCarousel.designs[index]].trainerPic;
+    // (it loads the palette under the pic's own tag, so the sprite must ask for that one)
+    u16 spriteId = CreateTrainerPicSprite(pic, TRUE, x, PW_CAROUSEL_Y, 0, GetTrainerPicTag(pic, TRUE));
+    if (spriteId >= MAX_SPRITES)
+        return SPRITE_NONE;
+    gSprites[spriteId].callback = SpriteCB_Null;
+    gSprites[spriteId].oam.priority = 0;
+    if (dim)
+        BlendPalette(OBJ_PLTT_ID(gSprites[spriteId].oam.paletteNum), 16, PW_CAROUSEL_DIM, RGB_BLACK);
+    return spriteId;
+}
+
+static void PwCarousel_DestroyTrainers(void)
+{
+    u32 i;
+    for (i = 0; i < ARRAY_COUNT(sPwCarousel.spriteIds); i++)
+    {
+        if (sPwCarousel.spriteIds[i] != SPRITE_NONE)
+            FreeAndDestroyTrainerPicSprite(sPwCarousel.spriteIds[i]);
+        sPwCarousel.spriteIds[i] = SPRITE_NONE;
+    }
+}
+
+// The trainer in the spotlight, with the previous one on the left and the next on the right.
+static void PwCarousel_PlaceTrainers(void)
+{
+    PwCarousel_DestroyTrainers();
+    sPwCarousel.spriteIds[0] = PwCarousel_CreateTrainer(PwCarousel_Wrap(sPwCarousel.cursor - 1), PW_CAROUSEL_X - PW_CAROUSEL_SPACING, TRUE);
+    sPwCarousel.spriteIds[1] = PwCarousel_CreateTrainer(sPwCarousel.cursor, PW_CAROUSEL_X, FALSE);
+    sPwCarousel.spriteIds[2] = PwCarousel_CreateTrainer(PwCarousel_Wrap(sPwCarousel.cursor + 1), PW_CAROUSEL_X + PW_CAROUSEL_SPACING, TRUE);
+}
+
+static void PwCarousel_PrintName(void)
+{
+    static const u8 sFormat[] = _("{STR_VAR_1}\n{LEFT_ARROW} {STR_VAR_2} {RIGHT_ARROW}");
+    StringCopy(gStringVar1, sPwSetup.step == PW_SETUP_PLAYER ? sText_PwSetup_Player : sText_PwSetup_Rival);
+    StringCopy(gStringVar2, gPwDesigns[sPwCarousel.designs[sPwCarousel.cursor]].name);
+    StringExpandPlaceholders(gStringVar4, sFormat);
+    FillWindowPixelBuffer(0, PIXEL_FILL(1));
+    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    CopyWindowToVram(0, COPYWIN_GFX);
+}
+
+// The spotlight: window 0 is a cone (narrow at the top, as wide as the platform at its foot) drawn
+// line by line with a scanline effect; inside it the backdrop and the platform are lightened. The
+// room's walls (Birch's gradient) go almost black meanwhile.
+static void PwCarousel_Spotlight(bool32 on)
+{
+    if (on)
+    {
+        struct ScanlineEffectParams params = {(void *)REG_ADDR_WIN0H, SCANLINE_EFFECT_DMACNT_16BIT, 1};
+        u32 y;
+
+        for (y = 0; y < DISPLAY_HEIGHT; y++)
+        {
+            u16 range = WIN_RANGE(0, 0);
+            if (y < PW_SPOTLIGHT_BOTTOM)
+            {
+                u32 half = 14 + (y * 50) / PW_SPOTLIGHT_BOTTOM;
+                range = WIN_RANGE(PW_CAROUSEL_X - half, PW_CAROUSEL_X + half);
+            }
+            gScanlineEffectRegBuffers[0][y] = range;
+            gScanlineEffectRegBuffers[1][y] = range;
+        }
+        ScanlineEffect_SetParams(params);
+        SetGpuReg(REG_OFFSET_WIN0H, gScanlineEffectRegBuffers[0][0]);
+        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(0, DISPLAY_HEIGHT));
+        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_ALL);
+        SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ);
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
+        SetGpuReg(REG_OFFSET_BLDY, 4);
+        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+        // the walls: the background's palettes at an eighth of their brightness (into both palette
+        // buffers, so nothing fades them back); the old colours are kept to put back afterwards
+        {
+            u16 dark[ARRAY_COUNT(sPwCarousel.bgPalette)];
+            for (y = 0; y < ARRAY_COUNT(dark); y++)
+            {
+                u16 c = gPlttBufferUnfaded[BG_PLTT_ID(0) + y];
+                sPwCarousel.bgPalette[y] = c;
+                dark[y] = RGB2(GET_R(c) / 8, GET_G(c) / 8, GET_B(c) / 8);
+            }
+            LoadPalette(dark, BG_PLTT_ID(0), sizeof(dark));
+        }
+    }
+    else
+    {
+        ScanlineEffect_Stop();
+        ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+        SetGpuReg(REG_OFFSET_WIN0H, 0);
+        SetGpuReg(REG_OFFSET_WIN0V, 0);
+        SetGpuReg(REG_OFFSET_WININ, 0);
+        SetGpuReg(REG_OFFSET_WINOUT, 0);
+        SetGpuReg(REG_OFFSET_BLDCNT, 0);
+        SetGpuReg(REG_OFFSET_BLDY, 0);
+        LoadPalette(sPwCarousel.bgPalette, BG_PLTT_ID(0), sizeof(sPwCarousel.bgPalette));
+    }
+}
+
+static void PwCarousel_Show(void)
+{
+    u32 i;
+    u8 current = sPwSetup.step == PW_SETUP_PLAYER ? sPwSetup.player : sPwSetup.rival;
+
+    sPwCarousel.count = 0;
+    sPwCarousel.cursor = 0;
+    for (i = 0; i < ARRAY_COUNT(sPwSetupDesignOrder); i++)
+    {
+        u8 design = sPwSetupDesignOrder[i];
+        if (sPwSetup.step == PW_SETUP_PLAYER ? !gPwDesigns[design].playable : design == sPwSetup.player)
+            continue;
+        if (design == current)
+            sPwCarousel.cursor = sPwCarousel.count;   // coming back: start on the one picked before
+        sPwCarousel.designs[sPwCarousel.count++] = design;
+    }
+    sPwCarousel.dir = 0;
+    for (i = 0; i < ARRAY_COUNT(sPwCarousel.spriteIds); i++)
+        sPwCarousel.spriteIds[i] = SPRITE_NONE;
+    sPwCarousel.active = TRUE;
+    PwCarousel_Spotlight(TRUE);
+    PwCarousel_PlaceTrainers();
+    PwCarousel_PrintName();
+}
+
+static void PwCarousel_Close(void)
+{
+    PwCarousel_DestroyTrainers();
+    PwCarousel_Spotlight(FALSE);
+    sPwCarousel.active = FALSE;
+}
+
+// Like ListMenu_ProcessInput: the chosen design, LIST_CANCEL, or LIST_NOTHING_CHOSEN.
+static s32 PwCarousel_ProcessInput(void)
+{
+    s32 dir = 0;
+    u32 i;
+
+    if (sPwCarousel.dir != 0)
+    {
+        s16 step = PW_CAROUSEL_SPACING / PW_CAROUSEL_FRAMES;
+        for (i = 0; i < ARRAY_COUNT(sPwCarousel.spriteIds); i++)
+        {
+            if (sPwCarousel.spriteIds[i] != SPRITE_NONE)
+                gSprites[sPwCarousel.spriteIds[i]].x -= sPwCarousel.dir * step;
+        }
+        if (++sPwCarousel.timer >= PW_CAROUSEL_FRAMES)
+        {
+            sPwCarousel.cursor = PwCarousel_Wrap(sPwCarousel.cursor + sPwCarousel.dir);
+            sPwCarousel.dir = 0;
+            PwCarousel_PlaceTrainers();
+            PwCarousel_PrintName();
+        }
+        return LIST_NOTHING_CHOSEN;
+    }
+
+    if (JOY_NEW(A_BUTTON))
+        return sPwCarousel.designs[sPwCarousel.cursor];
+    if (JOY_NEW(B_BUTTON))
+        return LIST_CANCEL;
+    if (JOY_REPEAT(DPAD_RIGHT | DPAD_DOWN))
+        dir = 1;
+    else if (JOY_REPEAT(DPAD_LEFT | DPAD_UP))
+        dir = -1;
+    if (dir != 0)
+    {
+        PlaySE(SE_SELECT);
+        sPwCarousel.dir = dir;
+        sPwCarousel.timer = 0;
+        // the trainer after the next one comes in from beyond the edge
+        sPwCarousel.spriteIds[3] = PwCarousel_CreateTrainer(PwCarousel_Wrap(sPwCarousel.cursor + 2 * dir),
+                                                            PW_CAROUSEL_X + 2 * dir * PW_CAROUSEL_SPACING, TRUE);
+        // the one leaving the light dims, the one coming into it brightens
+        if (sPwCarousel.spriteIds[1] != SPRITE_NONE)
+            BlendPalette(OBJ_PLTT_ID(gSprites[sPwCarousel.spriteIds[1]].oam.paletteNum), 16, PW_CAROUSEL_DIM, RGB_BLACK);
+        i = dir > 0 ? 2 : 0;
+        if (sPwCarousel.spriteIds[i] != SPRITE_NONE)
+            BlendPalette(OBJ_PLTT_ID(gSprites[sPwCarousel.spriteIds[i]].oam.paletteNum), 16, 0, RGB_BLACK);
+    }
+    return LIST_NOTHING_CHOSEN;
+}
+
 static void PwSetup_CloseMenu(void)
 {
+    if (sPwCarousel.active)
+    {
+        PwCarousel_Close();
+        return;
+    }
     DestroyListMenuTask(sPwSetup.listTaskId, NULL, NULL);
     if (sPwSetup.arrowTaskId != TASK_NONE)
         RemoveScrollIndicatorArrowPair(sPwSetup.arrowTaskId);
@@ -1504,11 +1729,21 @@ static void PwSetup_RecreatePlayerSprites(u8 taskId)
     }
 }
 
+// The closing dialog box queued a copy of BG0's tilemap to the screen. Run the queue now, with the
+// buffer already cleared: once the buffer is freed, a copy still waiting would paint whatever took
+// its place in the heap all over the professor's screen.
+static void PwSetup_FlushBg0Copies(void)
+{
+    CopyBgTilemapBufferToVram(0);
+    ProcessDma3Requests();
+}
+
 static void Task_PwSetup_Start(u8 taskId)
 {
     if (gPaletteFade.active)
         return;
     memset(&sPwSetup, 0, sizeof(sPwSetup));
+    sPwCarousel.active = FALSE;
     PW_SetPendingChoices(REGION_NONE, PW_DESIGN_NONE, PW_DESIGN_NONE);
     InitWindows(sNewGameBirchSpeechTextWindows);
     LoadMainMenuWindowFrameTiles(0, 0xF3);
@@ -1523,6 +1758,13 @@ static void Task_PwSetup_Start(u8 taskId)
 static void Task_PwSetup_ShowPrompt(u8 taskId)
 {
     static const u8 *const sPrompts[] = {sText_PwSetup_Region, sText_PwSetup_Player, sText_PwSetup_Rival};
+    if (sPwSetup.step != PW_SETUP_REGION)
+    {
+        // the characters: the spotlight scene, its question and the trainer's name at once
+        PwCarousel_Show();
+        gTasks[taskId].func = Task_PwSetup_HandleInput;
+        return;
+    }
     PwSetup_PrintMessage(sPrompts[sPwSetup.step]);
     gTasks[taskId].func = Task_PwSetup_WaitPrompt;
 }
@@ -1538,10 +1780,18 @@ static void Task_PwSetup_WaitPrompt(u8 taskId)
 
 static void Task_PwSetup_HandleInput(u8 taskId)
 {
-    s32 input = ListMenu_ProcessInput(sPwSetup.listTaskId);
+    s32 input;
     u16 cursor;
 
-    ListMenuGetScrollAndRow(sPwSetup.listTaskId, &sPwSetup.scroll, &cursor);
+    if (sPwCarousel.active)
+    {
+        input = PwCarousel_ProcessInput();
+    }
+    else
+    {
+        input = ListMenu_ProcessInput(sPwSetup.listTaskId);
+        ListMenuGetScrollAndRow(sPwSetup.listTaskId, &sPwSetup.scroll, &cursor);
+    }
     if (input == LIST_NOTHING_CHOSEN)
         return;
 
@@ -1596,6 +1846,7 @@ static void Task_PwSetup_HandleInput(u8 taskId)
         // Johto: the same, as Heart & Soul's Prof. Oak (PROF_TEXT, AddBirchSpeechObjects).
         // Clear what the menus left on BG0 first (window borders), or it stays on screen.
         FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
+        PwSetup_FlushBg0Copies();
         CpuFill16(0, (void *)BG_SCREEN_ADDR(GetBgAttribute(0, BG_ATTR_MAPBASEINDEX)), BG_SCREEN_SIZE);
         FreeAllWindowBuffers();
         UnsetBgTilemapBuffer(0); // freed above; InitWindows would otherwise reuse the stale pointer
@@ -1615,6 +1866,7 @@ static void Task_PwSetup_FadeToRowan(u8 taskId)
     if (gPaletteFade.active)
         return;
     FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
+    PwSetup_FlushBg0Copies();
     CpuFill16(0, (void *)BG_SCREEN_ADDR(GetBgAttribute(0, BG_ATTR_MAPBASEINDEX)), BG_SCREEN_SIZE);
     FreeAllWindowBuffers();
     UnsetBgTilemapBuffer(0);
