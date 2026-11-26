@@ -128,6 +128,13 @@ sprite chosen at setup.
   follow-up scripts, the other warp kinds, money, party queries/selection and clock commands are handled.
   Set `BW_TRACE_ON` to 1 in `src/bw_script.c` to log scripts and skipped commands to the browser console.
   Checked: the opening (room scene with the camera pan, gift box -> starter screen -> Bianca's battle).
+- **Movement and the scene check:** BW's movement codes come from one table, `bw/movement.py` (Gen 4's
+  codes, which BW's own scripts match), generating `src/data/bw_movement.h`. Each import simulates every BW
+  scene's walks on our maps (`bw/scenes.py`) and writes `tools/pokemon_world/bw_scene_report.txt`; rerun it
+  alone with `PYTHONPATH=~/pylib:tools/pokemon_world/bw python3 tools/pokemon_world/bw/scenes.py <rom>`.
+  Now: 5.7% of 4394 steps land on blocked tiles (mostly by design: exits, counters); wrong direction
+  orders give 18-43%, so the rules are right. Known: BW's command 0x241 (adds Bianca/Cheren as actors
+  240/250 for the walk out of Nuvema and Route 1's first scene) isn't handled yet.
 - **Trainer eye music:** a Unova trainer's `encounterMusic` is the index of BW's eye theme (from BW's class
   table), played by `GetUnovaTrainerEyeMusic`.
 - **Not yet:** sound effects in BW scripts (SEPlay), Call3DDemo cutscenes (e.g. N's castle), building/door and

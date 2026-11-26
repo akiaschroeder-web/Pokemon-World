@@ -39,6 +39,8 @@ import vmdata      # noqa: E402
 import trainers    # noqa: E402
 import items as bw_items  # noqa: E402
 import music as bw_music  # noqa: E402
+import movement as bw_movement  # noqa: E402
+import scenes as bw_scenes  # noqa: E402
 import export3d    # noqa: E402
 import nitro       # noqa: E402
 
@@ -551,6 +553,8 @@ def main():
     people = People(rom, tr_consts, btypes, trainers.texts(rom, decode_text), item_of)
     trainers.write_defeat_texts(people.texts)
     add_people(rom, zones, by_zone, people)
+    bw_movement.write_c()
+    check_scenes(rom, zones, by_zone, places)
     # Black's music: every zone's songs (four seasons each) and the ones our code plays in Unova
     seq_names = bw_music.names(rom.rom)
     want, seasonal = [], []
@@ -581,6 +585,47 @@ def main():
 
 FACE = {0: 'MOVEMENT_TYPE_FACE_UP', 1: 'MOVEMENT_TYPE_FACE_DOWN', 2: 'MOVEMENT_TYPE_FACE_LEFT', 3: 'MOVEMENT_TYPE_FACE_RIGHT'}
 NPC_LIMIT = 60     # object event templates per map (Emerald allows 64)
+
+
+def check_scenes(rom, zones, by_zone, places):
+    """Simulates every BW scene's movements on our maps (bw/scenes.py): a step into a wall means the
+    conversion of a command or a position is off."""
+    def blocked(zid, x, z):
+        for gm in by_zone.get(zid, []):
+            if gm.contains(x, z):
+                lx, ly = gm.local(x, z)
+                t = gm.tiles[ly][lx]
+                if t[0] in ('door', 'arrow'):
+                    return False
+                return bool(tile_block(*t) & (1 << 10))
+        return None
+    starts, triggers = {}, {}
+    for z in zones:
+        e = rom.narc('a/1/2/5')[z.entities]
+        nf, nn, nw, nt = e[4], e[5], e[6], e[7]
+        for i in range(nn):
+            r = e[8 + 0x14 * nf + 0x24 * i:8 + 0x14 * nf + 0x24 * (i + 1)]
+            if not u32(r, 0x18):
+                starts.setdefault(z.id, {})[u16(r, 0)] = (u16(r, 0x1C), u16(r, 0x1E))
+        o = 8 + 0x14 * nf + 0x24 * nn + 0x14 * nw
+        for i in range(nt):
+            r = e[o + 0x16 * i:o + 0x16 * (i + 1)]
+            gx, gz = struct.unpack_from('<hh', r, 10)
+            triggers.setdefault(z.id, {}).setdefault(u16(r, 0), (gx, gz))
+    names = {z.id: places[z.place] if z.place < len(places) else '' for z in zones}
+    bw_scenes.check(rom, zones, blocked, starts, triggers, names)
+    # the same inputs, for running the check on its own while working on it (bw/scenes.py main)
+    grid = {}
+    for z in zones:
+        for gm in by_zone.get(z.id, []):
+            x0, y0 = gm.rect[0] * 32, gm.rect[1] * 32
+            for ly, row in enumerate(gm.tiles):
+                for lx, t in enumerate(row):
+                    grid[(z.id, x0 + lx, y0 + ly)] = blocked(z.id, x0 + lx, y0 + ly)
+    import pickle
+    with open(os.path.expanduser('~/.cache_bw_scenes.pickle'), 'wb') as f:
+        pickle.dump({'grid': grid, 'starts': starts, 'triggers': triggers, 'names': names,
+                     'zones': [(z.id, z.scripts) for z in zones]}, f)
 
 
 ZONE_MUSIC = {}               # BW zone -> its (spring) song, MUS_BW_*

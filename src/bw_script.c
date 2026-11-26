@@ -365,41 +365,22 @@ static u8 LocalIdOf(u16 actor)
     return 0;
 }
 
-// BW movement codes (up, down, left, right order) -> ours (down, up, left, right).
-static u8 MovementAction(u16 code, u8 *count)
+#include "data/bw_movement.h"   // sBwMoveCodes: BW movement code -> ours (bw/movement.py)
+
+// appends a wait of the given number of frames to a movement list
+static u32 AddDelay(u8 *moves, u32 n, u32 frames)
 {
-    static const u8 sDir[4] = {1, 0, 2, 3};
-    u8 d = sDir[code & 3];
-    *count = 1;
-    if (code <= 0x03)
-        return MOVEMENT_ACTION_FACE_DOWN + d;
-    if (code <= 0x07)
-        return MOVEMENT_ACTION_WALK_SLOW_DOWN + d;
-    if (code <= 0x0B)
-        return MOVEMENT_ACTION_WALK_NORMAL_DOWN + d;
-    if (code <= 0x0F)
-        return MOVEMENT_ACTION_WALK_FAST_DOWN + d;
-    if (code <= 0x13)
-        return MOVEMENT_ACTION_WALK_FASTER_DOWN + d;
-    if (code <= 0x17)
-        return MOVEMENT_ACTION_PLAYER_RUN_DOWN + d;
-    if (code <= 0x1B)
-        return MOVEMENT_ACTION_WALK_IN_PLACE_SLOW_DOWN + d;
-    if (code <= 0x1F)
-        return MOVEMENT_ACTION_WALK_IN_PLACE_NORMAL_DOWN + d;
-    if (code <= 0x27)
-        return MOVEMENT_ACTION_WALK_IN_PLACE_FAST_DOWN + d;
-    if (code <= 0x2B)
-        return MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN + d;
-    if (code <= 0x33)
-        return MOVEMENT_ACTION_JUMP_DOWN + d;
-    if (code <= 0x3B)
-        return MOVEMENT_ACTION_JUMP_2_DOWN + d;
-    if (code == 0x4B)
-        return MOVEMENT_ACTION_EMOTE_EXCLAMATION_MARK;
-    if (code == 0x45)
-        return MOVEMENT_ACTION_SET_INVISIBLE;
-    return MOVEMENT_ACTION_DELAY_4;
+    static const u8 sSteps[] = {16, 8, 4, 2, 1};
+    static const u8 sActs[] = {MOVEMENT_ACTION_DELAY_16, MOVEMENT_ACTION_DELAY_8, MOVEMENT_ACTION_DELAY_4,
+                               MOVEMENT_ACTION_DELAY_2, MOVEMENT_ACTION_DELAY_1};
+    u32 k;
+    for (k = 0; k < ARRAY_COUNT(sSteps) && n < 63; k++)
+        while (frames >= sSteps[k] && n < 63)
+        {
+            moves[n++] = sActs[k];
+            frames -= sSteps[k];
+        }
+    return n;
 }
 
 static void StartMovement(u16 actor, const u8 *list, u32 limit)
@@ -407,30 +388,31 @@ static void StartMovement(u16 actor, const u8 *list, u32 limit)
     u32 n = 0, i;
     u8 localId = LocalIdOf(actor);
     u8 *moves = localId ? MoveListFor(localId) : sMoveLists[BW_MOVE_SLOTS - 1];
-    while (limit >= 4 && n < 64 - 1)
+    while (limit >= 4 && n < 63)
     {
         u16 code = list[0] | (list[1] << 8);
         u16 count = list[2] | (list[3] << 8);
-        u8 per;
+        const struct BwMoveCode *c;
         if (code == 0xFE)
             break;
-        if (code >= 0x00 && code <= 0x3B)
-        {
-            u8 a = MovementAction(code, &per);
-            for (i = 0; i < (count ? count : 1) && n < 64 - 1; i++)
-                moves[n++] = a;
-        }
-        else if (code == 0x4B || code == 0x45)
-        {
-            moves[n++] = MovementAction(code, &per);
-        }
-        else
-        {
-            for (i = 0; i < count && n < 64 - 1; i++)
-                moves[n++] = MOVEMENT_ACTION_DELAY_1;   // waits (counted in frames)
-        }
         list += 4;
         limit -= 4;
+        if (code > 0xFF)
+            continue;
+        c = &sBwMoveCodes[code];
+        switch (c->kind)
+        {
+        case 1: // a step, turn or jump: count times
+            for (i = 0; i < (count ? count : 1) && n < 63; i++)
+                moves[n++] = c->action;
+            break;
+        case 2:
+            moves[n++] = c->action;
+            break;
+        case 3: // wait: frames x count
+            n = AddDelay(moves, n, c->frames * (count ? count : 1));
+            break;
+        }
     }
     moves[n] = MOVEMENT_ACTION_STEP_END;
     if (localId == 0 || n == 0)
