@@ -1211,6 +1211,14 @@ static u32 GetBgType(u32 bg)
 
 bool32 IsTileMapOutsideWram(u32 bg)
 {
+#ifdef PORTABLE
+    // Web/PC build: buffers live wherever the program's memory puts them, not at GBA
+    // addresses. Once the program grew past 0x03008000 (48 MB) every tilemap buffer
+    // counted as "outside WRAM", and no room or text box was ever copied to the screen.
+    if (sGpuBgConfigs2[bg].tilemap == NULL)
+        return TRUE;
+    return FALSE;
+#endif
     if (sGpuBgConfigs2[bg].tilemap > (void *)IWRAM_END)
         return TRUE;
     else if (sGpuBgConfigs2[bg].tilemap == NULL)
