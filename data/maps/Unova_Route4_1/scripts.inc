@@ -21,7 +21,7 @@ Unova_Route4_1_EventScript_Npc2_Defeat:
 	.string "The guidebook does not tell me\nhow to win.$"
 
 Unova_Route4_1_EventScript_Npc2_Post:
-	.string "According to the popular guidebook,\nNimbasa City is an entertainment city.\l\lIt must be full of fun!$"
+	.string "According to the popular guidebook,\nNimbasa City is an entertainment city.\lIt must be full of fun!$"
 
 Unova_Route4_1_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_WAYLON_39, Unova_Route4_1_EventScript_Npc3_Intro, Unova_Route4_1_EventScript_Npc3_Defeat
@@ -29,13 +29,13 @@ Unova_Route4_1_EventScript_Npc3::
 	end
 
 Unova_Route4_1_EventScript_Npc3_Intro:
-	.string "The fun of traveling around the world\nis having serious battles\l\lwith a lot of Pokémon I meet!$"
+	.string "The fun of traveling around the world\nis having serious battles\lwith a lot of Pokémon I meet!$"
 
 Unova_Route4_1_EventScript_Npc3_Defeat:
-	.string "Wooo! You're a top-class Trainer,\nthe best in the world!\l\l...But what do I know?$"
+	.string "Wooo! You're a top-class Trainer,\nthe best in the world!\l...But what do I know?$"
 
 Unova_Route4_1_EventScript_Npc3_Post:
-	.string "As long as my Pokémon are with me,\nI can battle Trainers all over the world!\pThe world is so big! Woooooo!\nThat's really exciting!$"
+	.string "As long as my Pokémon are with me, I can\nbattle Trainers all over the world!\pThe world is so big! Woooooo!\nThat's really exciting!$"
 
 Unova_Route4_1_EventScript_Npc4::
 	finditem ITEM_SUPER_POTION, 1
@@ -67,7 +67,7 @@ Unova_Route4_1_EventScript_Npc7_Defeat:
 	.string "My first battle...\nAnd I lost...$"
 
 Unova_Route4_1_EventScript_Npc7_Post:
-	.string "To tell you the truth,\nI just left Castelia City yesterday.\l\lI've just started Pokémon battling, too.$"
+	.string "To tell you the truth, I just left\nCastelia City yesterday. I've just\lstarted Pokémon battling, too.$"
 
 Unova_Route4_1_EventScript_Npc8::
 	bwscript 326, 1

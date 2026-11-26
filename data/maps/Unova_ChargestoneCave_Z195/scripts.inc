@@ -53,13 +53,13 @@ Unova_ChargestoneCave_Z195_EventScript_Npc10::
 	end
 
 Unova_ChargestoneCave_Z195_EventScript_Npc10_Intro:
-	.string "This cave is full of rocks\ngenerating electricity!\l\lThe electricity is charging me up!$"
+	.string "This cave is full of rocks\ngenerating electricity!\lThe electricity is charging me up!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc10_Defeat:
 	.string "Yowch, a lightning spark!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc10_Post:
-	.string "The sources of my energy are\nmy precious Pokémon!\l\lThis has been scientifically proven!!$"
+	.string "The sources of my energy are\nmy precious Pokémon!\lThis has been scientifically proven!!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc11::
 	trainerbattle_single TRAINER_BW_JARED_105, Unova_ChargestoneCave_Z195_EventScript_Npc11_Intro, Unova_ChargestoneCave_Z195_EventScript_Npc11_Defeat
@@ -73,7 +73,7 @@ Unova_ChargestoneCave_Z195_EventScript_Npc11_Defeat:
 	.string "I see! I see, I see!\nI see, I see, I see, I see!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc11_Post:
-	.string "They say that there is a strong Champion\nin the Pokémon League.\pSomeday, I will be able to challenge\nthe Pokémon League!$"
+	.string "They say that there is a strong\nChampion in the Pokémon League.\pSomeday, I will be able to challenge\nthe Pokémon League!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc12::
 	trainerbattle_single TRAINER_BW_NAOKO_117, Unova_ChargestoneCave_Z195_EventScript_Npc12_Intro, Unova_ChargestoneCave_Z195_EventScript_Npc12_Defeat
@@ -109,7 +109,7 @@ Unova_ChargestoneCave_Z195_EventScript_Npc14::
 	end
 
 Unova_ChargestoneCave_Z195_EventScript_Npc14_Intro:
-	.string "I'm a Hiker exploring caves.\nI will teach you the harshness of life\l\land the difficulty of Pokémon battles.$"
+	.string "I'm a Hiker exploring caves.\nI will teach you the harshness of life\land the difficulty of Pokémon battles.$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc14_Defeat:
 	.string "Well...\nGuess I'll take a hike.$"
@@ -137,7 +137,7 @@ Unova_ChargestoneCave_Z195_EventScript_Npc17_Defeat:
 	.string "Whether I win or lose!\nMysteries only deepen!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Npc17_Post:
-	.string "I don't think I can solve\nall mysteries by myself!\pHowever! If I can discover something new\nand help someone, I will be satisfied!$"
+	.string "I don't think I can solve\nall mysteries by myself!\pHowever! If I can discover something\nnew and help someone, I will be\lsatisfied!$"
 
 Unova_ChargestoneCave_Z195_EventScript_Trigger0::
 	bwscript 195, 1

@@ -14,7 +14,7 @@ Unova_P2Laboratory_EventScript_Npc0_Defeat:
 	.string "I lost, but I am happy!\nBecause I have learned a few things!$"
 
 Unova_P2Laboratory_EventScript_Npc0_Post:
-	.string "Thinking about being happy\nand making happiness a reality...\l\lThis is also science.$"
+	.string "Thinking about being happy\nand making happiness a reality...\lThis is also science.$"
 
 Unova_P2Laboratory_EventScript_Npc1::
 	finditem ITEM_TM24, 1

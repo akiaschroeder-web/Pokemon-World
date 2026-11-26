@@ -16,7 +16,7 @@ Unova_Route15_EventScript_Npc2::
 	end
 
 Unova_Route15_EventScript_Npc2_Intro:
-	.string "Yoo-hoo, Pokémon!\nYoo-hoo, Pokémonnnn!\l\lYoo-hoo, are you a Trainer?!$"
+	.string "Yoo-hoo, Pokémon!\nYoo-hoo, Pokémonnnn!\lYoo-hoo, are you a Trainer?!$"
 
 Unova_Route15_EventScript_Npc2_Defeat:
 	.string "A tough Trainer,\nand a tough Pokémon. I lost.$"
@@ -44,7 +44,7 @@ Unova_Route15_EventScript_Npc4::
 	end
 
 Unova_Route15_EventScript_Npc4_Intro:
-	.string "What's wrong, Pokémon Trainer?\pAre you lost in your journey?\nNo... In your life? At times like that,\l\lif you fight, you'll know!$"
+	.string "What's wrong, Pokémon Trainer?\pAre you lost in your journey?\nNo... In your life? At times like that,\lif you fight, you'll know!$"
 
 Unova_Route15_EventScript_Npc4_Defeat:
 	.string "You have no doubts\nabout your way of fighting!$"
@@ -58,7 +58,7 @@ Unova_Route15_EventScript_Npc5::
 	end
 
 Unova_Route15_EventScript_Npc5_Intro:
-	.string "Se ripenso a quante montagne\nho attraversato in lungo e in largo,\l\lmi viene tanta voglia di una lotta.$"
+	.string "Se ripenso a quante montagne\nho attraversato in lungo e in largo,\lmi viene tanta voglia di una lotta.$"
 
 Unova_Route15_EventScript_Npc5_Defeat:
 	.string "Vengono in mente altre lotte in\ncui ho perso proprio come adesso!$"
@@ -78,7 +78,7 @@ Unova_Route15_EventScript_Npc6_Defeat:
 	.string "Your Pokémon are also cute,\nbut my Pokémon are charming!$"
 
 Unova_Route15_EventScript_Npc6_Post:
-	.string "Listen. My love for my Pokémon\nis the best in the world.\l\lNobody can beat it.$"
+	.string "Listen. My love for my Pokémon\nis the best in the world.\lNobody can beat it.$"
 
 Unova_Route15_EventScript_Npc7::
 	finditem ITEM_UP_GRADE, 1

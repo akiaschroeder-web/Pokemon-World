@@ -185,12 +185,15 @@ def to_script_string(codes, buffers=False):
     """BW text (decoded code units) -> a pokeemerald .string body, pages and lines like BW's."""
     out, line, i = '', 0, 0
     quote_open = False
+    scrolled = False      # the last thing was BW scroll code (its line break follows)
     while i < len(codes):
         c = codes[i]
         if c == 0xFFFF:
             break
         if c == 0xFFFE:
-            if not out.endswith('\\p'):        # BW puts a line break after a page break; ours doesn't need one
+            if scrolled:                       # BW's scroll code comes just before its line break: one \l
+                scrolled = False
+            elif not out.endswith('\\p'):      # BW puts a line break after a page break; ours doesn't need one
                 out += '\\n' if line == 0 else '\\l'
                 line += 1
         elif c == 0xF000 and i + 2 < len(codes):
@@ -204,6 +207,8 @@ def to_script_string(codes, buffers=False):
                 if out.endswith('\\n') or out.endswith('\\l'):
                     out = out[:-2]
                 out += '\\l'
+                line += 1
+                scrolled = True
             elif buffers and 0x0100 <= code < 0x0300 and n:
                 out += '{STR_VAR_%d}' % min(3, codes[i + 3] + 1)   # word buffer (name, item, number...)
             elif code in (0x0100, 0x0101):      # trainer (player) name
@@ -212,6 +217,7 @@ def to_script_string(codes, buffers=False):
         elif 0xD800 <= c <= 0xDFFF:
             pass
         else:
+            scrolled = False
             ch = chr(c)
             if ch == '’':
                 ch = "'"
@@ -230,4 +236,66 @@ def to_script_string(codes, buffers=False):
         i += 1
     while out.endswith('\\p') or out.endswith('\\n') or out.endswith('\\l'):
         out = out[:-2]
-    return out
+    return fit_text(out)
+
+
+# --- fitting BW's lines into our text boxes ---
+# BW's lines are laid out for the DS's wider box. A page with a line wider than ours (field message
+# box and battle box: FONT_NORMAL, 208 pixels to leave room for the "more" arrow) is wrapped again:
+# first line break \n, then \l (scroll), like ours.
+
+TEXT_WIDTH = 208
+TOKEN_WIDTH = {'PLAYER': 42, 'STR_VAR_1': 60, 'STR_VAR_2': 60, 'STR_VAR_3': 60}
+_widths = None
+
+
+def _char_widths():
+    """{character: pixel width} from charmap.txt and FONT_NORMAL's widths (src/fonts.c)."""
+    global _widths
+    if _widths is None:
+        import re as _re
+        here = os.path.dirname(os.path.abspath(__file__))
+        root = os.path.normpath(os.path.join(here, '..', '..', '..'))
+        table = _re.search(r'gFontNormalLatinGlyphWidths\[\] = \{(.*?)\};',
+                           open(os.path.join(root, 'src/fonts.c'), encoding='utf-8').read(), _re.S).group(1)
+        widths = [int(x) for x in _re.findall(r'\b\d+\b', table)]
+        _widths = {}
+        for line in open(os.path.join(root, 'charmap.txt'), encoding='utf-8'):
+            m = _re.match(r"^'(.+)'\s*=\s*([0-9A-Fa-f]{2})\s*$", line.strip())
+            if m and len(m.group(1)) == 1 and m.group(1) not in _widths:
+                code = int(m.group(2), 16)
+                if code < len(widths):
+                    _widths[m.group(1)] = widths[code]
+    return _widths
+
+
+def text_width(line):
+    w, i, cw = 0, 0, _char_widths()
+    while i < len(line):
+        if line[i] == '{':
+            j = line.index('}', i)
+            w += TOKEN_WIDTH.get(line[i + 1:j], 0)
+            i = j + 1
+            continue
+        w += cw.get(line[i], 6)
+        i += 1
+    return w
+
+
+def fit_text(s):
+    pages = s.split('\\p')
+    for k, page in enumerate(pages):
+        lines = page.replace('\\l', '\\n').split('\\n')
+        if all(text_width(l) <= TEXT_WIDTH for l in lines):
+            continue
+        out, cur = [], ''
+        for word in ' '.join(lines).split():
+            trial = word if not cur else cur + ' ' + word
+            if cur and text_width(trial) > TEXT_WIDTH:
+                out.append(cur)
+                cur = word
+            else:
+                cur = trial
+        out.append(cur)
+        pages[k] = out[0] + ''.join(('\\n' if n == 1 else '\\l') + l for n, l in enumerate(out[1:], 1))
+    return '\\p'.join(pages)

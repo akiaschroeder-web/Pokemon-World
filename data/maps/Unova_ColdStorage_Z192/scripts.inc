@@ -26,7 +26,7 @@ Unova_ColdStorage_Z192_EventScript_Npc2::
 	end
 
 Unova_ColdStorage_Z192_EventScript_Npc2_Intro:
-	.string "The best Trainer of Ice-type Pokémon\nin the Cold Storage...\l\lThat's me!$"
+	.string "The best Trainer of Ice-type Pokémon\nin the Cold Storage...\lThat's me!$"
 
 Unova_ColdStorage_Z192_EventScript_Npc2_Defeat:
 	.string "Oh, no... I will train even harder\nat the Icirrus Gym.$"
@@ -58,7 +58,7 @@ Unova_ColdStorage_Z192_EventScript_Npc6_Defeat:
 	.string "How we struggle in vain at the end\nalso shows how clever humans are!$"
 
 Unova_ColdStorage_Z192_EventScript_Npc6_Post:
-	.string "I'll tell you something clever.\pIf you use a Fire-type move on a Pokémon\nthat is frozen solid, the ice will melt!$"
+	.string "I'll tell you something clever.\pIf you use a Fire-type move on a\nPokémon that is frozen solid, the ice\lwill melt!$"
 
 Unova_ColdStorage_Z192_EventScript_Npc7::
 	trainerbattle_single TRAINER_BW_FILIPE_73, Unova_ColdStorage_Z192_EventScript_Npc7_Intro, Unova_ColdStorage_Z192_EventScript_Npc7_Defeat
@@ -72,7 +72,7 @@ Unova_ColdStorage_Z192_EventScript_Npc7_Defeat:
 	.string "Oh, no!$"
 
 Unova_ColdStorage_Z192_EventScript_Npc7_Post:
-	.string "Some Pokémon grow stronger\nwhen they get colder,\l\lwhile some Pokémon love hot places.\pThat's right! Everyone is different!\nEvery Pokémon is different!$"
+	.string "Some Pokémon grow stronger\nwhen they get colder,\lwhile some Pokémon love hot places.\pThat's right! Everyone is different!\nEvery Pokémon is different!$"
 
 Unova_ColdStorage_Z192_EventScript_Npc8::
 	trainerbattle_single TRAINER_BW_GLENN_74, Unova_ColdStorage_Z192_EventScript_Npc8_Intro, Unova_ColdStorage_Z192_EventScript_Npc8_Defeat

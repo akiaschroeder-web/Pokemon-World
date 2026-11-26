@@ -20,13 +20,13 @@ Unova_ChargestoneCave_Z196_EventScript_Npc3::
 	end
 
 Unova_ChargestoneCave_Z196_EventScript_Npc3_Intro:
-	.string "Pokémon living in this Chargestone Cave\nare so beautiful.\l\lBecause they are free from people.$"
+	.string "Pokémon living in this Chargestone Cave\nare so beautiful.\lBecause they are free from people.$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc3_Defeat:
 	.string "Oh, my! No, no.\nPlasmaaaa!$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc3_Post:
-	.string "It's bad for ordinary Trainers like you\nto use Pokémon.\pIt's good for us members of Team Plasma\nto use Pokémon!$"
+	.string "It's bad for ordinary Trainers like you\nto use Pokémon.\pIt's good for us members of Team\nPlasma to use Pokémon!$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_GRUNT_298, Unova_ChargestoneCave_Z196_EventScript_Npc4_Intro, Unova_ChargestoneCave_Z196_EventScript_Npc4_Defeat
@@ -40,7 +40,7 @@ Unova_ChargestoneCave_Z196_EventScript_Npc4_Defeat:
 	.string "Argh! I can't believe\nI lost...$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc4_Post:
-	.string "Ghetsis of the Seven Sages supports\nour king, and Ghetsis has\l\lthree subordinates...\l\lThey are the Shadow Triad!$"
+	.string "Ghetsis of the Seven Sages supports\nour king, and Ghetsis has\lthree subordinates...\lThey are the Shadow Triad!$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_GRUNT_299, Unova_ChargestoneCave_Z196_EventScript_Npc5_Intro, Unova_ChargestoneCave_Z196_EventScript_Npc5_Defeat
@@ -82,7 +82,7 @@ Unova_ChargestoneCave_Z196_EventScript_Npc7_Defeat:
 	.string "...I see.\nYou're very good at using Pokémon.$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc7_Post:
-	.string "Because they use Pokémon, people hold\ncompetitions to sort out the strong from\l\lthe weak...\pIs this fair? Is this right?\nAre Pokémon just the Trainers' tools?$"
+	.string "Because they use Pokémon, people hold\ncompetitions to sort out the strong\lfrom the weak...\pIs this fair? Is this right?\nAre Pokémon just the Trainers' tools?$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc8::
 	trainerbattle_single TRAINER_BW_WAYNE_150, Unova_ChargestoneCave_Z196_EventScript_Npc8_Intro, Unova_ChargestoneCave_Z196_EventScript_Npc8_Defeat
@@ -111,7 +111,7 @@ Unova_ChargestoneCave_Z196_EventScript_Npc10_Intro:
 	.string "You... You are the Trainer\nthat my lord N is worried about!$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc10_Defeat:
-	.string "You may have beaten me, but you're still no\nbetter than other Trainers around here.$"
+	.string "You may have beaten me, but you're\nstill no better than other Trainers\laround here.$"
 
 Unova_ChargestoneCave_Z196_EventScript_Npc10_Post:
 	.string "My lord N grew up with Pokémon...\pHe thinks about Pokémon more than\nanybody else!$"

@@ -25,7 +25,7 @@ Unova_TwistMountain_Z199_EventScript_Npc3::
 	end
 
 Unova_TwistMountain_Z199_EventScript_Npc3_Intro:
-	.string "Being with Pokémon is natural.\nHaving a Pokémon battle is natural.\l\lWhy don't we test whether that is true?$"
+	.string "Being with Pokémon is natural. Having a\nPokémon battle is natural. Why don't we\ltest whether that is true?$"
 
 Unova_TwistMountain_Z199_EventScript_Npc3_Defeat:
 	.string "We are happy to be with our Pokémon.\nThat's why we have battles!$"
@@ -43,7 +43,7 @@ Unova_TwistMountain_Z199_EventScript_Npc5::
 	end
 
 Unova_TwistMountain_Z199_EventScript_Npc5_Intro:
-	.string "At work, we do our best.\nThat is my, and my Pokémon's, way of life!$"
+	.string "At work, we do our best. That is my, and\nmy Pokémon's, way of life!$"
 
 Unova_TwistMountain_Z199_EventScript_Npc5_Defeat:
 	.string "We did our best,\nand this is the result?!$"

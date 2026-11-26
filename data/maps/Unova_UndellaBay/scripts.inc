@@ -8,7 +8,7 @@ Unova_UndellaBay_EventScript_Npc0::
 	end
 
 Unova_UndellaBay_EventScript_Npc0_Intro:
-	.string "Seeing a Pokémon use its best moves\nagainst another Pokémon\l\lis really an adventure!$"
+	.string "Seeing a Pokémon use its best moves\nagainst another Pokémon\lis really an adventure!$"
 
 Unova_UndellaBay_EventScript_Npc0_Defeat:
 	.string "The adventure is over already.$"
@@ -39,7 +39,7 @@ Unova_UndellaBay_EventScript_Npc2_Intro:
 	.string "Oh? Did you come here to see\nCynthia in a bathing suit?$"
 
 Unova_UndellaBay_EventScript_Npc2_Defeat:
-	.string "You should put on a bathing suit and swim\ninstead of riding on a Pokémon!$"
+	.string "You should put on a bathing suit and\nswim instead of riding on a Pokémon!$"
 
 Unova_UndellaBay_EventScript_Npc2_Post:
 	.string "I heard that Cynthia swims secretly\nwhen nobody else is around.\pAnd I heard she is great!\nJust great!$"
@@ -81,7 +81,7 @@ Unova_UndellaBay_EventScript_Npc5_Intro:
 	.string "My Pokémon and I are always swimming.\nOf course, I can battle while swimming!$"
 
 Unova_UndellaBay_EventScript_Npc5_Defeat:
-	.string "I lost. But I'm still cool, because not many\npeople can say they battled while swimming!$"
+	.string "I lost. But I'm still cool, because not\nmany people can say they battled while\lswimming!$"
 
 Unova_UndellaBay_EventScript_Npc5_Post:
 	.string "They say a temple sank\nto the ocean floor in Undella!$"

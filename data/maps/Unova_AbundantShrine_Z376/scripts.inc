@@ -53,7 +53,7 @@ Unova_AbundantShrine_Z376_EventScript_Npc9_Intro:
 	.string "This is our playground!\pGreat Landorus, watch out for us!$"
 
 Unova_AbundantShrine_Z376_EventScript_Npc9_Defeat:
-	.string "Wahaha!\nYour Pokémon looks like it is having fun!$"
+	.string "Wahaha! Your Pokémon looks like it is\nhaving fun!$"
 
 Unova_AbundantShrine_Z376_EventScript_Npc9_Post:
 	.string "Great Landorus...\nIs it a strong and kind Pokémon?$"
@@ -92,13 +92,13 @@ Unova_AbundantShrine_Z376_EventScript_Npc12::
 	end
 
 Unova_AbundantShrine_Z376_EventScript_Npc12_Intro:
-	.string "I got tired of Pokémon battles\nwith the same people,\l\lso I want to have a battle with you!$"
+	.string "I got tired of Pokémon battles\nwith the same people,\lso I want to have a battle with you!$"
 
 Unova_AbundantShrine_Z376_EventScript_Npc12_Defeat:
 	.string "Wow! Surprising!\nThe move just now was great!$"
 
 Unova_AbundantShrine_Z376_EventScript_Npc12_Post:
-	.string "The Pokémon called Burmy\ncan change their forms\l\ldepending on where they battle!\l\lIsn't that great??$"
+	.string "The Pokémon called Burmy\ncan change their forms\ldepending on where they battle!\lIsn't that great??$"
 
 Unova_AbundantShrine_Z376_EventScript_Sign0::
 	bwscript 376, 2

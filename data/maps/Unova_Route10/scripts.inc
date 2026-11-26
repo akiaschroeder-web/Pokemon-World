@@ -18,7 +18,7 @@ Unova_Route10_EventScript_Npc1_Defeat:
 	.string "There is an end\nfor this battle!$"
 
 Unova_Route10_EventScript_Npc1_Post:
-	.string "It's hard to have no end,\nbut if you change your perspective,\l\lyou'll see we can enjoy them forever!$"
+	.string "It's hard to have no end,\nbut if you change your perspective,\lyou'll see we can enjoy them forever!$"
 
 Unova_Route10_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_COREY_109, Unova_Route10_EventScript_Npc2_Intro, Unova_Route10_EventScript_Npc2_Defeat
@@ -26,13 +26,13 @@ Unova_Route10_EventScript_Npc2::
 	end
 
 Unova_Route10_EventScript_Npc2_Intro:
-	.string "Mua-ha-ha! I will leave here\nfor Victory Road.\l\lIt's my hobby to win against Trainers!$"
+	.string "Mua-ha-ha! I will leave here\nfor Victory Road.\lIt's my hobby to win against Trainers!$"
 
 Unova_Route10_EventScript_Npc2_Defeat:
 	.string "I can't believe this!$"
 
 Unova_Route10_EventScript_Npc2_Post:
-	.string "Rather than enjoying defeating someone,\nshould I aim higher...?\pI guess the Pokémon League is the place\nto find a better class of challengers.$"
+	.string "Rather than enjoying defeating\nsomeone, should I aim higher...?\pI guess the Pokémon League is the\nplace to find a better class of\lchallengers.$"
 
 Unova_Route10_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_BRET_193, Unova_Route10_EventScript_Npc3_Intro, Unova_Route10_EventScript_Npc3_Defeat
@@ -40,7 +40,7 @@ Unova_Route10_EventScript_Npc3::
 	end
 
 Unova_Route10_EventScript_Npc3_Intro:
-	.string "Victory Road!\pI'll test myself by fighting against you\nto see if I am ready to climb it!$"
+	.string "Victory Road!\pI'll test myself by fighting against\nyou to see if I am ready to climb it!$"
 
 Unova_Route10_EventScript_Npc3_Defeat:
 	.string "Agh...\nWas it too early for me?!$"
@@ -60,7 +60,7 @@ Unova_Route10_EventScript_Npc4_Defeat:
 	.string "The one who survived\nfierce battles was you?!$"
 
 Unova_Route10_EventScript_Npc4_Post:
-	.string "My heart is not broken.\pI will survive further fierce battles\nwith my Pokémon,\l\land I will become much stronger.$"
+	.string "My heart is not broken.\pI will survive further fierce battles\nwith my Pokémon,\land I will become much stronger.$"
 
 Unova_Route10_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_CHEYENNE_99, Unova_Route10_EventScript_Npc5_Intro, Unova_Route10_EventScript_Npc5_Defeat

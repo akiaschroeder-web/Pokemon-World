@@ -505,7 +505,12 @@ def write(rom, seq_names, first_id):
         is_me = name.startswith('SEQ_ME_')
         mvl = max(24, min(127, round(127 * 0.38 / max(level, 0.02))))
         cfg.append('%s.mid: -E -R0 -G_%s -V%03d\n' % (label, group, mvl))
-        table.append('\tsong %s, %s, 0\n' % (label, 'MUSIC_PLAYER_SE2' if name.startswith('SEQ_SE_') else 'MUSIC_PLAYER_BGM'))
+        # fanfares (ME) play on the fanfare player like ours, so the BGM player keeps the map's song
+        # paused under them and it carries on afterwards (src/sound.c Task_Fanfare)
+        if is_me:
+            table.append('\tsong %s, MUSIC_PLAYER_SE2, 2\n' % label)
+        else:
+            table.append('\tsong %s, %s, 0\n' % (label, 'MUSIC_PLAYER_SE2' if name.startswith('SEQ_SE_') else 'MUSIC_PLAYER_BGM'))
         consts[name] = const
         lengths[const] = frames
     with open('sound/voicegroups/bw.inc', 'w') as f:
@@ -531,6 +536,13 @@ def write(rom, seq_names, first_id):
             c = consts.get(seq)
             if c:
                 f.write('    [%s] = { %s, %d },\n' % (fan, c, min(lengths[c], 420)))
+        f.write('};\n')
+        # every fanfare BW's scripts can play (MEPlay), with its length (src/sound.c PlayBwFanfare)
+        f.write('\n// All of Black\'s fanfares (MEPlay in src/bw_script.c): song, length in frames.\n'
+                'static const struct Fanfare sFanfaresBWAll[] = {\n')
+        for seq, c in consts.items():
+            if seq.startswith('SEQ_ME_'):
+                f.write('    { %s, %d },\n' % (c, min(lengths[c], 420)))   # some loop: at most 7 s, like the badge's
         f.write('};\n')
     print('music: %d of Black\'s songs, %d samples' % (len(consts), len(samples.done)))
     return consts

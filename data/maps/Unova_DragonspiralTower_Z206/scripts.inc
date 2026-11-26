@@ -22,7 +22,7 @@ Unova_DragonspiralTower_Z206_EventScript_Npc1::
 	end
 
 Unova_DragonspiralTower_Z206_EventScript_Npc1_Intro:
-	.string "I've improved my ability\nby fighting strong opponents,\l\lcatching them, and overtaking them!\pYou're strong!\nI'll overtake you at all costs!$"
+	.string "I've improved my ability\nby fighting strong opponents,\lcatching them, and overtaking them!\pYou're strong!\nI'll overtake you at all costs!$"
 
 Unova_DragonspiralTower_Z206_EventScript_Npc1_Defeat:
 	.string "I was far from catching up with you...\nYou are no ordinary person!!$"

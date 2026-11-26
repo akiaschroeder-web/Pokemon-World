@@ -30,13 +30,13 @@ Unova_NacreneCity_Z18_EventScript_Npc4::
 	end
 
 Unova_NacreneCity_Z18_EventScript_Npc4_Intro:
-	.string "I hang around Nacrene Gym all the time.\nPeople call me a bookworm.\pI'll warn you now... I am strong because\nI spend the entire day either\l\lreading books or training Pokémon.$"
+	.string "I hang around Nacrene Gym all the time.\nPeople call me a bookworm.\pI'll warn you now... I am strong because\nI spend the entire day either\lreading books or training Pokémon.$"
 
 Unova_NacreneCity_Z18_EventScript_Npc4_Defeat:
 	.string "I may be a bookworm,\nbut I am not a bug Pokémon.$"
 
 Unova_NacreneCity_Z18_EventScript_Npc4_Post:
-	.string "My first recommendation is a book called\n“Nice to Meet You, Pokémon.“\pThe bookshelves for children's books\nare close to the entrance.$"
+	.string "My first recommendation is a book\ncalled “Nice to Meet You, Pokémon.“\pThe bookshelves for children's books\nare close to the entrance.$"
 
 Unova_NacreneCity_Z18_EventScript_Sign0::
 	bwscript 18, 8

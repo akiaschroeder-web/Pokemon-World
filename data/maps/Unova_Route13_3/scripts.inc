@@ -11,7 +11,7 @@ Unova_Route13_3_EventScript_Npc8_Intro:
 	.string "Our Pokémon make a nice matchup!$"
 
 Unova_Route13_3_EventScript_Npc8_Defeat:
-	.string "Emy: No, I can't believe it!\nHow come you're so strong?\pLin: Our team is the best in the whole world\never! How did you beat us?$"
+	.string "Emy: No, I can't believe it!\nHow come you're so strong?\pLin: Our team is the best in the whole\nworld ever! How did you beat us?$"
 
 Unova_Route13_3_EventScript_Npc8_Post:
 	.string "If Pokémon are good friends,\nthey will be filled with power!$"
@@ -49,7 +49,7 @@ Unova_Route13_3_EventScript_Npc11_Defeat:
 	.string "Uh...\nShocking!!$"
 
 Unova_Route13_3_EventScript_Npc11_Post:
-	.string "...Looking back, when I had\nups and downs, my Pokémon\l\lwere always there for me.$"
+	.string "...Looking back, when I had\nups and downs, my Pokémon\lwere always there for me.$"
 
 Unova_Route13_3_EventScript_Npc19::
 	finditem ITEM_DEEP_SEA_SCALE, 1

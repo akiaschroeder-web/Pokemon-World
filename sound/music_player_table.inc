@@ -1,7 +1,7 @@
 	.equiv TRACK_SIZE, 0x50
 	.equiv NUM_TRACKS_BGM, 16  @ Pokémon World: Pokémon Black's songs use up to 16
 	.equiv NUM_TRACKS_SE1, 3
-	.equiv NUM_TRACKS_SE2, 9
+	.equiv NUM_TRACKS_SE2, 10  @ Pokémon World: fanfares play here; BW's and HGSS's use up to 10
 	.equiv NUM_TRACKS_SE3, 1
 
 	.bss

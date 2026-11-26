@@ -50,13 +50,13 @@ Unova_Route16_EventScript_Npc3::
 	end
 
 Unova_Route16_EventScript_Npc3_Intro:
-	.string "I ride a Bicycle,\nI feel fresh winds,\l\land I win Pokémon battles!$"
+	.string "I ride a Bicycle,\nI feel fresh winds,\land I win Pokémon battles!$"
 
 Unova_Route16_EventScript_Npc3_Defeat:
 	.string "A pleasant wind is carrying a defeat.\n...Now, it is stopping here, though.$"
 
 Unova_Route16_EventScript_Npc3_Post:
-	.string "Most people don't know this,\nbut coming to Nimbasa\l\land riding a Bicycle is very popular.$"
+	.string "Most people don't know this,\nbut coming to Nimbasa\land riding a Bicycle is very popular.$"
 
 Unova_Route16_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_KRISSA_409, Unova_Route16_EventScript_Npc4_Intro, Unova_Route16_EventScript_Npc4_Defeat

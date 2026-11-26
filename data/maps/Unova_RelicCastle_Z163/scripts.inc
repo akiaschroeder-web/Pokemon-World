@@ -30,13 +30,13 @@ Unova_RelicCastle_Z163_EventScript_Npc3::
 	end
 
 Unova_RelicCastle_Z163_EventScript_Npc3_Intro:
-	.string "Pokémon are too good for the likes of\nyou! They are amazing, but putting them\l\lin the hands of foolish Trainers can bring\l\lnothing good!$"
+	.string "Pokémon are too good for the likes of\nyou! They are amazing, but putting them\lin the hands of foolish Trainers can\lbring nothing good!$"
 
 Unova_RelicCastle_Z163_EventScript_Npc3_Defeat:
 	.string "Argh!\nAnnoying!$"
 
 Unova_RelicCastle_Z163_EventScript_Npc3_Post:
-	.string "Me, lose? Here I am, covered in sand,\nthrowing everything I have into it,\l\land I lose? Am I that much of a loser?\pIt should be your loss.\nAnd that's an order!$"
+	.string "Me, lose? Here I am, covered in sand,\nthrowing everything I have into it,\land I lose? Am I that much of a loser?\pIt should be your loss.\nAnd that's an order!$"
 
 Unova_RelicCastle_Z163_EventScript_Trigger0::
 	bwscript 163, 3

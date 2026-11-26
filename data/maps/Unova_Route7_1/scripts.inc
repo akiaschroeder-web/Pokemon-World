@@ -24,7 +24,7 @@ Unova_Route7_1_EventScript_Npc1_Defeat:
 	.string "Impressive! That's what you'd expect\nfrom the owner of a Pokédex!$"
 
 Unova_Route7_1_EventScript_Npc1_Post:
-	.string "I've heard that both Professor Junipers\nwere Backpackers when they were young.$"
+	.string "I've heard that both Professor\nJunipers were Backpackers when they\lwere young.$"
 
 Unova_Route7_1_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_PEDRO_183, Unova_Route7_1_EventScript_Npc3_Intro, Unova_Route7_1_EventScript_Npc3_Defeat
@@ -92,7 +92,7 @@ Unova_Route7_1_EventScript_Npc12_Defeat:
 	.string "I lost, \nbut I won't stop!$"
 
 Unova_Route7_1_EventScript_Npc12_Post:
-	.string "If you walk on a raised walkway, you can\nmove without encountering wild Pokémon.\pBut if you stop to rest for a while,\nyou'll fall!$"
+	.string "If you walk on a raised walkway, you can\nmove without encountering wild\lPokémon.\pBut if you stop to rest for a while,\nyou'll fall!$"
 
 Unova_Route7_1_EventScript_Sign0::
 	bwscript 337, 4

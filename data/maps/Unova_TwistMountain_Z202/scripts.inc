@@ -19,7 +19,7 @@ Unova_TwistMountain_Z202_EventScript_Npc0_Defeat:
 	.string "You got me!\nMy Pokémon thinks so, too!$"
 
 Unova_TwistMountain_Z202_EventScript_Npc0_Post:
-	.string "If Pokémon eat the ore inside a mountain,\na hole grows, and our work speeds up!\pPeople and Pokémon\nwork great together!$"
+	.string "If Pokémon eat the ore inside a\nmountain, a hole grows, and our work\lspeeds up!\pPeople and Pokémon\nwork great together!$"
 
 Unova_TwistMountain_Z202_EventScript_Npc1::
 	trainerbattle_single TRAINER_BW_TEPPEI_110, Unova_TwistMountain_Z202_EventScript_Npc1_Intro, Unova_TwistMountain_Z202_EventScript_Npc1_Defeat
@@ -27,13 +27,13 @@ Unova_TwistMountain_Z202_EventScript_Npc1::
 	end
 
 Unova_TwistMountain_Z202_EventScript_Npc1_Intro:
-	.string "Words are unnecessary!\nI can understand everything if we battle.$"
+	.string "Words are unnecessary! I can\nunderstand everything if we battle.$"
 
 Unova_TwistMountain_Z202_EventScript_Npc1_Defeat:
 	.string "...$"
 
 Unova_TwistMountain_Z202_EventScript_Npc1_Post:
-	.string "Though people and Pokémon\ncannot communicate with words,\l\lwe can communicate with our hearts!$"
+	.string "Though people and Pokémon\ncannot communicate with words,\lwe can communicate with our hearts!$"
 
 Unova_TwistMountain_Z202_EventScript_Npc2::
 	bwscript 202, 2

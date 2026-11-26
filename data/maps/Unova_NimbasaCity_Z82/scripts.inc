@@ -13,13 +13,13 @@ Unova_NimbasaCity_Z82_EventScript_Npc0::
 	end
 
 Unova_NimbasaCity_Z82_EventScript_Npc0_Intro:
-	.string "I've practiced and practiced\nand become a great player!\l\lNow, let's play ball!$"
+	.string "I've practiced and practiced\nand become a great player!\lNow, let's play ball!$"
 
 Unova_NimbasaCity_Z82_EventScript_Npc0_Defeat:
 	.string "Game over!$"
 
 Unova_NimbasaCity_Z82_EventScript_Npc0_Post:
-	.string "Now, practice, practice, practice!\pPracticing over and over is the best way\nto be good at anything!\pMy hard work will make me a great player!$"
+	.string "Now, practice, practice, practice!\pPracticing over and over is the best\nway to be good at anything!\pMy hard work will make me a great player!$"
 
 Unova_NimbasaCity_Z82_EventScript_Npc1::
 	trainerbattle_single TRAINER_BW_TODD_319, Unova_NimbasaCity_Z82_EventScript_Npc1_Intro, Unova_NimbasaCity_Z82_EventScript_Npc1_Defeat
@@ -58,7 +58,7 @@ Unova_NimbasaCity_Z82_EventScript_Npc3::
 	end
 
 Unova_NimbasaCity_Z82_EventScript_Npc3_Intro:
-	.string "The bases loaded with two outs\nin the bottom of the ninth inning...\l\lAfter that... Isn't that obvious?$"
+	.string "The bases loaded with two outs\nin the bottom of the ninth inning...\lAfter that... Isn't that obvious?$"
 
 Unova_NimbasaCity_Z82_EventScript_Npc3_Defeat:
 	.string "Alf: Strike!\nGame over! Yes, the end!\pFred: Ah, my Poké Ball!$"

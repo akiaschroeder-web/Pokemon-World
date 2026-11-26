@@ -8,7 +8,7 @@ Unova_ChallengerSCave_Z353_EventScript_Npc0::
 	end
 
 Unova_ChallengerSCave_Z353_EventScript_Npc0_Intro:
-	.string "If there is a steep cave in the east,\nI go there and train my Pokémon, and\l\lif there is a strong Trainer in the west,\l\lI go there and challenge that Trainer!$"
+	.string "If there is a steep cave in the east,\nI go there and train my Pokémon, and\lif there is a strong Trainer in the west,\lI go there and challenge that Trainer!$"
 
 Unova_ChallengerSCave_Z353_EventScript_Npc0_Defeat:
 	.string "My Pokémon clearly lack\nproper training!!$"
@@ -28,7 +28,7 @@ Unova_ChallengerSCave_Z353_EventScript_Npc1_Defeat:
 	.string "You startled me.\nYou are a person!$"
 
 Unova_ChallengerSCave_Z353_EventScript_Npc1_Post:
-	.string "In the story I know,\nthe legendary Pokémon\l\lwas training its student Pokémon.$"
+	.string "In the story I know,\nthe legendary Pokémon\lwas training its student Pokémon.$"
 
 Unova_ChallengerSCave_Z353_EventScript_Npc2::
 	finditem ITEM_NUGGET, 1

@@ -26,7 +26,7 @@ Unova_Route8_EventScript_Npc2::
 	end
 
 Unova_Route8_EventScript_Npc2_Intro:
-	.string "Mother Nature changes her look\naccording to the seasons...\l\lThat's something I cherish!$"
+	.string "Mother Nature changes her look\naccording to the seasons...\lThat's something I cherish!$"
 
 Unova_Route8_EventScript_Npc2_Defeat:
 	.string "OK!\nYou seem to cherish nature!$"
@@ -40,13 +40,13 @@ Unova_Route8_EventScript_Npc3::
 	end
 
 Unova_Route8_EventScript_Npc3_Intro:
-	.string "If you turn a parasol around,\nit's like a flower blossoming in the rain!$"
+	.string "If you turn a parasol around, it's like a\nflower blossoming in the rain!$"
 
 Unova_Route8_EventScript_Npc3_Defeat:
 	.string "Ack...\nCome on!$"
 
 Unova_Route8_EventScript_Npc3_Post:
-	.string "On rainy days, use a parasol,\nwear a coat, or get wet.\l\lDo as you like!$"
+	.string "On rainy days, use a parasol,\nwear a coat, or get wet.\lDo as you like!$"
 
 Unova_Route8_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_MELITA_163, Unova_Route8_EventScript_Npc4_Intro, Unova_Route8_EventScript_Npc4_Defeat
@@ -54,13 +54,13 @@ Unova_Route8_EventScript_Npc4::
 	end
 
 Unova_Route8_EventScript_Npc4_Intro:
-	.string "The splish-splosh sounds! Those were\nyour footsteps, weren't they?\l\lSo cute!$"
+	.string "The splish-splosh sounds! Those were\nyour footsteps, weren't they?\lSo cute!$"
 
 Unova_Route8_EventScript_Npc4_Defeat:
-	.string "You are so strong--too strong to be cute!$"
+	.string "You are so strong--too strong to be\ncute!$"
 
 Unova_Route8_EventScript_Npc4_Post:
-	.string "According to footstep fortune-telling...\pThose whose footsteps make a splish and\na splosh are Trainers that Pokémon like.$"
+	.string "According to footstep\nfortune-telling...\pThose whose footsteps make a splish\nand a splosh are Trainers that Pokémon\llike.$"
 
 Unova_Route8_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_ANNIE_188, Unova_Route8_EventScript_Npc5_Intro, Unova_Route8_EventScript_Npc5_Defeat
@@ -68,7 +68,7 @@ Unova_Route8_EventScript_Npc5::
 	end
 
 Unova_Route8_EventScript_Npc5_Intro:
-	.string "It blends in among the trees and grass,\nand it shows its strength.\l\lSee the strength of my Pokémon!$"
+	.string "It blends in among the trees and grass,\nand it shows its strength.\lSee the strength of my Pokémon!$"
 
 Unova_Route8_EventScript_Npc5_Defeat:
 	.string "What I wanted to see\nwas not YOUR strength...$"

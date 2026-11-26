@@ -3,6 +3,12 @@
 #include "text.h"
 #include "malloc.h"
 
+// Pokémon World: the breakers work in these instead of the heap. They run on battle messages and
+// Unova's text while the heap can be full (a failed Alloc is fatal); a longer string keeps its breaks.
+#define LINE_BREAK_MAX_WORDS 256
+static EWRAM_DATA struct StringWord sLineBreakWords[LINE_BREAK_MAX_WORDS] = {0};
+static EWRAM_DATA struct StringLine sLineBreakLines[LINE_BREAK_MAX_WORDS] = {0};
+
 void StripLineBreaks(u8 *src)
 {
     u32 currIndex = 0;
@@ -97,8 +103,11 @@ void BreakSubStringNaive(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, enum
         isPrevCharSplitting = isCurrCharSplitting;
         numChars++;
     }
-    //  Allocate enough space for word data
-    struct StringWord *allWords = Alloc(numWords*sizeof(struct StringWord));
+    //  Space for the word data (no heap: see sLineBreakWords)
+    if (numWords > LINE_BREAK_MAX_WORDS)
+        return;
+    struct StringWord *allWords = sLineBreakWords;
+    memset(allWords, 0, numWords * sizeof(struct StringWord));   // a trailing space counts as an empty word
 
     allWords[currWordIndex].startIndex = 0;
     allWords[currWordIndex].width = 0;
@@ -181,7 +190,6 @@ void BreakSubStringNaive(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, enum
         }
     }
 
-    Free(allWords);
 }
 
 void BreakSubStringAutomatic(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, enum ToggleScrollPrompt toggleScrollPrompt)
@@ -207,8 +215,11 @@ void BreakSubStringAutomatic(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, 
         isPrevCharSplitting = isCurrCharSplitting;
         numChars++;
     }
-    //  Allocate enough space for word data
-    struct StringWord *allWords = Alloc(numWords*sizeof(struct StringWord));
+    //  Space for the word data (no heap: see sLineBreakWords)
+    if (numWords > LINE_BREAK_MAX_WORDS)
+        return;
+    struct StringWord *allWords = sLineBreakWords;
+    memset(allWords, 0, numWords * sizeof(struct StringWord));   // a trailing space counts as an empty word
 
     allWords[currWordIndex].startIndex = 0;
     allWords[currWordIndex].width = 0;
@@ -283,11 +294,14 @@ void BreakSubStringAutomatic(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, 
 
         //  LINE LAYOUT STARTS HERE
         struct StringLine *stringLines;
+        u32 usedLines = 1;
         do
         {
             shouldTryAgain = FALSE;
             u16 targetLineWidth = totalWidth/totalLines;
-            stringLines = Alloc(totalLines*sizeof(struct StringLine));
+            if (totalLines > LINE_BREAK_MAX_WORDS)
+                return;
+            stringLines = sLineBreakLines;
             for (u32 lineIndex = 0; lineIndex < totalLines; lineIndex++)
             {
                 stringLines[lineIndex].numWords = 0;
@@ -309,7 +323,6 @@ void BreakSubStringAutomatic(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, 
                     if (currLineIndex == totalLines)
                     {
                         totalLines++;
-                        Free(stringLines);
                         shouldTryAgain = TRUE;
                         break;
                     }
@@ -325,7 +338,6 @@ void BreakSubStringAutomatic(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, 
                     if (currLineIndex == totalLines)
                     {
                         totalLines++;
-                        Free(stringLines);
                         shouldTryAgain = TRUE;
                         break;
                     }
@@ -343,13 +355,15 @@ void BreakSubStringAutomatic(u8 *src, u32 maxWidth, u32 screenLines, u8 fontId, 
                     currWordIndex++;
                 }
             }
+            usedLines = currLineIndex + 1;
         } while (shouldTryAgain);
         //u32 currBadness = GetStringBadness(stringLines, totalLines, maxWidth);
-        BuildNewString(stringLines, totalLines, screenLines, src, toggleScrollPrompt);
-        Free(stringLines);
+        //  Pokémon World: only the lines the layout filled. A string with fewer words than the lines it
+        //  was planned for (one word too wide for a line, e.g. a battle text whose spaces are NBSPs) left
+        //  the rest empty, and BuildNewString read their unset word pointers.
+        BuildNewString(stringLines, usedLines, screenLines, src, toggleScrollPrompt);
     }
 
-    Free(allWords);
 }
 
 //  Only allow word splitting on allowed chars

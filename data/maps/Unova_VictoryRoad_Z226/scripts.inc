@@ -8,13 +8,13 @@ Unova_VictoryRoad_Z226_EventScript_Npc0::
 	end
 
 Unova_VictoryRoad_Z226_EventScript_Npc0_Intro:
-	.string "I've thought about what I can do\nto help my Pokémon win, and\l\lfinally I figured out the answer!$"
+	.string "I've thought about what I can do\nto help my Pokémon win, and\lfinally I figured out the answer!$"
 
 Unova_VictoryRoad_Z226_EventScript_Npc0_Defeat:
 	.string "I'm afraid I could not read\nwhat you wanted to do...$"
 
 Unova_VictoryRoad_Z226_EventScript_Npc0_Post:
-	.string "Read what your opponent wants to do.\pYour opponent is human and may change\nplans from moment to moment. Be careful!$"
+	.string "Read what your opponent wants to do.\pYour opponent is human and may change\nplans from moment to moment. Be\lcareful!$"
 
 Unova_VictoryRoad_Z226_EventScript_Npc1::
 	bwscript 226, 10000

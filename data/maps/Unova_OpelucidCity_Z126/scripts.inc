@@ -13,7 +13,7 @@ Unova_OpelucidCity_Z126_EventScript_Npc0::
 	end
 
 Unova_OpelucidCity_Z126_EventScript_Npc0_Intro:
-	.string "Which Pokémon you use...\pYes! Preparation before a battle\nis very important for Rotation Battles!\l\lNow, let's start!$"
+	.string "Which Pokémon you use...\pYes! Preparation before a battle\nis very important for Rotation Battles!\lNow, let's start!$"
 
 Unova_OpelucidCity_Z126_EventScript_Npc0_Defeat:
 	.string "Be ready! Stay prepared so\nyou can battle anytime!$"
@@ -27,7 +27,7 @@ Unova_OpelucidCity_Z126_EventScript_Npc1::
 	end
 
 Unova_OpelucidCity_Z126_EventScript_Npc1_Intro:
-	.string "Which Pokémon you use...\pYes! Preparation before a battle\nis very important for Triple Battles!\l\lNow, let's start!$"
+	.string "Which Pokémon you use...\pYes! Preparation before a battle\nis very important for Triple Battles!\lNow, let's start!$"
 
 Unova_OpelucidCity_Z126_EventScript_Npc1_Defeat:
 	.string "Be ready! Stay prepared so\nyou can battle anytime!$"

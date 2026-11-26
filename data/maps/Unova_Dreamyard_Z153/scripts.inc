@@ -79,7 +79,7 @@ Unova_Dreamyard_Z153_EventScript_Npc5_Defeat:
 	.string "Did you spot my weakness?$"
 
 Unova_Dreamyard_Z153_EventScript_Npc5_Post:
-	.string "To tell you the truth,\neverybody has Dream Mist.\p'Cause if you can make a dream come true,\nit's the same as having Dream Mist.\l\lRight?$"
+	.string "To tell you the truth,\neverybody has Dream Mist.\p'Cause if you can make a dream come\ntrue, it's the same as having Dream\lMist. Right?$"
 
 Unova_Dreamyard_Z153_EventScript_Npc6::
 	trainerbattle_single TRAINER_BW_FUTURE_422, Unova_Dreamyard_Z153_EventScript_Npc6_Intro, Unova_Dreamyard_Z153_EventScript_Npc6_Defeat
@@ -93,7 +93,7 @@ Unova_Dreamyard_Z153_EventScript_Npc6_Defeat:
 	.string "Eeek! I foresaw your thoughts,\nbut I lost!$"
 
 Unova_Dreamyard_Z153_EventScript_Npc6_Post:
-	.string "Dreams slip away when they almost\ncome true...\pIf you don't grab important things tight,\nyou will lose them.$"
+	.string "Dreams slip away when they almost\ncome true...\pIf you don't grab important things\ntight, you will lose them.$"
 
 Unova_Dreamyard_Z153_EventScript_Npc7::
 	trainerbattle_single TRAINER_BW_LUKE_420, Unova_Dreamyard_Z153_EventScript_Npc7_Intro, Unova_Dreamyard_Z153_EventScript_Npc7_Defeat
@@ -101,13 +101,13 @@ Unova_Dreamyard_Z153_EventScript_Npc7::
 	end
 
 Unova_Dreamyard_Z153_EventScript_Npc7_Intro:
-	.string "I've been researching\nwithout sleeping for days.\l\lI see you, but are you a dream?$"
+	.string "I've been researching\nwithout sleeping for days.\lI see you, but are you a dream?$"
 
 Unova_Dreamyard_Z153_EventScript_Npc7_Defeat:
 	.string "Theoretically, it's impossible!\nIs this a dream...?$"
 
 Unova_Dreamyard_Z153_EventScript_Npc7_Post:
-	.string "Talking about dreams, Fennel's\nPokémon DW!\l\lThat is some great research!\l\lAre you doing Game Sync, too?$"
+	.string "Talking about dreams, Fennel's\nPokémon DW!\lThat is some great research!\lAre you doing Game Sync, too?$"
 
 Unova_Dreamyard_Z153_EventScript_Npc8::
 	finditem ITEM_TM85, 1

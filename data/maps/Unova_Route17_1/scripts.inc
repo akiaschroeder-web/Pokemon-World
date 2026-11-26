@@ -8,7 +8,7 @@ Unova_Route17_1_EventScript_Npc0::
 	end
 
 Unova_Route17_1_EventScript_Npc0_Intro:
-	.string "I am good at backstroke,\nfreestyle, butterfly...\l\lAnd, of course, Pokémon battles!$"
+	.string "I am good at backstroke,\nfreestyle, butterfly...\lAnd, of course, Pokémon battles!$"
 
 Unova_Route17_1_EventScript_Npc0_Defeat:
 	.string "Did I just lose a Pokémon battle,\neven though I'm so good at them??$"
@@ -22,13 +22,13 @@ Unova_Route17_1_EventScript_Npc2::
 	end
 
 Unova_Route17_1_EventScript_Npc2_Intro:
-	.string "The Pokémon is riding the wave,\nand you are riding the Pokémon.\l\lAre you riding high?$"
+	.string "The Pokémon is riding the wave,\nand you are riding the Pokémon.\lAre you riding high?$"
 
 Unova_Route17_1_EventScript_Npc2_Defeat:
 	.string "The big wave has come and gone...\nMy heart is calm...$"
 
 Unova_Route17_1_EventScript_Npc2_Post:
-	.string "If you can surf calmly through the\nrough waters of your life,\l\lyou'll be riding high!$"
+	.string "If you can surf calmly through the\nrough waters of your life,\lyou'll be riding high!$"
 
 Unova_Route17_1_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_CAROLINE_447, Unova_Route17_1_EventScript_Npc4_Intro, Unova_Route17_1_EventScript_Npc4_Defeat
@@ -36,7 +36,7 @@ Unova_Route17_1_EventScript_Npc4::
 	end
 
 Unova_Route17_1_EventScript_Npc4_Intro:
-	.string "I was taking a little break, but hey,\nI always have time for Pokémon battles!\l\lLet's enjoy it as much as possible!$"
+	.string "I was taking a little break, but hey,\nI always have time for Pokémon battles!\lLet's enjoy it as much as possible!$"
 
 Unova_Route17_1_EventScript_Npc4_Defeat:
 	.string "Wooosh!\nSsshhhh!!$"

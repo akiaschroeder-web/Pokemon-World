@@ -50,7 +50,7 @@ Unova_DragonspiralTower_Z210_EventScript_Npc9_Defeat:
 	.string "I don't understand...\nI don't understand you guys...$"
 
 Unova_DragonspiralTower_Z210_EventScript_Npc9_Post:
-	.string "Why are you and the Gym Leaders\nagainst us?\l\lI just can't understand it at all.$"
+	.string "Why are you and the Gym Leaders\nagainst us?\lI just can't understand it at all.$"
 
 Unova_DragonspiralTower_Z210_EventScript_Npc10::
 	trainerbattle_single TRAINER_BW_GRUNT_304, Unova_DragonspiralTower_Z210_EventScript_Npc10_Intro, Unova_DragonspiralTower_Z210_EventScript_Npc10_Defeat
@@ -58,13 +58,13 @@ Unova_DragonspiralTower_Z210_EventScript_Npc10::
 	end
 
 Unova_DragonspiralTower_Z210_EventScript_Npc10_Intro:
-	.string "I'm sure you also thought\n“I am strong“ and “I can win”\l\land came here.$"
+	.string "I'm sure you also thought\n“I am strong“ and “I can win”\land came here.$"
 
 Unova_DragonspiralTower_Z210_EventScript_Npc10_Defeat:
 	.string "Huh...\nYou thought right!$"
 
 Unova_DragonspiralTower_Z210_EventScript_Npc10_Post:
-	.string "If the king of Team Plasma rules the\nworld, Trainers will disappear, and\l\ldisputes will end!$"
+	.string "If the king of Team Plasma rules the\nworld, Trainers will disappear, and\ldisputes will end!$"
 
 Unova_DragonspiralTower_Z210_EventScript_Npc11::
 	trainerbattle_single TRAINER_BW_GRUNT_312, Unova_DragonspiralTower_Z210_EventScript_Npc11_Intro, Unova_DragonspiralTower_Z210_EventScript_Npc11_Defeat
@@ -86,7 +86,7 @@ Unova_DragonspiralTower_Z210_EventScript_Npc12::
 	end
 
 Unova_DragonspiralTower_Z210_EventScript_Npc12_Intro:
-	.string "Since coming to Dragonspiral Tower,\nmy stress level has maxed out! The more\l\lhyper I am, the faster you'll go down!$"
+	.string "Since coming to Dragonspiral Tower,\nmy stress level has maxed out! The more\lhyper I am, the faster you'll go down!$"
 
 Unova_DragonspiralTower_Z210_EventScript_Npc12_Defeat:
 	.string "Bahhh.\nI have lost my motivation.$"

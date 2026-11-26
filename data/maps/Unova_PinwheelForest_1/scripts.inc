@@ -22,7 +22,7 @@ Unova_PinwheelForest_1_EventScript_Npc2_Defeat:
 	.string "I just caught them\nand have not raised them yet!$"
 
 Unova_PinwheelForest_1_EventScript_Npc2_Post:
-	.string "OK! I will catch some different Pokémon\nin Pinwheel Forest and have more friends!$"
+	.string "OK! I will catch some different Pokémon\nin Pinwheel Forest and have more\lfriends!$"
 
 Unova_PinwheelForest_1_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_KEITA_145, Unova_PinwheelForest_1_EventScript_Npc3_Intro, Unova_PinwheelForest_1_EventScript_Npc3_Defeat
@@ -33,7 +33,7 @@ Unova_PinwheelForest_1_EventScript_Npc3_Intro:
 	.string "OK! I'm brave and I'm bold!\nLet's get right to the battle!$"
 
 Unova_PinwheelForest_1_EventScript_Npc3_Defeat:
-	.string "Pfft...\nMy bold bravery is vanishing into the air...$"
+	.string "Pfft... My bold bravery is vanishing into\nthe air...$"
 
 Unova_PinwheelForest_1_EventScript_Npc3_Post:
 	.string "I will tell you 'cause you're strong!\pOnly one piece of the challenge rock\nwill be chipped off each day!$"
@@ -80,7 +80,7 @@ Unova_PinwheelForest_1_EventScript_Npc9_Defeat:
 	.string "Great, great! I didn't know\nthat way to raise Pokémon!$"
 
 Unova_PinwheelForest_1_EventScript_Npc9_Post:
-	.string "When you let a Pokémon evolve, it will be\nstronger, but if you don't let it evolve,\l\lit will learn moves quicker.$"
+	.string "When you let a Pokémon evolve, it will be\nstronger, but if you don't let it\levolve, it will learn moves quicker.$"
 
 Unova_PinwheelForest_1_EventScript_Npc11::
 	bwscript 154, 5

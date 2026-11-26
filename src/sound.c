@@ -77,15 +77,20 @@ static const struct Fanfare sFanfaresHGSS[ARRAY_COUNT(sFanfares)] = {
 // Pokémon World: Pokémon Black's in Unova (lengths from bw/music.py)
 #include "data/bw_fanfares.h"
 
-// Pokémon World: a BW script's MEPlay: the BW fanfare with this song, if it's one of ours
+// Pokémon World: a BW script's MEPlay: any of Black's fanfares (sFanfaresBWAll, bw/music.py), played
+// like ours: the map's song pauses under it and carries on afterwards (Task_Fanfare)
 bool32 PlayBwFanfare(u16 songNum)
 {
     u32 i;
-    for (i = 0; i < ARRAY_COUNT(sFanfaresBW); i++)
+    if (songNum == MUS_NONE)
+        return FALSE;
+    for (i = 0; i < ARRAY_COUNT(sFanfaresBWAll); i++)
     {
-        if (sFanfaresBW[i].songNum == songNum && songNum != MUS_NONE)
+        if (sFanfaresBWAll[i].songNum == songNum)
         {
-            PlayFanfareByFanfareNum(i);
+            m4aMPlayStop(&gMPlayInfo_BGM);
+            sFanfareCounter = sFanfaresBWAll[i].duration;
+            m4aSongNumStart(songNum);
             CreateFanfareTask();
             return TRUE;
         }

@@ -34,7 +34,7 @@ Unova_MistraltonCave_Z333_EventScript_Npc4::
 	end
 
 Unova_MistraltonCave_Z333_EventScript_Npc4_Intro:
-	.string "My favorite things are:\nMountains! Meals! Pokémon!\l\lAnd fun battles!!$"
+	.string "My favorite things are:\nMountains! Meals! Pokémon!\lAnd fun battles!!$"
 
 Unova_MistraltonCave_Z333_EventScript_Npc4_Defeat:
 	.string "Oh, ho ho!\nYou got me!$"

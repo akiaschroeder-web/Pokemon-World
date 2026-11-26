@@ -33,7 +33,7 @@ Unova_RelicCastle_Z160_EventScript_Npc1_Defeat:
 	.string "So...strong!\nWho are you?!$"
 
 Unova_RelicCastle_Z160_EventScript_Npc1_Post:
-	.string "It is said that long ago, these ruins\nwere the heart of civilization for people\l\land Pokémon in the Unova region.$"
+	.string "It is said that long ago, these ruins\nwere the heart of civilization for\lpeople and Pokémon in the Unova region.$"
 
 Unova_RelicCastle_Z160_EventScript_Npc2::
 	bwscript 160, 5

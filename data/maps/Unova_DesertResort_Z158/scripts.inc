@@ -60,10 +60,10 @@ Unova_DesertResort_Z158_EventScript_Npc13::
 	end
 
 Unova_DesertResort_Z158_EventScript_Npc13_Intro:
-	.string "Having traveled the world, I realized\nwe can communicate through our Pokémon.$"
+	.string "Having traveled the world, I realized we\ncan communicate through our Pokémon.$"
 
 Unova_DesertResort_Z158_EventScript_Npc13_Defeat:
-	.string "That message came through loud and clear!$"
+	.string "That message came through loud and\nclear!$"
 
 Unova_DesertResort_Z158_EventScript_Npc13_Post:
 	.string "Having traveled around the world,\nI learned that travel brings change!\pWe should not be afraid of change.$"
@@ -77,10 +77,10 @@ Unova_DesertResort_Z158_EventScript_Npc14_Intro:
 	.string "Being with my Pokémon makes me happy\neven when we're in a bad situation!$"
 
 Unova_DesertResort_Z158_EventScript_Npc14_Defeat:
-	.string "Yes! It was fun that your and my Pokémon\nwere both so energetic!$"
+	.string "Yes! It was fun that your and my\nPokémon were both so energetic!$"
 
 Unova_DesertResort_Z158_EventScript_Npc14_Post:
-	.string "When I feel lonely at night,\nI curl up with my Pokémon\l\land watch the twinkling stars.\pI track the shooting stars\nand slow down the rhythm of my life.$"
+	.string "When I feel lonely at night,\nI curl up with my Pokémon\land watch the twinkling stars.\pI track the shooting stars\nand slow down the rhythm of my life.$"
 
 Unova_DesertResort_Z158_EventScript_Npc15::
 	trainerbattle_single TRAINER_BW_CYBIL_235, Unova_DesertResort_Z158_EventScript_Npc15_Intro, Unova_DesertResort_Z158_EventScript_Npc15_Defeat
@@ -122,7 +122,7 @@ Unova_DesertResort_Z158_EventScript_Npc17_Defeat:
 	.string "I could not make really good use\nof the Ability Mummy...$"
 
 Unova_DesertResort_Z158_EventScript_Npc17_Post:
-	.string "If an Ability is changed to Mummy,\nthe Pokémon cannot use its original\l\lAbility. It's subtly devious, isn't it?$"
+	.string "If an Ability is changed to Mummy,\nthe Pokémon cannot use its original\lAbility. It's subtly devious, isn't it?$"
 
 Unova_DesertResort_Z158_EventScript_Npc18::
 	trainerbattle_single TRAINER_BW_NATE_237, Unova_DesertResort_Z158_EventScript_Npc18_Intro, Unova_DesertResort_Z158_EventScript_Npc18_Defeat
@@ -192,7 +192,7 @@ Unova_DesertResort_Z158_EventScript_Npc26::
 	end
 
 Unova_DesertResort_Z158_EventScript_Npc26_Intro:
-	.string "Scorching desert!\nA passion for adventure!\l\lAnd a heated battle!$"
+	.string "Scorching desert!\nA passion for adventure!\lAnd a heated battle!$"
 
 Unova_DesertResort_Z158_EventScript_Npc26_Defeat:
 	.string "Hot! Hot! Hot! Hot!!$"

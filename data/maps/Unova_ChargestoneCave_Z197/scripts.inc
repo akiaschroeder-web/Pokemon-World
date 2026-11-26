@@ -12,13 +12,13 @@ Unova_ChargestoneCave_Z197_EventScript_Npc1::
 	end
 
 Unova_ChargestoneCave_Z197_EventScript_Npc1_Intro:
-	.string "Even at an electrified place like this,\nif somebody challenges me,\l\lI will take that challenge.\l\lThat is an Ace Trainer!$"
+	.string "Even at an electrified place like this,\nif somebody challenges me,\lI will take that challenge.\lThat is an Ace Trainer!$"
 
 Unova_ChargestoneCave_Z197_EventScript_Npc1_Defeat:
 	.string "Hmmm...\nI am electrified!$"
 
 Unova_ChargestoneCave_Z197_EventScript_Npc1_Post:
-	.string "Bits of knowledge about electricity!\pAn electric current runs from plus\nto minus, and an electron runs\l\lfrom minus to plus.$"
+	.string "Bits of knowledge about electricity!\pAn electric current runs from plus\nto minus, and an electron runs\lfrom minus to plus.$"
 
 Unova_ChargestoneCave_Z197_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_ALLISON_101, Unova_ChargestoneCave_Z197_EventScript_Npc2_Intro, Unova_ChargestoneCave_Z197_EventScript_Npc2_Defeat

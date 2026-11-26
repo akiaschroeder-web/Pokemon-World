@@ -11,3 +11,29 @@ static const struct Fanfare sFanfaresBW[ARRAY_COUNT(sFanfares)] = {
     [FANFARE_OBTAIN_BERRY] = { MUS_BW_ME_KINOMI, 92 },
     [FANFARE_RG_OBTAIN_KEY_ITEM] = { MUS_BW_ME_KEYITEM, 131 },
 };
+
+// All of Black's fanfares (MEPlay in src/bw_script.c): song, length in frames.
+static const struct Fanfare sFanfaresBWAll[] = {
+    { MUS_BW_ME_BADGE, 420 },
+    { MUS_BW_ME_KEYITEM, 131 },
+    { MUS_BW_ME_CALL, 210 },
+    { MUS_BW_ME_POKEGET, 229 },
+    { MUS_BW_ME_ASA, 131 },
+    { MUS_BW_ME_BPGET, 253 },
+    { MUS_BW_ME_HYOUKA6, 356 },
+    { MUS_BW_ME_QUIZ, 73 },
+    { MUS_BW_ME_TAMAGO_GET, 420 },
+    { MUS_BW_ME_ITEM, 199 },
+    { MUS_BW_ME_LVUP, 51 },
+    { MUS_BW_ME_ITEM_MYSTERY, 210 },
+    { MUS_BW_ME_WAZA, 164 },
+    { MUS_BW_ME_ACCE, 167 },
+    { MUS_BW_ME_HYOUKA1, 420 },
+    { MUS_BW_ME_HYOUKA2, 420 },
+    { MUS_BW_ME_HYOUKA3, 420 },
+    { MUS_BW_ME_HYOUKA4, 420 },
+    { MUS_BW_ME_HYOUKA5, 420 },
+    { MUS_BW_ME_SHINKAOME, 229 },
+    { MUS_BW_ME_WASURE, 116 },
+    { MUS_BW_ME_KINOMI, 92 },
+};

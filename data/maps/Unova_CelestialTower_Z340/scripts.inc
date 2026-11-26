@@ -56,7 +56,7 @@ Unova_CelestialTower_Z340_EventScript_Npc3_Defeat:
 	.string "The end...\nIs that it?$"
 
 Unova_CelestialTower_Z340_EventScript_Npc3_Post:
-	.string "People, Pokémon...\nEven if the world is gone,\l\lthat is not the end.\l\lI feel sure of it.$"
+	.string "People, Pokémon...\nEven if the world is gone,\lthat is not the end.\lI feel sure of it.$"
 
 Unova_CelestialTower_Z340_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_SACHIKO_152, Unova_CelestialTower_Z340_EventScript_Npc4_Intro, Unova_CelestialTower_Z340_EventScript_Npc4_Defeat

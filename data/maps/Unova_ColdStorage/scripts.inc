@@ -51,7 +51,7 @@ Unova_ColdStorage_EventScript_Npc8_Defeat:
 	.string "...Dad.\n...I couldn't win.$"
 
 Unova_ColdStorage_EventScript_Npc8_Post:
-	.string "I have Pokémon battles with my dad, too.\nMy dad and I are quite evenly matched!$"
+	.string "I have Pokémon battles with my dad,\ntoo. My dad and I are quite evenly\lmatched!$"
 
 Unova_ColdStorage_EventScript_Npc9::
 	trainerbattle_single TRAINER_BW_EDDIE_77, Unova_ColdStorage_EventScript_Npc9_Intro, Unova_ColdStorage_EventScript_Npc9_Defeat
@@ -79,7 +79,7 @@ Unova_ColdStorage_EventScript_Npc10_Defeat:
 	.string "Ummmm! You're closer\nto your Pokémon than I am!$"
 
 Unova_ColdStorage_EventScript_Npc10_Post:
-	.string "It never occurred to you that\nthe Pokémon you find around containers\l\lcame here from another place?$"
+	.string "It never occurred to you that\nthe Pokémon you find around containers\lcame here from another place?$"
 
 Unova_ColdStorage_EventScript_Trigger0::
 	bwscript 191, 1

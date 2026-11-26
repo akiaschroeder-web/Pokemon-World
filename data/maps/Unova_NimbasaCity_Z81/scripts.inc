@@ -61,7 +61,7 @@ Unova_NimbasaCity_Z81_EventScript_Npc3_Defeat:
 	.string "Hawk: The bond between you and\nyour Pokémon is strong, too!\pDar: This feeling will go well past\nthe goal line...$"
 
 Unova_NimbasaCity_Z81_EventScript_Npc3_Post:
-	.string "Football is knockdown amazing,\nbecause you can feel the excitement,\l\lthe bond between players and the crowd!$"
+	.string "Football is knockdown amazing, because\nyou can feel the excitement, the bond\lbetween players and the crowd!$"
 
 Unova_NimbasaCity_Z81_EventScript_Npc3_NotEnough:
 	.string "You need two Pokémon to battle us!$"
@@ -188,7 +188,7 @@ Unova_NimbasaCity_Z81_EventScript_Npc24_Defeat:
 	.string "Cam: The teamwork of your Pokémon\nis outstanding!\pAbby: I'm super impressed!$"
 
 Unova_NimbasaCity_Z81_EventScript_Npc24_Post:
-	.string "If what you want to do is different\nfrom what your partner wants to do,\l\lit's hard to win a Double Battle!$"
+	.string "If what you want to do is different\nfrom what your partner wants to do,\lit's hard to win a Double Battle!$"
 
 Unova_NimbasaCity_Z81_EventScript_Npc24_NotEnough:
 	.string "You need two Pokémon to battle us!$"

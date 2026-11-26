@@ -32,7 +32,7 @@ Unova_CasteliaCity_Z46_EventScript_Npc2_Defeat:
 	.string "Instead of lending a hand,\nyou gave me a workout!$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc2_Post:
-	.string "I don't know if science will make everyone\nhappy, but if I believe it will, that\l\lhelps me do my best. That's a fact.$"
+	.string "I don't know if science will make\neveryone happy, but if I believe it will,\lthat helps me do my best. That's a fact.$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_WADE_170, Unova_CasteliaCity_Z46_EventScript_Npc3_Intro, Unova_CasteliaCity_Z46_EventScript_Npc3_Defeat
@@ -46,7 +46,7 @@ Unova_CasteliaCity_Z46_EventScript_Npc3_Defeat:
 	.string "This encounter was a good one...\nfor you!$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc3_Post:
-	.string "I met my Pokémon\nmore than ten years ago.\l\lI trust them.$"
+	.string "I met my Pokémon\nmore than ten years ago.\lI trust them.$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_SAMANTHA_116, Unova_CasteliaCity_Z46_EventScript_Npc4_Intro, Unova_CasteliaCity_Z46_EventScript_Npc4_Defeat
@@ -57,10 +57,10 @@ Unova_CasteliaCity_Z46_EventScript_Npc4_Intro:
 	.string "I've found a wonderful Trainer!\nI will research you immediately!$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc4_Defeat:
-	.string "The results of my research have revealed\nthat you are the best!$"
+	.string "The results of my research have\nrevealed that you are the best!$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc4_Post:
-	.string "It is very exciting\nto unlock the secrets\l\lof Pokémon and their Trainers.$"
+	.string "It is very exciting\nto unlock the secrets\lof Pokémon and their Trainers.$"
 
 Unova_CasteliaCity_Z46_EventScript_Npc5::
 	finditem ITEM_HYPER_POTION, 1

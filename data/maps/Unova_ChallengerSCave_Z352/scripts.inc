@@ -8,11 +8,11 @@ Unova_ChallengerSCave_Z352_EventScript_Npc0::
 	end
 
 Unova_ChallengerSCave_Z352_EventScript_Npc0_Intro:
-	.string "My journey has taught me\nthat everybody loves Pokémon!\l\lI'm sure you love them, too.$"
+	.string "My journey has taught me\nthat everybody loves Pokémon!\lI'm sure you love them, too.$"
 
 Unova_ChallengerSCave_Z352_EventScript_Npc0_Defeat:
 	.string "Although we lost,\nour journey will still continue!$"
 
 Unova_ChallengerSCave_Z352_EventScript_Npc0_Post:
-	.string "We will keep walking!\nAs long as the road goes on...\l\lAs long as I am with my Pokémon!$"
+	.string "We will keep walking!\nAs long as the road goes on...\lAs long as I am with my Pokémon!$"
 

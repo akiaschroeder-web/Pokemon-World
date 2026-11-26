@@ -12,7 +12,7 @@ Unova_Route2_1_EventScript_Npc3::
 	end
 
 Unova_Route2_1_EventScript_Npc3_Intro:
-	.string "A Trainer catches another Trainer's eye.\nThat is the start of a Pokémon battle!$"
+	.string "A Trainer catches another Trainer's\neye. That is the start of a Pokémon\lbattle!$"
 
 Unova_Route2_1_EventScript_Npc3_Defeat:
 	.string "What?!\nYou are too strong!$"
@@ -32,7 +32,7 @@ Unova_Route2_1_EventScript_Npc4_Defeat:
 	.string "Even though it lost,\nmy Pokémon is still cute!$"
 
 Unova_Route2_1_EventScript_Npc4_Post:
-	.string "I'll make my cute Pokémon even stronger\nby having battles with lots of Trainers!$"
+	.string "I'll make my cute Pokémon even\nstronger by having battles with lots of\lTrainers!$"
 
 Unova_Route2_1_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_ROLAND_85, Unova_Route2_1_EventScript_Npc5_Intro, Unova_Route2_1_EventScript_Npc5_Defeat
@@ -43,10 +43,10 @@ Unova_Route2_1_EventScript_Npc5_Intro:
 	.string "Lillipup, Lillipup!\nMy Lillipup! Go!$"
 
 Unova_Route2_1_EventScript_Npc5_Defeat:
-	.string "Your Pokémon uses those kinds of moves?!$"
+	.string "Your Pokémon uses those kinds of\nmoves?!$"
 
 Unova_Route2_1_EventScript_Npc5_Post:
-	.string "Different Trainers use\ndifferent kinds of Pokémon!\l\lThat's fun to see, isn't it?$"
+	.string "Different Trainers use\ndifferent kinds of Pokémon!\lThat's fun to see, isn't it?$"
 
 Unova_Route2_1_EventScript_Npc6::
 	finditem ITEM_SUPER_POTION, 1

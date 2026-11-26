@@ -22,32 +22,32 @@
 	song mus_hg_encounter_suspicious_1, MUSIC_PLAYER_BGM, 0
 	song mus_hg_encounter_suspicious_2, MUSIC_PLAYER_BGM, 0
 	song mus_hg_eusine, MUSIC_PLAYER_BGM, 0
-	song mus_hg_evolved, MUSIC_PLAYER_BGM, 0
+	song mus_hg_evolved, MUSIC_PLAYER_SE2, 2
 	song mus_hg_follow_me_1, MUSIC_PLAYER_BGM, 0
 	song mus_hg_game_corner, MUSIC_PLAYER_BGM, 0
 	song mus_hg_goldenrod, MUSIC_PLAYER_BGM, 0
 	song mus_hg_gym, MUSIC_PLAYER_BGM, 0
-	song mus_hg_heal, MUSIC_PLAYER_BGM, 0
+	song mus_hg_heal, MUSIC_PLAYER_SE2, 2
 	song mus_hg_ice_path, MUSIC_PLAYER_BGM, 0
 	song mus_hg_kimono_girl, MUSIC_PLAYER_BGM, 0
 	song mus_hg_kimono_girl_dance, MUSIC_PLAYER_BGM, 0
 	song mus_hg_lavender, MUSIC_PLAYER_BGM, 0
-	song mus_hg_level_up, MUSIC_PLAYER_BGM, 0
+	song mus_hg_level_up, MUSIC_PLAYER_SE2, 2
 	song mus_hg_lighthouse, MUSIC_PLAYER_BGM, 0
-	song mus_hg_move_deleted, MUSIC_PLAYER_BGM, 0
+	song mus_hg_move_deleted, MUSIC_PLAYER_SE2, 2
 	song mus_hg_mt_moon_square, MUSIC_PLAYER_BGM, 0
 	song mus_hg_national_park, MUSIC_PLAYER_BGM, 0
 	song mus_hg_new_bark, MUSIC_PLAYER_BGM, 0
 	song mus_hg_new_game, MUSIC_PLAYER_BGM, 0
 	song mus_hg_oak, MUSIC_PLAYER_BGM, 0
-	song mus_hg_obtain_badge, MUSIC_PLAYER_BGM, 0
-	song mus_hg_obtain_berry, MUSIC_PLAYER_BGM, 0
-	song mus_hg_obtain_item, MUSIC_PLAYER_BGM, 0
-	song mus_hg_obtain_key_item, MUSIC_PLAYER_BGM, 0
-	song mus_hg_obtain_tmhm, MUSIC_PLAYER_BGM, 0
+	song mus_hg_obtain_badge, MUSIC_PLAYER_SE2, 2
+	song mus_hg_obtain_berry, MUSIC_PLAYER_SE2, 2
+	song mus_hg_obtain_item, MUSIC_PLAYER_SE2, 2
+	song mus_hg_obtain_key_item, MUSIC_PLAYER_SE2, 2
+	song mus_hg_obtain_tmhm, MUSIC_PLAYER_SE2, 2
 	song mus_hg_pallet, MUSIC_PLAYER_BGM, 0
 	song mus_hg_pewter, MUSIC_PLAYER_BGM, 0
-	song mus_hg_pokegear_registered, MUSIC_PLAYER_BGM, 0
+	song mus_hg_pokegear_registered, MUSIC_PLAYER_SE2, 2
 	song mus_hg_pokemon_league, MUSIC_PLAYER_BGM, 0
 	song mus_hg_poke_center, MUSIC_PLAYER_BGM, 0
 	song mus_hg_poke_mart, MUSIC_PLAYER_BGM, 0

@@ -8,13 +8,13 @@ Unova_IcirrusCity_Z114_EventScript_Npc0::
 	end
 
 Unova_IcirrusCity_Z114_EventScript_Npc0_Intro:
-	.string "Well, well, if you are feeling dizzy\nbecause of the Gym machines,\l\lI will stand in your path!$"
+	.string "Well, well, if you are feeling dizzy\nbecause of the Gym machines,\lI will stand in your path!$"
 
 Unova_IcirrusCity_Z114_EventScript_Npc0_Defeat:
 	.string "Oh, dear me!$"
 
 Unova_IcirrusCity_Z114_EventScript_Npc0_Post:
-	.string "Being fired into the air by cannons\nand spinning on the ice many times...\l\lIt's difficult to get Badges.$"
+	.string "Being fired into the air by cannons\nand spinning on the ice many times...\lIt's difficult to get Badges.$"
 
 Unova_IcirrusCity_Z114_EventScript_Npc1::
 	bwscript 114, 2
@@ -94,7 +94,7 @@ Unova_IcirrusCity_Z114_EventScript_Npc14::
 	end
 
 Unova_IcirrusCity_Z114_EventScript_Npc14_Intro:
-	.string "The problem is never\nwhether you can battle or not.\l\lIt's whether you will battle or not.$"
+	.string "The problem is never\nwhether you can battle or not.\lIt's whether you will battle or not.$"
 
 Unova_IcirrusCity_Z114_EventScript_Npc14_Defeat:
 	.string "If you don't fight, you won't lose,\nbut you won't grow stronger, either.$"
@@ -114,7 +114,7 @@ Unova_IcirrusCity_Z114_EventScript_Npc15_Defeat:
 	.string "I slipped and lost!$"
 
 Unova_IcirrusCity_Z114_EventScript_Npc15_Post:
-	.string "Brycen slides on the frozen floor\nall the time, so it's worn down, and\l\lit looks like you can see the path...\l\lbut maybe I'm imagining it.$"
+	.string "Brycen slides on the frozen floor\nall the time, so it's worn down, and\lit looks like you can see the path...\lbut maybe I'm imagining it.$"
 
 Unova_IcirrusCity_Z114_EventScript_Npc16::
 	trainerbattle_single TRAINER_BW_THOMAS_217, Unova_IcirrusCity_Z114_EventScript_Npc16_Intro, Unova_IcirrusCity_Z114_EventScript_Npc16_Defeat

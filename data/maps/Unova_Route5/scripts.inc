@@ -59,7 +59,7 @@ Unova_Route5_EventScript_Npc5_Defeat:
 	.string "Oh, my...\nIt was a tasty battle.$"
 
 Unova_Route5_EventScript_Npc5_Post:
-	.string "I get on well with my Pokémon, and we\nbake bread together. It's so much fun!\l\lI don't mind getting up early every day.$"
+	.string "I get on well with my Pokémon, and we\nbake bread together. It's so much fun!\lI don't mind getting up early every day.$"
 
 Unova_Route5_EventScript_Npc6::
 	trainerbattle_single TRAINER_BW_MICHAEL_44, Unova_Route5_EventScript_Npc6_Intro, Unova_Route5_EventScript_Npc6_Defeat
@@ -87,7 +87,7 @@ Unova_Route5_EventScript_Npc7_Defeat:
 	.string "Oh, I just got whitewashed!$"
 
 Unova_Route5_EventScript_Npc7_Post:
-	.string "The reason why there are so many colors\nin this world...white, black, red, green,\l\lblue, yellow...is that they can be mixed\l\lto create an explosion of new color!\pBoom!$"
+	.string "The reason why there are so many colors\nin this world...white, black, red, green,\lblue, yellow...is that they can be mixed\lto create an explosion of new color!\pBoom!$"
 
 Unova_Route5_EventScript_Npc8::
 	bwscript 329, 12
@@ -105,7 +105,7 @@ Unova_Route5_EventScript_Npc9_Defeat:
 	.string "I lost, but now I have more things\nto add to my bag.$"
 
 Unova_Route5_EventScript_Npc9_Post:
-	.string "I'll tell you a secret. The things I put\nin the bag are memories of my journey!\pThe things you can't see are very heavy!$"
+	.string "I'll tell you a secret. The things I put\nin the bag are memories of my journey!\pThe things you can't see are very\nheavy!$"
 
 Unova_Route5_EventScript_Npc10::
 	bwscript 329, 2000

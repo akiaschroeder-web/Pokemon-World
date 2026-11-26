@@ -19,7 +19,7 @@ Unova_NimbasaCity_Z86_EventScript_Npc0_Defeat:
 	.string "You should...\nGo easy on me!$"
 
 Unova_NimbasaCity_Z86_EventScript_Npc0_Post:
-	.string "B-b-b-because I am a lady...\nwaaaah...\l\lI will admit my defeat gracefully...$"
+	.string "B-b-b-because I am a lady...\nwaaaah...\lI will admit my defeat gracefully...$"
 
 Unova_NimbasaCity_Z86_EventScript_Npc1::
 	trainerbattle_single TRAINER_BW_ASPEN_318, Unova_NimbasaCity_Z86_EventScript_Npc1_Intro, Unova_NimbasaCity_Z86_EventScript_Npc1_Defeat
@@ -27,13 +27,13 @@ Unova_NimbasaCity_Z86_EventScript_Npc1::
 	end
 
 Unova_NimbasaCity_Z86_EventScript_Npc1_Intro:
-	.string "The world championships are coming soon!\nI will practice volleys\l\lby using you as a wall!$"
+	.string "The world championships are coming\nsoon! I will practice volleys by using\lyou as a wall!$"
 
 Unova_NimbasaCity_Z86_EventScript_Npc1_Defeat:
 	.string "Whoa! Lemme...catch...my breath...\nThat was some good training...$"
 
 Unova_NimbasaCity_Z86_EventScript_Npc1_Post:
-	.string "You and I have just met.\nLet's start the game from the beginning!$"
+	.string "You and I have just met. Let's start\nthe game from the beginning!$"
 
 Unova_NimbasaCity_Z86_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_MARI_314, Unova_NimbasaCity_Z86_EventScript_Npc2_Intro, Unova_NimbasaCity_Z86_EventScript_Npc2_Defeat
@@ -41,7 +41,7 @@ Unova_NimbasaCity_Z86_EventScript_Npc2::
 	end
 
 Unova_NimbasaCity_Z86_EventScript_Npc2_Intro:
-	.string "I will show you a powerful serve!\nWatch this burn in at 120 miles per hour!$"
+	.string "I will show you a powerful serve! Watch\nthis burn in at 120 miles per hour!$"
 
 Unova_NimbasaCity_Z86_EventScript_Npc2_Defeat:
 	.string "Your attack just now...\nMore powerful!$"

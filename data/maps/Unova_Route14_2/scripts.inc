@@ -22,13 +22,13 @@ Unova_Route14_2_EventScript_Npc1::
 	end
 
 Unova_Route14_2_EventScript_Npc1_Intro:
-	.string "On a bridge!\nFighting Trainers!\l\lIt's a perfect picture!$"
+	.string "On a bridge!\nFighting Trainers!\lIt's a perfect picture!$"
 
 Unova_Route14_2_EventScript_Npc1_Defeat:
 	.string "I am not weak, even though I lost.\nYou, who won, are just too strong!$"
 
 Unova_Route14_2_EventScript_Npc1_Post:
-	.string "On a bridge!\nA sentimental Trainer after his defeat!\l\lThis is also a good, tragic picture!$"
+	.string "On a bridge!\nA sentimental Trainer after his defeat!\lThis is also a good, tragic picture!$"
 
 Unova_Route14_2_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_KIPP_411, Unova_Route14_2_EventScript_Npc3_Intro, Unova_Route14_2_EventScript_Npc3_Defeat
@@ -39,7 +39,7 @@ Unova_Route14_2_EventScript_Npc3_Intro:
 	.string "If I battle until I win, I will never\nultimately lose!$"
 
 Unova_Route14_2_EventScript_Npc3_Defeat:
-	.string "Try seven times and fall eight times...\nNo!\l\lFall down seven times, stand up eight!$"
+	.string "Try seven times and fall eight times...\nNo!\lFall down seven times, stand up eight!$"
 
 Unova_Route14_2_EventScript_Npc3_Post:
 	.string "The more I rise up,\nthe stronger my mind grows!\pThat's why I thank you for each round\nthat I lost!$"
@@ -53,10 +53,10 @@ Unova_Route14_2_EventScript_Npc4_Intro:
 	.string "Do you understand why Trainers\nand Pokémon are together?$"
 
 Unova_Route14_2_EventScript_Npc4_Defeat:
-	.string "You and your Pokémon share\nthe sad feeling of losing half-and-half...$"
+	.string "You and your Pokémon share the sad\nfeeling of losing half-and-half...$"
 
 Unova_Route14_2_EventScript_Npc4_Post:
-	.string "With a friend, you laugh twice for happy\nthings, and you cry half for sad ones.\l\lThat is the joy of living with Pokémon.$"
+	.string "With a friend, you laugh twice for happy\nthings, and you cry half for sad ones.\lThat is the joy of living with Pokémon.$"
 
 Unova_Route14_2_EventScript_Npc7::
 	finditem ITEM_REAPER_CLOTH, 1
@@ -74,7 +74,7 @@ Unova_Route14_2_EventScript_Npc8_Defeat:
 	.string "Thank you! Now you and I are friends.\nRight?$"
 
 Unova_Route14_2_EventScript_Npc8_Post:
-	.string "If we could greet anyone in the world\nwith “Let's have a Pokémon battle!“\l\lthat would be wonderful!$"
+	.string "If we could greet anyone in the world\nwith “Let's have a Pokémon battle!“\lthat would be wonderful!$"
 
 Unova_Route14_2_EventScript_Sign1::
 	bwscript 374, 3

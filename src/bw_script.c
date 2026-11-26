@@ -61,6 +61,8 @@
 #include "script_pokemon_util.h"
 #include "sound.h"
 #include "string_util.h"
+#include "line_break.h"
+#include "text.h"
 #include "trainer_see.h"
 #include "constants/battle.h"
 #include "constants/event_objects.h"
@@ -331,11 +333,87 @@ static const u8 *Message(u16 textFile, u16 msgId)
     return sBwTextFiles[file].strings[msgId];
 }
 
+// BW's lines are laid out for the DS's wider text box: a page with a line too wide for ours is
+// wrapped again to fit (two lines, scrolling like ours). Pages with control codes (colours...)
+// keep BW's breaks, since the line breaker can't step over them.
+#define BW_TEXT_WIDTH 208   // our field message box (27 tiles), less room for the "more" arrow
+
+static bool32 PageTooWide(u8 *page)
+{
+    u8 *p = page, *line = page;
+    for (;; p++)
+    {
+        u8 c = *p;
+        if (c == EXT_CTRL_CODE_BEGIN || c == PLACEHOLDER_BEGIN)
+            return FALSE;
+        if (c == EOS || c == CHAR_NEWLINE || c == CHAR_PROMPT_SCROLL)
+        {
+            s32 w;
+            *p = EOS;
+            w = GetStringWidth(FONT_NORMAL, line, 0);
+            *p = c;
+            if (w > BW_TEXT_WIDTH)
+                return TRUE;
+            if (c == EOS)
+                return FALSE;
+            line = p + 1;
+        }
+    }
+}
+
+static void FitPage(u8 *page)
+{
+    u8 *r, *w;
+    bool32 space = TRUE;
+    if (!PageTooWide(page))
+        return;
+    StripLineBreaks(page);
+    // one space between words, none at the ends (the line breaker counts one per gap)
+    for (r = w = page; *r != EOS; r++)
+    {
+        if (*r == CHAR_SPACE)
+        {
+            if (space)
+                continue;
+            space = TRUE;
+        }
+        else
+        {
+            space = FALSE;
+        }
+        *w++ = *r;
+    }
+    if (w > page && w[-1] == CHAR_SPACE)
+        w--;
+    *w = EOS;
+    BreakSubStringAutomatic(page, BW_TEXT_WIDTH, 2, FONT_NORMAL, SHOW_SCROLL_PROMPT);
+}
+
+static EWRAM_DATA u8 sBwExpanded[1000] = {0};
+
+static void FitMessageToBox(u8 *dst, const u8 *src)
+{
+    for (;;)
+    {
+        u8 *page = dst;
+        while (*src != EOS && *src != CHAR_PROMPT_CLEAR)
+            *dst++ = *src++;
+        *dst = EOS;
+        FitPage(page);
+        dst = page + StringLength(page);
+        if (*src == EOS)
+            break;
+        *dst++ = *src++;   // the page break
+    }
+    *dst = EOS;
+}
+
 static void ShowMessage(const u8 *str)
 {
     if (!str || sVm.immediate)
         return;
-    StringExpandPlaceholders(gStringVar4, str);
+    StringExpandPlaceholders(sBwExpanded, str);
+    FitMessageToBox(gStringVar4, sBwExpanded);
     ShowFieldMessage(gStringVar4);
     sVm.messageOpen = TRUE;
     sVm.wait = BW_WAIT_MESSAGE;

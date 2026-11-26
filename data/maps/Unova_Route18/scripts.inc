@@ -19,7 +19,7 @@ Unova_Route18_EventScript_Npc2_Intro:
 	.string "Did you come here by looking\nat the Town Map, too?\pMaps are good.\nThey tell you a lot of things!$"
 
 Unova_Route18_EventScript_Npc2_Defeat:
-	.string "I want something that's like a map but\ntells me how to fight instead of where to go.$"
+	.string "I want something that's like a map but\ntells me how to fight instead of where\lto go.$"
 
 Unova_Route18_EventScript_Npc2_Post:
 	.string "Where shall I go next...?\nI use the Town Map to decide!$"
@@ -58,13 +58,13 @@ Unova_Route18_EventScript_Npc5::
 	end
 
 Unova_Route18_EventScript_Npc5_Intro:
-	.string "When I look down from a high place,\nI feel very good!\pPokémon battles are the same!\nI will fight looking down from the heights!$"
+	.string "When I look down from a high place,\nI feel very good!\pPokémon battles are the same! I will\nfight looking down from the heights!$"
 
 Unova_Route18_EventScript_Npc5_Defeat:
 	.string "You're great!\nI can't help but look up to you!$"
 
 Unova_Route18_EventScript_Npc5_Post:
-	.string "We climb mountains because,\nno matter how hard it is,\l\lthe higher we climb,\l\lthe closer we get to the sky!$"
+	.string "We climb mountains because,\nno matter how hard it is,\lthe higher we climb,\lthe closer we get to the sky!$"
 
 Unova_Route18_EventScript_Npc6::
 	trainerbattle_single TRAINER_BW_KUMIKO_439, Unova_Route18_EventScript_Npc6_Intro, Unova_Route18_EventScript_Npc6_Defeat

@@ -11,7 +11,7 @@ Unova_TwistMountain_Z200_EventScript_Npc0_Intro:
 	.string "The number two Trainer\non Twist Mountain is me!$"
 
 Unova_TwistMountain_Z200_EventScript_Npc0_Defeat:
-	.string "From now on, you are the number two Trainer\non Twist Mountain.$"
+	.string "From now on, you are the number two\nTrainer on Twist Mountain.$"
 
 Unova_TwistMountain_Z200_EventScript_Npc0_Post:
 	.string "From now on, I will be the\nnumber three Trainer on Twist Mountain.\pFor your information,\nthe number one is Clay!$"
@@ -42,7 +42,7 @@ Unova_TwistMountain_Z200_EventScript_Npc2_Defeat:
 	.string "When I lose, I cry with my Pokémon!\nThat's me, a Battle Girl!$"
 
 Unova_TwistMountain_Z200_EventScript_Npc2_Post:
-	.string "When you train every day,\nyour body moves as you like.\l\lIt feels really good!$"
+	.string "When you train every day,\nyour body moves as you like.\lIt feels really good!$"
 
 Unova_TwistMountain_Z200_EventScript_Npc3::
 	finditem ITEM_MOON_STONE, 1

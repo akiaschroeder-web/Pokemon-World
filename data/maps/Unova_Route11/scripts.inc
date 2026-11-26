@@ -8,7 +8,7 @@ Unova_Route11_EventScript_Npc0::
 	end
 
 Unova_Route11_EventScript_Npc0_Intro:
-	.string "Permets-moi de te provoquer en duel afin\nque je puisse graver notre rencontre\l\ldans ma mémoire.$"
+	.string "Permets-moi de te provoquer en duel\nafin que je puisse graver notre\lrencontre dans ma mémoire.$"
 
 Unova_Route11_EventScript_Npc0_Defeat:
 	.string "Notre combat est à jamais gravé\ndans ma mémoire!$"
@@ -22,13 +22,13 @@ Unova_Route11_EventScript_Npc1::
 	end
 
 Unova_Route11_EventScript_Npc1_Intro:
-	.string "Tu n'imagineras jamais le nombre de\npays que j'ai visités, et le nombre\l\lde Dresseurs que j'ai combattus!$"
+	.string "Tu n'imagineras jamais le nombre de\npays que j'ai visités, et le nombre\lde Dresseurs que j'ai combattus!$"
 
 Unova_Route11_EventScript_Npc1_Defeat:
-	.string "Wah!\nEncore un formidable souvenir de voyage!$"
+	.string "Wah! Encore un formidable souvenir de\nvoyage!$"
 
 Unova_Route11_EventScript_Npc1_Post:
-	.string "Quand j'aurai beaucoup, beaucoup\nvoyagé, je rentrerai à la maison,\l\let je pourrai raconter tout\l\lplein de choses à ma famille!$"
+	.string "Quand j'aurai beaucoup, beaucoup\nvoyagé, je rentrerai à la maison,\let je pourrai raconter tout\lplein de choses à ma famille!$"
 
 Unova_Route11_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_CROFTON_455, Unova_Route11_EventScript_Npc2_Intro, Unova_Route11_EventScript_Npc2_Defeat
@@ -50,7 +50,7 @@ Unova_Route11_EventScript_Npc3::
 	end
 
 Unova_Route11_EventScript_Npc3_Intro:
-	.string "My Pokémon and I spend so much time\ntogether, we don't need words\l\lto understand one another.\pDo you think you can win against us?$"
+	.string "My Pokémon and I spend so much time\ntogether, we don't need words\lto understand one another.\pDo you think you can win against us?$"
 
 Unova_Route11_EventScript_Npc3_Defeat:
 	.string "You can understand each other\nvery well, too!$"

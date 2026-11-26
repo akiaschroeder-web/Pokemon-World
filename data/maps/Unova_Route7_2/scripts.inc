@@ -18,7 +18,7 @@ Unova_Route7_2_EventScript_Npc0::
 	end
 
 Unova_Route7_2_EventScript_Npc0_Intro:
-	.string "Sometimes you find more than just strong\nPokémon in the tall grass!$"
+	.string "Sometimes you find more than just\nstrong Pokémon in the tall grass!$"
 
 Unova_Route7_2_EventScript_Npc0_Defeat:
 	.string "Strooooong!\nWhat a Trainer!!$"
@@ -52,7 +52,7 @@ Unova_Route7_2_EventScript_Npc5_Defeat:
 	.string "You are not an ordinary Trainer.\nYou are a strong Trainer!!$"
 
 Unova_Route7_2_EventScript_Npc5_Post:
-	.string "Have you heard that when tall grass\nwaves in the breeze,\l\la rare Pokémon jumps out?$"
+	.string "Have you heard that when tall grass\nwaves in the breeze,\la rare Pokémon jumps out?$"
 
 Unova_Route7_2_EventScript_Npc6::
 	bwscript 337, 1
@@ -72,13 +72,13 @@ Unova_Route7_2_EventScript_Npc14::
 	end
 
 Unova_Route7_2_EventScript_Npc14_Intro:
-	.string "Rotation Battles are\nnew Pokémon battles\l\lin which the positions always change.\pI will overpower you\nwhile you are confused!$"
+	.string "Rotation Battles are\nnew Pokémon battles\lin which the positions always change.\pI will overpower you\nwhile you are confused!$"
 
 Unova_Route7_2_EventScript_Npc14_Defeat:
 	.string "Did I overthink it\nbecause of the unfamiliar rules?$"
 
 Unova_Route7_2_EventScript_Npc14_Post:
-	.string "The balance of three Pokémon...\neach with its own role...\l\lI still have to do more research.$"
+	.string "The balance of three Pokémon...\neach with its own role...\lI still have to do more research.$"
 
 Unova_Route7_2_EventScript_Npc15::
 	trainerbattle_double TRAINER_BW_ELMER_606, Unova_Route7_2_EventScript_Npc15_Intro, Unova_Route7_2_EventScript_Npc15_Defeat, Unova_Route7_2_EventScript_Npc15_NotEnough
@@ -86,13 +86,13 @@ Unova_Route7_2_EventScript_Npc15::
 	end
 
 Unova_Route7_2_EventScript_Npc15_Intro:
-	.string "Triple Battles are three-on-three\nPokémon battles.\pI will overpower you with\nmy perfect combination\l\land overwhelming attack power!$"
+	.string "Triple Battles are three-on-three\nPokémon battles.\pI will overpower you with\nmy perfect combination\land overwhelming attack power!$"
 
 Unova_Route7_2_EventScript_Npc15_Defeat:
 	.string "Did I overthink it\nbecause of the unfamiliar rules?$"
 
 Unova_Route7_2_EventScript_Npc15_Post:
-	.string "The balance of three Pokémon...\neach with its own role...\l\lI still have to do more research.$"
+	.string "The balance of three Pokémon...\neach with its own role...\lI still have to do more research.$"
 
 Unova_Route7_2_EventScript_Npc15_NotEnough:
 	.string "You need two Pokémon to battle us!$"

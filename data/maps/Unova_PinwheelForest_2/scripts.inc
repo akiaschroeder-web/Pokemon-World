@@ -8,13 +8,13 @@ Unova_PinwheelForest_2_EventScript_Npc10::
 	end
 
 Unova_PinwheelForest_2_EventScript_Npc10_Intro:
-	.string "I test the challenge rock\nwith my fist every day!\pIt is important to make steady progress,\nlittle by little.$"
+	.string "I test the challenge rock\nwith my fist every day!\pIt is important to make steady\nprogress, little by little.$"
 
 Unova_PinwheelForest_2_EventScript_Npc10_Defeat:
 	.string "I still have not\ntried hard enough!$"
 
 Unova_PinwheelForest_2_EventScript_Npc10_Post:
-	.string "I test the challenge rock every day\nwith my Pokémon!\pWhy don't you check out\nthe challenge rock\l\lwith a Fighting-type Pokémon?$"
+	.string "I test the challenge rock every day\nwith my Pokémon!\pWhy don't you check out\nthe challenge rock\lwith a Fighting-type Pokémon?$"
 
 Unova_PinwheelForest_2_EventScript_Npc14::
 	trainerbattle_single TRAINER_BW_KENTARO_111, Unova_PinwheelForest_2_EventScript_Npc14_Intro, Unova_PinwheelForest_2_EventScript_Npc14_Defeat

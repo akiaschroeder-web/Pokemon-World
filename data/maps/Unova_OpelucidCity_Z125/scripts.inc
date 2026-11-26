@@ -17,13 +17,13 @@ Unova_OpelucidCity_Z125_EventScript_Npc1::
 	end
 
 Unova_OpelucidCity_Z125_EventScript_Npc1_Intro:
-	.string "The flow of a game changes\nevery turn in a Rotation Battle!\l\lCan you master it?$"
+	.string "The flow of a game changes\nevery turn in a Rotation Battle!\lCan you master it?$"
 
 Unova_OpelucidCity_Z125_EventScript_Npc1_Defeat:
 	.string "It made my head spin,\nand I feel dizzy...$"
 
 Unova_OpelucidCity_Z125_EventScript_Npc1_Post:
-	.string "While a come-from-behind win is possible,\nif you are a strong Trainer,\l\lyou can handle the game well.\l\lThat is the thrill of Rotation Battles!$"
+	.string "While a come-from-behind win is\npossible, if you are a strong Trainer,\lyou can handle the game well. That is\lthe thrill of Rotation Battles!$"
 
 Unova_OpelucidCity_Z125_EventScript_Npc2::
 	trainerbattle_double TRAINER_BW_LOU_514, Unova_OpelucidCity_Z125_EventScript_Npc2_Intro, Unova_OpelucidCity_Z125_EventScript_Npc2_Defeat, Unova_OpelucidCity_Z125_EventScript_Npc2_NotEnough
@@ -31,13 +31,13 @@ Unova_OpelucidCity_Z125_EventScript_Npc2::
 	end
 
 Unova_OpelucidCity_Z125_EventScript_Npc2_Intro:
-	.string "I thought and thought\nand chose these three!\l\lTheir destructive force is overwhelming!$"
+	.string "I thought and thought and chose these\nthree! Their destructive force is\loverwhelming!$"
 
 Unova_OpelucidCity_Z125_EventScript_Npc2_Defeat:
 	.string "Did I position them wrong?\nOr is there a more fundamental problem?$"
 
 Unova_OpelucidCity_Z125_EventScript_Npc2_Post:
-	.string "Which Pokémon\nshould I put in the middle...?\l\lI'm still thinking about it.$"
+	.string "Which Pokémon\nshould I put in the middle...?\lI'm still thinking about it.$"
 
 Unova_OpelucidCity_Z125_EventScript_Npc2_NotEnough:
 	.string "You need two Pokémon to battle us!$"

@@ -56,7 +56,7 @@ Unova_VillageBridge_Z255_EventScript_Npc12::
 	end
 
 Unova_VillageBridge_Z255_EventScript_Npc12_Intro:
-	.string "What I learned after reading many books\nis that there are still a lot of mysteries\l\lin the world!$"
+	.string "What I learned after reading many\nbooks is that there are still a lot of\lmysteries in the world!$"
 
 Unova_VillageBridge_Z255_EventScript_Npc12_Defeat:
 	.string "How we can be friendlier with Pokémon\nis also a mystery.$"
@@ -70,13 +70,13 @@ Unova_VillageBridge_Z255_EventScript_Npc13::
 	end
 
 Unova_VillageBridge_Z255_EventScript_Npc13_Intro:
-	.string "I've been researching the Village Bridge,\nbut taking a break is also important!$"
+	.string "I've been researching the Village\nBridge, but taking a break is also\limportant!$"
 
 Unova_VillageBridge_Z255_EventScript_Npc13_Defeat:
-	.string "You and your Pokémon!\nYou are supporting each other perfectly!$"
+	.string "You and your Pokémon! You are\nsupporting each other perfectly!$"
 
 Unova_VillageBridge_Z255_EventScript_Npc13_Post:
-	.string "In the Village Bridge,\na lot of bricks support each other\l\land keep the bridge from collapsing.\pThat's how the bridge has kept its shape\nfor over 100 years.$"
+	.string "In the Village Bridge,\na lot of bricks support each other\land keep the bridge from collapsing.\pThat's how the bridge has kept its\nshape for over 100 years.$"
 
 Unova_VillageBridge_Z255_EventScript_Npc14::
 	bwscript 255, 9

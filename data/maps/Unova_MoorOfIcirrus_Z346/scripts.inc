@@ -42,13 +42,13 @@ Unova_MoorOfIcirrus_Z346_EventScript_Npc6::
 	end
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc6_Intro:
-	.string "If there are Trainers,\nI just have battles with them.\pBecause they may show me\nWater-type Pokémon\l\lI've never seen.$"
+	.string "If there are Trainers,\nI just have battles with them.\pBecause they may show me\nWater-type Pokémon\lI've never seen.$"
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc6_Defeat:
 	.string "I've never seen\nsuch a strong Trainer!$"
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc6_Post:
-	.string "If I find water, I drop in my fishing line.\pBecause even with a puddle,\nthere may be Pokémon\l\lthat I've never seen.$"
+	.string "If I find water, I drop in my fishing\nline.\pBecause even with a puddle,\nthere may be Pokémon\lthat I've never seen.$"
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc7::
 	trainerbattle_single TRAINER_BW_HARRY_583, Unova_MoorOfIcirrus_Z346_EventScript_Npc7_Intro, Unova_MoorOfIcirrus_Z346_EventScript_Npc7_Defeat
@@ -56,7 +56,7 @@ Unova_MoorOfIcirrus_Z346_EventScript_Npc7::
 	end
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc7_Intro:
-	.string "Knowing oneself, knowing the other,\nand knowing the surroundings...\l\lThat's a Ranger!$"
+	.string "Knowing oneself, knowing the other,\nand knowing the surroundings...\lThat's a Ranger!$"
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc7_Defeat:
 	.string "I guess there's still\na lot I don't know!$"
@@ -76,7 +76,7 @@ Unova_MoorOfIcirrus_Z346_EventScript_Npc8_Defeat:
 	.string "Oh! My boots got completely soaked\nin the battle!$"
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc8_Post:
-	.string "I would feel sorry for boots\nif I cared about them getting dirty.\pPokémon are the same. Right?\nI feel sorry for them getting hurt,\l\lbut it makes them stronger.$"
+	.string "I would feel sorry for boots\nif I cared about them getting dirty.\pPokémon are the same. Right?\nI feel sorry for them getting hurt,\lbut it makes them stronger.$"
 
 Unova_MoorOfIcirrus_Z346_EventScript_Npc9::
 	trainerbattle_single TRAINER_BW_CHLORIS_582, Unova_MoorOfIcirrus_Z346_EventScript_Npc9_Intro, Unova_MoorOfIcirrus_Z346_EventScript_Npc9_Defeat

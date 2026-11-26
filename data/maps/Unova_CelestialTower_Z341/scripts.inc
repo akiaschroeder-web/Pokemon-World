@@ -22,13 +22,13 @@ Unova_CelestialTower_Z341_EventScript_Npc1::
 	end
 
 Unova_CelestialTower_Z341_EventScript_Npc1_Intro:
-	.string "Pokémon that grew up in Unova and\nPokémon that grew up elsewhere--\l\lboth rest here quietly.$"
+	.string "Pokémon that grew up in Unova and\nPokémon that grew up elsewhere--\lboth rest here quietly.$"
 
 Unova_CelestialTower_Z341_EventScript_Npc1_Defeat:
 	.string "Your Pokémon are full of life!$"
 
 Unova_CelestialTower_Z341_EventScript_Npc1_Post:
-	.string "Pokémon that grew up in Unova and\nPokémon that grew up elsewhere--\l\lall are precious Pokémon...$"
+	.string "Pokémon that grew up in Unova and\nPokémon that grew up elsewhere--\lall are precious Pokémon...$"
 
 Unova_CelestialTower_Z341_EventScript_Npc2::
 	finditem ITEM_TM65, 1

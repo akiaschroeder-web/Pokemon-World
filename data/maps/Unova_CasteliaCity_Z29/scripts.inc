@@ -57,7 +57,7 @@ Unova_CasteliaCity_Z29_EventScript_Npc11::
 	end
 
 Unova_CasteliaCity_Z29_EventScript_Npc11_Intro:
-	.string "What do you think? This Pokémon Gym...\nHow should I say? Isn't it full of...\l\loutrageous and mysterious charms?$"
+	.string "What do you think? This Pokémon Gym...\nHow should I say? Isn't it full of...\loutrageous and mysterious charms?$"
 
 Unova_CasteliaCity_Z29_EventScript_Npc11_Defeat:
 	.string "As a Trainer,\nyou are full of charm!$"
@@ -77,7 +77,7 @@ Unova_CasteliaCity_Z29_EventScript_Npc12_Defeat:
 	.string "Falling beautifully...\nThis is also an art...$"
 
 Unova_CasteliaCity_Z29_EventScript_Npc12_Post:
-	.string "If you step on two switches, two lamps\nwill light up and a gate will open!\l\lThis is also an art!$"
+	.string "If you step on two switches, two lamps\nwill light up and a gate will open!\lThis is also an art!$"
 
 Unova_CasteliaCity_Z29_EventScript_Sign0::
 	bwscript 29, 1

@@ -8,7 +8,7 @@ Unova_ChallengerSCave_Z354_EventScript_Npc0::
 	end
 
 Unova_ChallengerSCave_Z354_EventScript_Npc0_Intro:
-	.string "Please tell me what kinds of Pokémon are\nby your side and share your happiness\l\lwhen you are happy!$"
+	.string "Please tell me what kinds of Pokémon\nare by your side and share your\lhappiness when you are happy!$"
 
 Unova_ChallengerSCave_Z354_EventScript_Npc0_Defeat:
 	.string "Wow!\nWonderful!$"
@@ -28,7 +28,7 @@ Unova_ChallengerSCave_Z354_EventScript_Npc1_Defeat:
 	.string "Oh!\nYou're pretty good!$"
 
 Unova_ChallengerSCave_Z354_EventScript_Npc1_Post:
-	.string "Our days with Pokémon\nare full of happiness, and\l\lour joys will grow as we live together!$"
+	.string "Our days with Pokémon\nare full of happiness, and\lour joys will grow as we live together!$"
 
 Unova_ChallengerSCave_Z354_EventScript_Npc2::
 	finditem ITEM_PROTEIN, 1

@@ -14,7 +14,7 @@ Unova_CasteliaCity_Z45_EventScript_Npc0_Defeat:
 	.string "I had the honor of meeting\nyour Pokémon!$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc0_Post:
-	.string "Well, well, you are strong!\nI admire you.\l\lI would like to learn by watching you!$"
+	.string "Well, well, you are strong!\nI admire you.\lI would like to learn by watching you!$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc1::
 	trainerbattle_single TRAINER_BW_ALBERTA_94, Unova_CasteliaCity_Z45_EventScript_Npc1_Intro, Unova_CasteliaCity_Z45_EventScript_Npc1_Defeat
@@ -28,7 +28,7 @@ Unova_CasteliaCity_Z45_EventScript_Npc1_Defeat:
 	.string "I'm good at Pokémon, but I still lost!$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc1_Post:
-	.string "A competent woman is\nas good at Pokémon battles\l\las she is at her work!$"
+	.string "A competent woman is\nas good at Pokémon battles\las she is at her work!$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_INGRID_93, Unova_CasteliaCity_Z45_EventScript_Npc2_Intro, Unova_CasteliaCity_Z45_EventScript_Npc2_Defeat
@@ -36,13 +36,13 @@ Unova_CasteliaCity_Z45_EventScript_Npc2::
 	end
 
 Unova_CasteliaCity_Z45_EventScript_Npc2_Intro:
-	.string "Welcome to the Battle Company!\nSince you are here, battle with me.\l\lI won't take no for an answer!$"
+	.string "Welcome to the Battle Company!\nSince you are here, battle with me.\lI won't take no for an answer!$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc2_Defeat:
 	.string "Oh, dear. Aren't you being\ntoo hard on me?$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc2_Post:
-	.string "In the Battle Company, the stronger you\nare, the higher the floor you work on.$"
+	.string "In the Battle Company, the stronger\nyou are, the higher the floor you work\lon.$"
 
 Unova_CasteliaCity_Z45_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_WARREN_166, Unova_CasteliaCity_Z45_EventScript_Npc3_Intro, Unova_CasteliaCity_Z45_EventScript_Npc3_Defeat

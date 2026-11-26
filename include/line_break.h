@@ -9,9 +9,9 @@
 #define MAX_SPACE_WIDTH     5
 
 struct StringWord {
-    u32 startIndex:16;
-    u32 length:8;
-    u32 width:8;
+    u16 startIndex;
+    u8 length;
+    u16 width;      // Pokémon World: was 8 bits, so a word wider than 255 pixels wrapped around
 };
 
 struct StringLine {

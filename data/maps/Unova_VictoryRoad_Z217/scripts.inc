@@ -14,5 +14,5 @@ Unova_VictoryRoad_Z217_EventScript_Npc0_Defeat:
 	.string "Not bad!\nI like your strength.$"
 
 Unova_VictoryRoad_Z217_EventScript_Npc0_Post:
-	.string "As a Pokémon grows, its connection\nto its Trainer will improve,\l\land their bond becomes stronger!$"
+	.string "As a Pokémon grows, its connection\nto its Trainer will improve,\land their bond becomes stronger!$"
 

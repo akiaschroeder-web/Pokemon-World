@@ -24,7 +24,7 @@ Unova_Route9_EventScript_Npc0_Defeat:
 	.string "You!!\nWhat great strength you have!$"
 
 Unova_Route9_EventScript_Npc0_Post:
-	.string "For a child like you, \na Bicycle is just right!\l\lIt is healthier, isn't it?$"
+	.string "For a child like you, \na Bicycle is just right!\lIt is healthier, isn't it?$"
 
 Unova_Route9_EventScript_Npc1::
 	trainerbattle_single TRAINER_BW_ZEKE_181, Unova_Route9_EventScript_Npc1_Intro, Unova_Route9_EventScript_Npc1_Defeat
@@ -38,7 +38,7 @@ Unova_Route9_EventScript_Npc1_Defeat:
 	.string "I have lost!\nI am such a loser!$"
 
 Unova_Route9_EventScript_Npc1_Post:
-	.string "Ah! I wish I could fly down\na much, much bigger road.\l\lThe Pokémon would be happy, too!$"
+	.string "Ah! I wish I could fly down\na much, much bigger road.\lThe Pokémon would be happy, too!$"
 
 Unova_Route9_EventScript_Npc2::
 	trainerbattle_double TRAINER_BW_JIM_CAS_157, Unova_Route9_EventScript_Npc2_Intro, Unova_Route9_EventScript_Npc2_Defeat, Unova_Route9_EventScript_Npc2_NotEnough
@@ -83,7 +83,7 @@ Unova_Route9_EventScript_Npc4_Defeat:
 	.string "That was just a joke.\nYou didn't have to take it so seriously!$"
 
 Unova_Route9_EventScript_Npc4_Post:
-	.string "Bah! I haven't fallen so low\nthat I would steal somebody's Pokémon\l\llike Team Plasma!$"
+	.string "Bah! I haven't fallen so low\nthat I would steal somebody's Pokémon\llike Team Plasma!$"
 
 Unova_Route9_EventScript_Npc5::
 	bwscript 348, 5157

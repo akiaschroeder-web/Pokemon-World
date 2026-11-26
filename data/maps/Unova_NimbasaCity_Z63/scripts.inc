@@ -29,7 +29,7 @@ Unova_NimbasaCity_Z63_EventScript_Npc2_Defeat:
 	.string "Oh, no!\nI thought I'd be the fashionista!$"
 
 Unova_NimbasaCity_Z63_EventScript_Npc2_Post:
-	.string "Elesa controls an elegant Gym\nin elegant Nimbasa City.\l\lShe has an essential elegance.\l\lYou should be her fan, too!$"
+	.string "Elesa controls an elegant Gym\nin elegant Nimbasa City.\lShe has an essential elegance.\lYou should be her fan, too!$"
 
 Unova_NimbasaCity_Z63_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_CODY_66, Unova_NimbasaCity_Z63_EventScript_Npc3_Intro, Unova_NimbasaCity_Z63_EventScript_Npc3_Defeat
@@ -43,7 +43,7 @@ Unova_NimbasaCity_Z63_EventScript_Npc3_Defeat:
 	.string "Roll, roll, roll, roll, roll, roll, roll on!\nRoller coaster!$"
 
 Unova_NimbasaCity_Z63_EventScript_Npc3_Post:
-	.string "I was aiming for a fighting style\nthat overwhelms you with speed...\pIf I can move faster than my opponents,\nI will get the upper hand.$"
+	.string "I was aiming for a fighting style\nthat overwhelms you with speed...\pIf I can move faster than my\nopponents, I will get the upper hand.$"
 
 Unova_NimbasaCity_Z63_EventScript_Npc4::
 	bwscript 63, 9

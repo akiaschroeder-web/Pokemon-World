@@ -19,7 +19,7 @@ BwTrainerDefeat_8:
 BwTrainerDefeat_9:
 	.string "Yow!\nYou're a Trainer with a lot of pepper!$"
 BwTrainerDefeat_10:
-	.string "That was one of our most popular dishes.\nDid you enjoy the battle?$"
+	.string "That was one of our most popular\ndishes. Did you enjoy the battle?$"
 BwTrainerDefeat_11:
 	.string "You got me.\pI am...burned...out...$"
 BwTrainerDefeat_12:
@@ -39,7 +39,7 @@ BwTrainerDefeat_18:
 BwTrainerDefeat_19:
 	.string "Oh. I guess they're still pretty green.$"
 BwTrainerDefeat_20:
-	.string "Oh, I see!\nYou've trained them by traveling together!$"
+	.string "Oh, I see! You've trained them by\ntraveling together!$"
 BwTrainerDefeat_21:
 	.string "My theory about you was correct.\pYou're more than just talented...\nYou're motivated! I salute you!$"
 BwTrainerDefeat_22:
@@ -57,11 +57,11 @@ BwTrainerDefeat_27:
 BwTrainerDefeat_28:
 	.string "Did you feel my wildness?$"
 BwTrainerDefeat_29:
-	.string "You and your Pokémon make a great team!$"
+	.string "You and your Pokémon make a great\nteam!$"
 BwTrainerDefeat_30:
 	.string "A ray of light shone in...\nI feel a little like that.$"
 BwTrainerDefeat_31:
-	.string "I've even won against my teacher, though...$"
+	.string "I've even won against my teacher,\nthough...$"
 BwTrainerDefeat_32:
 	.string "Mayo: Two of us keeping time together...\nAhhhhhhhhhhhhhhhhh!!\pMay: Two of us keeping time together...\nAhhhhhhhhhhhhhhhhh!!$"
 BwTrainerDefeat_33:
@@ -77,7 +77,7 @@ BwTrainerDefeat_37:
 BwTrainerDefeat_38:
 	.string "We've trained by doing physical work.\nSo even when we lose, we're powerful!$"
 BwTrainerDefeat_39:
-	.string "Wooo! You're a top-class Trainer,\nthe best in the world!\l\l...But what do I know?$"
+	.string "Wooo! You're a top-class Trainer,\nthe best in the world!\l...But what do I know?$"
 BwTrainerDefeat_40:
 	.string "My first battle...\nAnd I lost...$"
 BwTrainerDefeat_41:
@@ -91,7 +91,7 @@ BwTrainerDefeat_44:
 BwTrainerDefeat_45:
 	.string "I lost, but now I have more things\nto add to my bag.$"
 BwTrainerDefeat_46:
-	.string "There's a rhythm to attacking\nand defending...\l\lI think ours got thrown off.$"
+	.string "There's a rhythm to attacking\nand defending...\lI think ours got thrown off.$"
 BwTrainerDefeat_47:
 	.string "Turn around, turn around, turn around...$"
 BwTrainerDefeat_48:
@@ -117,11 +117,11 @@ BwTrainerDefeat_57:
 BwTrainerDefeat_58:
 	.string "Why do you keep beating me?\pWe have the same number of Gym Badges.\nWe should be equals in strength...$"
 BwTrainerDefeat_59:
-	.string "The Pokémon on both sides did their best!$"
+	.string "The Pokémon on both sides did their\nbest!$"
 BwTrainerDefeat_60:
-	.string "The Pokémon on both sides did their best!$"
+	.string "The Pokémon on both sides did their\nbest!$"
 BwTrainerDefeat_61:
-	.string "The Pokémon on both sides did their best!$"
+	.string "The Pokémon on both sides did their\nbest!$"
 BwTrainerDefeat_62:
 	.string "Plasmaaaa!\n...What? Did we lose?$"
 BwTrainerDefeat_63:
@@ -169,7 +169,7 @@ BwTrainerDefeat_83:
 BwTrainerDefeat_84:
 	.string "A new battle strategy only works\nif you stick with it...$"
 BwTrainerDefeat_85:
-	.string "Your Pokémon uses those kinds of moves?!$"
+	.string "Your Pokémon uses those kinds of\nmoves?!$"
 BwTrainerDefeat_86:
 	.string "I may be a bookworm,\nbut I am not a bug Pokémon.$"
 BwTrainerDefeat_87:
@@ -193,7 +193,7 @@ BwTrainerDefeat_95:
 BwTrainerDefeat_96:
 	.string "Oh, hee hee hee...\nYou're so strong.$"
 BwTrainerDefeat_97:
-	.string "Wonderful battle! A learning experience.\n...Thanks for the tip!$"
+	.string "Wonderful battle! A learning\nexperience. ...Thanks for the tip!$"
 BwTrainerDefeat_98:
 	.string "That was a wonderful battle.\nBravo!$"
 BwTrainerDefeat_99:
@@ -231,7 +231,7 @@ BwTrainerDefeat_114:
 BwTrainerDefeat_115:
 	.string "Whether I win or lose!\nMysteries only deepen!$"
 BwTrainerDefeat_116:
-	.string "The results of my research have revealed\nthat you are the best!$"
+	.string "The results of my research have\nrevealed that you are the best!$"
 BwTrainerDefeat_117:
 	.string "Aha!  \nThat made a light bulb go on in my head!$"
 BwTrainerDefeat_118:
@@ -247,7 +247,7 @@ BwTrainerDefeat_122:
 BwTrainerDefeat_123:
 	.string "You got me!\nMy Pokémon thinks so, too!$"
 BwTrainerDefeat_124:
-	.string "From now on, you are the number two Trainer\non Twist Mountain.$"
+	.string "From now on, you are the number two\nTrainer on Twist Mountain.$"
 BwTrainerDefeat_125:
 	.string "I was blown away!!$"
 BwTrainerDefeat_126:
@@ -261,11 +261,11 @@ BwTrainerDefeat_129:
 BwTrainerDefeat_130:
 	.string "Bam! You lectured me!\nWhat a great Trainer!$"
 BwTrainerDefeat_131:
-	.string "The wonderful combination\nof you and your Pokémon!\l\lWhat a beautiful friendship!$"
+	.string "The wonderful combination\nof you and your Pokémon!\lWhat a beautiful friendship!$"
 BwTrainerDefeat_132:
 	.string "Aghhhh...\nI did my best, but we lost...$"
 BwTrainerDefeat_133:
-	.string "This intense feeling that floods\nme after a defeat...\l\lI don't know how to describe it.$"
+	.string "This intense feeling that floods\nme after a defeat...\lI don't know how to describe it.$"
 BwTrainerDefeat_134:
 	.string "Our team doesn't need a Trainer\nwho is quite that strong!$"
 BwTrainerDefeat_135:
@@ -289,7 +289,7 @@ BwTrainerDefeat_143:
 BwTrainerDefeat_144:
 	.string "I just caught them\nand have not raised them yet!$"
 BwTrainerDefeat_145:
-	.string "Pfft...\nMy bold bravery is vanishing into the air...$"
+	.string "Pfft... My bold bravery is vanishing into\nthe air...$"
 BwTrainerDefeat_146:
 	.string "I wanted to captivate you,\nbut I feel like I slipped and fell!$"
 BwTrainerDefeat_147:
@@ -325,7 +325,7 @@ BwTrainerDefeat_161:
 BwTrainerDefeat_162:
 	.string "Uh-oh... I lost.\nBut it was fun, so I'm satisfied.$"
 BwTrainerDefeat_163:
-	.string "You are so strong--too strong to be cute!$"
+	.string "You are so strong--too strong to be\ncute!$"
 BwTrainerDefeat_164:
 	.string "Ack...\nCome on!$"
 BwTrainerDefeat_165:
@@ -335,7 +335,7 @@ BwTrainerDefeat_166:
 BwTrainerDefeat_167:
 	.string "Today's work\ndidn't go well...$"
 BwTrainerDefeat_168:
-	.string "Oh, no...\nI've found someone who's out of my league!$"
+	.string "Oh, no... I've found someone who's out\nof my league!$"
 BwTrainerDefeat_169:
 	.string "Even the battle I lost\nwill be a bittersweet memory...$"
 BwTrainerDefeat_170:
@@ -393,7 +393,7 @@ BwTrainerDefeat_195:
 BwTrainerDefeat_196:
 	.string "Falling beautifully...\nThis is also an art...$"
 BwTrainerDefeat_197:
-	.string "How is this possible?\nI will walk through the honey walls again.$"
+	.string "How is this possible? I will walk through\nthe honey walls again.$"
 BwTrainerDefeat_198:
 	.string "As a Trainer,\nyou are full of charm!$"
 BwTrainerDefeat_199:
@@ -421,7 +421,7 @@ BwTrainerDefeat_209:
 BwTrainerDefeat_210:
 	.string "While I was staring at your pretty face,\nthe Pokémon battle was over.$"
 BwTrainerDefeat_211:
-	.string "I thought I could take it easy against you,\nbut got burned bad!$"
+	.string "I thought I could take it easy against\nyou, but got burned bad!$"
 BwTrainerDefeat_212:
 	.string "Wow...\nYou are my strongest challenger so far.$"
 BwTrainerDefeat_213:
@@ -453,15 +453,15 @@ BwTrainerDefeat_226:
 BwTrainerDefeat_227:
 	.string "Argh...\nI won't forgive you!$"
 BwTrainerDefeat_228:
-	.string "Wow. I'm dumbstruck!\pI know a lot of words, but right now I can't\nfigure out how to say this.\pPerhaps, if the feeling I'm having now\nis put into words, it will be trapped there.\pSo let me say this...\nMy feeling is you're a great Trainer!$"
+	.string "Wow. I'm dumbstruck!\pI know a lot of words, but right now I\ncan't figure out how to say this.\pPerhaps, if the feeling I'm having now\nis put into words, it will be trapped\lthere.\pSo let me say this...\nMy feeling is you're a great Trainer!$"
 BwTrainerDefeat_229:
-	.string "There is no single strongest Pokémon\nor sole best combination...\pThat's why it is difficult\nto keep winning.\pHowever, I think a heart that desires\nstrength and strives to grow\l\lstronger is a precious ideal.\pThat is why I respect you--\nbecause you have these things.$"
+	.string "There is no single strongest Pokémon\nor sole best combination...\pThat's why it is difficult\nto keep winning.\pHowever, I think a heart that desires\nstrength and strives to grow\lstronger is a precious ideal.\pThat is why I respect you--\nbecause you have these things.$"
 BwTrainerDefeat_230:
-	.string "If somebody wins a battle, then, without\ndoubt, someone else has lost the battle.\pThat's the way of battle.\pA real warrior doesn't dash off in pursuit\nof the next victory, nor throw a fit\l\lwhen experiencing a loss.\pA real warrior ponders the next battle.$"
+	.string "If somebody wins a battle, then,\nwithout doubt, someone else has lost\lthe battle.\pThat's the way of battle.\pA real warrior doesn't dash off in\npursuit of the next victory, nor throw a\lfit when experiencing a loss.\pA real warrior ponders the next battle.$"
 BwTrainerDefeat_231:
 	.string "As a Trainer, you are both excellent\nand elegant. Your Pokémon have class.\pI am very pleased to have battled you.$"
 BwTrainerDefeat_232:
-	.string "My calculations... No! My careful schemes!\nThe world should be mine!$"
+	.string "My calculations... No! My careful\nschemes! The world should be mine!$"
 BwTrainerDefeat_233:
 	.string "I could not make really good use\nof the Ability Mummy...$"
 BwTrainerDefeat_234:
@@ -469,11 +469,11 @@ BwTrainerDefeat_234:
 BwTrainerDefeat_235:
 	.string "I am a Psychic,\nso I can tell the battle is over.$"
 BwTrainerDefeat_236:
-	.string "That message came through loud and clear!$"
+	.string "That message came through loud and\nclear!$"
 BwTrainerDefeat_237:
 	.string "I am feeling...\nvery upset because I could not win!$"
 BwTrainerDefeat_238:
-	.string "Yes! It was fun that your and my Pokémon\nwere both so energetic!$"
+	.string "Yes! It was fun that your and my\nPokémon were both so energetic!$"
 BwTrainerDefeat_239:
 	.string "Oh! I may have discovered\nsomething good about you!$"
 BwTrainerDefeat_240:
@@ -513,7 +513,7 @@ BwTrainerDefeat_256:
 BwTrainerDefeat_257:
 	.string "I must analyze my defeat...$"
 BwTrainerDefeat_258:
-	.string "I was so preoccupied with the mechanism,\nI forgot to concentrate on the battle!$"
+	.string "I was so preoccupied with the\nmechanism, I forgot to concentrate on\lthe battle!$"
 BwTrainerDefeat_259:
 	.string "Oh!\nYou're pretty good!$"
 BwTrainerDefeat_260:
@@ -539,7 +539,7 @@ BwTrainerDefeat_269:
 BwTrainerDefeat_270:
 	.string "I'm sure you can carve out\nyour own path!$"
 BwTrainerDefeat_271:
-	.string "You're strong! I guess you want to know\nabout the dragons' heads pretty badly.$"
+	.string "You're strong! I guess you want to\nknow about the dragons' heads pretty\lbadly.$"
 BwTrainerDefeat_272:
 	.string "You are bringing out your Pokémon's\nfull potential!$"
 BwTrainerDefeat_273:
@@ -581,11 +581,11 @@ BwTrainerDefeat_290:
 BwTrainerDefeat_291:
 	.string "My way of losing is\nalso dynamic!$"
 BwTrainerDefeat_292:
-	.string "What can you learn by losing?\nI feel like there's a “Eureka!“ here for me.$"
+	.string "What can you learn by losing? I feel\nlike there's a “Eureka!“ here for me.$"
 BwTrainerDefeat_293:
 	.string "Plasmaaaa!\nAhh, our beautiful dream...$"
 BwTrainerDefeat_294:
-	.string "Whoa, whoa, come on now!\nI'm shocked to lose against a little kid!$"
+	.string "Whoa, whoa, come on now! I'm shocked to\nlose against a little kid!$"
 BwTrainerDefeat_295:
 	.string "Come on! \nYou're just a kid--a kid on an ego trip!$"
 BwTrainerDefeat_296:
@@ -615,7 +615,7 @@ BwTrainerDefeat_307:
 BwTrainerDefeat_308:
 	.string "Plasmaaaa!\nThis is a nightmare!$"
 BwTrainerDefeat_309:
-	.string "My hunch is you're sabotaging us because\nyou're flat-out jealous of our cool outfits.$"
+	.string "My hunch is you're sabotaging us\nbecause you're flat-out jealous of our\lcool outfits.$"
 BwTrainerDefeat_310:
 	.string "Oh, my! No, no.\nPlasmaaaa!$"
 BwTrainerDefeat_311:
@@ -687,7 +687,7 @@ BwTrainerDefeat_343:
 BwTrainerDefeat_344:
 	.string "Masa: The greatness of basketball...\nI think you got it.\pYas: Shall we curl up \nlike balls?$"
 BwTrainerDefeat_345:
-	.string "Les: Thank you for listening to the beat\nof our spirit!\pWeb: Thank you for listening to the yell\nof our spirit!$"
+	.string "Les: Thank you for listening to the\nbeat of our spirit!\pWeb: Thank you for listening to the yell\nof our spirit!$"
 BwTrainerDefeat_346:
 	.string "Alf: Strike!\nGame over! Yes, the end!\pFred: Ah, my Poké Ball!$"
 BwTrainerDefeat_347:
@@ -719,7 +719,7 @@ BwTrainerDefeat_359:
 BwTrainerDefeat_360:
 	.string "That fighting style reminds me\nof the old days!$"
 BwTrainerDefeat_361:
-	.string "It's so frustrating to lose!\nBut it's also important to learn from it.$"
+	.string "It's so frustrating to lose! But it's\nalso important to learn from it.$"
 BwTrainerDefeat_362:
 	.string "The Pokémon you raised\nare great, too!$"
 BwTrainerDefeat_363:
@@ -739,7 +739,7 @@ BwTrainerDefeat_369:
 BwTrainerDefeat_370:
 	.string "Ladies and Gentlemen!\nThe game is over!$"
 BwTrainerDefeat_371:
-	.string "What is so great about popular athletes?\nWhat is bad about martial artists?$"
+	.string "What is so great about popular\nathletes? What is bad about martial\lartists?$"
 BwTrainerDefeat_372:
 	.string "The heat here is too much.\nI'm just burning up!$"
 BwTrainerDefeat_373:
@@ -809,15 +809,15 @@ BwTrainerDefeat_404:
 BwTrainerDefeat_405:
 	.string "Impressive.\nBut why can't I win?!$"
 BwTrainerDefeat_407:
-	.string "After the battle, a fresh wind\nblew through my heart...\pUse the battle with me as a stepping stone\nand move forward!$"
+	.string "After the battle, a fresh wind\nblew through my heart...\pUse the battle with me as a stepping\nstone and move forward!$"
 BwTrainerDefeat_408:
 	.string "A pleasant wind is carrying a defeat.\n...Now, it is stopping here, though.$"
 BwTrainerDefeat_409:
 	.string "I'm upset because I lost,\nso I will ring the bell. Ting-a-ling. ?$"
 BwTrainerDefeat_410:
-	.string "You and your Pokémon share\nthe sad feeling of losing half-and-half...$"
+	.string "You and your Pokémon share the sad\nfeeling of losing half-and-half...$"
 BwTrainerDefeat_411:
-	.string "Try seven times and fall eight times...\nNo!\l\lFall down seven times, stand up eight!$"
+	.string "Try seven times and fall eight times...\nNo!\lFall down seven times, stand up eight!$"
 BwTrainerDefeat_412:
 	.string "You were so strong\nthat I couldn't help falling back!$"
 BwTrainerDefeat_413:
@@ -863,13 +863,13 @@ BwTrainerDefeat_432:
 BwTrainerDefeat_433:
 	.string "I lost!\nBut I still love everything!$"
 BwTrainerDefeat_434:
-	.string "I'm so overwhelmed that I cannot speak...$"
+	.string "I'm so overwhelmed that I cannot\nspeak...$"
 BwTrainerDefeat_435:
 	.string "Yep! A strong person is strong.\nAnd a weak person is weak.$"
 BwTrainerDefeat_436:
 	.string "Ho ho!\nThese are some impressive Pokémon!$"
 BwTrainerDefeat_437:
-	.string "Wah!\nEncore un formidable souvenir de voyage!$"
+	.string "Wah! Encore un formidable souvenir de\nvoyage!$"
 BwTrainerDefeat_438:
 	.string "I felt the bond between\nyou and your Pokémon!$"
 BwTrainerDefeat_439:
@@ -877,7 +877,7 @@ BwTrainerDefeat_439:
 BwTrainerDefeat_440:
 	.string "Notre combat est à jamais gravé\ndans ma mémoire!$"
 BwTrainerDefeat_441:
-	.string "I want something that's like a map but\ntells me how to fight instead of where to go.$"
+	.string "I want something that's like a map but\ntells me how to fight instead of where\lto go.$"
 BwTrainerDefeat_442:
 	.string "Your strength!\nI want to put it in a guidebook!$"
 BwTrainerDefeat_443:
@@ -893,7 +893,7 @@ BwTrainerDefeat_447:
 BwTrainerDefeat_448:
 	.string "Fey: Your Pokémon are\ngreat friends, aren't they?\pSue: It was over while I was\nconsidering what my partner would do.$"
 BwTrainerDefeat_449:
-	.string "Emy: No, I can't believe it!\nHow come you're so strong?\pLin: Our team is the best in the whole world\never! How did you beat us?$"
+	.string "Emy: No, I can't believe it!\nHow come you're so strong?\pLin: Our team is the best in the whole\nworld ever! How did you beat us?$"
 BwTrainerDefeat_450:
 	.string "On a small rise of land,\nI lost and was left speechless...$"
 BwTrainerDefeat_451:
@@ -967,7 +967,7 @@ BwTrainerDefeat_518:
 BwTrainerDefeat_519:
 	.string "I will start all over again.\nWe still have time.$"
 BwTrainerDefeat_520:
-	.string "But you are just so relaxed! How could you\nwin against a busy person like me?$"
+	.string "But you are just so relaxed! How could\nyou win against a busy person like me?$"
 BwTrainerDefeat_523:
 	.string "What?\nHow could I lose?$"
 BwTrainerDefeat_524:
@@ -1005,7 +1005,7 @@ BwTrainerDefeat_540:
 BwTrainerDefeat_541:
 	.string "Pokémon battles are fun.\nBut what is it to be truly strong?$"
 BwTrainerDefeat_542:
-	.string "After all, I am the strongest and greatest.\nJust kidding!$"
+	.string "After all, I am the strongest and\ngreatest. Just kidding!$"
 BwTrainerDefeat_543:
 	.string "My!\nSpecial Emolga?!$"
 BwTrainerDefeat_544:
@@ -1037,25 +1037,25 @@ BwTrainerDefeat_556:
 BwTrainerDefeat_557:
 	.string "I failed to seize the victory!$"
 BwTrainerDefeat_563:
-	.string "Wow. I'm stunned.\pFor all the words I know, I can't figure out\nhow to say this... Putting my feelings\l\linto words would just be a trap.\pAll I will say is I feel you're even greater\nthan I thought!$"
+	.string "Wow. I'm stunned.\pFor all the words I know, I can't figure\nout how to say this... Putting my\lfeelings into words would just be a\ltrap.\pAll I will say is I feel you're even\ngreater than I thought!$"
 BwTrainerDefeat_564:
-	.string "There is no strongest Pokémon or single\nbest combination...\pSo, there are no guarantees of winning.\pBut the determination to be strong and to\ncontinue to grow and improve is itself a\l\lgreat strength. It's the determination\l\lthat you show that makes me respect you.$"
+	.string "There is no strongest Pokémon or single\nbest combination...\pSo, there are no guarantees of winning.\pBut the determination to be strong and\nto continue to grow and improve is\litself a great strength. It's the\ldetermination that you show that makes\lme respect you.$"
 BwTrainerDefeat_565:
-	.string "If somebody wins, the person who fought\nagainst that person will lose.\l\lThat's battle.\pA good contender just seeks the next\nvictory without bragging after winning,\l\land without getting upset after losing.$"
+	.string "If somebody wins, the person who\nfought against that person will lose.\lThat's battle.\pA good contender just seeks the next\nvictory without bragging after winning,\land without getting upset after losing.$"
 BwTrainerDefeat_566:
-	.string "As you have always been...or even more\nthan ever...\l\lyou are an elegant and excellent Trainer.\pYour Pokémon also have class.\nI am very pleased to have battled you.$"
+	.string "As you have always been...or even more\nthan ever... you are an elegant and\lexcellent Trainer.\pYour Pokémon also have class.\nI am very pleased to have battled you.$"
 BwTrainerDefeat_567:
-	.string "My heart is pounding so hard because I had\nsuch a heated battle with you.\pYou are a really great Trainer!!$"
+	.string "My heart is pounding so hard because I\nhad such a heated battle with you.\pYou are a really great Trainer!!$"
 BwTrainerDefeat_568:
 	.string "Blub, blub, blub...\n...I am sinking.$"
 BwTrainerDefeat_569:
 	.string "I guess people get strong\nby visiting Gyms!$"
 BwTrainerDefeat_570:
-	.string "I lost. But I'm still cool, because not many\npeople can say they battled while swimming!$"
+	.string "I lost. But I'm still cool, because not\nmany people can say they battled while\lswimming!$"
 BwTrainerDefeat_571:
 	.string "The adventure is over already.$"
 BwTrainerDefeat_572:
-	.string "You should put on a bathing suit and swim\ninstead of riding on a Pokémon!$"
+	.string "You should put on a bathing suit and\nswim instead of riding on a Pokémon!$"
 BwTrainerDefeat_573:
 	.string "Your battling style\nis very rough and ready!$"
 BwTrainerDefeat_574:
@@ -1063,7 +1063,7 @@ BwTrainerDefeat_574:
 BwTrainerDefeat_575:
 	.string "You won!\nYour Pokémon are awesome!$"
 BwTrainerDefeat_576:
-	.string "Wahaha!\nYour Pokémon looks like it is having fun!$"
+	.string "Wahaha! Your Pokémon looks like it is\nhaving fun!$"
 BwTrainerDefeat_577:
 	.string "Thank you! Now you and I are friends.\nRight?$"
 BwTrainerDefeat_578:
@@ -1071,7 +1071,7 @@ BwTrainerDefeat_578:
 BwTrainerDefeat_579:
 	.string "How we can be friendlier with Pokémon\nis also a mystery.$"
 BwTrainerDefeat_580:
-	.string "You and your Pokémon!\nYou are supporting each other perfectly!$"
+	.string "You and your Pokémon! You are\nsupporting each other perfectly!$"
 BwTrainerDefeat_581:
 	.string "Argh, I lost again...\nI'm a little bit sad.$"
 BwTrainerDefeat_582:
@@ -1105,7 +1105,7 @@ BwTrainerDefeat_595:
 BwTrainerDefeat_596:
 	.string "Thank you for having a battle with me!\nI definitely learned something!$"
 BwTrainerDefeat_597:
-	.string "That strength has protected\nthe world in which people and Pokémon\l\llive together.$"
+	.string "That strength has protected\nthe world in which people and Pokémon\llive together.$"
 BwTrainerDefeat_598:
 	.string "Plasmaaaa!\nI have fallen in the Relic Castle...$"
 BwTrainerDefeat_599:
@@ -1133,7 +1133,7 @@ BwTrainerDefeat_609:
 BwTrainerDefeat_610:
 	.string "Great plans are\nalways interrupted.$"
 BwTrainerDefeat_611:
-	.string "You may have beaten me, but you're still no\nbetter than other Trainers around here.$"
+	.string "You may have beaten me, but you're\nstill no better than other Trainers\laround here.$"
 BwTrainerDefeat_612:
 	.string "Ouch, ouuuuch!\nMy Pokémon got hurt!$"
 BwTrainerDefeat_613:

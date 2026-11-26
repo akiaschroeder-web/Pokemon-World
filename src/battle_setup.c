@@ -1519,7 +1519,9 @@ void BattleSetup_StartTrainerBattle(void)
         }
     }
 
-    if (TRAINER_BATTLE_PARAM.earlyRival && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
+    // RIVAL_BATTLE_TUTORIAL is 3, so it includes RIVAL_BATTLE_HEAL_AFTER's bit: test for both bits,
+    // or every heal-after rival battle (Unova's Bianca and Cheren) became Birch's Zigzagoon battle
+    if (TRAINER_BATTLE_PARAM.earlyRival && (GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL) == RIVAL_BATTLE_TUTORIAL)
         gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
 
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)

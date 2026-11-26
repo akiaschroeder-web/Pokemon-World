@@ -36,7 +36,7 @@ Unova_Route1_2_EventScript_Npc7::
 	end
 
 Unova_Route1_2_EventScript_Npc7_Intro:
-	.string "I am not running now,\nbut I usually barrel through\l\las quickly as I can!$"
+	.string "I am not running now,\nbut I usually barrel through\las quickly as I can!$"
 
 Unova_Route1_2_EventScript_Npc7_Defeat:
 	.string "I have not crossed\nthe finish line of victory!$"

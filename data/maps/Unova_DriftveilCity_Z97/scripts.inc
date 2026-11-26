@@ -74,13 +74,13 @@ Unova_DriftveilCity_Z97_EventScript_Npc14::
 	end
 
 Unova_DriftveilCity_Z97_EventScript_Npc14_Intro:
-	.string "Clay is at the bottom of the Gym,\nbut I will test you to see\l\lwhether you are skilled enough\l\lto face the Gym Leader.$"
+	.string "Clay is at the bottom of the Gym,\nbut I will test you to see\lwhether you are skilled enough\lto face the Gym Leader.$"
 
 Unova_DriftveilCity_Z97_EventScript_Npc14_Defeat:
 	.string "Agh, so frustrating!\nMaybe I'm not skilled enough...$"
 
 Unova_DriftveilCity_Z97_EventScript_Npc14_Post:
-	.string "I started Pokémon battles\nafter I grew up,\l\lbut I got so into it!$"
+	.string "I started Pokémon battles\nafter I grew up,\lbut I got so into it!$"
 
 Unova_DriftveilCity_Z97_EventScript_Npc15::
 	trainerbattle_single TRAINER_BW_ISAAC_168, Unova_DriftveilCity_Z97_EventScript_Npc15_Intro, Unova_DriftveilCity_Z97_EventScript_Npc15_Defeat
@@ -91,10 +91,10 @@ Unova_DriftveilCity_Z97_EventScript_Npc15_Intro:
 	.string "I received intense training from Clay.\pNo Trainer around here\nis out of my league.$"
 
 Unova_DriftveilCity_Z97_EventScript_Npc15_Defeat:
-	.string "Oh, no...\nI've found someone who's out of my league!$"
+	.string "Oh, no... I've found someone who's out\nof my league!$"
 
 Unova_DriftveilCity_Z97_EventScript_Npc15_Post:
-	.string "Clay is a Gym Leader and\na company president.\l\lAnd he scolds me all the time.$"
+	.string "Clay is a Gym Leader and\na company president.\lAnd he scolds me all the time.$"
 
 Unova_DriftveilCity_Z97_EventScript_Npc16::
 	bwscript 97, 2000

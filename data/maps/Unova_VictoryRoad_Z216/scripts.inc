@@ -14,7 +14,7 @@ Unova_VictoryRoad_Z216_EventScript_Npc0_Defeat:
 	.string "It's obvious, but there is always\nsomeone better...$"
 
 Unova_VictoryRoad_Z216_EventScript_Npc0_Post:
-	.string "The Elite Four are said to be\nwaiting at the Pokémon League.\l\lI wonder what kind of people they are.$"
+	.string "The Elite Four are said to be\nwaiting at the Pokémon League.\lI wonder what kind of people they are.$"
 
 Unova_VictoryRoad_Z216_EventScript_Npc1::
 	bwscript 216, 10000

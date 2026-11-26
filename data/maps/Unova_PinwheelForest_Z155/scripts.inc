@@ -58,7 +58,7 @@ Unova_PinwheelForest_Z155_EventScript_Npc8::
 	end
 
 Unova_PinwheelForest_Z155_EventScript_Npc8_Intro:
-	.string "Look, look! This is a Gym Badge\nfrom Striaton City!\pOh, you have it, too!\nThen let's have a Pokémon battle\l\lto see who is stronger!$"
+	.string "Look, look! This is a Gym Badge\nfrom Striaton City!\pOh, you have it, too!\nThen let's have a Pokémon battle\lto see who is stronger!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc8_Defeat:
 	.string "Impressive! A battle with a\nGym Badge holder is different!$"
@@ -72,7 +72,7 @@ Unova_PinwheelForest_Z155_EventScript_Npc9::
 	end
 
 Unova_PinwheelForest_Z155_EventScript_Npc9_Intro:
-	.string "Blend into the wilderness\nand talk to Pokémon with your heart.\l\lThat is a Ranger!$"
+	.string "Blend into the wilderness\nand talk to Pokémon with your heart.\lThat is a Ranger!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc9_Defeat:
 	.string "Did you feel my wildness?$"
@@ -114,13 +114,13 @@ Unova_PinwheelForest_Z155_EventScript_Npc12::
 	end
 
 Unova_PinwheelForest_Z155_EventScript_Npc12_Intro:
-	.string "Get great powers drawn from nature\nwithout opposing it.\l\lThat is the strength of Rangers!$"
+	.string "Get great powers drawn from nature\nwithout opposing it.\lThat is the strength of Rangers!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc12_Defeat:
-	.string "You and your Pokémon make a great team!$"
+	.string "You and your Pokémon make a great\nteam!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc12_Post:
-	.string "You and your Pokémon make a great team!$"
+	.string "You and your Pokémon make a great\nteam!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc13::
 	trainerbattle_single TRAINER_BW_SAMMY_30, Unova_PinwheelForest_Z155_EventScript_Npc13_Intro, Unova_PinwheelForest_Z155_EventScript_Npc13_Defeat
@@ -128,7 +128,7 @@ Unova_PinwheelForest_Z155_EventScript_Npc13::
 	end
 
 Unova_PinwheelForest_Z155_EventScript_Npc13_Intro:
-	.string "Why do Pokémon and people\nstay together...?\l\lThat's the theme of my research.$"
+	.string "Why do Pokémon and people\nstay together...?\lThat's the theme of my research.$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc13_Defeat:
 	.string "A ray of light shone in...\nI feel a little like that.$"
@@ -145,10 +145,10 @@ Unova_PinwheelForest_Z155_EventScript_Npc14_Intro:
 	.string "If I apply what I just learned\nto the battle, I think I can win!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc14_Defeat:
-	.string "I've even won against my teacher, though...$"
+	.string "I've even won against my teacher,\nthough...$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc14_Post:
-	.string "Knowing something and being\nable to do it seem pretty similar,\l\lbut they can be very different.$"
+	.string "Knowing something and being\nable to do it seem pretty similar,\lbut they can be very different.$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc15::
 	trainerbattle_single TRAINER_BW_NICHOLAS_33, Unova_PinwheelForest_Z155_EventScript_Npc15_Intro, Unova_PinwheelForest_Z155_EventScript_Npc15_Defeat
@@ -162,7 +162,7 @@ Unova_PinwheelForest_Z155_EventScript_Npc15_Defeat:
 	.string "Hey! Did you see\nmy Pokémon's strong points?!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc15_Post:
-	.string "My Pokémon's strong points?\pHmmm...\pI don't know 'cause there are too many!$"
+	.string "My Pokémon's strong points?\pHmmm...\pI don't know 'cause there are too\nmany!$"
 
 Unova_PinwheelForest_Z155_EventScript_Npc16::
 	bwscript 155, 4

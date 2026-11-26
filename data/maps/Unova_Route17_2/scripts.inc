@@ -22,7 +22,7 @@ Unova_Route17_2_EventScript_Npc3::
 	end
 
 Unova_Route17_2_EventScript_Npc3_Intro:
-	.string "I learned all the good points of my\nAlomomola by swimming with Pokémon!\l\lI will show off its strength!$"
+	.string "I learned all the good points of my\nAlomomola by swimming with Pokémon!\lI will show off its strength!$"
 
 Unova_Route17_2_EventScript_Npc3_Defeat:
 	.string "What a fresh Trainer!\nReally fresh, fresh!$"

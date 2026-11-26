@@ -55,7 +55,7 @@ Unova_Dreamyard_Z152_EventScript_Npc9_Defeat:
 	.string "My Pokémon fought well, didn't they?$"
 
 Unova_Dreamyard_Z152_EventScript_Npc9_Post:
-	.string "I have my goal!\nMy Pokémon are there for me!\l\lThat's why I can keep trying!$"
+	.string "I have my goal!\nMy Pokémon are there for me!\lThat's why I can keep trying!$"
 
 Unova_Dreamyard_Z152_EventScript_Npc10::
 	trainerbattle_single TRAINER_BW_ERI_8, Unova_Dreamyard_Z152_EventScript_Npc10_Intro, Unova_Dreamyard_Z152_EventScript_Npc10_Defeat

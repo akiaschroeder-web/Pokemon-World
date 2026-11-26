@@ -45,13 +45,13 @@ Unova_Route3_1_EventScript_Npc9::
 	end
 
 Unova_Route3_1_EventScript_Npc9_Intro:
-	.string "I feel invincible because I am surrounded\nby the smiles of children and Pokémon!$"
+	.string "I feel invincible because I am\nsurrounded by the smiles of children\land Pokémon!$"
 
 Unova_Route3_1_EventScript_Npc9_Defeat:
 	.string "Wow! Great, great!\nYou are very strong!$"
 
 Unova_Route3_1_EventScript_Npc9_Post:
-	.string "Speak while making eye contact, and\nexpress your feelings to each other...\l\lIt's the same for people and Pokémon.$"
+	.string "Speak while making eye contact, and\nexpress your feelings to each other...\lIt's the same for people and Pokémon.$"
 
 Unova_Route3_1_EventScript_Npc10::
 	trainerbattle_single TRAINER_BW_WENDY_15, Unova_Route3_1_EventScript_Npc10_Intro, Unova_Route3_1_EventScript_Npc10_Defeat
@@ -104,10 +104,10 @@ Unova_Route3_1_EventScript_Npc13_Intro:
 	.string "Your Pokémon look quite good!\pWould you show me how\nyou've been training them?$"
 
 Unova_Route3_1_EventScript_Npc13_Defeat:
-	.string "Oh, I see!\nYou've trained them by traveling together!$"
+	.string "Oh, I see! You've trained them by\ntraveling together!$"
 
 Unova_Route3_1_EventScript_Npc13_Post:
-	.string "Oh, I see!\nYou've trained them by traveling together!$"
+	.string "Oh, I see! You've trained them by\ntraveling together!$"
 
 Unova_Route3_1_EventScript_Npc14::
 	trainerbattle_single TRAINER_BW_AL_3, Unova_Route3_1_EventScript_Npc14_Intro, Unova_Route3_1_EventScript_Npc14_Defeat
@@ -121,7 +121,7 @@ Unova_Route3_1_EventScript_Npc14_Defeat:
 	.string "Argh...$"
 
 Unova_Route3_1_EventScript_Npc14_Post:
-	.string "I was so overwhelmed by your greatness\nthat I forgot everything I learned!\l\lI need to keep my wits during a battle.$"
+	.string "I was so overwhelmed by your greatness\nthat I forgot everything I learned!\lI need to keep my wits during a battle.$"
 
 Unova_Route3_1_EventScript_Npc17::
 	finditem ITEM_REPEL, 1

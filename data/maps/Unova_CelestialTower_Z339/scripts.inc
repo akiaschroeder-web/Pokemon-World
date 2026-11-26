@@ -14,7 +14,7 @@ Unova_CelestialTower_Z339_EventScript_Npc0_Defeat:
 	.string "That's right.\nThe Pokémon is no longer with me.$"
 
 Unova_CelestialTower_Z339_EventScript_Npc0_Post:
-	.string "...The Pokémon is no longer with me.\p...That's not true.\nAs long as I remember,\l\lit will be with me forever.$"
+	.string "...The Pokémon is no longer with me.\p...That's not true.\nAs long as I remember,\lit will be with me forever.$"
 
 Unova_CelestialTower_Z339_EventScript_Npc1::
 	trainerbattle_single TRAINER_BW_JUDE_138, Unova_CelestialTower_Z339_EventScript_Npc1_Intro, Unova_CelestialTower_Z339_EventScript_Npc1_Defeat
@@ -22,7 +22,7 @@ Unova_CelestialTower_Z339_EventScript_Npc1::
 	end
 
 Unova_CelestialTower_Z339_EventScript_Npc1_Intro:
-	.string "When Pokémon Trainers meet,\nwhat we do is, of course,\l\lengage in a Pokémon battle, don't we?$"
+	.string "When Pokémon Trainers meet,\nwhat we do is, of course,\lengage in a Pokémon battle, don't we?$"
 
 Unova_CelestialTower_Z339_EventScript_Npc1_Defeat:
 	.string "Oh no...\nI'm pathetic...$"
@@ -42,7 +42,7 @@ Unova_CelestialTower_Z339_EventScript_Npc2_Defeat:
 	.string "The energy is escaping...\nAww...$"
 
 Unova_CelestialTower_Z339_EventScript_Npc2_Post:
-	.string "A lot of energies are swirling\naround in the world,\l\lincluding hopes and dreams.$"
+	.string "A lot of energies are swirling\naround in the world,\lincluding hopes and dreams.$"
 
 Unova_CelestialTower_Z339_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_KARA_190, Unova_CelestialTower_Z339_EventScript_Npc3_Intro, Unova_CelestialTower_Z339_EventScript_Npc3_Defeat

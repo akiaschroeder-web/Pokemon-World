@@ -55,7 +55,7 @@ Unova_NimbasaCity_Z83_EventScript_Npc9_Defeat:
 	.string "Aghhhhh! I am such a rookie!\nI've got more guts, though!$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc9_Post:
-	.string "My Pokémon and I still\nhaven't practiced enough...\l\lTo put it in levels, we're maybe a 50...$"
+	.string "My Pokémon and I still\nhaven't practiced enough...\lTo put it in levels, we're maybe a 50...$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc10::
 	trainerbattle_single TRAINER_BW_ROBERTO_328, Unova_NimbasaCity_Z83_EventScript_Npc10_Intro, Unova_NimbasaCity_Z83_EventScript_Npc10_Defeat
@@ -63,13 +63,13 @@ Unova_NimbasaCity_Z83_EventScript_Npc10::
 	end
 
 Unova_NimbasaCity_Z83_EventScript_Npc10_Intro:
-	.string "Let me tell you about the strength\nof the team you create when\l\lyou put a strong Pokémon at the core.$"
+	.string "Let me tell you about the strength\nof the team you create when\lyou put a strong Pokémon at the core.$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc10_Defeat:
 	.string "...You taught me!\nYou are great!$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc10_Post:
-	.string "It looks like a team built around\na strong Pokémon. That is, an ace\l\lhas advantages and disadvantages.$"
+	.string "It looks like a team built around\na strong Pokémon. That is, an ace\lhas advantages and disadvantages.$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc11::
 	trainerbattle_single TRAINER_BW_MARCO_324, Unova_NimbasaCity_Z83_EventScript_Npc11_Intro, Unova_NimbasaCity_Z83_EventScript_Npc11_Defeat
@@ -108,10 +108,10 @@ Unova_NimbasaCity_Z83_EventScript_Npc13::
 	end
 
 Unova_NimbasaCity_Z83_EventScript_Npc13_Intro:
-	.string "Boom-boom-badum! Ha! Boom-boom-badum!\nListen to the fans' drumbeat!$"
+	.string "Boom-boom-badum! Ha!\nBoom-boom-badum! Listen to the fans'\ldrumbeat!$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc13_Defeat:
-	.string "Les: Thank you for listening to the beat\nof our spirit!\pWeb: Thank you for listening to the yell\nof our spirit!$"
+	.string "Les: Thank you for listening to the\nbeat of our spirit!\pWeb: Thank you for listening to the yell\nof our spirit!$"
 
 Unova_NimbasaCity_Z83_EventScript_Npc13_Post:
 	.string "Ha, pan-pan-papan, hey-hoo!!\nNext, we will use this rhythm!$"

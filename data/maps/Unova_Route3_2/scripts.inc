@@ -17,13 +17,13 @@ Unova_Route3_2_EventScript_Npc15::
 	end
 
 Unova_Route3_2_EventScript_Npc15_Intro:
-	.string "Even if Pokémon have not been fully\ntrained, they can show their potential\l\ldepending on their Trainer's style.$"
+	.string "Even if Pokémon have not been fully\ntrained, they can show their potential\ldepending on their Trainer's style.$"
 
 Unova_Route3_2_EventScript_Npc15_Defeat:
 	.string "Oh, that's really frustrating!$"
 
 Unova_Route3_2_EventScript_Npc15_Post:
-	.string "I feel sorry for Pokémon when they lose\nbecause their Trainer lacks skill...\l\lA Trainer has a huge responsibility.$"
+	.string "I feel sorry for Pokémon when they lose\nbecause their Trainer lacks skill...\lA Trainer has a huge responsibility.$"
 
 Unova_Route3_2_EventScript_Npc16::
 	trainerbattle_single TRAINER_BW_EDGAR_84, Unova_Route3_2_EventScript_Npc16_Intro, Unova_Route3_2_EventScript_Npc16_Defeat
@@ -37,7 +37,7 @@ Unova_Route3_2_EventScript_Npc16_Defeat:
 	.string "A new battle strategy only works\nif you stick with it...$"
 
 Unova_Route3_2_EventScript_Npc16_Post:
-	.string "I know all kinds of things! Like if you\nwalk through the swaying tall grass,\l\lyou might find a cool Pokémon!$"
+	.string "I know all kinds of things! Like if you\nwalk through the swaying tall grass,\lyou might find a cool Pokémon!$"
 
 Unova_Route3_2_EventScript_Npc18::
 	finditem ITEM_FULL_HEAL, 1
@@ -60,7 +60,7 @@ Unova_Route3_2_EventScript_Npc27_Intro:
 	.string "It's best to use what you have learned\nin order to master it!$"
 
 Unova_Route3_2_EventScript_Npc27_Defeat:
-	.string "What can you learn by losing?\nI feel like there's a “Eureka!“ here for me.$"
+	.string "What can you learn by losing? I feel\nlike there's a “Eureka!“ here for me.$"
 
 Unova_Route3_2_EventScript_Npc27_Post:
 	.string "I'm mastering the lesson in three\ndimensions by experiencing it like this!$"

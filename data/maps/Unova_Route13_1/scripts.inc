@@ -30,7 +30,7 @@ Unova_Route13_1_EventScript_Npc4_Defeat:
 	.string "Huh? Is it already over? Noooo!\nI want to see more Pokémon!$"
 
 Unova_Route13_1_EventScript_Npc4_Post:
-	.string "When Pokémon use moves, or when they\nsee you and catch your eye, your heart\l\lbeats a little faster, doesn't it?$"
+	.string "When Pokémon use moves, or when they\nsee you and catch your eye, your heart\lbeats a little faster, doesn't it?$"
 
 Unova_Route13_1_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_ASTOR_430, Unova_Route13_1_EventScript_Npc5_Intro, Unova_Route13_1_EventScript_Npc5_Defeat
@@ -52,13 +52,13 @@ Unova_Route13_1_EventScript_Npc6::
 	end
 
 Unova_Route13_1_EventScript_Npc6_Intro:
-	.string "A woman standing alone with a parasol\nin one hand at the beach...\l\lHi... Please have a battle with me.$"
+	.string "A woman standing alone with a parasol\nin one hand at the beach...\lHi... Please have a battle with me.$"
 
 Unova_Route13_1_EventScript_Npc6_Defeat:
 	.string "The parasol can block ultraviolet rays, \nbut it can't block moves...$"
 
 Unova_Route13_1_EventScript_Npc6_Post:
-	.string "I heard a parasol is a must\non the beach...\l\lBut I'm the only one who has one?$"
+	.string "I heard a parasol is a must\non the beach...\lBut I'm the only one who has one?$"
 
 Unova_Route13_1_EventScript_Npc12::
 	trainerbattle_single TRAINER_BW_ZACH_416, Unova_Route13_1_EventScript_Npc12_Intro, Unova_Route13_1_EventScript_Npc12_Defeat
@@ -86,7 +86,7 @@ Unova_Route13_1_EventScript_Npc13_Defeat:
 	.string "I lost!\nBut I still love everything!$"
 
 Unova_Route13_1_EventScript_Npc13_Post:
-	.string "I want to go deep-sea fishing\nusing the Royal Unova\l\lthat leaves from Castelia City!$"
+	.string "I want to go deep-sea fishing\nusing the Royal Unova\lthat leaves from Castelia City!$"
 
 Unova_Route13_1_EventScript_Npc14::
 	trainerbattle_single TRAINER_BW_MICK_434, Unova_Route13_1_EventScript_Npc14_Intro, Unova_Route13_1_EventScript_Npc14_Defeat
@@ -97,10 +97,10 @@ Unova_Route13_1_EventScript_Npc14_Intro:
 	.string "Don't be overwhelmed\nby my awesome Pokémon!$"
 
 Unova_Route13_1_EventScript_Npc14_Defeat:
-	.string "I'm so overwhelmed that I cannot speak...$"
+	.string "I'm so overwhelmed that I cannot\nspeak...$"
 
 Unova_Route13_1_EventScript_Npc14_Post:
-	.string "Is my fishing rod bad?\nOr is it my fishing skill that's bad?\l\lI always catch the same Pokémon.$"
+	.string "Is my fishing rod bad?\nOr is it my fishing skill that's bad?\lI always catch the same Pokémon.$"
 
 Unova_Route13_1_EventScript_Npc15::
 	trainerbattle_single TRAINER_BW_VINCE_436, Unova_Route13_1_EventScript_Npc15_Intro, Unova_Route13_1_EventScript_Npc15_Defeat

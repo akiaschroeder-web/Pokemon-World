@@ -18,7 +18,7 @@ Unova_RelicCastle_Z162_EventScript_Npc1_Defeat:
 	.string "What a Trainer!$"
 
 Unova_RelicCastle_Z162_EventScript_Npc1_Post:
-	.string "Because of you,\nmy Pokémon lost!\l\lDon't you feel sorry for them?\pBesides, you are just depending\non your Pokémon for strength.$"
+	.string "Because of you,\nmy Pokémon lost!\lDon't you feel sorry for them?\pBesides, you are just depending\non your Pokémon for strength.$"
 
 Unova_RelicCastle_Z162_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_GRUNT_225, Unova_RelicCastle_Z162_EventScript_Npc2_Intro, Unova_RelicCastle_Z162_EventScript_Npc2_Defeat
@@ -32,7 +32,7 @@ Unova_RelicCastle_Z162_EventScript_Npc2_Defeat:
 	.string "Ouch...\nI don't like pain.$"
 
 Unova_RelicCastle_Z162_EventScript_Npc2_Post:
-	.string "We're trying so hard to change the world\nbecause nobody else is trying. Yet...\pThat's right! You! Can you understand\nour lord N's feelings?$"
+	.string "We're trying so hard to change the\nworld because nobody else is trying.\lYet...\pThat's right! You! Can you understand\nour lord N's feelings?$"
 
 Unova_RelicCastle_Z162_EventScript_Npc3::
 	finditem ITEM_MAX_POTION, 1

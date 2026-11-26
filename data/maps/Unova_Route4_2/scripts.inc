@@ -35,7 +35,7 @@ Unova_Route4_2_EventScript_Npc1_Defeat:
 	.string "Oh, no! The one who was caught...\nwas me!$"
 
 Unova_Route4_2_EventScript_Npc1_Post:
-	.string "I usually release the Pokémon I catch.\nThat's called catch and release!\l\lWhen I release them, I say these words:\pFarewell, Pokémon.\nIt was a nice fight.\pI'll say these words to you, too.\nIt was a nice fight!$"
+	.string "I usually release the Pokémon I catch.\nThat's called catch and release!\lWhen I release them, I say these words:\pFarewell, Pokémon.\nIt was a nice fight.\pI'll say these words to you, too.\nIt was a nice fight!$"
 
 Unova_Route4_2_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_SHELBY_36, Unova_Route4_2_EventScript_Npc5_Intro, Unova_Route4_2_EventScript_Npc5_Defeat
@@ -121,7 +121,7 @@ Unova_Route4_2_EventScript_Npc23_Defeat:
 	.string "Ooh... That piece of cake was\nhard to swallow!$"
 
 Unova_Route4_2_EventScript_Npc23_Post:
-	.string "I may have lost in the battle, but I bow\nto nobody when it comes to construction!\pYou must have something like that, right?\nSomething you do better than anybody?$"
+	.string "I may have lost in the battle, but I bow\nto nobody when it comes to\lconstruction!\pYou must have something like that,\nright? Something you do better than\lanybody?$"
 
 Unova_Route4_2_EventScript_Sign1::
 	bwscript 326, 8

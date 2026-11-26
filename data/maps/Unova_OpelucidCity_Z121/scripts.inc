@@ -30,10 +30,10 @@ Unova_OpelucidCity_Z121_EventScript_Npc1_Intro:
 	.string "Do you understand\nhow the dragons' heads move?$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc1_Defeat:
-	.string "You're strong! I guess you want to know\nabout the dragons' heads pretty badly.$"
+	.string "You're strong! I guess you want to\nknow about the dragons' heads pretty\lbadly.$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc1_Post:
-	.string "The dragons' arms go up and down...\pAnd depending on the arms,\nthe dragons' heads turn right and left\l\land move up and down, too.\pListen! Here is a hint!\pIf both arms point down,\nthe dragon's head sinks down, too.$"
+	.string "The dragons' arms go up and down...\pAnd depending on the arms,\nthe dragons' heads turn right and left\land move up and down, too.\pListen! Here is a hint!\pIf both arms point down,\nthe dragon's head sinks down, too.$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_OLWEN_265, Unova_OpelucidCity_Z121_EventScript_Npc2_Intro, Unova_OpelucidCity_Z121_EventScript_Npc2_Defeat
@@ -47,7 +47,7 @@ Unova_OpelucidCity_Z121_EventScript_Npc2_Defeat:
 	.string "Wow! \nYou beat me!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc2_Post:
-	.string "Jump from a triangle mark!\pWhen you land on a switch on an arm,\nthe dragon's head will move,\l\land you can move ahead!$"
+	.string "Jump from a triangle mark!\pWhen you land on a switch on an arm,\nthe dragon's head will move,\land you can move ahead!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_WEBSTER_270, Unova_OpelucidCity_Z121_EventScript_Npc3_Intro, Unova_OpelucidCity_Z121_EventScript_Npc3_Defeat
@@ -55,13 +55,13 @@ Unova_OpelucidCity_Z121_EventScript_Npc3::
 	end
 
 Unova_OpelucidCity_Z121_EventScript_Npc3_Intro:
-	.string "The Dragon Gym in Opelucid City\nis where tough Trainers show\l\lthey can carve out their own path!$"
+	.string "The Dragon Gym in Opelucid City\nis where tough Trainers show\lthey can carve out their own path!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc3_Defeat:
 	.string "I'm sure you can carve out\nyour own path!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc3_Post:
-	.string "As the name suggests,\na Gym Leader is the top of a Gym!\pThe Leader is top of the heap\nat this Opelucid Gym!\pIf you want to meet the Leader,\nclimb up on the dragons' backs\l\land aim for the top floor!$"
+	.string "As the name suggests,\na Gym Leader is the top of a Gym!\pThe Leader is top of the heap\nat this Opelucid Gym!\pIf you want to meet the Leader,\nclimb up on the dragons' backs\land aim for the top floor!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc4::
 	bwscript 121, 1
@@ -73,7 +73,7 @@ Unova_OpelucidCity_Z121_EventScript_Npc5::
 	end
 
 Unova_OpelucidCity_Z121_EventScript_Npc5_Intro:
-	.string "Are you happy just hanging out\nwith Pokémon?\l\lOr do they have to be strong?\l\lWe'll see which type you are!$"
+	.string "Are you happy just hanging out\nwith Pokémon?\lOr do they have to be strong?\lWe'll see which type you are!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc5_Defeat:
 	.string "Your Pokémon seem to be happy\njust hanging around with you!$"
@@ -87,13 +87,13 @@ Unova_OpelucidCity_Z121_EventScript_Npc6::
 	end
 
 Unova_OpelucidCity_Z121_EventScript_Npc6_Intro:
-	.string "We have ten years' experience battling!\nI give you a taste of a Veteran's skill!$"
+	.string "We have ten years' experience\nbattling! I give you a taste of a\lVeteran's skill!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc6_Defeat:
 	.string "I guess the time spent\nis not everything!$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc6_Post:
-	.string "Getting stronger...\pis like walking down a road\nthat never ends,\l\lno matter how much you fight...\pIt's what this Dragon Gym is about.\nIt's the secret of the dragons' backs...$"
+	.string "Getting stronger...\pis like walking down a road\nthat never ends,\lno matter how much you fight...\pIt's what this Dragon Gym is about.\nIt's the secret of the dragons'\lbacks...$"
 
 Unova_OpelucidCity_Z121_EventScript_Npc7::
 	trainerbattle_single TRAINER_BW_DARA_267, Unova_OpelucidCity_Z121_EventScript_Npc7_Intro, Unova_OpelucidCity_Z121_EventScript_Npc7_Defeat

@@ -14,5 +14,5 @@ Unova_VictoryRoad_Z227_EventScript_Npc0_Defeat:
 	.string "Mwa haha!\nIt's fun!$"
 
 Unova_VictoryRoad_Z227_EventScript_Npc0_Post:
-	.string "Winning is good,\nbut winning is not everything...\l\lDon't lose sight of what's important!$"
+	.string "Winning is good,\nbut winning is not everything...\lDon't lose sight of what's important!$"
 

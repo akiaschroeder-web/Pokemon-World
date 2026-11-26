@@ -49,7 +49,7 @@ Unova_StriatonCity_Z7_EventScript_Npc7_Defeat:
 	.string "Yow!\nYou're a Trainer with a lot of pepper!$"
 
 Unova_StriatonCity_Z7_EventScript_Npc7_Post:
-	.string "I think it is all right to move ahead\nwith Pokémon you've trained well, even\l\lwithout thinking about type matchups.$"
+	.string "I think it is all right to move ahead\nwith Pokémon you've trained well, even\lwithout thinking about type matchups.$"
 
 Unova_StriatonCity_Z7_EventScript_Npc8::
 	trainerbattle_single TRAINER_BW_TIA_10, Unova_StriatonCity_Z7_EventScript_Npc8_Intro, Unova_StriatonCity_Z7_EventScript_Npc8_Defeat
@@ -57,13 +57,13 @@ Unova_StriatonCity_Z7_EventScript_Npc8::
 	end
 
 Unova_StriatonCity_Z7_EventScript_Npc8_Intro:
-	.string "The specialty of Striaton Gym--\nthe full-course “Trainer de luxe!“\l\lI'm your second course.$"
+	.string "The specialty of Striaton Gym--\nthe full-course “Trainer de luxe!“\lI'm your second course.$"
 
 Unova_StriatonCity_Z7_EventScript_Npc8_Defeat:
-	.string "That was one of our most popular dishes.\nDid you enjoy the battle?$"
+	.string "That was one of our most popular\ndishes. Did you enjoy the battle?$"
 
 Unova_StriatonCity_Z7_EventScript_Npc8_Post:
-	.string "The specialty of Striaton Gym--\nthe full-course “Trainer de luxe!“\l\lTo complete your repast--a Gym Leader.$"
+	.string "The specialty of Striaton Gym--\nthe full-course “Trainer de luxe!“\lTo complete your repast--a Gym Leader.$"
 
 Unova_StriatonCity_Z7_EventScript_Npc9::
 	bwscript 7, 18

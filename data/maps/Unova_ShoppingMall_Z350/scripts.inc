@@ -40,13 +40,13 @@ Unova_ShoppingMall_Z350_EventScript_Npc8::
 	end
 
 Unova_ShoppingMall_Z350_EventScript_Npc8_Intro:
-	.string "Even when I am resting from\ntoo much shopping, I'm willing to battle!$"
+	.string "Even when I am resting from too much\nshopping, I'm willing to battle!$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc8_Defeat:
 	.string "Oh, no! I'm still the one to beat\nin shopping competitions, though!$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc8_Post:
-	.string "I'm very rich, but even I am\npleased with the selection\l\lat this shopping mall. I want to buy more!$"
+	.string "I'm very rich, but even I am pleased\nwith the selection at this shopping\lmall. I want to buy more!$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc9::
 	trainerbattle_single TRAINER_BW_BERT_97, Unova_ShoppingMall_Z350_EventScript_Npc9_Intro, Unova_ShoppingMall_Z350_EventScript_Npc9_Defeat
@@ -57,7 +57,7 @@ Unova_ShoppingMall_Z350_EventScript_Npc9_Intro:
 	.string "I am a Waiter who is good\nat Pokémon battles.$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc9_Defeat:
-	.string "Wonderful battle! A learning experience.\n...Thanks for the tip!$"
+	.string "Wonderful battle! A learning\nexperience. ...Thanks for the tip!$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc9_Post:
 	.string "Our specialty is the best\nPokémon battles.$"
@@ -74,7 +74,7 @@ Unova_ShoppingMall_Z350_EventScript_Npc10_Defeat:
 	.string "That was a wonderful battle.\nBravo!$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc10_Post:
-	.string "Invigorating Soda Pop for exhausted\nPokémon after a battle!\l\lAvailable in any vending machine!$"
+	.string "Invigorating Soda Pop for exhausted\nPokémon after a battle!\lAvailable in any vending machine!$"
 
 Unova_ShoppingMall_Z350_EventScript_Npc11::
 	trainerbattle_single TRAINER_BW_MANUEL_108, Unova_ShoppingMall_Z350_EventScript_Npc11_Intro, Unova_ShoppingMall_Z350_EventScript_Npc11_Defeat

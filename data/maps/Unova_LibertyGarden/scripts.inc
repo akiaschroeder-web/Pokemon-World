@@ -106,13 +106,13 @@ Unova_LibertyGarden_EventScript_Npc22::
 	end
 
 Unova_LibertyGarden_EventScript_Npc22_Intro:
-	.string "We finally reached the secret sleeping in\nthe basement of the lighthouse.\l\lI won't let you interrupt us!$"
+	.string "We finally reached the secret sleeping\nin the basement of the lighthouse. I\lwon't let you interrupt us!$"
 
 Unova_LibertyGarden_EventScript_Npc22_Defeat:
 	.string "I am bitterly disappointed...$"
 
 Unova_LibertyGarden_EventScript_Npc22_Post:
-	.string "In the basement of the lighthouse\nbuilt over 200 years ago,\l\lthe mythical Pokémon\l\lVictini was sleeping!$"
+	.string "In the basement of the lighthouse\nbuilt over 200 years ago,\lthe mythical Pokémon\lVictini was sleeping!$"
 
 Unova_LibertyGarden_EventScript_Npc23::
 	trainerbattle_single TRAINER_BW_GRUNT_554, Unova_LibertyGarden_EventScript_Npc23_Intro, Unova_LibertyGarden_EventScript_Npc23_Defeat
@@ -134,7 +134,7 @@ Unova_LibertyGarden_EventScript_Npc24::
 	end
 
 Unova_LibertyGarden_EventScript_Npc24_Intro:
-	.string "We will release Victini\nfrom its confinement\l\lin a small basement on the island!$"
+	.string "We will release Victini\nfrom its confinement\lin a small basement on the island!$"
 
 Unova_LibertyGarden_EventScript_Npc24_Defeat:
 	.string "You're sabotaging\nour noble cause!$"

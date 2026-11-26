@@ -18,7 +18,7 @@ Unova_RelicCastle_Z164_EventScript_Npc1_Defeat:
 	.string "My king...\nI am so sorry.$"
 
 Unova_RelicCastle_Z164_EventScript_Npc1_Post:
-	.string "Everything changes.\nUnova will also be born again.\l\lWhy don't you admit that?$"
+	.string "Everything changes.\nUnova will also be born again.\lWhy don't you admit that?$"
 
 Unova_RelicCastle_Z164_EventScript_Npc2::
 	trainerbattle_single TRAINER_BW_GRUNT_227, Unova_RelicCastle_Z164_EventScript_Npc2_Intro, Unova_RelicCastle_Z164_EventScript_Npc2_Defeat

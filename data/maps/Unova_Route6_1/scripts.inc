@@ -85,10 +85,10 @@ Unova_Route6_1_EventScript_Npc8_Intro:
 	.string "I will unlock the mechanism\nand find the secret of your power!$"
 
 Unova_Route6_1_EventScript_Npc8_Defeat:
-	.string "I was so preoccupied with the mechanism,\nI forgot to concentrate on the battle!$"
+	.string "I was so preoccupied with the\nmechanism, I forgot to concentrate on\lthe battle!$"
 
 Unova_Route6_1_EventScript_Npc8_Post:
-	.string "The mechanism of rain, and\nthe science of changing seasons...\l\lNature is full of wonders.$"
+	.string "The mechanism of rain, and\nthe science of changing seasons...\lNature is full of wonders.$"
 
 Unova_Route6_1_EventScript_Npc9::
 	bwscript 331, 3

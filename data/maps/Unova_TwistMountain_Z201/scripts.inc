@@ -27,7 +27,7 @@ Unova_TwistMountain_Z201_EventScript_Npc1::
 	end
 
 Unova_TwistMountain_Z201_EventScript_Npc1_Intro:
-	.string "Twist Mountain changes in every season,\nand this old man changes in every battle!$"
+	.string "Twist Mountain changes in every\nseason, and this old man changes in\levery battle!$"
 
 Unova_TwistMountain_Z201_EventScript_Npc1_Defeat:
 	.string "Go easy on...\na grown-up?!$"
@@ -55,7 +55,7 @@ Unova_TwistMountain_Z201_EventScript_Npc3::
 	end
 
 Unova_TwistMountain_Z201_EventScript_Npc3_Intro:
-	.string "Why do I dig?\nWhy do you fight?\l\lLet's find out.$"
+	.string "Why do I dig?\nWhy do you fight?\lLet's find out.$"
 
 Unova_TwistMountain_Z201_EventScript_Npc3_Defeat:
 	.string "Your past experience...\nIs that the source of your strength?$"

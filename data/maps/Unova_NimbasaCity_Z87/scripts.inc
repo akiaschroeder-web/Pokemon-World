@@ -78,7 +78,7 @@ Unova_NimbasaCity_Z87_EventScript_Npc4_Defeat:
 	.string "Kat: Come on!\pPhae: Look! Even though we lost, \nthe ball is still spinning!$"
 
 Unova_NimbasaCity_Z87_EventScript_Npc4_Post:
-	.string "When you are watching basketball,\nit reminds you of fruit in a basket,\l\land it looks delicious. Right?$"
+	.string "When you are watching basketball,\nit reminds you of fruit in a basket,\land it looks delicious. Right?$"
 
 Unova_NimbasaCity_Z87_EventScript_Npc4_NotEnough:
 	.string "You need two Pokémon to battle us!$"

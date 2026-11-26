@@ -38,7 +38,7 @@ Unova_WellspringCave_Z325_EventScript_Npc5::
 	end
 
 Unova_WellspringCave_Z325_EventScript_Npc5_Intro:
-	.string "Are you looking for a Pokémon here,\nor are you just taking a walk?\l\lEither way, have a battle with me!$"
+	.string "Are you looking for a Pokémon here,\nor are you just taking a walk?\lEither way, have a battle with me!$"
 
 Unova_WellspringCave_Z325_EventScript_Npc5_Defeat:
 	.string "What is it?\nI can't explain it, but you are great!$"

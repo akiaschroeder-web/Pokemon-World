@@ -29,13 +29,13 @@ Unova_Route12_EventScript_Npc2::
 	end
 
 Unova_Route12_EventScript_Npc2_Intro:
-	.string "I was checking for Pokémon\naround here just now,\l\lbut I am also interested in you.$"
+	.string "I was checking for Pokémon\naround here just now,\lbut I am also interested in you.$"
 
 Unova_Route12_EventScript_Npc2_Defeat:
 	.string "Oh! \nWhat interesting Pokémon!$"
 
 Unova_Route12_EventScript_Npc2_Post:
-	.string "Even similar Pokémon will have\ndifferent behavior and appearances\l\lin Unova and other regions.$"
+	.string "Even similar Pokémon will have\ndifferent behavior and appearances\lin Unova and other regions.$"
 
 Unova_Route12_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_ANN_428, Unova_Route12_EventScript_Npc3_Intro, Unova_Route12_EventScript_Npc3_Defeat
@@ -43,13 +43,13 @@ Unova_Route12_EventScript_Npc3::
 	end
 
 Unova_Route12_EventScript_Npc3_Intro:
-	.string "I was checking the landscape\naround here just now,\l\lbut I am also interested in you.$"
+	.string "I was checking the landscape\naround here just now,\lbut I am also interested in you.$"
 
 Unova_Route12_EventScript_Npc3_Defeat:
 	.string "Oh, my!\nWhat an interesting Trainer!$"
 
 Unova_Route12_EventScript_Npc3_Post:
-	.string "The unevenness of this landscape...\nWe can tell that the flow of a river\l\lcreated the undulation.$"
+	.string "The unevenness of this landscape...\nWe can tell that the flow of a river\lcreated the undulation.$"
 
 Unova_Route12_EventScript_Npc4::
 	trainerbattle_single TRAINER_BW_EUSTACE_451, Unova_Route12_EventScript_Npc4_Intro, Unova_Route12_EventScript_Npc4_Defeat
@@ -57,7 +57,7 @@ Unova_Route12_EventScript_Npc4::
 	end
 
 Unova_Route12_EventScript_Npc4_Intro:
-	.string "Are you raising these Pokémon all alone?\nOr do you rely on Pokémon Day Care?$"
+	.string "Are you raising these Pokémon all\nalone? Or do you rely on Pokémon Day\lCare?$"
 
 Unova_Route12_EventScript_Npc4_Defeat:
 	.string "I was only thinking about Eggs...$"
@@ -71,7 +71,7 @@ Unova_Route12_EventScript_Npc5::
 	end
 
 Unova_Route12_EventScript_Npc5_Intro:
-	.string "My Pokémon are running around\nin this beautiful grassland...\l\lPlease take a look!$"
+	.string "My Pokémon are running around\nin this beautiful grassland...\lPlease take a look!$"
 
 Unova_Route12_EventScript_Npc5_Defeat:
 	.string "They were bouncing around\njust a few minutes ago!$"

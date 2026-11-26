@@ -16,13 +16,13 @@ Unova_MistraltonCity_Z108_EventScript_Npc2::
 	end
 
 Unova_MistraltonCity_Z108_EventScript_Npc2_Intro:
-	.string "I became a Pilot, which has been\nmy dream since I was a child.\l\lI am extremely strong! Bring it on!$"
+	.string "I became a Pilot, which has been\nmy dream since I was a child.\lI am extremely strong! Bring it on!$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc2_Defeat:
 	.string "Altitude is dropping slowly...\nI will prepare for landing.$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc2_Post:
-	.string "I became a Pilot, making the dream\nof my younger days a reality...\l\lThe weight is quite comfortable.$"
+	.string "I became a Pilot, making the dream\nof my younger days a reality...\lThe weight is quite comfortable.$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc3::
 	trainerbattle_single TRAINER_BW_CHASE_71, Unova_MistraltonCity_Z108_EventScript_Npc3_Intro, Unova_MistraltonCity_Z108_EventScript_Npc3_Defeat
@@ -50,7 +50,7 @@ Unova_MistraltonCity_Z108_EventScript_Npc4_Defeat:
 	.string "I was blown away!!$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc4_Post:
-	.string "I'll be stronger if I fight\nwhile thinking about Pokémon!\l\lVictory will come my way!$"
+	.string "I'll be stronger if I fight\nwhile thinking about Pokémon!\lVictory will come my way!$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc5::
 	trainerbattle_single TRAINER_BW_BRADY_127, Unova_MistraltonCity_Z108_EventScript_Npc5_Intro, Unova_MistraltonCity_Z108_EventScript_Npc5_Defeat
@@ -64,7 +64,7 @@ Unova_MistraltonCity_Z108_EventScript_Npc5_Defeat:
 	.string "No problem! Even though I lost,\nI will just prepare and jump again!$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc5_Post:
-	.string "Trainer! Do you remember\nwhat you were told at the beginning?\p“The cannons go up, down,\nleft, and right.\l\lYou can enter them from anywhere!“\pHow about that?\nI am good at imitating him, aren't I?$"
+	.string "Trainer! Do you remember\nwhat you were told at the beginning?\p“The cannons go up, down,\nleft, and right.\lYou can enter them from anywhere!“\pHow about that?\nI am good at imitating him, aren't I?$"
 
 Unova_MistraltonCity_Z108_EventScript_Npc6::
 	trainerbattle_single TRAINER_BW_ARNOLD_128, Unova_MistraltonCity_Z108_EventScript_Npc6_Intro, Unova_MistraltonCity_Z108_EventScript_Npc6_Defeat

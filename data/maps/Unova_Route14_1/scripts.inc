@@ -8,13 +8,13 @@ Unova_Route14_1_EventScript_Npc2::
 	end
 
 Unova_Route14_1_EventScript_Npc2_Intro:
-	.string "An expert Fisherman can time many things\nperfectly and precisely!$"
+	.string "An expert Fisherman can time many\nthings perfectly and precisely!$"
 
 Unova_Route14_1_EventScript_Npc2_Defeat:
 	.string "Hmmmm! A lot of my timing\ndidn't go well!$"
 
 Unova_Route14_1_EventScript_Npc2_Post:
-	.string "You! It's impressive that\nyou have a Super Rod!\pOK! Probably you know, but\nI will tell you how to use it!\pFirst, you face any body of water,\nthen you cast with your Super Rod.\pNext you must focus!\pWhen a Pokémon bites,\n“!“ appears.\l\lThat's your cue to reel it in!$"
+	.string "You! It's impressive that\nyou have a Super Rod!\pOK! Probably you know, but\nI will tell you how to use it!\pFirst, you face any body of water,\nthen you cast with your Super Rod.\pNext you must focus!\pWhen a Pokémon bites,\n“!“ appears.\lThat's your cue to reel it in!$"
 
 Unova_Route14_1_EventScript_Npc5::
 	bwscript 374, 1
