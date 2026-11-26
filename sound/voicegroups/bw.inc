@@ -6324,6 +6324,864 @@ voice_group bw_win4_s8
 keysplit_bw_win4_s8:
 	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
 
+@ SEQ_BGM_EYE_01 (bank 1114)
+voice_group bw_eye_01
+	voice_keysplit voicegroup_bw_eye_01_s0, keysplit_bw_eye_01_s0
+	voice_keysplit voicegroup_bw_eye_01_s1, keysplit_bw_eye_01_s1
+	voice_keysplit voicegroup_bw_eye_01_s2, keysplit_bw_eye_01_s2
+	voice_keysplit voicegroup_bw_eye_01_s3, keysplit_bw_eye_01_s3
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit_all voicegroup_bw_eye_01_d5
+
+voice_group bw_eye_01_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_7_48, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_8_60, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_9_72, 255, 244, 0, 205
+	.global keysplit_bw_eye_01_s0
+keysplit_bw_eye_01_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_01_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_2_55, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_1_64, 255, 235, 157, 205
+	.global keysplit_bw_eye_01_s1
+keysplit_bw_eye_01_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_01_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_4_45, 255, 223, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_5_57, 255, 223, 191, 194
+	.global keysplit_bw_eye_01_s2
+keysplit_bw_eye_01_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_01_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_11_43, 255, 250, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_12_55, 255, 250, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1114_10_64, 255, 250, 6, 205
+	.global keysplit_bw_eye_01_s3
+keysplit_bw_eye_01_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_01_d5, 27
+	voice_directsound 27, 0, DirectSoundWaveData_bw_1114_6_27, 255, 177, 227, 205
+	voice_directsound 28, 0, DirectSoundWaveData_bw_1114_6_27, 255, 177, 227, 205
+	voice_directsound 29, 0, DirectSoundWaveData_bw_1114_6_27, 255, 177, 227, 205
+	voice_directsound 30, 0, DirectSoundWaveData_bw_1114_6_27, 255, 177, 227, 205
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1114_6_27, 255, 177, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1114_6_27, 255, 177, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1114_0_33, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1114_13_41, 255, 0, 255, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1114_13_41, 255, 0, 255, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1114_14_43, 255, 0, 255, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1114_14_43, 255, 0, 255, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1114_15_45, 255, 0, 255, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1114_15_45, 255, 0, 255, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1114_15_45, 255, 0, 255, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1114_15_45, 255, 0, 255, 205
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1114_3_49, 255, 241, 0, 213
+
+@ SEQ_BGM_EYE_02 (bank 1115)
+voice_group bw_eye_02
+	voice_keysplit voicegroup_bw_eye_02_s0, keysplit_bw_eye_02_s0
+	voice_keysplit voicegroup_bw_eye_02_s1, keysplit_bw_eye_02_s1
+	voice_keysplit voicegroup_bw_eye_02_s2, keysplit_bw_eye_02_s2
+	voice_keysplit voicegroup_bw_eye_02_s3, keysplit_bw_eye_02_s3
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_bw_eye_02_s5, keysplit_bw_eye_02_s5
+	voice_keysplit_all voicegroup_bw_eye_02_d6
+
+voice_group bw_eye_02_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_14_60, 255, 241, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_15_72, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_16_84, 255, 241, 0, 205
+	.global keysplit_bw_eye_02_s0
+keysplit_bw_eye_02_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_02_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_0_36, 255, 248, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_1_48, 255, 248, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_2_55, 255, 248, 0, 194
+	.global keysplit_bw_eye_02_s1
+keysplit_bw_eye_02_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_02_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_7_43, 255, 250, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_8_55, 255, 250, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_6_64, 255, 250, 6, 205
+	.global keysplit_bw_eye_02_s2
+keysplit_bw_eye_02_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_02_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_12_41, 255, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_11_48, 255, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_10_57, 255, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_13_65, 255, 235, 191, 194
+	.global keysplit_bw_eye_02_s3
+keysplit_bw_eye_02_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_02_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_4_60, 255, 246, 0, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1115_5_72, 255, 246, 0, 209
+	.global keysplit_bw_eye_02_s5
+keysplit_bw_eye_02_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_02_d6, 67
+	voice_directsound 67, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 68, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 69, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 70, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 71, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 72, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 73, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 74, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 75, 0, DirectSoundWaveData_bw_1115_3_67, 255, 235, 128, 177
+	voice_directsound 76, 0, DirectSoundWaveData_bw_1115_9_76, 255, 223, 128, 205
+
+@ SEQ_BGM_EYE_03 (bank 1116)
+voice_group bw_eye_03
+	voice_keysplit voicegroup_bw_eye_03_s0, keysplit_bw_eye_03_s0
+	voice_keysplit voicegroup_bw_eye_03_s1, keysplit_bw_eye_03_s1
+	voice_keysplit voicegroup_bw_eye_03_s2, keysplit_bw_eye_03_s2
+	voice_keysplit_all voicegroup_bw_eye_03_d3
+
+voice_group bw_eye_03_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_1_60, 255, 246, 0, 84
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_2_72, 255, 246, 0, 84
+	.global keysplit_bw_eye_03_s0
+keysplit_bw_eye_03_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_03_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_7_48, 255, 0, 255, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_8_60, 255, 0, 255, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_9_72, 255, 0, 255, 205
+	.global keysplit_bw_eye_03_s1
+keysplit_bw_eye_03_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_03_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_4_60, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_5_72, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_6_84, 255, 241, 0, 205
+	.global keysplit_bw_eye_03_s2
+keysplit_bw_eye_03_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_03_d3, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1116_10_31, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1116_10_31, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1116_10_31, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1116_10_31, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1116_10_31, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1116_3_36, 255, 0, 227, 205
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 55, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 56, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 57, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 58, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 59, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 61, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 62, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 63, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 64, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 65, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 66, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 67, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 68, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 69, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 70, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 71, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 72, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 73, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 74, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 75, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 76, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 77, 0, DirectSoundWaveData_bw_1116_11_54, 255, 0, 227, 205
+	voice_directsound 78, 0, DirectSoundWaveData_bw_1116_0_78, 255, 209, 227, 205
+
+@ SEQ_BGM_EYE_04 (bank 1117)
+voice_group bw_eye_04
+	voice_keysplit voicegroup_bw_eye_04_s0, keysplit_bw_eye_04_s0
+	voice_keysplit voicegroup_bw_eye_04_s1, keysplit_bw_eye_04_s1
+	voice_keysplit voicegroup_bw_eye_04_s2, keysplit_bw_eye_04_s2
+	voice_keysplit_all voicegroup_bw_eye_04_d3
+
+voice_group bw_eye_04_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_6_60, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_7_72, 255, 245, 0, 205
+	.global keysplit_bw_eye_04_s0
+keysplit_bw_eye_04_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_04_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_8_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_9_43, 255, 28, 227, 177
+	.global keysplit_bw_eye_04_s1
+keysplit_bw_eye_04_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_04_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_3_43, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_4_55, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1117_2_64, 255, 252, 0, 177
+	.global keysplit_bw_eye_04_s2
+keysplit_bw_eye_04_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_04_d3, 34
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1117_0_34, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1117_0_34, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1117_0_34, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1117_0_34, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1117_10_38, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1117_10_38, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1117_11_40, 255, 213, 128, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1117_13_41, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1117_13_41, 255, 0, 255, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1117_13_41, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1117_13_41, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1117_15_45, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1117_5_46, 255, 233, 0, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1117_14_47, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1117_14_47, 255, 0, 255, 177
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1117_1_49, 255, 244, 0, 213
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1117_1_49, 255, 244, 0, 213
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1117_1_49, 255, 244, 0, 213
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1117_1_49, 255, 244, 0, 213
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1117_1_49, 255, 244, 0, 213
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1117_12_54, 255, 0, 255, 205
+
+@ SEQ_BGM_EYE_05 (bank 1118)
+voice_group bw_eye_05
+	voice_keysplit voicegroup_bw_eye_05_s0, keysplit_bw_eye_05_s0
+	voice_keysplit voicegroup_bw_eye_05_s1, keysplit_bw_eye_05_s1
+	voice_keysplit voicegroup_bw_eye_05_s2, keysplit_bw_eye_05_s2
+	voice_keysplit voicegroup_bw_eye_05_s3, keysplit_bw_eye_05_s3
+	voice_keysplit_all voicegroup_bw_eye_05_d4
+
+voice_group bw_eye_05_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_9_48, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_10_60, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_11_72, 255, 223, 227, 205
+	.global keysplit_bw_eye_05_s0
+keysplit_bw_eye_05_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_05_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_0_60, 255, 245, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_1_72, 255, 245, 0, 177
+	.global keysplit_bw_eye_05_s1
+keysplit_bw_eye_05_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_05_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_14_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_15_48, 255, 28, 227, 177
+	.global keysplit_bw_eye_05_s2
+keysplit_bw_eye_05_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_05_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_4_36, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_5_48, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_6_60, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_7_72, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1118_8_84, 255, 245, 0, 205
+	.global keysplit_bw_eye_05_s3
+keysplit_bw_eye_05_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4
+voice_group bw_eye_05_d4, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1118_12_31, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1118_12_31, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1118_12_31, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1118_2_34, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1118_2_34, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1118_2_34, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1118_2_34, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1118_13_38, 255, 0, 227, 205
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1118_3_49, 255, 244, 0, 213
+
+@ SEQ_BGM_EYE_06 (bank 1119)
+voice_group bw_eye_06
+	voice_keysplit voicegroup_bw_eye_06_s0, keysplit_bw_eye_06_s0
+	voice_keysplit voicegroup_bw_eye_06_s1, keysplit_bw_eye_06_s1
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_bw_eye_06_s3, keysplit_bw_eye_06_s3
+	voice_keysplit voicegroup_bw_eye_06_s4, keysplit_bw_eye_06_s4
+	voice_keysplit voicegroup_bw_eye_06_s5, keysplit_bw_eye_06_s5
+	voice_keysplit voicegroup_bw_eye_06_s6, keysplit_bw_eye_06_s6
+	voice_keysplit_all voicegroup_bw_eye_06_d7
+
+voice_group bw_eye_06_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_3_48, 255, 177, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_4_60, 255, 0, 255, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_5_72, 255, 0, 255, 205
+	.global keysplit_bw_eye_06_s0
+keysplit_bw_eye_06_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_06_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_23_60, 255, 241, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_24_72, 255, 241, 0, 205
+	.global keysplit_bw_eye_06_s1
+keysplit_bw_eye_06_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_06_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_0_36, 255, 248, 0, 205
+	.global keysplit_bw_eye_06_s3
+keysplit_bw_eye_06_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_eye_06_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_16_43, 255, 248, 14, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_17_55, 255, 248, 14, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_15_64, 255, 248, 14, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_14_72, 255, 248, 14, 194
+	.global keysplit_bw_eye_06_s4
+keysplit_bw_eye_06_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_06_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_19_60, 255, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_18_69, 255, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_21_77, 237, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_20_84, 237, 235, 191, 194
+	.global keysplit_bw_eye_06_s5
+keysplit_bw_eye_06_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_06_s6
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_8_36, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_9_48, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_10_60, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_11_72, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1119_12_84, 255, 245, 0, 205
+	.global keysplit_bw_eye_06_s6
+keysplit_bw_eye_06_s6:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4
+voice_group bw_eye_06_d7, 30
+	voice_directsound 30, 0, DirectSoundWaveData_bw_1119_13_30, 255, 255, 191, 177
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1119_13_30, 255, 255, 191, 177
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1119_13_30, 255, 255, 191, 177
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1119_13_30, 255, 255, 191, 177
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1119_13_30, 255, 255, 191, 177
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1119_1_35, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1119_6_42, 255, 235, 0, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1119_6_42, 255, 235, 0, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1119_6_42, 255, 235, 0, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1119_6_42, 255, 235, 0, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1119_7_46, 255, 233, 0, 177
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1119_22_54, 255, 0, 255, 177
+	voice_directsound 55, 0, DirectSoundWaveData_bw_1119_22_54, 255, 0, 255, 177
+	voice_directsound 56, 0, DirectSoundWaveData_bw_1119_22_54, 255, 0, 255, 177
+	voice_directsound 57, 0, DirectSoundWaveData_bw_1119_2_57, 255, 244, 0, 213
+
+@ SEQ_BGM_EYE_07 (bank 1120)
+voice_group bw_eye_07
+	voice_keysplit voicegroup_bw_eye_07_s0, keysplit_bw_eye_07_s0
+	voice_keysplit voicegroup_bw_eye_07_s1, keysplit_bw_eye_07_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_20_36, 255, 0, 255, 177
+	voice_keysplit voicegroup_bw_eye_07_s3, keysplit_bw_eye_07_s3
+	voice_keysplit voicegroup_bw_eye_07_s4, keysplit_bw_eye_07_s4
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit_all voicegroup_bw_eye_07_d7
+
+voice_group bw_eye_07_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_9_40, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_8_48, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_10_64, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_11_76, 255, 252, 0, 177
+	.global keysplit_bw_eye_07_s0
+keysplit_bw_eye_07_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_07_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_12_60, 255, 246, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_13_72, 255, 246, 0, 28
+	.global keysplit_bw_eye_07_s1
+keysplit_bw_eye_07_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_07_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_4_43, 255, 241, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_5_55, 255, 241, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_3_64, 255, 241, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_2_72, 255, 241, 0, 28
+	.global keysplit_bw_eye_07_s3
+keysplit_bw_eye_07_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_07_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_34_60, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_33_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_35_79, 255, 223, 191, 205
+	.global keysplit_bw_eye_07_s4
+keysplit_bw_eye_07_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_07_d7, 30
+	voice_directsound 30, 0, DirectSoundWaveData_bw_1120_21_30, 255, 255, 191, 177
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1120_17_31, 2, 0, 227, 177
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1120_17_31, 2, 0, 227, 177
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1120_17_31, 2, 0, 227, 177
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1120_17_31, 2, 0, 227, 177
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1120_0_35, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1120_0_35, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1120_0_35, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1120_22_38, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1120_14_39, 255, 0, 227, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1120_23_40, 255, 213, 128, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1120_29_41, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1120_15_42, 255, 235, 0, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1120_31_43, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1120_31_43, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1120_32_45, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1120_16_46, 255, 233, 0, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1120_30_47, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1120_30_47, 255, 0, 255, 177
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1120_7_52, 255, 235, 0, 213
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1120_7_52, 255, 235, 0, 213
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1120_7_52, 255, 235, 0, 213
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1120_1_53, 255, 246, 0, 223
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1120_18_53, 255, 246, 0, 209
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1120_18_53, 255, 246, 0, 209
+	voice_directsound 55, 0, DirectSoundWaveData_bw_1120_24_55, 255, 246, 0, 177
+	voice_directsound 56, 0, DirectSoundWaveData_bw_1120_6_56, 255, 0, 255, 177
+	voice_directsound 57, 0, DirectSoundWaveData_bw_1120_7_57, 255, 244, 0, 213
+	voice_directsound 58, 0, DirectSoundWaveData_bw_1120_7_57, 255, 244, 0, 213
+	voice_directsound 59, 0, DirectSoundWaveData_bw_1120_19_59, 255, 246, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 61, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 62, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 63, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 64, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 65, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 66, 0, DirectSoundWaveData_bw_1120_29_64, 255, 0, 255, 177
+	voice_directsound 67, 0, DirectSoundWaveData_bw_1120_31_71, 255, 0, 255, 177
+	voice_directsound 68, 0, DirectSoundWaveData_bw_1120_31_71, 255, 0, 255, 177
+	voice_directsound 69, 0, DirectSoundWaveData_bw_1120_31_71, 255, 0, 255, 177
+	voice_directsound 70, 0, DirectSoundWaveData_bw_1120_31_71, 255, 0, 255, 177
+	voice_directsound 71, 0, DirectSoundWaveData_bw_1120_31_71, 255, 0, 255, 177
+	voice_directsound 72, 0, DirectSoundWaveData_bw_1120_31_72, 255, 0, 255, 177
+	voice_directsound 73, 0, DirectSoundWaveData_bw_1120_31_72, 255, 0, 255, 177
+	voice_directsound 74, 0, DirectSoundWaveData_bw_1120_31_72, 255, 0, 255, 177
+	voice_directsound 75, 0, DirectSoundWaveData_bw_1120_31_72, 255, 0, 255, 177
+	voice_directsound 76, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 77, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 78, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 79, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 80, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 81, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 82, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 83, 0, DirectSoundWaveData_bw_1120_32_79, 255, 0, 255, 177
+	voice_directsound 84, 0, DirectSoundWaveData_bw_1120_30_84, 255, 0, 255, 177
+	voice_directsound 85, 0, DirectSoundWaveData_bw_1120_30_84, 255, 0, 255, 177
+	voice_directsound 86, 0, DirectSoundWaveData_bw_1120_30_84, 255, 0, 255, 177
+	voice_directsound 87, 0, DirectSoundWaveData_bw_1120_30_84, 255, 0, 255, 177
+	voice_directsound 88, 0, DirectSoundWaveData_bw_1120_30_84, 255, 0, 255, 177
+
+@ SEQ_BGM_EYE_08 (bank 1121)
+voice_group bw_eye_08
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_7_60, 255, 0, 227, 177
+	voice_keysplit voicegroup_bw_eye_08_s1, keysplit_bw_eye_08_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_3_60, 255, 241, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_2_60, 255, 0, 255, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_1_60, 255, 0, 227, 177
+	voice_keysplit voicegroup_bw_eye_08_s5, keysplit_bw_eye_08_s5
+	voice_keysplit voicegroup_bw_eye_08_s6, keysplit_bw_eye_08_s6
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_bw_eye_08_s8, keysplit_bw_eye_08_s8
+	voice_keysplit_all voicegroup_bw_eye_08_d9
+
+voice_group bw_eye_08_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_0_36, 255, 248, 0, 205
+	.global keysplit_bw_eye_08_s1
+keysplit_bw_eye_08_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_eye_08_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_14_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_15_48, 255, 28, 227, 177
+	.global keysplit_bw_eye_08_s5
+keysplit_bw_eye_08_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_08_s6
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_4_45, 255, 223, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_5_57, 255, 223, 191, 194
+	.global keysplit_bw_eye_08_s6
+keysplit_bw_eye_08_s6:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_08_s8
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_11_60, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_10_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_13_77, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1121_12_84, 255, 235, 191, 205
+	.global keysplit_bw_eye_08_s8
+keysplit_bw_eye_08_s8:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_08_d9, 30
+	voice_directsound 30, 0, DirectSoundWaveData_bw_1121_8_30, 255, 255, 191, 177
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1121_8_30, 255, 255, 191, 177
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1121_8_30, 255, 255, 191, 177
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1121_8_30, 255, 255, 191, 177
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1121_8_30, 255, 255, 191, 177
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1121_2_35, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1121_2_35, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1121_2_35, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1121_2_35, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1121_2_35, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1121_9_40, 255, 213, 128, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1121_9_40, 255, 213, 128, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1121_6_42, 255, 235, 0, 177
+
+@ SEQ_BGM_EYE_09 (bank 1122)
+voice_group bw_eye_09
+	voice_keysplit voicegroup_bw_eye_09_s0, keysplit_bw_eye_09_s0
+	voice_keysplit voicegroup_bw_eye_09_s1, keysplit_bw_eye_09_s1
+	voice_keysplit voicegroup_bw_eye_09_s2, keysplit_bw_eye_09_s2
+	voice_keysplit voicegroup_bw_eye_09_s3, keysplit_bw_eye_09_s3
+
+voice_group bw_eye_09_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_5_43, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_2_48, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_6_55, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_3_60, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_7_67, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_4_72, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_8_79, 255, 249, 0, 213
+	.global keysplit_bw_eye_09_s0
+keysplit_bw_eye_09_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+voice_group bw_eye_09_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_13_72, 255, 241, 0, 205
+	.global keysplit_bw_eye_09_s1
+keysplit_bw_eye_09_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_eye_09_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_12_43, 255, 244, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_11_52, 255, 244, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_10_60, 255, 244, 6, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_9_69, 255, 244, 6, 205
+	.global keysplit_bw_eye_09_s2
+keysplit_bw_eye_09_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_09_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_0_57, 255, 235, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1122_1_65, 255, 235, 191, 194
+	.global keysplit_bw_eye_09_s3
+keysplit_bw_eye_09_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
+@ SEQ_BGM_EYE_10 (bank 1123)
+voice_group bw_eye_10
+	voice_keysplit voicegroup_bw_eye_10_s0, keysplit_bw_eye_10_s0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_bw_eye_10_s2, keysplit_bw_eye_10_s2
+	voice_keysplit voicegroup_bw_eye_10_s3, keysplit_bw_eye_10_s3
+	voice_keysplit_all voicegroup_bw_eye_10_d4
+
+voice_group bw_eye_10_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1123_1_60, 255, 177, 255, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1123_2_72, 255, 177, 255, 205
+	.global keysplit_bw_eye_10_s0
+keysplit_bw_eye_10_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_10_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1123_7_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1123_8_48, 255, 28, 227, 177
+	.global keysplit_bw_eye_10_s2
+keysplit_bw_eye_10_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_10_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1123_10_52, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1123_9_60, 255, 235, 210, 205
+	.global keysplit_bw_eye_10_s3
+keysplit_bw_eye_10_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_10_d4, 32
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1123_6_32, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1123_6_32, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1123_6_32, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1123_5_35, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1123_3_42, 255, 84, 0, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1123_3_42, 255, 84, 0, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1123_3_42, 255, 84, 0, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1123_3_42, 255, 84, 0, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1123_4_46, 255, 233, 0, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1123_4_46, 255, 233, 0, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1123_4_46, 255, 233, 0, 205
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1123_0_49, 255, 241, 0, 213
+
+@ SEQ_BGM_EYE_11 (bank 1124)
+voice_group bw_eye_11
+	voice_keysplit voicegroup_bw_eye_11_s0, keysplit_bw_eye_11_s0
+	voice_keysplit voicegroup_bw_eye_11_s1, keysplit_bw_eye_11_s1
+	voice_keysplit voicegroup_bw_eye_11_s2, keysplit_bw_eye_11_s2
+	voice_keysplit voicegroup_bw_eye_11_s3, keysplit_bw_eye_11_s3
+	voice_keysplit voicegroup_bw_eye_11_s4, keysplit_bw_eye_11_s4
+	voice_keysplit voicegroup_bw_eye_11_s5, keysplit_bw_eye_11_s5
+	voice_keysplit_all voicegroup_bw_eye_11_d6
+
+voice_group bw_eye_11_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_10_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_9_69, 255, 241, 210, 205
+	.global keysplit_bw_eye_11_s0
+keysplit_bw_eye_11_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_11_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_4_53, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_3_62, 255, 223, 227, 205
+	.global keysplit_bw_eye_11_s1
+keysplit_bw_eye_11_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_11_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_12_36, 255, 223, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_11_45, 255, 223, 210, 205
+	.global keysplit_bw_eye_11_s2
+keysplit_bw_eye_11_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_11_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_2_65, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_1_72, 255, 241, 157, 205
+	.global keysplit_bw_eye_11_s3
+keysplit_bw_eye_11_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_11_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_8_43, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_7_52, 255, 235, 210, 205
+	.global keysplit_bw_eye_11_s4
+keysplit_bw_eye_11_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_11_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1124_6_55, 255, 249, 0, 205
+	.global keysplit_bw_eye_11_s5
+keysplit_bw_eye_11_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_eye_11_d6, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1124_5_31, 255, 0, 227, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1124_0_48, 255, 246, 0, 213
+
+@ SEQ_BGM_EYE_12 (bank 1125)
+voice_group bw_eye_12
+	voice_keysplit voicegroup_bw_eye_12_s0, keysplit_bw_eye_12_s0
+	voice_keysplit voicegroup_bw_eye_12_s1, keysplit_bw_eye_12_s1
+	voice_keysplit voicegroup_bw_eye_12_s2, keysplit_bw_eye_12_s2
+	voice_keysplit voicegroup_bw_eye_12_s3, keysplit_bw_eye_12_s3
+	voice_keysplit_all voicegroup_bw_eye_12_d4
+
+voice_group bw_eye_12_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_10_72, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_11_79, 255, 249, 0, 213
+	.global keysplit_bw_eye_12_s0
+keysplit_bw_eye_12_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_12_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_5_45, 255, 223, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_6_57, 255, 223, 191, 194
+	.global keysplit_bw_eye_12_s1
+keysplit_bw_eye_12_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_12_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_8_43, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_9_55, 255, 252, 0, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_7_64, 255, 252, 0, 177
+	.global keysplit_bw_eye_12_s2
+keysplit_bw_eye_12_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_12_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_3_48, 255, 177, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1125_4_60, 255, 177, 255, 205
+	.global keysplit_bw_eye_12_s3
+keysplit_bw_eye_12_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_12_d4, 33
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1125_0_33, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1125_0_33, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1125_1_35, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1125_1_35, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1125_1_35, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1125_1_35, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1125_1_35, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1125_14_40, 255, 213, 128, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1125_15_41, 255, 0, 255, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1125_12_42, 255, 84, 0, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1125_17_43, 255, 0, 255, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1125_17_43, 255, 0, 255, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1125_18_45, 255, 0, 255, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1125_13_46, 255, 233, 0, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1125_16_47, 255, 0, 255, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1125_2_48, 255, 241, 0, 213
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1125_2_48, 255, 241, 0, 213
+
+@ SEQ_BGM_EYE_13 (bank 1126)
+voice_group bw_eye_13
+	voice_keysplit voicegroup_bw_eye_13_s0, keysplit_bw_eye_13_s0
+	voice_keysplit voicegroup_bw_eye_13_s1, keysplit_bw_eye_13_s1
+	voice_keysplit voicegroup_bw_eye_13_s2, keysplit_bw_eye_13_s2
+
+voice_group bw_eye_13_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_2_64, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_1_72, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_0_81, 255, 235, 157, 205
+	.global keysplit_bw_eye_13_s0
+keysplit_bw_eye_13_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_eye_13_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_4_60, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_3_69, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_6_77, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_5_84, 255, 241, 157, 205
+	.global keysplit_bw_eye_13_s1
+keysplit_bw_eye_13_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_eye_13_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_8_60, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_7_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_10_77, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1126_9_84, 255, 235, 191, 205
+	.global keysplit_bw_eye_13_s2
+keysplit_bw_eye_13_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+
+@ SEQ_BGM_EYE_PLASMA (bank 1127)
+voice_group bw_eye_plasma
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_13_72, 255, 0, 255, 177
+	voice_keysplit voicegroup_bw_eye_plasma_s1, keysplit_bw_eye_plasma_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_2_35, 255, 28, 227, 0
+	voice_keysplit voicegroup_bw_eye_plasma_s3, keysplit_bw_eye_plasma_s3
+	voice_keysplit voicegroup_bw_eye_plasma_s4, keysplit_bw_eye_plasma_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_19_46, 255, 244, 0, 205
+	voice_keysplit voicegroup_bw_eye_plasma_s6, keysplit_bw_eye_plasma_s6
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit_all voicegroup_bw_eye_plasma_d8
+
+voice_group bw_eye_plasma_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_16_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_17_77, 255, 235, 191, 205
+	.global keysplit_bw_eye_plasma_s1
+keysplit_bw_eye_plasma_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_eye_plasma_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_14_43, 255, 28, 227, 177
+	.global keysplit_bw_eye_plasma_s3
+keysplit_bw_eye_plasma_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_eye_plasma_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_8_40, 255, 252, 0, 84
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_7_48, 255, 252, 0, 84
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_9_64, 255, 252, 0, 84
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_10_76, 255, 252, 0, 84
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_6_83, 255, 252, 0, 84
+	.global keysplit_bw_eye_plasma_s4
+keysplit_bw_eye_plasma_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4
+voice_group bw_eye_plasma_s6
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_11_72, 255, 235, 191, 0
+	.global keysplit_bw_eye_plasma_s6
+keysplit_bw_eye_plasma_s6:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_eye_plasma_d8, 28
+	voice_directsound 28, 0, DirectSoundWaveData_bw_1127_1_28, 255, 0, 227, 205
+	voice_directsound 29, 0, DirectSoundWaveData_bw_1127_0_29, 255, 0, 227, 205
+	voice_directsound 30, 0, DirectSoundWaveData_bw_1127_0_29, 255, 0, 227, 205
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1127_0_29, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1127_0_29, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1127_0_29, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1127_0_29, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1127_18_35, 255, 0, 255, 0
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1127_18_35, 255, 0, 255, 0
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1127_18_35, 255, 0, 255, 0
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1127_18_35, 255, 0, 255, 0
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1127_18_35, 255, 0, 255, 0
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1127_15_40, 255, 213, 128, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1127_15_40, 255, 213, 128, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1127_12_42, 255, 235, 0, 177
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1127_4_54, 255, 0, 255, 0
+	voice_directsound 55, 0, DirectSoundWaveData_bw_1127_4_54, 255, 0, 255, 0
+	voice_directsound 56, 0, DirectSoundWaveData_bw_1127_4_54, 255, 0, 255, 0
+	voice_directsound 57, 0, DirectSoundWaveData_bw_1127_4_54, 255, 0, 255, 0
+	voice_directsound 58, 0, DirectSoundWaveData_bw_1127_5_58, 255, 0, 255, 0
+	voice_directsound 59, 0, DirectSoundWaveData_bw_1127_5_58, 255, 0, 255, 0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1127_5_58, 255, 0, 255, 0
+	voice_directsound 61, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 62, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 63, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 64, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 65, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 66, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 67, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 68, 0, DirectSoundWaveData_bw_1127_3_61, 255, 241, 0, 213
+	voice_directsound 69, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 70, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 71, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 72, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 73, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 74, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 75, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 76, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
+	voice_directsound 77, 0, DirectSoundWaveData_bw_1127_3_77, 255, 241, 0, 213
+
 @ SEQ_ME_LVUP (bank 1301)
 voice_group bw_me_lvup
 	voice_keysplit voicegroup_bw_me_lvup_s0, keysplit_bw_me_lvup_s0

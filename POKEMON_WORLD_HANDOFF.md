@@ -123,8 +123,17 @@ sprite chosen at setup.
   BW's themes in Unova (`MUSIC_STYLE_UNOVA`), BGM players have 16 tracks now. Two songs ndspy can't read
   (`SEQ_BGM_H_01`, `SEQ_BGM_D_06`, command 0x82) keep a placeholder.
 - **Start:** "UNOVA" at the new-game region choice: the player's room in Nuvema Town (the intro speech is still Birch's).
-- **Not yet:** BW's camera moves, map/building animations, trainer encounter (eye) music, rail NPCs, the
-  Badge Case's Unova row, the Town Map, Juniper's intro. Note: the map group count is at its limit (128).
+- **Cutscenes:** BW's event camera (EVCamera*) moves the 3D view (scene block words 11-19, eased in
+  `unova3d.js`); cutscene characters (ActorNew, `sBwObjGfx`), teleports (ActorSetGPos), list menus, reserved
+  follow-up scripts, the other warp kinds, money, party queries/selection and clock commands are handled.
+  Set `BW_TRACE_ON` to 1 in `src/bw_script.c` to log scripts and skipped commands to the browser console.
+  Checked: the opening (room scene with the camera pan, gift box -> starter screen -> Bianca's battle).
+- **Trainer eye music:** a Unova trainer's `encounterMusic` is the index of BW's eye theme (from BW's class
+  table), played by `GetUnovaTrainerEyeMusic`.
+- **Not yet:** sound effects in BW scripts (SEPlay), Call3DDemo cutscenes (e.g. N's castle), building/door and
+  map texture animations, rail NPCs (40, on Castelia's curved streets etc.; needs BW's rail geometry), the
+  Badge Case's Unova row and a Unova Town Map (BW's art not located yet), Juniper's intro, two songs ndspy
+  misreads (`SEQ_BGM_H_01`, `SEQ_BGM_D_06`). Note: the map group count is at its limit (128).
 - BW zone ids, area/texture sets and formats: see the converter's comments.
 
 ## Known gaps / not yet played (Johto stages 1–7)

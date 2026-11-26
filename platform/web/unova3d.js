@@ -193,6 +193,39 @@
 
   PW3D.camera = null;     // the last camera: {eye, at, mvp}
 
+  // BW's event camera. The field camera follows the player with the zone's pitch/yaw/distance; a
+  // cutscene can move it to a fixed view (pitch, yaw, distance, target) and back, easing over n frames.
+  var ev = { seq: -1, mode: 0, from: null, to: null, t: 0, n: 1, last: null };
+  PW3D.eventCamera = function (mode, pitch, yaw, dist, x, y, z, frames, seq) {
+    if (seq === ev.seq) return;
+    ev.seq = seq;
+    ev.mode = mode;
+    ev.from = ev.last;
+    ev.to = mode === 1 ? { pitch: pitch * 360 / 65536, yaw: yaw * 360 / 65536, distance: dist / 4096,
+                           at: [x / 4096, y / 4096, z / 4096] } : null;
+    ev.t = 0;
+    ev.n = Math.max(1, frames);
+  };
+  function lerp(a, b, t) { return a + (b - a) * t; }
+  function angLerp(a, b, t) { var d = ((b - a + 540) % 360) - 180; return a + d * t; }
+  function viewOf(cam, target) {
+    return { pitch: cam.pitch, yaw: cam.yaw, distance: cam.distance,
+             at: [target[0] + cam.target[0], target[1] + cam.target[1], target[2] + cam.target[2]] };
+  }
+  // the view to draw this frame: the field camera, the event camera, or on the way between them
+  function currentView(cam, target) {
+    var field = viewOf(cam, target);
+    if (ev.mode === 0 || (ev.mode === 2 && ev.t >= ev.n)) { ev.mode = 0; ev.last = field; return field; }
+    var goal = ev.mode === 1 ? ev.to : field, from = ev.from || field;
+    var t = Math.min(1, ev.t / ev.n);
+    t = t * t * (3 - 2 * t);
+    ev.t++;
+    var v = { pitch: lerp(from.pitch, goal.pitch, t), yaw: angLerp(from.yaw, goal.yaw, t), distance: lerp(from.distance, goal.distance, t),
+              at: [lerp(from.at[0], goal.at[0], t), lerp(from.at[1], goal.at[1], t), lerp(from.at[2], goal.at[2], t)] };
+    ev.last = v;
+    return v;
+  }
+
   // fadeY 0..16 and fadeColor (RGB555): the game's palette fade, applied to the 3D picture too.
   PW3D.draw = function (target, sprites, fadeY, fadeColor) {
     if (!gl) return;
@@ -203,8 +236,9 @@
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     var cam = zones && zones[scene.zone] && zones[scene.zone].camera;
     if (!cam) return;
-    var at = [target[0] + cam.target[0], target[1] + cam.target[1], target[2] + cam.target[2]];
-    var pitch = cam.pitch * Math.PI / 180, yaw = cam.yaw * Math.PI / 180, d = cam.distance;
+    var view = currentView(cam, target);
+    var at = view.at;
+    var pitch = view.pitch * Math.PI / 180, yaw = view.yaw * Math.PI / 180, d = view.distance;
     var eye = [at[0] + d * Math.cos(pitch) * Math.sin(yaw), at[1] + d * Math.sin(pitch), at[2] + d * Math.cos(pitch) * Math.cos(yaw)];
     var proj = perspective(cam.fov * Math.PI / 180, canvas.width / canvas.height, Math.max(cam.near, 1), cam.far);
     var mvp = mul(proj, lookAt(eye, at, [0, 1, 0]));

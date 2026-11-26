@@ -87,16 +87,30 @@
 #define MUS_BW_WIN2                      (BW_SONGS_START + 78)
 #define MUS_BW_WIN3                      (BW_SONGS_START + 79)
 #define MUS_BW_WIN4                      (BW_SONGS_START + 80)
-#define MUS_BW_ME_LVUP                   (BW_SONGS_START + 81)
-#define MUS_BW_ME_ITEM                   (BW_SONGS_START + 82)
-#define MUS_BW_ME_SHINKAOME              (BW_SONGS_START + 83)
-#define MUS_BW_ME_WAZA                   (BW_SONGS_START + 84)
-#define MUS_BW_ME_ASA                    (BW_SONGS_START + 85)
-#define MUS_BW_ME_BADGE                  (BW_SONGS_START + 86)
-#define MUS_BW_ME_WASURE                 (BW_SONGS_START + 87)
-#define MUS_BW_ME_KINOMI                 (BW_SONGS_START + 88)
-#define MUS_BW_ME_KEYITEM                (BW_SONGS_START + 89)
-#define BW_SONGS_END (BW_SONGS_START + 89)
+#define MUS_BW_EYE_01                    (BW_SONGS_START + 81)
+#define MUS_BW_EYE_02                    (BW_SONGS_START + 82)
+#define MUS_BW_EYE_03                    (BW_SONGS_START + 83)
+#define MUS_BW_EYE_04                    (BW_SONGS_START + 84)
+#define MUS_BW_EYE_05                    (BW_SONGS_START + 85)
+#define MUS_BW_EYE_06                    (BW_SONGS_START + 86)
+#define MUS_BW_EYE_07                    (BW_SONGS_START + 87)
+#define MUS_BW_EYE_08                    (BW_SONGS_START + 88)
+#define MUS_BW_EYE_09                    (BW_SONGS_START + 89)
+#define MUS_BW_EYE_10                    (BW_SONGS_START + 90)
+#define MUS_BW_EYE_11                    (BW_SONGS_START + 91)
+#define MUS_BW_EYE_12                    (BW_SONGS_START + 92)
+#define MUS_BW_EYE_13                    (BW_SONGS_START + 93)
+#define MUS_BW_EYE_PLASMA                (BW_SONGS_START + 94)
+#define MUS_BW_ME_LVUP                   (BW_SONGS_START + 95)
+#define MUS_BW_ME_ITEM                   (BW_SONGS_START + 96)
+#define MUS_BW_ME_SHINKAOME              (BW_SONGS_START + 97)
+#define MUS_BW_ME_WAZA                   (BW_SONGS_START + 98)
+#define MUS_BW_ME_ASA                    (BW_SONGS_START + 99)
+#define MUS_BW_ME_BADGE                  (BW_SONGS_START + 100)
+#define MUS_BW_ME_WASURE                 (BW_SONGS_START + 101)
+#define MUS_BW_ME_KINOMI                 (BW_SONGS_START + 102)
+#define MUS_BW_ME_KEYITEM                (BW_SONGS_START + 103)
+#define BW_SONGS_END (BW_SONGS_START + 103)
 
 // For the debug menu's sound test
 #define BW_SOUND_LIST_BGM \
@@ -181,6 +195,20 @@
     X(MUS_BW_WIN2) \
     X(MUS_BW_WIN3) \
     X(MUS_BW_WIN4) \
+    X(MUS_BW_EYE_01) \
+    X(MUS_BW_EYE_02) \
+    X(MUS_BW_EYE_03) \
+    X(MUS_BW_EYE_04) \
+    X(MUS_BW_EYE_05) \
+    X(MUS_BW_EYE_06) \
+    X(MUS_BW_EYE_07) \
+    X(MUS_BW_EYE_08) \
+    X(MUS_BW_EYE_09) \
+    X(MUS_BW_EYE_10) \
+    X(MUS_BW_EYE_11) \
+    X(MUS_BW_EYE_12) \
+    X(MUS_BW_EYE_13) \
+    X(MUS_BW_EYE_PLASMA) \
     X(MUS_BW_ME_LVUP) \
     X(MUS_BW_ME_ITEM) \
     X(MUS_BW_ME_SHINKAOME) \

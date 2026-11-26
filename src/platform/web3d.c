@@ -50,6 +50,15 @@ static struct
     u32 matrix;        // BW map matrix the map is part of
     u32 chunkX;        // where the map's top-left chunk is in that matrix
     u32 chunkY;
+    // BW's event camera (scripts' EVCamera commands, src/bw_script.c): mode 0 = the field camera
+    // following the player, 1 = go to the event camera below, 2 = go back to the field camera;
+    // over evFrames frames, starting when evSeq changes
+    u32 evMode;
+    s32 evPitch, evYaw;            // BW angles: 0x10000 = 360 degrees
+    s32 evDistance;                // fx32 (4096 = 1 world unit; 16 units per tile)
+    s32 evTargetX, evTargetY, evTargetZ;   // fx32, in BW's map matrix
+    u32 evFrames;
+    u32 evSeq;
 } sScene;
 
 static struct Web3DSprite sSceneSprites[MAX_3D_SPRITES];
@@ -223,6 +232,22 @@ void Web3D_EndFrame(void)
         n++;
     }
     sScene.count = n;
+}
+
+void Web3D_EventCamera(u32 mode, s32 pitch, s32 yaw, s32 distance, s32 x, s32 y, s32 z, u32 frames)
+{
+    sScene.evMode = mode;
+    if (mode == 1)
+    {
+        sScene.evPitch = pitch;
+        sScene.evYaw = yaw;
+        sScene.evDistance = distance;
+        sScene.evTargetX = x;
+        sScene.evTargetY = y;
+        sScene.evTargetZ = z;
+    }
+    sScene.evFrames = frames;
+    sScene.evSeq++;
 }
 
 EMSCRIPTEN_KEEPALIVE const void *Web_Get3DScene(void)

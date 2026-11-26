@@ -120,6 +120,23 @@ def flags_cleared(rom):
     return out
 
 
+def actor_new_objs(rom):
+    """objCodes BW scripts bring in with ActorNew (0x69: x, z, dir, actor, objCode, moveCode)."""
+    out = set()
+    for d in rom.narc('a/0/5/7'):
+        try:
+            es = entries(d)
+        except Exception:
+            continue
+        if len(es) > 3000:
+            continue
+        for e in es:
+            for op, args in walk(d, e):
+                if op == 0x69 and args[4] < 0x4000:
+                    out.add(args[4])
+    return out
+
+
 # --- text -> our script strings ---
 
 ALLOWED = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,!?'\"-:;/()&%+=~<>$#*@"

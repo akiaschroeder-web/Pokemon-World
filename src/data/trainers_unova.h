@@ -162,7 +162,7 @@
 #line 61
         .gender = TRAINER_GENDER_FEMALE,
 #line 62
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 63
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 64
@@ -198,7 +198,7 @@
 #line 74
         .gender = TRAINER_GENDER_MALE,
 #line 75
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 76
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 77
@@ -354,7 +354,7 @@
 #line 129
         .gender = TRAINER_GENDER_MALE,
 #line 130
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 131
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 132
@@ -390,7 +390,7 @@
 #line 142
         .gender = TRAINER_GENDER_FEMALE,
 #line 143
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 144
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 145
@@ -618,7 +618,7 @@
 #line 225
         .gender = TRAINER_GENDER_FEMALE,
 #line 226
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 227
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 228
@@ -666,7 +666,7 @@
 #line 242
         .gender = TRAINER_GENDER_MALE,
 #line 243
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 244
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 245
@@ -702,7 +702,7 @@
 #line 255
         .gender = TRAINER_GENDER_FEMALE,
 #line 256
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 257
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 258
@@ -738,7 +738,7 @@
 #line 268
         .gender = TRAINER_GENDER_FEMALE,
 #line 269
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 270
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 271
@@ -774,7 +774,7 @@
 #line 281
         .gender = TRAINER_GENDER_FEMALE,
 #line 282
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 283
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 284
@@ -882,7 +882,7 @@
 #line 319
         .gender = TRAINER_GENDER_FEMALE,
 #line 320
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 321
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 322
@@ -942,7 +942,7 @@
 #line 340
         .gender = TRAINER_GENDER_FEMALE,
 #line 341
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 344
         .items = { ITEM_SUPER_POTION },
 #line 342
@@ -1089,7 +1089,7 @@
 #line 400
         .gender = TRAINER_GENDER_FEMALE,
 #line 401
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 404
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 402
@@ -1257,7 +1257,7 @@
 #line 467
         .gender = TRAINER_GENDER_FEMALE,
 #line 468
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 471
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 469
@@ -1340,7 +1340,7 @@
 #line 501
         .gender = TRAINER_GENDER_MALE,
 #line 502
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 503
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 504
@@ -1376,7 +1376,7 @@
 #line 514
         .gender = TRAINER_GENDER_FEMALE,
 #line 515
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 516
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 517
@@ -1412,7 +1412,7 @@
 #line 527
         .gender = TRAINER_GENDER_MALE,
 #line 528
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 529
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 530
@@ -1448,7 +1448,7 @@
 #line 540
         .gender = TRAINER_GENDER_FEMALE,
 #line 541
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 542
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 543
@@ -1568,7 +1568,7 @@
 #line 583
         .gender = TRAINER_GENDER_FEMALE,
 #line 584
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 585
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 586
@@ -1724,7 +1724,7 @@
 #line 638
         .gender = TRAINER_GENDER_MALE,
 #line 639
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 640
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 641
@@ -1772,7 +1772,7 @@
 #line 655
         .gender = TRAINER_GENDER_MALE,
 #line 656
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 657
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 658
@@ -1808,7 +1808,7 @@
 #line 668
         .gender = TRAINER_GENDER_MALE,
 #line 669
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 670
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 671
@@ -1844,7 +1844,7 @@
 #line 681
         .gender = TRAINER_GENDER_MALE,
 #line 682
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 683
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 684
@@ -1880,7 +1880,7 @@
 #line 694
         .gender = TRAINER_GENDER_MALE,
 #line 695
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 696
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 697
@@ -1916,7 +1916,7 @@
 #line 707
         .gender = TRAINER_GENDER_FEMALE,
 #line 708
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 709
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 710
@@ -1952,7 +1952,7 @@
 #line 720
         .gender = TRAINER_GENDER_MALE,
 #line 721
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 722
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 723
@@ -2000,7 +2000,7 @@
 #line 737
         .gender = TRAINER_GENDER_MALE,
 #line 738
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 739
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 740
@@ -2072,7 +2072,7 @@
 #line 762
         .gender = TRAINER_GENDER_FEMALE,
 #line 763
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 764
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 765
@@ -2120,7 +2120,7 @@
 #line 779
         .gender = TRAINER_GENDER_MALE,
 #line 780
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 781
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 782
@@ -2156,7 +2156,7 @@
 #line 792
         .gender = TRAINER_GENDER_FEMALE,
 #line 793
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 794
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 795
@@ -2192,7 +2192,7 @@
 #line 805
         .gender = TRAINER_GENDER_MALE,
 #line 806
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 807
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 808
@@ -2240,7 +2240,7 @@
 #line 822
         .gender = TRAINER_GENDER_MALE,
 #line 823
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 824
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 825
@@ -2288,7 +2288,7 @@
 #line 839
         .gender = TRAINER_GENDER_MALE,
 #line 840
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 841
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 842
@@ -2336,7 +2336,7 @@
 #line 856
         .gender = TRAINER_GENDER_MALE,
 #line 857
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 858
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 859
@@ -2372,7 +2372,7 @@
 #line 869
         .gender = TRAINER_GENDER_FEMALE,
 #line 870
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 871
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 872
@@ -2432,7 +2432,7 @@
 #line 890
         .gender = TRAINER_GENDER_MALE,
 #line 891
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 892
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 893
@@ -2468,7 +2468,7 @@
 #line 903
         .gender = TRAINER_GENDER_FEMALE,
 #line 904
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 905
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 906
@@ -2774,7 +2774,7 @@
 #line 1010
         .gender = TRAINER_GENDER_FEMALE,
 #line 1011
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 1012
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1013
@@ -2810,7 +2810,7 @@
 #line 1023
         .gender = TRAINER_GENDER_FEMALE,
 #line 1024
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 1025
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1026
@@ -2846,7 +2846,7 @@
 #line 1036
         .gender = TRAINER_GENDER_FEMALE,
 #line 1037
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 1038
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1039
@@ -2882,7 +2882,7 @@
 #line 1049
         .gender = TRAINER_GENDER_MALE,
 #line 1050
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 1051
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1052
@@ -2918,7 +2918,7 @@
 #line 1062
         .gender = TRAINER_GENDER_MALE,
 #line 1063
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 1064
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1065
@@ -3223,7 +3223,7 @@
 #line 1171
         .gender = TRAINER_GENDER_MALE,
 #line 1172
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1173
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1174
@@ -3271,7 +3271,7 @@
 #line 1188
         .gender = TRAINER_GENDER_MALE,
 #line 1189
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1190
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1191
@@ -3307,7 +3307,7 @@
 #line 1201
         .gender = TRAINER_GENDER_MALE,
 #line 1202
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1203
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1204
@@ -3355,7 +3355,7 @@
 #line 1218
         .gender = TRAINER_GENDER_MALE,
 #line 1219
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1220
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1221
@@ -3391,7 +3391,7 @@
 #line 1231
         .gender = TRAINER_GENDER_MALE,
 #line 1232
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1233
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1234
@@ -3439,7 +3439,7 @@
 #line 1248
         .gender = TRAINER_GENDER_MALE,
 #line 1249
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1250
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1251
@@ -3499,7 +3499,7 @@
 #line 1269
         .gender = TRAINER_GENDER_MALE,
 #line 1270
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1271
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1272
@@ -3547,7 +3547,7 @@
 #line 1286
         .gender = TRAINER_GENDER_MALE,
 #line 1287
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1288
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1289
@@ -3595,7 +3595,7 @@
 #line 1303
         .gender = TRAINER_GENDER_MALE,
 #line 1304
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1305
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1306
@@ -3643,7 +3643,7 @@
 #line 1320
         .gender = TRAINER_GENDER_MALE,
 #line 1321
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1322
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1323
@@ -3679,7 +3679,7 @@
 #line 1333
         .gender = TRAINER_GENDER_MALE,
 #line 1334
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 1335
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1336
@@ -3715,7 +3715,7 @@
 #line 1346
         .gender = TRAINER_GENDER_MALE,
 #line 1347
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 1348
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1349
@@ -3763,7 +3763,7 @@
 #line 1363
         .gender = TRAINER_GENDER_MALE,
 #line 1364
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 1365
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1366
@@ -3799,7 +3799,7 @@
 #line 1376
         .gender = TRAINER_GENDER_MALE,
 #line 1377
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 1378
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1379
@@ -4045,7 +4045,7 @@
 #line 1466
         .gender = TRAINER_GENDER_FEMALE,
 #line 1467
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1470
         .items = { ITEM_X_DEFENSE },
 #line 1468
@@ -4389,7 +4389,7 @@
 #line 1583
         .gender = TRAINER_GENDER_FEMALE,
 #line 1584
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 1585
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1586
@@ -4425,7 +4425,7 @@
 #line 1596
         .gender = TRAINER_GENDER_FEMALE,
 #line 1597
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 1598
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1599
@@ -4473,7 +4473,7 @@
 #line 1613
         .gender = TRAINER_GENDER_FEMALE,
 #line 1614
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 1615
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1616
@@ -4509,7 +4509,7 @@
 #line 1626
         .gender = TRAINER_GENDER_FEMALE,
 #line 1627
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 1628
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1629
@@ -4545,7 +4545,7 @@
 #line 1639
         .gender = TRAINER_GENDER_MALE,
 #line 1640
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1641
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1642
@@ -4593,7 +4593,7 @@
 #line 1656
         .gender = TRAINER_GENDER_FEMALE,
 #line 1657
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 1658
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1659
@@ -4641,7 +4641,7 @@
 #line 1673
         .gender = TRAINER_GENDER_FEMALE,
 #line 1674
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1675
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1676
@@ -4690,7 +4690,7 @@
 #line 1690
         .gender = TRAINER_GENDER_FEMALE,
 #line 1691
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1692
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1693
@@ -4750,7 +4750,7 @@
 #line 1711
         .gender = TRAINER_GENDER_FEMALE,
 #line 1712
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1713
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1714
@@ -4798,7 +4798,7 @@
 #line 1728
         .gender = TRAINER_GENDER_FEMALE,
 #line 1729
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1730
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1731
@@ -4858,7 +4858,7 @@
 #line 1749
         .gender = TRAINER_GENDER_MALE,
 #line 1750
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1751
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1752
@@ -4918,7 +4918,7 @@
 #line 1770
         .gender = TRAINER_GENDER_MALE,
 #line 1771
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1772
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1773
@@ -4966,7 +4966,7 @@
 #line 1787
         .gender = TRAINER_GENDER_MALE,
 #line 1788
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1789
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1790
@@ -5002,7 +5002,7 @@
 #line 1800
         .gender = TRAINER_GENDER_MALE,
 #line 1801
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 1802
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1803
@@ -5122,7 +5122,7 @@
 #line 1843
         .gender = TRAINER_GENDER_MALE,
 #line 1844
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 1845
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1846
@@ -5158,7 +5158,7 @@
 #line 1856
         .gender = TRAINER_GENDER_MALE,
 #line 1857
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 1858
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1859
@@ -5194,7 +5194,7 @@
 #line 1869
         .gender = TRAINER_GENDER_MALE,
 #line 1870
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 1871
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1872
@@ -5230,7 +5230,7 @@
 #line 1882
         .gender = TRAINER_GENDER_MALE,
 #line 1883
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1886
         .items = { ITEM_X_DEFENSE },
 #line 1884
@@ -5268,7 +5268,7 @@
 #line 1896
         .gender = TRAINER_GENDER_MALE,
 #line 1897
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1900
         .items = { ITEM_X_SP_DEF },
 #line 1898
@@ -5306,7 +5306,7 @@
 #line 1910
         .gender = TRAINER_GENDER_MALE,
 #line 1911
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1914
         .items = { ITEM_DIRE_HIT },
 #line 1912
@@ -5344,7 +5344,7 @@
 #line 1924
         .gender = TRAINER_GENDER_MALE,
 #line 1925
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1928
         .items = { ITEM_DIRE_HIT },
 #line 1926
@@ -5382,7 +5382,7 @@
 #line 1938
         .gender = TRAINER_GENDER_FEMALE,
 #line 1939
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1942
         .items = { ITEM_X_SP_ATK },
 #line 1940
@@ -5420,7 +5420,7 @@
 #line 1952
         .gender = TRAINER_GENDER_FEMALE,
 #line 1953
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 1956
         .items = { ITEM_X_SP_ATK },
 #line 1954
@@ -5458,7 +5458,7 @@
 #line 1966
         .gender = TRAINER_GENDER_MALE,
 #line 1967
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 1968
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1969
@@ -5506,7 +5506,7 @@
 #line 1983
         .gender = TRAINER_GENDER_MALE,
 #line 1984
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 1985
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1986
@@ -5542,7 +5542,7 @@
 #line 1996
         .gender = TRAINER_GENDER_FEMALE,
 #line 1997
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 1998
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 1999
@@ -5602,7 +5602,7 @@
 #line 2017
         .gender = TRAINER_GENDER_FEMALE,
 #line 2018
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 2019
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2020
@@ -5650,7 +5650,7 @@
 #line 2034
         .gender = TRAINER_GENDER_MALE,
 #line 2035
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2036
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2037
@@ -5710,7 +5710,7 @@
 #line 2055
         .gender = TRAINER_GENDER_MALE,
 #line 2056
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2057
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2058
@@ -5758,7 +5758,7 @@
 #line 2072
         .gender = TRAINER_GENDER_MALE,
 #line 2073
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2074
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2075
@@ -5794,7 +5794,7 @@
 #line 2085
         .gender = TRAINER_GENDER_MALE,
 #line 2086
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2087
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2088
@@ -5842,7 +5842,7 @@
 #line 2102
         .gender = TRAINER_GENDER_MALE,
 #line 2103
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2104
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2105
@@ -5878,7 +5878,7 @@
 #line 2115
         .gender = TRAINER_GENDER_MALE,
 #line 2116
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2117
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2118
@@ -5926,7 +5926,7 @@
 #line 2132
         .gender = TRAINER_GENDER_MALE,
 #line 2133
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2134
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2135
@@ -5962,7 +5962,7 @@
 #line 2145
         .gender = TRAINER_GENDER_MALE,
 #line 2146
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2147
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2148
@@ -5998,7 +5998,7 @@
 #line 2158
         .gender = TRAINER_GENDER_MALE,
 #line 2159
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2160
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2161
@@ -6034,7 +6034,7 @@
 #line 2171
         .gender = TRAINER_GENDER_FEMALE,
 #line 2172
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 2175
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 2173
@@ -6117,7 +6117,7 @@
 #line 2205
         .gender = TRAINER_GENDER_FEMALE,
 #line 2206
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 2209
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 2207
@@ -6283,7 +6283,7 @@
 #line 2273
         .gender = TRAINER_GENDER_MALE,
 #line 2274
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 2275
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2276
@@ -6319,7 +6319,7 @@
 #line 2286
         .gender = TRAINER_GENDER_MALE,
 #line 2287
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 2288
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2289
@@ -6367,7 +6367,7 @@
 #line 2303
         .gender = TRAINER_GENDER_MALE,
 #line 2304
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 2305
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2306
@@ -6427,7 +6427,7 @@
 #line 2324
         .gender = TRAINER_GENDER_MALE,
 #line 2325
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2326
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2327
@@ -6475,7 +6475,7 @@
 #line 2341
         .gender = TRAINER_GENDER_MALE,
 #line 2342
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 2345
         .items = { ITEM_HYPER_POTION },
 #line 2343
@@ -6525,7 +6525,7 @@
 #line 2359
         .gender = TRAINER_GENDER_FEMALE,
 #line 2360
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 2363
         .items = { ITEM_HYPER_POTION },
 #line 2361
@@ -7009,7 +7009,7 @@
 #line 2533
         .gender = TRAINER_GENDER_MALE,
 #line 2534
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2535
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2536
@@ -7057,7 +7057,7 @@
 #line 2550
         .gender = TRAINER_GENDER_MALE,
 #line 2551
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2552
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2553
@@ -7129,7 +7129,7 @@
 #line 2575
         .gender = TRAINER_GENDER_MALE,
 #line 2576
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2579
         .items = { ITEM_FULL_HEAL, ITEM_HYPER_POTION },
 #line 2577
@@ -7167,7 +7167,7 @@
 #line 2589
         .gender = TRAINER_GENDER_MALE,
 #line 2590
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2593
         .items = { ITEM_FULL_HEAL, ITEM_HYPER_POTION },
 #line 2591
@@ -7217,7 +7217,7 @@
 #line 2607
         .gender = TRAINER_GENDER_FEMALE,
 #line 2608
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2611
         .items = { ITEM_FULL_HEAL, ITEM_HYPER_POTION },
 #line 2609
@@ -7267,7 +7267,7 @@
 #line 2625
         .gender = TRAINER_GENDER_MALE,
 #line 2626
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2627
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2628
@@ -7303,7 +7303,7 @@
 #line 2638
         .gender = TRAINER_GENDER_MALE,
 #line 2639
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2640
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2641
@@ -7339,7 +7339,7 @@
 #line 2651
         .gender = TRAINER_GENDER_FEMALE,
 #line 2652
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2653
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2654
@@ -7375,7 +7375,7 @@
 #line 2664
         .gender = TRAINER_GENDER_FEMALE,
 #line 2665
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 2666
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2667
@@ -7411,7 +7411,7 @@
 #line 2677
         .gender = TRAINER_GENDER_MALE,
 #line 2678
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 2679
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 2680
@@ -7459,7 +7459,7 @@
 #line 2694
         .gender = TRAINER_GENDER_FEMALE,
 #line 2695
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 2696
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2697
@@ -7507,7 +7507,7 @@
 #line 2711
         .gender = TRAINER_GENDER_FEMALE,
 #line 2712
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 2713
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2714
@@ -7543,7 +7543,7 @@
 #line 2724
         .gender = TRAINER_GENDER_FEMALE,
 #line 2725
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 2726
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2727
@@ -7579,7 +7579,7 @@
 #line 2737
         .gender = TRAINER_GENDER_FEMALE,
 #line 2738
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 2739
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2740
@@ -7667,7 +7667,7 @@
 #line 2766
         .gender = TRAINER_GENDER_FEMALE,
 #line 2767
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 2768
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2769
@@ -7716,7 +7716,7 @@
 #line 2783
         .gender = TRAINER_GENDER_FEMALE,
 #line 2784
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 2785
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2786
@@ -7765,7 +7765,7 @@
 #line 2800
         .gender = TRAINER_GENDER_FEMALE,
 #line 2801
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 2802
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2803
@@ -7801,7 +7801,7 @@
 #line 2813
         .gender = TRAINER_GENDER_MALE,
 #line 2814
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2815
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2816
@@ -7837,7 +7837,7 @@
 #line 2826
         .gender = TRAINER_GENDER_MALE,
 #line 2827
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2828
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2829
@@ -7897,7 +7897,7 @@
 #line 2847
         .gender = TRAINER_GENDER_MALE,
 #line 2848
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2849
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2850
@@ -7933,7 +7933,7 @@
 #line 2860
         .gender = TRAINER_GENDER_MALE,
 #line 2861
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2862
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2863
@@ -7993,7 +7993,7 @@
 #line 2881
         .gender = TRAINER_GENDER_MALE,
 #line 2882
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2883
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2884
@@ -8041,7 +8041,7 @@
 #line 2898
         .gender = TRAINER_GENDER_MALE,
 #line 2899
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2900
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2901
@@ -8101,7 +8101,7 @@
 #line 2919
         .gender = TRAINER_GENDER_MALE,
 #line 2920
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 2921
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 2922
@@ -8149,7 +8149,7 @@
 #line 2936
         .gender = TRAINER_GENDER_MALE,
 #line 2937
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 2938
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 2939
@@ -8197,7 +8197,7 @@
 #line 2953
         .gender = TRAINER_GENDER_MALE,
 #line 2954
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 2955
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 2956
@@ -8245,7 +8245,7 @@
 #line 2970
         .gender = TRAINER_GENDER_MALE,
 #line 2971
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 2972
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 2973
@@ -8293,7 +8293,7 @@
 #line 2987
         .gender = TRAINER_GENDER_FEMALE,
 #line 2988
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 2989
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 2990
@@ -8341,7 +8341,7 @@
 #line 3004
         .gender = TRAINER_GENDER_FEMALE,
 #line 3005
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 3006
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 3007
@@ -8389,7 +8389,7 @@
 #line 3021
         .gender = TRAINER_GENDER_MALE,
 #line 3022
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 3023
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3024
@@ -8437,7 +8437,7 @@
 #line 3038
         .gender = TRAINER_GENDER_MALE,
 #line 3039
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3040
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3041
@@ -8518,7 +8518,7 @@
 #line 3071
         .gender = TRAINER_GENDER_FEMALE,
 #line 3072
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3073
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3074
@@ -8599,7 +8599,7 @@
 #line 3104
         .gender = TRAINER_GENDER_MALE,
 #line 3105
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3106
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3107
@@ -8647,7 +8647,7 @@
 #line 3121
         .gender = TRAINER_GENDER_MALE,
 #line 3122
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3123
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3124
@@ -8683,7 +8683,7 @@
 #line 3134
         .gender = TRAINER_GENDER_MALE,
 #line 3135
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3136
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3137
@@ -8731,7 +8731,7 @@
 #line 3151
         .gender = TRAINER_GENDER_MALE,
 #line 3152
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3153
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3154
@@ -8779,7 +8779,7 @@
 #line 3168
         .gender = TRAINER_GENDER_MALE,
 #line 3169
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3170
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3171
@@ -8839,7 +8839,7 @@
 #line 3189
         .gender = TRAINER_GENDER_MALE,
 #line 3190
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3191
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3192
@@ -8899,7 +8899,7 @@
 #line 3210
         .gender = TRAINER_GENDER_FEMALE,
 #line 3211
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3212
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3213
@@ -8947,7 +8947,7 @@
 #line 3227
         .gender = TRAINER_GENDER_FEMALE,
 #line 3228
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3229
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3230
@@ -9007,7 +9007,7 @@
 #line 3248
         .gender = TRAINER_GENDER_FEMALE,
 #line 3249
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3250
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3251
@@ -9043,7 +9043,7 @@
 #line 3261
         .gender = TRAINER_GENDER_FEMALE,
 #line 3262
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3263
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3264
@@ -9151,7 +9151,7 @@
 #line 3299
         .gender = TRAINER_GENDER_MALE,
 #line 3300
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 3301
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3302
@@ -9211,7 +9211,7 @@
 #line 3320
         .gender = TRAINER_GENDER_MALE,
 #line 3321
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 3322
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3323
@@ -9259,7 +9259,7 @@
 #line 3337
         .gender = TRAINER_GENDER_MALE,
 #line 3338
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 3339
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3340
@@ -9307,7 +9307,7 @@
 #line 3354
         .gender = TRAINER_GENDER_MALE,
 #line 3355
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 3356
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3357
@@ -9355,7 +9355,7 @@
 #line 3371
         .gender = TRAINER_GENDER_MALE,
 #line 3372
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 3373
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3374
@@ -9403,7 +9403,7 @@
 #line 3388
         .gender = TRAINER_GENDER_MALE,
 #line 3389
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 3390
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3391
@@ -9451,7 +9451,7 @@
 #line 3405
         .gender = TRAINER_GENDER_MALE,
 #line 3406
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 3407
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3408
@@ -9487,7 +9487,7 @@
 #line 3418
         .gender = TRAINER_GENDER_MALE,
 #line 3419
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 3420
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3421
@@ -9535,7 +9535,7 @@
 #line 3435
         .gender = TRAINER_GENDER_MALE,
 #line 3436
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 3437
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3438
@@ -9596,7 +9596,7 @@
 #line 3459
         .gender = TRAINER_GENDER_MALE,
 #line 3460
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 3461
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3462
@@ -9632,7 +9632,7 @@
 #line 3472
         .gender = TRAINER_GENDER_MALE,
 #line 3473
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 3474
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3475
@@ -9680,7 +9680,7 @@
 #line 3489
         .gender = TRAINER_GENDER_MALE,
 #line 3490
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 3491
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3492
@@ -9728,7 +9728,7 @@
 #line 3506
         .gender = TRAINER_GENDER_MALE,
 #line 3507
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 3508
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3509
@@ -9764,7 +9764,7 @@
 #line 3519
         .gender = TRAINER_GENDER_FEMALE,
 #line 3520
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 3521
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 3522
@@ -9812,7 +9812,7 @@
 #line 3536
         .gender = TRAINER_GENDER_FEMALE,
 #line 3537
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3538
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3539
@@ -9872,7 +9872,7 @@
 #line 3557
         .gender = TRAINER_GENDER_MALE,
 #line 3558
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 3559
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3560
@@ -10076,7 +10076,7 @@
 #line 3629
         .gender = TRAINER_GENDER_FEMALE,
 #line 3630
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 3633
         .items = { ITEM_FULL_RESTORE },
 #line 3631
@@ -10126,7 +10126,7 @@
 #line 3647
         .gender = TRAINER_GENDER_MALE,
 #line 3648
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 3651
         .items = { ITEM_FULL_RESTORE },
 #line 3649
@@ -10188,7 +10188,7 @@
 #line 3669
         .gender = TRAINER_GENDER_FEMALE,
 #line 3670
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3671
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3672
@@ -10224,7 +10224,7 @@
 #line 3682
         .gender = TRAINER_GENDER_FEMALE,
 #line 3683
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3684
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3685
@@ -10272,7 +10272,7 @@
 #line 3699
         .gender = TRAINER_GENDER_FEMALE,
 #line 3700
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3701
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3702
@@ -10320,7 +10320,7 @@
 #line 3716
         .gender = TRAINER_GENDER_MALE,
 #line 3717
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3718
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3719
@@ -10380,7 +10380,7 @@
 #line 3737
         .gender = TRAINER_GENDER_MALE,
 #line 3738
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3739
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3740
@@ -10416,7 +10416,7 @@
 #line 3750
         .gender = TRAINER_GENDER_MALE,
 #line 3751
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 3752
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3753
@@ -10608,7 +10608,7 @@
 #line 3818
         .gender = TRAINER_GENDER_MALE,
 #line 3819
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3820
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3821
@@ -10668,7 +10668,7 @@
 #line 3839
         .gender = TRAINER_GENDER_MALE,
 #line 3840
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3841
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3842
@@ -10716,7 +10716,7 @@
 #line 3856
         .gender = TRAINER_GENDER_MALE,
 #line 3857
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3858
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3859
@@ -10752,7 +10752,7 @@
 #line 3869
         .gender = TRAINER_GENDER_MALE,
 #line 3870
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3871
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3872
@@ -10800,7 +10800,7 @@
 #line 3886
         .gender = TRAINER_GENDER_FEMALE,
 #line 3887
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3888
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3889
@@ -10836,7 +10836,7 @@
 #line 3899
         .gender = TRAINER_GENDER_FEMALE,
 #line 3900
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3901
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3902
@@ -10896,7 +10896,7 @@
 #line 3920
         .gender = TRAINER_GENDER_FEMALE,
 #line 3921
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 3922
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 3923
@@ -10944,7 +10944,7 @@
 #line 3937
         .gender = TRAINER_GENDER_FEMALE,
 #line 3938
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 3941
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 3939
@@ -11251,7 +11251,7 @@
 #line 4062
         .gender = TRAINER_GENDER_FEMALE,
 #line 4063
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 4066
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 4064
@@ -11493,7 +11493,7 @@
 #line 4162
         .gender = TRAINER_GENDER_MALE,
 #line 4163
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4164
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4165
@@ -11541,7 +11541,7 @@
 #line 4179
         .gender = TRAINER_GENDER_MALE,
 #line 4180
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4181
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4182
@@ -11589,7 +11589,7 @@
 #line 4196
         .gender = TRAINER_GENDER_FEMALE,
 #line 4197
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4198
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4199
@@ -11625,7 +11625,7 @@
 #line 4209
         .gender = TRAINER_GENDER_MALE,
 #line 4210
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4211
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4212
@@ -11661,7 +11661,7 @@
 #line 4222
         .gender = TRAINER_GENDER_MALE,
 #line 4223
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4224
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4225
@@ -11697,7 +11697,7 @@
 #line 4235
         .gender = TRAINER_GENDER_FEMALE,
 #line 4236
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4237
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4238
@@ -11733,7 +11733,7 @@
 #line 4248
         .gender = TRAINER_GENDER_FEMALE,
 #line 4249
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4250
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4251
@@ -11769,7 +11769,7 @@
 #line 4261
         .gender = TRAINER_GENDER_MALE,
 #line 4262
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 4265
         .items = { ITEM_X_ATTACK },
 #line 4263
@@ -11807,7 +11807,7 @@
 #line 4275
         .gender = TRAINER_GENDER_MALE,
 #line 4276
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 4277
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4278
@@ -11855,7 +11855,7 @@
 #line 4292
         .gender = TRAINER_GENDER_MALE,
 #line 4293
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4294
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4295
@@ -11915,7 +11915,7 @@
 #line 4313
         .gender = TRAINER_GENDER_MALE,
 #line 4314
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4315
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4316
@@ -11963,7 +11963,7 @@
 #line 4330
         .gender = TRAINER_GENDER_FEMALE,
 #line 4331
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4332
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4333
@@ -12011,7 +12011,7 @@
 #line 4347
         .gender = TRAINER_GENDER_FEMALE,
 #line 4348
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4349
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4350
@@ -12071,7 +12071,7 @@
 #line 4368
         .gender = TRAINER_GENDER_MALE,
 #line 4369
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4370
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4371
@@ -12119,7 +12119,7 @@
 #line 4385
         .gender = TRAINER_GENDER_MALE,
 #line 4386
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4387
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4388
@@ -12179,7 +12179,7 @@
 #line 4406
         .gender = TRAINER_GENDER_MALE,
 #line 4407
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4408
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4409
@@ -12239,7 +12239,7 @@
 #line 4427
         .gender = TRAINER_GENDER_MALE,
 #line 4428
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 4431
         .items = { ITEM_FULL_HEAL, ITEM_HYPER_POTION },
 #line 4429
@@ -12289,7 +12289,7 @@
 #line 4445
         .gender = TRAINER_GENDER_MALE,
 #line 4446
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4447
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4448
@@ -12351,7 +12351,7 @@
 #line 4470
         .gender = TRAINER_GENDER_FEMALE,
 #line 4471
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4472
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4473
@@ -12432,7 +12432,7 @@
 #line 4503
         .gender = TRAINER_GENDER_MALE,
 #line 4504
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4505
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4506
@@ -12492,7 +12492,7 @@
 #line 4524
         .gender = TRAINER_GENDER_FEMALE,
 #line 4525
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4526
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4527
@@ -12540,7 +12540,7 @@
 #line 4541
         .gender = TRAINER_GENDER_FEMALE,
 #line 4542
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4543
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4544
@@ -12588,7 +12588,7 @@
 #line 4558
         .gender = TRAINER_GENDER_MALE,
 #line 4559
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4560
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4561
@@ -12636,7 +12636,7 @@
 #line 4575
         .gender = TRAINER_GENDER_MALE,
 #line 4576
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 4577
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4578
@@ -12672,7 +12672,7 @@
 #line 4588
         .gender = TRAINER_GENDER_MALE,
 #line 4589
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 4592
         .items = { ITEM_X_ATTACK },
 #line 4590
@@ -12710,7 +12710,7 @@
 #line 4602
         .gender = TRAINER_GENDER_FEMALE,
 #line 4603
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 4606
         .items = { ITEM_X_SPEED },
 #line 4604
@@ -12748,7 +12748,7 @@
 #line 4616
         .gender = TRAINER_GENDER_MALE,
 #line 4617
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4618
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4619
@@ -12886,7 +12886,7 @@
 #line 4673
         .gender = TRAINER_GENDER_FEMALE,
 #line 4674
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4675
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4676
@@ -12986,7 +12986,7 @@
 #line 4714
         .gender = TRAINER_GENDER_FEMALE,
 #line 4715
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4716
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4717
@@ -13046,7 +13046,7 @@
 #line 4735
         .gender = TRAINER_GENDER_MALE,
 #line 4736
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4737
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4738
@@ -13118,7 +13118,7 @@
 #line 4760
         .gender = TRAINER_GENDER_FEMALE,
 #line 4761
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 4762
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4763
@@ -13154,7 +13154,7 @@
 #line 4773
         .gender = TRAINER_GENDER_FEMALE,
 #line 4774
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4775
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4776
@@ -13202,7 +13202,7 @@
 #line 4790
         .gender = TRAINER_GENDER_FEMALE,
 #line 4791
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4792
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4793
@@ -13238,7 +13238,7 @@
 #line 4803
         .gender = TRAINER_GENDER_FEMALE,
 #line 4804
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4805
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4806
@@ -13274,7 +13274,7 @@
 #line 4816
         .gender = TRAINER_GENDER_FEMALE,
 #line 4817
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4818
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4819
@@ -13322,7 +13322,7 @@
 #line 4833
         .gender = TRAINER_GENDER_FEMALE,
 #line 4834
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4835
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4836
@@ -13358,7 +13358,7 @@
 #line 4846
         .gender = TRAINER_GENDER_MALE,
 #line 4847
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4848
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4849
@@ -13401,7 +13401,7 @@
 #line 4863
         .gender = TRAINER_GENDER_MALE,
 #line 4864
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4865
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4866
@@ -13437,7 +13437,7 @@
 #line 4876
         .gender = TRAINER_GENDER_MALE,
 #line 4877
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4878
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4879
@@ -13485,7 +13485,7 @@
 #line 4893
         .gender = TRAINER_GENDER_MALE,
 #line 4894
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4895
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4896
@@ -13545,7 +13545,7 @@
 #line 4914
         .gender = TRAINER_GENDER_MALE,
 #line 4915
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4916
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4917
@@ -13581,7 +13581,7 @@
 #line 4927
         .gender = TRAINER_GENDER_MALE,
 #line 4928
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4929
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4930
@@ -13617,7 +13617,7 @@
 #line 4940
         .gender = TRAINER_GENDER_FEMALE,
 #line 4941
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 4942
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4943
@@ -13665,7 +13665,7 @@
 #line 4957
         .gender = TRAINER_GENDER_MALE,
 #line 4958
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 4959
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4960
@@ -13713,7 +13713,7 @@
 #line 4974
         .gender = TRAINER_GENDER_MALE,
 #line 4975
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 4976
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4977
@@ -13749,7 +13749,7 @@
 #line 4987
         .gender = TRAINER_GENDER_FEMALE,
 #line 4988
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 4989
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 4990
@@ -13785,7 +13785,7 @@
 #line 5000
         .gender = TRAINER_GENDER_MALE,
 #line 5001
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5002
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5003
@@ -13833,7 +13833,7 @@
 #line 5017
         .gender = TRAINER_GENDER_FEMALE,
 #line 5018
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 5019
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5020
@@ -13869,7 +13869,7 @@
 #line 5030
         .gender = TRAINER_GENDER_MALE,
 #line 5031
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 5032
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5033
@@ -13905,7 +13905,7 @@
 #line 5043
         .gender = TRAINER_GENDER_MALE,
 #line 5044
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 5045
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5046
@@ -13941,7 +13941,7 @@
 #line 5056
         .gender = TRAINER_GENDER_MALE,
 #line 5057
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 5058
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5059
@@ -14235,7 +14235,7 @@
 #line 5159
         .gender = TRAINER_GENDER_MALE,
 #line 5160
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5161
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5162
@@ -14271,7 +14271,7 @@
 #line 5172
         .gender = TRAINER_GENDER_MALE,
 #line 5173
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 5174
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5175
@@ -14379,7 +14379,7 @@
 #line 5210
         .gender = TRAINER_GENDER_MALE,
 #line 5211
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5212
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5213
@@ -14415,7 +14415,7 @@
 #line 5223
         .gender = TRAINER_GENDER_MALE,
 #line 5224
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5225
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5226
@@ -14451,7 +14451,7 @@
 #line 5236
         .gender = TRAINER_GENDER_MALE,
 #line 5237
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5238
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5239
@@ -14487,7 +14487,7 @@
 #line 5249
         .gender = TRAINER_GENDER_MALE,
 #line 5250
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5251
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5252
@@ -14523,7 +14523,7 @@
 #line 5262
         .gender = TRAINER_GENDER_MALE,
 #line 5263
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5264
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5265
@@ -14583,7 +14583,7 @@
 #line 5283
         .gender = TRAINER_GENDER_MALE,
 #line 5284
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5285
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5286
@@ -14643,7 +14643,7 @@
 #line 5304
         .gender = TRAINER_GENDER_MALE,
 #line 5305
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5306
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5307
@@ -14679,7 +14679,7 @@
 #line 5317
         .gender = TRAINER_GENDER_MALE,
 #line 5318
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5319
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5320
@@ -14727,7 +14727,7 @@
 #line 5334
         .gender = TRAINER_GENDER_MALE,
 #line 5335
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5336
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5337
@@ -14775,7 +14775,7 @@
 #line 5351
         .gender = TRAINER_GENDER_MALE,
 #line 5352
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5353
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5354
@@ -14835,7 +14835,7 @@
 #line 5372
         .gender = TRAINER_GENDER_MALE,
 #line 5373
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5374
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5375
@@ -14871,7 +14871,7 @@
 #line 5385
         .gender = TRAINER_GENDER_MALE,
 #line 5386
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5387
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5388
@@ -14907,7 +14907,7 @@
 #line 5398
         .gender = TRAINER_GENDER_MALE,
 #line 5399
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5400
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5401
@@ -14955,7 +14955,7 @@
 #line 5415
         .gender = TRAINER_GENDER_MALE,
 #line 5416
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5417
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5418
@@ -14991,7 +14991,7 @@
 #line 5428
         .gender = TRAINER_GENDER_MALE,
 #line 5429
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5430
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5431
@@ -15027,7 +15027,7 @@
 #line 5441
         .gender = TRAINER_GENDER_FEMALE,
 #line 5442
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5443
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5444
@@ -15063,7 +15063,7 @@
 #line 5454
         .gender = TRAINER_GENDER_FEMALE,
 #line 5455
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5456
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5457
@@ -15099,7 +15099,7 @@
 #line 5467
         .gender = TRAINER_GENDER_FEMALE,
 #line 5468
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5469
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5470
@@ -15147,7 +15147,7 @@
 #line 5484
         .gender = TRAINER_GENDER_FEMALE,
 #line 5485
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5486
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5487
@@ -15183,7 +15183,7 @@
 #line 5497
         .gender = TRAINER_GENDER_FEMALE,
 #line 5498
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5499
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5500
@@ -15231,7 +15231,7 @@
 #line 5514
         .gender = TRAINER_GENDER_FEMALE,
 #line 5515
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 5516
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5517
@@ -15279,7 +15279,7 @@
 #line 5531
         .gender = TRAINER_GENDER_FEMALE,
 #line 5532
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5533
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5534
@@ -15328,7 +15328,7 @@
 #line 5548
         .gender = TRAINER_GENDER_FEMALE,
 #line 5549
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5550
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5551
@@ -15364,7 +15364,7 @@
 #line 5561
         .gender = TRAINER_GENDER_FEMALE,
 #line 5562
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5563
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5564
@@ -15400,7 +15400,7 @@
 #line 5574
         .gender = TRAINER_GENDER_FEMALE,
 #line 5575
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5576
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5577
@@ -15448,7 +15448,7 @@
 #line 5591
         .gender = TRAINER_GENDER_FEMALE,
 #line 5592
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5593
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5594
@@ -15496,7 +15496,7 @@
 #line 5608
         .gender = TRAINER_GENDER_MALE,
 #line 5609
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5610
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5611
@@ -15544,7 +15544,7 @@
 #line 5625
         .gender = TRAINER_GENDER_MALE,
 #line 5626
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5627
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5628
@@ -15604,7 +15604,7 @@
 #line 5646
         .gender = TRAINER_GENDER_MALE,
 #line 5647
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5648
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5649
@@ -15664,7 +15664,7 @@
 #line 5667
         .gender = TRAINER_GENDER_MALE,
 #line 5668
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5669
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5670
@@ -15724,7 +15724,7 @@
 #line 5688
         .gender = TRAINER_GENDER_MALE,
 #line 5689
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5690
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5691
@@ -15772,7 +15772,7 @@
 #line 5705
         .gender = TRAINER_GENDER_MALE,
 #line 5706
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5707
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5708
@@ -15820,7 +15820,7 @@
 #line 5722
         .gender = TRAINER_GENDER_MALE,
 #line 5723
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5724
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5725
@@ -15856,7 +15856,7 @@
 #line 5735
         .gender = TRAINER_GENDER_MALE,
 #line 5736
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5737
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5738
@@ -15892,7 +15892,7 @@
 #line 5748
         .gender = TRAINER_GENDER_MALE,
 #line 5749
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5750
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5751
@@ -15940,7 +15940,7 @@
 #line 5765
         .gender = TRAINER_GENDER_MALE,
 #line 5766
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5767
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5768
@@ -16000,7 +16000,7 @@
 #line 5786
         .gender = TRAINER_GENDER_MALE,
 #line 5787
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5788
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5789
@@ -16036,7 +16036,7 @@
 #line 5799
         .gender = TRAINER_GENDER_MALE,
 #line 5800
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5801
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5802
@@ -16084,7 +16084,7 @@
 #line 5816
         .gender = TRAINER_GENDER_MALE,
 #line 5817
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5818
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5819
@@ -16132,7 +16132,7 @@
 #line 5833
         .gender = TRAINER_GENDER_MALE,
 #line 5834
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5835
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5836
@@ -16192,7 +16192,7 @@
 #line 5854
         .gender = TRAINER_GENDER_MALE,
 #line 5855
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5856
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5857
@@ -16252,7 +16252,7 @@
 #line 5875
         .gender = TRAINER_GENDER_MALE,
 #line 5876
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5877
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5878
@@ -16300,7 +16300,7 @@
 #line 5892
         .gender = TRAINER_GENDER_MALE,
 #line 5893
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5894
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5895
@@ -16336,7 +16336,7 @@
 #line 5905
         .gender = TRAINER_GENDER_MALE,
 #line 5906
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5907
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5908
@@ -16372,7 +16372,7 @@
 #line 5918
         .gender = TRAINER_GENDER_MALE,
 #line 5919
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5920
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5921
@@ -16420,7 +16420,7 @@
 #line 5935
         .gender = TRAINER_GENDER_MALE,
 #line 5936
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 5937
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 5938
@@ -16468,7 +16468,7 @@
 #line 5952
         .gender = TRAINER_GENDER_MALE,
 #line 5953
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 5954
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5955
@@ -16516,7 +16516,7 @@
 #line 5969
         .gender = TRAINER_GENDER_MALE,
 #line 5970
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 5971
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5972
@@ -16564,7 +16564,7 @@
 #line 5986
         .gender = TRAINER_GENDER_MALE,
 #line 5987
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 5988
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 5989
@@ -16612,7 +16612,7 @@
 #line 6003
         .gender = TRAINER_GENDER_MALE,
 #line 6004
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6005
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6006
@@ -16661,7 +16661,7 @@
 #line 6020
         .gender = TRAINER_GENDER_MALE,
 #line 6021
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6022
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6023
@@ -16709,7 +16709,7 @@
 #line 6037
         .gender = TRAINER_GENDER_MALE,
 #line 6038
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6039
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6040
@@ -16757,7 +16757,7 @@
 #line 6054
         .gender = TRAINER_GENDER_MALE,
 #line 6055
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6056
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6057
@@ -16805,7 +16805,7 @@
 #line 6071
         .gender = TRAINER_GENDER_MALE,
 #line 6072
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6073
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6074
@@ -16853,7 +16853,7 @@
 #line 6088
         .gender = TRAINER_GENDER_FEMALE,
 #line 6089
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6090
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6091
@@ -16901,7 +16901,7 @@
 #line 6105
         .gender = TRAINER_GENDER_FEMALE,
 #line 6106
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6107
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6108
@@ -16949,7 +16949,7 @@
 #line 6122
         .gender = TRAINER_GENDER_FEMALE,
 #line 6123
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6124
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6125
@@ -16997,7 +16997,7 @@
 #line 6139
         .gender = TRAINER_GENDER_FEMALE,
 #line 6140
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6141
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6142
@@ -17045,7 +17045,7 @@
 #line 6156
         .gender = TRAINER_GENDER_FEMALE,
 #line 6157
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6158
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6159
@@ -17093,7 +17093,7 @@
 #line 6173
         .gender = TRAINER_GENDER_FEMALE,
 #line 6174
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6175
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6176
@@ -17142,7 +17142,7 @@
 #line 6190
         .gender = TRAINER_GENDER_FEMALE,
 #line 6191
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6192
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 6193
@@ -17370,7 +17370,7 @@
 #line 6270
         .gender = TRAINER_GENDER_FEMALE,
 #line 6271
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 6272
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6273
@@ -17430,7 +17430,7 @@
 #line 6291
         .gender = TRAINER_GENDER_MALE,
 #line 6292
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 6293
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6294
@@ -17490,7 +17490,7 @@
 #line 6312
         .gender = TRAINER_GENDER_MALE,
 #line 6313
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 6314
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6315
@@ -17590,7 +17590,7 @@
 #line 6353
         .gender = TRAINER_GENDER_FEMALE,
 #line 6354
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 6355
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6356
@@ -17786,7 +17786,7 @@
 #line 6427
         .gender = TRAINER_GENDER_FEMALE,
 #line 6428
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 6429
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6430
@@ -17882,7 +17882,7 @@
 #line 6460
         .gender = TRAINER_GENDER_MALE,
 #line 6461
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6462
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6463
@@ -17942,7 +17942,7 @@
 #line 6481
         .gender = TRAINER_GENDER_FEMALE,
 #line 6482
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6483
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6484
@@ -17990,7 +17990,7 @@
 #line 6498
         .gender = TRAINER_GENDER_MALE,
 #line 6499
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 6502
         .items = { ITEM_X_DEFENSE },
 #line 6500
@@ -18040,7 +18040,7 @@
 #line 6516
         .gender = TRAINER_GENDER_FEMALE,
 #line 6517
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 6520
         .items = { ITEM_X_SP_ATK },
 #line 6518
@@ -18162,7 +18162,7 @@
 #line 6560
         .gender = TRAINER_GENDER_FEMALE,
 #line 6561
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 6564
         .items = { ITEM_FULL_RESTORE },
 #line 6562
@@ -18212,7 +18212,7 @@
 #line 6578
         .gender = TRAINER_GENDER_MALE,
 #line 6579
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 6582
         .items = { ITEM_FULL_RESTORE },
 #line 6580
@@ -18250,7 +18250,7 @@
 #line 6592
         .gender = TRAINER_GENDER_MALE,
 #line 6593
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 6594
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6595
@@ -18310,7 +18310,7 @@
 #line 6613
         .gender = TRAINER_GENDER_FEMALE,
 #line 6614
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 6615
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6616
@@ -18346,7 +18346,7 @@
 #line 6626
         .gender = TRAINER_GENDER_MALE,
 #line 6627
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6630
         .items = { ITEM_HYPER_POTION },
 #line 6628
@@ -18396,7 +18396,7 @@
 #line 6644
         .gender = TRAINER_GENDER_FEMALE,
 #line 6645
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6648
         .items = { ITEM_HYPER_POTION },
 #line 6646
@@ -18482,7 +18482,7 @@
 #line 6674
         .gender = TRAINER_GENDER_MALE,
 #line 6675
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6676
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6677
@@ -18542,7 +18542,7 @@
 #line 6695
         .gender = TRAINER_GENDER_MALE,
 #line 6696
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6697
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6698
@@ -18590,7 +18590,7 @@
 #line 6712
         .gender = TRAINER_GENDER_FEMALE,
 #line 6713
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6714
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6715
@@ -18638,7 +18638,7 @@
 #line 6729
         .gender = TRAINER_GENDER_FEMALE,
 #line 6730
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 6731
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6732
@@ -18686,7 +18686,7 @@
 #line 6746
         .gender = TRAINER_GENDER_MALE,
 #line 6747
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6748
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6749
@@ -18770,7 +18770,7 @@
 #line 6775
         .gender = TRAINER_GENDER_FEMALE,
 #line 6776
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 6777
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6778
@@ -18830,7 +18830,7 @@
 #line 6796
         .gender = TRAINER_GENDER_MALE,
 #line 6797
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6798
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6799
@@ -18878,7 +18878,7 @@
 #line 6813
         .gender = TRAINER_GENDER_FEMALE,
 #line 6814
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 6815
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6816
@@ -18914,7 +18914,7 @@
 #line 6826
         .gender = TRAINER_GENDER_MALE,
 #line 6827
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 6828
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6829
@@ -18950,7 +18950,7 @@
 #line 6839
         .gender = TRAINER_GENDER_MALE,
 #line 6840
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6843
         .items = { ITEM_FULL_HEAL, ITEM_HYPER_POTION },
 #line 6841
@@ -18988,7 +18988,7 @@
 #line 6853
         .gender = TRAINER_GENDER_FEMALE,
 #line 6854
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6855
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6856
@@ -19024,7 +19024,7 @@
 #line 6866
         .gender = TRAINER_GENDER_MALE,
 #line 6867
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 6868
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6869
@@ -19084,7 +19084,7 @@
 #line 6887
         .gender = TRAINER_GENDER_FEMALE,
 #line 6888
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 6889
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6890
@@ -19132,7 +19132,7 @@
 #line 6904
         .gender = TRAINER_GENDER_MALE,
 #line 6905
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 6906
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6907
@@ -19180,7 +19180,7 @@
 #line 6921
         .gender = TRAINER_GENDER_MALE,
 #line 6922
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 6923
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6924
@@ -19252,7 +19252,7 @@
 #line 6946
         .gender = TRAINER_GENDER_FEMALE,
 #line 6947
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 6948
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6949
@@ -19288,7 +19288,7 @@
 #line 6959
         .gender = TRAINER_GENDER_MALE,
 #line 6960
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 6961
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6962
@@ -19336,7 +19336,7 @@
 #line 6976
         .gender = TRAINER_GENDER_MALE,
 #line 6977
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6978
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6979
@@ -19384,7 +19384,7 @@
 #line 6993
         .gender = TRAINER_GENDER_MALE,
 #line 6994
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 6995
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 6996
@@ -19432,7 +19432,7 @@
 #line 7010
         .gender = TRAINER_GENDER_MALE,
 #line 7011
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 7012
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7013
@@ -19475,7 +19475,7 @@
 #line 7027
         .gender = TRAINER_GENDER_MALE,
 #line 7028
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 7029
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7030
@@ -19523,7 +19523,7 @@
 #line 7044
         .gender = TRAINER_GENDER_FEMALE,
 #line 7045
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 7046
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7047
@@ -19571,7 +19571,7 @@
 #line 7061
         .gender = TRAINER_GENDER_FEMALE,
 #line 7062
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 7063
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7064
@@ -19614,7 +19614,7 @@
 #line 7078
         .gender = TRAINER_GENDER_MALE,
 #line 7079
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7080
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7081
@@ -19674,7 +19674,7 @@
 #line 7099
         .gender = TRAINER_GENDER_MALE,
 #line 7100
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 7101
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7102
@@ -19710,7 +19710,7 @@
 #line 7112
         .gender = TRAINER_GENDER_FEMALE,
 #line 7113
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 7114
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7115
@@ -19746,7 +19746,7 @@
 #line 7125
         .gender = TRAINER_GENDER_MALE,
 #line 7126
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 7127
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7128
@@ -19784,7 +19784,7 @@
 #line 7138
         .gender = TRAINER_GENDER_FEMALE,
 #line 7139
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 7140
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7141
@@ -20220,7 +20220,7 @@
 #line 7297
         .gender = TRAINER_GENDER_MALE,
 #line 7298
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 7299
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7300
@@ -20268,7 +20268,7 @@
 #line 7314
         .gender = TRAINER_GENDER_FEMALE,
 #line 7315
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 7316
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7317
@@ -20316,7 +20316,7 @@
 #line 7331
         .gender = TRAINER_GENDER_FEMALE,
 #line 7332
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7333
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7334
@@ -20376,7 +20376,7 @@
 #line 7352
         .gender = TRAINER_GENDER_MALE,
 #line 7353
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 7354
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7355
@@ -20436,7 +20436,7 @@
 #line 7373
         .gender = TRAINER_GENDER_MALE,
 #line 7374
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 7375
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7376
@@ -20472,7 +20472,7 @@
 #line 7386
         .gender = TRAINER_GENDER_MALE,
 #line 7387
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 7388
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7389
@@ -20521,7 +20521,7 @@
 #line 7403
         .gender = TRAINER_GENDER_MALE,
 #line 7404
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7405
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7406
@@ -20569,7 +20569,7 @@
 #line 7420
         .gender = TRAINER_GENDER_MALE,
 #line 7421
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7422
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7423
@@ -20629,7 +20629,7 @@
 #line 7441
         .gender = TRAINER_GENDER_MALE,
 #line 7442
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 7443
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7444
@@ -20665,7 +20665,7 @@
 #line 7454
         .gender = TRAINER_GENDER_FEMALE,
 #line 7455
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 7458
         .items = { ITEM_DIRE_HIT },
 #line 7456
@@ -20715,7 +20715,7 @@
 #line 7472
         .gender = TRAINER_GENDER_FEMALE,
 #line 7473
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 7476
         .items = { ITEM_X_SPEED },
 #line 7474
@@ -20777,7 +20777,7 @@
 #line 7494
         .gender = TRAINER_GENDER_MALE,
 #line 7495
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 7498
         .items = { ITEM_X_ATTACK },
 #line 7496
@@ -20839,7 +20839,7 @@
 #line 7516
         .gender = TRAINER_GENDER_MALE,
 #line 7517
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 7520
         .items = { ITEM_X_SP_ATK },
 #line 7518
@@ -20889,7 +20889,7 @@
 #line 7534
         .gender = TRAINER_GENDER_MALE,
 #line 7535
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 7538
         .items = { ITEM_X_ATTACK },
 #line 7536
@@ -20927,7 +20927,7 @@
 #line 7548
         .gender = TRAINER_GENDER_FEMALE,
 #line 7549
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7550
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7551
@@ -20987,7 +20987,7 @@
 #line 7569
         .gender = TRAINER_GENDER_MALE,
 #line 7570
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7571
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7572
@@ -21035,7 +21035,7 @@
 #line 7586
         .gender = TRAINER_GENDER_MALE,
 #line 7587
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7588
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7589
@@ -21107,7 +21107,7 @@
 #line 7611
         .gender = TRAINER_GENDER_MALE,
 #line 7612
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 7615
         .items = { ITEM_FULL_RESTORE },
 #line 7613
@@ -21157,7 +21157,7 @@
 #line 7629
         .gender = TRAINER_GENDER_FEMALE,
 #line 7630
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 7633
         .items = { ITEM_FULL_RESTORE },
 #line 7631
@@ -21315,7 +21315,7 @@
 #line 7685
         .gender = TRAINER_GENDER_MALE,
 #line 7686
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 7689
         .items = { ITEM_HYPER_POTION },
 #line 7687
@@ -21449,7 +21449,7 @@
 #line 7732
         .gender = TRAINER_GENDER_MALE,
 #line 7733
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7734
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7735
@@ -21521,7 +21521,7 @@
 #line 7757
         .gender = TRAINER_GENDER_MALE,
 #line 7758
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7759
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7760
@@ -21569,7 +21569,7 @@
 #line 7774
         .gender = TRAINER_GENDER_MALE,
 #line 7775
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7776
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7777
@@ -21629,7 +21629,7 @@
 #line 7795
         .gender = TRAINER_GENDER_MALE,
 #line 7796
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7797
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7798
@@ -21725,7 +21725,7 @@
 #line 7828
         .gender = TRAINER_GENDER_MALE,
 #line 7829
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7830
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7831
@@ -21785,7 +21785,7 @@
 #line 7849
         .gender = TRAINER_GENDER_MALE,
 #line 7850
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7851
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7852
@@ -21833,7 +21833,7 @@
 #line 7866
         .gender = TRAINER_GENDER_FEMALE,
 #line 7867
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7868
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7869
@@ -21869,7 +21869,7 @@
 #line 7879
         .gender = TRAINER_GENDER_FEMALE,
 #line 7880
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7881
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7882
@@ -21905,7 +21905,7 @@
 #line 7892
         .gender = TRAINER_GENDER_FEMALE,
 #line 7893
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7894
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7895
@@ -21941,7 +21941,7 @@
 #line 7905
         .gender = TRAINER_GENDER_MALE,
 #line 7906
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7907
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7908
@@ -21977,7 +21977,7 @@
 #line 7918
         .gender = TRAINER_GENDER_MALE,
 #line 7919
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7920
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7921
@@ -22013,7 +22013,7 @@
 #line 7931
         .gender = TRAINER_GENDER_MALE,
 #line 7932
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7933
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7934
@@ -22049,7 +22049,7 @@
 #line 7944
         .gender = TRAINER_GENDER_MALE,
 #line 7945
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 7946
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7947
@@ -22085,7 +22085,7 @@
 #line 7957
         .gender = TRAINER_GENDER_FEMALE,
 #line 7958
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7959
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7960
@@ -22145,7 +22145,7 @@
 #line 7978
         .gender = TRAINER_GENDER_FEMALE,
 #line 7979
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 7980
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7981
@@ -22193,7 +22193,7 @@
 #line 7995
         .gender = TRAINER_GENDER_FEMALE,
 #line 7996
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 7997
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 7998
@@ -22253,7 +22253,7 @@
 #line 8016
         .gender = TRAINER_GENDER_FEMALE,
 #line 8017
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 8018
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8019
@@ -22302,7 +22302,7 @@
 #line 8033
         .gender = TRAINER_GENDER_FEMALE,
 #line 8034
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 8035
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8036
@@ -22350,7 +22350,7 @@
 #line 8050
         .gender = TRAINER_GENDER_FEMALE,
 #line 8051
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 8052
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 8053
@@ -22398,7 +22398,7 @@
 #line 8067
         .gender = TRAINER_GENDER_MALE,
 #line 8068
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8069
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8070
@@ -22539,7 +22539,7 @@
 #line 8121
         .gender = TRAINER_GENDER_FEMALE,
 #line 8122
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 8123
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8124
@@ -22623,7 +22623,7 @@
 #line 8150
         .gender = TRAINER_GENDER_FEMALE,
 #line 8151
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8152
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8153
@@ -22683,7 +22683,7 @@
 #line 8171
         .gender = TRAINER_GENDER_FEMALE,
 #line 8172
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8173
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8174
@@ -22731,7 +22731,7 @@
 #line 8188
         .gender = TRAINER_GENDER_MALE,
 #line 8189
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8190
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8191
@@ -22791,7 +22791,7 @@
 #line 8209
         .gender = TRAINER_GENDER_MALE,
 #line 8210
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8211
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8212
@@ -22899,7 +22899,7 @@
 #line 8247
         .gender = TRAINER_GENDER_MALE,
 #line 8248
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8249
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8250
@@ -22959,7 +22959,7 @@
 #line 8268
         .gender = TRAINER_GENDER_MALE,
 #line 8269
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8270
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8271
@@ -23019,7 +23019,7 @@
 #line 8289
         .gender = TRAINER_GENDER_MALE,
 #line 8290
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8291
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8292
@@ -23067,7 +23067,7 @@
 #line 8306
         .gender = TRAINER_GENDER_FEMALE,
 #line 8307
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 8308
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8309
@@ -23103,7 +23103,7 @@
 #line 8319
         .gender = TRAINER_GENDER_FEMALE,
 #line 8320
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 8321
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8322
@@ -23139,7 +23139,7 @@
 #line 8332
         .gender = TRAINER_GENDER_FEMALE,
 #line 8333
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8334
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8335
@@ -23187,7 +23187,7 @@
 #line 8349
         .gender = TRAINER_GENDER_MALE,
 #line 8350
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8351
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8352
@@ -23307,7 +23307,7 @@
 #line 8392
         .gender = TRAINER_GENDER_MALE,
 #line 8393
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 8394
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8395
@@ -23343,7 +23343,7 @@
 #line 8405
         .gender = TRAINER_GENDER_MALE,
 #line 8406
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 8409
         .items = { ITEM_DIRE_HIT },
 #line 8407
@@ -23381,7 +23381,7 @@
 #line 8419
         .gender = TRAINER_GENDER_FEMALE,
 #line 8420
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 8423
         .items = { ITEM_DIRE_HIT },
 #line 8421
@@ -23419,7 +23419,7 @@
 #line 8433
         .gender = TRAINER_GENDER_MALE,
 #line 8434
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 8435
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8436
@@ -23455,7 +23455,7 @@
 #line 8446
         .gender = TRAINER_GENDER_MALE,
 #line 8447
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 8448
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8449
@@ -23491,7 +23491,7 @@
 #line 8459
         .gender = TRAINER_GENDER_MALE,
 #line 8460
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 8463
         .items = { ITEM_FULL_RESTORE },
 #line 8461
@@ -23613,7 +23613,7 @@
 #line 8503
         .gender = TRAINER_GENDER_MALE,
 #line 8504
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 8505
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8506
@@ -23685,7 +23685,7 @@
 #line 8529
         .gender = TRAINER_GENDER_FEMALE,
 #line 8530
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8531
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8532
@@ -23721,7 +23721,7 @@
 #line 8542
         .gender = TRAINER_GENDER_FEMALE,
 #line 8543
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8544
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8545
@@ -23757,7 +23757,7 @@
 #line 8555
         .gender = TRAINER_GENDER_MALE,
 #line 8556
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8557
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8558
@@ -23793,7 +23793,7 @@
 #line 8568
         .gender = TRAINER_GENDER_MALE,
 #line 8569
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8570
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8571
@@ -23829,7 +23829,7 @@
 #line 8581
         .gender = TRAINER_GENDER_FEMALE,
 #line 8582
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 8583
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8584
@@ -23865,7 +23865,7 @@
 #line 8594
         .gender = TRAINER_GENDER_FEMALE,
 #line 8595
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8596
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8597
@@ -23901,7 +23901,7 @@
 #line 8607
         .gender = TRAINER_GENDER_MALE,
 #line 8608
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8609
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8610
@@ -23973,7 +23973,7 @@
 #line 8633
         .gender = TRAINER_GENDER_MALE,
 #line 8634
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 8635
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8636
@@ -24009,7 +24009,7 @@
 #line 8646
         .gender = TRAINER_GENDER_FEMALE,
 #line 8647
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8648
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8649
@@ -24045,7 +24045,7 @@
 #line 8659
         .gender = TRAINER_GENDER_MALE,
 #line 8660
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 8661
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8662
@@ -24081,7 +24081,7 @@
 #line 8672
         .gender = TRAINER_GENDER_FEMALE,
 #line 8673
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 8676
         .items = { ITEM_FULL_RESTORE },
 #line 8674
@@ -24119,7 +24119,7 @@
 #line 8686
         .gender = TRAINER_GENDER_FEMALE,
 #line 8687
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 8688
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8689
@@ -24191,7 +24191,7 @@
 #line 8712
         .gender = TRAINER_GENDER_FEMALE,
 #line 8713
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8716
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 8714
@@ -24265,7 +24265,7 @@
 #line 8738
         .gender = TRAINER_GENDER_FEMALE,
 #line 8739
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8742
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 8740
@@ -24339,7 +24339,7 @@
 #line 8764
         .gender = TRAINER_GENDER_FEMALE,
 #line 8765
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8768
         .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION },
 #line 8766
@@ -24413,7 +24413,7 @@
 #line 8790
         .gender = TRAINER_GENDER_FEMALE,
 #line 8791
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8794
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 8792
@@ -24487,7 +24487,7 @@
 #line 8816
         .gender = TRAINER_GENDER_FEMALE,
 #line 8817
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8820
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 8818
@@ -24561,7 +24561,7 @@
 #line 8842
         .gender = TRAINER_GENDER_FEMALE,
 #line 8843
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8846
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 8844
@@ -24673,7 +24673,7 @@
 #line 8882
         .gender = TRAINER_GENDER_FEMALE,
 #line 8883
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8886
         .items = { ITEM_POTION },
 #line 8884
@@ -24723,7 +24723,7 @@
 #line 8900
         .gender = TRAINER_GENDER_FEMALE,
 #line 8901
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8904
         .items = { ITEM_POTION },
 #line 8902
@@ -24773,7 +24773,7 @@
 #line 8918
         .gender = TRAINER_GENDER_FEMALE,
 #line 8919
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 8922
         .items = { ITEM_POTION },
 #line 8920
@@ -24823,7 +24823,7 @@
 #line 8936
         .gender = TRAINER_GENDER_MALE,
 #line 8937
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 8938
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8939
@@ -24871,7 +24871,7 @@
 #line 8953
         .gender = TRAINER_GENDER_FEMALE,
 #line 8954
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 8955
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8956
@@ -24907,7 +24907,7 @@
 #line 8966
         .gender = TRAINER_GENDER_MALE,
 #line 8967
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 8968
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8969
@@ -24955,7 +24955,7 @@
 #line 8983
         .gender = TRAINER_GENDER_MALE,
 #line 8984
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_TWINS,
 #line 8985
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 8986
@@ -25015,7 +25015,7 @@
 #line 9004
         .gender = TRAINER_GENDER_FEMALE,
 #line 9005
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 9006
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9007
@@ -25123,7 +25123,7 @@
 #line 9042
         .gender = TRAINER_GENDER_FEMALE,
 #line 9043
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9046
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
 #line 9044
@@ -25197,7 +25197,7 @@
 #line 9068
         .gender = TRAINER_GENDER_FEMALE,
 #line 9069
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9072
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
 #line 9070
@@ -25271,7 +25271,7 @@
 #line 9094
         .gender = TRAINER_GENDER_FEMALE,
 #line 9095
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9098
         .items = { ITEM_SUPER_POTION, ITEM_SUPER_POTION },
 #line 9096
@@ -25453,7 +25453,7 @@
 #line 9159
         .gender = TRAINER_GENDER_FEMALE,
 #line 9160
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9161
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9162
@@ -25513,7 +25513,7 @@
 #line 9180
         .gender = TRAINER_GENDER_MALE,
 #line 9181
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9182
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 9183
@@ -25681,7 +25681,7 @@
 #line 9240
         .gender = TRAINER_GENDER_FEMALE,
 #line 9241
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9242
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9243
@@ -25741,7 +25741,7 @@
 #line 9261
         .gender = TRAINER_GENDER_MALE,
 #line 9262
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9263
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9264
@@ -25837,7 +25837,7 @@
 #line 9295
         .gender = TRAINER_GENDER_FEMALE,
 #line 9296
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9297
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9298
@@ -25873,7 +25873,7 @@
 #line 9308
         .gender = TRAINER_GENDER_MALE,
 #line 9309
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9310
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9311
@@ -25909,7 +25909,7 @@
 #line 9321
         .gender = TRAINER_GENDER_FEMALE,
 #line 9322
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9323
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9324
@@ -25993,7 +25993,7 @@
 #line 9350
         .gender = TRAINER_GENDER_FEMALE,
 #line 9351
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9352
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9353
@@ -26125,7 +26125,7 @@
 #line 9396
         .gender = TRAINER_GENDER_MALE,
 #line 9397
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 9400
         .items = { ITEM_X_SP_ATK },
 #line 9398
@@ -26175,7 +26175,7 @@
 #line 9414
         .gender = TRAINER_GENDER_MALE,
 #line 9415
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 9416
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9417
@@ -26211,7 +26211,7 @@
 #line 9427
         .gender = TRAINER_GENDER_MALE,
 #line 9428
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 9429
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9430
@@ -26331,7 +26331,7 @@
 #line 9469
         .gender = TRAINER_GENDER_FEMALE,
 #line 9470
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 9471
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 9472
@@ -26391,7 +26391,7 @@
 #line 9490
         .gender = TRAINER_GENDER_FEMALE,
 #line 9491
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9492
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9493
@@ -26439,7 +26439,7 @@
 #line 9507
         .gender = TRAINER_GENDER_MALE,
 #line 9508
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9509
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9510
@@ -26487,7 +26487,7 @@
 #line 9524
         .gender = TRAINER_GENDER_MALE,
 #line 9525
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 9526
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9527
@@ -26537,7 +26537,7 @@
 #line 9541
         .gender = TRAINER_GENDER_MALE,
 #line 9542
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9543
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9544
@@ -26573,7 +26573,7 @@
 #line 9554
         .gender = TRAINER_GENDER_MALE,
 #line 9555
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 9556
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9557
@@ -26609,7 +26609,7 @@
 #line 9567
         .gender = TRAINER_GENDER_MALE,
 #line 9568
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_GIRL,
 #line 9569
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9570
@@ -26645,7 +26645,7 @@
 #line 9580
         .gender = TRAINER_GENDER_MALE,
 #line 9581
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 9582
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9583
@@ -26681,7 +26681,7 @@
 #line 9593
         .gender = TRAINER_GENDER_FEMALE,
 #line 9594
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 9595
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9596
@@ -27102,7 +27102,7 @@
 #line 9738
         .gender = TRAINER_GENDER_FEMALE,
 #line 9739
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTERVIEWER,
 #line 9740
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9741
@@ -27138,7 +27138,7 @@
 #line 9751
         .gender = TRAINER_GENDER_MALE,
 #line 9752
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 9753
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9754
@@ -27174,7 +27174,7 @@
 #line 9764
         .gender = TRAINER_GENDER_MALE,
 #line 9765
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 9766
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9767
@@ -27234,7 +27234,7 @@
 #line 9785
         .gender = TRAINER_GENDER_FEMALE,
 #line 9786
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 9787
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9788
@@ -27270,7 +27270,7 @@
 #line 9798
         .gender = TRAINER_GENDER_FEMALE,
 #line 9799
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 9800
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9801
@@ -27414,7 +27414,7 @@
 #line 9848
         .gender = TRAINER_GENDER_FEMALE,
 #line 9849
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9850
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9851
@@ -27450,7 +27450,7 @@
 #line 9861
         .gender = TRAINER_GENDER_MALE,
 #line 9862
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 9863
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9864
@@ -27498,7 +27498,7 @@
 #line 9878
         .gender = TRAINER_GENDER_FEMALE,
 #line 9879
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 9880
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9881
@@ -27546,7 +27546,7 @@
 #line 9895
         .gender = TRAINER_GENDER_MALE,
 #line 9896
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 9897
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9898
@@ -27594,7 +27594,7 @@
 #line 9912
         .gender = TRAINER_GENDER_MALE,
 #line 9913
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 9914
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9915
@@ -27630,7 +27630,7 @@
 #line 9925
         .gender = TRAINER_GENDER_MALE,
 #line 9926
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 9927
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9928
@@ -27678,7 +27678,7 @@
 #line 9942
         .gender = TRAINER_GENDER_MALE,
 #line 9943
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 9944
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9945
@@ -27714,7 +27714,7 @@
 #line 9955
         .gender = TRAINER_GENDER_MALE,
 #line 9956
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 9957
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9958
@@ -27762,7 +27762,7 @@
 #line 9972
         .gender = TRAINER_GENDER_MALE,
 #line 9973
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 9974
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 9975
@@ -27942,7 +27942,7 @@
 #line 10037
         .gender = TRAINER_GENDER_MALE,
 #line 10038
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 10039
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10040
@@ -27978,7 +27978,7 @@
 #line 10050
         .gender = TRAINER_GENDER_FEMALE,
 #line 10051
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 10054
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 10052
@@ -28398,7 +28398,7 @@
 #line 10222
         .gender = TRAINER_GENDER_FEMALE,
 #line 10223
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 10226
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 10224
@@ -28538,7 +28538,7 @@
 #line 10280
         .gender = TRAINER_GENDER_FEMALE,
 #line 10281
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 10284
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 10282
@@ -28678,7 +28678,7 @@
 #line 10338
         .gender = TRAINER_GENDER_MALE,
 #line 10339
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 10340
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10341
@@ -28726,7 +28726,7 @@
 #line 10355
         .gender = TRAINER_GENDER_MALE,
 #line 10356
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 10357
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10358
@@ -28787,7 +28787,7 @@
 #line 10376
         .gender = TRAINER_GENDER_MALE,
 #line 10377
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_AQUA,
 #line 10378
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10379
@@ -28835,7 +28835,7 @@
 #line 10393
         .gender = TRAINER_GENDER_FEMALE,
 #line 10394
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 10395
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10396
@@ -28896,7 +28896,7 @@
 #line 10414
         .gender = TRAINER_GENDER_FEMALE,
 #line 10415
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 10416
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10417
@@ -28944,7 +28944,7 @@
 #line 10431
         .gender = TRAINER_GENDER_FEMALE,
 #line 10432
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 10433
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10434
@@ -29184,7 +29184,7 @@
 #line 10515
         .gender = TRAINER_GENDER_FEMALE,
 #line 10516
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 10517
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10518
@@ -29220,7 +29220,7 @@
 #line 10528
         .gender = TRAINER_GENDER_MALE,
 #line 10529
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 10530
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10531
@@ -29352,7 +29352,7 @@
 #line 10574
         .gender = TRAINER_GENDER_FEMALE,
 #line 10575
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SWIMMER,
 #line 10578
         .items = { ITEM_X_SP_DEF },
 #line 10576
@@ -29486,7 +29486,7 @@
 #line 10621
         .gender = TRAINER_GENDER_FEMALE,
 #line 10622
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 10623
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10624
@@ -29546,7 +29546,7 @@
 #line 10642
         .gender = TRAINER_GENDER_MALE,
 #line 10643
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 10644
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10645
@@ -29594,7 +29594,7 @@
 #line 10659
         .gender = TRAINER_GENDER_MALE,
 #line 10660
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
 #line 10661
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10662
@@ -29642,7 +29642,7 @@
 #line 10676
         .gender = TRAINER_GENDER_FEMALE,
 #line 10677
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_COOL,
 #line 10678
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 10679
@@ -30659,7 +30659,7 @@
 #line 11052
         .gender = TRAINER_GENDER_FEMALE,
 #line 11053
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 11056
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 11054
@@ -30798,7 +30798,7 @@
 #line 11109
         .gender = TRAINER_GENDER_FEMALE,
 #line 11110
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 11113
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 11111
@@ -30937,7 +30937,7 @@
 #line 11166
         .gender = TRAINER_GENDER_FEMALE,
 #line 11167
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 11170
         .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 11168
@@ -31076,7 +31076,7 @@
 #line 11223
         .gender = TRAINER_GENDER_FEMALE,
 #line 11224
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 11225
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11226
@@ -31136,7 +31136,7 @@
 #line 11244
         .gender = TRAINER_GENDER_MALE,
 #line 11245
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 11246
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11247
@@ -31172,7 +31172,7 @@
 #line 11257
         .gender = TRAINER_GENDER_MALE,
 #line 11258
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 11259
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11260
@@ -31220,7 +31220,7 @@
 #line 11274
         .gender = TRAINER_GENDER_MALE,
 #line 11275
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 11276
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11277
@@ -31256,7 +31256,7 @@
 #line 11287
         .gender = TRAINER_GENDER_MALE,
 #line 11288
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 11289
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11290
@@ -31292,7 +31292,7 @@
 #line 11300
         .gender = TRAINER_GENDER_MALE,
 #line 11301
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 11302
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11303
@@ -31388,7 +31388,7 @@
 #line 11334
         .gender = TRAINER_GENDER_FEMALE,
 #line 11335
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 11336
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 11337
@@ -31448,7 +31448,7 @@
 #line 11355
         .gender = TRAINER_GENDER_MALE,
 #line 11356
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 11357
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11358
@@ -31508,7 +31508,7 @@
 #line 11376
         .gender = TRAINER_GENDER_MALE,
 #line 11377
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 11378
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 11379
@@ -31568,7 +31568,7 @@
 #line 11397
         .gender = TRAINER_GENDER_MALE,
 #line 11398
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 11399
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11400
@@ -31628,7 +31628,7 @@
 #line 11418
         .gender = TRAINER_GENDER_FEMALE,
 #line 11419
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 11420
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 11421
@@ -31688,7 +31688,7 @@
 #line 11439
         .gender = TRAINER_GENDER_FEMALE,
 #line 11440
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
 #line 11441
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11442
@@ -31748,7 +31748,7 @@
 #line 11460
         .gender = TRAINER_GENDER_FEMALE,
 #line 11461
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 11462
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11463
@@ -31784,7 +31784,7 @@
 #line 11473
         .gender = TRAINER_GENDER_FEMALE,
 #line 11474
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 11475
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11476
@@ -31844,7 +31844,7 @@
 #line 11494
         .gender = TRAINER_GENDER_FEMALE,
 #line 11495
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_FEMALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_RICH,
 #line 11496
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11497
@@ -31880,7 +31880,7 @@
 #line 11507
         .gender = TRAINER_GENDER_MALE,
 #line 11508
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_HIKER,
 #line 11511
         .items = { ITEM_FULL_HEAL, ITEM_HYPER_POTION },
 #line 11509
@@ -31954,7 +31954,7 @@
 #line 11534
         .gender = TRAINER_GENDER_MALE,
 #line 11535
-        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .encounterMusic = TRAINER_ENCOUNTER_MUSIC_INTENSE,
 #line 11536
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 11537

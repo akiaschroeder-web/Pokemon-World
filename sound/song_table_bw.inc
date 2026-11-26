@@ -81,6 +81,20 @@
 	song mus_bw_win2, MUSIC_PLAYER_BGM, 0
 	song mus_bw_win3, MUSIC_PLAYER_BGM, 0
 	song mus_bw_win4, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_01, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_02, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_03, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_04, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_05, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_06, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_07, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_08, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_09, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_10, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_11, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_12, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_13, MUSIC_PLAYER_BGM, 0
+	song mus_bw_eye_plasma, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_lvup, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_item, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_shinkaome, MUSIC_PLAYER_BGM, 0

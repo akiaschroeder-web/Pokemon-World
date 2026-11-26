@@ -37,6 +37,17 @@
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
+#include "constants/party_menu.h"
+#include "constants/script_menu.h"
+#include "constants/rtc.h"
+#include "strings.h"
+#include "platform/web3d.h"
+#include "pokemon.h"
+#include "list_menu.h"
+#include "party_menu.h"
+#include "malloc.h"
+#include "fieldmap.h"
+#include "money.h"
 #include "pokemon_world.h"
 #include "shop.h"
 #include "starter_choose.h"
@@ -59,6 +70,17 @@
 #include "constants/map_groups.h"
 #include "constants/songs.h"
 #include "constants/vars.h"
+
+#ifndef BW_TRACE_ON
+#define BW_TRACE_ON 0   // 1: log BW scripts to the browser console
+#endif
+// BW_TRACE: script starts/ends and skipped commands to the browser console (debugging cutscenes)
+#if defined(PLATFORM_WEB) && BW_TRACE_ON
+extern void emscripten_log(int flags, const char *format, ...);   // <emscripten.h> clashes with our headers
+#define BW_TRACE(...) emscripten_log(1, __VA_ARGS__)
+#else
+#define BW_TRACE(...)
+#endif
 
 struct BwScriptFile { const u8 *data; u32 size; };
 struct BwTextFile { const u8 *const *strings; const u32 *count; };
@@ -91,6 +113,8 @@ enum BwWait
     BW_WAIT_BATTLE,
     BW_WAIT_FREEZE,
     BW_WAIT_STARTER,     // the starter choice screen
+    BW_WAIT_MENU,        // a list menu (ListMenu*)
+    BW_WAIT_PARTY,       // choosing a party Pokémon (CallPokeSelect)
 };
 
 struct BwFrame
@@ -121,7 +145,21 @@ static struct
     u16 temps[BW_TEMP_VARS];
     u8 movement[64];     // our movement actions for the NPC being moved
     u8 movementActor;    // our local id
+    u16 reserved;        // RTReserveScript: run after this one ends
+    u16 cameraFrames;    // frames left of the event camera's move (EVCameraWait)
+    u16 menuDest, menuDefault;
+    u8 menuX, menuY, menuCount;
+    bool8 menuCancel;
+    u16 partyDest;
+    struct ListMenuItem *menuItems;
 } sVm;
+
+// Actors BW's scripts add with ActorNew: BW actor id -> our local id, for this map.
+#define BW_DYN_ACTORS 8
+#define BW_DYN_LOCALID_FIRST 0xE0
+static u16 sDynActors[BW_DYN_ACTORS];   // BW actor id + 1 (0 = free)
+
+#include "data/bw_obj_gfx.h"   // sBwObjGfx: BW objCode -> our graphics id (bw/sprites.py)
 
 // --- variables and flags
 
@@ -287,6 +325,9 @@ static u8 LocalIdOf(u16 actor)
     actor = BwFlex(actor);
     if (actor == BW_PLAYER_ACTOR)
         return LOCALID_PLAYER;
+    for (i = 0; i < BW_DYN_ACTORS; i++)
+        if (sDynActors[i] == actor + 1)
+            return BW_DYN_LOCALID_FIRST + i;
     for (i = 0; i < ARRAY_COUNT(sBwMapActors); i++)
     {
         if (sBwMapActors[i].map != map)
@@ -380,6 +421,116 @@ static void SetActorVisible(u16 actor, bool32 visible)
         TrySpawnObjectEvent(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     else
         RemoveObjectEventByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+}
+
+// --- positions: BW matrix tiles <-> this map's tiles
+
+static const struct BwZoneMap *CurrentZoneMap(void)
+{
+    u32 i;
+    u16 map = ((u8)gSaveBlock1Ptr->location.mapGroup << 8) | (u8)gSaveBlock1Ptr->location.mapNum;
+    for (i = 0; i < ARRAY_COUNT(sBwZoneMaps); i++)
+        if (sBwZoneMaps[i].map == map)
+            return &sBwZoneMaps[i];
+    return NULL;
+}
+
+static void ToLocal(u16 x, u16 z, s16 *lx, s16 *ly)
+{
+    const struct BwZoneMap *m = CurrentZoneMap();
+    *lx = (s16)x - (m ? m->x : 0);
+    *ly = (s16)z - (m ? m->y : 0);
+}
+
+static u8 OurDir(u16 bwDir)
+{
+    static const u8 sDirs[4] = {DIR_NORTH, DIR_SOUTH, DIR_WEST, DIR_EAST};
+    return sDirs[bwDir & 3];
+}
+
+static struct ObjectEvent *ActorObject(u16 actor)
+{
+    u8 id, localId = LocalIdOf(actor);
+    if (!localId)
+        return NULL;
+    if (localId == LOCALID_PLAYER)
+        return &gObjectEvents[gPlayerAvatar.objectEventId];
+    if (TryGetObjectEventIdByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &id))
+        return NULL;
+    return &gObjectEvents[id];
+}
+
+// ActorNew: a character a cutscene brings in
+static void NewActor(u16 x, u16 z, u16 dir, u16 actor, u16 objCode)
+{
+    u32 i, gfx = OBJ_EVENT_GFX_BOY_1;
+    s16 lx, ly;
+    for (i = 0; i < ARRAY_COUNT(sBwObjGfx); i++)
+        if (sBwObjGfx[i][0] == objCode)
+            gfx = sBwObjGfx[i][1];
+    for (i = 0; i < BW_DYN_ACTORS; i++)
+        if (sDynActors[i] == 0 || sDynActors[i] == actor + 1)
+            break;
+    if (i == BW_DYN_ACTORS)
+        return;
+    if (sDynActors[i])
+        RemoveObjectEventByLocalIdAndMap(BW_DYN_LOCALID_FIRST + i, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    sDynActors[i] = actor + 1;
+    ToLocal(x, z, &lx, &ly);
+    SpawnSpecialObjectEventParameterized(gfx, MOVEMENT_TYPE_FACE_DOWN, BW_DYN_LOCALID_FIRST + i,
+                                         lx + MAP_OFFSET, ly + MAP_OFFSET, 3);
+    {
+        struct ObjectEvent *o = ActorObject(actor);
+        if (o)
+            ObjectEventTurn(o, OurDir(dir));
+    }
+}
+
+static void SetActorPos(u16 actor, u16 x, u16 z, u16 dir, bool32 turn)
+{
+    struct ObjectEvent *o = ActorObject(actor);
+    s16 lx, ly;
+    if (!o || LocalIdOf(actor) == LOCALID_PLAYER)
+        return;            // the player stays where they are (moving them would leave the camera behind)
+    ToLocal(x, z, &lx, &ly);
+    MoveObjectEventToMapCoords(o, lx + MAP_OFFSET, ly + MAP_OFFSET);
+    if (turn)
+        ObjectEventTurn(o, OurDir(dir));
+}
+
+// a list menu option: BW's text, in our box
+static void MenuAdd(u16 msg, u16 uid)
+{
+    const u8 *str = Message(BW_ZONE_TEXT, msg);
+    u8 *name;
+    if (!sVm.menuItems)
+        sVm.menuItems = AllocZeroed(sizeof(struct ListMenuItem) * 16);
+    if (!sVm.menuItems || sVm.menuCount >= 16)
+        return;
+    if (!str)
+        return;
+    name = Alloc(100);
+    StringExpandPlaceholders(name, str);
+    sVm.menuItems[sVm.menuCount].name = name;
+    sVm.menuItems[sVm.menuCount].id = uid;
+    sVm.menuCount++;
+}
+
+static bool32 MenuShow(void)
+{
+    u32 i, row = 0;
+    if (!sVm.menuCount || !sVm.menuItems)
+        return FALSE;
+    for (i = 0; i < sVm.menuCount; i++)
+        if (sVm.menuItems[i].id == sVm.menuDefault)
+            row = i;
+    if (!ScriptMenu_MultichoiceDynamic(sVm.menuX, sVm.menuY, sVm.menuCount, sVm.menuItems, !sVm.menuCancel, 6, row, 0))
+        return FALSE;
+    sVm.menuItems = NULL;      // the menu frees them
+    sVm.menuCount = 0;
+    ScriptContext_Stop();
+    sVm.wait = BW_WAIT_MENU;
+    return TRUE;
 }
 
 // --- warps: a BW zone and tile -> our map and its local tile
@@ -631,6 +782,17 @@ static bool32 Waiting(void)
         if (!IsFreezePlayerFinished())
             return TRUE;
         break;
+    case BW_WAIT_MENU:
+        if (ScriptContext_IsEnabled() == FALSE)
+            return TRUE;
+        BwVarSet(sVm.menuDest, gSpecialVar_Result == MULTI_B_PRESSED ? 0xFFFE : gSpecialVar_Result);
+        break;
+    case BW_WAIT_PARTY:
+        if (gMain.callback2 != CB2_Overworld)
+            return TRUE;
+        BwVarSet(sVm.partyDest, gSpecialVar_0x8004 < PARTY_SIZE ? gSpecialVar_0x8004 : 0xFF);
+        BwVarSet(sVm.battleDest, gSpecialVar_0x8004 < PARTY_SIZE);
+        break;
     case BW_WAIT_STARTER:
         if (gMain.callback2 != CB2_Overworld)
             return TRUE;
@@ -643,6 +805,7 @@ static bool32 Waiting(void)
 
 static void EndScript(void)
 {
+    BW_TRACE("[bw] end");
     if (sVm.messageOpen)
         HideFieldMessageBox();
     if (sVm.locked)
@@ -659,6 +822,7 @@ static void EndScript(void)
 static bool32 Run(void)
 {
     u32 steps = 0;
+again:
     while (sVm.depth)
     {
         struct BwFrame *f;
@@ -902,6 +1066,13 @@ static bool32 Run(void)
             }
             break;
         }
+        case 0x8B: // TrainerBGMPlayPush: the trainer's eye-contact theme
+        {
+            u16 t = BwFlex(Read16());
+            if (t && t < UNOVA_TRAINERS_COUNT)
+                PlayNewMapMusic(GetUnovaTrainerEyeMusic(UNOVA_TRAINERS_START + t));
+            break;
+        }
         case 0x8C: // CallTrainerLose: our battle end already whited out when that was due
             break;
         case 0x8D: { u16 dest = Read16(); BwVarSet(dest, PlayerWon()); break; }   // TrainerBattleIsVictory
@@ -1026,10 +1197,231 @@ static bool32 Run(void)
             break;
         }
         case 0x17B: { u16 dest = Read16(); BwVarSet(dest, PlayerWon()); break; }
+        case 0x17C: { u16 dest = Read16(); BwVarSet(dest, gBattleOutcome); break; }      // WildBattleGetResult
+
+        // --- cutscenes: BW's event camera (the 3D view eases to it; src/platform/web3d.c)
+        case 0x13F: case 0x141: case 0x142: break;             // EVCameraInit, Unbind, Rebind
+        case 0x140: // EVCameraEnd: back to the field camera at once
+            Web3D_EventCamera(2, 0, 0, 0, 0, 0, 0, 1);
+            sVm.cameraFrames = 0;
+            break;
+        case 0x143: // EVCameraMoveTo: pitch, yaw (fx16 angles), distance, target x, y, z (fx32), frames
+        {
+            u16 pitch = Read16(), yaw = Read16();
+            s32 dist = Read32(), x = Read32(), y = Read32(), z = Read32();
+            u16 frames = BwFlex(Read16());
+            Web3D_EventCamera(1, pitch, yaw, dist, x, y, z, frames);
+            sVm.cameraFrames = frames;
+            break;
+        }
+        case 0x144: case 0x147: // EVCameraReturn, EVCameraMoveToDefault: back to the field camera
+        {
+            u16 frames = BwFlex(Read16());
+            Web3D_EventCamera(2, 0, 0, 0, 0, 0, 0, frames);
+            sVm.cameraFrames = frames;
+            break;
+        }
+        case 0x146: Read16(); Read16(); break;                 // EVCameraMoveToCommon: preset views (not known)
+        case 0x145: // EVCameraWait
+            if (sVm.cameraFrames)
+            {
+                sVm.waitFrames = sVm.cameraFrames;
+                sVm.cameraFrames = 0;
+                sVm.wait = BW_WAIT_FRAMES;
+            }
+            break;
+
+        // --- actors
+        case 0x69: // ActorNew: x, z, dir, actor id, objCode, moveCode
+        {
+            u16 x = BwFlex(Read16()), z = BwFlex(Read16()), dir = BwFlex(Read16()), actor = BwFlex(Read16());
+            u16 obj = BwFlex(Read16());
+            Read16();
+            NewActor(x, z, dir, actor, obj);
+            break;
+        }
+        case 0x6D: // ActorSetGPos: actor, x, y, z, dir
+        {
+            u16 actor = Read16(), x = BwFlex(Read16()), dir;
+            Read16();
+            {
+                u16 z = BwFlex(Read16());
+                dir = BwFlex(Read16());
+                SetActorPos(actor, x, z, dir, TRUE);
+            }
+            break;
+        }
+        case 0x7B: // ActorJumpToGPos: actor, x, y, z
+        {
+            u16 actor = Read16(), x = BwFlex(Read16()), z;
+            Read16();
+            z = BwFlex(Read16());
+            SetActorPos(actor, x, z, 0, FALSE);
+            break;
+        }
+        case 0x67: // ActorGetGPos: actor, -> x, z
+        {
+            u16 actor = Read16(), vx = Read16(), vz = Read16();
+            struct ObjectEvent *o = ActorObject(actor);
+            const struct BwZoneMap *m = CurrentZoneMap();
+            if (o)
+            {
+                BwVarSet(vx, o->currentCoords.x - MAP_OFFSET + (m ? m->x : 0));
+                BwVarSet(vz, o->currentCoords.y - MAP_OFFSET + (m ? m->y : 0));
+            }
+            break;
+        }
+
+        // --- list menus
+        case 0xB2: // ListMenuInitTR: x, y, default, cancellable, -> result
+            sVm.menuX = min(Read8(), 20);
+            sVm.menuY = min(Read8(), 10);
+            sVm.menuDefault = BwFlex(Read16());
+            sVm.menuCancel = Read8();
+            sVm.menuDest = Read16();
+            sVm.menuCount = 0;
+            break;
+        case 0xAF: { u16 msg = Read16(); Read16(); MenuAdd(msg, BwFlex(Read16())); break; }   // ListMenuAdd: text, hint, uid
+        case 0xB0: case 0xB1: // ListMenuShow
+            if (MenuShow())
+                return TRUE;
+            break;
+
+        // --- more messages and words
+        case 0x3A: { u16 msg = Read16(); Read16(); Read16(); Read16(); ShowMessage(Message(BW_ZONE_TEXT, msg)); break; }  // MsgMulti
+        case 0x3B: Read16(); if (sVm.messageOpen) { HideFieldMessageBox(); sVm.messageOpen = FALSE; } break;          // MsgWinCloseNo
+        case 0x51: { u8 b = Read8(); u16 m = BwFlex(Read16()); if (m < MOVES_COUNT) StringCopy(Buffer(b), GetMoveName(m)); break; }
+        case 0x53: case 0x54: // WordSetPartyPokeSpecies / Name
+        {
+            u8 b = Read8();
+            u16 idx = BwFlex(Read16());
+            if (idx < PARTY_SIZE)
+            {
+                if (op == 0x53)
+                    StringCopy(Buffer(b), GetSpeciesName(GetMonData(&gPlayerParty[idx], MON_DATA_SPECIES)));
+                else
+                {
+                    GetMonData(&gPlayerParty[idx], MON_DATA_NICKNAME, Buffer(b));
+                    StringGet_Nickname(Buffer(b));
+                }
+            }
+            break;
+        }
+        case 0x56: { u8 b = Read8(); u16 t = BwFlex(Read16()); if (t + 1 < NUMBER_OF_MON_TYPES) StringCopy(Buffer(b), gTypesInfo[t + 1].name); break; }
+
+        // --- the party
+        case 0x103: // PokePartyGetCount: dest, mode (0: all, else: not eggs)
+        {
+            u16 dest = Read16(), mode = BwFlex(Read16()), n = 0, i;
+            for (i = 0; i < PARTY_SIZE; i++)
+            {
+                u16 sp = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+                if (sp != SPECIES_NONE && (mode == 0 || !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)))
+                    n++;
+            }
+            BwVarSet(dest, n);
+            break;
+        }
+        case 0xFE: // PokePartyGetSpecies: dest, slot (as the National Dex number)
+        {
+            u16 dest = Read16(), idx = BwFlex(Read16());
+            BwVarSet(dest, idx < PARTY_SIZE ? SpeciesToNationalPokedexNum(GetMonData(&gPlayerParty[idx], MON_DATA_SPECIES)) : 0);
+            break;
+        }
+        case 0x220: // PokePartyFindEx: species, form, -> slot, -> found
+        {
+            u16 sp = Species(BwFlex(Read16())), i, slot = 0, found = 0;
+            u16 vs, vf;
+            Read16();
+            vs = Read16();
+            vf = Read16();
+            for (i = 0; i < PARTY_SIZE; i++)
+                if (sp && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == sp && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                {
+                    slot = i;
+                    found = 1;
+                    break;
+                }
+            BwVarSet(vs, slot);
+            BwVarSet(vf, found);
+            break;
+        }
+        case 0x116: // PokePartyHasMoveAny: dest, move
+        {
+            u16 dest = Read16(), mv = BwFlex(Read16()), i, has = 0;
+            for (i = 0; i < PARTY_SIZE; i++)
+                if (MonKnowsMove(&gPlayerParty[i], mv))
+                    has = 1;
+            BwVarSet(dest, has);
+            break;
+        }
+        case 0x107: // CallPokeSelect: wantEgg, -> chose one, -> slot
+            Read16();
+            sVm.battleDest = Read16();
+            sVm.partyDest = Read16();
+            Read16();
+            if (sVm.messageOpen)
+            {
+                HideFieldMessageBox();
+                sVm.messageOpen = FALSE;
+            }
+            ChoosePartyMon();
+            ScriptContext_Stop();
+            sVm.wait = BW_WAIT_PARTY;
+            return TRUE;
+
+        // --- money
+        case 0xF9: AddMoney(&gSaveBlock1Ptr->money, BwFlex(Read16())); break;
+        case 0xFA: RemoveMoney(&gSaveBlock1Ptr->money, BwFlex(Read16())); break;
+        case 0xFB: { u16 dest = Read16(); BwVarSet(dest, IsEnoughMoney(&gSaveBlock1Ptr->money, BwFlex(Read16()))); break; }
+        case 0x40: Read16(); Read16(); break;                 // MoneyWinDisp / Close / Update: no box yet
+        case 0x41: case 0x42: break;
+
+        // --- clock (BW: day parts 0 morning, 1 day, 2 evening, 3 night)
+        case 0xCF: BwVarSet(Read16(), GetDayOfWeek()); break;
+        case 0xD2: BwVarSet(Read16(), (GetMonth() - MONTH_JAN) % 4); break;
+        case 0xCD:
+        {
+            static const u8 sParts[] = {[TIME_MORNING] = 0, [TIME_DAY] = 1, [TIME_EVENING] = 2, [TIME_NIGHT] = 3};
+            u32 t = GetTimeOfDay();
+            BwVarSet(Read16(), t < ARRAY_COUNT(sParts) ? sParts[t] : 1);
+            break;
+        }
+        case 0x1C4: { u16 dest = Read16(); Read16(); BwVarSet(dest, 0); break; }     // PokeDexIsComplete
+
+        // --- scripts
+        case 0x21: sVm.reserved = Read16(); break;              // RTReserveScript: next, once this one ends
+
+        // --- other warps: like MapChangeWarp
+        case 0xBE: case 0xBF: case 0xC1: case 0xC4:
+        {
+            u16 zone = Read16(), x = Read16(), z;
+            if (op == 0xC4)
+                Read16();                                       // y
+            z = Read16();
+            if (op != 0xC1)
+                Read16();                                       // dir
+            EndScript();
+            WarpTo(zone, x, z);
+            ResetInitialPlayerAvatarState();
+            ScriptContext_Stop();
+            return TRUE;
+        }
         default:
+            BW_TRACE("[bw] skip %x at %u", op, f->pc - 2);
             SkipParams(op);
             break;
         }
+        if (sVm.wait != BW_WAIT_NONE)
+            BW_TRACE("[bw] op %x waits %d", op, sVm.wait);
+    }
+    if (sVm.reserved && sBwZones[sVm.zone].scripts)
+    {
+        u16 r = sVm.reserved;
+        sVm.reserved = 0;
+        sVm.sp = 0;
+        if (PushScript(r, sBwZones[sVm.zone].scripts, sBwZones[sVm.zone].text, FALSE))
+            goto again;
     }
     EndScript();
     return FALSE;
@@ -1049,6 +1441,7 @@ static bool32 Start(struct ScriptContext *ctx, bool32 immediate)
         return FALSE;
     sVm.zone = zone;
     sVm.immediate = immediate;
+    BW_TRACE("[bw] start zone %d script %d%s", zone, scrid, immediate ? " (load)" : "");
     return PushScript(scrid, sBwZones[zone].scripts, sBwZones[zone].text, FALSE);
 }
 
@@ -1089,6 +1482,8 @@ u16 BwSeasonMusic(u16 song)
 void BwScript_OnEnterMap(void)
 {
     u32 i;
+    memset(sDynActors, 0, sizeof(sDynActors));   // ActorNew's actors belong to the map they were added on
+    Web3D_EventCamera(0, 0, 0, 0, 0, 0, 0, 1);
     if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA || FlagGet(FLAG_UNOVA_INITIALIZED))
         return;
     for (i = 0; i < ARRAY_COUNT(sBwStartFlags); i++)

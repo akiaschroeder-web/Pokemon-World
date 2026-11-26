@@ -187,6 +187,34 @@ def plain(codes):
     return s
 
 
+# BW's trainer eye-contact themes, SEQ_BGM_EYE_01..13 and EYE_PLASMA (SDAT 1114..1127); a Unova
+# trainer's encounterMusic holds the theme's index (src/battle_setup.c PlayTrainerEncounterMusic)
+EYE_FIRST, EYE_LAST = 1114, 1127
+MUSIC_ENUM = ['TRAINER_ENCOUNTER_MUSIC_MALE', 'TRAINER_ENCOUNTER_MUSIC_FEMALE', 'TRAINER_ENCOUNTER_MUSIC_GIRL',
+              'TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS', 'TRAINER_ENCOUNTER_MUSIC_INTENSE', 'TRAINER_ENCOUNTER_MUSIC_COOL',
+              'TRAINER_ENCOUNTER_MUSIC_AQUA', 'TRAINER_ENCOUNTER_MUSIC_MAGMA', 'TRAINER_ENCOUNTER_MUSIC_SWIMMER',
+              'TRAINER_ENCOUNTER_MUSIC_TWINS', 'TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR', 'TRAINER_ENCOUNTER_MUSIC_HIKER',
+              'TRAINER_ENCOUNTER_MUSIC_INTERVIEWER', 'TRAINER_ENCOUNTER_MUSIC_RICH']
+
+
+def class_eye_music(rom):
+    """BW class -> eye theme index (0-13): a table of (u16 class, u16 SDAT id) pairs in ARM9."""
+    arm9 = bytes(rom.rom.arm9)
+    try:
+        arm9 = ndspy.codeCompression.decompress(arm9)
+    except Exception:
+        pass
+    i = arm9.find(struct.pack('<4H', 2, 1114, 3, 1115))
+    out = {}
+    while i >= 0 and i + 4 <= len(arm9):
+        c, m = struct.unpack_from('<2H', arm9, i)
+        if not EYE_FIRST <= m <= EYE_LAST or c > 200:
+            break
+        out.setdefault(c, m - EYE_FIRST)
+        i += 4
+    return out
+
+
 def ident(s):
     s = s.replace('é', 'e').replace('É', 'E').replace('♂', ' M').replace('♀', ' F')
     s = re.sub(r'[^A-Za-z0-9]+', '_', s).strip('_').upper()
@@ -218,6 +246,7 @@ def write(rom, decode_text, item_of, species_of):
     cls_names = [class_name(unpack9(c)) for c in decode_text(sys_text[191])]
     tdata, tparty = rom.narc('a/0/9/2'), rom.narc('a/0/9/3')
     pics_of_class = class_pictures(rom)
+    eye = class_eye_music(rom)
     moves = {int(n): m for m, n in re.findall(r'^\s*(MOVE_\w+)\s*=\s*(\d+)\s*,', open('include/constants/moves.h').read(), re.M)}
 
     # classes
@@ -294,7 +323,7 @@ def write(rom, decode_text, item_of, species_of):
         female = pic in FEMALE_PICS
         out.append('=== %s ===\nName: %s\nClass: %s\nPic: %s\nGender: %s\nMusic: %s\nDouble Battle: %s\nAI: %s\n'
                    % (const, safe_name(name), our_class.get(cls, 'TRAINER_CLASS_PKMN_TRAINER_1'), pic_const.get(pic, 'TRAINER_PIC_BW_0'),
-                      'Female' if female else 'Male', 'TRAINER_ENCOUNTER_MUSIC_FEMALE' if female else 'TRAINER_ENCOUNTER_MUSIC_MALE',
+                      'Female' if female else 'Male', MUSIC_ENUM[eye.get(cls, 0)],
                       'Yes' if btype in (1, 2) and count >= 2 else 'No',
                       'Check Bad Move / Try To Faint / Check Viability' if ai & 6 else 'Check Bad Move'))
         if items:
@@ -339,7 +368,7 @@ def write(rom, decode_text, item_of, species_of):
         for tid, c in consts.items():
             f.write('#define %s (UNOVA_TRAINERS_START + %d)\n' % (c, tid))
         f.write('\n#define UNOVA_TRAINERS_COUNT %d\n\n#endif // GUARD_CONSTANTS_OPPONENTS_UNOVA_H\n' % len(tdata))
-    print('trainers: %d (%d new classes, %d pictures)' % (len(consts), len(new_classes), len(used_pics)))
+    print('trainers: %d (%d new classes, %d pictures, %d classes with eye music)' % (len(consts), len(new_classes), len(used_pics), len(eye)))
     return consts, btypes(tdata)
 
 

@@ -1780,6 +1780,16 @@ void ShowTrainerCantBattleSpeech(void)
     ShowFieldMessage(GetTrainerCantBattleSpeech());
 }
 
+// Pokémon World: Unova's trainers keep the index of Pokémon Black's eye-contact theme in encounterMusic
+u16 GetUnovaTrainerEyeMusic(u16 trainerId)
+{
+    static const u16 sBwEyeMusic[] = {MUS_BW_EYE_01, MUS_BW_EYE_02, MUS_BW_EYE_03, MUS_BW_EYE_04, MUS_BW_EYE_05,
+        MUS_BW_EYE_06, MUS_BW_EYE_07, MUS_BW_EYE_08, MUS_BW_EYE_09, MUS_BW_EYE_10, MUS_BW_EYE_11, MUS_BW_EYE_12,
+        MUS_BW_EYE_13, MUS_BW_EYE_PLASMA};
+    u32 style = GetTrainerEncounterMusicId(trainerId);
+    return style < ARRAY_COUNT(sBwEyeMusic) ? sBwEyeMusic[style] : MUS_BW_EYE_01;
+}
+
 void PlayTrainerEncounterMusic(void)
 {
     u16 trainerId;
@@ -1792,6 +1802,8 @@ void PlayTrainerEncounterMusic(void)
 
     enum TrainerApproachMusic musicStyle = GetTrainerEncounterMusicId(trainerId);
     music = gTrainerApproachMusicStyles[musicStyle];
+    if (trainerId >= UNOVA_TRAINERS_START && trainerId <= UNOVA_TRAINERS_END)
+        music = GetUnovaTrainerEyeMusic(trainerId);
     // Pokémon World: Sinnoh's villains (marked with Aqua's style) get Team Galactic's encounter theme.
     if (musicStyle == TRAINER_ENCOUNTER_MUSIC_AQUA && GetCurrentRegion() == REGION_SINNOH)
         music = MUS_DPP_ENCOUNTER_GALACTIC;
