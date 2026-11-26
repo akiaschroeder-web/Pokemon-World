@@ -1229,6 +1229,11 @@ struct SaveBlock1
 #if IS_FRLG
     struct DaycareMon route5DayCareMon;
 #endif
+    // Pokémon World: Unova's story state (Pokémon Black's flags, work variables and trainer flags;
+    // src/bw_script.c). At the end so older saves still load.
+    u8 unovaFlags[UNOVA_FLAGS_COUNT / 8];
+    u8 unovaTrainerFlags[UNOVA_TRAINER_FLAGS_COUNT / 8];
+    u16 unovaVars[UNOVA_VARS_COUNT];
     // sizeof: 0x3???
 };
 

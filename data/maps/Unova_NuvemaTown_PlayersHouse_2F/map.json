@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F",
   "name": "Unova_NuvemaTown_PlayersHouse_2F",
   "layout": "LAYOUT_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_T_01",
   "region_map_section": "MAPSEC_UNOVA_NUVEMA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -13,7 +13,112 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ7",
+      "x": 6,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc0",
+      "flag": "0x21F4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ134",
+      "x": 9,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc1",
+      "flag": "0x21F5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ208",
+      "x": 5,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc2",
+      "flag": "0x22A8"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ200",
+      "x": 5,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc3",
+      "flag": "0x22A9"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ201",
+      "x": 6,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc4",
+      "flag": "0x22AA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ197",
+      "x": 4,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc5",
+      "flag": "0x22AB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ198",
+      "x": 5,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc6",
+      "flag": "0x22AC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ199",
+      "x": 6,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Npc7",
+      "flag": "0x22AD"
+    }
+  ],
   "warp_events": [
     {
       "x": 9,
@@ -23,7 +128,17 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "var": "0x4A81",
+      "var_value": "1",
+      "script": "Unova_NuvemaTown_PlayersHouse_2F_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

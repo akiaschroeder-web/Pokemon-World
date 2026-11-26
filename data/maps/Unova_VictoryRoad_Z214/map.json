@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_VICTORY_ROAD_Z214",
   "name": "Unova_VictoryRoad_Z214",
   "layout": "LAYOUT_UNOVA_VICTORY_ROAD_Z214",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_CHAMPROAD",
   "region_map_section": "MAPSEC_UNOVA_VICTORY_ROAD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

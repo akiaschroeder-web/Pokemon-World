@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_POKEMON_LEAGUE_Z139",
   "name": "Unova_PokemonLeague_Z139",
   "layout": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z139",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_N_CASTLE_BRIDGE",
   "region_map_section": "MAPSEC_UNOVA_POKEMON_LEAGUE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

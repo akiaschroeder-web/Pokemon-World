@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_BATTLE_SUBWAY_Z75",
   "name": "Unova_BattleSubway_Z75",
   "layout": "LAYOUT_UNOVA_BATTLE_SUBWAY_Z75",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_BATTLE_SUBWAY",
   "region_map_section": "MAPSEC_UNOVA_BATTLE_SUBWAY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ICIRRUS_CITY_Z292_2",
   "name": "Unova_IcirrusCity_Z292_2",
   "layout": "LAYOUT_UNOVA_ICIRRUS_CITY_Z292_2",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_PALACE2",
   "region_map_section": "MAPSEC_UNOVA_ICIRRUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

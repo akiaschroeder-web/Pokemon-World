@@ -1694,6 +1694,15 @@
 #define FLAG_SINNOH_VISITED_FIGHT_AREA              (PW_FLAGS_START + 0x2F)
 #define FLAG_SINNOH_VISITED_SURVIVAL_AREA           (PW_FLAGS_START + 0x30)
 #define FLAG_SINNOH_VISITED_RESORT_AREA             (PW_FLAGS_START + 0x31)
+// Unova's badges (Pokémon Black's gyms award them with TrainerCardAddBadge, src/bw_script.c)
+#define FLAG_UNOVA_BADGE01_GET                      (PW_FLAGS_START + 0x38) // Trio
+#define FLAG_UNOVA_BADGE02_GET                      (PW_FLAGS_START + 0x39) // Basic
+#define FLAG_UNOVA_BADGE03_GET                      (PW_FLAGS_START + 0x3A) // Insect
+#define FLAG_UNOVA_BADGE04_GET                      (PW_FLAGS_START + 0x3B) // Bolt
+#define FLAG_UNOVA_BADGE05_GET                      (PW_FLAGS_START + 0x3C) // Quake
+#define FLAG_UNOVA_BADGE06_GET                      (PW_FLAGS_START + 0x3D) // Jet
+#define FLAG_UNOVA_BADGE07_GET                      (PW_FLAGS_START + 0x3E) // Freeze
+#define FLAG_UNOVA_BADGE08_GET                      (PW_FLAGS_START + 0x3F) // Legend
 #define PW_FLAGS_END                                (PW_FLAGS_START + 0xFF)
 
 #define FLAGS_COUNT (PW_FLAGS_END + 1)
@@ -1706,6 +1715,19 @@
 #define REGION_TRAINER_FLAGS_START              (REGION_FLAGS_START+0x900) // one per trainer from SAVEBLOCK1_TRAINER_FLAGS_COUNT on
 #define REGION_TRAINER_FLAGS_COUNT              0x600
 #define REGION_FLAGS_END                        (REGION_TRAINER_FLAGS_START+REGION_TRAINER_FLAGS_COUNT-1) // 0x1EFF
+// Pokémon World: Unova (Pokémon Black): BW's own flags n are FLAG_UNOVA_START + n, and its
+// trainers' flags follow; they live in SaveBlock1 (unovaFlags, unovaTrainerFlags).
+#define FLAG_UNOVA_START                        0x2000
+#define UNOVA_FLAGS_COUNT                       0xB00   // BW's flags go up to 2764
+// Unova's hidden items: BW's hidden item flags (UNOVA_HIDDEN_ITEM_FLAG_BASE on) don't fit the 13-bit
+// field in the map events, so their ids start at UNOVA_HIDDEN_ITEM_ID_BASE instead (HIDDEN_ITEM_FLAG()).
+#define UNOVA_HIDDEN_ITEM_ID_BASE               0x1E00
+#define UNOVA_HIDDEN_ITEM_FLAG_BASE             900
+#define HIDDEN_ITEM_FLAG(id)                    ((id) >= UNOVA_HIDDEN_ITEM_ID_BASE ? FLAG_UNOVA_START + UNOVA_HIDDEN_ITEM_FLAG_BASE + (id) - UNOVA_HIDDEN_ITEM_ID_BASE : (id) + FLAG_HIDDEN_ITEMS_START)
+#define FLAG_UNOVA_TRAINERS_START               (FLAG_UNOVA_START + UNOVA_FLAGS_COUNT)
+#define UNOVA_TRAINER_FLAGS_COUNT               0x300
+#define FLAG_UNOVA_END                          (FLAG_UNOVA_TRAINERS_START + UNOVA_TRAINER_FLAGS_COUNT - 1)
+#define FLAG_UNOVA_INITIALIZED                  (FLAG_UNOVA_START + UNOVA_FLAGS_COUNT - 1)  // past BW's own
 #define NUM_REGION_FLAG_BYTES                   ((REGION_FLAGS_END - REGION_FLAGS_START + 1) / 8)
 
 #include "constants/flags_hns.h" // Pokémon World: Heart & Soul's Johto and later-Kanto flags (generated)

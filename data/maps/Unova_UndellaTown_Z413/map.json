@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_UNDELLA_TOWN_Z413",
   "name": "Unova_UndellaTown_Z413",
   "layout": "LAYOUT_UNOVA_UNDELLA_TOWN_Z413",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_POKECEN",
   "region_map_section": "MAPSEC_UNOVA_UNDELLA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,6 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ70",
+      "x": 5,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_Z413_EventScript_Npc0",
+      "flag": "0x2291"
+    },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ82",
       "x": 7,

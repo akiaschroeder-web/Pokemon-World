@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ACCUMULA_GATE_Z320",
   "name": "Unova_AccumulaGate_Z320",
   "layout": "LAYOUT_UNOVA_ACCUMULA_GATE_Z320",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GATE",
   "region_map_section": "MAPSEC_UNOVA_ACCUMULA_GATE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

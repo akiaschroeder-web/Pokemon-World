@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_STRIATON_CITY",
   "name": "Unova_StriatonCity",
   "layout": "LAYOUT_UNOVA_STRIATON_CITY",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_01",
   "region_map_section": "MAPSEC_UNOVA_STRIATON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -122,6 +122,45 @@
       "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ187",
+      "x": 52,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_StriatonCity_EventScript_Npc7",
+      "flag": "0x221A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ85",
+      "x": 52,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_StriatonCity_EventScript_Npc8",
+      "flag": "0x221B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ74",
+      "x": 51,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_StriatonCity_EventScript_Npc9",
+      "flag": "0x221C"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ63",
       "x": 4,
       "y": 6,
@@ -159,6 +198,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_StriatonCity_EventScript_Npc12",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 38,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_StriatonCity_EventScript_Npc13",
+      "flag": "0x2552"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 12,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_StriatonCity_EventScript_Npc14",
+      "flag": "0x24E8"
     }
   ],
   "warp_events": [
@@ -233,7 +298,62 @@
       "dest_warp_id": "6"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A88",
+      "var_value": "0",
+      "script": "Unova_StriatonCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A88",
+      "var_value": "0",
+      "script": "Unova_StriatonCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A88",
+      "var_value": "0",
+      "script": "Unova_StriatonCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A88",
+      "var_value": "2",
+      "script": "Unova_StriatonCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A88",
+      "var_value": "2",
+      "script": "Unova_StriatonCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A88",
+      "var_value": "2",
+      "script": "Unova_StriatonCity_EventScript_Trigger1"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -260,20 +380,24 @@
       "script": "Unova_StriatonCity_EventScript_Sign2"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 8,
       "y": 3,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_StriatonCity_EventScript_Sign3"
+      "item": "ITEM_BALMMUSHROOM",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+0)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 26,
       "y": 6,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_StriatonCity_EventScript_Sign4"
+      "item": "ITEM_ZINC",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+1)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
       "type": "sign",

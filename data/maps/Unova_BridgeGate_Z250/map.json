@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_BRIDGE_GATE_Z250",
   "name": "Unova_BridgeGate_Z250",
   "layout": "LAYOUT_UNOVA_BRIDGE_GATE_Z250",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_R_B_SP",
   "region_map_section": "MAPSEC_UNOVA_BRIDGE_GATE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

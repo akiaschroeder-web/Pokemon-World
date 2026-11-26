@@ -47,6 +47,7 @@ enum MusicStyle
     MUSIC_STYLE_SINNOH,     // the Sinnoh port's
     MUSIC_STYLE_HGSS_JOHTO, // Heart & Soul's Johto
     MUSIC_STYLE_HGSS_KANTO, // Heart & Soul's later Kanto
+    MUSIC_STYLE_UNOVA,      // Pokémon Black's
 };
 
 static inline bool32 IsHnsMapGroup(u32 mapGroup)
@@ -64,6 +65,8 @@ static inline enum MusicStyle GetCurrentMusicStyle(void)
         return IsHnsMapGroup(gSaveBlock1Ptr->location.mapGroup) ? MUSIC_STYLE_HGSS_KANTO : MUSIC_STYLE_FRLG;
     case REGION_SINNOH:
         return MUSIC_STYLE_SINNOH;
+    case REGION_UNOVA:
+        return MUSIC_STYLE_UNOVA;
     default:
         return MUSIC_STYLE_HOENN;
     }

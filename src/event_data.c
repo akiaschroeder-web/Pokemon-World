@@ -170,6 +170,8 @@ u16 *GetVarPointer(u16 id)
         return &gSaveBlock1Ptr->vars[id - VARS_START];
     else if (id >= REGION_VARS_START && id <= REGION_VARS_END) // Pokémon World
         return &gSaveBlock3Ptr->regionVars[id - REGION_VARS_START];
+    else if (id >= VAR_UNOVA_START && id <= VAR_UNOVA_END) // Pokémon World: Unova
+        return &gSaveBlock1Ptr->unovaVars[id - VAR_UNOVA_START];
     else if (id < SPECIAL_VARS_START)
         return NULL;
 #if TESTING
@@ -218,6 +220,10 @@ u8 *GetFlagPointer(u16 id)
         return &gSaveBlock1Ptr->flags[id / 8];
     else if (id >= REGION_FLAGS_START && id <= REGION_FLAGS_END) // Pokémon World
         return &gSaveBlock3Ptr->regionFlags[(id - REGION_FLAGS_START) / 8];
+    else if (id >= FLAG_UNOVA_START && id < FLAG_UNOVA_TRAINERS_START) // Pokémon World: Unova
+        return &gSaveBlock1Ptr->unovaFlags[(id - FLAG_UNOVA_START) / 8];
+    else if (id >= FLAG_UNOVA_TRAINERS_START && id <= FLAG_UNOVA_END)
+        return &gSaveBlock1Ptr->unovaTrainerFlags[(id - FLAG_UNOVA_TRAINERS_START) / 8];
     else if (id < SPECIAL_FLAGS_START)
         return NULL;
 #if TESTING

@@ -289,7 +289,7 @@
     sprites.slice().sort(function (a, b) { return b.order - a.order; }).forEach(function (s) {
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, s.w, s.h, 0, gl.RGBA, gl.UNSIGNED_BYTE, s.image);
       gl.uniform3fv(uPos, [s.x, s.y, s.z]);
-      gl.uniform2fv(uSize, [s.w, s.h]);
+      gl.uniform2fv(uSize, [s.w * (s.scale || 1), s.h * (s.scale || 1)]);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     });
     gl.disableVertexAttribArray(aCorner);

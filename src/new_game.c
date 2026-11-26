@@ -145,6 +145,11 @@ static void WarpToTruck(void)
     {
         SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), MAP_NUM(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), WARP_ID_NONE, -1, -1);
     }
+    else if (PW_GetStartRegion() == REGION_UNOVA)
+    {
+        SetWarpDestination(MAP_GROUP(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_UNOVA_NUVEMA_TOWN_PLAYERS_HOUSE_2F), 0, -1, -1);
+        SetLastHealLocationWarp(HEAL_LOCATION_NUVEMA_TOWN);
+    }
     else if (PW_GetStartRegion() == REGION_JOHTO)
     {
         // Where Heart & Soul's new game begins: the player's room in New Bark Town (its warp 1).

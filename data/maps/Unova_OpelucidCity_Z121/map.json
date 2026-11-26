@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_OPELUCID_CITY_Z121",
   "name": "Unova_OpelucidCity_Z121",
   "layout": "LAYOUT_UNOVA_OPELUCID_CITY_Z121",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GYM",
   "region_map_section": "MAPSEC_UNOVA_OPELUCID_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -22,8 +22,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc0",
       "flag": "0"
     },
@@ -35,8 +35,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc1",
       "flag": "0"
     },
@@ -48,8 +48,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc2",
       "flag": "0"
     },
@@ -61,8 +61,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc3",
       "flag": "0"
     },
@@ -87,8 +87,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc5",
       "flag": "0"
     },
@@ -100,8 +100,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc6",
       "flag": "0"
     },
@@ -113,8 +113,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_OpelucidCity_Z121_EventScript_Npc7",
       "flag": "0"
     },
@@ -162,7 +162,62 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 29,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_OpelucidCity_Z121_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 29,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_OpelucidCity_Z121_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 22,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_OpelucidCity_Z121_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 22,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_OpelucidCity_Z121_EventScript_Trigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 27,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_OpelucidCity_Z121_EventScript_Trigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 27,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_OpelucidCity_Z121_EventScript_Trigger5"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

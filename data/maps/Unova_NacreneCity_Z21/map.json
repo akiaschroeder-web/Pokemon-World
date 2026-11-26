@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_NACRENE_CITY_Z21",
   "name": "Unova_NacreneCity_Z21",
   "layout": "LAYOUT_UNOVA_NACRENE_CITY_Z21",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_02",
   "region_map_section": "MAPSEC_UNOVA_NACRENE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

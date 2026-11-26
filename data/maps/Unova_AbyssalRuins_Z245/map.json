@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ABYSSAL_RUINS_Z245",
   "name": "Unova_AbyssalRuins_Z245",
   "layout": "LAYOUT_UNOVA_ABYSSAL_RUINS_Z245",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_DIVING",
   "region_map_section": "MAPSEC_UNOVA_ABYSSAL_RUINS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -39,9 +39,2220 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_AbyssalRuins_Z245_EventScript_Npc1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 60,
+      "y": 83,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc2",
+      "flag": "0x2506"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 36,
+      "y": 101,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc3",
+      "flag": "0x2507"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 48,
+      "y": 101,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc4",
+      "flag": "0x2508"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 90,
+      "y": 92,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc5",
+      "flag": "0x2509"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 36,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc6",
+      "flag": "0x251E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 72,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc7",
+      "flag": "0x2514"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 111,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc8",
+      "flag": "0x250F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 42,
+      "y": 50,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc9",
+      "flag": "0x2512"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 48,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc10",
+      "flag": "0x2519"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 66,
+      "y": 65,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc11",
+      "flag": "0x2513"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 78,
+      "y": 56,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc12",
+      "flag": "0x250E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 117,
+      "y": 50,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc13",
+      "flag": "0x251A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 123,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc14",
+      "flag": "0x250D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 54,
+      "y": 89,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc15",
+      "flag": "0x2516"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 81,
+      "y": 68,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc16",
+      "flag": "0x2524"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 99,
+      "y": 86,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc17",
+      "flag": "0x250C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 96,
+      "y": 80,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc18",
+      "flag": "0x2520"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 102,
+      "y": 74,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc19",
+      "flag": "0x2515"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 36,
+      "y": 122,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc20",
+      "flag": "0x250A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 60,
+      "y": 107,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc21",
+      "flag": "0x2521"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 78,
+      "y": 92,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc22",
+      "flag": "0x2511"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 99,
+      "y": 116,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc23",
+      "flag": "0x251D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 84,
+      "y": 122,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc24",
+      "flag": "0x2518"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 120,
+      "y": 122,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc25",
+      "flag": "0x250B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 114,
+      "y": 104,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc26",
+      "flag": "0x251C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 84,
+      "y": 44,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Npc27",
+      "flag": "0x2510"
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 82,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 67,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 67,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 67,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 77,
+      "y": 16,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 16,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 16,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 140,
+      "y": 70,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 141,
+      "y": 70,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 142,
+      "y": 70,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 68,
+      "y": 145,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 69,
+      "y": 145,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 70,
+      "y": 145,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 115,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 115,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 115,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 116,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 116,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 116,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 117,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 117,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 117,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 118,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 118,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 118,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger5"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 88,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 88,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 88,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 89,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 89,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 89,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 90,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 90,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 90,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 91,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 91,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 91,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger6"
+    },
+    {
+      "type": "trigger",
+      "x": 71,
+      "y": 34,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 72,
+      "y": 34,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 73,
+      "y": 34,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger7"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 77,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 77,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 77,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 78,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 78,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 78,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger8"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 97,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 97,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 97,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 98,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 98,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 98,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 99,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 99,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 99,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 86,
+      "y": 100,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 87,
+      "y": 100,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 88,
+      "y": 100,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger9"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 73,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 73,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 73,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 74,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 74,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 74,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 75,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 75,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 75,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger10"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 37,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 37,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 37,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 38,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 38,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 38,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 39,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 39,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 39,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 40,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 40,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 40,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger11"
+    },
+    {
+      "type": "trigger",
+      "x": 77,
+      "y": 52,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 52,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 52,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 77,
+      "y": 53,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 53,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 53,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 77,
+      "y": 54,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 54,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 54,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 77,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 78,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger12"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 37,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 37,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 37,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 38,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 38,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 38,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 39,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 39,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 39,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 40,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 40,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 40,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger13"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 52,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 52,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 52,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 53,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 53,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 53,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 54,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 54,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 54,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger14"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 88,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 88,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 88,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 89,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 89,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 89,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 90,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 90,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 90,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 119,
+      "y": 91,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 120,
+      "y": 91,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 121,
+      "y": 91,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger15"
+    },
+    {
+      "type": "trigger",
+      "x": 122,
+      "y": 100,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 123,
+      "y": 100,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 124,
+      "y": 100,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 122,
+      "y": 101,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 123,
+      "y": 101,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 124,
+      "y": 101,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 122,
+      "y": 102,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 123,
+      "y": 102,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 124,
+      "y": 102,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 122,
+      "y": 103,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 123,
+      "y": 103,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 124,
+      "y": 103,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger16"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 106,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 106,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 106,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 107,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 107,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 107,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 108,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 108,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 108,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 104,
+      "y": 109,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 105,
+      "y": 109,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 106,
+      "y": 109,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger17"
+    },
+    {
+      "type": "trigger",
+      "x": 56,
+      "y": 112,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger18"
+    },
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 112,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger18"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 112,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger18"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 109,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 109,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 109,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 110,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 110,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 110,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 111,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 111,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 111,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 112,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 112,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 112,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 56,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 56,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 56,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 57,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 57,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 57,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 58,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 58,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 58,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger20"
+    },
+    {
+      "type": "trigger",
+      "x": 80,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger21"
+    },
+    {
+      "type": "trigger",
+      "x": 81,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger21"
+    },
+    {
+      "type": "trigger",
+      "x": 82,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger21"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 76,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "1",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger22"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 77,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "1",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger22"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 78,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "1",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger22"
+    },
+    {
+      "type": "trigger",
+      "x": 79,
+      "y": 79,
+      "elevation": 0,
+      "var": "0x4ADD",
+      "var_value": "1",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger22"
+    },
+    {
+      "type": "trigger",
+      "x": 92,
+      "y": 67,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 67,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 67,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 92,
+      "y": 68,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 68,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 68,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 92,
+      "y": 69,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 69,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 69,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 92,
+      "y": 70,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 93,
+      "y": 70,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    },
+    {
+      "type": "trigger",
+      "x": 94,
+      "y": 70,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_AbyssalRuins_Z245_EventScript_Trigger23"
+    }
+  ],
   "bg_events": []
 }

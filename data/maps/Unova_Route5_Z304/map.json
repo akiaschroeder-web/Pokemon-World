@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ROUTE5_Z304",
   "name": "Unova_Route5_Z304",
   "layout": "LAYOUT_UNOVA_ROUTE5_Z304",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_BW_PALACE2",
   "region_map_section": "MAPSEC_UNOVA_ROUTE_5",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -66,12 +66,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 50,
       "y": 21,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_Route5_Z304_EventScript_Sign0"
+      "item": "ITEM_PASS_ORB",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+28)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

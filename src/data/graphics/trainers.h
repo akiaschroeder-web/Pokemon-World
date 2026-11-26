@@ -735,6 +735,7 @@ const u8 gTrainerBackPic_PwKris[] = INCGFX_U8("graphics/trainers/back_pics/kris_
 const u16 gTrainerBackPicPalette_PwKris[] = INCGFX_U16("graphics/trainers/back_pics/kris_hns.png", ".gbapal");
 
 #include "trainers_hns_gfx.h" // Pokémon World: Heart & Soul's front pics (generated)
+#include "trainers_unova_gfx.h" // Pokémon World: Pokémon Black's battle pictures (generated)
 
 const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
 {
@@ -1657,4 +1658,5 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
         .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_PwKris, gTrainerBackPicPalette_PwKris, sBackAnims_Hoenn),
     },
 #include "trainers_hns_table.h" // Pokémon World: Heart & Soul's front pics (generated)
+#include "trainers_unova_table.h" // Pokémon World: Pokémon Black's battle pictures (generated)
 };

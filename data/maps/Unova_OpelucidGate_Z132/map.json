@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_OPELUCID_GATE_Z132",
   "name": "Unova_OpelucidGate_Z132",
   "layout": "LAYOUT_UNOVA_OPELUCID_GATE_Z132",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GATE",
   "region_map_section": "MAPSEC_UNOVA_OPELUCID_GATE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -98,7 +98,62 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "var": "0x4AB8",
+      "var_value": "2",
+      "script": "Unova_OpelucidGate_Z132_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 11,
+      "elevation": 0,
+      "var": "0x4AB8",
+      "var_value": "2",
+      "script": "Unova_OpelucidGate_Z132_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 11,
+      "elevation": 0,
+      "var": "0x4AB8",
+      "var_value": "2",
+      "script": "Unova_OpelucidGate_Z132_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 11,
+      "elevation": 0,
+      "var": "0x4AB8",
+      "var_value": "2",
+      "script": "Unova_OpelucidGate_Z132_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "var": "0x4AB8",
+      "var_value": "2",
+      "script": "Unova_OpelucidGate_Z132_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "var": "0x4AB8",
+      "var_value": "2",
+      "script": "Unova_OpelucidGate_Z132_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -271,6 +271,22 @@
 	@ 'callnative's should set 'requests_effects=1' if the native
 	@ contains a call to 'Script_RequestEffects', which allows them
 	@ to be analyzed by 'RunScriptImmediatelyUntilEffect'.
+	@ Pokémon World: runs Pokémon Black's script <scrid> for BW zone <zone> (src/bw_script.c), to its end.
+	.macro bwscript zone:req, scrid:req
+	.byte SCR_OP_CALLNATIVE
+	.4byte Script_BwScript
+	.2byte \zone
+	.2byte \scrid
+	.endm
+
+	@ The same for a map's on-load scripts (run straight through: they can't wait for anything).
+	.macro bwscript_init zone:req, scrid:req
+	.byte SCR_OP_CALLNATIVE
+	.4byte Script_BwScriptInit
+	.2byte \zone
+	.2byte \scrid
+	.endm
+
 	.macro callnative func:req, requests_effects=0, waitstate=0
 	.byte SCR_OP_CALLNATIVE
 	.if \requests_effects == 0

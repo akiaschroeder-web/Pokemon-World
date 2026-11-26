@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_DRAGONSPIRAL_TOWER_Z209",
   "name": "Unova_DragonspiralTower_Z209",
   "layout": "LAYOUT_UNOVA_DRAGONSPIRAL_TOWER_Z209",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_05",
   "region_map_section": "MAPSEC_UNOVA_DRAGONSPIRAL_TOWER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

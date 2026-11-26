@@ -2136,3 +2136,5 @@ const u32 gItemIcon_TidalBell_Hns[] = INCGFX_U32("graphics/items/icons/hns/tidal
 const u16 gItemIconPalette_TidalBell_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/tidalbell.pal", ".gbapal");
 const u32 gItemIcon_Radio_Hns[] = INCGFX_U32("graphics/items/icons/hns/radio.png", ".4bpp.smol");
 const u16 gItemIconPalette_Radio_Hns[] = INCGFX_U16("graphics/items/icon_palettes/hns/radio.pal", ".gbapal");
+
+#include "items_unova.h" // Pokémon World: Pokémon Black's key item icons (generated)

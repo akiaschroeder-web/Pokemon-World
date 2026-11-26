@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_NACRENE_CITY_Z18",
   "name": "Unova_NacreneCity_Z18",
   "layout": "LAYOUT_UNOVA_NACRENE_CITY_Z18",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GYM",
   "region_map_section": "MAPSEC_UNOVA_NACRENE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -74,8 +74,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "7",
       "script": "Unova_NacreneCity_Z18_EventScript_Npc4",
       "flag": "0"
     }
@@ -110,7 +110,35 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 29,
+      "elevation": 0,
+      "var": "0x4A8A",
+      "var_value": "0",
+      "script": "Unova_NacreneCity_Z18_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 29,
+      "elevation": 0,
+      "var": "0x4A8A",
+      "var_value": "0",
+      "script": "Unova_NacreneCity_Z18_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 29,
+      "elevation": 0,
+      "var": "0x4A8A",
+      "var_value": "0",
+      "script": "Unova_NacreneCity_Z18_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

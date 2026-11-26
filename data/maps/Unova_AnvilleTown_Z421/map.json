@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ANVILLE_TOWN_Z421",
   "name": "Unova_AnvilleTown_Z421",
   "layout": "LAYOUT_UNOVA_ANVILLE_TOWN_Z421",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_T_03",
   "region_map_section": "MAPSEC_UNOVA_ANVILLE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

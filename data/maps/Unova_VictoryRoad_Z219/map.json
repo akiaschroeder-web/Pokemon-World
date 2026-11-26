@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_VICTORY_ROAD_Z219",
   "name": "Unova_VictoryRoad_Z219",
   "layout": "LAYOUT_UNOVA_VICTORY_ROAD_Z219",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_CHAMPROAD",
   "region_map_section": "MAPSEC_UNOVA_VICTORY_ROAD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -33,12 +33,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 3,
       "y": 9,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_VictoryRoad_Z219_EventScript_Sign0"
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+90)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

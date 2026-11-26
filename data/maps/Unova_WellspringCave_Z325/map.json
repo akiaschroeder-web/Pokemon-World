@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_WELLSPRING_CAVE_Z325",
   "name": "Unova_WellspringCave_Z325",
   "layout": "LAYOUT_UNOVA_WELLSPRING_CAVE_Z325",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_02",
   "region_map_section": "MAPSEC_UNOVA_WELLSPRING_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +15,45 @@
   "connections": null,
   "object_events": [
     {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 17,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_WellspringCave_Z325_EventScript_Npc0",
+      "flag": "0x24D9"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 25,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_WellspringCave_Z325_EventScript_Npc1",
+      "flag": "0x24DB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 27,
+      "y": 53,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_WellspringCave_Z325_EventScript_Npc2",
+      "flag": "0x24DD"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ46",
       "x": 14,
       "y": 35,
@@ -22,10 +61,23 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_WellspringCave_Z325_EventScript_Npc3",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 15,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_WellspringCave_Z325_EventScript_Npc4",
+      "flag": "0x24DC"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ47",
@@ -35,8 +87,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_WellspringCave_Z325_EventScript_Npc5",
       "flag": "0"
     },
@@ -48,8 +100,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_WellspringCave_Z325_EventScript_Npc6",
       "flag": "0"
     }
@@ -66,36 +118,44 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 22,
       "y": 4,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_WellspringCave_Z325_EventScript_Sign0"
+      "item": "ITEM_MAX_ELIXIR",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+122)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 23,
       "y": 55,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_WellspringCave_Z325_EventScript_Sign1"
+      "item": "ITEM_MAX_POTION",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+164)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 25,
       "y": 41,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_WellspringCave_Z325_EventScript_Sign2"
+      "item": "ITEM_REVIVE",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+163)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 12,
       "y": 26,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_WellspringCave_Z325_EventScript_Sign3"
+      "item": "ITEM_HYPER_POTION",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+136)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

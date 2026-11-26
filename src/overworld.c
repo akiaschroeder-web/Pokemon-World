@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bw_script.h"
 #include "platform/web3d.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
@@ -1257,8 +1258,8 @@ u16 GetLocationMusic(struct WarpData *warp)
     const struct MapHeader *mapHeader = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum);
     if (mapHeader->nightMusic != MUS_NONE && GetTimeOfDay() == TIME_NIGHT)
         return mapHeader->nightMusic;
-    
-    return mapHeader->music;
+
+    return BwSeasonMusic(mapHeader->music); // Pokémon World: Unova's routes change with the season
 }
 
 u16 GetCurrLocationDefaultMusic(void)

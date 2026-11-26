@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA__Z422",
   "name": "Unova__Z422",
   "layout": "LAYOUT_UNOVA__Z422",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_POKECEN",
   "region_map_section": "MAPSEC_UNOVA_UNOVA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_NIMBASA_CITY",
   "name": "Unova_NimbasaCity",
   "layout": "LAYOUT_UNOVA_NIMBASA_CITY",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_04",
   "region_map_section": "MAPSEC_UNOVA_NIMBASA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -138,6 +138,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_NimbasaCity_EventScript_Npc7",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ98",
+      "x": 47,
+      "y": 49,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NimbasaCity_EventScript_Npc8",
+      "flag": "0x221F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ98",
+      "x": 48,
+      "y": 50,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NimbasaCity_EventScript_Npc9",
+      "flag": "0x221F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ28",
+      "x": 44,
+      "y": 50,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NimbasaCity_EventScript_Npc10",
+      "flag": "0x221F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ134",
+      "x": 49,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NimbasaCity_EventScript_Npc11",
+      "flag": "0x2231"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ24",
+      "x": 47,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_NimbasaCity_EventScript_Npc12",
+      "flag": "0x227F"
     }
   ],
   "warp_events": [
@@ -289,7 +354,143 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 20,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "1",
+      "script": "Unova_NimbasaCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "1",
+      "script": "Unova_NimbasaCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 22,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "1",
+      "script": "Unova_NimbasaCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 23,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "1",
+      "script": "Unova_NimbasaCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 24,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "1",
+      "script": "Unova_NimbasaCity_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 55,
+      "elevation": 0,
+      "var": "0x4A89",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 44,
+      "elevation": 0,
+      "var": "0x4AD6",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 44,
+      "elevation": 0,
+      "var": "0x4AD6",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 44,
+      "elevation": 0,
+      "var": "0x4AD6",
+      "var_value": "0",
+      "script": "Unova_NimbasaCity_EventScript_Trigger2"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

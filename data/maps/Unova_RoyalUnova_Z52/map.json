@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ROYAL_UNOVA_Z52",
   "name": "Unova_RoyalUnova_Z52",
   "layout": "LAYOUT_UNOVA_ROYAL_UNOVA_Z52",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_PLEASURE_BOAT",
   "region_map_section": "MAPSEC_UNOVA_ROYAL_UNOVA",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -762,6 +762,34 @@
       "dest_warp_id": "56"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 10,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_RoyalUnova_Z52_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 10,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_RoyalUnova_Z52_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 10,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "0",
+      "script": "Unova_RoyalUnova_Z52_EventScript_Trigger0"
+    }
+  ],
   "bg_events": []
 }

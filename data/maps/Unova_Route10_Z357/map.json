@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ROUTE10_Z357",
   "name": "Unova_Route10_Z357",
   "layout": "LAYOUT_UNOVA_ROUTE10_Z357",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_BW_D_CHAMPROAD",
   "region_map_section": "MAPSEC_UNOVA_ROUTE_10",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -100,6 +100,52 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_Route10_Z357_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_Route10_Z357_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_Route10_Z357_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_Route10_Z357_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_Route10_Z357_EventScript_Trigger0"
+    }
+  ],
   "bg_events": []
 }

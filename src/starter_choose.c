@@ -130,6 +130,14 @@ static const u16 sStarterMonSinnoh[STARTER_MON_COUNT] =
     SPECIES_PIPLUP,
 };
 
+// Pokémon World: Unova's, in the order Pokémon Black's gift box returns them (src/bw_script.c)
+static const u16 sStarterMonUnova[STARTER_MON_COUNT] =
+{
+    SPECIES_SNIVY,
+    SPECIES_TEPIG,
+    SPECIES_OSHAWOTT,
+};
+
 static const struct BgTemplate sBgTemplates[3] =
 {
     {
@@ -362,6 +370,8 @@ u16 GetStarterPokemon(u16 chosenStarterId)
         chosenStarterId = 0;
     if (GetCurrentRegion() == REGION_SINNOH)
         return sStarterMonSinnoh[chosenStarterId];
+    if (GetCurrentRegion() == REGION_UNOVA)
+        return sStarterMonUnova[chosenStarterId];
     return sStarterMon[chosenStarterId];
 }
 

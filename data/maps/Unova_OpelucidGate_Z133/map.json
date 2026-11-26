@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_OPELUCID_GATE_Z133",
   "name": "Unova_OpelucidGate_Z133",
   "layout": "LAYOUT_UNOVA_OPELUCID_GATE_Z133",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GATE",
   "region_map_section": "MAPSEC_UNOVA_OPELUCID_GATE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,6 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ72",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Npc0",
+      "flag": "0x22F8"
+    },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ76",
       "x": 13,
@@ -72,7 +85,62 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "var": "0x4AD0",
+      "var_value": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "var": "0x4AD0",
+      "var_value": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "0x4AD0",
+      "var_value": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4AD0",
+      "var_value": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "var": "0x4AD0",
+      "var_value": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4AD0",
+      "var_value": "0",
+      "script": "Unova_OpelucidGate_Z133_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

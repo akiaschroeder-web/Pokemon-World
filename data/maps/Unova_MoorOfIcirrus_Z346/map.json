@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_MOOR_OF_ICIRRUS_Z346",
   "name": "Unova_MoorOfIcirrus_Z346",
   "layout": "LAYOUT_UNOVA_MOOR_OF_ICIRRUS_Z346",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_01",
   "region_map_section": "MAPSEC_UNOVA_MOOR_OF_ICIRRUS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,6 +14,71 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ122",
+      "x": 24,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc0",
+      "flag": "0x22B8"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ115",
+      "x": 24,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc1",
+      "flag": "0x22B5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ116",
+      "x": 22,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc2",
+      "flag": "0x22B6"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ117",
+      "x": 26,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc3",
+      "flag": "0x22B7"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ28",
+      "x": 25,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc4",
+      "flag": "0x22BA"
+    },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 16,
@@ -35,8 +100,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc6",
       "flag": "0"
     },
@@ -48,8 +113,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc7",
       "flag": "0"
     },
@@ -61,8 +126,8 @@
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc8",
       "flag": "0"
     },
@@ -74,10 +139,75 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc9",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 45,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc10",
+      "flag": "0x2517"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 15,
+      "y": 53,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc11",
+      "flag": "0x251B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 31,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc12",
+      "flag": "0x251F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 42,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc13",
+      "flag": "0x2522"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 6,
+      "y": 44,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Npc14",
+      "flag": "0x2523"
     }
   ],
   "warp_events": [
@@ -99,36 +229,44 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 17,
       "y": 51,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Sign0"
+      "item": "ITEM_MAX_ETHER",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+137)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 42,
       "y": 40,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Sign1"
+      "item": "ITEM_NUGGET",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+138)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 38,
       "y": 28,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Sign2"
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+139)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 20,
       "y": 12,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_MoorOfIcirrus_Z346_EventScript_Sign3"
+      "item": "ITEM_REVIVE",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+140)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

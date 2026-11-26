@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_DRIFTVEIL_CITY_Z105",
   "name": "Unova_DriftveilCity_Z105",
   "layout": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z105",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_05",
   "region_map_section": "MAPSEC_UNOVA_DRIFTVEIL_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -104,6 +104,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_DriftveilCity_Z105_EventScript_Npc6",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 2,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_DriftveilCity_Z105_EventScript_Npc7",
+      "flag": "0x24CF"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ98",
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_DriftveilCity_Z105_EventScript_Npc8",
+      "flag": "0x22CD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ23",
@@ -208,12 +234,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 7,
       "y": 13,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_DriftveilCity_Z105_EventScript_Sign0"
+      "item": "ITEM_HEART_SCALE",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+157)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

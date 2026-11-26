@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_DRIFTVEIL_CITY_Z103",
   "name": "Unova_DriftveilCity_Z103",
   "layout": "LAYOUT_UNOVA_DRIFTVEIL_CITY_Z103",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_05",
   "region_map_section": "MAPSEC_UNOVA_DRIFTVEIL_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

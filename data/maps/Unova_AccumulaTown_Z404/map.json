@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ACCUMULA_TOWN_Z404",
   "name": "Unova_AccumulaTown_Z404",
   "layout": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z404",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_T_02",
   "region_map_section": "MAPSEC_UNOVA_ACCUMULA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_MARVELOUS_BRIDGE_Z263",
   "name": "Unova_MarvelousBridge_Z263",
   "layout": "LAYOUT_UNOVA_MARVELOUS_BRIDGE_Z263",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_H_05",
   "region_map_section": "MAPSEC_UNOVA_MARVELOUS_BRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -14,6 +14,58 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ182",
+      "x": 63,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc0",
+      "flag": "0x233D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ182",
+      "x": 63,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc1",
+      "flag": "0x233D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ182",
+      "x": 63,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc2",
+      "flag": "0x233D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ15",
+      "x": 148,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc3",
+      "flag": "0x2342"
+    },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ20",
       "x": 146,
@@ -39,6 +91,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_MarvelousBridge_Z263_EventScript_Npc5",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ22",
+      "x": 104,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc6",
+      "flag": "0x2343"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ128",
+      "x": 105,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc7",
+      "flag": "0x2343"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ128",
+      "x": 106,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc8",
+      "flag": "0x2343"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ128",
+      "x": 107,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc9",
+      "flag": "0x2343"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ128",
+      "x": 108,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Npc10",
+      "flag": "0x2343"
     }
   ],
   "warp_events": [
@@ -57,6 +174,97 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 31,
+      "elevation": 0,
+      "var": "0x4AE5",
+      "var_value": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 32,
+      "elevation": 0,
+      "var": "0x4AE5",
+      "var_value": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 33,
+      "elevation": 0,
+      "var": "0x4AE5",
+      "var_value": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 34,
+      "elevation": 0,
+      "var": "0x4AE5",
+      "var_value": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 35,
+      "elevation": 0,
+      "var": "0x4AE5",
+      "var_value": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 64,
+      "y": 36,
+      "elevation": 0,
+      "var": "0x4AE5",
+      "var_value": "0",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 148,
+      "y": 35,
+      "elevation": 0,
+      "var": "0x4AE6",
+      "var_value": "1",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 147,
+      "y": 36,
+      "elevation": 0,
+      "var": "0x4AE6",
+      "var_value": "1",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 148,
+      "y": 36,
+      "elevation": 0,
+      "var": "0x4AE6",
+      "var_value": "1",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 149,
+      "y": 36,
+      "elevation": 0,
+      "var": "0x4AE6",
+      "var_value": "1",
+      "script": "Unova_MarvelousBridge_Z263_EventScript_Trigger2"
+    }
+  ],
   "bg_events": []
 }

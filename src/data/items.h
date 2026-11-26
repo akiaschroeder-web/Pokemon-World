@@ -16458,6 +16458,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_TIDAL_BELL]   = HNS_KEY_ITEM("Tidal Bell", "Old-fashioned bell\nwith a gentle,\nsoothing sound.", TidalBell),
     [ITEM_MYSTERY_EGG]  = HNS_KEY_ITEM("Mystery Egg", "Obtained from MR.\nPOKéMON. Who knows\nwhat's inside?", MysteryEgg),
 #undef HNS_KEY_ITEM
+#include "items_unova.h" // Pokémon World: Pokémon Black's key items (generated)
 
     [ITEM_SQUIRT_BOTTLE] =
     {

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_POKEMON_LEAGUE_Z137",
   "name": "Unova_PokemonLeague_Z137",
   "layout": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z137",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_POKEMON_LEAGUE",
   "region_map_section": "MAPSEC_UNOVA_POKEMON_LEAGUE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

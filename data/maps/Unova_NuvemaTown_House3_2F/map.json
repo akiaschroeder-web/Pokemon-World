@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_NUVEMA_TOWN_HOUSE3_2F",
   "name": "Unova_NuvemaTown_House3_2F",
   "layout": "LAYOUT_UNOVA_NUVEMA_TOWN_HOUSE3_2F",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_T_01",
   "region_map_section": "MAPSEC_UNOVA_NUVEMA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

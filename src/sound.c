@@ -74,8 +74,13 @@ static const struct Fanfare sFanfaresHGSS[ARRAY_COUNT(sFanfares)] = {
     [FANFARE_REGISTER_MATCH_CALL] = { MUS_HG_POKEGEAR_REGISTERED, 185 },
 };
 
+// Pokémon World: Pokémon Black's in Unova (lengths from bw/music.py)
+#include "data/bw_fanfares.h"
+
 static const struct Fanfare *GetFanfare(u8 fanfareNum)
 {
+    if (sFanfaresBW[fanfareNum].songNum && GetCurrentMusicStyle() == MUSIC_STYLE_UNOVA)
+        return &sFanfaresBW[fanfareNum];
     if (sFanfaresHGSS[fanfareNum].songNum && IsHgssMusicStyle(GetCurrentMusicStyle()))
         return &sFanfaresHGSS[fanfareNum];
     return &sFanfares[fanfareNum];

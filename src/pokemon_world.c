@@ -257,7 +257,7 @@ enum TrainerPicID PW_SubstituteOpponentTrainerPic(enum TrainerClassID trainerCla
 // ---------------------------------------------------------------- badges
 
 // Regions in the order the Badge Case lists them.
-static const u8 sBadgeRegions[] = {REGION_KANTO, REGION_JOHTO, REGION_HOENN, REGION_SINNOH};
+static const u8 sBadgeRegions[] = {REGION_KANTO, REGION_JOHTO, REGION_HOENN, REGION_SINNOH, REGION_UNOVA};
 
 static const u16 sBadgeFlags[][PW_BADGES_PER_REGION] =
 {
@@ -269,11 +269,13 @@ static const u16 sBadgeFlags[][PW_BADGES_PER_REGION] =
                       FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET},
     [REGION_SINNOH] = {FLAG_SINNOH_BADGE01_GET, FLAG_SINNOH_BADGE02_GET, FLAG_SINNOH_BADGE03_GET, FLAG_SINNOH_BADGE04_GET,
                        FLAG_SINNOH_BADGE05_GET, FLAG_SINNOH_BADGE06_GET, FLAG_SINNOH_BADGE07_GET, FLAG_SINNOH_BADGE08_GET},
+    [REGION_UNOVA] = {FLAG_UNOVA_BADGE01_GET, FLAG_UNOVA_BADGE02_GET, FLAG_UNOVA_BADGE03_GET, FLAG_UNOVA_BADGE04_GET,
+                      FLAG_UNOVA_BADGE05_GET, FLAG_UNOVA_BADGE06_GET, FLAG_UNOVA_BADGE07_GET, FLAG_UNOVA_BADGE08_GET},
 };
 
 // Which badge (1-8, 0 = none) in each region lets a field move be used outside battle.
 // A move works once you have its badge from any region, so nothing has to be redone.
-static const u8 sFieldMoveBadges[][REGION_SINNOH + 1] =
+static const u8 sFieldMoveBadges[][REGION_UNOVA + 1] =
 {
     //                          Kanto Johto Hoenn Sinnoh
     [FIELD_MOVE_CUT]       = { [REGION_KANTO] = 2, [REGION_JOHTO] = 2, [REGION_HOENN] = 1, [REGION_SINNOH] = 2 },

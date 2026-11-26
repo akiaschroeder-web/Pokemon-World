@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_UNDELLA_TOWN",
   "name": "Unova_UndellaTown",
   "layout": "LAYOUT_UNOVA_UNDELLA_TOWN",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_T_05_SP",
   "region_map_section": "MAPSEC_UNOVA_UNDELLA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -36,6 +36,19 @@
   ],
   "object_events": [
     {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ12",
+      "x": 12,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc0",
+      "flag": "0x22E5"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ17",
       "x": 42,
       "y": 15,
@@ -47,6 +60,84 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_UndellaTown_EventScript_Npc1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ20",
+      "x": 40,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc2",
+      "flag": "0x2322"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ30",
+      "x": 30,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc3",
+      "flag": "0x2322"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ65",
+      "x": 23,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc4",
+      "flag": "0x2322"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ84",
+      "x": 38,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc5",
+      "flag": "0x2322"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ9",
+      "x": 7,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc6",
+      "flag": "0x2322"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 21,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_UndellaTown_EventScript_Npc7",
+      "flag": "0x2525"
     }
   ],
   "warp_events": [

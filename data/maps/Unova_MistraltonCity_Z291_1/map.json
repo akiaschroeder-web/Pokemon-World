@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_MISTRALTON_CITY_Z291_1",
   "name": "Unova_MistraltonCity_Z291_1",
   "layout": "LAYOUT_UNOVA_MISTRALTON_CITY_Z291_1",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_PALACE2",
   "region_map_section": "MAPSEC_UNOVA_MISTRALTON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

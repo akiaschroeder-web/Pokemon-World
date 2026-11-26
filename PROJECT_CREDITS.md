@@ -63,7 +63,8 @@ itself is never in the repository. The file formats were worked out from these o
 - NITRO 3D models and textures: **scurest/apicula** and its **nsbmd_docs**, **noclip.website** (magcius), **Fexty12573/nitrog3d** (MIT), and **GBATEK** (Martin Korth)
 - Gen V maps, zones, areas, buildings, cameras and warps: **CTRMapV / CTRMap-CE** (kingdom-of-ds-hacking, HelloOO7), **Pokémon DS Map Studio** (Trifindo), and the **ds-pokemon-hacking** docs (Gonhex, Trifindo)
 - Gen V text, scripts and overworld sprites: **CTRMapV**, and **PokeScriptSDK5**'s BW script command list (ds-pokemon-hacking), copied as `tools/pokemon_world/bw/bw_script_commands.json`
-- Wild encounter and trainer data: **Universal Pokémon Randomizer ZX** (Dabomstew and contributors) and **PokeFinder** (Admiral-Fish)
+- Wild encounter and trainer data, item balls, hidden items and shop lists: **Universal Pokémon Randomizer ZX** (Dabomstew and contributors) and **PokeFinder** (Admiral-Fish)
+- BW's music (SDAT sequences, instrument banks, wave archives), converted to our sound engine: **ndspy** (RoadrunnerWMC) reads the files; the meaning of the sequence and envelope commands follows **SSEQPlayer** / **FeOS Sound System** (fincs, Naram Qashat), **VGMTrans** and **kiwi.ds**' NDS sound notes
 
 ### Web/PC version — from pokeemerald-multiplatform
 MIT License — https://github.com/gradenGnostic/pokeemerald-multiplatform

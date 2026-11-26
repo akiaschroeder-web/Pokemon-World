@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ENTREE_FOREST_Z282",
   "name": "Unova_EntreeForest_Z282",
   "layout": "LAYOUT_UNOVA_ENTREE_FOREST_Z282",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_PALACE",
   "region_map_section": "MAPSEC_UNOVA_ENTREE_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +15,52 @@
   "connections": null,
   "object_events": [],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 24,
+      "elevation": 0,
+      "var": "0x4B11",
+      "var_value": "0",
+      "script": "Unova_EntreeForest_Z282_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 24,
+      "elevation": 0,
+      "var": "0x4B11",
+      "var_value": "0",
+      "script": "Unova_EntreeForest_Z282_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 15,
+      "elevation": 0,
+      "var": "0x4B11",
+      "var_value": "0",
+      "script": "Unova_EntreeForest_Z282_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 16,
+      "elevation": 0,
+      "var": "0x4B11",
+      "var_value": "0",
+      "script": "Unova_EntreeForest_Z282_EventScript_Trigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 17,
+      "elevation": 0,
+      "var": "0x4B11",
+      "var_value": "0",
+      "script": "Unova_EntreeForest_Z282_EventScript_Trigger1"
+    }
+  ],
   "bg_events": []
 }

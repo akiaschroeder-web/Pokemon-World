@@ -190,7 +190,8 @@ static void SetPlayerAvatarObjectEventIdAndObjectId(u8, u8);
 static u8 UpdateSpritePalette(const struct SpritePalette *spritePalette, struct Sprite *sprite);
 static void ResetObjectEventFldEffData(struct ObjectEvent *);
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *);
-static u8 FindObjectEventPaletteIndexByTag(u16);
+#define PAL_INDEX_NONE 0xFFFF
+static u16 FindObjectEventPaletteIndexByTag(u16);
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *, u8);
 static void SpriteCB_CameraObject(struct Sprite *);
 static void CameraObject_Init(struct Sprite *);
@@ -3238,8 +3239,8 @@ static u8 UpdateSpritePalette(const struct SpritePalette *spritePalette, struct 
 // Find and update based on template's paletteTag
 u8 UpdateSpritePaletteByTemplate(const struct SpriteTemplate *template, struct Sprite *sprite)
 {
-    u8 i = FindObjectEventPaletteIndexByTag(template->paletteTag);
-    if (i == 0xFF)
+    u16 i = FindObjectEventPaletteIndexByTag(template->paletteTag);
+    if (i == PAL_INDEX_NONE)
         return i;
     return UpdateSpritePalette(&sObjectEventSpritePalettes[i], sprite);
 }
@@ -3249,7 +3250,7 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
 {
     struct Sprite *sprite = &gSprites[objectEvent->spriteId];
     u32 i = FindObjectEventPaletteIndexByTag(graphicsInfo->paletteTag);
-    if (i != 0xFF)
+    if (i != PAL_INDEX_NONE)
         UpdateSpritePalette(&sObjectEventSpritePalettes[i], sprite);
 
     // If frame size changes, we need to reallocate tiles.
@@ -3446,8 +3447,8 @@ void FreeAndReserveObjectSpritePalettes(void)
 u8 LoadObjectEventPalette(u16 paletteTag)
 {
     u16 i = FindObjectEventPaletteIndexByTag(paletteTag);
-    if (i == 0xFF)
-        return i;
+    if (i == PAL_INDEX_NONE)
+        return 0xFF;
     return LoadSpritePaletteIfTagExists(&sObjectEventSpritePalettes[i]);
 }
 
@@ -3497,7 +3498,7 @@ static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *spritePalette
 void PatchObjectPalette(u16 paletteTag, u8 paletteSlot)
 {
     // paletteTag is assumed to exist in sObjectEventSpritePalettes
-    u8 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
+    u16 paletteIndex = FindObjectEventPaletteIndexByTag(paletteTag);
 
     LoadPalette(sObjectEventSpritePalettes[paletteIndex].data, OBJ_PLTT_ID(paletteSlot), PLTT_SIZE_4BPP);
 }
@@ -3512,16 +3513,18 @@ void PatchObjectPaletteRange(const u16 *paletteTags, u8 minSlot, u8 maxSlot)
     }
 }
 
-static u8 FindObjectEventPaletteIndexByTag(u16 tag)
+// Pokémon World: u16, the table is over 255 entries with Heart & Soul's and Unova's palettes
+// (a u8 index never reached the end: the game hung). Not found = PAL_INDEX_NONE.
+static u16 FindObjectEventPaletteIndexByTag(u16 tag)
 {
-    u8 i;
+    u16 i;
 
     for (i = 0; sObjectEventSpritePalettes[i].tag != OBJ_EVENT_PAL_TAG_NONE; i++)
     {
         if (sObjectEventSpritePalettes[i].tag == tag)
             return i;
     }
-    return 0xFF;
+    return PAL_INDEX_NONE;
 }
 
 static void UNUSED IncrementObjectEventCoords(struct ObjectEvent *objectEvent, s16 x, s16 y)
@@ -11160,8 +11163,8 @@ void SetVirtualObjectGraphics(u8 virtualObjId, u16 graphicsId)
         struct Sprite *sprite = &gSprites[spriteId];
         const struct ObjectEventGraphicsInfo *graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
         u16 tileNum = sprite->oam.tileNum;
-        u8 i = FindObjectEventPaletteIndexByTag(graphicsInfo->paletteTag);
-        if (i != 0xFF)
+        u16 i = FindObjectEventPaletteIndexByTag(graphicsInfo->paletteTag);
+        if (i != PAL_INDEX_NONE)
             UpdateSpritePalette(&sObjectEventSpritePalettes[i], sprite);
 
         sprite->oam = *graphicsInfo->oam;

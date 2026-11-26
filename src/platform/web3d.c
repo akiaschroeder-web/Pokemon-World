@@ -16,6 +16,8 @@
 #include "overworld.h"
 #include "palette.h"
 #include "sprite.h"
+#include "event_object_movement.h"
+#include "field_player_avatar.h"
 #include "constants/map_groups.h"
 #include "platform/web3d.h"
 
@@ -30,8 +32,10 @@ struct Web3DSprite
     u16 w, h;
     u32 pixels;        // offset (in RGBA pixels) into sScenePixels
     u16 order;         // OAM index: lower = drawn in front
-    u16 priority;
+    u16 flags;         // WEB3D_SPRITE_*
 };
+
+#define WEB3D_SPRITE_PLAYER 1   // the player's own sprite (drawn a little bigger, to match BW's people)
 
 static struct
 {
@@ -53,7 +57,7 @@ static u32 sScenePixels[MAX_3D_SPRITES * MAX_SPRITE_PIXELS];
 
 // OAM slot -> is it a map sprite? Built with the OAM buffer, latched when the buffer is loaded
 // into OAM (the frame drawn next uses that OAM).
-static u8 sBuildWorld[128];
+static u8 sBuildWorld[128];   // 0 = not a map sprite, else 1 + WEB3D_SPRITE_* flags
 static u8 sWorld[128];
 bool8 gWeb3DWorldOam[128];
 static s32 sBuildCameraX, sBuildCameraY, sCameraX, sCameraY;
@@ -71,7 +75,7 @@ void Web3D_ResetCamera(void)
 static s32 CurrentZoneIndex(void)
 {
     u32 i;
-    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+    u16 map = ((u8)gSaveBlock1Ptr->location.mapGroup << 8) | (u8)gSaveBlock1Ptr->location.mapNum;
     for (i = 0; i < ARRAY_COUNT(sUnovaZones); i++)
         if (sUnovaZones[i].map == map)
             return i;
@@ -103,10 +107,13 @@ void Web3D_BeginOamBuffer(void)
 void Web3D_MarkOam(const struct Sprite *sprite, u32 firstOam, u32 endOam)
 {
     u32 i;
+    u8 mark = 1;
     if (!sprite->coordOffsetEnabled)
         return;
+    if (sprite == &gSprites[gObjectEvents[gPlayerAvatar.objectEventId].spriteId])
+        mark |= WEB3D_SPRITE_PLAYER << 1;
     for (i = firstOam; i < endOam && i < 128; i++)
-        sBuildWorld[i] = TRUE;
+        sBuildWorld[i] = mark;
 }
 
 void Web3D_LatchOam(void)
@@ -129,7 +136,7 @@ static u32 Rgba(u16 c)
 }
 
 // The sprite's pixels, unrotated, straight from OBJ VRAM (1D mapping).
-static void CopySprite(const struct OamData *oam, u32 w, u32 h, u32 *out)
+static void CopyOamSprite(const struct OamData *oam, u32 w, u32 h, u32 *out)
 {
     const u8 *tiles = gPlatformVram + 0x10000;
     const u16 *pal = (const u16 *)(PLTT + 0x200);
@@ -204,14 +211,14 @@ void Web3D_EndFrame(void)
         gWeb3DWorldOam[i] = TRUE;
         if (x + (s32)w <= -64 || x >= DISPLAY_WIDTH + 64 || y + (s32)h <= -64 || y >= DISPLAY_HEIGHT + 64)
             continue;
-        CopySprite(oam, w, h, sScenePixels + used);
+        CopyOamSprite(oam, w, h, sScenePixels + used);
         sSceneSprites[n].x = x;
         sSceneSprites[n].y = y;
         sSceneSprites[n].w = w;
         sSceneSprites[n].h = h;
         sSceneSprites[n].pixels = used;
         sSceneSprites[n].order = i;
-        sSceneSprites[n].priority = oam->priority;
+        sSceneSprites[n].flags = sWorld[i] >> 1;
         used += w * h;
         n++;
     }

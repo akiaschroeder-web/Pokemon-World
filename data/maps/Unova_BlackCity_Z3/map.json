@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_BLACK_CITY_Z3",
   "name": "Unova_BlackCity_Z3",
   "layout": "LAYOUT_UNOVA_BLACK_CITY_Z3",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_10_B",
   "region_map_section": "MAPSEC_UNOVA_BLACK_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

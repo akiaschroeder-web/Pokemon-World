@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ICIRRUS_CITY_Z115",
   "name": "Unova_IcirrusCity_Z115",
   "layout": "LAYOUT_UNOVA_ICIRRUS_CITY_Z115",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_POKECEN",
   "region_map_section": "MAPSEC_UNOVA_ICIRRUS_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -104,6 +104,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_IcirrusCity_Z115_EventScript_Npc6",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ70",
+      "x": 5,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_IcirrusCity_Z115_EventScript_Npc7",
+      "flag": "0x2291"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ44",

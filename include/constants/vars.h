@@ -291,6 +291,11 @@
 #define KANTO_VARS_START              (REGION_VARS_START+0x010) // 0xE0 vars
 #define JOHTO_VARS_START              (REGION_VARS_START+0x0F0) // 0x100 vars
 #define REGION_VARS_END               (REGION_VARS_START+0x1EF)
+// Pokémon World: Unova (Pokémon Black): BW's saved work variables 0x4000+n are VAR_UNOVA_START + n
+// (SaveBlock1's unovaVars; src/bw_script.c)
+#define VAR_UNOVA_START               0x4A00
+#define UNOVA_VARS_COUNT              0x140
+#define VAR_UNOVA_END                 (VAR_UNOVA_START + UNOVA_VARS_COUNT - 1)
 #define REGION_VARS_COUNT             (REGION_VARS_END - REGION_VARS_START + 1)
 
 #include "constants/vars_hns.h" // Pokémon World: Heart & Soul's Johto and later-Kanto vars (generated)

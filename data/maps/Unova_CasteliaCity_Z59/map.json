@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_CASTELIA_CITY_Z59",
   "name": "Unova_CasteliaCity_Z59",
   "layout": "LAYOUT_UNOVA_CASTELIA_CITY_Z59",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_03",
   "region_map_section": "MAPSEC_UNOVA_CASTELIA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

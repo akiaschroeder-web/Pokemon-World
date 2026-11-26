@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ROUTE14_Z312_2",
   "name": "Unova_Route14_Z312_2",
   "layout": "LAYOUT_UNOVA_ROUTE14_Z312_2",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_BW_PALACE2",
   "region_map_section": "MAPSEC_UNOVA_ROUTE_14",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

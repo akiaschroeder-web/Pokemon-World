@@ -103,13 +103,36 @@ def script_messages(rom, zone, scrid, female=False):
     return out
 
 
+def flags_cleared(rom):
+    """Flags any BW script clears (FlagReset with a constant flag)."""
+    out = set()
+    for d in rom.narc('a/0/5/7'):
+        try:
+            es = entries(d)
+        except Exception:
+            continue
+        if len(es) > 3000:
+            continue
+        for e in es:
+            for op, args in walk(d, e):
+                if op == 0x24 and args[0] < 0x4000:
+                    out.add(args[0])
+    return out
+
+
 # --- text -> our script strings ---
 
 ALLOWED = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 .,!?'\"-:;/()&%+=~<>$#*@"
               "ÀÁÂÄÇÈÉÊËÌÍÎÏÑÒÓÔÖÙÚÛÜßàáâäçèéêëìíîïñòóôöùúûüŒœ‘’“”…♀♂×¡¿")
 
 
-def to_script_string(codes):
+def to_vm_string(codes):
+    """Like to_script_string, for text the BW script interpreter shows: BW's word buffers (filled by
+    its WordSet* commands, e.g. the player's name) become {STR_VAR_1..3}."""
+    return to_script_string(codes, buffers=True)
+
+
+def to_script_string(codes, buffers=False):
     """BW text (decoded code units) -> a pokeemerald .string body, pages and lines like BW's."""
     out, line, i = '', 0, 0
     quote_open = False
@@ -132,6 +155,8 @@ def to_script_string(codes):
                 if out.endswith('\\n') or out.endswith('\\l'):
                     out = out[:-2]
                 out += '\\l'
+            elif buffers and 0x0100 <= code < 0x0300 and n:
+                out += '{STR_VAR_%d}' % min(3, codes[i + 3] + 1)   # word buffer (name, item, number...)
             elif code in (0x0100, 0x0101):      # trainer (player) name
                 out += '{PLAYER}'
             i += 2 + n

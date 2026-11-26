@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_UNITY_TOWER_Z148",
   "name": "Unova_UnityTower_Z148",
   "layout": "LAYOUT_UNOVA_UNITY_TOWER_Z148",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_UNITED_NATIONS",
   "region_map_section": "MAPSEC_UNOVA_UNITY_TOWER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -129,6 +129,16 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 18,
+      "elevation": 0,
+      "var": "0x4A01",
+      "var_value": "1",
+      "script": "Unova_UnityTower_Z148_EventScript_Trigger0"
+    }
+  ],
   "bg_events": []
 }

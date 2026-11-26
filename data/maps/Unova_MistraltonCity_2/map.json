@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_MISTRALTON_CITY_2",
   "name": "Unova_MistraltonCity_2",
   "layout": "LAYOUT_UNOVA_MISTRALTON_CITY_2",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_06",
   "region_map_section": "MAPSEC_UNOVA_MISTRALTON_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -87,7 +87,53 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 14,
+      "elevation": 0,
+      "var": "0x4A99",
+      "var_value": "0",
+      "script": "Unova_MistraltonCity_2_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 14,
+      "elevation": 0,
+      "var": "0x4A99",
+      "var_value": "0",
+      "script": "Unova_MistraltonCity_2_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 14,
+      "elevation": 0,
+      "var": "0x4A99",
+      "var_value": "0",
+      "script": "Unova_MistraltonCity_2_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "var": "0x4A99",
+      "var_value": "0",
+      "script": "Unova_MistraltonCity_2_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "var": "0x4A99",
+      "var_value": "0",
+      "script": "Unova_MistraltonCity_2_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_VICTORY_ROAD_Z224",
   "name": "Unova_VictoryRoad_Z224",
   "layout": "LAYOUT_UNOVA_VICTORY_ROAD_Z224",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_CHAMPROAD",
   "region_map_section": "MAPSEC_UNOVA_VICTORY_ROAD",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -22,8 +22,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_VictoryRoad_Z224_EventScript_Npc0",
       "flag": "0"
     },
@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_VictoryRoad_Z224_EventScript_Npc1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 17,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_VictoryRoad_Z224_EventScript_Npc2",
+      "flag": "0x24AF"
     }
   ],
   "warp_events": [
@@ -60,12 +73,14 @@
   "coord_events": [],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 6,
       "y": 9,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_VictoryRoad_Z224_EventScript_Sign0"
+      "item": "ITEM_REVIVE",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+93)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

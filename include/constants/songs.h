@@ -608,5 +608,7 @@
 
 // Pokémon World: Heart & Soul's HGSS songs (Johto, later Kanto), numbered after all the songs above
 #include "constants/songs_hns.h"
+// Pokémon World: then Pokémon Black's (Unova), after Heart & Soul's
+#include "constants/songs_bw.h"
 
 #endif  // GUARD_CONSTANTS_SONGS_H

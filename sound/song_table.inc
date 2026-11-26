@@ -665,6 +665,7 @@ gSongTable::
 	song mus_dpp_title, MUSIC_PLAYER_BGM, 0
 @ Pokemon World: the HGSS songs. Keep this last (their ids are counted from here)
 	.include "sound/song_table_hns.inc"
+	.include "sound/song_table_bw.inc"
 
 	.align 2
 dummy_song_header:

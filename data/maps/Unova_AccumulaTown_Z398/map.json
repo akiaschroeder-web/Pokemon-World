@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ACCUMULA_TOWN_Z398",
   "name": "Unova_AccumulaTown_Z398",
   "layout": "LAYOUT_UNOVA_ACCUMULA_TOWN_Z398",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_POKECEN",
   "region_map_section": "MAPSEC_UNOVA_ACCUMULA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -41,6 +41,19 @@
       "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ105",
+      "x": 7,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AccumulaTown_Z398_EventScript_Npc2",
+      "flag": "0x21FF"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ21",
       "x": 3,
       "y": 15,
@@ -52,6 +65,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_AccumulaTown_Z398_EventScript_Npc3",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ134",
+      "x": 9,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AccumulaTown_Z398_EventScript_Npc4",
+      "flag": "0x2206"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ77",
@@ -104,6 +130,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_AccumulaTown_Z398_EventScript_Npc8",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ70",
+      "x": 5,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_AccumulaTown_Z398_EventScript_Npc9",
+      "flag": "0x2291"
     }
   ],
   "warp_events": [
@@ -129,7 +168,17 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "0x4A7B",
+      "var_value": "1",
+      "script": "Unova_AccumulaTown_Z398_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ROUTE1_1",
   "name": "Unova_Route1_1",
   "layout": "LAYOUT_UNOVA_ROUTE1_1",
-  "music": "MUS_ROUTE101",
+  "music": "MUS_BW_R_A",
   "region_map_section": "MAPSEC_UNOVA_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -55,10 +55,113 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_Route1_1_EventScript_Npc1",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ105",
+      "x": 20,
+      "y": 52,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_Route1_1_EventScript_Npc2",
+      "flag": "0x21FC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ7",
+      "x": 24,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_Route1_1_EventScript_Npc3",
+      "flag": "0x2203"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ134",
+      "x": 22,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_Route1_1_EventScript_Npc4",
+      "flag": "0x2203"
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 6,
+      "elevation": 0,
+      "var": "0x4A7C",
+      "var_value": "1",
+      "script": "Unova_Route1_1_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

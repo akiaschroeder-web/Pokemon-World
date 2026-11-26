@@ -5148,9 +5148,57 @@ static u16 GetHgssTrainerBGM(enum TrainerClassID trainerClass, bool32 kanto)
     }
 }
 
+// Pokémon World: Pokémon Black's battle themes in Unova
+static u16 GetUnovaTrainerBGM(enum TrainerClassID trainerClass, u16 trainerId)
+{
+    const u8 *name = GetTrainerNameFromId(trainerId);
+    if (!StringCompare(name, COMPOUND_STRING("N")))
+        return MUS_BW_VS_N;
+    if (!StringCompare(name, COMPOUND_STRING("Ghetsis")))
+        return MUS_BW_VS_G_CIS;
+    switch (trainerClass)
+    {
+    case TRAINER_CLASS_LEADER:
+        return MUS_BW_VS_GYMLEADER;
+    case TRAINER_CLASS_ELITE_FOUR:
+        return MUS_BW_VS_SHITENNO;
+    case TRAINER_CLASS_CHAMPION:
+        return MUS_BW_VS_CHAMP;
+    case TRAINER_CLASS_PKMN_TRAINER_1:   // Cheren and Bianca
+        return MUS_BW_VS_RIVAL;
+    case TRAINER_CLASS_TEAM_PLASMA_BW:
+        return MUS_BW_VS_PLASMA;
+    default:
+        return MUS_BW_VS_TRAINER;
+    }
+}
+
 u16 GetBattleBGM(void)
 {
     enum MusicStyle style = GetCurrentMusicStyle();
+
+    if (style == MUSIC_STYLE_UNOVA && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER)))
+    {
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            return GetUnovaTrainerBGM(GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA), TRAINER_BATTLE_PARAM.opponentA);
+        switch (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES))
+        {
+        case SPECIES_RESHIRAM:
+        case SPECIES_ZEKROM:
+            return MUS_BW_VS_SHIN;
+        case SPECIES_COBALION:
+        case SPECIES_TERRAKION:
+        case SPECIES_VIRIZION:
+        case SPECIES_TORNADUS:
+        case SPECIES_THUNDURUS:
+        case SPECIES_LANDORUS:
+        case SPECIES_KYUREM:
+        case SPECIES_VICTINI:
+            return MUS_BW_VS_TSUYOPOKE;
+        default:
+            return MUS_BW_VS_NORAPOKE;
+        }
+    }
 
     if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
      && GetHgssLegendaryBGM(GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_SPECIES)))
@@ -5291,6 +5339,18 @@ u16 GetTrainerVictoryBGM(enum TrainerClassID trainerClass)
 
     switch (style)
     {
+    case MUSIC_STYLE_UNOVA:
+        switch (trainerClass)
+        {
+        case TRAINER_CLASS_LEADER:
+        case TRAINER_CLASS_ELITE_FOUR:
+        case TRAINER_CLASS_CHAMPION:
+            return MUS_BW_WIN3;
+        case TRAINER_CLASS_TEAM_PLASMA_BW:
+            return MUS_BW_WIN4;
+        default:
+            return MUS_BW_WIN2;
+        }
     case MUSIC_STYLE_HGSS_JOHTO:
     case MUSIC_STYLE_HGSS_KANTO:
         switch (trainerClass)
@@ -5335,6 +5395,8 @@ u16 GetWildVictoryBGM(void)
 {
     switch (GetCurrentMusicStyle())
     {
+    case MUSIC_STYLE_UNOVA:
+        return MUS_BW_WIN1;
     case MUSIC_STYLE_FRLG:
         return MUS_RG_VICTORY_WILD;
     case MUSIC_STYLE_SINNOH:

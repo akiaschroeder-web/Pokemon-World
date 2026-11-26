@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_CELESTIAL_TOWER_Z338",
   "name": "Unova_CelestialTower_Z338",
   "layout": "LAYOUT_UNOVA_CELESTIAL_TOWER_Z338",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_05",
   "region_map_section": "MAPSEC_UNOVA_CELESTIAL_TOWER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

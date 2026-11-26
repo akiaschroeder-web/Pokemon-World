@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_NACRENE_GATE_Z27",
   "name": "Unova_NacreneGate_Z27",
   "layout": "LAYOUT_UNOVA_NACRENE_GATE_Z27",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GATE",
   "region_map_section": "MAPSEC_UNOVA_NACRENE_GATE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

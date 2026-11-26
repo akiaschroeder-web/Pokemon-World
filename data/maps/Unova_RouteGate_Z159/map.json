@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_ROUTE_GATE_Z159",
   "name": "Unova_RouteGate_Z159",
   "layout": "LAYOUT_UNOVA_ROUTE_GATE_Z159",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_GATE",
   "region_map_section": "MAPSEC_UNOVA_ROUTE_GATE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

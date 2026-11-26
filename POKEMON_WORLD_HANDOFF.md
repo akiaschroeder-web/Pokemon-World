@@ -13,7 +13,7 @@ Pokémon World is a fan game that puts the main-series regions into one game you
 | Sinnoh | LiderMorti00's Sinnoh port on pokeemerald-expansion | In the game (flag split still partly to do) |
 | Kanto | FireRed (pokefirered), merged in; after the time skip, Heart & Soul's Gold/Silver-era Kanto | In the game: FireRed's Kanto first, then the Gold/Silver-era one after Johto's Champion |
 | Johto | The Heart & Soul pokeemerald-expansion project | In the game (maps, story, trainers, wild Pokémon, HGSS music); can be the starting region |
-| Unova | Pokémon Black (the owner's ROM), drawn in 3D | Stage 1: Nuvema Town and its houses, walkable (debug warp only); see “Unova” below |
+| Unova | Pokémon Black (the owner's ROM), drawn in 3D | All zones, BW's scripts, trainers, items, music; startable; see “Unova” below |
 | Kalos, Galar | To be looked at | Future |
 | Alola | The owner is worried about it | Maybe |
 | Orre (Colosseum/XD) | Looks tough | Maybe; Shadow Pokémon might come later, but first decide how Shadow Lugia would affect Johto's story |
@@ -103,9 +103,28 @@ sprite chosen at setup.
   (`bw/sprites.py` → `graphics/object_events/pics/unova`, `OBJ_EVENT_GFX_UNOVA_OBJ<n>`) and signs, with
   what they say taken from BW's scripts and text (`bw/scripts.py`). Debug menu → Warp to town →
   Unova… → Nuvema Town.
-- **Not yet:** story scripts and flags (NPCs that BW shows or hides with story flags are left out for now,
-  and people only say their first lines), trainer battles, items on the ground, marts, BW's music
-  (placeholder Emerald music), map/building animations, Unova as a starting region, the Town Map.
+- **BW's own scripts run** (`src/bw_script.c`, a Gen 5 script interpreter; data from `bw/vmdata.py`): NPCs,
+  signs, step triggers and map load/frame scripts call `bwscript <zone>, <id>`. Messages, yes/no, movement,
+  flags/variables (BW flag n = `FLAG_UNOVA_START + n`, work var 0x4000+n = `VAR_UNOVA_START + n`, in
+  SaveBlock1), items, gifts, wild and trainer battles (BW trainer n = `UNOVA_TRAINERS_START + n`), the
+  starter gift box (our starter screen: Snivy/Tepig/Oshawott), badges (`FLAG_UNOVA_BADGE01_GET`…), shops
+  (BW's lists, the counter's by badge count), BGM commands, warps. Unknown commands are skipped by size.
+  Characters BW shows later start hidden (`src/data/bw_start_flags.h`, set on first entry).
+- **Trainers** (`bw/trainers.py`): all 615 into `src/data/trainers_unova.party` with BW's pictures
+  (`TRAINER_PIC_BW_*`, 80×80 scaled to 64×64), classes (ours when we have it, else `TRAINER_CLASS_*_BW`),
+  and their lines (a/0/0/2 file 189). Trainer NPCs (BW scripts 3000+) get our `trainerbattle`; their flags
+  are `FLAG_UNOVA_TRAINERS_START + n` (`GetTrainerFlagId`).
+- **Items:** item balls (scripts 7000+ → `finditem`), hidden items (8000+; BW's flags 900+ through
+  `UNOVA_HIDDEN_ITEM_ID_BASE` / `HIDDEN_ITEM_FLAG()`), and BW's key items we lacked (`bw/items.py`: Light/Dark
+  Stone, Gram 1–3, Liberty Pass, Pass Orb, Prop Case, Dragon Skull, Xtransceiver, with BW's icons).
+- **Music** (`bw/music.py`): 90 of BW's songs (zones, battles, victories, fanfares) as `MUS_BW_*`: each SSEQ
+  becomes a MIDI file for mid2agb (all tracks on; loops marked), its bank a voicegroup, its samples .wav files
+  (8-bit, exact pitch in an `agbp` chunk). Routes change with the season (`BwSeasonMusic`), battles use
+  BW's themes in Unova (`MUSIC_STYLE_UNOVA`), BGM players have 16 tracks now. Two songs ndspy can't read
+  (`SEQ_BGM_H_01`, `SEQ_BGM_D_06`, command 0x82) keep a placeholder.
+- **Start:** "UNOVA" at the new-game region choice: the player's room in Nuvema Town (the intro speech is still Birch's).
+- **Not yet:** BW's camera moves, map/building animations, trainer encounter (eye) music, rail NPCs, the
+  Badge Case's Unova row, the Town Map, Juniper's intro. Note: the map group count is at its limit (128).
 - BW zone ids, area/texture sets and formats: see the converter's comments.
 
 ## Known gaps / not yet played (Johto stages 1–7)

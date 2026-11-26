@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z253",
   "name": "Unova_DriftveilDrawbridge_Z253",
   "layout": "LAYOUT_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z253",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_H_02",
   "region_map_section": "MAPSEC_UNOVA_DRIFTVEIL_DRAWBRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

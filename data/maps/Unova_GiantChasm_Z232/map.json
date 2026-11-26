@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_GIANT_CHASM_Z232",
   "name": "Unova_GiantChasm_Z232",
   "layout": "LAYOUT_UNOVA_GIANT_CHASM_Z232",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_D_05",
   "region_map_section": "MAPSEC_UNOVA_GIANT_CHASM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -13,7 +13,112 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 31,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc0",
+      "flag": "0x255D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 39,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc1",
+      "flag": "0x255E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 54,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc2",
+      "flag": "0x255F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 61,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc3",
+      "flag": "0x2560"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 28,
+      "y": 48,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc4",
+      "flag": "0x2561"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 48,
+      "y": 61,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc5",
+      "flag": "0x2562"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 19,
+      "y": 71,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc6",
+      "flag": "0x2563"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 72,
+      "y": 72,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Npc7",
+      "flag": "0x2564"
+    }
+  ],
   "warp_events": [
     {
       "x": 26,
@@ -30,6 +135,25 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 51,
+      "elevation": 0,
+      "var": "0x4AD8",
+      "var_value": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 51,
+      "elevation": 0,
+      "var": "0x4AD8",
+      "var_value": "0",
+      "script": "Unova_GiantChasm_Z232_EventScript_Trigger0"
+    }
+  ],
   "bg_events": []
 }

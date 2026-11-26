@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_COLD_STORAGE_Z296",
   "name": "Unova_ColdStorage_Z296",
   "layout": "LAYOUT_UNOVA_COLD_STORAGE_Z296",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_PALACE2",
   "region_map_section": "MAPSEC_UNOVA_COLD_STORAGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

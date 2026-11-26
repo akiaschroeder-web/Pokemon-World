@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_CASTELIA_CITY_Z37",
   "name": "Unova_CasteliaCity_Z37",
   "layout": "LAYOUT_UNOVA_CASTELIA_CITY_Z37",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_C_03",
   "region_map_section": "MAPSEC_UNOVA_CASTELIA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -26,6 +26,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Unova_CasteliaCity_Z37_EventScript_Npc0",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ55",
+      "x": 17,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_CasteliaCity_Z37_EventScript_Npc1",
+      "flag": "0x22BD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ76",

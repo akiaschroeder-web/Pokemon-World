@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_POKEMON_LEAGUE_Z143",
   "name": "Unova_PokemonLeague_Z143",
   "layout": "LAYOUT_UNOVA_POKEMON_LEAGUE_Z143",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_POKEMON_LEAGUE",
   "region_map_section": "MAPSEC_UNOVA_POKEMON_LEAGUE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -29,6 +29,25 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 25,
+      "elevation": 0,
+      "var": "0x4A00",
+      "var_value": "0",
+      "script": "Unova_PokemonLeague_Z143_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 9,
+      "elevation": 0,
+      "var": "0x4A0A",
+      "var_value": "555",
+      "script": "Unova_PokemonLeague_Z143_EventScript_Trigger1"
+    }
+  ],
   "bg_events": []
 }

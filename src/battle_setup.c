@@ -1100,9 +1100,13 @@ static void TryUpdateGymLeaderRematchFromTrainer(void)
 
 // Pokémon World: trainers after Hoenn's and Sinnoh's keep their flags in SaveBlock3.
 // Kanto's (1530-2152) and Heart & Soul's Johto/later-Kanto trainers (JOHTO_TRAINERS_START on) all fit.
-STATIC_ASSERT(TRAINERS_COUNT <= SAVEBLOCK1_TRAINER_FLAGS_COUNT + REGION_TRAINER_FLAGS_COUNT, RegionTrainerFlagsFit);
+// Unova's (Pokémon Black's) have their own, from FLAG_UNOVA_TRAINERS_START.
+STATIC_ASSERT(JOHTO_TRAINERS_END < SAVEBLOCK1_TRAINER_FLAGS_COUNT + REGION_TRAINER_FLAGS_COUNT, RegionTrainerFlagsFit);
+STATIC_ASSERT(UNOVA_TRAINERS_END - UNOVA_TRAINERS_START < UNOVA_TRAINER_FLAGS_COUNT, UnovaTrainerFlagsFit);
 u16 GetTrainerFlagId(u16 trainerId)
 {
+    if (trainerId >= UNOVA_TRAINERS_START && trainerId <= UNOVA_TRAINERS_END)
+        return FLAG_UNOVA_TRAINERS_START + trainerId - UNOVA_TRAINERS_START;
     if (trainerId < SAVEBLOCK1_TRAINER_FLAGS_COUNT)
         return TRAINER_FLAGS_START + trainerId;
     return REGION_TRAINER_FLAGS_START + trainerId - SAVEBLOCK1_TRAINER_FLAGS_COUNT;

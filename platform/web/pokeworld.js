@@ -95,6 +95,7 @@ var Module = typeof Module !== 'undefined' ? Module : {};
   // Unova (src/platform/web3d.c, platform/web/unova3d.js): the game says which BW zone is on
   // screen, where its camera is and which map sprites it left out of the picture; draw them in 3D.
   var stack3D, on3D = false, ok3D = null;
+  var PLAYER_SCALE = 1.25;   // Unova: how much bigger the player's sprite is drawn
   var SPRITE_FOOT = 8;        // a map sprite's feet are this far above its bottom edge (GBA pixels)
   function draw3D() {
     if (!Module._Web_Get3DScene || !window.PW3D) return;
@@ -118,9 +119,11 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     for (var i = 0; i < count; i++) {
       var o = sp + 16 * i;
       var x = HEAP16[o >> 1], y = HEAP16[(o >> 1) + 1], w = HEAPU16[(o >> 1) + 2], h = HEAPU16[(o >> 1) + 3];
-      var off = u[(o >> 2) + 2], order = HEAPU16[(o >> 1) + 6];
+      var off = u[(o >> 2) + 2], order = HEAPU16[(o >> 1) + 6], flags = HEAPU16[(o >> 1) + 7];
       var wx = camX + x + w / 2, wz = camY + y + h - SPRITE_FOOT;
-      sprites.push({ x: wx, z: wz, y: PW3D.groundHeight(wx, wz), w: w, h: h, order: order,
+      // the player's GBA sprite is drawn a bit bigger in Unova, to stand as tall as BW's people
+      var scale = (flags & 1) ? PLAYER_SCALE : 1;
+      sprites.push({ x: wx, z: wz, y: PW3D.groundHeight(wx, wz), w: w, h: h, scale: scale, order: order,
                      image: HEAPU8.subarray(px + 4 * off, px + 4 * (off + w * h)) });
     }
     var tx = camX + 120, tz = camY + 80 + 16;      // the player: centre of the screen

@@ -2,7 +2,7 @@
   "id": "MAP_UNOVA_PINWHEEL_FOREST_1",
   "name": "Unova_PinwheelForest_1",
   "layout": "LAYOUT_UNOVA_PINWHEEL_FOREST_1",
-  "music": "MUS_LITTLEROOT",
+  "music": "MUS_BW_R_B_SP",
   "region_map_section": "MAPSEC_UNOVA_PINWHEEL_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -39,6 +39,19 @@
       "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ87",
+      "x": 14,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_PinwheelForest_1_EventScript_Npc1",
+      "flag": "0x2224"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ11",
       "x": 28,
       "y": 52,
@@ -46,8 +59,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Unova_PinwheelForest_1_EventScript_Npc2",
       "flag": "0"
     },
@@ -59,10 +72,62 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_PinwheelForest_1_EventScript_Npc3",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 28,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_PinwheelForest_1_EventScript_Npc4",
+      "flag": "0x247F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 23,
+      "y": 52,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_PinwheelForest_1_EventScript_Npc5",
+      "flag": "0x2480"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 9,
+      "y": 59,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_PinwheelForest_1_EventScript_Npc6",
+      "flag": "0x2481"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 27,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_PinwheelForest_1_EventScript_Npc7",
+      "flag": "0x2530"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ153",
@@ -72,8 +137,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Unova_PinwheelForest_1_EventScript_Npc8",
       "flag": "0"
     },
@@ -85,8 +150,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Unova_PinwheelForest_1_EventScript_Npc9",
       "flag": "0"
     },
@@ -111,10 +176,23 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "Unova_PinwheelForest_1_EventScript_Npc12",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOVA_OBJ110",
+      "x": 21,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Unova_PinwheelForest_1_EventScript_Npc13",
+      "flag": "0x2482"
     }
   ],
   "warp_events": [
@@ -147,23 +225,55 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 7,
+      "elevation": 0,
+      "var": "0x4A8C",
+      "var_value": "1",
+      "script": "Unova_PinwheelForest_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "0x4A8C",
+      "var_value": "1",
+      "script": "Unova_PinwheelForest_1_EventScript_Trigger0"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 9,
+      "elevation": 0,
+      "var": "0x4A8C",
+      "var_value": "1",
+      "script": "Unova_PinwheelForest_1_EventScript_Trigger0"
+    }
+  ],
   "bg_events": [
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 27,
       "y": 6,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_PinwheelForest_1_EventScript_Sign1"
+      "item": "ITEM_SUPER_POTION",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+41)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 21,
       "y": 59,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_PinwheelForest_1_EventScript_Sign2"
+      "item": "ITEM_ANTIDOTE",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+42)",
+      "quantity": 1,
+      "underfoot": false
     },
     {
       "type": "sign",
@@ -174,12 +284,14 @@
       "script": "Unova_PinwheelForest_1_EventScript_Sign4"
     },
     {
-      "type": "sign",
+      "type": "hidden_item",
       "x": 14,
       "y": 43,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Unova_PinwheelForest_1_EventScript_Sign8"
+      "item": "ITEM_TINYMUSHROOM",
+      "flag": "(FLAG_HIDDEN_ITEMS_START+UNOVA_HIDDEN_ITEM_ID_BASE+43)",
+      "quantity": 1,
+      "underfoot": false
     }
   ]
 }

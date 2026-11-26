@@ -1377,8 +1377,9 @@ static const struct MenuAction sPwSetupRegionActions[] =
     {COMPOUND_STRING("HOENN"),  {NULL}},
     {COMPOUND_STRING("SINNOH"), {NULL}},
     {COMPOUND_STRING("JOHTO"),  {NULL}},
+    {COMPOUND_STRING("UNOVA"),  {NULL}},
 };
-static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH, REGION_JOHTO};
+static const u8 sPwSetupRegions[] = {REGION_HOENN, REGION_SINNOH, REGION_JOHTO, REGION_UNOVA};
 
 // The designs in menu order: the player picks from the playable ones; the rival from all
 // but the player's own (so both lists have at most PW_DESIGN_COUNT - 2 entries).
