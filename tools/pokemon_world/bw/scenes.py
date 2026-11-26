@@ -39,6 +39,9 @@ def check(rom, zones, blocked, npc_starts, trigger_scripts, names):
                 if op == 0x69:                       # ActorNew x, z, dir, actor, obj, move
                     if args[0] < 0x4000 and args[1] < 0x4000 and args[3] < 0x4000:
                         pos[args[3]] = (args[0], args[1])
+                elif op == 0x241 and PLAYER in pos:  # companions (src/bw_script.c SpawnCompanion)
+                    px, pz = (788, 737) if z.id == 389 else pos[PLAYER]
+                    pos[args[0]] = (px - 1, pz - 1) if args[0] == 250 else (px + 1, pz)
                 elif op in (0x6D, 0x7B):             # ActorSetGPos / JumpToGPos: actor, x, y, z
                     if args[0] < 0x4000 and args[1] < 0x4000 and args[3] < 0x4000:
                         pos[args[0]] = (args[1], args[3])

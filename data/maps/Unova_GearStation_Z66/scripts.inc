@@ -7,6 +7,26 @@ Unova_GearStation_Z66_OnFrameTable:
 	map_script_2 0x4B36, 1, Unova_GearStation_Z66_OnFrame_5
 	.2byte 0
 
+Unova_GearStation_Z66_EventScript_Npc0::
+	bwscript 66, 3
+	end
+
+Unova_GearStation_Z66_EventScript_Npc1::
+	bwscript 66, 1
+	end
+
+Unova_GearStation_Z66_EventScript_Npc2::
+	bwscript 66, 2
+	end
+
+Unova_GearStation_Z66_EventScript_Npc3::
+	bwscript 66, 6
+	end
+
+Unova_GearStation_Z66_EventScript_Npc4::
+	bwscript 66, 10310
+	end
+
 Unova_GearStation_Z66_OnFrame_5::
 	bwscript 66, 5
 	end

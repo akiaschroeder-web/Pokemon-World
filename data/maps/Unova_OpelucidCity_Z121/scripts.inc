@@ -113,6 +113,10 @@ Unova_OpelucidCity_Z121_EventScript_Npc8::
 	bwscript 121, 9
 	end
 
+Unova_OpelucidCity_Z121_EventScript_Npc9::
+	bwscript 121, 12
+	end
+
 Unova_OpelucidCity_Z121_EventScript_Sign0::
 	bwscript 121, 10
 	end

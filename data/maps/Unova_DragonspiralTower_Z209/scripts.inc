@@ -2,3 +2,7 @@
 Unova_DragonspiralTower_Z209_MapScripts::
 	.byte 0
 
+Unova_DragonspiralTower_Z209_EventScript_Npc0::
+	finditem ITEM_SHINY_STONE, 1
+	end
+

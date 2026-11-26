@@ -18,6 +18,10 @@ Unova_CasteliaCity_Z30_EventScript_Npc3::
 	bwscript 30, 6
 	end
 
+Unova_CasteliaCity_Z30_EventScript_Npc4::
+	bwscript 30, 2000
+	end
+
 Unova_CasteliaCity_Z30_EventScript_Sign0::
 	bwscript 30, 4
 	end

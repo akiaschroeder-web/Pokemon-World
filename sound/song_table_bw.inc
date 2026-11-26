@@ -66,6 +66,88 @@
 	song mus_bw_t_05_wi, MUSIC_PLAYER_BGM, 0
 	song mus_bw_t_03, MUSIC_PLAYER_BGM, 0
 	song mus_bw_c_10_w, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_message, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_sys_22, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_44, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_42, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_41, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_43, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_badge, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_keyitem, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_decide3, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_kaidan, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_143, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_36, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_58, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_56, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_55, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_call, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_sys_82, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_87, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_pokeget, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_fld_158, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_78, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_asa, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_bpget, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_hyouka6, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_bdemo_03, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_bdemo_01, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_bdemo_04, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_bdemo_02, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_61, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_64, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_quiz, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_fld_10, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_128, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_118, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_60, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_104, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_107, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_109, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_vdemo_02, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_124, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_23, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_04, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_ardemo_01, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_17, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_kouka_h, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_144, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_170, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_126, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_end_01, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_176, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_recovery, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_end_02, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_sys_71, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_sys_72, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_159, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_151, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_93, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_94, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_w017_01, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_160, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_tamago_get, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_item, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_fld_22, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_lvup, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_item_mystery, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_waza, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_fld_02, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_pc_login, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_acce, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_fld_125, MUSIC_PLAYER_SE2, 0
+	song mus_bw_me_hyouka1, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_hyouka2, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_hyouka3, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_hyouka4, MUSIC_PLAYER_BGM, 0
+	song mus_bw_me_hyouka5, MUSIC_PLAYER_BGM, 0
+	song mus_bw_se_fld_133, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_06, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_156, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_155, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_154, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_153, MUSIC_PLAYER_SE2, 0
+	song mus_bw_se_fld_68, MUSIC_PLAYER_SE2, 0
 	song mus_bw_vs_norapoke, MUSIC_PLAYER_BGM, 0
 	song mus_bw_vs_tsuyopoke, MUSIC_PLAYER_BGM, 0
 	song mus_bw_vs_trainer, MUSIC_PLAYER_BGM, 0
@@ -95,12 +177,6 @@
 	song mus_bw_eye_12, MUSIC_PLAYER_BGM, 0
 	song mus_bw_eye_13, MUSIC_PLAYER_BGM, 0
 	song mus_bw_eye_plasma, MUSIC_PLAYER_BGM, 0
-	song mus_bw_me_lvup, MUSIC_PLAYER_BGM, 0
-	song mus_bw_me_item, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_shinkaome, MUSIC_PLAYER_BGM, 0
-	song mus_bw_me_waza, MUSIC_PLAYER_BGM, 0
-	song mus_bw_me_asa, MUSIC_PLAYER_BGM, 0
-	song mus_bw_me_badge, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_wasure, MUSIC_PLAYER_BGM, 0
 	song mus_bw_me_kinomi, MUSIC_PLAYER_BGM, 0
-	song mus_bw_me_keyitem, MUSIC_PLAYER_BGM, 0

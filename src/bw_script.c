@@ -34,6 +34,7 @@
 #include "field_weather.h"
 #include "item.h"
 #include "main.h"
+#include "m4a.h"
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
@@ -115,6 +116,8 @@ enum BwWait
     BW_WAIT_STARTER,     // the starter choice screen
     BW_WAIT_MENU,        // a list menu (ListMenu*)
     BW_WAIT_PARTY,       // choosing a party Pokémon (CallPokeSelect)
+    BW_WAIT_SE,          // a sound effect (SEWait)
+    BW_WAIT_DEMO,        // a 3D cutscene we don't have: a fade to black and back
 };
 
 struct BwFrame
@@ -478,6 +481,66 @@ static struct ObjectEvent *ActorObject(u16 actor)
     return &gObjectEvents[id];
 }
 
+// Companions: BW's command 0x241 makes Cheren (actor 250) and Bianca (actor 240) walk with you
+// out of Nuvema Town and into Route 1's first scene, across the map change; ActorDelete ends it.
+#define BW_COMPANION_CHEREN 250
+#define BW_COMPANION_BIANCA 240
+static const u16 sCompanionObj[][2] = {{BW_COMPANION_CHEREN, 7}, {BW_COMPANION_BIANCA, 134}};
+static EWRAM_DATA u16 sCompanions[2] = {0};   // actor id + 1 of each one walking with you
+static EWRAM_DATA bool8 sCompanionsSpawned = FALSE;
+
+static void NewActor(u16 x, u16 z, u16 dir, u16 actor, u16 objCode);
+
+// where a companion stands next to the player: Cheren a step ahead on the left, Bianca on the
+// right (from the Nuvema scene's choreography: they face each other across the player, and
+// Bianca steps up beside the player while Cheren is already a row ahead)
+static void SpawnCompanion(u32 k)
+{
+    const struct BwZoneMap *m = CurrentZoneMap();
+    s16 px = gSaveBlock1Ptr->pos.x + (m ? m->x : 0), py = gSaveBlock1Ptr->pos.y + (m ? m->y : 0);
+    u16 actor = sCompanionObj[k][0];
+    if (sVm.zone == 389)      // Nuvema's exit scene first walks the player to (788, 737), x = 786 + 2
+    {
+        px = 788;
+        py = 737;
+    }
+    if (actor == BW_COMPANION_CHEREN)
+        NewActor(px - 1, py - 1, 1, actor, sCompanionObj[k][1]);
+    else
+        NewActor(px + 1, py, 1, actor, sCompanionObj[k][1]);
+}
+
+static void AddCompanion(u16 actor)
+{
+    u32 k;
+    for (k = 0; k < ARRAY_COUNT(sCompanionObj); k++)
+        if (sCompanionObj[k][0] == actor)
+        {
+            sCompanions[k] = actor + 1;
+            SpawnCompanion(k);
+        }
+}
+
+// a script starting on a new map: bring the companions along
+static void SpawnCompanionsHere(void)
+{
+    u32 k;
+    if (sCompanionsSpawned)
+        return;
+    sCompanionsSpawned = TRUE;
+    for (k = 0; k < ARRAY_COUNT(sCompanionObj); k++)
+        if (sCompanions[k])
+            SpawnCompanion(k);
+}
+
+static void DropCompanion(u16 actor)
+{
+    u32 k;
+    for (k = 0; k < ARRAY_COUNT(sCompanionObj); k++)
+        if (sCompanions[k] == actor + 1)
+            sCompanions[k] = 0;
+}
+
 // ActorNew: a character a cutscene brings in
 static void NewActor(u16 x, u16 z, u16 dir, u16 actor, u16 objCode)
 {
@@ -811,6 +874,25 @@ static bool32 Waiting(void)
         BwVarSet(sVm.partyDest, gSpecialVar_0x8004 < PARTY_SIZE ? gSpecialVar_0x8004 : 0xFF);
         BwVarSet(sVm.battleDest, gSpecialVar_0x8004 < PARTY_SIZE);
         break;
+    case BW_WAIT_SE:
+        if (IsSEPlaying())
+            return TRUE;
+        break;
+    case BW_WAIT_DEMO:
+        if (gPaletteFade.active)
+            return TRUE;
+        if (sVm.waitFrames == 0xFFFF)          // faded out: hold the black a moment, then fade back in
+        {
+            sVm.waitFrames = 45;
+            return TRUE;
+        }
+        if (sVm.waitFrames)
+        {
+            if (--sVm.waitFrames == 0)
+                BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+            return TRUE;
+        }
+        break;
     case BW_WAIT_STARTER:
         if (gMain.callback2 != CB2_Overworld)
             return TRUE;
@@ -1063,7 +1145,8 @@ again:
             break;
         }
         case 0x6B: SetActorVisible(Read16(), TRUE); break;      // ActorAdd
-        case 0x6C: SetActorVisible(Read16(), FALSE); break;     // ActorDelete
+        case 0x6C: { u16 a = BwFlex(Read16()); SetActorVisible(a, FALSE); DropCompanion(a); break; }  // ActorDelete
+        case 0x241: AddCompanion(BwFlex(Read16())); break;     // the friends walk with you (see AddCompanion)
         case 0x6E: // PlayerGetDir: BW 0 up, 1 down, 2 left, 3 right
         {
             static const u8 sToBw[] = {[DIR_NORTH] = 0, [DIR_SOUTH] = 1, [DIR_WEST] = 2, [DIR_EAST] = 3};
@@ -1110,9 +1193,28 @@ again:
             BwVarSet(dest, t && t < UNOVA_TRAINERS_COUNT && FlagGet(GetTrainerFlagId(UNOVA_TRAINERS_START + t)));
             break;
         }
-        case 0xA9: // MEPlay
+        case 0xA9: // MEPlay: BW's own fanfare where we converted it (bw/music.py), else ours
+        {
+            u16 song = BwSong(BwFlex(Read16()));
+            if (!song || !PlayBwFanfare(song))
+                PlayFanfare(MUS_OBTAIN_ITEM);
+            break;
+        }
+        case 0xA6: // SEPlay: BW's sound effects, on the SE player
+        {
+            u16 id = BwFlex(Read16()), song = BwSong(id);
+            if (song && id != 1351)          // SEQ_SE_MESSAGE: our own talk sound already plays
+                PlaySE(song);
+            break;
+        }
+        case 0xA7: m4aMPlayStop(&gMPlayInfo_SE1); m4aMPlayStop(&gMPlayInfo_SE2); break;   // SEStop
+        case 0xA8: sVm.wait = BW_WAIT_SE; break;               // SEWait
+        case 0x154: // Call3DDemo: BW's 3D cutscenes (the legendary's awakening, N's castle...) aren't converted
             Read16();
-            PlayFanfare(MUS_OBTAIN_ITEM);
+            Read16();
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+            sVm.waitFrames = 0xFFFF;
+            sVm.wait = BW_WAIT_DEMO;
             break;
         case 0xAA: sVm.wait = BW_WAIT_FANFARE; break;          // MEWait
         case 0xAB: { u16 sp = Species(Read16()); Read16(); if (sp) PlayCry_Normal(sp, 0); break; }
@@ -1468,6 +1570,8 @@ static bool32 Start(struct ScriptContext *ctx, bool32 immediate)
     sVm.zone = zone;
     sVm.immediate = immediate;
     BW_TRACE("[bw] start zone %d script %d%s", zone, scrid, immediate ? " (load)" : "");
+    if (!immediate)
+        SpawnCompanionsHere();
     return PushScript(scrid, sBwZones[zone].scripts, sBwZones[zone].text, FALSE);
 }
 
@@ -1509,7 +1613,10 @@ void BwScript_OnEnterMap(void)
 {
     u32 i;
     memset(sDynActors, 0, sizeof(sDynActors));
-    memset(sMoveOwner, 0, sizeof(sMoveOwner));   // ActorNew's actors belong to the map they were added on
+    memset(sMoveOwner, 0, sizeof(sMoveOwner));
+    sCompanionsSpawned = FALSE;
+    if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA)
+        memset(sCompanions, 0, sizeof(sCompanions));   // ActorNew's actors belong to the map they were added on
     Web3D_EventCamera(0, 0, 0, 0, 0, 0, 0, 1);
     if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA || FlagGet(FLAG_UNOVA_INITIALIZED))
         return;

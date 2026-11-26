@@ -505,7 +505,7 @@ def write(rom, seq_names, first_id):
         is_me = name.startswith('SEQ_ME_')
         mvl = max(24, min(127, round(127 * 0.38 / max(level, 0.02))))
         cfg.append('%s.mid: -E -R0 -G_%s -V%03d\n' % (label, group, mvl))
-        table.append('\tsong %s, %s, 0\n' % (label, 'MUSIC_PLAYER_SE1' if False else 'MUSIC_PLAYER_BGM'))
+        table.append('\tsong %s, %s, 0\n' % (label, 'MUSIC_PLAYER_SE2' if name.startswith('SEQ_SE_') else 'MUSIC_PLAYER_BGM'))
         consts[name] = const
         lengths[const] = frames
     with open('sound/voicegroups/bw.inc', 'w') as f:

@@ -5518,12 +5518,14 @@ static const u8 sBwActors_Unova_NacreneCity_Z24[][2] = {{0, 1}, {1, 2}, {2, 3}, 
 static const u8 sBwActors_Unova_NacreneCity_Z25[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_NacreneCity_Z26[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}};
 static const u8 sBwActors_Unova_NacreneGate_Z27[][2] = {{0, 1}, {1, 2}, {2, 3}};
+static const u8 sBwActors_Unova_CasteliaCity_Z28[][2] = {{0, 1}, {3, 2}, {9, 3}, {10, 4}};
 static const u8 sBwActors_Unova_CasteliaCity_Z29[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}, {11, 12}, {12, 13}};
-static const u8 sBwActors_Unova_CasteliaCity_Z30[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
+static const u8 sBwActors_Unova_CasteliaCity_Z30[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}};
 static const u8 sBwActors_Unova_CasteliaCity_Z31[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}};
 static const u8 sBwActors_Unova_CasteliaCity_Z32[][2] = {{0, 1}, {1, 2}};
 static const u8 sBwActors_Unova_CasteliaCity_Z33[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}};
 static const u8 sBwActors_Unova_CasteliaCity_Z35[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
+static const u8 sBwActors_Unova_CasteliaCity_Z36[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_CasteliaCity_Z37[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_CasteliaCity_Z38[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}};
 static const u8 sBwActors_Unova_CasteliaCity_Z39[][2] = {{0, 1}};
@@ -5552,6 +5554,7 @@ static const u8 sBwActors_Unova_NimbasaCity[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 
 static const u8 sBwActors_Unova_NimbasaCity_Z63[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}};
 static const u8 sBwActors_Unova_NimbasaCity_Z64[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}};
 static const u8 sBwActors_Unova_NimbasaCity_Z65[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}};
+static const u8 sBwActors_Unova_GearStation_Z66[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}};
 static const u8 sBwActors_Unova_GearStation_Z67[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_GearStation_Z68[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_GearStation_Z69[][2] = {{0, 1}, {1, 2}, {2, 3}};
@@ -5608,7 +5611,7 @@ static const u8 sBwActors_Unova_IcirrusCity_Z117[][2] = {{0, 1}, {1, 2}, {2, 3}}
 static const u8 sBwActors_Unova_IcirrusCity_Z118[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_IcirrusCity_Z119[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
 static const u8 sBwActors_Unova_OpelucidCity[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}, {11, 12}, {12, 13}, {13, 14}, {14, 15}, {15, 16}, {16, 17}, {17, 18}, {18, 19}, {19, 20}, {20, 21}, {21, 22}, {22, 23}, {23, 24}, {24, 25}, {25, 26}, {26, 27}, {27, 28}, {28, 29}};
-static const u8 sBwActors_Unova_OpelucidCity_Z121[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}};
+static const u8 sBwActors_Unova_OpelucidCity_Z121[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}};
 static const u8 sBwActors_Unova_OpelucidCity_Z122[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}};
 static const u8 sBwActors_Unova_OpelucidCity_Z123[][2] = {{0, 1}, {1, 2}};
 static const u8 sBwActors_Unova_OpelucidCity_Z124[][2] = {{0, 1}, {1, 2}, {2, 3}};
@@ -5672,9 +5675,12 @@ static const u8 sBwActors_Unova_DragonspiralTower[][2] = {{0, 1}, {1, 2}, {2, 3}
 static const u8 sBwActors_Unova_DragonspiralTower_Z206[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}};
 static const u8 sBwActors_Unova_DragonspiralTower_Z207[][2] = {{0, 1}, {1, 2}};
 static const u8 sBwActors_Unova_DragonspiralTower_Z208[][2] = {{0, 1}, {1, 2}, {2, 3}};
+static const u8 sBwActors_Unova_DragonspiralTower_Z209[][2] = {{0, 1}};
 static const u8 sBwActors_Unova_DragonspiralTower_Z210[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}, {11, 12}, {12, 13}, {13, 14}, {14, 15}};
+static const u8 sBwActors_Unova_DragonspiralTower_Z211[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_DragonspiralTower_Z212[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}};
 static const u8 sBwActors_Unova_DragonspiralTower_Z213[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}};
+static const u8 sBwActors_Unova_VictoryRoad_Z214[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {5, 5}, {6, 6}, {7, 7}, {9, 8}};
 static const u8 sBwActors_Unova_VictoryRoad_Z215[][2] = {{0, 1}};
 static const u8 sBwActors_Unova_VictoryRoad_Z216[][2] = {{0, 1}, {1, 2}};
 static const u8 sBwActors_Unova_VictoryRoad_Z217[][2] = {{0, 1}};
@@ -5704,7 +5710,7 @@ static const u8 sBwActors_Unova_BridgeGate_Z251[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_BridgeGate_Z252[][2] = {{0, 1}, {1, 2}};
 static const u8 sBwActors_Unova_DriftveilDrawbridge_Z253[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_TubelineBridge_Z254[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}};
-static const u8 sBwActors_Unova_VillageBridge_Z255[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}, {11, 12}, {12, 13}, {13, 14}, {14, 15}, {15, 16}, {18, 17}, {19, 18}};
+static const u8 sBwActors_Unova_VillageBridge_Z255[][2] = {{0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {8, 9}, {9, 10}, {10, 11}, {11, 12}, {12, 13}, {13, 14}, {14, 15}, {15, 16}, {16, 17}, {17, 18}, {18, 19}, {19, 20}};
 static const u8 sBwActors_Unova_VillageBridge_Z256[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_VillageBridge_Z257[][2] = {{0, 1}, {1, 2}, {2, 3}};
 static const u8 sBwActors_Unova_VillageBridge_Z258[][2] = {{0, 1}};
@@ -5895,12 +5901,14 @@ static const struct BwMapActors sBwMapActors[] =
     { MAP_UNOVA_NACRENE_CITY_Z25, sBwActors_Unova_NacreneCity_Z25, 3 },
     { MAP_UNOVA_NACRENE_CITY_Z26, sBwActors_Unova_NacreneCity_Z26, 7 },
     { MAP_UNOVA_NACRENE_GATE_Z27, sBwActors_Unova_NacreneGate_Z27, 3 },
+    { MAP_UNOVA_CASTELIA_CITY_Z28, sBwActors_Unova_CasteliaCity_Z28, 4 },
     { MAP_UNOVA_CASTELIA_CITY_Z29, sBwActors_Unova_CasteliaCity_Z29, 13 },
-    { MAP_UNOVA_CASTELIA_CITY_Z30, sBwActors_Unova_CasteliaCity_Z30, 4 },
+    { MAP_UNOVA_CASTELIA_CITY_Z30, sBwActors_Unova_CasteliaCity_Z30, 5 },
     { MAP_UNOVA_CASTELIA_CITY_Z31, sBwActors_Unova_CasteliaCity_Z31, 11 },
     { MAP_UNOVA_CASTELIA_CITY_Z32, sBwActors_Unova_CasteliaCity_Z32, 2 },
     { MAP_UNOVA_CASTELIA_CITY_Z33, sBwActors_Unova_CasteliaCity_Z33, 10 },
     { MAP_UNOVA_CASTELIA_CITY_Z35, sBwActors_Unova_CasteliaCity_Z35, 4 },
+    { MAP_UNOVA_CASTELIA_CITY_Z36, sBwActors_Unova_CasteliaCity_Z36, 3 },
     { MAP_UNOVA_CASTELIA_CITY_Z37, sBwActors_Unova_CasteliaCity_Z37, 3 },
     { MAP_UNOVA_CASTELIA_CITY_Z38, sBwActors_Unova_CasteliaCity_Z38, 5 },
     { MAP_UNOVA_CASTELIA_CITY_Z39, sBwActors_Unova_CasteliaCity_Z39, 1 },
@@ -5929,6 +5937,7 @@ static const struct BwMapActors sBwMapActors[] =
     { MAP_UNOVA_NIMBASA_CITY_Z63, sBwActors_Unova_NimbasaCity_Z63, 6 },
     { MAP_UNOVA_NIMBASA_CITY_Z64, sBwActors_Unova_NimbasaCity_Z64, 9 },
     { MAP_UNOVA_NIMBASA_CITY_Z65, sBwActors_Unova_NimbasaCity_Z65, 10 },
+    { MAP_UNOVA_GEAR_STATION_Z66, sBwActors_Unova_GearStation_Z66, 5 },
     { MAP_UNOVA_GEAR_STATION_Z67, sBwActors_Unova_GearStation_Z67, 3 },
     { MAP_UNOVA_GEAR_STATION_Z68, sBwActors_Unova_GearStation_Z68, 3 },
     { MAP_UNOVA_GEAR_STATION_Z69, sBwActors_Unova_GearStation_Z69, 3 },
@@ -5985,7 +5994,7 @@ static const struct BwMapActors sBwMapActors[] =
     { MAP_UNOVA_ICIRRUS_CITY_Z118, sBwActors_Unova_IcirrusCity_Z118, 3 },
     { MAP_UNOVA_ICIRRUS_CITY_Z119, sBwActors_Unova_IcirrusCity_Z119, 4 },
     { MAP_UNOVA_OPELUCID_CITY, sBwActors_Unova_OpelucidCity, 29 },
-    { MAP_UNOVA_OPELUCID_CITY_Z121, sBwActors_Unova_OpelucidCity_Z121, 9 },
+    { MAP_UNOVA_OPELUCID_CITY_Z121, sBwActors_Unova_OpelucidCity_Z121, 10 },
     { MAP_UNOVA_OPELUCID_CITY_Z122, sBwActors_Unova_OpelucidCity_Z122, 9 },
     { MAP_UNOVA_OPELUCID_CITY_Z123, sBwActors_Unova_OpelucidCity_Z123, 2 },
     { MAP_UNOVA_OPELUCID_CITY_Z124, sBwActors_Unova_OpelucidCity_Z124, 3 },
@@ -6049,9 +6058,12 @@ static const struct BwMapActors sBwMapActors[] =
     { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z206, sBwActors_Unova_DragonspiralTower_Z206, 8 },
     { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z207, sBwActors_Unova_DragonspiralTower_Z207, 2 },
     { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z208, sBwActors_Unova_DragonspiralTower_Z208, 3 },
+    { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z209, sBwActors_Unova_DragonspiralTower_Z209, 1 },
     { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z210, sBwActors_Unova_DragonspiralTower_Z210, 15 },
+    { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z211, sBwActors_Unova_DragonspiralTower_Z211, 3 },
     { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z212, sBwActors_Unova_DragonspiralTower_Z212, 6 },
     { MAP_UNOVA_DRAGONSPIRAL_TOWER_Z213, sBwActors_Unova_DragonspiralTower_Z213, 4 },
+    { MAP_UNOVA_VICTORY_ROAD_Z214, sBwActors_Unova_VictoryRoad_Z214, 8 },
     { MAP_UNOVA_VICTORY_ROAD_Z215, sBwActors_Unova_VictoryRoad_Z215, 1 },
     { MAP_UNOVA_VICTORY_ROAD_Z216, sBwActors_Unova_VictoryRoad_Z216, 2 },
     { MAP_UNOVA_VICTORY_ROAD_Z217, sBwActors_Unova_VictoryRoad_Z217, 1 },
@@ -6081,7 +6093,7 @@ static const struct BwMapActors sBwMapActors[] =
     { MAP_UNOVA_BRIDGE_GATE_Z252, sBwActors_Unova_BridgeGate_Z252, 2 },
     { MAP_UNOVA_DRIFTVEIL_DRAWBRIDGE_Z253, sBwActors_Unova_DriftveilDrawbridge_Z253, 3 },
     { MAP_UNOVA_TUBELINE_BRIDGE_Z254, sBwActors_Unova_TubelineBridge_Z254, 11 },
-    { MAP_UNOVA_VILLAGE_BRIDGE_Z255, sBwActors_Unova_VillageBridge_Z255, 18 },
+    { MAP_UNOVA_VILLAGE_BRIDGE_Z255, sBwActors_Unova_VillageBridge_Z255, 20 },
     { MAP_UNOVA_VILLAGE_BRIDGE_Z256, sBwActors_Unova_VillageBridge_Z256, 3 },
     { MAP_UNOVA_VILLAGE_BRIDGE_Z257, sBwActors_Unova_VillageBridge_Z257, 3 },
     { MAP_UNOVA_VILLAGE_BRIDGE_Z258, sBwActors_Unova_VillageBridge_Z258, 1 },

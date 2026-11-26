@@ -2,3 +2,15 @@
 Unova_CasteliaCity_Z36_MapScripts::
 	.byte 0
 
+Unova_CasteliaCity_Z36_EventScript_Npc0::
+	bwscript 36, 2
+	end
+
+Unova_CasteliaCity_Z36_EventScript_Npc1::
+	bwscript 36, 1
+	end
+
+Unova_CasteliaCity_Z36_EventScript_Npc2::
+	bwscript 36, 3
+	end
+

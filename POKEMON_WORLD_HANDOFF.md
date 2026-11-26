@@ -133,12 +133,17 @@ sprite chosen at setup.
   scene's walks on our maps (`bw/scenes.py`) and writes `tools/pokemon_world/bw_scene_report.txt`; rerun it
   alone with `PYTHONPATH=~/pylib:tools/pokemon_world/bw python3 tools/pokemon_world/bw/scenes.py <rom>`.
   Now: 5.7% of 4394 steps land on blocked tiles (mostly by design: exits, counters); wrong direction
-  orders give 18-43%, so the rules are right. Known: BW's command 0x241 (adds Bianca/Cheren as actors
-  240/250 for the walk out of Nuvema and Route 1's first scene) isn't handled yet.
+  orders give 18-43%, so the rules are right. BW's 0x241 makes Cheren (actor 250) and Bianca (240)
+  companions that walk with you out of Nuvema into Route 1's first scene (`AddCompanion`).
+- **Rails:** NPCs on BW's rails are placed from the rail geometry (`bw/rails.py`: a/0/7/9 files, BW's
+  zone -> rail table in ARM9, a/1/0/9 rail headers; format from CTRMapV). Rails span a whole city, so a
+  rail NPC goes on whichever map of the matrix holds its tile. The player still walks the grid.
+- **Sounds:** BW's sound effects and fanfares that its scripts play are converted with the music
+  (`SEQ_SE_*` on the SE2 player); SEPlay/SEWait/SEStop/MEPlay use them. Call3DDemo (BW's 3D movies) is
+  a fade to black and back.
 - **Trainer eye music:** a Unova trainer's `encounterMusic` is the index of BW's eye theme (from BW's class
   table), played by `GetUnovaTrainerEyeMusic`.
-- **Not yet:** sound effects in BW scripts (SEPlay), Call3DDemo cutscenes (e.g. N's castle), building/door and
-  map texture animations, rail NPCs (40, on Castelia's curved streets etc.; needs BW's rail geometry), the
+- **Not yet:** BW's 3D movies themselves (Call3DDemo), building/door and map texture animations, the
   Badge Case's Unova row and a Unova Town Map (BW's art not located yet), Juniper's intro, two songs ndspy
   misreads (`SEQ_BGM_H_01`, `SEQ_BGM_D_06`). Note: the map group count is at its limit (128).
 - BW zone ids, area/texture sets and formats: see the converter's comments.

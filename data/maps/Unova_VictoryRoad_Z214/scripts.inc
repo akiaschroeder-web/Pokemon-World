@@ -2,3 +2,35 @@
 Unova_VictoryRoad_Z214_MapScripts::
 	.byte 0
 
+Unova_VictoryRoad_Z214_EventScript_Npc0::
+	bwscript 214, 2
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc1::
+	finditem ITEM_FULL_RESTORE, 1
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc2::
+	finditem ITEM_TM93, 1
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc3::
+	finditem ITEM_NUGGET, 1
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc5::
+	bwscript 214, 2
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc6::
+	bwscript 214, 3
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc7::
+	bwscript 214, 5
+	end
+
+Unova_VictoryRoad_Z214_EventScript_Npc9::
+	finditem ITEM_FULL_HEAL, 1
+	end
+

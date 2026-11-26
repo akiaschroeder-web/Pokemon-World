@@ -16,6 +16,7 @@ bool8 IsNotWaitingForBGMStop(void);
 void PlayFanfareByFanfareNum(u8 fanfareNum);
 bool8 WaitFanfare(bool8 stop);
 void PlayFanfare(u16 songNum);
+bool32 PlayBwFanfare(u16 songNum);
 bool8 IsFanfareTaskInactive(void);
 void FadeInNewBGM(u16 songNum, u8 speed);
 void FadeOutBGMTemporarily(u8 speed);

@@ -2,3 +2,15 @@
 Unova_DragonspiralTower_Z211_MapScripts::
 	.byte 0
 
+Unova_DragonspiralTower_Z211_EventScript_Npc0::
+	finditem ITEM_STARDUST, 1
+	end
+
+Unova_DragonspiralTower_Z211_EventScript_Npc1::
+	finditem ITEM_REVIVE, 1
+	end
+
+Unova_DragonspiralTower_Z211_EventScript_Npc2::
+	finditem ITEM_STAR_PIECE, 1
+	end
+

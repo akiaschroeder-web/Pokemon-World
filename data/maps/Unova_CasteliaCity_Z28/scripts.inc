@@ -2,3 +2,19 @@
 Unova_CasteliaCity_Z28_MapScripts::
 	.byte 0
 
+Unova_CasteliaCity_Z28_EventScript_Npc0::
+	bwscript 28, 9
+	end
+
+Unova_CasteliaCity_Z28_EventScript_Npc3::
+	bwscript 28, 6
+	end
+
+Unova_CasteliaCity_Z28_EventScript_Npc9::
+	bwscript 28, 5
+	end
+
+Unova_CasteliaCity_Z28_EventScript_Npc10::
+	bwscript 28, 2000
+	end
+

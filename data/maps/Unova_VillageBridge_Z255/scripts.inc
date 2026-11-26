@@ -86,6 +86,14 @@ Unova_VillageBridge_Z255_EventScript_Npc15::
 	bwscript 255, 4
 	end
 
+Unova_VillageBridge_Z255_EventScript_Npc16::
+	bwscript 255, 20
+	end
+
+Unova_VillageBridge_Z255_EventScript_Npc17::
+	bwscript 255, 3
+	end
+
 Unova_VillageBridge_Z255_EventScript_Npc18::
 	bwscript 255, 2
 	end

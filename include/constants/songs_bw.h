@@ -72,45 +72,121 @@
 #define MUS_BW_T_05_WI                   (BW_SONGS_START + 63)
 #define MUS_BW_T_03                      (BW_SONGS_START + 64)
 #define MUS_BW_C_10_W                    (BW_SONGS_START + 65)
-#define MUS_BW_VS_NORAPOKE               (BW_SONGS_START + 66)
-#define MUS_BW_VS_TSUYOPOKE              (BW_SONGS_START + 67)
-#define MUS_BW_VS_TRAINER                (BW_SONGS_START + 68)
-#define MUS_BW_VS_GYMLEADER              (BW_SONGS_START + 69)
-#define MUS_BW_VS_RIVAL                  (BW_SONGS_START + 70)
-#define MUS_BW_VS_PLASMA                 (BW_SONGS_START + 71)
-#define MUS_BW_VS_SHITENNO               (BW_SONGS_START + 72)
-#define MUS_BW_VS_CHAMP                  (BW_SONGS_START + 73)
-#define MUS_BW_VS_N                      (BW_SONGS_START + 74)
-#define MUS_BW_VS_G_CIS                  (BW_SONGS_START + 75)
-#define MUS_BW_VS_SHIN                   (BW_SONGS_START + 76)
-#define MUS_BW_WIN1                      (BW_SONGS_START + 77)
-#define MUS_BW_WIN2                      (BW_SONGS_START + 78)
-#define MUS_BW_WIN3                      (BW_SONGS_START + 79)
-#define MUS_BW_WIN4                      (BW_SONGS_START + 80)
-#define MUS_BW_EYE_01                    (BW_SONGS_START + 81)
-#define MUS_BW_EYE_02                    (BW_SONGS_START + 82)
-#define MUS_BW_EYE_03                    (BW_SONGS_START + 83)
-#define MUS_BW_EYE_04                    (BW_SONGS_START + 84)
-#define MUS_BW_EYE_05                    (BW_SONGS_START + 85)
-#define MUS_BW_EYE_06                    (BW_SONGS_START + 86)
-#define MUS_BW_EYE_07                    (BW_SONGS_START + 87)
-#define MUS_BW_EYE_08                    (BW_SONGS_START + 88)
-#define MUS_BW_EYE_09                    (BW_SONGS_START + 89)
-#define MUS_BW_EYE_10                    (BW_SONGS_START + 90)
-#define MUS_BW_EYE_11                    (BW_SONGS_START + 91)
-#define MUS_BW_EYE_12                    (BW_SONGS_START + 92)
-#define MUS_BW_EYE_13                    (BW_SONGS_START + 93)
-#define MUS_BW_EYE_PLASMA                (BW_SONGS_START + 94)
-#define MUS_BW_ME_LVUP                   (BW_SONGS_START + 95)
-#define MUS_BW_ME_ITEM                   (BW_SONGS_START + 96)
-#define MUS_BW_ME_SHINKAOME              (BW_SONGS_START + 97)
-#define MUS_BW_ME_WAZA                   (BW_SONGS_START + 98)
-#define MUS_BW_ME_ASA                    (BW_SONGS_START + 99)
-#define MUS_BW_ME_BADGE                  (BW_SONGS_START + 100)
-#define MUS_BW_ME_WASURE                 (BW_SONGS_START + 101)
-#define MUS_BW_ME_KINOMI                 (BW_SONGS_START + 102)
-#define MUS_BW_ME_KEYITEM                (BW_SONGS_START + 103)
-#define BW_SONGS_END (BW_SONGS_START + 103)
+#define MUS_BW_SE_MESSAGE                (BW_SONGS_START + 66)
+#define MUS_BW_SE_SYS_22                 (BW_SONGS_START + 67)
+#define MUS_BW_SE_FLD_44                 (BW_SONGS_START + 68)
+#define MUS_BW_SE_FLD_42                 (BW_SONGS_START + 69)
+#define MUS_BW_SE_FLD_41                 (BW_SONGS_START + 70)
+#define MUS_BW_SE_FLD_43                 (BW_SONGS_START + 71)
+#define MUS_BW_ME_BADGE                  (BW_SONGS_START + 72)
+#define MUS_BW_ME_KEYITEM                (BW_SONGS_START + 73)
+#define MUS_BW_SE_DECIDE3                (BW_SONGS_START + 74)
+#define MUS_BW_SE_KAIDAN                 (BW_SONGS_START + 75)
+#define MUS_BW_SE_FLD_143                (BW_SONGS_START + 76)
+#define MUS_BW_SE_FLD_36                 (BW_SONGS_START + 77)
+#define MUS_BW_SE_FLD_58                 (BW_SONGS_START + 78)
+#define MUS_BW_SE_FLD_56                 (BW_SONGS_START + 79)
+#define MUS_BW_SE_FLD_55                 (BW_SONGS_START + 80)
+#define MUS_BW_ME_CALL                   (BW_SONGS_START + 81)
+#define MUS_BW_SE_SYS_82                 (BW_SONGS_START + 82)
+#define MUS_BW_SE_FLD_87                 (BW_SONGS_START + 83)
+#define MUS_BW_ME_POKEGET                (BW_SONGS_START + 84)
+#define MUS_BW_SE_FLD_158                (BW_SONGS_START + 85)
+#define MUS_BW_SE_FLD_78                 (BW_SONGS_START + 86)
+#define MUS_BW_ME_ASA                    (BW_SONGS_START + 87)
+#define MUS_BW_ME_BPGET                  (BW_SONGS_START + 88)
+#define MUS_BW_ME_HYOUKA6                (BW_SONGS_START + 89)
+#define MUS_BW_SE_BDEMO_03               (BW_SONGS_START + 90)
+#define MUS_BW_SE_BDEMO_01               (BW_SONGS_START + 91)
+#define MUS_BW_SE_BDEMO_04               (BW_SONGS_START + 92)
+#define MUS_BW_SE_BDEMO_02               (BW_SONGS_START + 93)
+#define MUS_BW_SE_FLD_61                 (BW_SONGS_START + 94)
+#define MUS_BW_SE_FLD_64                 (BW_SONGS_START + 95)
+#define MUS_BW_ME_QUIZ                   (BW_SONGS_START + 96)
+#define MUS_BW_SE_FLD_10                 (BW_SONGS_START + 97)
+#define MUS_BW_SE_FLD_128                (BW_SONGS_START + 98)
+#define MUS_BW_SE_FLD_118                (BW_SONGS_START + 99)
+#define MUS_BW_SE_FLD_60                 (BW_SONGS_START + 100)
+#define MUS_BW_SE_FLD_104                (BW_SONGS_START + 101)
+#define MUS_BW_SE_FLD_107                (BW_SONGS_START + 102)
+#define MUS_BW_SE_FLD_109                (BW_SONGS_START + 103)
+#define MUS_BW_SE_VDEMO_02               (BW_SONGS_START + 104)
+#define MUS_BW_SE_FLD_124                (BW_SONGS_START + 105)
+#define MUS_BW_SE_FLD_23                 (BW_SONGS_START + 106)
+#define MUS_BW_SE_FLD_04                 (BW_SONGS_START + 107)
+#define MUS_BW_SE_ARDEMO_01              (BW_SONGS_START + 108)
+#define MUS_BW_SE_FLD_17                 (BW_SONGS_START + 109)
+#define MUS_BW_SE_KOUKA_H                (BW_SONGS_START + 110)
+#define MUS_BW_SE_FLD_144                (BW_SONGS_START + 111)
+#define MUS_BW_SE_FLD_170                (BW_SONGS_START + 112)
+#define MUS_BW_SE_FLD_126                (BW_SONGS_START + 113)
+#define MUS_BW_SE_END_01                 (BW_SONGS_START + 114)
+#define MUS_BW_SE_FLD_176                (BW_SONGS_START + 115)
+#define MUS_BW_SE_RECOVERY               (BW_SONGS_START + 116)
+#define MUS_BW_SE_END_02                 (BW_SONGS_START + 117)
+#define MUS_BW_SE_SYS_71                 (BW_SONGS_START + 118)
+#define MUS_BW_SE_SYS_72                 (BW_SONGS_START + 119)
+#define MUS_BW_SE_FLD_159                (BW_SONGS_START + 120)
+#define MUS_BW_SE_FLD_151                (BW_SONGS_START + 121)
+#define MUS_BW_SE_FLD_93                 (BW_SONGS_START + 122)
+#define MUS_BW_SE_FLD_94                 (BW_SONGS_START + 123)
+#define MUS_BW_SE_W017_01                (BW_SONGS_START + 124)
+#define MUS_BW_SE_FLD_160                (BW_SONGS_START + 125)
+#define MUS_BW_ME_TAMAGO_GET             (BW_SONGS_START + 126)
+#define MUS_BW_ME_ITEM                   (BW_SONGS_START + 127)
+#define MUS_BW_SE_FLD_22                 (BW_SONGS_START + 128)
+#define MUS_BW_ME_LVUP                   (BW_SONGS_START + 129)
+#define MUS_BW_ME_ITEM_MYSTERY           (BW_SONGS_START + 130)
+#define MUS_BW_ME_WAZA                   (BW_SONGS_START + 131)
+#define MUS_BW_SE_FLD_02                 (BW_SONGS_START + 132)
+#define MUS_BW_SE_PC_LOGIN               (BW_SONGS_START + 133)
+#define MUS_BW_ME_ACCE                   (BW_SONGS_START + 134)
+#define MUS_BW_SE_FLD_125                (BW_SONGS_START + 135)
+#define MUS_BW_ME_HYOUKA1                (BW_SONGS_START + 136)
+#define MUS_BW_ME_HYOUKA2                (BW_SONGS_START + 137)
+#define MUS_BW_ME_HYOUKA3                (BW_SONGS_START + 138)
+#define MUS_BW_ME_HYOUKA4                (BW_SONGS_START + 139)
+#define MUS_BW_ME_HYOUKA5                (BW_SONGS_START + 140)
+#define MUS_BW_SE_FLD_133                (BW_SONGS_START + 141)
+#define MUS_BW_SE_FLD_06                 (BW_SONGS_START + 142)
+#define MUS_BW_SE_FLD_156                (BW_SONGS_START + 143)
+#define MUS_BW_SE_FLD_155                (BW_SONGS_START + 144)
+#define MUS_BW_SE_FLD_154                (BW_SONGS_START + 145)
+#define MUS_BW_SE_FLD_153                (BW_SONGS_START + 146)
+#define MUS_BW_SE_FLD_68                 (BW_SONGS_START + 147)
+#define MUS_BW_VS_NORAPOKE               (BW_SONGS_START + 148)
+#define MUS_BW_VS_TSUYOPOKE              (BW_SONGS_START + 149)
+#define MUS_BW_VS_TRAINER                (BW_SONGS_START + 150)
+#define MUS_BW_VS_GYMLEADER              (BW_SONGS_START + 151)
+#define MUS_BW_VS_RIVAL                  (BW_SONGS_START + 152)
+#define MUS_BW_VS_PLASMA                 (BW_SONGS_START + 153)
+#define MUS_BW_VS_SHITENNO               (BW_SONGS_START + 154)
+#define MUS_BW_VS_CHAMP                  (BW_SONGS_START + 155)
+#define MUS_BW_VS_N                      (BW_SONGS_START + 156)
+#define MUS_BW_VS_G_CIS                  (BW_SONGS_START + 157)
+#define MUS_BW_VS_SHIN                   (BW_SONGS_START + 158)
+#define MUS_BW_WIN1                      (BW_SONGS_START + 159)
+#define MUS_BW_WIN2                      (BW_SONGS_START + 160)
+#define MUS_BW_WIN3                      (BW_SONGS_START + 161)
+#define MUS_BW_WIN4                      (BW_SONGS_START + 162)
+#define MUS_BW_EYE_01                    (BW_SONGS_START + 163)
+#define MUS_BW_EYE_02                    (BW_SONGS_START + 164)
+#define MUS_BW_EYE_03                    (BW_SONGS_START + 165)
+#define MUS_BW_EYE_04                    (BW_SONGS_START + 166)
+#define MUS_BW_EYE_05                    (BW_SONGS_START + 167)
+#define MUS_BW_EYE_06                    (BW_SONGS_START + 168)
+#define MUS_BW_EYE_07                    (BW_SONGS_START + 169)
+#define MUS_BW_EYE_08                    (BW_SONGS_START + 170)
+#define MUS_BW_EYE_09                    (BW_SONGS_START + 171)
+#define MUS_BW_EYE_10                    (BW_SONGS_START + 172)
+#define MUS_BW_EYE_11                    (BW_SONGS_START + 173)
+#define MUS_BW_EYE_12                    (BW_SONGS_START + 174)
+#define MUS_BW_EYE_13                    (BW_SONGS_START + 175)
+#define MUS_BW_EYE_PLASMA                (BW_SONGS_START + 176)
+#define MUS_BW_ME_SHINKAOME              (BW_SONGS_START + 177)
+#define MUS_BW_ME_WASURE                 (BW_SONGS_START + 178)
+#define MUS_BW_ME_KINOMI                 (BW_SONGS_START + 179)
+#define BW_SONGS_END (BW_SONGS_START + 179)
 
 // For the debug menu's sound test
 #define BW_SOUND_LIST_BGM \
@@ -180,6 +256,88 @@
     X(MUS_BW_T_05_WI) \
     X(MUS_BW_T_03) \
     X(MUS_BW_C_10_W) \
+    X(MUS_BW_SE_MESSAGE) \
+    X(MUS_BW_SE_SYS_22) \
+    X(MUS_BW_SE_FLD_44) \
+    X(MUS_BW_SE_FLD_42) \
+    X(MUS_BW_SE_FLD_41) \
+    X(MUS_BW_SE_FLD_43) \
+    X(MUS_BW_ME_BADGE) \
+    X(MUS_BW_ME_KEYITEM) \
+    X(MUS_BW_SE_DECIDE3) \
+    X(MUS_BW_SE_KAIDAN) \
+    X(MUS_BW_SE_FLD_143) \
+    X(MUS_BW_SE_FLD_36) \
+    X(MUS_BW_SE_FLD_58) \
+    X(MUS_BW_SE_FLD_56) \
+    X(MUS_BW_SE_FLD_55) \
+    X(MUS_BW_ME_CALL) \
+    X(MUS_BW_SE_SYS_82) \
+    X(MUS_BW_SE_FLD_87) \
+    X(MUS_BW_ME_POKEGET) \
+    X(MUS_BW_SE_FLD_158) \
+    X(MUS_BW_SE_FLD_78) \
+    X(MUS_BW_ME_ASA) \
+    X(MUS_BW_ME_BPGET) \
+    X(MUS_BW_ME_HYOUKA6) \
+    X(MUS_BW_SE_BDEMO_03) \
+    X(MUS_BW_SE_BDEMO_01) \
+    X(MUS_BW_SE_BDEMO_04) \
+    X(MUS_BW_SE_BDEMO_02) \
+    X(MUS_BW_SE_FLD_61) \
+    X(MUS_BW_SE_FLD_64) \
+    X(MUS_BW_ME_QUIZ) \
+    X(MUS_BW_SE_FLD_10) \
+    X(MUS_BW_SE_FLD_128) \
+    X(MUS_BW_SE_FLD_118) \
+    X(MUS_BW_SE_FLD_60) \
+    X(MUS_BW_SE_FLD_104) \
+    X(MUS_BW_SE_FLD_107) \
+    X(MUS_BW_SE_FLD_109) \
+    X(MUS_BW_SE_VDEMO_02) \
+    X(MUS_BW_SE_FLD_124) \
+    X(MUS_BW_SE_FLD_23) \
+    X(MUS_BW_SE_FLD_04) \
+    X(MUS_BW_SE_ARDEMO_01) \
+    X(MUS_BW_SE_FLD_17) \
+    X(MUS_BW_SE_KOUKA_H) \
+    X(MUS_BW_SE_FLD_144) \
+    X(MUS_BW_SE_FLD_170) \
+    X(MUS_BW_SE_FLD_126) \
+    X(MUS_BW_SE_END_01) \
+    X(MUS_BW_SE_FLD_176) \
+    X(MUS_BW_SE_RECOVERY) \
+    X(MUS_BW_SE_END_02) \
+    X(MUS_BW_SE_SYS_71) \
+    X(MUS_BW_SE_SYS_72) \
+    X(MUS_BW_SE_FLD_159) \
+    X(MUS_BW_SE_FLD_151) \
+    X(MUS_BW_SE_FLD_93) \
+    X(MUS_BW_SE_FLD_94) \
+    X(MUS_BW_SE_W017_01) \
+    X(MUS_BW_SE_FLD_160) \
+    X(MUS_BW_ME_TAMAGO_GET) \
+    X(MUS_BW_ME_ITEM) \
+    X(MUS_BW_SE_FLD_22) \
+    X(MUS_BW_ME_LVUP) \
+    X(MUS_BW_ME_ITEM_MYSTERY) \
+    X(MUS_BW_ME_WAZA) \
+    X(MUS_BW_SE_FLD_02) \
+    X(MUS_BW_SE_PC_LOGIN) \
+    X(MUS_BW_ME_ACCE) \
+    X(MUS_BW_SE_FLD_125) \
+    X(MUS_BW_ME_HYOUKA1) \
+    X(MUS_BW_ME_HYOUKA2) \
+    X(MUS_BW_ME_HYOUKA3) \
+    X(MUS_BW_ME_HYOUKA4) \
+    X(MUS_BW_ME_HYOUKA5) \
+    X(MUS_BW_SE_FLD_133) \
+    X(MUS_BW_SE_FLD_06) \
+    X(MUS_BW_SE_FLD_156) \
+    X(MUS_BW_SE_FLD_155) \
+    X(MUS_BW_SE_FLD_154) \
+    X(MUS_BW_SE_FLD_153) \
+    X(MUS_BW_SE_FLD_68) \
     X(MUS_BW_VS_NORAPOKE) \
     X(MUS_BW_VS_TSUYOPOKE) \
     X(MUS_BW_VS_TRAINER) \
@@ -209,15 +367,9 @@
     X(MUS_BW_EYE_12) \
     X(MUS_BW_EYE_13) \
     X(MUS_BW_EYE_PLASMA) \
-    X(MUS_BW_ME_LVUP) \
-    X(MUS_BW_ME_ITEM) \
     X(MUS_BW_ME_SHINKAOME) \
-    X(MUS_BW_ME_WAZA) \
-    X(MUS_BW_ME_ASA) \
-    X(MUS_BW_ME_BADGE) \
     X(MUS_BW_ME_WASURE) \
     X(MUS_BW_ME_KINOMI) \
-    X(MUS_BW_ME_KEYITEM) \
 
 
 #endif

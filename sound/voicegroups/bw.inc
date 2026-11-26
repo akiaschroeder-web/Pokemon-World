@@ -4849,6 +4849,1251 @@ voice_group bw_c_10_w_d6, 32
 	voice_directsound 69, 0, DirectSoundWaveData_bw_1036_7_69, 255, 0, 227, 205
 	voice_directsound 70, 0, DirectSoundWaveData_bw_1036_6_67, 255, 0, 255, 177
 
+@ SEQ_SE_MESSAGE (bank 1351)
+voice_group bw_se_message
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1351_0_60, 255, 0, 191, 194
+
+
+@ SEQ_SE_SYS_22 (bank 1611)
+voice_group bw_se_sys_22
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 102, 177
+
+
+@ SEQ_SE_FLD_44 (bank 1655)
+voice_group bw_se_fld_44
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1655_0_60, 255, 0, 255, 209
+
+
+@ SEQ_SE_FLD_42 (bank 1653)
+voice_group bw_se_fld_42
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1653_0_60, 255, 0, 255, 209
+
+
+@ SEQ_SE_FLD_41 (bank 1652)
+voice_group bw_se_fld_41
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1652_0_60, 255, 0, 255, 209
+
+
+@ SEQ_SE_FLD_43 (bank 1654)
+voice_group bw_se_fld_43
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1654_0_60, 255, 0, 255, 0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 62, 235, 255, 0
+
+
+@ SEQ_ME_BADGE (bank 1306)
+voice_group bw_me_badge
+	voice_keysplit voicegroup_bw_me_badge_s0, keysplit_bw_me_badge_s0
+	voice_keysplit voicegroup_bw_me_badge_s1, keysplit_bw_me_badge_s1
+	voice_keysplit voicegroup_bw_me_badge_s2, keysplit_bw_me_badge_s2
+	voice_keysplit voicegroup_bw_me_badge_s3, keysplit_bw_me_badge_s3
+	voice_keysplit voicegroup_bw_me_badge_s4, keysplit_bw_me_badge_s4
+	voice_keysplit voicegroup_bw_me_badge_s5, keysplit_bw_me_badge_s5
+	voice_keysplit_all voicegroup_bw_me_badge_d6
+
+voice_group bw_me_badge_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_13_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_12_69, 255, 241, 210, 205
+	.global keysplit_bw_me_badge_s0
+keysplit_bw_me_badge_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_badge_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_11_43, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_10_52, 255, 235, 210, 205
+	.global keysplit_bw_me_badge_s1
+keysplit_bw_me_badge_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_badge_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_3_53, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_2_62, 255, 223, 227, 205
+	.global keysplit_bw_me_badge_s2
+keysplit_bw_me_badge_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_badge_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_5_60, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_4_69, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_6_77, 255, 241, 157, 205
+	.global keysplit_bw_me_badge_s3
+keysplit_bw_me_badge_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_badge_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_0_43, 175, 235, 255, 205
+	.global keysplit_bw_me_badge_s4
+keysplit_bw_me_badge_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_badge_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_9_55, 255, 249, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_8_60, 255, 249, 0, 205
+	.global keysplit_bw_me_badge_s5
+keysplit_bw_me_badge_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_badge_d6, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1306_1_48, 255, 246, 0, 213
+
+@ SEQ_ME_KEYITEM (bank 1303)
+voice_group bw_me_keyitem
+	voice_keysplit voicegroup_bw_me_keyitem_s0, keysplit_bw_me_keyitem_s0
+	voice_keysplit voicegroup_bw_me_keyitem_s1, keysplit_bw_me_keyitem_s1
+	voice_keysplit voicegroup_bw_me_keyitem_s2, keysplit_bw_me_keyitem_s2
+	voice_keysplit_all voicegroup_bw_me_keyitem_d3
+
+voice_group bw_me_keyitem_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_3_60, 255, 246, 0, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_4_72, 255, 246, 0, 209
+	.global keysplit_bw_me_keyitem_s0
+keysplit_bw_me_keyitem_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_keyitem_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_0_36, 255, 248, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_1_48, 255, 248, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_2_55, 255, 248, 0, 194
+	.global keysplit_bw_me_keyitem_s1
+keysplit_bw_me_keyitem_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_keyitem_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_8_60, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_7_69, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_9_77, 255, 246, 0, 205
+	.global keysplit_bw_me_keyitem_s2
+keysplit_bw_me_keyitem_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_keyitem_d3, 46
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1303_6_54, 255, 0, 227, 205
+
+@ SEQ_SE_DECIDE3 (bank 1358)
+voice_group bw_se_decide3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1358_0_60, 255, 0, 255, 235
+
+
+@ SEQ_SE_KAIDAN (bank 1370)
+voice_group bw_se_kaidan
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1370_0_60, 255, 0, 255, 28
+
+
+@ SEQ_SE_FLD_143 (bank 1903)
+voice_group bw_se_fld_143
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1903_0_60, 255, 0, 255, 235
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 235, 157, 177
+
+
+@ SEQ_SE_FLD_36 (bank 1647)
+voice_group bw_se_fld_36
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1647_0_60, 255, 0, 255, 223
+
+
+@ SEQ_SE_FLD_58 (bank 1693)
+voice_group bw_se_fld_58
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1693_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_56 (bank 1691)
+voice_group bw_se_fld_56
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1691_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_55 (bank 1690)
+voice_group bw_se_fld_55
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1690_0_60, 255, 0, 255, 194
+
+
+@ SEQ_ME_CALL (bank 1327)
+voice_group bw_me_call
+	voice_keysplit voicegroup_bw_me_call_s0, keysplit_bw_me_call_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1327_4_60, 255, 0, 255, 209
+
+voice_group bw_me_call_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1327_0_60, 255, 0, 255, 122
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1327_2_67, 255, 0, 255, 122
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1327_1_72, 255, 0, 255, 122
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1327_3_79, 255, 0, 255, 122
+	.global keysplit_bw_me_call_s0
+keysplit_bw_me_call_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+
+@ SEQ_SE_SYS_82 (bank 1882)
+voice_group bw_se_sys_82
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 39, 194
+
+
+@ SEQ_SE_FLD_87 (bank 1751)
+voice_group bw_se_fld_87
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1751_0_60, 62, 0, 255, 223
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1751_0_60, 62, 0, 255, 223
+
+
+@ SEQ_ME_POKEGET (bank 1304)
+voice_group bw_me_pokeget
+	voice_keysplit voicegroup_bw_me_pokeget_s0, keysplit_bw_me_pokeget_s0
+	voice_keysplit voicegroup_bw_me_pokeget_s1, keysplit_bw_me_pokeget_s1
+	voice_keysplit voicegroup_bw_me_pokeget_s2, keysplit_bw_me_pokeget_s2
+	voice_keysplit voicegroup_bw_me_pokeget_s3, keysplit_bw_me_pokeget_s3
+	voice_keysplit voicegroup_bw_me_pokeget_s4, keysplit_bw_me_pokeget_s4
+	voice_keysplit voicegroup_bw_me_pokeget_s5, keysplit_bw_me_pokeget_s5
+	voice_keysplit_all voicegroup_bw_me_pokeget_d6
+	voice_keysplit voicegroup_bw_me_pokeget_s7, keysplit_bw_me_pokeget_s7
+
+voice_group bw_me_pokeget_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_14_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_13_69, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_15_79, 255, 241, 210, 205
+	.global keysplit_bw_me_pokeget_s0
+keysplit_bw_me_pokeget_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_pokeget_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_12_43, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_11_52, 255, 235, 210, 205
+	.global keysplit_bw_me_pokeget_s1
+keysplit_bw_me_pokeget_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_pokeget_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_9_36, 255, 28, 227, 177
+	.global keysplit_bw_me_pokeget_s2
+keysplit_bw_me_pokeget_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_pokeget_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_4_60, 255, 241, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_5_72, 255, 241, 0, 213
+	.global keysplit_bw_me_pokeget_s3
+keysplit_bw_me_pokeget_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_pokeget_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_10_55, 255, 249, 0, 205
+	.global keysplit_bw_me_pokeget_s4
+keysplit_bw_me_pokeget_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_pokeget_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_8_60, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_7_69, 255, 235, 191, 205
+	.global keysplit_bw_me_pokeget_s5
+keysplit_bw_me_pokeget_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_pokeget_d6, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1304_6_31, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1304_3_48, 255, 246, 0, 213
+voice_group bw_me_pokeget_s7
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_2_55, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_1_64, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1304_0_72, 255, 235, 157, 205
+	.global keysplit_bw_me_pokeget_s7
+keysplit_bw_me_pokeget_s7:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+
+@ SEQ_SE_FLD_158 (bank 1903)
+voice_group bw_se_fld_158
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1903_0_60, 255, 0, 255, 235
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 235, 157, 177
+
+
+@ SEQ_SE_FLD_78 (bank 1740)
+voice_group bw_se_fld_78
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1740_0_60, 40, 0, 255, 223
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1740_0_60, 40, 0, 255, 223
+
+
+@ SEQ_ME_ASA (bank 1300)
+voice_group bw_me_asa
+	voice_keysplit voicegroup_bw_me_asa_s0, keysplit_bw_me_asa_s0
+	voice_keysplit voicegroup_bw_me_asa_s1, keysplit_bw_me_asa_s1
+	voice_keysplit voicegroup_bw_me_asa_s2, keysplit_bw_me_asa_s2
+	voice_keysplit voicegroup_bw_me_asa_s3, keysplit_bw_me_asa_s3
+	voice_keysplit voicegroup_bw_me_asa_s4, keysplit_bw_me_asa_s4
+	voice_keysplit voicegroup_bw_me_asa_s5, keysplit_bw_me_asa_s5
+
+voice_group bw_me_asa_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_4_60, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_5_72, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_6_84, 255, 241, 0, 205
+	.global keysplit_bw_me_asa_s0
+keysplit_bw_me_asa_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_asa_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_2_72, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_3_79, 255, 249, 0, 213
+	.global keysplit_bw_me_asa_s1
+keysplit_bw_me_asa_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_asa_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_9_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_10_48, 255, 28, 227, 177
+	.global keysplit_bw_me_asa_s2
+keysplit_bw_me_asa_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_asa_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_0_60, 255, 246, 0, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_1_72, 255, 246, 0, 209
+	.global keysplit_bw_me_asa_s3
+keysplit_bw_me_asa_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_asa_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_7_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_8_77, 255, 235, 191, 205
+	.global keysplit_bw_me_asa_s4
+keysplit_bw_me_asa_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_asa_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_11_72, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_12_84, 255, 244, 0, 205
+	.global keysplit_bw_me_asa_s5
+keysplit_bw_me_asa_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
+@ SEQ_ME_BPGET (bank 1318)
+voice_group bw_me_bpget
+	voice_keysplit voicegroup_bw_me_bpget_s0, keysplit_bw_me_bpget_s0
+	voice_keysplit voicegroup_bw_me_bpget_s1, keysplit_bw_me_bpget_s1
+	voice_keysplit voicegroup_bw_me_bpget_s2, keysplit_bw_me_bpget_s2
+	voice_keysplit_all voicegroup_bw_me_bpget_d3
+
+voice_group bw_me_bpget_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_1_48, 255, 177, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_2_60, 255, 177, 255, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_3_72, 255, 177, 255, 205
+	.global keysplit_bw_me_bpget_s0
+keysplit_bw_me_bpget_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_bpget_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_9_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_11_43, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_10_48, 255, 28, 227, 177
+	.global keysplit_bw_me_bpget_s1
+keysplit_bw_me_bpget_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_bpget_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_6_43, 255, 252, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_7_55, 255, 252, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_5_64, 255, 252, 0, 28
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1318_4_72, 255, 252, 0, 28
+	.global keysplit_bw_me_bpget_s2
+keysplit_bw_me_bpget_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_me_bpget_d3, 36
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1318_8_36, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1318_8_36, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1318_8_36, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1318_8_36, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1318_12_40, 255, 213, 128, 205
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1318_0_52, 255, 246, 0, 223
+
+@ SEQ_ME_HYOUKA6 (bank 1316)
+voice_group bw_me_hyouka6
+	voice_keysplit voicegroup_bw_me_hyouka6_s0, keysplit_bw_me_hyouka6_s0
+	voice_keysplit voicegroup_bw_me_hyouka6_s1, keysplit_bw_me_hyouka6_s1
+	voice_keysplit voicegroup_bw_me_hyouka6_s2, keysplit_bw_me_hyouka6_s2
+	voice_keysplit voicegroup_bw_me_hyouka6_s3, keysplit_bw_me_hyouka6_s3
+	voice_keysplit voicegroup_bw_me_hyouka6_s4, keysplit_bw_me_hyouka6_s4
+	voice_keysplit voicegroup_bw_me_hyouka6_s5, keysplit_bw_me_hyouka6_s5
+	voice_keysplit_all voicegroup_bw_me_hyouka6_d6
+
+voice_group bw_me_hyouka6_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_13_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_12_69, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_14_79, 255, 241, 210, 205
+	.global keysplit_bw_me_hyouka6_s0
+keysplit_bw_me_hyouka6_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka6_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_11_43, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_10_52, 255, 235, 210, 205
+	.global keysplit_bw_me_hyouka6_s1
+keysplit_bw_me_hyouka6_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka6_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_3_62, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_2_71, 255, 223, 227, 205
+	.global keysplit_bw_me_hyouka6_s2
+keysplit_bw_me_hyouka6_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka6_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_5_60, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_4_69, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_7_77, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_6_84, 255, 241, 157, 205
+	.global keysplit_bw_me_hyouka6_s3
+keysplit_bw_me_hyouka6_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_me_hyouka6_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_9_55, 255, 249, 0, 205
+	.global keysplit_bw_me_hyouka6_s4
+keysplit_bw_me_hyouka6_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka6_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1316_0_43, 175, 235, 255, 205
+	.global keysplit_bw_me_hyouka6_s5
+keysplit_bw_me_hyouka6_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka6_d6, 38
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1316_8_38, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1316_1_48, 255, 241, 0, 213
+
+@ SEQ_SE_BDEMO_03 (bank 1940)
+voice_group bw_se_bdemo_03
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1940_0_60, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 28
+
+
+@ SEQ_SE_BDEMO_01 (bank 1938)
+voice_group bw_se_bdemo_01
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1938_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_BDEMO_04 (bank 1941)
+voice_group bw_se_bdemo_04
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1941_0_60, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 28
+
+
+@ SEQ_SE_BDEMO_02 (bank 1939)
+voice_group bw_se_bdemo_02
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1939_0_60, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 28
+
+
+@ SEQ_SE_FLD_61 (bank 1696)
+voice_group bw_se_fld_61
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1696_0_60, 255, 0, 255, 0
+
+
+@ SEQ_SE_FLD_64 (bank 1699)
+voice_group bw_se_fld_64
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1699_0_60, 255, 0, 191, 194
+
+
+@ SEQ_ME_QUIZ (bank 1328)
+voice_group bw_me_quiz
+	voice_keysplit voicegroup_bw_me_quiz_s0, keysplit_bw_me_quiz_s0
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_bw_me_quiz_s2, keysplit_bw_me_quiz_s2
+	voice_keysplit voicegroup_bw_me_quiz_s3, keysplit_bw_me_quiz_s3
+
+voice_group bw_me_quiz_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1328_3_57, 255, 246, 2, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1328_4_72, 255, 246, 2, 205
+	.global keysplit_bw_me_quiz_s0
+keysplit_bw_me_quiz_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_quiz_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1328_2_60, 255, 0, 255, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1328_1_69, 255, 0, 255, 205
+	.global keysplit_bw_me_quiz_s2
+keysplit_bw_me_quiz_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_quiz_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1328_0_36, 255, 223, 191, 194
+	.global keysplit_bw_me_quiz_s3
+keysplit_bw_me_quiz_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+@ SEQ_SE_FLD_10 (bank 1621)
+voice_group bw_se_fld_10
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1621_0_60, 255, 0, 255, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 177
+
+
+@ SEQ_SE_FLD_128 (bank 1878)
+voice_group bw_se_fld_128
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1878_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_118 (bank 1863)
+voice_group bw_se_fld_118
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+
+
+@ SEQ_SE_FLD_60 (bank 1695)
+voice_group bw_se_fld_60
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1695_0_64, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_104 (bank 1838)
+voice_group bw_se_fld_104
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1838_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_107 (bank 1841)
+voice_group bw_se_fld_107
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1841_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_109 (bank 1843)
+voice_group bw_se_fld_109
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1843_0_60, 255, 0, 255, 223
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 62, 235, 255, 177
+
+
+@ SEQ_SE_VDEMO_02 (bank 1642)
+voice_group bw_se_vdemo_02
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1642_0_60, 255, 0, 255, 177
+
+
+@ SEQ_SE_FLD_124 (bank 1874)
+voice_group bw_se_fld_124
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1874_0_60, 62, 0, 255, 223
+
+
+@ SEQ_SE_FLD_23 (bank 1634)
+voice_group bw_se_fld_23
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1634_0_60, 255, 0, 255, 177
+
+
+@ SEQ_SE_FLD_04 (bank 1616)
+voice_group bw_se_fld_04
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1616_0_60, 255, 0, 255, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 194
+
+
+@ SEQ_SE_ARDEMO_01 (bank 1962)
+voice_group bw_se_ardemo_01
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1962_0_60, 78, 0, 191, 194
+
+
+@ SEQ_SE_FLD_17 (bank 1628)
+voice_group bw_se_fld_17
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1628_0_60, 255, 0, 255, 209
+
+
+@ SEQ_SE_KOUKA_H (bank 1379)
+voice_group bw_se_kouka_h
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 177, 128, 218
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1379_0_60, 62, 254, 25, 218
+
+
+@ SEQ_SE_FLD_144 (bank 1904)
+voice_group bw_se_fld_144
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1904_0_60, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 235, 157, 177
+
+
+@ SEQ_SE_FLD_170 (bank 1798)
+voice_group bw_se_fld_170
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1798_0_60, 55, 236, 155, 209
+
+
+@ SEQ_SE_FLD_126 (bank 1876)
+voice_group bw_se_fld_126
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1876_0_60, 255, 0, 191, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 62, 0, 255, 177
+
+
+@ SEQ_SE_END_01 (bank 1967)
+voice_group bw_se_end_01
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1967_0_60, 255, 0, 255, 177
+
+
+@ SEQ_SE_FLD_176 (bank 1984)
+voice_group bw_se_fld_176
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1984_0_60, 255, 0, 255, 0
+
+
+@ SEQ_SE_RECOVERY (bank 1391)
+voice_group bw_se_recovery
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 249, 0, 28
+
+
+@ SEQ_SE_END_02 (bank 1968)
+voice_group bw_se_end_02
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1968_0_60, 255, 0, 255, 0
+
+
+@ SEQ_SE_SYS_71 (bank 1836)
+voice_group bw_se_sys_71
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1836_0_60, 62, 0, 255, 177
+
+
+@ SEQ_SE_SYS_72 (bank 1837)
+voice_group bw_se_sys_72
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1837_0_60, 255, 0, 255, 209
+
+
+@ SEQ_SE_FLD_159 (bank 1805)
+voice_group bw_se_fld_159
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1805_0_60, 47, 235, 255, 209
+
+
+@ SEQ_SE_FLD_151 (bank 1936)
+voice_group bw_se_fld_151
+	voice_keysplit voicegroup_bw_se_fld_151_s0, keysplit_bw_se_fld_151_s0
+
+voice_group bw_se_fld_151_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1936_0_67, 255, 244, 0, 205
+	.global keysplit_bw_se_fld_151_s0
+keysplit_bw_se_fld_151_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+@ SEQ_SE_FLD_93 (bank 1757)
+voice_group bw_se_fld_93
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1757_0_48, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1757_1_48, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 122
+
+
+@ SEQ_SE_FLD_94 (bank 1758)
+voice_group bw_se_fld_94
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1758_0_64, 255, 0, 255, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 0
+
+
+@ SEQ_SE_W017_01 (bank 1433)
+voice_group bw_se_w017_01
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1433_0_60, 255, 0, 191, 194
+
+
+@ SEQ_SE_FLD_160 (bank 1805)
+voice_group bw_se_fld_160
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1805_0_60, 47, 235, 255, 209
+
+
+@ SEQ_ME_TAMAGO_GET (bank 1317)
+voice_group bw_me_tamago_get
+	voice_keysplit voicegroup_bw_me_tamago_get_s0, keysplit_bw_me_tamago_get_s0
+	voice_keysplit voicegroup_bw_me_tamago_get_s1, keysplit_bw_me_tamago_get_s1
+	voice_keysplit voicegroup_bw_me_tamago_get_s2, keysplit_bw_me_tamago_get_s2
+	voice_keysplit voicegroup_bw_me_tamago_get_s3, keysplit_bw_me_tamago_get_s3
+
+voice_group bw_me_tamago_get_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_7_60, 255, 244, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_8_72, 255, 244, 0, 205
+	.global keysplit_bw_me_tamago_get_s0
+keysplit_bw_me_tamago_get_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_tamago_get_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_5_60, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_4_69, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_6_77, 255, 244, 0, 205
+	.global keysplit_bw_me_tamago_get_s1
+keysplit_bw_me_tamago_get_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_tamago_get_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_0_36, 255, 248, 0, 194
+	.global keysplit_bw_me_tamago_get_s2
+keysplit_bw_me_tamago_get_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_tamago_get_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_1_48, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_2_60, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1317_3_72, 255, 244, 0, 205
+	.global keysplit_bw_me_tamago_get_s3
+keysplit_bw_me_tamago_get_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+
+@ SEQ_ME_ITEM (bank 1302)
+voice_group bw_me_item
+	voice_keysplit voicegroup_bw_me_item_s0, keysplit_bw_me_item_s0
+	voice_keysplit voicegroup_bw_me_item_s1, keysplit_bw_me_item_s1
+	voice_keysplit voicegroup_bw_me_item_s2, keysplit_bw_me_item_s2
+	voice_keysplit voicegroup_bw_me_item_s3, keysplit_bw_me_item_s3
+	voice_keysplit voicegroup_bw_me_item_s4, keysplit_bw_me_item_s4
+
+voice_group bw_me_item_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_2_72, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_3_84, 255, 241, 0, 205
+	.global keysplit_bw_me_item_s0
+keysplit_bw_me_item_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_item_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_5_36, 255, 28, 227, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_6_48, 255, 28, 227, 177
+	.global keysplit_bw_me_item_s1
+keysplit_bw_me_item_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_item_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_4_69, 255, 241, 157, 205
+	.global keysplit_bw_me_item_s2
+keysplit_bw_me_item_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_item_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_0_60, 255, 246, 0, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_1_72, 255, 246, 0, 209
+	.global keysplit_bw_me_item_s3
+keysplit_bw_me_item_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_item_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_7_84, 255, 244, 0, 205
+	.global keysplit_bw_me_item_s4
+keysplit_bw_me_item_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+@ SEQ_SE_FLD_22 (bank 1633)
+voice_group bw_se_fld_22
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1633_0_60, 255, 0, 255, 177
+
+
+@ SEQ_ME_LVUP (bank 1301)
+voice_group bw_me_lvup
+	voice_keysplit voicegroup_bw_me_lvup_s0, keysplit_bw_me_lvup_s0
+	voice_keysplit voicegroup_bw_me_lvup_s1, keysplit_bw_me_lvup_s1
+	voice_keysplit voicegroup_bw_me_lvup_s2, keysplit_bw_me_lvup_s2
+
+voice_group bw_me_lvup_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_2_67, 255, 244, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_1_76, 255, 244, 0, 213
+	.global keysplit_bw_me_lvup_s0
+keysplit_bw_me_lvup_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_lvup_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_0_72, 255, 246, 0, 213
+	.global keysplit_bw_me_lvup_s1
+keysplit_bw_me_lvup_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_lvup_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_3_77, 255, 241, 157, 213
+	.global keysplit_bw_me_lvup_s2
+keysplit_bw_me_lvup_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+@ SEQ_ME_ITEM_MYSTERY (bank 1326)
+voice_group bw_me_item_mystery
+	voice_keysplit voicegroup_bw_me_item_mystery_s0, keysplit_bw_me_item_mystery_s0
+	voice_keysplit voicegroup_bw_me_item_mystery_s1, keysplit_bw_me_item_mystery_s1
+	voice_keysplit voicegroup_bw_me_item_mystery_s2, keysplit_bw_me_item_mystery_s2
+	voice_keysplit voicegroup_bw_me_item_mystery_s3, keysplit_bw_me_item_mystery_s3
+	voice_keysplit voicegroup_bw_me_item_mystery_s4, keysplit_bw_me_item_mystery_s4
+	voice_keysplit voicegroup_bw_me_item_mystery_s5, keysplit_bw_me_item_mystery_s5
+	voice_keysplit_all voicegroup_bw_me_item_mystery_d6
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_0_40, 255, 0, 255, 235
+
+voice_group bw_me_item_mystery_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_3_62, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_2_71, 255, 223, 227, 205
+	.global keysplit_bw_me_item_mystery_s0
+keysplit_bw_me_item_mystery_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_item_mystery_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_13_84, 255, 244, 0, 205
+	.global keysplit_bw_me_item_mystery_s1
+keysplit_bw_me_item_mystery_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_item_mystery_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_7_60, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_6_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_9_77, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_8_84, 255, 235, 191, 205
+	.global keysplit_bw_me_item_mystery_s2
+keysplit_bw_me_item_mystery_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+voice_group bw_me_item_mystery_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_12_52, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_11_60, 255, 235, 210, 205
+	.global keysplit_bw_me_item_mystery_s3
+keysplit_bw_me_item_mystery_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_item_mystery_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_10_55, 255, 249, 0, 205
+	.global keysplit_bw_me_item_mystery_s4
+keysplit_bw_me_item_mystery_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_item_mystery_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_4_72, 255, 248, 0, 213
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1326_5_79, 255, 249, 0, 213
+	.global keysplit_bw_me_item_mystery_s5
+keysplit_bw_me_item_mystery_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_item_mystery_d6, 48
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1326_1_48, 255, 246, 0, 213
+
+@ SEQ_ME_WAZA (bank 1307)
+voice_group bw_me_waza
+	voice_keysplit voicegroup_bw_me_waza_s0, keysplit_bw_me_waza_s0
+	voice_keysplit voicegroup_bw_me_waza_s1, keysplit_bw_me_waza_s1
+	voice_keysplit voicegroup_bw_me_waza_s2, keysplit_bw_me_waza_s2
+	voice_keysplit voicegroup_bw_me_waza_s3, keysplit_bw_me_waza_s3
+	voice_keysplit voicegroup_bw_me_waza_s4, keysplit_bw_me_waza_s4
+	voice_keysplit_all voicegroup_bw_me_waza_d5
+	voice_keysplit voicegroup_bw_me_waza_s6, keysplit_bw_me_waza_s6
+
+voice_group bw_me_waza_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_10_60, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_9_69, 255, 241, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_11_77, 255, 241, 157, 205
+	.global keysplit_bw_me_waza_s0
+keysplit_bw_me_waza_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_waza_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_2_55, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_1_64, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_0_72, 255, 235, 157, 205
+	.global keysplit_bw_me_waza_s1
+keysplit_bw_me_waza_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_waza_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_4_36, 255, 223, 191, 194
+	.global keysplit_bw_me_waza_s2
+keysplit_bw_me_waza_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_waza_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_5_48, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_6_60, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_7_72, 255, 241, 0, 205
+	.global keysplit_bw_me_waza_s3
+keysplit_bw_me_waza_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_waza_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_13_55, 255, 249, 0, 205
+	.global keysplit_bw_me_waza_s4
+keysplit_bw_me_waza_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_waza_d5, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1307_3_48, 255, 246, 0, 213
+voice_group bw_me_waza_s6
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_8_72, 255, 235, 157, 205
+	.global keysplit_bw_me_waza_s6
+keysplit_bw_me_waza_s6:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+@ SEQ_SE_FLD_02 (bank 1614)
+voice_group bw_se_fld_02
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1614_2_60, 255, 0, 255, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1614_1_60, 255, 0, 255, 177
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1614_0_60, 255, 254, 25, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 177, 0, 177
+
+
+@ SEQ_SE_PC_LOGIN (bank 1373)
+voice_group bw_se_pc_login
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 25, 0
+
+
+@ SEQ_ME_ACCE (bank 1308)
+voice_group bw_me_acce
+	voice_keysplit voicegroup_bw_me_acce_s0, keysplit_bw_me_acce_s0
+	voice_keysplit voicegroup_bw_me_acce_s1, keysplit_bw_me_acce_s1
+	voice_keysplit voicegroup_bw_me_acce_s2, keysplit_bw_me_acce_s2
+	voice_keysplit voicegroup_bw_me_acce_s3, keysplit_bw_me_acce_s3
+	voice_keysplit voicegroup_bw_me_acce_s4, keysplit_bw_me_acce_s4
+
+voice_group bw_me_acce_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_2_60, 255, 246, 0, 209
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_3_72, 255, 246, 0, 209
+	.global keysplit_bw_me_acce_s0
+keysplit_bw_me_acce_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_acce_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_6_77, 255, 230, 25, 205
+	.global keysplit_bw_me_acce_s1
+keysplit_bw_me_acce_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_acce_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_4_72, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_5_84, 255, 241, 0, 205
+	.global keysplit_bw_me_acce_s2
+keysplit_bw_me_acce_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_acce_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_7_72, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_8_84, 255, 244, 0, 205
+	.global keysplit_bw_me_acce_s3
+keysplit_bw_me_acce_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_acce_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_0_36, 255, 248, 0, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1308_1_48, 255, 248, 0, 194
+	.global keysplit_bw_me_acce_s4
+keysplit_bw_me_acce_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
+@ SEQ_SE_FLD_125 (bank 1875)
+voice_group bw_se_fld_125
+	voice_directsound 60, 0, DirectSoundWaveData_bw_square_3, 255, 235, 39, 194
+
+
+@ SEQ_ME_HYOUKA1 (bank 1311)
+voice_group bw_me_hyouka1
+	voice_keysplit voicegroup_bw_me_hyouka1_s0, keysplit_bw_me_hyouka1_s0
+	voice_keysplit voicegroup_bw_me_hyouka1_s1, keysplit_bw_me_hyouka1_s1
+	voice_keysplit voicegroup_bw_me_hyouka1_s2, keysplit_bw_me_hyouka1_s2
+	voice_keysplit voicegroup_bw_me_hyouka1_s3, keysplit_bw_me_hyouka1_s3
+	voice_keysplit voicegroup_bw_me_hyouka1_s4, keysplit_bw_me_hyouka1_s4
+	voice_keysplit_all voicegroup_bw_me_hyouka1_d5
+	voice_keysplit voicegroup_bw_me_hyouka1_s6, keysplit_bw_me_hyouka1_s6
+
+voice_group bw_me_hyouka1_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_14_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_13_69, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_15_79, 255, 241, 210, 205
+	.global keysplit_bw_me_hyouka1_s0
+keysplit_bw_me_hyouka1_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka1_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_12_43, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_11_52, 255, 235, 210, 205
+	.global keysplit_bw_me_hyouka1_s1
+keysplit_bw_me_hyouka1_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka1_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_6_36, 255, 28, 227, 177
+	.global keysplit_bw_me_hyouka1_s2
+keysplit_bw_me_hyouka1_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka1_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_16_69, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_17_77, 255, 246, 0, 205
+	.global keysplit_bw_me_hyouka1_s3
+keysplit_bw_me_hyouka1_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka1_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_8_55, 255, 249, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_7_60, 255, 249, 0, 205
+	.global keysplit_bw_me_hyouka1_s4
+keysplit_bw_me_hyouka1_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka1_d5, 35
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1311_0_35, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1311_0_35, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1311_0_35, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1311_0_35, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1311_0_35, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1311_5_40, 255, 213, 128, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1311_9_41, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1311_9_41, 255, 0, 255, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1311_9_41, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1311_9_41, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1311_9_41, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1311_9_41, 255, 0, 255, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1311_10_47, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1311_10_47, 255, 0, 255, 177
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1311_2_52, 255, 235, 0, 213
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1311_2_50, 255, 235, 0, 213
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1311_2_50, 255, 235, 0, 213
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1311_1_53, 255, 246, 0, 223
+	voice_directsound 53, 0, DirectSoundWaveData_bw_1311_1_53, 255, 246, 0, 223
+	voice_directsound 54, 0, DirectSoundWaveData_bw_1311_1_53, 255, 246, 0, 223
+	voice_directsound 55, 0, DirectSoundWaveData_bw_1311_1_53, 255, 246, 0, 223
+	voice_directsound 56, 0, DirectSoundWaveData_bw_1311_1_53, 255, 246, 0, 223
+	voice_directsound 57, 0, DirectSoundWaveData_bw_1311_1_53, 255, 246, 0, 223
+	voice_directsound 58, 0, DirectSoundWaveData_bw_1311_2_57, 255, 244, 0, 213
+voice_group bw_me_hyouka1_s6
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_4_64, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1311_3_72, 255, 235, 157, 205
+	.global keysplit_bw_me_hyouka1_s6
+keysplit_bw_me_hyouka1_s6:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+
+@ SEQ_ME_HYOUKA2 (bank 1312)
+voice_group bw_me_hyouka2
+	voice_keysplit voicegroup_bw_me_hyouka2_s0, keysplit_bw_me_hyouka2_s0
+	voice_keysplit voicegroup_bw_me_hyouka2_s1, keysplit_bw_me_hyouka2_s1
+	voice_keysplit voicegroup_bw_me_hyouka2_s2, keysplit_bw_me_hyouka2_s2
+	voice_keysplit voicegroup_bw_me_hyouka2_s3, keysplit_bw_me_hyouka2_s3
+
+voice_group bw_me_hyouka2_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_8_60, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_7_69, 255, 246, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_9_77, 255, 246, 0, 205
+	.global keysplit_bw_me_hyouka2_s0
+keysplit_bw_me_hyouka2_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka2_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_1_60, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_2_72, 255, 244, 0, 205
+	.global keysplit_bw_me_hyouka2_s1
+keysplit_bw_me_hyouka2_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka2_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_0_36, 255, 248, 0, 194
+	.global keysplit_bw_me_hyouka2_s2
+keysplit_bw_me_hyouka2_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka2_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_5_52, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_4_60, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_3_69, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1312_6_77, 255, 244, 0, 205
+	.global keysplit_bw_me_hyouka2_s3
+keysplit_bw_me_hyouka2_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+
+@ SEQ_ME_HYOUKA3 (bank 1313)
+voice_group bw_me_hyouka3
+	voice_keysplit voicegroup_bw_me_hyouka3_s0, keysplit_bw_me_hyouka3_s0
+	voice_keysplit voicegroup_bw_me_hyouka3_s1, keysplit_bw_me_hyouka3_s1
+	voice_keysplit voicegroup_bw_me_hyouka3_s2, keysplit_bw_me_hyouka3_s2
+	voice_keysplit voicegroup_bw_me_hyouka3_s3, keysplit_bw_me_hyouka3_s3
+	voice_keysplit voicegroup_bw_me_hyouka3_s4, keysplit_bw_me_hyouka3_s4
+	voice_keysplit voicegroup_bw_me_hyouka3_s5, keysplit_bw_me_hyouka3_s5
+	voice_keysplit_all voicegroup_bw_me_hyouka3_d6
+
+voice_group bw_me_hyouka3_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_18_72, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_19_84, 255, 244, 0, 205
+	.global keysplit_bw_me_hyouka3_s0
+keysplit_bw_me_hyouka3_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka3_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_3_72, 255, 246, 0, 209
+	.global keysplit_bw_me_hyouka3_s1
+keysplit_bw_me_hyouka3_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka3_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_14_36, 255, 28, 227, 177
+	.global keysplit_bw_me_hyouka3_s2
+keysplit_bw_me_hyouka3_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka3_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_5_48, 255, 244, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_6_60, 255, 241, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_7_72, 255, 241, 0, 205
+	.global keysplit_bw_me_hyouka3_s3
+keysplit_bw_me_hyouka3_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka3_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_9_60, 255, 245, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_8_69, 255, 244, 0, 205
+	.global keysplit_bw_me_hyouka3_s4
+keysplit_bw_me_hyouka3_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka3_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_12_60, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_11_69, 255, 235, 191, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1313_13_77, 255, 235, 191, 205
+	.global keysplit_bw_me_hyouka3_s5
+keysplit_bw_me_hyouka3_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka3_d6, 34
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1313_10_34, 255, 205, 0, 177
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1313_0_35, 255, 0, 255, 177
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1313_0_35, 255, 0, 255, 177
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1313_0_35, 255, 0, 255, 177
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1313_0_35, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1313_4_39, 255, 0, 227, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1313_4_39, 255, 0, 227, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1313_15_41, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1313_15_41, 255, 0, 255, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1313_16_43, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1313_16_43, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1313_17_45, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1313_17_45, 255, 0, 255, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1313_17_45, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1313_17_45, 255, 0, 255, 177
+	voice_directsound 49, 0, DirectSoundWaveData_bw_1313_2_52, 255, 235, 0, 213
+	voice_directsound 50, 0, DirectSoundWaveData_bw_1313_2_52, 255, 235, 0, 213
+	voice_directsound 51, 0, DirectSoundWaveData_bw_1313_2_52, 255, 235, 0, 213
+	voice_directsound 52, 0, DirectSoundWaveData_bw_1313_1_53, 255, 246, 0, 223
+
+@ SEQ_ME_HYOUKA4 (bank 1314)
+voice_group bw_me_hyouka4
+	voice_keysplit voicegroup_bw_me_hyouka4_s0, keysplit_bw_me_hyouka4_s0
+	voice_keysplit voicegroup_bw_me_hyouka4_s1, keysplit_bw_me_hyouka4_s1
+	voice_keysplit voicegroup_bw_me_hyouka4_s2, keysplit_bw_me_hyouka4_s2
+	voice_keysplit voicegroup_bw_me_hyouka4_s3, keysplit_bw_me_hyouka4_s3
+	voice_keysplit voicegroup_bw_me_hyouka4_s4, keysplit_bw_me_hyouka4_s4
+	voice_keysplit_all voicegroup_bw_me_hyouka4_d5
+
+voice_group bw_me_hyouka4_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_8_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_7_69, 255, 241, 210, 205
+	.global keysplit_bw_me_hyouka4_s0
+keysplit_bw_me_hyouka4_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka4_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_6_43, 255, 235, 210, 205
+	.global keysplit_bw_me_hyouka4_s1
+keysplit_bw_me_hyouka4_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka4_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_3_62, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_2_71, 255, 223, 227, 205
+	.global keysplit_bw_me_hyouka4_s2
+keysplit_bw_me_hyouka4_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka4_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_1_45, 255, 223, 191, 194
+	.global keysplit_bw_me_hyouka4_s3
+keysplit_bw_me_hyouka4_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka4_s4
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1314_5_55, 255, 249, 0, 205
+	.global keysplit_bw_me_hyouka4_s4
+keysplit_bw_me_hyouka4_s4:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+voice_group bw_me_hyouka4_d5, 31
+	voice_directsound 31, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 32, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 33, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 34, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 35, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 36, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 37, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1314_4_31, 255, 0, 227, 205
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1314_0_48, 255, 246, 0, 213
+
+@ SEQ_ME_HYOUKA5 (bank 1315)
+voice_group bw_me_hyouka5
+	voice_keysplit voicegroup_bw_me_hyouka5_s0, keysplit_bw_me_hyouka5_s0
+	voice_keysplit voicegroup_bw_me_hyouka5_s1, keysplit_bw_me_hyouka5_s1
+	voice_keysplit voicegroup_bw_me_hyouka5_s2, keysplit_bw_me_hyouka5_s2
+	voice_keysplit voicegroup_bw_me_hyouka5_s3, keysplit_bw_me_hyouka5_s3
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_keysplit voicegroup_bw_me_hyouka5_s5, keysplit_bw_me_hyouka5_s5
+	voice_keysplit_all voicegroup_bw_me_hyouka5_d6
+
+voice_group bw_me_hyouka5_s0
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_14_60, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_13_69, 255, 241, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_15_79, 255, 241, 210, 205
+	.global keysplit_bw_me_hyouka5_s0
+keysplit_bw_me_hyouka5_s0:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka5_s1
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_12_43, 255, 235, 210, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_11_52, 255, 235, 210, 205
+	.global keysplit_bw_me_hyouka5_s1
+keysplit_bw_me_hyouka5_s1:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka5_s2
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_7_53, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_6_62, 255, 223, 227, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_5_71, 255, 223, 227, 205
+	.global keysplit_bw_me_hyouka5_s2
+keysplit_bw_me_hyouka5_s2:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
+voice_group bw_me_hyouka5_s3
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_1_55, 255, 235, 157, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_0_64, 255, 235, 157, 205
+	.global keysplit_bw_me_hyouka5_s3
+keysplit_bw_me_hyouka5_s3:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka5_s5
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_10_55, 255, 249, 0, 205
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1315_9_60, 255, 249, 0, 205
+	.global keysplit_bw_me_hyouka5_s5
+keysplit_bw_me_hyouka5_s5:
+	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+voice_group bw_me_hyouka5_d6, 38
+	voice_directsound 38, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 39, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 40, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 41, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 42, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 43, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 44, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 45, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 46, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 47, 0, DirectSoundWaveData_bw_1315_8_38, 255, 0, 255, 177
+	voice_directsound 48, 0, DirectSoundWaveData_bw_1315_2_48, 255, 241, 0, 213
+
+@ SEQ_SE_FLD_133 (bank 1891)
+voice_group bw_se_fld_133
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1891_0_60, 47, 0, 255, 223
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+
+
+@ SEQ_SE_FLD_06 (bank 1618)
+voice_group bw_se_fld_06
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1618_0_60, 255, 0, 255, 177
+
+
+@ SEQ_SE_FLD_156 (bank 1953)
+voice_group bw_se_fld_156
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1953_0_60, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_noise, 255, 0, 255, 28
+
+
+@ SEQ_SE_FLD_155 (bank 1952)
+voice_group bw_se_fld_155
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1952_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_154 (bank 1951)
+voice_group bw_se_fld_154
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1951_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_153 (bank 1950)
+voice_group bw_se_fld_153
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1950_0_60, 255, 0, 255, 194
+
+
+@ SEQ_SE_FLD_68 (bank 1706)
+voice_group bw_se_fld_68
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1706_0_60, 255, 0, 255, 194
+	voice_directsound 60, 0, DirectSoundWaveData_bw_1706_0_60, 255, 0, 255, 194
+
+
 @ SEQ_BGM_VS_NORAPOKE (bank 1128)
 voice_group bw_vs_norapoke
 	voice_keysplit voicegroup_bw_vs_norapoke_s0, keysplit_bw_vs_norapoke_s0
@@ -7182,66 +8427,6 @@ voice_group bw_eye_plasma_d8, 28
 	voice_directsound 76, 0, DirectSoundWaveData_bw_1127_3_69, 255, 241, 0, 213
 	voice_directsound 77, 0, DirectSoundWaveData_bw_1127_3_77, 255, 241, 0, 213
 
-@ SEQ_ME_LVUP (bank 1301)
-voice_group bw_me_lvup
-	voice_keysplit voicegroup_bw_me_lvup_s0, keysplit_bw_me_lvup_s0
-	voice_keysplit voicegroup_bw_me_lvup_s1, keysplit_bw_me_lvup_s1
-	voice_keysplit voicegroup_bw_me_lvup_s2, keysplit_bw_me_lvup_s2
-
-voice_group bw_me_lvup_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_2_67, 255, 244, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_1_76, 255, 244, 0, 213
-	.global keysplit_bw_me_lvup_s0
-keysplit_bw_me_lvup_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_lvup_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_0_72, 255, 246, 0, 213
-	.global keysplit_bw_me_lvup_s1
-keysplit_bw_me_lvup_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-voice_group bw_me_lvup_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1301_3_77, 255, 241, 157, 213
-	.global keysplit_bw_me_lvup_s2
-keysplit_bw_me_lvup_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-
-@ SEQ_ME_ITEM (bank 1302)
-voice_group bw_me_item
-	voice_keysplit voicegroup_bw_me_item_s0, keysplit_bw_me_item_s0
-	voice_keysplit voicegroup_bw_me_item_s1, keysplit_bw_me_item_s1
-	voice_keysplit voicegroup_bw_me_item_s2, keysplit_bw_me_item_s2
-	voice_keysplit voicegroup_bw_me_item_s3, keysplit_bw_me_item_s3
-	voice_keysplit voicegroup_bw_me_item_s4, keysplit_bw_me_item_s4
-
-voice_group bw_me_item_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_2_72, 255, 241, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_3_84, 255, 241, 0, 205
-	.global keysplit_bw_me_item_s0
-keysplit_bw_me_item_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_item_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_5_36, 255, 28, 227, 177
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_6_48, 255, 28, 227, 177
-	.global keysplit_bw_me_item_s1
-keysplit_bw_me_item_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_item_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_4_69, 255, 241, 157, 205
-	.global keysplit_bw_me_item_s2
-keysplit_bw_me_item_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-voice_group bw_me_item_s3
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_0_60, 255, 246, 0, 209
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_1_72, 255, 246, 0, 209
-	.global keysplit_bw_me_item_s3
-keysplit_bw_me_item_s3:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_item_s4
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1302_7_84, 255, 244, 0, 205
-	.global keysplit_bw_me_item_s4
-keysplit_bw_me_item_s4:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-
 @ SEQ_ME_SHINKAOME (bank 1305)
 voice_group bw_me_shinkaome
 	voice_keysplit voicegroup_bw_me_shinkaome_s0, keysplit_bw_me_shinkaome_s0
@@ -7315,185 +8500,6 @@ voice_group bw_me_shinkaome_s7
 keysplit_bw_me_shinkaome_s7:
 	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
 
-@ SEQ_ME_WAZA (bank 1307)
-voice_group bw_me_waza
-	voice_keysplit voicegroup_bw_me_waza_s0, keysplit_bw_me_waza_s0
-	voice_keysplit voicegroup_bw_me_waza_s1, keysplit_bw_me_waza_s1
-	voice_keysplit voicegroup_bw_me_waza_s2, keysplit_bw_me_waza_s2
-	voice_keysplit voicegroup_bw_me_waza_s3, keysplit_bw_me_waza_s3
-	voice_keysplit voicegroup_bw_me_waza_s4, keysplit_bw_me_waza_s4
-	voice_keysplit_all voicegroup_bw_me_waza_d5
-	voice_keysplit voicegroup_bw_me_waza_s6, keysplit_bw_me_waza_s6
-
-voice_group bw_me_waza_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_10_60, 255, 241, 157, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_9_69, 255, 241, 157, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_11_77, 255, 241, 157, 205
-	.global keysplit_bw_me_waza_s0
-keysplit_bw_me_waza_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_waza_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_2_55, 255, 235, 157, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_1_64, 255, 235, 157, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_0_72, 255, 235, 157, 205
-	.global keysplit_bw_me_waza_s1
-keysplit_bw_me_waza_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_waza_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_4_36, 255, 223, 191, 194
-	.global keysplit_bw_me_waza_s2
-keysplit_bw_me_waza_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-voice_group bw_me_waza_s3
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_5_48, 255, 244, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_6_60, 255, 241, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_7_72, 255, 241, 0, 205
-	.global keysplit_bw_me_waza_s3
-keysplit_bw_me_waza_s3:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_waza_s4
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_13_55, 255, 249, 0, 205
-	.global keysplit_bw_me_waza_s4
-keysplit_bw_me_waza_s4:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-voice_group bw_me_waza_d5, 31
-	voice_directsound 31, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 32, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 33, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 34, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 35, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 36, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 37, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 38, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 39, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 40, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 41, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 42, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 43, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 44, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 45, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 46, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 47, 0, DirectSoundWaveData_bw_1307_12_31, 255, 0, 227, 205
-	voice_directsound 48, 0, DirectSoundWaveData_bw_1307_3_48, 255, 246, 0, 213
-voice_group bw_me_waza_s6
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1307_8_72, 255, 235, 157, 205
-	.global keysplit_bw_me_waza_s6
-keysplit_bw_me_waza_s6:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-
-@ SEQ_ME_ASA (bank 1300)
-voice_group bw_me_asa
-	voice_keysplit voicegroup_bw_me_asa_s0, keysplit_bw_me_asa_s0
-	voice_keysplit voicegroup_bw_me_asa_s1, keysplit_bw_me_asa_s1
-	voice_keysplit voicegroup_bw_me_asa_s2, keysplit_bw_me_asa_s2
-	voice_keysplit voicegroup_bw_me_asa_s3, keysplit_bw_me_asa_s3
-	voice_keysplit voicegroup_bw_me_asa_s4, keysplit_bw_me_asa_s4
-	voice_keysplit voicegroup_bw_me_asa_s5, keysplit_bw_me_asa_s5
-
-voice_group bw_me_asa_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_4_60, 255, 241, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_5_72, 255, 241, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_6_84, 255, 241, 0, 205
-	.global keysplit_bw_me_asa_s0
-keysplit_bw_me_asa_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_asa_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_2_72, 255, 248, 0, 213
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_3_79, 255, 249, 0, 213
-	.global keysplit_bw_me_asa_s1
-keysplit_bw_me_asa_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_asa_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_9_36, 255, 28, 227, 177
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_10_48, 255, 28, 227, 177
-	.global keysplit_bw_me_asa_s2
-keysplit_bw_me_asa_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_asa_s3
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_0_60, 255, 246, 0, 209
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_1_72, 255, 246, 0, 209
-	.global keysplit_bw_me_asa_s3
-keysplit_bw_me_asa_s3:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_asa_s4
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_7_69, 255, 235, 191, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_8_77, 255, 235, 191, 205
-	.global keysplit_bw_me_asa_s4
-keysplit_bw_me_asa_s4:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_asa_s5
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_11_72, 255, 244, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1300_12_84, 255, 244, 0, 205
-	.global keysplit_bw_me_asa_s5
-keysplit_bw_me_asa_s5:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-
-@ SEQ_ME_BADGE (bank 1306)
-voice_group bw_me_badge
-	voice_keysplit voicegroup_bw_me_badge_s0, keysplit_bw_me_badge_s0
-	voice_keysplit voicegroup_bw_me_badge_s1, keysplit_bw_me_badge_s1
-	voice_keysplit voicegroup_bw_me_badge_s2, keysplit_bw_me_badge_s2
-	voice_keysplit voicegroup_bw_me_badge_s3, keysplit_bw_me_badge_s3
-	voice_keysplit voicegroup_bw_me_badge_s4, keysplit_bw_me_badge_s4
-	voice_keysplit voicegroup_bw_me_badge_s5, keysplit_bw_me_badge_s5
-	voice_keysplit_all voicegroup_bw_me_badge_d6
-
-voice_group bw_me_badge_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_13_60, 255, 241, 210, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_12_69, 255, 241, 210, 205
-	.global keysplit_bw_me_badge_s0
-keysplit_bw_me_badge_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_badge_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_11_43, 255, 235, 210, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_10_52, 255, 235, 210, 205
-	.global keysplit_bw_me_badge_s1
-keysplit_bw_me_badge_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_badge_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_3_53, 255, 223, 227, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_2_62, 255, 223, 227, 205
-	.global keysplit_bw_me_badge_s2
-keysplit_bw_me_badge_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_badge_s3
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_5_60, 255, 241, 157, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_4_69, 255, 241, 157, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_6_77, 255, 241, 157, 205
-	.global keysplit_bw_me_badge_s3
-keysplit_bw_me_badge_s3:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_badge_s4
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_0_43, 175, 235, 255, 205
-	.global keysplit_bw_me_badge_s4
-keysplit_bw_me_badge_s4:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-voice_group bw_me_badge_s5
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_9_55, 255, 249, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1306_8_60, 255, 249, 0, 205
-	.global keysplit_bw_me_badge_s5
-keysplit_bw_me_badge_s5:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_badge_d6, 31
-	voice_directsound 31, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 32, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 33, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 34, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 35, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 36, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 37, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 38, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 39, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 40, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 41, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 42, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 43, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 44, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 45, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 46, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 47, 0, DirectSoundWaveData_bw_1306_7_31, 255, 0, 227, 205
-	voice_directsound 48, 0, DirectSoundWaveData_bw_1306_1_48, 255, 246, 0, 213
-
 @ SEQ_ME_WASURE (bank 1309)
 voice_group bw_me_wasure
 	voice_keysplit voicegroup_bw_me_wasure_s0, keysplit_bw_me_wasure_s0
@@ -7558,42 +8564,4 @@ voice_group bw_me_kinomi_s3
 	.global keysplit_bw_me_kinomi_s3
 keysplit_bw_me_kinomi_s3:
 	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-
-@ SEQ_ME_KEYITEM (bank 1303)
-voice_group bw_me_keyitem
-	voice_keysplit voicegroup_bw_me_keyitem_s0, keysplit_bw_me_keyitem_s0
-	voice_keysplit voicegroup_bw_me_keyitem_s1, keysplit_bw_me_keyitem_s1
-	voice_keysplit voicegroup_bw_me_keyitem_s2, keysplit_bw_me_keyitem_s2
-	voice_keysplit_all voicegroup_bw_me_keyitem_d3
-
-voice_group bw_me_keyitem_s0
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_3_60, 255, 246, 0, 209
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_4_72, 255, 246, 0, 209
-	.global keysplit_bw_me_keyitem_s0
-keysplit_bw_me_keyitem_s0:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-voice_group bw_me_keyitem_s1
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_0_36, 255, 248, 0, 194
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_1_48, 255, 248, 0, 194
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_2_55, 255, 248, 0, 194
-	.global keysplit_bw_me_keyitem_s1
-keysplit_bw_me_keyitem_s1:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_keyitem_s2
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_8_60, 255, 246, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_7_69, 255, 246, 0, 205
-	voice_directsound 60, 0, DirectSoundWaveData_bw_1303_9_77, 255, 246, 0, 205
-	.global keysplit_bw_me_keyitem_s2
-keysplit_bw_me_keyitem_s2:
-	.byte 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
-voice_group bw_me_keyitem_d3, 46
-	voice_directsound 46, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 47, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 48, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 49, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 50, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 51, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 52, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 53, 0, DirectSoundWaveData_bw_1303_5_46, 255, 233, 0, 205
-	voice_directsound 54, 0, DirectSoundWaveData_bw_1303_6_54, 255, 0, 227, 205
 
