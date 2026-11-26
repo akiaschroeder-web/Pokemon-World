@@ -117,7 +117,7 @@ enum BwWait
     BW_WAIT_MENU,        // a list menu (ListMenu*)
     BW_WAIT_PARTY,       // choosing a party Pokémon (CallPokeSelect)
     BW_WAIT_SE,          // a sound effect (SEWait)
-    BW_WAIT_DEMO,        // a 3D cutscene we don't have: a fade to black and back
+    BW_WAIT_DEMO,        // a BW 3D cutscene playing (Call3DDemo)
 };
 
 struct BwFrame
@@ -153,6 +153,8 @@ static struct
     u8 menuX, menuY, menuCount;
     bool8 menuCancel;
     u16 partyDest;
+    u16 demoFrames;
+    u32 demoWaited;
     struct ListMenuItem *menuItems;
 } sVm;
 
@@ -759,7 +761,8 @@ static bool32 OpenShop(u16 shop)
     return TRUE;
 }
 
-#include "data/bw_songs.h"   // sBwSongs: BW sound id -> MUS_BW_* (import_bw.py)
+#include "data/bw_songs.h"
+#include "data/bw_demos.h"   // sBwDemoFrames: cutscene id -> its length (bw/demos.py)   // sBwSongs: BW sound id -> MUS_BW_* (import_bw.py)
 
 static u16 BwSong(u16 id)
 {
@@ -879,19 +882,8 @@ static bool32 Waiting(void)
             return TRUE;
         break;
     case BW_WAIT_DEMO:
-        if (gPaletteFade.active)
+        if (Web3D_StepDemo(sVm.demoFrames, &sVm.demoWaited))
             return TRUE;
-        if (sVm.waitFrames == 0xFFFF)          // faded out: hold the black a moment, then fade back in
-        {
-            sVm.waitFrames = 45;
-            return TRUE;
-        }
-        if (sVm.waitFrames)
-        {
-            if (--sVm.waitFrames == 0)
-                BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
-            return TRUE;
-        }
         break;
     case BW_WAIT_STARTER:
         if (gMain.callback2 != CB2_Overworld)
@@ -1209,13 +1201,21 @@ again:
         }
         case 0xA7: m4aMPlayStop(&gMPlayInfo_SE1); m4aMPlayStop(&gMPlayInfo_SE2); break;   // SEStop
         case 0xA8: sVm.wait = BW_WAIT_SE; break;               // SEWait
-        case 0x154: // Call3DDemo: BW's 3D cutscenes (the legendary's awakening, N's castle...) aren't converted
+        case 0x154: // Call3DDemo: BW's 3D cutscenes, played by the page (bw/demos.py, unova3d.js)
+        {
+            u16 id = BwFlex(Read16()), i;
             Read16();
-            Read16();
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-            sVm.waitFrames = 0xFFFF;
+            for (i = 0; i < ARRAY_COUNT(sBwDemoFrames); i++)
+                if (sBwDemoFrames[i][0] == id)
+                    break;
+            if (i == ARRAY_COUNT(sBwDemoFrames))
+                break;
+            sVm.demoFrames = sBwDemoFrames[i][1];
+            sVm.demoWaited = 0;
+            Web3D_PlayDemo(id);
             sVm.wait = BW_WAIT_DEMO;
             break;
+        }
         case 0xAA: sVm.wait = BW_WAIT_FANFARE; break;          // MEWait
         case 0xAB: { u16 sp = Species(Read16()); Read16(); if (sp) PlayCry_Normal(sp, 0); break; }
         case 0xAC: sVm.wait = BW_WAIT_CRY; break;              // PVWait

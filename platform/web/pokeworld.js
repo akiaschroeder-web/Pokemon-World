@@ -127,6 +127,15 @@ var Module = typeof Module !== 'undefined' ? Module : {};
                      image: HEAPU8.subarray(px + 4 * off, px + 4 * (off + w * h)) });
     }
     var tx = camX + 120, tz = camY + 80 + 16;      // the player: centre of the screen
+    // BW's 3D cutscenes (Call3DDemo): words 20-22; the page draws them instead of the map, without
+    // the GBA picture, and tells the game (word 22) once the cutscene's files have loaded
+    if (u[p + 20]) {
+      stack3D.classList.add('demo');
+      if (PW3D.demoReady(u[p + 20] - 1)) u[p + 22] = 1;
+      PW3D.drawDemo(u[p + 20] - 1, u[p + 21] / 16);
+      return;
+    }
+    stack3D.classList.remove('demo');
     // BW's event camera (cutscenes): words 11-19 of the scene block (src/platform/web3d.c)
     PW3D.eventCamera(u[p + 11], s[p + 12], s[p + 13], s[p + 14], s[p + 15], s[p + 16], s[p + 17], u[p + 18], u[p + 19]);
     PW3D.draw([tx, PW3D.groundHeight(tx, tz), tz], sprites, u[p + 3], u[p + 4]);

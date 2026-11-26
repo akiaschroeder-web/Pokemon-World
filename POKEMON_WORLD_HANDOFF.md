@@ -139,11 +139,16 @@ sprite chosen at setup.
   zone -> rail table in ARM9, a/1/0/9 rail headers; format from CTRMapV). Rails span a whole city, so a
   rail NPC goes on whichever map of the matrix holds its tile. The player still walks the grid.
 - **Sounds:** BW's sound effects and fanfares that its scripts play are converted with the music
-  (`SEQ_SE_*` on the SE2 player); SEPlay/SEWait/SEStop/MEPlay use them. Call3DDemo (BW's 3D movies) is
-  a fade to black and back.
+  (`SEQ_SE_*` on the SE2 player); SEPlay/SEWait/SEStop/MEPlay use them.
+- **3D cutscenes** (Call3DDemo, `bw/demos.py`): BW's demo models and animations from a/1/6/0 - joints
+  (BCA), visibility (BVA), texture patterns (BTP) and scrolling (BTA), per-frame camera (pitch, yaw, roll,
+  position) - baked to `graphics/unova/demos` and played by `PW3D.drawDemo` (unova3d.js) at 30 fps;
+  the game waits on it (scene block words 20-22). Ids by where BW calls them: cruise ship, Ferris wheel
+  (by season), harbour boats, N's castle rising, Reshiram awakening and meeting N, Zekrom at
+  Dragonspiral, Driftveil Drawbridge. Not converted: material colour animations (BMA), lighting.
 - **Trainer eye music:** a Unova trainer's `encounterMusic` is the index of BW's eye theme (from BW's class
   table), played by `GetUnovaTrainerEyeMusic`.
-- **Not yet:** BW's 3D movies themselves (Call3DDemo), building/door and map texture animations, the
+- **Not yet:** building/door and map texture animations, the
   Badge Case's Unova row and a Unova Town Map (BW's art not located yet), Juniper's intro, two songs ndspy
   misreads (`SEQ_BGM_H_01`, `SEQ_BGM_D_06`). Note: the map group count is at its limit (128).
 - BW zone ids, area/texture sets and formats: see the converter's comments.

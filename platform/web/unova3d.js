@@ -340,4 +340,130 @@
     var tx = Math.max(0, Math.min(31, Math.floor((x - cx * 512) / 16))), tz = Math.max(0, Math.min(31, Math.floor((z - cz * 512) / 16)));
     return c.info.heights[tz * 32 + tx];
   };
+
+  // --- BW's 3D cutscenes (Call3DDemo), converted by tools/pokemon_world/bw/demos.py ---
+  // unova/demos/d<id>.json: frames, camera [pitch, yaw, roll (degrees), x, y, z] per frame, models;
+  // a model's mesh (PWD1: f32 bone-local positions, a bone slot per vertex) and baked bone matrices
+  // (3x4 rows per bone, every `step` frames). Each draw call has its own list of up to 60 bones.
+  var DVS = [
+    'attribute vec3 aPos; attribute float aBone; attribute vec2 aUV; attribute vec4 aCol;',
+    'uniform mat4 uVP; uniform vec4 uBones[180]; uniform vec2 uUVOff; varying vec2 vUV; varying vec4 vCol;',
+    'void main() { int i = int(aBone) * 3; vec4 p = vec4(aPos, 1.0);',
+    '  vec3 w = vec3(dot(uBones[i], p), dot(uBones[i + 1], p), dot(uBones[i + 2], p));',
+    '  gl_Position = uVP * vec4(w, 1.0); vUV = aUV + uUVOff; vCol = aCol; }'].join('\n');
+  var demoProg = null, demos = {};
+  PW3D.demoFov = 40;          // degrees
+  PW3D.demoCamMode = 0;       // camera convention (see demoCamera)
+
+  function loadDemo(id) {
+    if (demos[id]) return demos[id];
+    var d = demos[id] = { state: 'loading' };
+    var base = PW3D.base + 'demos/';
+    fetch(base + 'd' + id + '.json').then(function (r) { return r.json(); }).then(function (j) {
+      d.info = j;
+      return Promise.all(j.models.map(function (m) {
+        return Promise.all([fetch(base + m.mesh).then(function (r) { return r.arrayBuffer(); }),
+                            fetch(base + m.anim).then(function (r) { return r.arrayBuffer(); })]).then(function (bufs) {
+          var dv = new DataView(bufs[0]), ng = dv.getUint32(4, true), nv = dv.getUint32(8, true), ni = dv.getUint32(12, true);
+          var groups = [];
+          for (var g = 0; g < ng; g++) {
+            var o = 16 + 16 * g;
+            groups.push({ tex: dv.getUint16(o, true), ws: dv.getUint8(o + 2), wt: dv.getUint8(o + 3), alpha: dv.getUint8(o + 4),
+                          cull: dv.getUint8(o + 5), flags: dv.getUint8(o + 6), first: dv.getUint32(o + 8, true), count: dv.getUint32(o + 12, true) });
+          }
+          var vo = 16 + 16 * ng, io = vo + 28 * nv;
+          var vbuf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, vbuf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Uint8Array(bufs[0], vo, 28 * nv), gl.STATIC_DRAW);
+          var big = nv > 65535, ibuf = gl.createBuffer(); gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf);
+          gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, big ? new Uint32Array(bufs[0].slice(io, io + 4 * ni)) : new Uint16Array(bufs[0].slice(io, io + 2 * ni)), gl.STATIC_DRAW);
+          return { info: m, groups: groups, vbuf: vbuf, ibuf: ibuf, big: big, anim: new Float32Array(bufs[1]),
+                   tex: m.textures.map(function (t) { return base + 'tex/' + t; }) };
+        });
+      }));
+    }).then(function (models) { d.models = models; d.state = 'ready'; }).catch(function (e) { d.state = 'failed'; console.log('[demo] ' + e); });
+    return d;
+  }
+
+  // BW's demo camera: pitch, yaw, roll in degrees, then the camera's position.
+  // Orientation R = Ry(yaw) Rx(pitch) Rz(roll); the camera looks down its -z axis.
+  function demoCamera(c) {
+    var D = Math.PI / 180, px = c[0] * D, py = c[1] * D, pz = c[2] * D;
+    var cx = Math.cos(px), sx = Math.sin(px), cy = Math.cos(py), sy = Math.sin(py), cz = Math.cos(pz), sz = Math.sin(pz);
+    function m3(a, b) { var o = []; for (var r = 0; r < 3; r++) for (var k = 0; k < 3; k++) o[r * 3 + k] = a[r * 3] * b[k] + a[r * 3 + 1] * b[3 + k] + a[r * 3 + 2] * b[6 + k]; return o; }
+    var RY = [cy, 0, sy, 0, 1, 0, -sy, 0, cy], RX = [1, 0, 0, 0, cx, -sx, 0, sx, cx], RZ = [cz, -sz, 0, sz, cz, 0, 0, 0, 1];
+    var R = PW3D.demoCamMode === 1 ? m3(m3(RX, RY), RZ) : m3(m3(RY, RX), RZ);
+    var e = [c[3], c[4], c[5]];
+    return new Float32Array([R[0], R[1], R[2], 0, R[3], R[4], R[5], 0, R[6], R[7], R[8], 0,   // view = R^T (p - e)
+      -(R[0] * e[0] + R[3] * e[1] + R[6] * e[2]), -(R[1] * e[0] + R[4] * e[1] + R[7] * e[2]), -(R[2] * e[0] + R[5] * e[1] + R[8] * e[2]), 1]);
+  }
+
+  PW3D.demoReady = function (id) { return loadDemo(id).state === 'ready'; };
+
+  // draws cutscene `id` at `frame` (its own 30 fps frames); until it has loaded the screen is black
+  PW3D.drawDemo = function (id, frame) {
+    if (!gl) return;
+    var w = canvas.clientWidth * (window.devicePixelRatio || 1), h = canvas.clientHeight * (window.devicePixelRatio || 1);
+    if (canvas.width !== Math.round(w) || canvas.height !== Math.round(h)) { canvas.width = Math.round(w); canvas.height = Math.round(h); }
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    var d = loadDemo(id);
+    if (d.state !== 'ready') return;
+    if (!demoProg) demoProg = compile(DVS, FS);
+    var cams = d.info.camera, f = Math.max(0, Math.min(cams.length - 1, frame));
+    var c0 = cams[Math.floor(f)], c1 = cams[Math.min(cams.length - 1, Math.floor(f) + 1)], t = f - Math.floor(f);
+    var cam = c0.map(function (v, i) { return v + (c1[i] - v) * t; });
+    var vp = mul(perspective(PW3D.demoFov * Math.PI / 180, canvas.width / canvas.height, 4, 40000), demoCamera(cam));
+    gl.useProgram(demoProg);
+    gl.uniformMatrix4fv(gl.getUniformLocation(demoProg, 'uVP'), false, vp);
+    var aPos = gl.getAttribLocation(demoProg, 'aPos'), aBone = gl.getAttribLocation(demoProg, 'aBone'),
+      aUV = gl.getAttribLocation(demoProg, 'aUV'), aCol = gl.getAttribLocation(demoProg, 'aCol');
+    var uBones = gl.getUniformLocation(demoProg, 'uBones'), uUVOff = gl.getUniformLocation(demoProg, 'uUVOff'),
+      uTextured = gl.getUniformLocation(demoProg, 'uTextured'), uAlpha = gl.getUniformLocation(demoProg, 'uAlpha'),
+      uAlphaTest = gl.getUniformLocation(demoProg, 'uAlphaTest');
+    [aPos, aBone, aUV, aCol].forEach(function (a) { if (a >= 0) gl.enableVertexAttribArray(a); });
+    gl.enable(gl.DEPTH_TEST);
+    var palette = new Float32Array(180 * 4);
+    [false, true].forEach(function (pass) {
+      var season = new Date().getMonth() % 4;     // like BW: January is spring
+      d.models.forEach(function (m) {
+        var info = m.info, nb = info.bones, step = info.step || 2;
+        if (info.season !== undefined && info.season !== season) return;
+        var nfr = m.anim.length / (12 * nb), fk = Math.min(nfr - 1, f / step), k0 = Math.floor(fk), k1 = Math.min(nfr - 1, k0 + 1), g = fk - k0;
+        gl.bindBuffer(gl.ARRAY_BUFFER, m.vbuf);
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, m.ibuf);
+        gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 28, 0);
+        gl.vertexAttribPointer(aBone, 1, gl.UNSIGNED_SHORT, false, 28, 12);
+        gl.vertexAttribPointer(aUV, 2, gl.FLOAT, false, 28, 16);
+        gl.vertexAttribPointer(aCol, 4, gl.UNSIGNED_BYTE, true, 28, 24);
+        m.groups.forEach(function (grp, gi) {
+          var translucent = (grp.flags & 2) !== 0;
+          if (translucent !== pass) return;
+          var bones = info.draws[gi] || [];
+          for (var b = 0; b < bones.length && b < 60; b++) {
+            var a0 = (k0 * nb + bones[b]) * 12, a1 = (k1 * nb + bones[b]) * 12;
+            for (var q = 0; q < 12; q++) palette[b * 12 + q] = m.anim[a0 + q] + (m.anim[a1 + q] - m.anim[a0 + q]) * g;
+          }
+          gl.uniform4fv(uBones, palette);
+          var ti = grp.tex, pat = info.patterns[gi];
+          if (pat) { for (var p = 0; p < pat.length; p++) if (pat[p][0] <= f) ti = pat[p][1]; }
+          var sc = info.scroll[gi], uo = 0, vo = 0;
+          if (sc) { if (sc[0].length) uo = sc[0][Math.floor(f) % sc[0].length]; if (sc[1].length) vo = sc[1][Math.floor(f) % sc[1].length]; }
+          gl.uniform2f(uUVOff, uo, vo);
+          var tex = ti !== 0xFFFF && m.tex[ti] ? texture(m.tex[ti], grp.ws, grp.wt) : null;
+          if (tex && !(tex instanceof WebGLTexture)) return;     // still loading
+          gl.uniform1f(uTextured, tex ? 1 : 0);
+          if (tex) { gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, tex); }
+          gl.uniform1f(uAlpha, grp.alpha / 31);
+          gl.uniform1f(uAlphaTest, (grp.flags & 1) ? 0.5 : 0.0);
+          if (grp.cull === 0) gl.disable(gl.CULL_FACE); else { gl.enable(gl.CULL_FACE); gl.cullFace(grp.cull === 1 ? gl.BACK : grp.cull === 2 ? gl.FRONT : gl.FRONT_AND_BACK); }
+          if (translucent) { gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); gl.depthMask(false); }
+          else { gl.disable(gl.BLEND); gl.depthMask(true); }
+          gl.drawElements(gl.TRIANGLES, grp.count, m.big ? gl.UNSIGNED_INT : gl.UNSIGNED_SHORT, grp.first * (m.big ? 4 : 2));
+        });
+      });
+    });
+    gl.depthMask(true); gl.disable(gl.BLEND); gl.disable(gl.CULL_FACE);
+    [aPos, aBone, aUV, aCol].forEach(function (a) { if (a >= 0) gl.disableVertexAttribArray(a); });
+  };
 })();

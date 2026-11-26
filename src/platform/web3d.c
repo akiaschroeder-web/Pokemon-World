@@ -59,6 +59,11 @@ static struct
     s32 evTargetX, evTargetY, evTargetZ;   // fx32, in BW's map matrix
     u32 evFrames;
     u32 evSeq;
+    // BW's 3D cutscenes (Call3DDemo): demo id + 1 (0 = none), its frame x 16 (BW's 30 fps frames),
+    // and set by the page once the cutscene's files have loaded
+    u32 demo;
+    u32 demoFrame;
+    u32 demoReady;
 } sScene;
 
 static struct Web3DSprite sSceneSprites[MAX_3D_SPRITES];
@@ -248,6 +253,36 @@ void Web3D_EventCamera(u32 mode, s32 pitch, s32 yaw, s32 distance, s32 x, s32 y,
     }
     sScene.evFrames = frames;
     sScene.evSeq++;
+}
+
+void Web3D_PlayDemo(u32 id)
+{
+    sScene.demo = id + 1;
+    sScene.demoFrame = 0;
+    sScene.demoReady = 0;
+}
+
+// one game frame of the cutscene (60 per second; BW's demos run at 30): FALSE once it's over
+bool32 Web3D_StepDemo(u32 frames, u32 *waited)
+{
+    if (!sScene.demo)
+        return FALSE;
+    if (!sScene.demoReady)
+    {
+        if (++*waited > 60 * 20)        // the files never came: carry on without it
+        {
+            sScene.demo = 0;
+            return FALSE;
+        }
+        return TRUE;
+    }
+    sScene.demoFrame += 8;
+    if (sScene.demoFrame >= frames * 16)
+    {
+        sScene.demo = 0;
+        return FALSE;
+    }
+    return TRUE;
 }
 
 EMSCRIPTEN_KEEPALIVE const void *Web_Get3DScene(void)
