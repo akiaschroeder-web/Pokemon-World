@@ -34,7 +34,7 @@
 #include "../graphics/unova/intro/juniper_text.h"
 
 static const u16 sJuniperPal[] = INCBIN_U16("graphics/unova/intro/juniper.pal");
-static const u32 sBgTiles[] = INCBIN_U32("graphics/unova/intro/bg.4bpp");
+static const u32 sBgTiles[] = INCBIN_U32("graphics/unova/intro/bg.tiles");
 static const u16 sBgPal[] = INCBIN_U16("graphics/unova/intro/bg.pal");
 static const u16 sBgMap[] = INCBIN_U16("graphics/unova/intro/bg_map.bin");
 
