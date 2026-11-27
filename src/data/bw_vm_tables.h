@@ -1828,6 +1828,18 @@ extern const u8 *const gBwTextTable_470[];
 extern const u32 gBwTextCount_470;
 extern const u8 *const gBwTextTable_471[];
 extern const u32 gBwTextCount_471;
+extern const u8 *const gBwCallTable_192[];
+extern const u32 gBwCallCount_192;
+extern const u8 *const gBwCallTable_193[];
+extern const u32 gBwCallCount_193;
+extern const u8 *const gBwCallTable_194[];
+extern const u32 gBwCallCount_194;
+extern const u8 *const gBwCallTable_195[];
+extern const u32 gBwCallCount_195;
+extern const u8 *const gBwCallTable_196[];
+extern const u32 gBwCallCount_196;
+extern const u8 *const gBwCallTable_197[];
+extern const u32 gBwCallCount_197;
 
 static const struct BwScriptFile sBwScriptFiles[] =
 {
@@ -3197,6 +3209,17 @@ static const struct BwTextFile sBwTextFiles[] =
     [469] = { gBwTextTable_469, &gBwTextCount_469 },
     [470] = { gBwTextTable_470, &gBwTextCount_470 },
     [471] = { gBwTextTable_471, &gBwTextCount_471 },
+};
+
+// CallXTransceiver n -> the call's lines (a/0/0/2 file 191 + n)
+static const struct BwTextFile sBwCalls[] =
+{
+    [1] = { gBwCallTable_192, &gBwCallCount_192 },
+    [2] = { gBwCallTable_193, &gBwCallCount_193 },
+    [3] = { gBwCallTable_194, &gBwCallCount_194 },
+    [4] = { gBwCallTable_195, &gBwCallCount_195 },
+    [5] = { gBwCallTable_196, &gBwCallCount_196 },
+    [6] = { gBwCallTable_197, &gBwCallCount_197 },
 };
 
 static const struct BwGlobalRange sBwGlobalRanges[] =

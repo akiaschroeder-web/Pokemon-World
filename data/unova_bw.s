@@ -29746,3 +29746,78 @@ gBwTextTable_471:
 	.global gBwTextCount_471
 gBwTextCount_471:
 	.4byte 97
+gBwCallText_192_0:
+	.string "Hello!\nHow is everybody doing?\pYou and your Pokémon are getting\nalong great now, right?$"
+gBwCallText_192_1:
+	.string "Oh! Professor!$"
+gBwCallText_192_2:
+	.string "Right now, I'm in front of Accumula\nTown's Pokémon Center!\pI'd like to show you around, \nso hurry on over, everyone!$"
+gBwCallText_192_3:
+	.string "OK!\nThe Pokémon Center, right!$"
+gBwCallText_192_4:
+	.string "OK!\nSee you!$"
+	.align 2
+	.global gBwCallTable_192
+gBwCallTable_192:
+	.4byte gBwCallText_192_0
+	.4byte gBwCallText_192_1
+	.4byte gBwCallText_192_2
+	.4byte gBwCallText_192_3
+	.4byte gBwCallText_192_4
+	.global gBwCallCount_192
+gBwCallCount_192:
+	.4byte 5
+gBwCallText_193_0:
+	.string "{STR_VAR_1}!\pIt's your mom!\nHow are things?\pAre you and your Pokémon getting along\nand enjoying your journey so far?\pI needed to talk to you, so I called,\nbut I'm going to hang up\lthe Xtransceiver now.$"
+	.align 2
+	.global gBwCallTable_193
+gBwCallTable_193:
+	.4byte gBwCallText_193_0
+	.global gBwCallCount_193
+gBwCallCount_193:
+	.4byte 1
+gBwCallText_194_0:
+	.string "Hey there! Where are you now?\pCould you do me a favor?\nLet's have a Pokémon battle!\pIris has trained me, and I've become\na little stronger. I should be able\lto protect my own Pokémon now.\pLet's meet at the gate to Route 4!\pOK, see you later!$"
+	.align 2
+	.global gBwCallTable_194
+gBwCallTable_194:
+	.4byte gBwCallText_194_0
+	.global gBwCallCount_194
+gBwCallCount_194:
+	.4byte 1
+gBwCallText_195_0:
+	.string "Hello there!\p{STR_VAR_1},\ndo you have a second?$"
+gBwCallText_195_1:
+	.string "Professor Juniper,\ndo you need something?$"
+gBwCallText_195_2:
+	.string "I called Bianca too, but I guess\nshe didn't hear the call.\pI wonder what she's caught up in.\nWell, I suppose I'll just have\lto call her again later.\pOK! I'll be waiting for you two\nin front of the gate to Nimbasa City!$"
+gBwCallText_195_3:
+	.string "...Um, hello?!$"
+	.align 2
+	.global gBwCallTable_195
+gBwCallTable_195:
+	.4byte gBwCallText_195_0
+	.4byte gBwCallText_195_1
+	.4byte gBwCallText_195_2
+	.4byte gBwCallText_195_3
+	.global gBwCallCount_195
+gBwCallCount_195:
+	.4byte 4
+gBwCallText_196_0:
+	.string "{STR_VAR_1}!\p{STR_VAR_1}!!\pHello?\n{STR_VAR_1}!!\pOh! You picked up!\nHey, {STR_VAR_1}.\pCome to the museum in Nacrene City\nimmediately! Right away, got it?\pI mean right now!$"
+	.align 2
+	.global gBwCallTable_196
+gBwCallTable_196:
+	.4byte gBwCallText_196_0
+	.global gBwCallCount_196
+gBwCallCount_196:
+	.4byte 1
+gBwCallText_197_0:
+	.string "{STR_VAR_1}!\pThis is your mom.\nHow are you doing?\pWow, you're already on Route 7?\nYou've gone quite far!\pSay, how are your Pokémon?\nYou can't get that far\lall by yourself, you know?\pIt's all thanks to your Pokémon.\nDon't forget to take care of them!\pAm I being too serious?\nWell, take care!\p“Senior Trainer Mom,“\nsigning off!$"
+	.align 2
+	.global gBwCallTable_197
+gBwCallTable_197:
+	.4byte gBwCallText_197_0
+	.global gBwCallCount_197
+gBwCallCount_197:
+	.4byte 1

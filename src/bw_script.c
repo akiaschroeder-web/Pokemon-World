@@ -68,6 +68,8 @@
 #include "line_break.h"
 #include "text.h"
 #include "trainer_see.h"
+#include "tv.h"
+void ChangePokemonNickname(void);   // src/tv.c (a special, not in tv.h)
 #include "constants/battle.h"
 #include "constants/event_objects.h"
 #include "constants/opponents.h"
@@ -125,6 +127,8 @@ enum BwWait
     BW_WAIT_SE,          // a sound effect (SEWait)
     BW_WAIT_DEMO,        // a BW 3D cutscene playing (Call3DDemo)
     BW_WAIT_PROP,        // a building's animation (StaticProp.HndWaitAnm)
+    BW_WAIT_CALL,        // an Xtransceiver call, line by line (CallXTransceiver)
+    BW_WAIT_FIELD,       // an app (the naming screen...) until we're back on the map
 };
 
 struct BwFrame
@@ -161,6 +165,7 @@ static struct
     bool8 menuCancel;
     u16 partyDest;
     u16 demoFrames;
+    u8 callId, callLine;
     u32 demoWaited;
     struct ListMenuItem *menuItems;
 } sVm;
@@ -805,6 +810,7 @@ static void SkipParams(u16 op)
 // MapReplace: BW swaps parts of a map for other versions (the player's room after the first
 // battle...). Its on/off states are kept in BW flags past BW's own (2765 on are unused).
 #define BW_MAP_REPLACE_FLAG  2780
+#define BW_START_FLAGS_FIXED_FLAG 2779   // set once the start flags are Black's own (BwScript_OnEnterMap)
 #define BW_MAP_REPLACE_COUNT 32
 
 static EWRAM_DATA u16 sBwPushedSong = 0;
@@ -1009,6 +1015,23 @@ static bool32 Waiting(void)
     case BW_WAIT_DEMO:
         if (Web3D_StepDemo(sVm.demoFrames, &sVm.demoWaited))
             return TRUE;
+        break;
+    case BW_WAIT_CALL:
+        if (RunTextPrintersAndIsPrinter0Active() || !JOY_NEW(A_BUTTON | B_BUTTON))
+            return TRUE;
+        if (++sVm.callLine < *sBwCalls[sVm.callId].count)
+        {
+            ShowMessage(sBwCalls[sVm.callId].strings[sVm.callLine]);
+            sVm.wait = BW_WAIT_CALL;
+            return TRUE;
+        }
+        HideFieldMessageBox();
+        sVm.messageOpen = FALSE;
+        break;
+    case BW_WAIT_FIELD:
+        if (gMain.callback2 != CB2_Overworld)
+            return TRUE;
+        BwVarSet(sVm.partyDest, 1);
         break;
     case BW_WAIT_PROP:
         if (sVm.waitFrames)
@@ -1982,6 +2005,46 @@ again:
         }
         case 0x1EB: case 0x1EA: Read16(); Read16(); Read16(); Read16(); break;   // ObjInit warp / sign positions (not yet)
 
+        // --- CallPokeNameInput(-> done, party slot, transition): the nickname screen for that Pokémon
+        // (Black's handler reads them in that order)
+        case 0x105:
+        {
+            u16 dest = Read16(), slot = BwFlex(Read16());
+            Read16();
+            if (slot >= gPlayerPartyCount || sVm.immediate)
+            {
+                BwVarSet(dest, 0);
+                break;
+            }
+            if (sVm.messageOpen)
+            {
+                HideFieldMessageBox();
+                sVm.messageOpen = FALSE;
+            }
+            sVm.partyDest = dest;
+            gSpecialVar_0x8004 = slot;
+            ChangePokemonNickname();
+            ScriptContext_Stop();
+            sVm.wait = BW_WAIT_FIELD;
+            return TRUE;
+        }
+
+        // --- CallXTransceiver(call): Black's app plays the call (its lines: a/0/0/2 file 191 + call); here
+        // they're said in the message box, one after another
+        case 0x155:
+        {
+            u16 id = BwFlex(Read16());
+            if (id < ARRAY_COUNT(sBwCalls) && sBwCalls[id].strings && *sBwCalls[id].count && !sVm.immediate)
+            {
+                sVm.callId = id;
+                sVm.callLine = 0;
+                PlaySE(SE_POKENAV_CALL);
+                ShowMessage(sBwCalls[id].strings[0]);
+                sVm.wait = BW_WAIT_CALL;
+            }
+            break;
+        }
+
         // --- the Pokémon Center: BW's healing jingle (SEQ_ME_ASA, our heal fanfare), and wait for it
         case 0x12F:
             Read16();
@@ -2090,6 +2153,11 @@ u16 BwSeasonMusic(u16 song)
 }
 
 // The first time the player is in Unova: hide the characters who only appear later in BW's story.
+// Saves made before the start flags came from Black's new-game script (2026-11-26) got a guessed
+// list: these 105 were set though Black leaves them clear, these 6 clear though it sets them.
+static const u16 sOldStartFlagsOnly[] = {1, 505, 512, 513, 514, 522, 563, 564, 565, 569, 570, 571, 580, 623, 627, 628, 629, 630, 631, 632, 633, 634, 635, 638, 642, 643, 644, 645, 646, 649, 650, 651, 670, 671, 672, 673, 674, 689, 690, 698, 709, 710, 711, 712, 713, 714, 715, 716, 720, 721, 722, 723, 724, 725, 726, 727, 728, 732, 733, 749, 752, 753, 754, 755, 756, 761, 764, 765, 777, 778, 779, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 801, 802, 810, 818, 819, 821, 822, 823, 824, 825, 826, 827, 828, 830, 831, 832, 833, 834, 840};
+static const u16 sNewStartFlagsOnly[] = {519, 529, 616, 618, 2430, 2436};
+
 void BwScript_OnEnterMap(void)
 {
     u32 i;
@@ -2099,9 +2167,33 @@ void BwScript_OnEnterMap(void)
     if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA)
         memset(sCompanions, 0, sizeof(sCompanions));   // ActorNew's actors belong to the map they were added on
     Web3D_EventCamera(0, 0, 0, 0, 0, 0, 0, 1);
-    if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA || FlagGet(FLAG_UNOVA_INITIALIZED))
+    if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA)
         return;
+    // saves from before the start flags came from Black's new-game script hid characters Black shows
+    // (Cheren and Bianca at the lab - which stopped the story there - Juniper in her lab...): once,
+    // if the story hasn't reached the lab yet, put the flags the way Black's new game has them
+    if (FlagGet(FLAG_UNOVA_INITIALIZED) && !FlagGet(FLAG_UNOVA_START + BW_START_FLAGS_FIXED_FLAG))
+    {
+        FlagSet(FLAG_UNOVA_START + BW_START_FLAGS_FIXED_FLAG);
+        if (BwVarGet(0x4080) == 0)    // before the lab: nothing yet has set these for the story
+        {
+            for (i = 0; i < ARRAY_COUNT(sOldStartFlagsOnly); i++)
+                if (sOldStartFlagsOnly[i] != 512 && sOldStartFlagsOnly[i] != 514)
+                    FlagClear(FLAG_UNOVA_START + sOldStartFlagsOnly[i]);
+            for (i = 0; i < ARRAY_COUNT(sNewStartFlagsOnly); i++)
+                FlagSet(FLAG_UNOVA_START + sNewStartFlagsOnly[i]);
+            // Bianca at the lab (514): there from the start, home once you first leave your house
+            // (0x407F), back at the lab after the scene in her house (0x4078)
+            if (BwVarGet(0x4078) == 1 || BwVarGet(0x407F) < 1)
+                FlagClear(FLAG_UNOVA_START + 514);
+        }
+    }
+    if (FlagGet(FLAG_UNOVA_INITIALIZED))
+        return;
+    FlagSet(FLAG_UNOVA_START + BW_START_FLAGS_FIXED_FLAG);
     for (i = 0; i < ARRAY_COUNT(sBwStartFlags); i++)
         FlagSet(FLAG_UNOVA_START + sBwStartFlags[i]);
+    for (i = 0; i < ARRAY_COUNT(sBwStartVars); i++)
+        BwVarSet(sBwStartVars[i][0], sBwStartVars[i][1]);
     FlagSet(FLAG_UNOVA_INITIALIZED);
 }

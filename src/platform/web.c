@@ -128,6 +128,32 @@ EMSCRIPTEN_KEEPALIVE void Web_DebugPlayer(void)
         GetCollisionInDirection(p, DIR_WEST), GetCollisionInDirection(p, DIR_EAST));
 }
 
+// The harness: set a variable / flag (testing story scenes without replaying the story). Only memory
+// writes: calling game code that starts tasks or warps from the page, mid-frame, crashes the web build.
+#include "event_data.h"
+
+EMSCRIPTEN_KEEPALIVE void Web_DebugSetVar(int var, int value)
+{
+    VarSet(var, value);
+}
+
+// a save, made by the game itself at its next frame on the map (see the frame loop)
+#include "save.h"
+#include "overworld.h"
+static bool8 sSaveRequested;
+EMSCRIPTEN_KEEPALIVE void Web_DebugRequestSave(void)
+{
+    sSaveRequested = TRUE;
+}
+
+EMSCRIPTEN_KEEPALIVE void Web_DebugSetFlag(int flag, int on)
+{
+    if (on)
+        FlagSet(flag);
+    else
+        FlagClear(flag);
+}
+
 // The harness: 1 while a script or message has the player (it presses A until this is 0).
 EMSCRIPTEN_KEEPALIVE int Web_PlayerBusy(void)
 {
@@ -243,6 +269,13 @@ void VBlankIntrWait(void)
 
     Web_WaitForNextFrame();
     REG_KEYINPUT = ~sKeys & KEYS_MASK;
+
+    // the test harness asked for a save (Web_DebugRequestSave): here, between frames, on the map
+    if (sSaveRequested && gMain.callback2 == CB2_Overworld && !ScriptContext_IsEnabled())
+    {
+        sSaveRequested = FALSE;
+        TrySavingData(SAVE_NORMAL);
+    }
 
     // Timers: the game reads them to seed its random numbers (e.g. the trainer ID),
     // so give them values that differ from run to run.

@@ -68,6 +68,10 @@ def item_const(name, known):
     return c if c in known else None
 
 
+XT_CALL_BASE = 191                      # CallXTransceiver n: a/0/0/2 file 191 + n
+XT_CALL_FILES = range(192, 198)
+
+
 def write(rom, rom_path, zones, maps, places, text_decoder, species_by_dex):
     ranges = global_ranges(rom_path)
     files = rom.narc('a/0/5/7')
@@ -94,6 +98,16 @@ def write(rom, rom_path, zones, maps, places, text_decoder, species_by_dex):
         asm += ['\t.4byte gBwText_%d_%d\n' % (n, k) for k in range(len(lines))]
         asm.append('\t.global gBwTextCount_%d\ngBwTextCount_%d:\n\t.4byte %d\n' % (n, n, len(lines)))
         strings += len(lines)
+    # the Xtransceiver's scripted calls (CallXTransceiver n): their lines are in the system text,
+    # a/0/0/2 file 191 + n, one string per line of the call (Black: calls 1-6, Route 1 to Route 7)
+    systext = rom.narc('a/0/0/2')
+    for n in XT_CALL_FILES:
+        lines = text_decoder(systext[n])
+        for k, codes in enumerate(lines):
+            asm.append('gBwCallText_%d_%d:\n\t.string "%s$"\n' % (n, k, scripts.to_vm_string(codes)))
+        asm.append('\t.align 2\n\t.global gBwCallTable_%d\ngBwCallTable_%d:\n' % (n, n))
+        asm += ['\t.4byte gBwCallText_%d_%d\n' % (n, k) for k in range(len(lines))]
+        asm.append('\t.global gBwCallCount_%d\ngBwCallCount_%d:\n\t.4byte %d\n' % (n, n, len(lines)))
     with open('data/unova_bw.s', 'w', encoding='utf-8') as f:
         f.write(''.join(asm))
 
@@ -111,6 +125,8 @@ def write(rom, rom_path, zones, maps, places, text_decoder, species_by_dex):
     for n in sorted(used_texts):
         if n < len(texts):
             c.append('extern const u8 *const gBwTextTable_%d[];\nextern const u32 gBwTextCount_%d;\n' % (n, n))
+    for n in XT_CALL_FILES:
+        c.append('extern const u8 *const gBwCallTable_%d[];\nextern const u32 gBwCallCount_%d;\n' % (n, n))
     c.append('\nstatic const struct BwScriptFile sBwScriptFiles[] =\n{\n')
     for n in sorted(used_scripts):
         if n < len(files):
@@ -119,6 +135,9 @@ def write(rom, rom_path, zones, maps, places, text_decoder, species_by_dex):
     for n in sorted(used_texts):
         if n < len(texts):
             c.append('    [%d] = { gBwTextTable_%d, &gBwTextCount_%d },\n' % (n, n, n))
+    c.append('};\n\n// CallXTransceiver n -> the call\'s lines (a/0/0/2 file 191 + n)\nstatic const struct BwTextFile sBwCalls[] =\n{\n')
+    for n in XT_CALL_FILES:
+        c.append('    [%d] = { gBwCallTable_%d, &gBwCallCount_%d },\n' % (n - XT_CALL_BASE, n, n))
     c.append('};\n\nstatic const struct BwGlobalRange sBwGlobalRanges[] =\n{\n')
     for s, e, f, t in ranges:
         c.append('    { %d, %d, %d, %d },\n' % (s, e, f, t))

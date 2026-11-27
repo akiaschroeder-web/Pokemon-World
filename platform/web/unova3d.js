@@ -456,6 +456,7 @@
     return new Float32Array([m[0], m[4], m[8], 0, m[1], m[5], m[9], 0, m[2], m[6], m[10], 0, m[3] + ox, m[7], m[11] + oz, 1]);
   }
   function drawProps(near, mvp) {
+    if (PW3D.noProps) return;          // testing
     var list = [], now = propFrame / 2;
     propBusy = 0;
     near.forEach(function (n) {
