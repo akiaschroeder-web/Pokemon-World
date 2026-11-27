@@ -759,6 +759,7 @@ const u16 gTrainerBackPicPalette_PwRosa[] = INCGFX_U16("graphics/trainers/back_p
 
 #include "trainers_hns_gfx.h" // Pokémon World: Heart & Soul's front pics (generated)
 #include "trainers_unova_gfx.h" // Pokémon World: Pokémon Black's battle pictures (generated)
+#include "trainers_unova_back.h" // Pokémon World: Pokémon Black's battle back sprites (bw/backpics.py)
 
 const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
 {
@@ -1707,4 +1708,5 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     },
 #include "trainers_hns_table.h" // Pokémon World: Heart & Soul's front pics (generated)
 #include "trainers_unova_table.h" // Pokémon World: Pokémon Black's battle pictures (generated)
+#include "trainers_unova_back_table.h" // Pokémon World: Pokémon Black's battle back sprites (generated)
 };

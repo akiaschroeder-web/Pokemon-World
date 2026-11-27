@@ -28,7 +28,6 @@
 #include "util.h"
 #include "window.h"
 #include "constants/battle_anim.h"
-#include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
@@ -141,6 +140,10 @@ static void WallyHandleActions(enum BattlerId battler)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
             BtlController_Complete(battler);
             gBattleStruct->wallyBattleState++;
+            // Pokémon World: Unova's demonstration (Juniper's Minccino, Lv. 7, against a Lv. 2 Patrat)
+            // attacks once before the Poké Ball - a second Pound knocks the Patrat out
+            if (GetCurrentRegion() == REGION_UNOVA)
+                gBattleStruct->wallyBattleState++;
             gBattleStruct->wallyMovesState = 0;
             gBattleStruct->wallyWaitFrames = B_WAIT_TIME_LONG;
         }
@@ -317,7 +320,10 @@ static void WallyHandleChooseAction(enum BattlerId battler)
         ActionSelectionDestroyCursorAt(i);
 
     ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
-    BattleStringExpandPlaceholdersToDisplayedString(GetCurrentRegion() != REGION_SINNOH ? gText_WhatWillWallyDo : gSaveBlock2Ptr->playerGender == MALE ? COMPOUND_STRING("What will\nDAWN do?") : COMPOUND_STRING("What will\nLUCAS do?"));
+    if (GetCurrentRegion() == REGION_UNOVA)
+        BattleStringExpandPlaceholdersToDisplayedString(COMPOUND_STRING("What will\nProfessor Juniper do?"));
+    else
+        BattleStringExpandPlaceholdersToDisplayedString(GetCurrentRegion() != REGION_SINNOH ? gText_WhatWillWallyDo : gSaveBlock2Ptr->playerGender == MALE ? COMPOUND_STRING("What will\nDAWN do?") : COMPOUND_STRING("What will\nLUCAS do?"));
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
 }
 

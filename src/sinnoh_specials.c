@@ -316,10 +316,23 @@ void SinnohCountAllMons(void)
 // Se usa la batalla de Wally de Esmeralda con el sprite de espaldas del acompañante.
 enum TrainerPicID SinnohTutorialBackPic(void)
 {
-    // Pokémon World: only Sinnoh's catching tutorial uses Lucas/Dawn; Hoenn's keeps Wally.
+    // Pokémon World: Sinnoh's catching tutorial uses Lucas/Dawn, Unova's Professor Juniper (Pokémon
+    // Black's capture demonstration, BW script command 0x17D); Hoenn's keeps Wally.
+    if (GetCurrentRegion() == REGION_UNOVA)
+        return TRAINER_PIC_BW_BACK_JUNIPER;
     if (GetCurrentRegion() != REGION_SINNOH)
         return TRAINER_PIC_WALLY;
     return gSaveBlock2Ptr->playerGender == MALE ? TRAINER_PIC_SINNOH_DAWN : TRAINER_PIC_SINNOH_LUCAS;
+}
+
+// Who the catching tutorial's messages name ("... used a Poké Ball!")
+const u8 *CatchTutorialTrainerName(void)
+{
+    if (GetCurrentRegion() == REGION_UNOVA)
+        return COMPOUND_STRING("Professor Juniper");    // Black's demonstration (a/0/0/2 file 20)
+    if (GetCurrentRegion() == REGION_SINNOH)
+        return gSaveBlock2Ptr->playerGender == MALE ? COMPOUND_STRING("DAWN") : COMPOUND_STRING("LUCAS");
+    return COMPOUND_STRING("WALLY");
 }
 
 void SinnohLoadCounterpartMon(void)

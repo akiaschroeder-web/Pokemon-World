@@ -28,6 +28,7 @@ void SinnohSpaTreatment(void);
 void SinnohUnownFormsCount(void);
 void SinnohCountAllMons(void);
 enum TrainerPicID SinnohTutorialBackPic(void);
+const u8 *CatchTutorialTrainerName(void);
 void SinnohLoadCounterpartMon(void);
 void SinnohStartCatchTutorial(void);
 

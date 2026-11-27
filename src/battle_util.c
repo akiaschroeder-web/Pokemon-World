@@ -8084,6 +8084,10 @@ s32 GetAdjustedDamage(struct DamageContext *ctx, s32 damage)
     {
         enduredHit = TRUE;
     }
+    else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL)
+    {
+        enduredHit = TRUE;      // Pokémon World: a catching demonstration's Pokémon is there to be caught
+    }
     else if (GetConfig(B_STURDY) >= GEN_5 && ctx->abilities[ctx->battlerDef] == ABILITY_STURDY && IsBattlerAtMaxHp(ctx->battlerDef))
     {
         enduredHit = TRUE;

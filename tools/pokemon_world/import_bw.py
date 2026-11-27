@@ -37,6 +37,7 @@ import scripts     # noqa: E402
 import sprites     # noqa: E402
 import vmdata      # noqa: E402
 import trainers    # noqa: E402
+import backpics    # noqa: E402
 import items as bw_items  # noqa: E402
 import music as bw_music  # noqa: E402
 import movement as bw_movement  # noqa: E402
@@ -630,6 +631,7 @@ def main():
             return encounters.FORMS[n][form]
         return dex.get(n)
     tr_consts, btypes = trainers.write(rom, decode_text, item_of, species_of)
+    backpics.write(rom)
     people = People(rom, tr_consts, btypes, trainers.texts(rom, decode_text), item_of)
     trainers.write_defeat_texts(people.texts)
     add_people(rom, zones, by_zone, people)

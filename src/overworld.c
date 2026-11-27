@@ -2,6 +2,7 @@
 #include "bw_script.h"
 #include "platform/web3d.h"
 #include "overworld.h"
+#include "regions.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
 #include "battle_util.h"
@@ -920,7 +921,9 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     ChooseAmbientCrySpecies();
     SetDefaultFlashLevel();
     Overworld_ClearSavedMusic();
+    gBwCameraTransition = TRUE;     // Pokémon World: a BW scene's characters walk across with you
     RunOnTransitionMapScript();
+    gBwCameraTransition = FALSE;
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
@@ -1801,7 +1804,10 @@ void UpdateTimeOfDay(bool32 updateBlend)
 // Whether a map type is naturally lit/outside
 bool32 MapHasNaturalLight(enum MapType mapType)
 {
+    // Not in Unova: Black has no tint for the sprites alone (its time-of-day light, a/0/6/1, lights
+    // the 3D map and its characters together)
     return (OW_ENABLE_DNS
+         && GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA
          && (mapType == MAP_TYPE_TOWN
           || mapType == MAP_TYPE_CITY
           || mapType == MAP_TYPE_ROUTE

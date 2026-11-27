@@ -1,4 +1,6 @@
 #include "global.h"
+#include "regions.h"
+#include "sinnoh_specials.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_record.h"
@@ -2809,6 +2811,11 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
             gDisplayedStringBattle[0] = EOS;
             return;
         }
+        else if (stringID == STRINGID_YOUTHROWABALLNOWRIGHT && GetCurrentRegion() == REGION_UNOVA)
+        {
+            // Pokémon World: Pokémon Black's capture demonstration (a/0/0/2 file 20, text 1)
+            stringPtr = COMPOUND_STRING("Professor Juniper used\na Poké Ball!");
+        }
         else
         {
             stringPtr = gBattleStringsTable[stringID];
@@ -3560,7 +3567,7 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     if (IS_FRLG)
                         textStart = StringCopy(textStart, COMPOUND_STRING("The old man"));
                     else
-                        textStart = StringCopy(textStart, gSaveBlock2Ptr->playerGender == MALE ? COMPOUND_STRING("DAWN") : COMPOUND_STRING("LUCAS"));
+                        textStart = StringCopy(textStart, CatchTutorialTrainerName());
                 }
                 else if (GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_LEFT)
                 {

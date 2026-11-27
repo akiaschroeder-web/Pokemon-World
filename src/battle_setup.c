@@ -543,6 +543,16 @@ void StartWallyTutorialBattle(void)
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
+// Pokémon World: the catching tutorial with both parties already set up by the caller (Unova:
+// Pokémon Black's capture demonstration, src/bw_script.c)
+void StartCatchTutorialWithParties(void)
+{
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_CATCH_TUTORIAL;
+    CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
 // Proyecto Sinnoh: demostración de captura de la Ruta 202 (Dawn o Lucas atrapan un Bidoof).
 void SinnohStartCatchTutorial(void)
 {

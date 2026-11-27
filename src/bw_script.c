@@ -24,6 +24,7 @@
 #include "bw_script.h"
 #include "battle.h"
 #include "battle_setup.h"
+#include "load_save.h"
 #include "event_data.h"
 #include "event_object_lock.h"
 #include "event_object_movement.h"
@@ -159,6 +160,7 @@ static struct
     u16 temps[BW_TEMP_VARS];
     u8 movementActor;    // our local id (the last one moved)
     u16 reserved;        // RTReserveScript: run after this one ends
+    bool8 captureDemo;   // CallCaptureDemo's battle: put the player's party back after it
     u16 cameraFrames;    // frames left of the event camera's move (EVCameraWait)
     u16 menuDest, menuDefault;
     u8 menuX, menuY, menuCount;
@@ -460,6 +462,28 @@ static u8 LocalIdOf(u16 actor)
 
 #include "data/bw_movement.h"   // sBwMoveCodes: BW movement code -> ours (bw/movement.py)
 
+// The map an actor's object belongs to. Black's field is one world: a scene that walks from Nuvema
+// Town onto Route 1 keeps its characters (Cheren and Bianca) through the zone change. Ours keeps
+// their objects too, but they stay Nuvema's - so a character the scene brought in (a dynamic actor)
+// is looked up on whichever map holds it, not only the current one.
+static void ActorMap(u8 localId, u8 *mapNum, u8 *mapGroup)
+{
+    u32 i;
+    *mapNum = gSaveBlock1Ptr->location.mapNum;
+    *mapGroup = gSaveBlock1Ptr->location.mapGroup;
+    if (localId < BW_DYN_LOCALID_FIRST || localId >= BW_DYN_LOCALID_FIRST + BW_DYN_ACTORS)
+        return;
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (gObjectEvents[i].active && !gObjectEvents[i].isPlayer && gObjectEvents[i].localId == localId)
+        {
+            *mapNum = gObjectEvents[i].mapNum;
+            *mapGroup = gObjectEvents[i].mapGroup;
+            return;
+        }
+    }
+}
+
 // appends a wait of the given number of frames to a movement list
 static u32 AddDelay(u8 *moves, u32 n, u32 frames)
 {
@@ -520,18 +544,23 @@ static void StartMovement(u16 actor, const u8 *list, u32 limit)
                 BW_TRACE("[bw]   obj %d at %d,%d", gObjectEvents[k].localId, gObjectEvents[k].currentCoords.x - MAP_OFFSET, gObjectEvents[k].currentCoords.y - MAP_OFFSET);
     }
 #endif
-    ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, moves);
+    {
+        u8 mapNum, mapGroup;
+        ActorMap(localId, &mapNum, &mapGroup);
+        ScriptMovement_StartObjectMovementScript(localId, mapNum, mapGroup, moves);
+    }
 }
 
 static void SetActorVisible(u16 actor, bool32 visible)
 {
-    u8 localId = LocalIdOf(actor);
+    u8 localId = LocalIdOf(actor), mapNum, mapGroup;
     if (!localId || localId == LOCALID_PLAYER)
         return;
+    ActorMap(localId, &mapNum, &mapGroup);
     if (visible)
-        TrySpawnObjectEvent(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+        TrySpawnObjectEvent(localId, mapNum, mapGroup);
     else
-        RemoveObjectEventByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+        RemoveObjectEventByLocalIdAndMap(localId, mapNum, mapGroup);
 }
 
 // --- positions: BW matrix tiles <-> this map's tiles
@@ -561,12 +590,13 @@ static u8 OurDir(u16 bwDir)
 
 static struct ObjectEvent *ActorObject(u16 actor)
 {
-    u8 id, localId = LocalIdOf(actor);
+    u8 id, localId = LocalIdOf(actor), mapNum, mapGroup;
     if (!localId)
         return NULL;
     if (localId == LOCALID_PLAYER)
         return &gObjectEvents[gPlayerAvatar.objectEventId];
-    if (TryGetObjectEventIdByLocalIdAndMap(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &id))
+    ActorMap(localId, &mapNum, &mapGroup);
+    if (TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &id))
         return NULL;
     return &gObjectEvents[id];
 }
@@ -645,7 +675,11 @@ static void NewActor(u16 x, u16 z, u16 dir, u16 actor, u16 objCode)
     if (i == BW_DYN_ACTORS)
         return;
     if (sDynActors[i])
-        RemoveObjectEventByLocalIdAndMap(BW_DYN_LOCALID_FIRST + i, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    {
+        u8 mapNum, mapGroup;
+        ActorMap(BW_DYN_LOCALID_FIRST + i, &mapNum, &mapGroup);
+        RemoveObjectEventByLocalIdAndMap(BW_DYN_LOCALID_FIRST + i, mapNum, mapGroup);
+    }
     sDynActors[i] = actor + 1;
     ToLocal(x, z, &lx, &ly);
     SpawnSpecialObjectEventParameterized(gfx, MOVEMENT_TYPE_FACE_DOWN, BW_DYN_LOCALID_FIRST + i,
@@ -991,6 +1025,11 @@ static bool32 Waiting(void)
     case BW_WAIT_BATTLE:
         if (gMain.callback2 != CB2_Overworld)
             return TRUE;
+        if (sVm.captureDemo)
+        {
+            LoadPlayerParty();      // the demonstration's Minccino goes, the player's party comes back
+            sVm.captureDemo = FALSE;
+        }
         BwVarSet(sVm.battleDest, PlayerWon() ? 1 : 0);
         break;
     case BW_WAIT_FREEZE:
@@ -1077,6 +1116,26 @@ static void EndScript(void)
 }
 
 // Executes instructions until the script waits or ends. Returns FALSE when it has ended.
+// Black's capture demonstration (0x17D; 0x0216E95C builds its two Pokémon: species, level, moves)
+static void SetDemoMon(struct Pokemon *mon, u16 species, u8 level, u16 move1, u16 move2)
+{
+    u32 i;
+    CreateRandomMon(mon, species, level);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+        SetMonMoveSlot(mon, MOVE_NONE, i);
+    SetMonMoveSlot(mon, move1, 0);
+    SetMonMoveSlot(mon, move2, 1);
+}
+
+static void StartCaptureDemo(void)
+{
+    SavePlayerParty();
+    SetDemoMon(&gParties[B_TRAINER_PLAYER][0], SPECIES_MINCCINO, 7, MOVE_POUND, MOVE_GROWL);
+    SetDemoMon(&gParties[B_TRAINER_OPPONENT_A][0], SPECIES_PATRAT, 2, MOVE_TACKLE, MOVE_LEER);
+    sVm.captureDemo = TRUE;
+    StartCatchTutorialWithParties();
+}
+
 static bool32 Run(void)
 {
     u32 steps = 0;
@@ -1486,6 +1545,16 @@ again:
             }
             break;
         }
+        case 0x17D: // CallCaptureDemo (no parameters)
+            // Black's handler (0x021B50F8) sets up battle type 4 (0x0216E95C): Juniper's Minccino,
+            // Lv. 7, Pound and Growl, against a wild Patrat, Lv. 2, Tackle and Leer; she lowers its HP
+            // and catches it. Ours: the catching tutorial battle with Juniper's back sprite
+            // (sinnoh_specials.c), the player's party put back afterwards.
+            StartCaptureDemo();
+            sVm.battleDest = 0;
+            sVm.wait = BW_WAIT_BATTLE;
+            ScriptContext_Stop();
+            return TRUE;
         case 0x17B: { u16 dest = Read16(); BwVarSet(dest, PlayerWon()); break; }
         case 0x17C: { u16 dest = Read16(); BwVarSet(dest, gBattleOutcome); break; }      // WildBattleGetResult
 
@@ -2061,11 +2130,17 @@ again:
         if (sVm.wait != BW_WAIT_NONE)
             BW_TRACE("[bw] op %x waits %d", op, sVm.wait);
     }
+    // RTReserveScript only stores the id; Black's field event check (0x0218A738) starts it once this
+    // script has ended, as a script of the zone the player is in by then - Nuvema's exit scene walks
+    // you onto Route 1 and reserves script 1: Route 1's, Juniper's catching lesson
+    if (sVm.reserved && CurrentZoneMap())
+        sVm.zone = CurrentZoneMap()->zone;
     if (sVm.reserved && sBwZones[sVm.zone].scripts)
     {
         u16 r = sVm.reserved;
         sVm.reserved = 0;
         sVm.sp = 0;
+        BW_TRACE("[bw] reserved: zone %d script %d", sVm.zone, r);
         if (PushScript(r, sBwZones[sVm.zone].scripts, sBwZones[sVm.zone].text, FALSE))
             goto again;
     }
@@ -2158,12 +2233,19 @@ u16 BwSeasonMusic(u16 song)
 static const u16 sOldStartFlagsOnly[] = {1, 505, 512, 513, 514, 522, 563, 564, 565, 569, 570, 571, 580, 623, 627, 628, 629, 630, 631, 632, 633, 634, 635, 638, 642, 643, 644, 645, 646, 649, 650, 651, 670, 671, 672, 673, 674, 689, 690, 698, 709, 710, 711, 712, 713, 714, 715, 716, 720, 721, 722, 723, 724, 725, 726, 727, 728, 732, 733, 749, 752, 753, 754, 755, 756, 761, 764, 765, 777, 778, 779, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 801, 802, 810, 818, 819, 821, 822, 823, 824, 825, 826, 827, 828, 830, 831, 832, 833, 834, 840};
 static const u16 sNewStartFlagsOnly[] = {519, 529, 616, 618, 2430, 2436};
 
+EWRAM_DATA bool8 gBwCameraTransition = FALSE;
+
 void BwScript_OnEnterMap(void)
 {
     u32 i;
-    memset(sDynActors, 0, sizeof(sDynActors));
-    memset(sMoveOwner, 0, sizeof(sMoveOwner));
-    sCompanionsSpawned = FALSE;
+    // walking over a map connection keeps the objects (a scene's characters stay with you, as in
+    // Black's seamless field); a warp starts the map afresh
+    if (!gBwCameraTransition)
+    {
+        memset(sDynActors, 0, sizeof(sDynActors));
+        memset(sMoveOwner, 0, sizeof(sMoveOwner));
+        sCompanionsSpawned = FALSE;
+    }
     if (GetRegionForSectionId(gMapHeader.regionMapSectionId) != REGION_UNOVA)
         memset(sCompanions, 0, sizeof(sCompanions));   // ActorNew's actors belong to the map they were added on
     Web3D_EventCamera(0, 0, 0, 0, 0, 0, 0, 1);
