@@ -1,0 +1,6 @@
+--- 01-start: frame 61
+--- 02-intro: frame 473
+--- 03-title: frame 735
+--- 04-menu: frame 874
+--- 05-after-A: frame 1172
+frames run: 1177
