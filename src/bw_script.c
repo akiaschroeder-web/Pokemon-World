@@ -800,7 +800,7 @@ static void SkipParams(u16 op)
 }
 
 
-// --- support for the commands named from the B2W2 SDK
+// --- support for the commands checked against Black's handlers (below)
 
 // MapReplace: BW swaps parts of a map for other versions (the player's room after the first
 // battle...). Its on/off states are kept in BW flags past BW's own (2765 on are unused).
@@ -886,6 +886,7 @@ static bool32 OpenShop(u16 shop)
 }
 
 #include "data/bw_songs.h"
+#include "data/bw_item_pockets.h"   // sBwItemPocket: BW item -> its pocket (bw/items.py)
 #include "data/bw_demos.h"   // sBwDemoFrames: cutscene id -> its length (bw/demos.py)   // sBwSongs: BW sound id -> MUS_BW_* (import_bw.py)
 
 static u16 BwSong(u16 id)
@@ -1621,10 +1622,10 @@ again:
             BwVarSet(dest, has);
             break;
         }
-        case 0x107: // CallPokeSelect: wantEgg, -> chose one, -> slot (3 parameters: bw/param_sizes.py)
-            Read16();
+        case 0x107: // CallPokeSelect(-> chose one, -> slot, eggs allowed): the order of Black's handler's reads
             sVm.battleDest = Read16();
             sVm.partyDest = Read16();
+            Read16();
             if (sVm.messageOpen)
             {
                 HideFieldMessageBox();
@@ -1673,8 +1674,10 @@ again:
             return TRUE;
         }
 
-        // ---- Commands named from the B2W2 script SDK by matching handler code (bw_b2 matching,
-        // 2026-11-26); parameter layouts from bw/param_sizes.py.
+        // ---- Commands BW's list leaves unnamed or undocumented. What each does was checked in Pokémon
+        // Black's own handler code (its parameter reads, in order, and what it calls; 2026-11-26); the
+        // names are only labels (some borrowed from the B2W2 SDK, whose matching handlers share them).
+        // Parameter sizes: bw/param_sizes.py.
 
         // --- nothing for us to do: sub-event bookkeeping, debug output, the field closing for an
         // app (ours draw over it), wireless, records, interactive-music switches
@@ -1682,16 +1685,18 @@ again:
         case 0x06: Read16(); break;                               // DebugPrint
         case 0x14A: case 0x14B: break;                            // FieldOpen, FieldClose
         case 0xA3: case 0xA4: Read16(); break;                    // ISSSwitchEnable / Disable
-        case 0xA5: BwVarSet(Read16(), 0); break;                  // ISSSwitchQuery
+        case 0xA5: { u16 dest = Read16(); Read16(); BwVarSet(dest, 0); break; }   // ISSSwitchQuery(-> on, switch)
         case 0x23A: Read16(); Read16(); break;                    // Records.Add
         case 0x25F: break;                                        // BGMAmbienceResume
-        case 0x13B: case 0x13C: case 0x13D: case 0x13E: break;    // GameComm / C-Gear housekeeping
+        case 0x13B: BwVarSet(Read16(), 0); break;                 // GameComm.CheckDSiWiFi(-> on): no
+        case 0x13C: case 0x13D: case 0x13E: break;                // a sound state on / off (Black's handlers), comm housekeeping
         case 0x8E: case 0x179: break;                             // EndTrainerBattle, EndWildBattle (ours end themselves)
         case 0x17A: break;                                        // CallWildLose (our battles white out)
         case 0x37: Read16(); break;                               // MsgSetLoadingSpinner
         case 0xA0: break;                                         // BGMWait
 
-        // --- fades (B2W2's Fade class, ten numbers lower): Q = quick
+        // --- fades: Black's handlers all call one fade with (mode, colour): modes 0/2 in, 1/3 out (0/1 at
+        // speed -1, 2/3 at speed 4 - their exact timing is our estimate), colour 0 black, 1 white
         case 0x1AD: case 0x1B2:                                   // InBlackQ
             BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
             break;
@@ -1707,7 +1712,7 @@ again:
         // --- music
         case 0x248: // BGMPlayEx: a song, faded in over `interval` frames
         {
-            u16 song = BwSong(BwFlex(Read16()));
+            u16 song = BwSong(Read16());
             Read16();
             if (song)
                 PlayNewMapMusic(song);
@@ -1763,9 +1768,8 @@ again:
         case 0xD0: // RTCGetDate(-> month, -> day)
         {
             u16 m = Read16(), d = Read16();
-            RtcCalcLocalTime();
-            BwVarSet(m, GetMonth());
-            BwVarSet(d, gLocalTime.days % 31 + 1);
+            BwVarSet(m, GetMonth() - MONTH_JAN + 1);
+            BwVarSet(d, GetDay());
             break;
         }
         case 0xD1: // RTCGetTime(-> hour, -> minute)
@@ -1896,11 +1900,10 @@ again:
         }
 
         // --- items
-        case 0xBB: // Item.GetPocket(item, -> pocket): BW's pockets 0 items, 1 medicine, 2 TMs, 3 berries, 4 key items
+        case 0xBB: // ItemGetPocket(item, -> pocket): Black's own (0 items, 1 medicine, 2 TMs, 3 berries, 4 key items)
         {
-            u16 it = Item(BwFlex(Read16())), dest = Read16();
-            u8 p = it ? GetItemPocket(it) : 0;
-            BwVarSet(dest, p == POCKET_KEY_ITEMS ? 4 : p == POCKET_TM_HM ? 2 : p == POCKET_BERRIES ? 3 : 0);
+            u16 bwItem = BwFlex(Read16()), dest = Read16();
+            BwVarSet(dest, bwItem < ARRAY_COUNT(sBwItemPocket) ? sBwItemPocket[bwItem] : 0);
             break;
         }
         case 0xBA: { u16 it = Item(BwFlex(Read16())), dest = Read16(); BwVarSet(dest, it && GetItemPocket(it) == POCKET_TM_HM); break; }   // IsTMHM
@@ -1935,7 +1938,7 @@ again:
             break;
         }
 
-        // --- BW's animated buildings ("static props", B2W2's StaticProp class): the page plays them
+        // --- BW's animated buildings (Black's BM* commands, "static props"): the page plays them
         case 0x127: // CreateHandle(-> handle, type, x, z): a handle is a slot remembering the building
         {
             u16 dest = Read16(), type = BwFlex(Read16()), x = BwFlex(Read16()), z = BwFlex(Read16()), i;

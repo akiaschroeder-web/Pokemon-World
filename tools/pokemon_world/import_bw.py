@@ -616,6 +616,7 @@ def main():
 
     # Black's own key items first (so items.h knows them), then trainers, then the people on the maps
     bw_items.write(rom, decode_text, text_plain)
+    bw_items.write_pockets(rom)                       # ItemGetPocket's answers
     item_names = [vmdata.scripts_plain(s) for s in decode_text(rom.narc('a/0/0/2')[54])]
     known_items = vmdata.const_names('include/constants/items.h', 'ITEM_')
 
