@@ -519,8 +519,10 @@ def write(rom):
     return table
 
 
-def write_model(demo, k, md, mesh, curves, vis, pats, srt, frames, bmd):
-    texset = export3d.TextureSet(bmd)
+def write_model(demo, k, md, mesh, curves, vis, pats, srt, frames, bmd, name=None, out=None, texset=None):
+    """Writes a model's mesh, baked joints and textures; name/out/texset: for buildings (bw/buildings.py)."""
+    out = out or OUT
+    texset = texset or export3d.TextureSet(bmd)
     # draws: per material group, split so each uses at most MAX_BONES bones
     draws, verts, vindex, groups = [], [], {}, []
     for mat_idx in sorted(mesh.groups):
@@ -567,13 +569,13 @@ def write_model(demo, k, md, mesh, curves, vis, pats, srt, frames, bmd):
                     for slot, x, y, z, u, v, c, _ in verts)
     data = (b'PWD1' + struct.pack('<III', len(groups), len(verts), len(ibin)) + gbin + vbin
             + struct.pack(('<%dI' if big else '<%dH') % len(ibin), *ibin))
-    name = 'd%d_%d' % (demo, k)
-    with open('%s/%s.bin' % (OUT, name), 'wb') as f:
+    name = name or 'd%d_%d' % (demo, k)
+    with open('%s/%s.bin' % (out, name), 'wb') as f:
         f.write(data)
     textures = []
     for tname, pngdata, _, _ in texset.images:
         fn = '%s_%s.png' % (name, ''.join(ch if ch.isalnum() or ch in '_-' else '_' for ch in tname))
-        with open('%s/tex/%s' % (OUT, fn), 'wb') as f:
+        with open('%s/tex/%s' % (out, fn), 'wb') as f:
             f.write(pngdata)
         textures.append(fn)
     # texture patterns: material -> keys [frame, texture index]
@@ -589,7 +591,7 @@ def write_model(demo, k, md, mesh, curves, vis, pats, srt, frames, bmd):
                 patterns[gi] = keys
     for tname, pngdata, _, _ in texset.images[len(textures):]:       # textures the patterns added
         fn = '%s_%s.png' % (name, ''.join(ch if ch.isalnum() or ch in '_-' else '_' for ch in tname))
-        with open('%s/tex/%s' % (OUT, fn), 'wb') as f:
+        with open('%s/tex/%s' % (out, fn), 'wb') as f:
             f.write(pngdata)
         textures.append(fn)
     scroll = {gi: srt[g[7]] for gi, g in enumerate(groups) if g[7] in srt}
@@ -600,7 +602,7 @@ def write_model(demo, k, md, mesh, curves, vis, pats, srt, frames, bmd):
         mats = bone_matrices(md, mesh, curves, vis, fr)
         for m in mats:
             baked.append(struct.pack('<12f', *(m[r][c] for r in range(3) for c in range(4))))
-    with open('%s/%s.anim' % (OUT, name), 'wb') as f:
+    with open('%s/%s.anim' % (out, name), 'wb') as f:
         f.write(b''.join(baked))
     return {'mesh': name + '.bin', 'anim': name + '.anim', 'bones': nb, 'step': STEP, 'textures': textures,
             'draws': draws, 'patterns': patterns,

@@ -12,6 +12,7 @@
 
 #include <emscripten.h>
 #include "global.h"
+#include "bw_script.h"
 #include "main.h"
 #include "overworld.h"
 #include "palette.h"
@@ -36,6 +37,8 @@ struct Web3DSprite
 };
 
 #define WEB3D_SPRITE_PLAYER 1   // the player's own sprite (drawn a little bigger, to match BW's people)
+
+#include "../data/bw_map_replace.h"   // sBwMapReplace (bw/mapreplace.py)
 
 static struct
 {
@@ -64,6 +67,16 @@ static struct
     u32 demo;
     u32 demoFrame;
     u32 demoReady;
+    // BW's map replacements that are on (bit n = MapReplace id n, src/bw_script.c): the page draws
+    // their replacement models (unova3d.js)
+    u32 mapReplace;
+    // BW's animated buildings (bw/buildings.py, unova3d.js): a request from the scripts - seq (changes
+    // per request), op (1 play, 2 play backwards, 3 pause), BW building type (0xFFFF any, 0xFFFE a
+    // door), the matrix tile it stands on, the clip - and, set by the page, how many are playing
+    u32 propSeq, propOp, propType;
+    s32 propX, propZ;
+    u32 propAnim;
+    u32 propBusy;
 } sScene;
 
 static struct Web3DSprite sSceneSprites[MAX_3D_SPRITES];
@@ -194,6 +207,10 @@ void Web3D_EndFrame(void)
         sScene.matrix = sUnovaZones[z].matrix;
         sScene.chunkX = sUnovaZones[z].chunkX;
         sScene.chunkY = sUnovaZones[z].chunkY;
+        sScene.mapReplace = BwMapReplaceBits();
+        for (i = 0; i < ARRAY_COUNT(sBwMapReplace); i++)     // the story swapped this map for another version
+            if (sBwMapReplace[i].matrix == sScene.matrix && (sScene.mapReplace & (1u << sBwMapReplace[i].event)))
+                sScene.matrix = sBwMapReplace[i].replacement;
     }
     sScene.count = 0;
     sScene.sprites = (u32)(uintptr_t)sSceneSprites;
@@ -253,6 +270,37 @@ void Web3D_EventCamera(u32 mode, s32 pitch, s32 yaw, s32 distance, s32 x, s32 y,
     }
     sScene.evFrames = frames;
     sScene.evSeq++;
+}
+
+void Web3D_PropCommand(u32 op, u32 type, s32 x, s32 z, u32 anim)
+{
+    sScene.propOp = op;
+    sScene.propType = type;
+    sScene.propX = x;
+    sScene.propZ = z;
+    sScene.propAnim = anim;
+    sScene.propSeq++;
+    sScene.propBusy = 1;          // until the page has looked at it
+}
+
+bool32 Web3D_PropBusy(void)
+{
+    return sScene.propBusy != 0;
+}
+
+// walking into a door (map coordinates): BW opens it as you go in
+void Web3D_OpenDoorAt(s16 mapX, s16 mapY)
+{
+    s32 z = CurrentZoneIndex();
+    if (z < 0 || !sScene.zone)
+        return;
+    Web3D_PropCommand(1, 0xFFFE, sUnovaZones[z].chunkX * 32 + mapX - 7, sUnovaZones[z].chunkY * 32 + mapY - 7, 0);
+}
+
+void Web3D_MapReplace(u32 id, bool32 on)
+{
+    if (id < 32)
+        sScene.mapReplace = on ? sScene.mapReplace | (1u << id) : sScene.mapReplace & ~(1u << id);
 }
 
 void Web3D_PlayDemo(u32 id)

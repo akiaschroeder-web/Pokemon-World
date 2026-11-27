@@ -8078,6 +8078,86 @@ DirectSoundWaveData_bw_1137_2_77::
 	.incbin "sound/direct_sound_samples/bw/bw_1137_2_77.bin"
 
 	.align 2
+DirectSoundWaveData_bw_1008_18_60::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_18_60.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_17_69::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_17_69.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_19_79::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_19_79.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_5_69::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_5_69.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_7_77::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_7_77.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_6_84::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_6_84.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_2_48::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_2_48.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_4_53::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_4_53.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_3_62::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_3_62.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_1_71::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_1_71.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_11_60::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_11_60.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_10_69::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_10_69.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_12_77::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_12_77.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_16_43::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_16_43.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_15_52::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_15_52.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_14_55::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_14_55.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_13_60::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_13_60.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_8_26::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_8_26.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_9_31::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_9_31.bin"
+
+	.align 2
+DirectSoundWaveData_bw_1008_0_48::
+	.incbin "sound/direct_sound_samples/bw/bw_1008_0_48.bin"
+
+	.align 2
 DirectSoundWaveData_bw_1139_14_37::
 	.incbin "sound/direct_sound_samples/bw/bw_1139_14_37.bin"
 

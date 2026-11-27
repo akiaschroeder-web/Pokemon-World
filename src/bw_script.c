@@ -44,6 +44,10 @@
 #include "strings.h"
 #include "platform/web3d.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
+#include "pokerus.h"
+#include "pokedex.h"
+#include "map_name_popup.h"
 #include "list_menu.h"
 #include "party_menu.h"
 #include "malloc.h"
@@ -120,6 +124,7 @@ enum BwWait
     BW_WAIT_PARTY,       // choosing a party Pokémon (CallPokeSelect)
     BW_WAIT_SE,          // a sound effect (SEWait)
     BW_WAIT_DEMO,        // a BW 3D cutscene playing (Call3DDemo)
+    BW_WAIT_PROP,        // a building's animation (StaticProp.HndWaitAnm)
 };
 
 struct BwFrame
@@ -794,6 +799,47 @@ static void SkipParams(u16 op)
     }
 }
 
+
+// --- support for the commands named from the B2W2 SDK
+
+// MapReplace: BW swaps parts of a map for other versions (the player's room after the first
+// battle...). Its on/off states are kept in BW flags past BW's own (2765 on are unused).
+#define BW_MAP_REPLACE_FLAG  2780
+#define BW_MAP_REPLACE_COUNT 32
+
+static EWRAM_DATA u16 sBwPushedSong = 0;
+static EWRAM_DATA struct { bool8 used; u16 type, x, z; } sBwProps[8] = {0};   // StaticProp handles
+
+u32 BwMapReplaceBits(void)
+{
+    u32 i, bits = 0;
+    for (i = 0; i < BW_MAP_REPLACE_COUNT; i++)
+        if (FlagGet(FLAG_UNOVA_START + BW_MAP_REPLACE_FLAG + i))
+            bits |= 1u << i;
+    return bits;
+}   // BGMPush / BGMPop
+
+static bool32 PartyHasPokerus(void)
+{
+    u32 k;
+    for (k = 0; k < gPlayerPartyCount; k++)
+        if (CheckMonPokerus(&gPlayerParty[k]))
+            return TRUE;
+    return FALSE;
+}
+
+// our type -> BW's numbering (Normal 0 ... Dark 16; BW has no Fairy, and no ??? type)
+static u16 BwType(u32 type)
+{
+    static const u8 sTypes[] = {
+        [TYPE_NORMAL] = 0, [TYPE_FIGHTING] = 1, [TYPE_FLYING] = 2, [TYPE_POISON] = 3, [TYPE_GROUND] = 4,
+        [TYPE_ROCK] = 5, [TYPE_BUG] = 6, [TYPE_GHOST] = 7, [TYPE_STEEL] = 8, [TYPE_FIRE] = 9, [TYPE_WATER] = 10,
+        [TYPE_GRASS] = 11, [TYPE_ELECTRIC] = 12, [TYPE_PSYCHIC] = 13, [TYPE_ICE] = 14, [TYPE_DRAGON] = 15,
+        [TYPE_DARK] = 16, [TYPE_FAIRY] = 0,
+    };
+    return type < ARRAY_COUNT(sTypes) ? sTypes[type] : 0;
+}
+
 static bool32 PlayerWon(void)
 {
     return gBattleOutcome != B_OUTCOME_LOST && gBattleOutcome != B_OUTCOME_DREW && gBattleOutcome != B_OUTCOME_FORFEITED;
@@ -961,6 +1007,15 @@ static bool32 Waiting(void)
         break;
     case BW_WAIT_DEMO:
         if (Web3D_StepDemo(sVm.demoFrames, &sVm.demoWaited))
+            return TRUE;
+        break;
+    case BW_WAIT_PROP:
+        if (sVm.waitFrames)
+        {
+            sVm.waitFrames--;
+            return TRUE;
+        }
+        if (Web3D_PropBusy())
             return TRUE;
         break;
     case BW_WAIT_STARTER:
@@ -1617,6 +1672,321 @@ again:
             ScriptContext_Stop();
             return TRUE;
         }
+
+        // ---- Commands named from the B2W2 script SDK by matching handler code (bw_b2 matching,
+        // 2026-11-26); parameter layouts from bw/param_sizes.py.
+
+        // --- nothing for us to do: sub-event bookkeeping, debug output, the field closing for an
+        // app (ours draw over it), wireless, records, interactive-music switches
+        case 0x30: break;                                           // RTFinishSubEvents
+        case 0x06: Read16(); break;                               // DebugPrint
+        case 0x14A: case 0x14B: break;                            // FieldOpen, FieldClose
+        case 0xA3: case 0xA4: Read16(); break;                    // ISSSwitchEnable / Disable
+        case 0xA5: BwVarSet(Read16(), 0); break;                  // ISSSwitchQuery
+        case 0x23A: Read16(); Read16(); break;                    // Records.Add
+        case 0x25F: break;                                        // BGMAmbienceResume
+        case 0x13B: case 0x13C: case 0x13D: case 0x13E: break;    // GameComm / C-Gear housekeeping
+        case 0x8E: case 0x179: break;                             // EndTrainerBattle, EndWildBattle (ours end themselves)
+        case 0x17A: break;                                        // CallWildLose (our battles white out)
+        case 0x37: Read16(); break;                               // MsgSetLoadingSpinner
+        case 0xA0: break;                                         // BGMWait
+
+        // --- fades (B2W2's Fade class, ten numbers lower): Q = quick
+        case 0x1AD: case 0x1B2:                                   // InBlackQ
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+            break;
+        case 0x1AE: BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); break;   // OutBlackQ
+        case 0x1AF: BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_WHITE); break;   // InWhiteQ
+        case 0x1B0: BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITE); break;   // OutWhiteQ
+        case 0x1B5: BeginNormalPaletteFade(PALETTES_ALL, 2, 16, 0, RGB_BLACK); break;   // InBlack
+        case 0x1B6: BeginNormalPaletteFade(PALETTES_ALL, 2, 0, 16, RGB_BLACK); break;   // OutBlack
+        case 0x1B7: BeginNormalPaletteFade(PALETTES_ALL, 2, 16, 0, RGB_WHITE); break;   // InWhite
+        case 0x1B8: BeginNormalPaletteFade(PALETTES_ALL, 2, 0, 16, RGB_WHITE); break;   // OutWhite
+        case 0x1B1: sVm.wait = BW_WAIT_FADE; break;               // Fade.Wait
+
+        // --- music
+        case 0x248: // BGMPlayEx: a song, faded in over `interval` frames
+        {
+            u16 song = BwSong(BwFlex(Read16()));
+            Read16();
+            if (song)
+                PlayNewMapMusic(song);
+            break;
+        }
+        case 0x24B: // PlayMapBGMEx: back to the map's music
+            Read16();
+            PlayNewMapMusic(GetCurrLocationDefaultMusic());
+            break;
+        case 0xA1: // BGMPush: remember the song (BGMPop brings it back)
+            Read16();
+            sBwPushedSong = GetCurrentMapMusic();
+            break;
+        case 0xA2: // BGMPop
+            Read16(); Read16();
+            PlayNewMapMusic(sBwPushedSong ? sBwPushedSong : GetCurrLocationDefaultMusic());
+            sBwPushedSong = 0;
+            break;
+
+        // --- the field
+        case 0x252: ShowMapNamePopup(); break;                    // Field.CallPlaceNameDisp
+        case 0xE3: FlagSet(FLAG_SYS_B_DASH); break;               // PlayerEnableRunningShoes
+        case 0xD3: BwVarSet(Read16(), sVm.zone); break;           // FieldGetZoneID
+        case 0x22: BwVarSet(Read16(), 0); break;                  // FieldGetContinueFlag: not continuing a link session
+        case 0xD8: // MapReplaceIsEventSet(id, -> set)
+        {
+            u16 id = BwFlex(Read16()), dest = Read16();
+            BwVarSet(dest, id < BW_MAP_REPLACE_COUNT && FlagGet(FLAG_UNOVA_START + BW_MAP_REPLACE_FLAG + id));
+            break;
+        }
+        case 0xDA: // MapReplaceSetEvent(id, on, reload): the room after the battle, and so on
+        {
+            u16 id = BwFlex(Read16()), on = BwFlex(Read16());
+            Read16();
+            if (id < BW_MAP_REPLACE_COUNT)
+            {
+                if (on)
+                    FlagSet(FLAG_UNOVA_START + BW_MAP_REPLACE_FLAG + id);
+                else
+                    FlagClear(FLAG_UNOVA_START + BW_MAP_REPLACE_FLAG + id);
+                Web3D_MapReplace(id, on);
+            }
+            break;
+        }
+        case 0x78: // PlayerGetExState: 0 walking, 1 cycling, 2 surfing
+            BwVarSet(Read16(), TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING) ? 2
+                             : TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE) ? 1 : 0);
+            break;
+        case 0x75: Read16(); break;                               // PlayerSetSpecialSequence (poses)
+        case 0x77: break;                                         // PlayerTurnByTrigger
+
+        // --- the clock
+        case 0xD0: // RTCGetDate(-> month, -> day)
+        {
+            u16 m = Read16(), d = Read16();
+            RtcCalcLocalTime();
+            BwVarSet(m, GetMonth());
+            BwVarSet(d, gLocalTime.days % 31 + 1);
+            break;
+        }
+        case 0xD1: // RTCGetTime(-> hour, -> minute)
+        {
+            u16 h = Read16(), mi = Read16();
+            RtcCalcLocalTime();
+            BwVarSet(h, gLocalTime.hours);
+            BwVarSet(mi, gLocalTime.minutes);
+            break;
+        }
+
+        // --- the party
+        case 0x102: { u16 dest = Read16(), i = BwFlex(Read16()); BwVarSet(dest, i < PARTY_SIZE && GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)); break; }  // IsEgg
+        case 0xFC: { u16 dest = Read16(), i = BwFlex(Read16()); BwVarSet(dest, i < PARTY_SIZE ? GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP) : 0); break; }  // GetHappiness
+        case 0xFD: // AdjustHappiness(slot, mode 0 add / 1 subtract, amount)
+        {
+            u16 i = BwFlex(Read16()), mode = BwFlex(Read16()), n = BwFlex(Read16());
+            if (i < PARTY_SIZE)
+            {
+                s32 f = GetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP);
+                f = mode ? f - n : f + n;
+                f = f < 0 ? 0 : f > 255 ? 255 : f;
+                SetMonData(&gPlayerParty[i], MON_DATA_FRIENDSHIP, &f);
+            }
+            break;
+        }
+        case 0xFF: { u16 dest = Read16(); Read16(); BwVarSet(dest, 0); break; }   // GetForme (no forms in BW1's story)
+        case 0x10A: // GetMove(-> move, slot, move slot)
+        {
+            u16 dest = Read16(), i = BwFlex(Read16()), m = BwFlex(Read16());
+            BwVarSet(dest, i < PARTY_SIZE && m < MAX_MON_MOVES ? GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + m) : 0);
+            break;
+        }
+        case 0x115: // HasMove(-> knows it, move, slot)
+        {
+            u16 dest = Read16(), mv = BwFlex(Read16()), i = BwFlex(Read16()), k;
+            bool32 has = FALSE;
+            for (k = 0; i < PARTY_SIZE && k < MAX_MON_MOVES; k++)
+                if (GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + k) == mv)
+                    has = TRUE;
+            BwVarSet(dest, has);
+            break;
+        }
+        case 0x108: // GetLearnedMoveCount
+        {
+            u16 dest = Read16(), i = BwFlex(Read16()), k, n = 0;
+            for (k = 0; i < PARTY_SIZE && k < MAX_MON_MOVES; k++)
+                if (GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + k))
+                    n++;
+            BwVarSet(dest, n);
+            break;
+        }
+        case 0x101: // IsFullHP
+        {
+            u16 dest = Read16(), i = BwFlex(Read16());
+            BwVarSet(dest, i < PARTY_SIZE && GetMonData(&gPlayerParty[i], MON_DATA_HP) == GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP));
+            break;
+        }
+        case 0x100: BwVarSet(Read16(), PartyHasPokerus()); break;            // IsPokerusAny
+        case 0x113: { u16 dest = Read16(); Read16(); BwVarSet(dest, 1); break; }               // IsOriginGame
+        case 0x112: // GetEVTotal
+        {
+            u16 dest = Read16(), i = BwFlex(Read16()), k, n = 0;
+            for (k = 0; i < PARTY_SIZE && k < NUM_STATS; k++)
+                n += GetMonData(&gPlayerParty[i], MON_DATA_HP_EV + k);
+            BwVarSet(dest, n);
+            break;
+        }
+        case 0x114: // GetPkmCountBySpecies(species, -> count)
+        {
+            u16 sp = Species(BwFlex(Read16())), dest = Read16(), k, n = 0;
+            for (k = 0; k < gPlayerPartyCount; k++)
+                if (!GetMonData(&gPlayerParty[k], MON_DATA_IS_EGG) && GetMonData(&gPlayerParty[k], MON_DATA_SPECIES) == sp)
+                    n++;
+            BwVarSet(dest, n);
+            break;
+        }
+        case 0x118: // FindPkm(species, -> found, -> slot)
+        {
+            u16 sp = Species(BwFlex(Read16())), ok = Read16(), slot = Read16(), k;
+            BwVarSet(ok, 0);
+            for (k = 0; k < gPlayerPartyCount; k++)
+            {
+                if (!GetMonData(&gPlayerParty[k], MON_DATA_IS_EGG) && GetMonData(&gPlayerParty[k], MON_DATA_SPECIES) == sp)
+                {
+                    BwVarSet(ok, 1);
+                    BwVarSet(slot, k);
+                    break;
+                }
+            }
+            break;
+        }
+        case 0x10D: // GetMemberByType(-> slot, 1 an egg / 2 fainted)
+        {
+            u16 dest = Read16(), cond = BwFlex(Read16()), k;
+            BwVarSet(dest, 0xFF);
+            for (k = 0; k < gPlayerPartyCount; k++)
+            {
+                bool32 egg = GetMonData(&gPlayerParty[k], MON_DATA_IS_EGG);
+                if ((cond == 1 && egg) || (cond == 2 && !egg && GetMonData(&gPlayerParty[k], MON_DATA_HP) == 0))
+                {
+                    BwVarSet(dest, k);
+                    break;
+                }
+            }
+            break;
+        }
+        case 0x11B: // GetTypes(-> type 1, -> type 2, slot): BW's type numbers are the games' usual order
+        {
+            u16 t1 = Read16(), t2 = Read16(), i = BwFlex(Read16());
+            u16 sp = i < PARTY_SIZE ? GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) : SPECIES_NONE;
+            BwVarSet(t1, BwType(GetSpeciesType(sp, 0)));
+            BwVarSet(t2, BwType(GetSpeciesType(sp, 1)));
+            break;
+        }
+        case 0x11D: Read16(); break;                              // TrainerCard.SetFavePokemon
+        case 0x11E: Read16(); break;                              // TrainerCard.SaveGymVictoryParty
+        case 0x121: // Box.GetPkmCount(-> count, mode): 4 = free slots, else Pokémon stored
+        {
+            u16 dest = Read16(), mode = BwFlex(Read16());
+            u32 b, s, used = 0;
+            for (b = 0; b < TOTAL_BOXES_COUNT; b++)
+                for (s = 0; s < IN_BOX_COUNT; s++)
+                    if (GetBoxMonDataAt(b, s, MON_DATA_SPECIES))
+                        used++;
+            BwVarSet(dest, mode == 4 ? TOTAL_BOXES_COUNT * IN_BOX_COUNT - used : used);
+            break;
+        }
+
+        // --- items
+        case 0xBB: // Item.GetPocket(item, -> pocket): BW's pockets 0 items, 1 medicine, 2 TMs, 3 berries, 4 key items
+        {
+            u16 it = Item(BwFlex(Read16())), dest = Read16();
+            u8 p = it ? GetItemPocket(it) : 0;
+            BwVarSet(dest, p == POCKET_KEY_ITEMS ? 4 : p == POCKET_TM_HM ? 2 : p == POCKET_BERRIES ? 3 : 0);
+            break;
+        }
+        case 0xBA: { u16 it = Item(BwFlex(Read16())), dest = Read16(); BwVarSet(dest, it && GetItemPocket(it) == POCKET_TM_HM); break; }   // IsTMHM
+        case 0xBD: { Read16(); BwVarSet(Read16(), 0); break; }    // GetClass
+
+        // --- the Pokédex (BW's counts are the Unova dex: Victini to Genesect)
+        case 0xDD: // GetDexCount(caught only, -> count)
+        {
+            u16 caught = BwFlex(Read16()), dest = Read16(), sp, n = 0;
+            for (sp = NATIONAL_DEX_VICTINI; sp <= NATIONAL_DEX_GENESECT; sp++)
+                if (GetSetPokedexFlag(sp, caught ? FLAG_GET_CAUGHT : FLAG_GET_SEEN))
+                    n++;
+            BwVarSet(dest, n);
+            break;
+        }
+        case 0xDF: // IsSpeciesRegistered(caught only, species, -> registered)
+        {
+            u16 caught = BwFlex(Read16()), dex = BwFlex(Read16()), dest = Read16();
+            BwVarSet(dest, dex && dex < NATIONAL_DEX_COUNT && GetSetPokedexFlag(dex, caught ? FLAG_GET_CAUGHT : FLAG_GET_SEEN));
+            break;
+        }
+        case 0xDE: // RegisterSpecies(mode, species): seen and caught
+        {
+            u16 dex;
+            Read16();
+            dex = BwFlex(Read16());
+            if (dex && dex < NATIONAL_DEX_COUNT)
+            {
+                GetSetPokedexFlag(dex, FLAG_SET_SEEN);
+                GetSetPokedexFlag(dex, FLAG_SET_CAUGHT);
+            }
+            break;
+        }
+
+        // --- BW's animated buildings ("static props", B2W2's StaticProp class): the page plays them
+        case 0x127: // CreateHandle(-> handle, type, x, z): a handle is a slot remembering the building
+        {
+            u16 dest = Read16(), type = BwFlex(Read16()), x = BwFlex(Read16()), z = BwFlex(Read16()), i;
+            for (i = 0; i < ARRAY_COUNT(sBwProps) - 1 && sBwProps[i].used; i++)
+                ;
+            sBwProps[i].used = TRUE;
+            sBwProps[i].type = type;
+            sBwProps[i].x = x;
+            sBwProps[i].z = z;
+            BwVarSet(dest, i);
+            break;
+        }
+        case 0x128: { u16 h = BwFlex(Read16()); if (h < ARRAY_COUNT(sBwProps)) sBwProps[h].used = FALSE; break; }   // ReleaseHandle
+        case 0x129: case 0x124: // HndPlayAudioVisualAnm / HndPlayAnm(handle, clip)
+        {
+            u16 h = BwFlex(Read16()), anim = BwFlex(Read16());
+            if (h < ARRAY_COUNT(sBwProps))
+                Web3D_PropCommand(1, sBwProps[h].type, sBwProps[h].x, sBwProps[h].z, anim);
+            break;
+        }
+        case 0x12C: { u16 h = BwFlex(Read16()); if (h < ARRAY_COUNT(sBwProps)) Web3D_PropCommand(3, sBwProps[h].type, sBwProps[h].x, sBwProps[h].z, 0); break; }  // HndPauseAnm
+        case 0x12A: Read16(); sVm.wait = BW_WAIT_PROP; sVm.waitFrames = 2; break;      // HndWaitAnm
+        case 0x12E: case 0x12B: // PlayAnm / PlayAnmInv(type, x, z): its first clip, forwards or backwards
+        {
+            u16 type = BwFlex(Read16()), x = BwFlex(Read16()), z = BwFlex(Read16());
+            Web3D_PropCommand(op == 0x12B ? 2 : 1, type, x, z, 0);
+            break;
+        }
+        case 0x12D: Read16(); Read16(); Read16(); Read16(); break;                       // SetVisible (not yet)
+        case 0x126: Read16(); Read16(); Read16(); Read16(); break;                       // ChangeMdlID (not yet)
+        case 0x125: break;                                                               // PlayHOFMachineSeq
+
+        case 0xCC: BwVarSet(Read16(), Top()->text); break;      // RTGetTextFile: the running script's text file
+        case 0x1EC: // ObjInit.SetNPCGPos(npc, dir, x, y, z): where an NPC stands when the map loads
+        {
+            u16 npc = BwFlex(Read16()), dir = BwFlex(Read16()), x = BwFlex(Read16()), z;
+            Read16();
+            z = BwFlex(Read16());
+            SetActorPos(npc, x, z, dir, TRUE);
+            break;
+        }
+        case 0x1EB: case 0x1EA: Read16(); Read16(); Read16(); Read16(); break;   // ObjInit warp / sign positions (not yet)
+
+        // --- the Pokémon Center: BW's healing jingle (SEQ_ME_ASA, our heal fanfare), and wait for it
+        case 0x12F:
+            Read16();
+            if (!PlayBwFanfare(MUS_BW_ME_ASA))
+                PlayFanfare(MUS_HEAL);
+            sVm.wait = BW_WAIT_FANFARE;
+            break;
+
         default:
             BW_TRACE("[bw] skip %x at %u", op, f->pc - 2);
             SkipParams(op);

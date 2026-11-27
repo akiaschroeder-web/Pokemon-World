@@ -56,6 +56,7 @@ FANFARES = [('FANFARE_LEVEL_UP', 'SEQ_ME_LVUP'), ('FANFARE_OBTAIN_ITEM', 'SEQ_ME
 # the songs our C code plays in Unova (battles, victories, fanfares), besides the maps' own
 ENGINE_SONGS = ['SEQ_BGM_VS_NORAPOKE', 'SEQ_BGM_VS_TSUYOPOKE', 'SEQ_BGM_VS_TRAINER', 'SEQ_BGM_VS_GYMLEADER',
                 'SEQ_BGM_VS_RIVAL', 'SEQ_BGM_VS_PLASMA', 'SEQ_BGM_VS_SHITENNO', 'SEQ_BGM_VS_CHAMP', 'SEQ_BGM_VS_N',
+                'SEQ_BGM_STARTING', 'SEQ_BGM_STARTING2',   # the new game's introduction (juniper_intro.c)
                 'SEQ_BGM_VS_G_CIS', 'SEQ_BGM_VS_SHIN', 'SEQ_BGM_WIN1', 'SEQ_BGM_WIN2', 'SEQ_BGM_WIN3', 'SEQ_BGM_WIN4'] + ['SEQ_BGM_EYE_%02d' % i for i in range(1, 14)] + ['SEQ_BGM_EYE_PLASMA'] +                [s for _, s in FANFARES]
 DUMMY_VOICE = '\tvoice_square_1 60, 0, 0, 2, 0, 0, 15, 0\n'
 

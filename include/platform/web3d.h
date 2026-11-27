@@ -17,10 +17,18 @@ void Web3D_EndFrame(void);
 bool32 Web3D_IsActive(void);
 void Web3D_EventCamera(u32 mode, s32 pitch, s32 yaw, s32 distance, s32 x, s32 y, s32 z, u32 frames);
 void Web3D_PlayDemo(u32 id);
+void Web3D_MapReplace(u32 id, bool32 on);
+void Web3D_PropCommand(u32 op, u32 type, s32 x, s32 z, u32 anim);
+bool32 Web3D_PropBusy(void);
+void Web3D_OpenDoorAt(s16 mapX, s16 mapY);
 bool32 Web3D_StepDemo(u32 frames, u32 *waited);
 
 #else
 static inline void Web3D_PlayDemo(u32 id) {}
+static inline void Web3D_MapReplace(u32 id, bool32 on) {}
+static inline void Web3D_PropCommand(u32 op, u32 type, s32 x, s32 z, u32 anim) {}
+static inline bool32 Web3D_PropBusy(void) { return FALSE; }
+static inline void Web3D_OpenDoorAt(s16 mapX, s16 mapY) {}
 static inline bool32 Web3D_StepDemo(u32 frames, u32 *waited) { return FALSE; }
 static inline void Web3D_EventCamera(u32 mode, s32 pitch, s32 yaw, s32 distance, s32 x, s32 y, s32 z, u32 frames) {}
 #endif // PLATFORM_WEB

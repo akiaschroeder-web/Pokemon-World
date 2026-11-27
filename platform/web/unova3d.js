@@ -164,7 +164,7 @@
       if (!name) continue;
       if (!chunks[name]) loadChunk(name);
       if (Math.abs(i) <= draw && Math.abs(j) <= draw && chunks[name].state === 'ready')
-        out.push({ chunk: chunks[name], ox: X * 512, oz: Z * 512 });
+        out.push({ chunk: chunks[name], name: name, ox: X * 512, oz: Z * 512 });
     }
     return out;
   }
@@ -280,6 +280,8 @@
     });
     gl.disableVertexAttribArray(aPos); gl.disableVertexAttribArray(aUV); gl.disableVertexAttribArray(aCol);
     gl.disable(gl.CULL_FACE);
+    nearNow = near;
+    drawProps(near, mvp);
 
     if (sprites && sprites.length) drawSprites(sprites, eye, at, mvp);
     if (fadeY) {
@@ -352,70 +354,37 @@
     '  vec3 w = vec3(dot(uBones[i], p), dot(uBones[i + 1], p), dot(uBones[i + 2], p));',
     '  gl_Position = uVP * vec4(w, 1.0); vUV = aUV + uUVOff; vCol = aCol; }'].join('\n');
   var demoProg = null, demos = {};
-  PW3D.demoFov = 40;          // degrees
-  PW3D.demoCamMode = 0;       // camera convention (see demoCamera)
 
-  function loadDemo(id) {
-    if (demos[id]) return demos[id];
-    var d = demos[id] = { state: 'loading' };
-    var base = PW3D.base + 'demos/';
-    fetch(base + 'd' + id + '.json').then(function (r) { return r.json(); }).then(function (j) {
-      d.info = j;
-      return Promise.all(j.models.map(function (m) {
-        return Promise.all([fetch(base + m.mesh).then(function (r) { return r.arrayBuffer(); }),
-                            fetch(base + m.anim).then(function (r) { return r.arrayBuffer(); })]).then(function (bufs) {
-          var dv = new DataView(bufs[0]), ng = dv.getUint32(4, true), nv = dv.getUint32(8, true), ni = dv.getUint32(12, true);
-          var groups = [];
-          for (var g = 0; g < ng; g++) {
-            var o = 16 + 16 * g;
-            groups.push({ tex: dv.getUint16(o, true), ws: dv.getUint8(o + 2), wt: dv.getUint8(o + 3), alpha: dv.getUint8(o + 4),
-                          cull: dv.getUint8(o + 5), flags: dv.getUint8(o + 6), first: dv.getUint32(o + 8, true), count: dv.getUint32(o + 12, true) });
-          }
-          var vo = 16 + 16 * ng, io = vo + 28 * nv;
-          var vbuf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, vbuf);
-          gl.bufferData(gl.ARRAY_BUFFER, new Uint8Array(bufs[0], vo, 28 * nv), gl.STATIC_DRAW);
-          var big = nv > 65535, ibuf = gl.createBuffer(); gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf);
-          gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, big ? new Uint32Array(bufs[0].slice(io, io + 4 * ni)) : new Uint16Array(bufs[0].slice(io, io + 2 * ni)), gl.STATIC_DRAW);
-          return { info: m, groups: groups, vbuf: vbuf, ibuf: ibuf, big: big, anim: new Float32Array(bufs[1]),
-                   tex: m.textures.map(function (t) { return base + 'tex/' + t; }) };
-        });
-      }));
-    }).then(function (models) { d.models = models; d.state = 'ready'; }).catch(function (e) { d.state = 'failed'; console.log('[demo] ' + e); });
-    return d;
+  // a model with baked bone matrices (bw/demos.py's write_model): mesh PWD1 + .anim
+  function loadModel(base, m) {
+    return Promise.all([fetch(base + m.mesh).then(function (r) { return r.arrayBuffer(); }),
+                        fetch(base + m.anim).then(function (r) { return r.arrayBuffer(); })]).then(function (bufs) {
+      var dv = new DataView(bufs[0]), ng = dv.getUint32(4, true), nv = dv.getUint32(8, true), ni = dv.getUint32(12, true);
+      var groups = [];
+      for (var g = 0; g < ng; g++) {
+        var o = 16 + 16 * g;
+        groups.push({ tex: dv.getUint16(o, true), ws: dv.getUint8(o + 2), wt: dv.getUint8(o + 3), alpha: dv.getUint8(o + 4),
+                      cull: dv.getUint8(o + 5), flags: dv.getUint8(o + 6), first: dv.getUint32(o + 8, true), count: dv.getUint32(o + 12, true) });
+      }
+      var vo = 16 + 16 * ng, io = vo + 28 * nv;
+      var vbuf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, vbuf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Uint8Array(bufs[0], vo, 28 * nv), gl.STATIC_DRAW);
+      var big = nv > 65535, ibuf = gl.createBuffer(); gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibuf);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, big ? new Uint32Array(bufs[0].slice(io, io + 4 * ni)) : new Uint16Array(bufs[0].slice(io, io + 2 * ni)), gl.STATIC_DRAW);
+      return { info: m, groups: groups, vbuf: vbuf, ibuf: ibuf, big: big, anim: new Float32Array(bufs[1]),
+               tex: m.textures.map(function (t) { return base + 'tex/' + t; }) };
+    });
   }
 
-  // BW's demo camera: pitch, yaw, roll in degrees, then the camera's position.
-  // Orientation R = Ry(yaw) Rx(pitch) Rz(roll); the camera looks down its -z axis.
-  function demoCamera(c) {
-    var D = Math.PI / 180, px = c[0] * D, py = c[1] * D, pz = c[2] * D;
-    var cx = Math.cos(px), sx = Math.sin(px), cy = Math.cos(py), sy = Math.sin(py), cz = Math.cos(pz), sz = Math.sin(pz);
-    function m3(a, b) { var o = []; for (var r = 0; r < 3; r++) for (var k = 0; k < 3; k++) o[r * 3 + k] = a[r * 3] * b[k] + a[r * 3 + 1] * b[3 + k] + a[r * 3 + 2] * b[6 + k]; return o; }
-    var RY = [cy, 0, sy, 0, 1, 0, -sy, 0, cy], RX = [1, 0, 0, 0, cx, -sx, 0, sx, cx], RZ = [cz, -sz, 0, sz, cz, 0, 0, 0, 1];
-    var R = PW3D.demoCamMode === 1 ? m3(m3(RX, RY), RZ) : m3(m3(RY, RX), RZ);
-    var e = [c[3], c[4], c[5]];
-    return new Float32Array([R[0], R[1], R[2], 0, R[3], R[4], R[5], 0, R[6], R[7], R[8], 0,   // view = R^T (p - e)
-      -(R[0] * e[0] + R[3] * e[1] + R[6] * e[2]), -(R[1] * e[0] + R[4] * e[1] + R[7] * e[2]), -(R[2] * e[0] + R[5] * e[1] + R[8] * e[2]), 1]);
-  }
-
-  PW3D.demoReady = function (id) { return loadDemo(id).state === 'ready'; };
-
-  // draws cutscene `id` at `frame` (its own 30 fps frames); until it has loaded the screen is black
-  PW3D.drawDemo = function (id, frame) {
-    if (!gl) return;
-    var w = canvas.clientWidth * (window.devicePixelRatio || 1), h = canvas.clientHeight * (window.devicePixelRatio || 1);
-    if (canvas.width !== Math.round(w) || canvas.height !== Math.round(h)) { canvas.width = Math.round(w); canvas.height = Math.round(h); }
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    gl.clearColor(0, 0, 0, 1);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    var d = loadDemo(id);
-    if (d.state !== 'ready') return;
+  // draws models: list of {model, frame, vp} (vp: the full view-projection-world matrix)
+  var modelPalette = null;
+  function drawModels(list) {
+    if (!list.length) return;
     if (!demoProg) demoProg = compile(DVS, FS);
-    var cams = d.info.camera, f = Math.max(0, Math.min(cams.length - 1, frame));
-    var c0 = cams[Math.floor(f)], c1 = cams[Math.min(cams.length - 1, Math.floor(f) + 1)], t = f - Math.floor(f);
-    var cam = c0.map(function (v, i) { return v + (c1[i] - v) * t; });
-    var vp = mul(perspective(PW3D.demoFov * Math.PI / 180, canvas.width / canvas.height, 4, 40000), demoCamera(cam));
+    if (!modelPalette) modelPalette = new Float32Array(180 * 4);
+    var palette = modelPalette;
     gl.useProgram(demoProg);
-    gl.uniformMatrix4fv(gl.getUniformLocation(demoProg, 'uVP'), false, vp);
+    var uVP = gl.getUniformLocation(demoProg, 'uVP');
     var aPos = gl.getAttribLocation(demoProg, 'aPos'), aBone = gl.getAttribLocation(demoProg, 'aBone'),
       aUV = gl.getAttribLocation(demoProg, 'aUV'), aCol = gl.getAttribLocation(demoProg, 'aCol');
     var uBones = gl.getUniformLocation(demoProg, 'uBones'), uUVOff = gl.getUniformLocation(demoProg, 'uUVOff'),
@@ -423,12 +392,10 @@
       uAlphaTest = gl.getUniformLocation(demoProg, 'uAlphaTest');
     [aPos, aBone, aUV, aCol].forEach(function (a) { if (a >= 0) gl.enableVertexAttribArray(a); });
     gl.enable(gl.DEPTH_TEST);
-    var palette = new Float32Array(180 * 4);
     [false, true].forEach(function (pass) {
-      var season = new Date().getMonth() % 4;     // like BW: January is spring
-      d.models.forEach(function (m) {
-        var info = m.info, nb = info.bones, step = info.step || 2;
-        if (info.season !== undefined && info.season !== season) return;
+      list.forEach(function (it) {
+        var m = it.model, info = m.info, nb = info.bones, step = info.step || 2, f = it.frame;
+        gl.uniformMatrix4fv(uVP, false, it.vp);
         var nfr = m.anim.length / (12 * nb), fk = Math.min(nfr - 1, f / step), k0 = Math.floor(fk), k1 = Math.min(nfr - 1, k0 + 1), g = fk - k0;
         gl.bindBuffer(gl.ARRAY_BUFFER, m.vbuf);
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, m.ibuf);
@@ -465,5 +432,122 @@
     });
     gl.depthMask(true); gl.disable(gl.BLEND); gl.disable(gl.CULL_FACE);
     [aPos, aBone, aUV, aCol].forEach(function (a) { if (a >= 0) gl.disableVertexAttribArray(a); });
+  }
+
+  // --- BW's animated buildings ("static props": doors, fountains, the PC...), bw/buildings.py ---
+  // a chunk lists its props: {key, uid, type, kind, m: 3x4 placement}; unova/props/<key>.json has
+  // the building's clips (one per animation). kind 1: always playing (clip 0, looping); 2/3:
+  // still on clip 0's first frame until the game plays a clip (PW3D.propCommand).
+  var propModels = {};    // key -> {state, kind, type, clips: [model]}
+  var propState = {};     // chunk name + index -> {clip, start, inverse, playing}
+  var propFrame = 0;      // frames drawn (BW's props run at 30 frames a second: half our rate)
+  var propBusy = 0;
+  function loadProp(key) {
+    if (propModels[key]) return propModels[key];
+    var p = propModels[key] = { state: 'loading' };
+    var base = PW3D.base + 'props/';
+    fetch(base + key + '.json').then(function (r) { return r.json(); }).then(function (j) {
+      p.kind = j.kind; p.type = j.type; p.frames = j.clips.map(function (c) { return c.frames; });
+      return Promise.all(j.clips.map(function (c) { return loadModel(base, c); }));
+    }).then(function (clips) { p.clips = clips; p.state = 'ready'; }).catch(function (e) { p.state = 'failed'; console.log('[prop] ' + key + ' ' + e); });
+    return p;
+  }
+  function propWorld(m, ox, oz) {   // column-major 4x4 of placement m (3x4 rows) moved by (ox, 0, oz)
+    return new Float32Array([m[0], m[4], m[8], 0, m[1], m[5], m[9], 0, m[2], m[6], m[10], 0, m[3] + ox, m[7], m[11] + oz, 1]);
+  }
+  function drawProps(near, mvp) {
+    var list = [], now = propFrame / 2;
+    propBusy = 0;
+    near.forEach(function (n) {
+      var props = n.chunk.info.props || [];
+      props.forEach(function (pr, i) {
+        var p = loadProp(pr.key);
+        if (p.state !== 'ready') return;
+        var st = propState[n.name + ':' + i], clip = 0, f = 0;
+        if (p.kind === 1 || (p.kind === 3 && !st)) {
+          var len = Math.max(1, p.frames[0]); f = now % len;
+        } else if (st) {
+          clip = Math.min(st.clip, p.clips.length - 1);
+          var len2 = Math.max(1, p.frames[clip]), t = Math.min(len2 - 1, now - st.start);
+          if (st.playing && now - st.start >= len2 - 1) st.playing = false;
+          if (st.playing) propBusy++;
+          f = st.inverse ? len2 - 1 - t : t;
+        }
+        list.push({ model: p.clips[clip], frame: f, vp: mul(mvp, propWorld(pr.m, n.ox, n.oz)) });
+      });
+    });
+    drawModels(list);
+    propFrame++;
+  }
+  // the game asks for a prop's animation (src/bw_script.c): op 1 play clip `anim`, 2 the same backwards,
+  // 3 pause; the prop of BW type `type` (0xFFFF: any) standing on matrix tile (x, z)
+  var propSeq = -1, nearNow = [];
+  PW3D.propCommand = function (seq, op, type, x, z, anim) {
+    if (seq === propSeq) return propBusy;
+    propSeq = seq;
+    var best = null, bestD = 3;
+    nearNow.forEach(function (n) {
+      (n.chunk.info.props || []).forEach(function (pr, i) {
+        var p = propModels[pr.key];
+        if (type === 0xFFFE ? (pr.type !== 1 && pr.type !== 2) : (type !== 0xFFFF && pr.type !== type)) return;
+        var tx = (n.ox + pr.m[3]) / 16, tz = (n.oz + pr.m[11]) / 16;
+        var d = Math.max(Math.abs(tx - x - 0.5), Math.abs(tz - z - 0.5));
+        if (d < bestD) { bestD = d; best = n.name + ':' + i; }
+      });
+    });
+    if (!best) return propBusy;
+    if (op === 3) { if (propState[best]) propState[best].playing = false; return propBusy; }
+    propState[best] = { clip: anim, start: propFrame / 2, inverse: op === 2, playing: true };
+    return propBusy + 1;
+  };
+  PW3D.propBusy = function () { return propBusy; };
+
+  PW3D.demoFov = 40;          // degrees
+  PW3D.demoCamMode = 0;       // camera convention (see demoCamera)
+
+  function loadDemo(id) {
+    if (demos[id]) return demos[id];
+    var d = demos[id] = { state: 'loading' };
+    var base = PW3D.base + 'demos/';
+    fetch(base + 'd' + id + '.json').then(function (r) { return r.json(); }).then(function (j) {
+      d.info = j;
+      return Promise.all(j.models.map(function (m) { return loadModel(base, m); }));
+    }).then(function (models) { d.models = models; d.state = 'ready'; }).catch(function (e) { d.state = 'failed'; console.log('[demo] ' + e); });
+    return d;
+  }
+
+  // BW's demo camera: pitch, yaw, roll in degrees, then the camera's position.
+  // Orientation R = Ry(yaw) Rx(pitch) Rz(roll); the camera looks down its -z axis.
+  function demoCamera(c) {
+    var D = Math.PI / 180, px = c[0] * D, py = c[1] * D, pz = c[2] * D;
+    var cx = Math.cos(px), sx = Math.sin(px), cy = Math.cos(py), sy = Math.sin(py), cz = Math.cos(pz), sz = Math.sin(pz);
+    function m3(a, b) { var o = []; for (var r = 0; r < 3; r++) for (var k = 0; k < 3; k++) o[r * 3 + k] = a[r * 3] * b[k] + a[r * 3 + 1] * b[3 + k] + a[r * 3 + 2] * b[6 + k]; return o; }
+    var RY = [cy, 0, sy, 0, 1, 0, -sy, 0, cy], RX = [1, 0, 0, 0, cx, -sx, 0, sx, cx], RZ = [cz, -sz, 0, sz, cz, 0, 0, 0, 1];
+    var R = PW3D.demoCamMode === 1 ? m3(m3(RX, RY), RZ) : m3(m3(RY, RX), RZ);
+    var e = [c[3], c[4], c[5]];
+    return new Float32Array([R[0], R[1], R[2], 0, R[3], R[4], R[5], 0, R[6], R[7], R[8], 0,   // view = R^T (p - e)
+      -(R[0] * e[0] + R[3] * e[1] + R[6] * e[2]), -(R[1] * e[0] + R[4] * e[1] + R[7] * e[2]), -(R[2] * e[0] + R[5] * e[1] + R[8] * e[2]), 1]);
+  }
+
+  PW3D.demoReady = function (id) { return loadDemo(id).state === 'ready'; };
+
+  // draws cutscene `id` at `frame` (its own 30 fps frames); until it has loaded the screen is black
+  PW3D.drawDemo = function (id, frame) {
+    if (!gl) return;
+    var w = canvas.clientWidth * (window.devicePixelRatio || 1), h = canvas.clientHeight * (window.devicePixelRatio || 1);
+    if (canvas.width !== Math.round(w) || canvas.height !== Math.round(h)) { canvas.width = Math.round(w); canvas.height = Math.round(h); }
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.clearColor(0, 0, 0, 1);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    var d = loadDemo(id);
+    if (d.state !== 'ready') return;
+    if (!demoProg) demoProg = compile(DVS, FS);
+    var cams = d.info.camera, f = Math.max(0, Math.min(cams.length - 1, frame));
+    var c0 = cams[Math.floor(f)], c1 = cams[Math.min(cams.length - 1, Math.floor(f) + 1)], t = f - Math.floor(f);
+    var cam = c0.map(function (v, i) { return v + (c1[i] - v) * t; });
+    var vp = mul(perspective(PW3D.demoFov * Math.PI / 180, canvas.width / canvas.height, 4, 40000), demoCamera(cam));
+    var season = new Date().getMonth() % 4;     // like BW: January is spring
+    drawModels(d.models.filter(function (m) { return m.info.season === undefined || m.info.season === season; })
+      .map(function (m) { return { model: m, frame: f, vp: vp }; }));
   };
 })();

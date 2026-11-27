@@ -16,6 +16,7 @@
 #include "main.h"
 #include "main_menu.h"
 #include "rowan_intro.h"
+#include "juniper_intro.h"
 #include "menu.h"
 #include "list_menu.h"
 #include "mystery_event_menu.h"
@@ -1407,6 +1408,7 @@ static void Task_PwSetup_ShowPrompt(u8 taskId);
 static void Task_PwSetup_WaitPrompt(u8 taskId);
 static void Task_PwSetup_HandleInput(u8 taskId);
 static void Task_PwSetup_FadeToRowan(u8 taskId);
+static void Task_PwSetup_FadeToJuniper(u8 taskId);
 
 static void PwSetup_PrintMessage(const u8 *text)
 {
@@ -1840,6 +1842,12 @@ static void Task_PwSetup_HandleInput(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_PwSetup_FadeToRowan;
     }
+    else if (sPwSetup.region == REGION_UNOVA)
+    {
+        // Unova: Pokémon Black's own introduction, Professor Juniper (src/juniper_intro.c)
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gTasks[taskId].func = Task_PwSetup_FadeToJuniper;
+    }
     else
     {
         // Hoenn: carry on with Birch's speech; it shows its own text windows.
@@ -1859,6 +1867,20 @@ static void Task_PwSetup_HandleInput(u8 taskId)
         gTasks[taskId].tTimer = 0x40;
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitToShowBirch;
     }
+}
+
+static void Task_PwSetup_FadeToJuniper(u8 taskId)
+{
+    if (gPaletteFade.active)
+        return;
+    FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 32, 32);
+    PwSetup_FlushBg0Copies();
+    CpuFill16(0, (void *)BG_SCREEN_ADDR(GetBgAttribute(0, BG_ATTR_MAPBASEINDEX)), BG_SCREEN_SIZE);
+    FreeAllWindowBuffers();
+    UnsetBgTilemapBuffer(0);
+    ResetAllPicSprites();
+    DestroyTask(taskId);
+    StartJuniperIntro();
 }
 
 static void Task_PwSetup_FadeToRowan(u8 taskId)

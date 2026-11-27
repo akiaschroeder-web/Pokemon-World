@@ -1,0 +1,1 @@
+{"kind":2,"type":2,"clips":[{"mesh":"bld16_93_0.bin","anim":"bld16_93_0.anim","bones":8,"step":2,"textures":["bld16_93_0_door_pc.png"],"draws":[[3,6]],"patterns":{},"scroll":{},"frames":8,"magic":"BCA0"},{"mesh":"bld16_93_1.bin","anim":"bld16_93_1.anim","bones":8,"step":2,"textures":["bld16_93_0_door_pc.png"],"draws":[[3,6]],"patterns":{},"scroll":{},"frames":8,"magic":"BCA0"}]}

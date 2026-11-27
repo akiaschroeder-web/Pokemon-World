@@ -138,6 +138,8 @@ var Module = typeof Module !== 'undefined' ? Module : {};
     stack3D.classList.remove('demo');
     // BW's event camera (cutscenes): words 11-19 of the scene block (src/platform/web3d.c)
     PW3D.eventCamera(u[p + 11], s[p + 12], s[p + 13], s[p + 14], s[p + 15], s[p + 16], s[p + 17], u[p + 18], u[p + 19]);
+    // BW's animated buildings: words 24-29 a request from the scripts, word 30 back: how many play
+    u[p + 30] = PW3D.propCommand(u[p + 24], u[p + 25], u[p + 26], s[p + 27], s[p + 28], u[p + 29]);
     PW3D.draw([tx, PW3D.groundHeight(tx, tz), tz], sprites, u[p + 3], u[p + 4]);
   }
 

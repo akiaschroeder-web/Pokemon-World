@@ -162,6 +162,8 @@
 	song mus_bw_vs_shitenno, MUSIC_PLAYER_BGM, 0
 	song mus_bw_vs_champ, MUSIC_PLAYER_BGM, 0
 	song mus_bw_vs_n, MUSIC_PLAYER_BGM, 0
+	song mus_bw_starting, MUSIC_PLAYER_BGM, 0
+	song mus_bw_starting2, MUSIC_PLAYER_BGM, 0
 	song mus_bw_vs_g_cis, MUSIC_PLAYER_BGM, 0
 	song mus_bw_vs_shin, MUSIC_PLAYER_BGM, 0
 	song mus_bw_win1, MUSIC_PLAYER_BGM, 0

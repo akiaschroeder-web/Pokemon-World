@@ -1,4 +1,5 @@
 #include "global.h"
+#include "platform/web3d.h"
 #include "sinnoh_radar.h"
 #include "battle_setup.h"
 #include "bike.h"
@@ -1027,6 +1028,8 @@ static bool8 TryStartWarpEventScript(struct MapPosition *position, u16 metatileB
             DoMossdeepGymWarp();
             return TRUE;
         }
+        if (MetatileBehavior_IsNonAnimDoor(metatileBehavior) == TRUE)
+            Web3D_OpenDoorAt(position->x, position->y);   // Unova: the building's door opens (BW's 3D door)
         DoWarp();
         return TRUE;
     }

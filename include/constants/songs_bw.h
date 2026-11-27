@@ -168,29 +168,31 @@
 #define MUS_BW_VS_SHITENNO               (BW_SONGS_START + 159)
 #define MUS_BW_VS_CHAMP                  (BW_SONGS_START + 160)
 #define MUS_BW_VS_N                      (BW_SONGS_START + 161)
-#define MUS_BW_VS_G_CIS                  (BW_SONGS_START + 162)
-#define MUS_BW_VS_SHIN                   (BW_SONGS_START + 163)
-#define MUS_BW_WIN1                      (BW_SONGS_START + 164)
-#define MUS_BW_WIN2                      (BW_SONGS_START + 165)
-#define MUS_BW_WIN3                      (BW_SONGS_START + 166)
-#define MUS_BW_WIN4                      (BW_SONGS_START + 167)
-#define MUS_BW_EYE_01                    (BW_SONGS_START + 168)
-#define MUS_BW_EYE_02                    (BW_SONGS_START + 169)
-#define MUS_BW_EYE_03                    (BW_SONGS_START + 170)
-#define MUS_BW_EYE_04                    (BW_SONGS_START + 171)
-#define MUS_BW_EYE_05                    (BW_SONGS_START + 172)
-#define MUS_BW_EYE_06                    (BW_SONGS_START + 173)
-#define MUS_BW_EYE_07                    (BW_SONGS_START + 174)
-#define MUS_BW_EYE_08                    (BW_SONGS_START + 175)
-#define MUS_BW_EYE_09                    (BW_SONGS_START + 176)
-#define MUS_BW_EYE_10                    (BW_SONGS_START + 177)
-#define MUS_BW_EYE_11                    (BW_SONGS_START + 178)
-#define MUS_BW_EYE_12                    (BW_SONGS_START + 179)
-#define MUS_BW_EYE_13                    (BW_SONGS_START + 180)
-#define MUS_BW_EYE_PLASMA                (BW_SONGS_START + 181)
-#define MUS_BW_ME_SHINKAOME              (BW_SONGS_START + 182)
-#define MUS_BW_ME_KINOMI                 (BW_SONGS_START + 183)
-#define BW_SONGS_END (BW_SONGS_START + 183)
+#define MUS_BW_STARTING                  (BW_SONGS_START + 162)
+#define MUS_BW_STARTING2                 (BW_SONGS_START + 163)
+#define MUS_BW_VS_G_CIS                  (BW_SONGS_START + 164)
+#define MUS_BW_VS_SHIN                   (BW_SONGS_START + 165)
+#define MUS_BW_WIN1                      (BW_SONGS_START + 166)
+#define MUS_BW_WIN2                      (BW_SONGS_START + 167)
+#define MUS_BW_WIN3                      (BW_SONGS_START + 168)
+#define MUS_BW_WIN4                      (BW_SONGS_START + 169)
+#define MUS_BW_EYE_01                    (BW_SONGS_START + 170)
+#define MUS_BW_EYE_02                    (BW_SONGS_START + 171)
+#define MUS_BW_EYE_03                    (BW_SONGS_START + 172)
+#define MUS_BW_EYE_04                    (BW_SONGS_START + 173)
+#define MUS_BW_EYE_05                    (BW_SONGS_START + 174)
+#define MUS_BW_EYE_06                    (BW_SONGS_START + 175)
+#define MUS_BW_EYE_07                    (BW_SONGS_START + 176)
+#define MUS_BW_EYE_08                    (BW_SONGS_START + 177)
+#define MUS_BW_EYE_09                    (BW_SONGS_START + 178)
+#define MUS_BW_EYE_10                    (BW_SONGS_START + 179)
+#define MUS_BW_EYE_11                    (BW_SONGS_START + 180)
+#define MUS_BW_EYE_12                    (BW_SONGS_START + 181)
+#define MUS_BW_EYE_13                    (BW_SONGS_START + 182)
+#define MUS_BW_EYE_PLASMA                (BW_SONGS_START + 183)
+#define MUS_BW_ME_SHINKAOME              (BW_SONGS_START + 184)
+#define MUS_BW_ME_KINOMI                 (BW_SONGS_START + 185)
+#define BW_SONGS_END (BW_SONGS_START + 185)
 
 // For the debug menu's sound test
 #define BW_SOUND_LIST_BGM \
@@ -356,6 +358,8 @@
     X(MUS_BW_VS_SHITENNO) \
     X(MUS_BW_VS_CHAMP) \
     X(MUS_BW_VS_N) \
+    X(MUS_BW_STARTING) \
+    X(MUS_BW_STARTING2) \
     X(MUS_BW_VS_G_CIS) \
     X(MUS_BW_VS_SHIN) \
     X(MUS_BW_WIN1) \
